@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+{% load i18n %}
+{% load core_extras %}
+{% load profile_image_tags %}
+
+<html lang="en">
+
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>
+{% block title %}{% endblock title %} | {{ project_name }}
+</title>
+
+<link rel="icon" href="{% static 'favicon.ico' %}">
+
+{% block stylesheets %}
+
+<link rel="stylesheet" href="{% static 'css/app.css' %}" />
+<link rel="stylesheet" href="{% static 'css/fontawesome-all.css' %}" />
+
+{% endblock stylesheets %}
+
+</head>
+
+<body class="{% block body_classes %}theme-white{% endblock body_classes %}">
+
+<div id="app-container">
+
+{% block top_navbar %}
+
+<div class="top-navbar">
+
+{% block top_navbar_content %}
+
+{% block top_navbar_content_left %}
+
+<div class="navbar-content">
+
+<div class="navbar-btn">
+<a href="" id="sidebar-nav-btn" class="sidebar-nav-btn" @click.prevent="toggleSidebar">
+<i class="fas fa-bars"></i>
+</a>
+</div>
+
+<div class="logo">
+<a href="{% url 'app:home' %}">
+<img src="{% static 'images/nublado-logo-sm.png' %}" alt="logo">
+</a>
+</div>
+
+</div>
+
+{% endblock top_navbar_content_left %}
+
+<div class="navbar-content">
+
+{% block top_navbar_content_right %}
+
+{% if not user.is_authenticated %}
+
+  <a href="{% url 'security:login' %}" class="navbar-link nav-link login-link">
+  {% trans "label_login" %}
+  </a>
+
+{% else %}
+
+  <dropdown 
+  id="navbar-user-dropdown" 
+  container-classes="navbar-user user-toggle"
+  dropdown-classes="dropdown-right"
+  >
+
+  <template slot="trigger-content">
+    <div class="navbar-user-icon">
+    {% profile_image user 40 'circle' %}
+    <span class="navbar-username">{{ user.username }}</span>
+    </div>
+  </template>
+
+  <template slot="dropdown-content">
+
+  {% block navbar_menu_items %}
+
+  {% include "includes/_user_menu_items.html" %}
+
+  {% endblock navbar_menu_items %}
+
+  </template>
+
+  </dropdown>
+
+{% endif %}
+
+{% endblock top_navbar_content_right %}
+
+</div><!-- navbar-content -->
+
+{% endblock top_navbar_content %}
+
+</div>
+
+{% endblock top_navbar %}
+
+{# SIDEBAR_NAV #}
+
+{% block sidebar_nav %}
+
+<!-- sidebar -->
+<div id="sidebar-nav-background" class="sidebar-nav-background" @click="toggleSidebar(false)"></div>
+
+<div
+id="sidebar-nav"
+class="{% block sidebar_nav_classes %}sidebar-nav{% endblock sidebar_nav_classes %}"
+ref="sidebarNav"
+>
+<div class="sidebar-nav-container-outer">
+<div class="sidebar-nav-container-inner">
+
+{% block sidebar_nav_top %}
+
+<div class="sidebar-nav-navbar-top">
+
+<div class="navbar-btn">
+<a href="" id="sidebar-nav-btn-b" class="sidebar-nav-btn" @click.prevent="toggleSidebar(false)">
+<i class="fas fa-bars"></i>
+</a>
+</div>
+
+<div class="logo">
+<a href="{% url 'app:home' %}">
+<img src="{% static 'images/nublado-logo-sm.png' %}" alt="logo">
+</a>
+</div>
+
+</div>
+
+{% endblock sidebar_nav_top %}
+
+{% block sidebar_nav_top_panel %}
+
+<div class="sidebar-nav-top-panel">
+
+<div class="sidebar-nav-container-outer">
+<div class="sidebar-nav-container-inner">
+
+{% block sidebar_nav_top_panel_top %}
+{% endblock sidebar_nav_top_panel_top %}
+
+<div class="sidebar-nav-body">
+
+<ul class="sidebar-nav-list">
+
+{% block sidebar_nav_top_panel_content %}
+{% endblock sidebar_nav_top_panel_content %}
+
+</ul>
+
+</div>
+
+</div>
+</div>
+
+</div>
+
+{% endblock sidebar_nav_top_panel %}
+
+<div class="sidebar-nav-body">
+
+<ul class="sidebar-nav-list">
+
+{% block sidebar_nav_items_top %}{% endblock sidebar_nav_items_top %}
+
+{% block sidebar_nav_items %}{% endblock sidebar_nav_items %}
+
+{% block sidebar_nav_items_bottom %}{% endblock sidebar_nav_items_bottom %}
+
+</ul><!-- sidebar-nav-list -->
+
+</div><!-- sidebar-nav-body -->
+
+{% block sidebar_nav_footer %}
+
+<div class="sidebar-nav-footer">
+
+<div class="footer-content">
+
+{% block sidebar_language_changer %}
+
+<dropdown 
+id="sidebar-nav-language-menu" 
+trigger-classes="ui mini icon button" 
+v-bind:dropup="true">
+
+<template slot="trigger-content">
+{% trans "label_language" %}: {{ LANGUAGE_CODE|upper }}
+</template>
+
+<template slot="dropdown-content">
+
+<ul>
+
+{% get_language_info_list for LANGUAGES as languages %}
+{% for language in languages %}
+
+  <li>
+  <a id="sidebar-{{ language.code }}" href="{% change_language language.code %}">
+  {{ language.name_translated }}
+  </a>
+  </li>
+
+{% endfor %}
+
+</ul>
+
+</template>
+
+</dropdown>
+
+{% endblock sidebar_language_changer %}
+
+</div>
+
+</div><!--sidebar-nav-footer -->
+
+{% endblock sidebar_nav_footer %}
+
+</div>
+</div>
+</div><!-- sidebar-nav -->
+
+{% endblock sidebar_nav %}
+
+<div 
+id="content-container" 
+class="{% block container_classes %}topnav-container{% endblock container_classes %}"
+>
+
+{% block body %}
+
+{% block messages %}
+
+<div id="messages">
+{% include "includes/_messages.html" %}
+</div><!-- messages -->
+
+{% endblock messages %}
+
+{% block content_top %}{% endblock content_top %}
+
+<div id="main-content" class="main-content container">
+{% block content %}{% endblock content %}
+</div>
+
+{% endblock body %}
+
+{% block page_footer %}
+{% endblock page_footer %}
+
+{% block modal_content %}{% endblock modal_content %}
+
+</div><!-- main -->
+
+</div>
+
+<script>
+{# Block reserved for JavaScript variables whose values come from backend Python content #}
+
+{% block python_to_javascript %}
+
+// If enabled, maintain sidebar's state between requests.
+var initSidebarSessionEnabled = false; 
+var sidebarExpanded = false;
+var appSessionUrl = "{% url 'app:app_session' %}";
+
+{% endblock python_to_javascript %}
+</script>
+
+{% block scripts_bottom %}
+
+<script src="{% url 'core:js_settings' %}"></script>
+<script src="{% static 'js/showdown.min.js' %}"></script>
+<script src="{% static 'js/he.js' %}"></script>
+
+{% endblock scripts_bottom %}
+
+{% block scripts_vue %}
+
+<script src="{% static 'js/vue.js' %}"></script>
+<script src="{% static 'js/axios.min.js' %}"></script>
+<script src="{% static 'js/ajax.js' %}"></script>
+<script src="{% static 'js/vue/plugins.js' %}"></script>
+<script src="{% static 'js/vue/core-components.js' %}"></script>
+<script src="{% static 'js/vue/app-components.js' %}"></script>
+<script src="{% static 'js/vue/app.js' %}"></script>
+
+{% endblock scripts_vue %}
+
+</body>
+</html>

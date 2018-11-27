@@ -1,0 +1,50 @@
+{% load core_extras %}
+
+{% if not modal_id %}{% alias "modal" as modal_id %}{% endif %}
+
+{% if not modal_name %}{% alias "modal" as modal_name %}{% endif %}
+
+{% if not modal_trigger %}{% alias "showModal" as modal_trigger %}{% endif %}
+
+<{{ modal_name }} 
+{% block modal_extra %}{% endblock modal_extra %} 
+v-cloak 
+inline-template
+init-id="{{ modal_id }}"
+>
+
+<transition name="fade-transition" v-on:after-enter="isOpen = true" v-on:after-leave="isOpen = false">
+
+<div class="modal-backdrop" v-show="isOpen" @click="close">
+
+<div class="modal" @click.stop>
+
+{% block modal_content %}
+
+<header class="modal-header">
+
+{% block modal_header %}{% endblock modal_header %}
+
+</header>
+
+<section class="modal-body">
+
+{% block modal_body %}{% endblock modal_body %}
+
+</section>
+
+<footer class="modal-footer">
+
+{% block modal_footer %}{% endblock modal_footer %}
+
+</footer>
+
+{% endblock modal_content %}
+
+</div>
+
+</div>
+
+</transition>
+
+</{{ modal_name }}>

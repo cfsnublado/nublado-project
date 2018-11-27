@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}
+{% trans "page_500_title" %}
+{% endblock title %}
+
+{% block top_navbar %}{% endblock top_navbar %}
+{% block sidebar_left %}{% endblock sidebar_left %}
+{% block sidebar_right %}{% endblock sidebar_right %}
+
+{% block container_classes %}flex-center-container{% endblock container_classes %}
+
+{% block content %}
+<div class="row" style="text-align: center;">
+
+<h1 class="response-error-header">500</h1>
+<p class="response-error-text">
+{% trans "page_500_message" %}
+</p>
+
+</div>
+{% endblock content %}
+

@@ -1,0 +1,20 @@
+{% load staticfiles %}
+{% load i18n %}
+
+<ul>
+
+<li>
+<a id="nav-menu-profile" href="{% url 'users:profile_update' user.username %}">
+<i class="nav-link-icon fas fa-user-circle fa-fw"></i>
+{% trans "label_profile" %}</a>
+</li>
+
+<li class="divider"></li>
+
+<li>
+<a class="logout-link" href="{% url 'security:logout' %}"><i class="fas fa-sign-out-alt fa-fw"></i>
+{% trans "label_logout" %}
+</a>
+</li>
+
+</ul>

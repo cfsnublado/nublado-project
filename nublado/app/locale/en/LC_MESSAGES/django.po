@@ -1,0 +1,519 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-11-27 11:45-0800\n"
+"PO-Revision-Date: 2018-08-02 21:46-0700\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 2.0.6\n"
+
+#: config/settings/base.py:93 nublado/core/tests/test_models.py:63
+#: nublado/core/tests/test_models.py:67 nublado/core/tests/test_models.py:70
+msgid "English"
+msgstr "English"
+
+#: config/settings/base.py:94 nublado/core/tests/test_models.py:70
+msgid "Spanish"
+msgstr "Español"
+
+#: nublado/core/models.py:23
+msgid "label_invite_pending"
+msgstr ""
+
+#: nublado/core/models.py:24
+msgid "label_invite_status_accepted"
+msgstr ""
+
+#: nublado/core/models.py:25
+msgid "label_invite_status_declined"
+msgstr ""
+
+#: nublado/core/models.py:39 nublado/core/models.py:108
+msgid "label_status"
+msgstr ""
+
+#: nublado/core/models.py:51
+msgid "validation_invite_sender_receiver_equal"
+msgstr ""
+
+#: nublado/core/models.py:61 nublado/app/templates/base.html:199
+msgid "label_language"
+msgstr "Language"
+
+#: nublado/core/models.py:103
+msgid "status_archived"
+msgstr ""
+
+#: nublado/core/models.py:104
+msgid "status_draft"
+msgstr ""
+
+#: nublado/core/models.py:105
+msgid "status_published"
+msgstr ""
+
+#: nublado/core/models.py:203
+msgid "label_date_created"
+msgstr ""
+
+#: nublado/core/models.py:208
+msgid "label_date_updated"
+msgstr ""
+
+#: nublado/core/models.py:259
+msgid "validation_translation_languages_equal"
+msgstr ""
+
+#: nublado/core/validation.py:11
+msgid "help_text_password"
+msgstr ""
+
+#: nublado/core/validation.py:17 nublado/users/tests/test_forms.py:231
+#: nublado/users/tests/test_forms.py:241 nublado/users/tests/test_forms.py:327
+#: nublado/users/tests/test_forms.py:349 nublado/users/tests/test_models.py:100
+#: nublado/users/tests/test_serializers.py:202
+msgid "validation_user_name_characters"
+msgstr ""
+
+#: nublado/core/validation.py:22 nublado/users/forms.py:25
+#: nublado/users/forms.py:106 nublado/users/tests/test_api.py:194
+#: nublado/users/tests/test_forms.py:37 nublado/users/tests/test_models.py:136
+#: nublado/users/tests/test_serializers.py:190
+msgid "validation_email_format"
+msgstr "Email must have valid format (e.g., foo@foo.com)."
+
+#: nublado/core/validation.py:29
+#, python-brace-format
+msgid "validation_password_min_length {min_len}"
+msgstr ""
+
+#: nublado/core/validation.py:37 nublado/users/tests/test_forms.py:93
+#: nublado/users/tests/test_forms.py:160
+#: nublado/users/tests/test_serializers.py:154
+msgid "validation_password_characters"
+msgstr ""
+
+#: nublado/core/validation.py:44 nublado/users/tests/test_serializers.py:172
+msgid "validation_username_characters"
+msgstr ""
+
+#: nublado/core/validation.py:51
+#, python-brace-format
+msgid "validation_username_min_length {min_len}"
+msgstr ""
+
+#: nublado/core/views.py:247 nublado/users/tests/test_views.py:460
+msgid "message_success"
+msgstr "Success"
+
+#: nublado/core/views.py:248 nublado/users/tests/test_views.py:474
+msgid "message_error"
+msgstr "Error"
+
+#: nublado/security/forms.py:8 nublado/users/models.py:35
+msgid "label_username"
+msgstr ""
+
+#: nublado/security/forms.py:11 nublado/security/forms.py:18
+#: nublado/security/tests/test_forms.py:37
+#: nublado/security/tests/test_forms.py:42
+#: nublado/security/tests/test_views.py:121
+#: nublado/security/tests/test_views.py:122 nublado/users/forms.py:19
+#: nublado/users/forms.py:23 nublado/users/forms.py:28
+#: nublado/users/forms.py:31 nublado/users/forms.py:49
+#: nublado/users/forms.py:83 nublado/users/forms.py:105
+#: nublado/users/tests/test_api.py:144 nublado/users/tests/test_api.py:145
+#: nublado/users/tests/test_api.py:146 nublado/users/tests/test_api.py:147
+#: nublado/users/tests/test_forms.py:33 nublado/users/tests/test_forms.py:87
+#: nublado/users/tests/test_forms.py:153 nublado/users/tests/test_forms.py:154
+#: nublado/users/tests/test_forms.py:227 nublado/users/tests/test_forms.py:237
+#: nublado/users/tests/test_forms.py:317 nublado/users/tests/test_forms.py:339
+#: nublado/users/tests/test_views.py:114 nublado/users/tests/test_views.py:280
+#: nublado/users/tests/test_views.py:475
+msgid "validation_field_required"
+msgstr "This field is required."
+
+#: nublado/security/forms.py:15 nublado/users/forms.py:46
+msgid "label_password"
+msgstr ""
+
+#: nublado/security/forms.py:22 nublado/security/tests/test_forms.py:32
+#: nublado/security/tests/test_forms.py:49
+#: nublado/security/tests/test_forms.py:56
+#: nublado/security/tests/test_views.py:130
+msgid "validation_invalid_login"
+msgstr "Invalid login"
+
+#: nublado/security/forms.py:23
+msgid "validation_inactive_user"
+msgstr ""
+
+#: nublado/users/apps.py:7
+msgid "label_user_config"
+msgstr ""
+
+#: nublado/users/forms.py:20
+msgid "validation_username_unique"
+msgstr ""
+
+#: nublado/users/forms.py:24 nublado/users/models.py:45
+#: nublado/users/tests/test_models.py:123
+msgid "validation_email_unique"
+msgstr ""
+
+#: nublado/users/forms.py:55
+msgid "label_password_confirm"
+msgstr ""
+
+#: nublado/users/forms.py:74 nublado/users/serializers.py:71
+#: nublado/users/tests/test_forms.py:101 nublado/users/tests/test_forms.py:168
+#: nublado/users/tests/test_serializers.py:148
+msgid "validation_password_match"
+msgstr ""
+
+#: nublado/users/forms.py:80
+msgid "label_current_password"
+msgstr "Current password"
+
+#: nublado/users/forms.py:89
+msgid "label_new_password"
+msgstr "New password"
+
+#: nublado/users/forms.py:90
+msgid "label_new_password_confirm"
+msgstr "Confirm new password"
+
+#: nublado/users/forms.py:95 nublado/users/tests/test_forms.py:174
+#, fuzzy
+#| msgid "validation_invalid_login"
+msgid "validation_password_invalid"
+msgstr "Invalid login"
+
+#: nublado/users/forms.py:101 nublado/users/models.py:41
+msgid "label_email"
+msgstr "Email"
+
+#: nublado/users/managers.py:9 nublado/users/managers.py:33
+msgid "validation_username_required"
+msgstr ""
+
+#: nublado/users/managers.py:11 nublado/users/managers.py:35
+msgid "validation_email_required"
+msgstr ""
+
+#: nublado/users/models.py:48
+msgid "label_first_name"
+msgstr "First name"
+
+#: nublado/users/models.py:53
+msgid "label_last_name"
+msgstr "Last name"
+
+#: nublado/users/models.py:58
+msgid "label_is_active"
+msgstr ""
+
+#: nublado/users/models.py:62
+msgid "label_is_admin"
+msgstr ""
+
+#: nublado/users/models.py:100
+msgid "label_user"
+msgstr "User"
+
+#: nublado/users/models.py:103
+msgid "label_profile_about"
+msgstr ""
+
+#: nublado/users/models.py:112
+#: nublado/app/templates/includes/_user_menu_items.html:9
+msgid "label_profile"
+msgstr "Profile"
+
+#: nublado/users/models.py:113
+msgid "label_profile_plural"
+msgstr ""
+
+#: nublado/users/tests/test_forms.py:97 nublado/users/tests/test_forms.py:164
+#: nublado/users/tests/test_serializers.py:160
+msgid "validation_password_min_length 8"
+msgstr ""
+
+#: nublado/users/tests/test_serializers.py:178
+#, fuzzy
+#| msgid "validation_invalid_login"
+msgid "validation_username_min_length 3"
+msgstr "Invalid login"
+
+#: nublado/users/views.py:38
+msgid "message_user_password_reset_request_confirmation"
+msgstr "Thank you. An email has been sent to reset your password."
+
+#: nublado/users/views.py:70
+msgid "user_password_reset_success_msg"
+msgstr ""
+
+#: nublado/users/views_auth.py:23
+msgid "message_password_reset_success"
+msgstr "User password has been changed."
+
+#: nublado/app/templates/403.html:5
+msgid "page_403_title"
+msgstr ""
+
+#: nublado/app/templates/403.html:19
+msgid "page_403_message"
+msgstr "403"
+
+#: nublado/app/templates/404.html:5
+msgid "page_404_title"
+msgstr "404"
+
+#: nublado/app/templates/404.html:19
+msgid "page_404_message"
+msgstr "404"
+
+#: nublado/app/templates/500.html:5
+msgid "page_500_title"
+msgstr "500"
+
+#: nublado/app/templates/500.html:19
+msgid "page_500_message"
+msgstr "500"
+
+#: nublado/app/templates/base.html:66
+#: nublado/app/templates/security/login.html:56
+msgid "label_login"
+msgstr "Log in"
+
+#: nublado/app/templates/home.html:5
+msgid "page_home_title"
+msgstr "Home"
+
+#: nublado/app/templates/home.html:18
+msgid "header_project_tagline"
+msgstr "A tool for jotting down context-based vocabulary"
+
+#: nublado/app/templates/home.html:27
+msgid "label_search_vocabulary"
+msgstr "Search vocabulary"
+
+#: nublado/app/templates/home.html:41
+msgid "header_project_features"
+msgstr "Nublado at a glance"
+
+#: nublado/app/templates/home.html:52
+msgid "label_vocab_collab"
+msgstr ""
+
+#: nublado/app/templates/home.html:56
+msgid "text_vocab_collab_desc"
+msgstr ""
+
+#: nublado/app/templates/home.html:65
+#, fuzzy
+#| msgid "label_details"
+msgid "label_django_cool"
+msgstr "Details"
+
+#: nublado/app/templates/home.html:69
+msgid "text_developed_in_django"
+msgstr ""
+
+#: nublado/app/templates/includes/_pagination.html:14
+#: nublado/app/templates/includes/_pagination.html:19
+msgid "label_previous"
+msgstr "Previous"
+
+#: nublado/app/templates/includes/_pagination.html:40
+#: nublado/app/templates/includes/_pagination.html:49
+msgid "label_next"
+msgstr "Next"
+
+#: nublado/app/templates/includes/_user_menu_items.html:16
+msgid "label_logout"
+msgstr "Log out"
+
+#: nublado/app/templates/security/login.html:7
+msgid "page_login_title"
+msgstr "Log in"
+
+#: nublado/app/templates/security/login.html:40
+msgid "placeholder_username"
+msgstr "Username"
+
+#: nublado/app/templates/security/login.html:49
+msgid "placeholder_password"
+msgstr "Password"
+
+#: nublado/app/templates/security/login.html:64
+msgid "forgot_password_q"
+msgstr "Forgot password?"
+
+#: nublado/app/templates/users/auth/password_reset.html:8
+msgid "page_user_password_reset_title"
+msgstr "Change user password"
+
+#: nublado/app/templates/users/auth/password_reset.html:19
+msgid "header_password_change"
+msgstr "Change password"
+
+#: nublado/app/templates/users/auth/password_reset.html:39
+msgid "placeholder_current_password"
+msgstr "Current password"
+
+#: nublado/app/templates/users/auth/password_reset.html:44
+msgid "placeholder_password1_new"
+msgstr "New password"
+
+#: nublado/app/templates/users/auth/password_reset.html:49
+msgid "placeholder_password2_new"
+msgstr "Confirm new password"
+
+#: nublado/app/templates/users/auth/password_reset.html:54
+#: nublado/app/templates/users/auth/user_base.html:45
+#: nublado/app/templates/users/forgot_password_reset.html:39
+msgid "label_change_password"
+msgstr "Change password"
+
+#: nublado/app/templates/users/auth/profile_update.html:9
+msgid "page_edit_profile_title"
+msgstr "Edit profile"
+
+#: nublado/app/templates/users/auth/profile_update.html:26
+#: nublado/app/templates/users/auth/user_base.html:30
+msgid "label_edit_profile"
+msgstr "Edit profile"
+
+#: nublado/app/templates/users/auth/profile_update.html:45
+msgid "header_name"
+msgstr "Name"
+
+#: nublado/app/templates/users/auth/profile_update.html:50
+msgid "placeholder_first_name"
+msgstr "First name"
+
+#: nublado/app/templates/users/auth/profile_update.html:62
+msgid "placeholder_last_name"
+msgstr "Last name"
+
+#: nublado/app/templates/users/auth/profile_update.html:73
+msgid "header_contact_info"
+msgstr "Contact info"
+
+#: nublado/app/templates/users/auth/profile_update.html:78
+#: nublado/app/templates/users/password_reset_request.html:55
+msgid "placeholder_email"
+msgstr "Email"
+
+#: nublado/app/templates/users/auth/profile_update.html:89
+msgid "header_profile_image"
+msgstr "Profile image"
+
+#: nublado/app/templates/users/auth/profile_update.html:97
+msgid "link_gravatar_change"
+msgstr "Edit gravatar image"
+
+#: nublado/app/templates/users/auth/profile_update.html:106
+msgid "header_about_yourself"
+msgstr "About you"
+
+#: nublado/app/templates/users/auth/profile_update.html:110
+msgid "placeholder_profile_about"
+msgstr "Write a little about you."
+
+#: nublado/app/templates/users/auth/profile_update.html:122
+msgid "label_update"
+msgstr "Update"
+
+#: nublado/app/templates/users/auth/user_base.html:22
+msgid "label_details"
+msgstr "Details"
+
+#: nublado/app/templates/users/auth/user_base.html:37
+msgid "label_security"
+msgstr "Security"
+
+#: nublado/app/templates/users/forgot_password_reset.html:22
+msgid "placeholder_password1"
+msgstr "Password"
+
+#: nublado/app/templates/users/forgot_password_reset.html:30
+msgid "placeholder_password2"
+msgstr "Password"
+
+#: nublado/app/templates/users/password_reset_request.html:8
+msgid "page_user_password_reset_request_title"
+msgstr "Change user password"
+
+#: nublado/app/templates/users/password_reset_request.html:33
+msgid "header_user_reset_password_request"
+msgstr "Forgot your password?"
+
+#: nublado/app/templates/users/password_reset_request.html:34
+msgid "header_user_reset_password_instructions"
+msgstr ""
+"Enter your account's email and a link to reset your password will be sent to "
+"you."
+
+#: nublado/app/templates/users/password_reset_request.html:64
+msgid "label_send_email"
+msgstr "Send email"
+
+#: nublado/app/templates/users/password_reset_request_email.html:4
+#, python-format
+msgid " password_reset_email_body %(site_name)s %(site_url)s %(username)s "
+msgstr ""
+"You are receiving this email because user account %(username)s registered at "
+"%(site_name)s ( %(site_url)s ) with this email address has requested its "
+"password be changed. To reset your password, please click on the link below."
+
+#: nublado/app/templates/users/password_reset_request_email.html:10
+#, python-format
+msgid " password_reset_email_conclusion %(site_name)s "
+msgstr ""
+"Thank you for testing our prototype!\n"
+"Your feedback is important.\n"
+"\n"
+"Cheers\n"
+"The %(site_name)s team"
+
+#: nublado/app/templates/users/password_reset_request_subject.txt:2
+#, python-format
+msgid "user_password_reset_request_email_subject %(username)s %(site_name)s"
+msgstr ""
+
+#: nublado/app/templates/users/user_delete_confirm.html:7
+#, fuzzy
+#| msgid "page_login_title"
+msgid "page_delete_confirm_title"
+msgstr "Login"
+
+#: nublado/app/templates/users/user_delete_confirm.html:19
+#, python-format
+msgid "confirm_user_delete %(del_object)s"
+msgstr ""
+
+#: nublado/app/templates/users/user_delete_confirm.html:25
+msgid "confirm_yes"
+msgstr ""
+
+#: nublado/app/templates/users/user_delete_confirm.html:29
+msgid "confirm_no"
+msgstr ""
+
+#, fuzzy
+#~| msgid "label_login"
+#~ msgid "label_upload"
+#~ msgstr "Log in"

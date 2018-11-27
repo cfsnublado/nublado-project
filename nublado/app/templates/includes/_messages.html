@@ -1,0 +1,9 @@
+{% if messages %}
+
+{% for message in messages %}
+
+<alert-message {% if message.tags %} message-type="{{ message.tags }}" {% endif %} message-text="{{ message }}">
+</alert-message>
+
+{% endfor %}
+{% endif %}

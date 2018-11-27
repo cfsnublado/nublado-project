@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load staticfiles %}
+
+{% block title %}{% trans "page_home_title" %}{% endblock title %}
+
+{% block container_classes %}topnav-container{% endblock container_classes %}
+
+{% block content_top %}
+
+<section id="intro" class="parallax-block intro">
+
+<div class="text-center">
+
+<h1> {{ project_name }} </h1>
+
+<h3>
+{% trans "header_project_tagline" %}
+</h3>
+
+<a 
+href="" 
+class="ui huge inverted blue basic icon button" 
+style="margin-top: 30px;"
+>
+<i class="fas fa-search fa-fw"></i>
+{% trans "label_search_vocabulary" %}
+</a>
+
+</section>
+
+{% endblock content_top %}
+
+{% block content %}
+
+<section id="description-blocks">
+
+<div class="row">
+<div class="col-sm text-center">
+
+<h2 class="section-header">{% trans "header_project_features" %}</h2>
+
+</div>
+</div>
+
+<div class="row">
+
+<div class="col-sm icon-block">
+
+<header class="icon-block-header">
+<i class="fas fa-language icon-block-icon"></i>
+<h3>{% trans "label_vocab_collab" %}</h3>
+</header>
+
+<p>
+{% trans "text_vocab_collab_desc" %}
+</p>
+
+</div>
+
+<div class="col-sm icon-block">
+
+<header class="icon-block-header">
+<i class="fab fa-python icon-block-icon"></i>
+<h3>{% trans "label_django_cool" %}</h3>
+</header>
+
+<p>
+{% trans "text_developed_in_django" %}
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+{% endblock content %}

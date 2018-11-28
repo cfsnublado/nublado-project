@@ -16212,13 +16212,12 @@ custom icons - customize the small arrow inside the next and prev buttons
   /* set margin-top = icon height/2 */
   margin-top: -8px;
   content: '';
-  background: transparent url("../img/cd-icon-arrow-1.svg") no-repeat center center;
 }
-/* line 207, ../scss/cfs/_pagination.scss */
+/* line 205, ../scss/cfs/_pagination.scss */
 .cd-pagination.custom-icons .button:first-of-type a::before {
   left: 0.8em;
 }
-/* line 211, ../scss/cfs/_pagination.scss */
+/* line 209, ../scss/cfs/_pagination.scss */
 .cd-pagination.custom-icons .button:last-of-type a::after {
   -moz-transform: rotate(180deg);
   -ms-transform: rotate(180deg);
@@ -16232,12 +16231,12 @@ custom icons - customize the small arrow inside the next and prev buttons
 custom buttons - replace prev and next buttons text with a custom icon 
 
 -------------------------------- */
-/* line 225, ../scss/cfs/_pagination.scss */
+/* line 223, ../scss/cfs/_pagination.scss */
 .cd-pagination.custom-buttons a,
 .cd-pagination.custom-buttons span {
   vertical-align: middle;
 }
-/* line 230, ../scss/cfs/_pagination.scss */
+/* line 228, ../scss/cfs/_pagination.scss */
 .cd-pagination.custom-buttons .button a {
   /* image replacement */
   overflow: hidden;
@@ -16246,18 +16245,15 @@ custom buttons - replace prev and next buttons text with a custom icon
   white-space: nowrap;
   text-indent: 100%;
   color: transparent;
-  background-image: url("../img/cd-icon-arrow-2.svg");
-  background-repeat: no-repeat;
-  background-position: center center;
 }
-/* line 246, ../scss/cfs/_pagination.scss */
+/* line 241, ../scss/cfs/_pagination.scss */
 .cd-pagination.custom-buttons .button:last-of-type a {
   -moz-transform: rotate(180deg);
   -ms-transform: rotate(180deg);
   -webkit-transform: rotate(180deg);
   transform: rotate(180deg);
 }
-/* line 249, ../scss/cfs/_pagination.scss */
+/* line 244, ../scss/cfs/_pagination.scss */
 .no-touch .cd-pagination.custom-buttons .button:last-of-type a:active {
   -moz-transform: scale(0.9) rotate(180deg);
   -ms-transform: scale(0.9) rotate(180deg);
@@ -16265,7 +16261,7 @@ custom buttons - replace prev and next buttons text with a custom icon
   transform: scale(0.9) rotate(180deg);
 }
 
-/* line 256, ../scss/cfs/_pagination.scss */
+/* line 251, ../scss/cfs/_pagination.scss */
 .cd-pagination.no-space.custom-buttons .button:last-of-type a {
   border-radius: 0.25em 0 0 0.25em;
 }
@@ -16275,7 +16271,7 @@ custom buttons - replace prev and next buttons text with a custom icon
 animated buttons - animate the text inside prev and next buttons 
 
 -------------------------------- */
-/* line 268, ../scss/cfs/_pagination.scss */
+/* line 263, ../scss/cfs/_pagination.scss */
 .cd-pagination.animated-buttons a,
 .cd-pagination.animated-buttons span {
   overflow: hidden;
@@ -16283,12 +16279,12 @@ animated buttons - animate the text inside prev and next buttons
   height: 50px;
   padding: 0 1.4em;
 }
-/* line 278, ../scss/cfs/_pagination.scss */
+/* line 273, ../scss/cfs/_pagination.scss */
 .cd-pagination.animated-buttons .button a {
   position: relative;
   padding: 0 2em;
 }
-/* line 284, ../scss/cfs/_pagination.scss */
+/* line 279, ../scss/cfs/_pagination.scss */
 .cd-pagination.animated-buttons .button:first-of-type a::before,
 .cd-pagination.animated-buttons .button:last-of-type a::after {
   -moz-transform: translateX(-50%);
@@ -16302,14 +16298,14 @@ animated buttons - animate the text inside prev and next buttons
   right: auto;
   left: 50%;
 }
-/* line 293, ../scss/cfs/_pagination.scss */
+/* line 288, ../scss/cfs/_pagination.scss */
 .cd-pagination.animated-buttons .button:last-of-type a::after {
   -moz-transform: translateX(-50%) rotate(180deg);
   -ms-transform: translateX(-50%) rotate(180deg);
   -webkit-transform: translateX(-50%) rotate(180deg);
   transform: translateX(-50%) rotate(180deg);
 }
-/* line 297, ../scss/cfs/_pagination.scss */
+/* line 292, ../scss/cfs/_pagination.scss */
 .cd-pagination.animated-buttons i {
   -moz-transform: translateY(100%);
   -ms-transform: translateY(100%);
@@ -16323,7 +16319,7 @@ animated buttons - animate the text inside prev and next buttons
   height: 100%;
 }
 
-/* line 307, ../scss/cfs/_pagination.scss */
+/* line 302, ../scss/cfs/_pagination.scss */
 .no-touch .cd-pagination.animated-buttons .button a:hover i {
   -moz-transform: translateY(0);
   -ms-transform: translateY(0);
@@ -16331,7 +16327,7 @@ animated buttons - animate the text inside prev and next buttons
   transform: translateY(0);
 }
 
-/* line 311, ../scss/cfs/_pagination.scss */
+/* line 306, ../scss/cfs/_pagination.scss */
 .no-touch .cd-pagination.animated-buttons .button:first-of-type a:hover::before {
   -moz-transform: translateX(-50%) translateY(-50px);
   -ms-transform: translateX(-50%) translateY(-50px);
@@ -16339,7 +16335,7 @@ animated buttons - animate the text inside prev and next buttons
   transform: translateX(-50%) translateY(-50px);
 }
 
-/* line 315, ../scss/cfs/_pagination.scss */
+/* line 310, ../scss/cfs/_pagination.scss */
 .no-touch .cd-pagination.animated-buttons .button:last-of-type a:hover::after {
   -moz-transform: translateX(-50%) rotate(180deg) translateY(50px);
   -ms-transform: translateX(-50%) rotate(180deg) translateY(50px);
@@ -16348,7 +16344,7 @@ animated buttons - animate the text inside prev and next buttons
 }
 
 @media (min-width: 576px) {
-  /* line 322, ../scss/cfs/_pagination.scss */
+  /* line 317, ../scss/cfs/_pagination.scss */
   .cd-pagination li {
     display: inline-block;
   }

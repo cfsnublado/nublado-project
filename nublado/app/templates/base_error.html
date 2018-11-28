@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+{% load i18n %}
+{% load core_extras %}
+{% load profile_image_tags %}
+
+<html lang="en">
+
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>
+{% block title %}{% endblock title %} | {{ project_name }}
+</title>
+
+<link rel="icon" href="{% static 'favicon.ico' %}">
+
+{% block stylesheets %}
+
+<link rel="stylesheet" href="{% static 'css/app.css' %}" />
+<link rel="stylesheet" href="{% static 'css/fontawesome-all.css' %}" />
+
+<style>
+.response-error-header {
+  font-size: 80px;
+}
+
+.response-error-text {
+  margin-top: 10px;
+  font-size: 22px;
+}
+</style>
+
+{% endblock stylesheets %}
+
+</head>
+
+<body class="{% block body_classes %}theme-white{% endblock body_classes %}">
+
+{% block body %}
+
+<div class="flex-center-container">
+{% block content %}{% endblock content %}
+</div>
+
+{% endblock body %}
+
+</body>
+</html>

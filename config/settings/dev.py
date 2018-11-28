@@ -3,6 +3,7 @@ from .base import *
 PROJECT_DOMAIN = "http://127.0.0.1:8000"
 
 DEBUG = True
+
 INSTALLED_APPS += ['debug_toolbar', ]
 MIDDLEWARE += ['debug_toolbar.middleware.DebugToolbarMiddleware', ]
 DEBUG_TOOLBAR_PATCH_SETTINGS = False

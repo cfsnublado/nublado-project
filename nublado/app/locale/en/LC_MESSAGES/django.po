@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-27 21:34-0800\n"
+"POT-Creation-Date: 2018-11-28 15:21-0800\n"
 "PO-Revision-Date: 2018-08-02 21:46-0700\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -18,12 +18,12 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 2.0.6\n"
 
-#: config/settings/base.py:94 nublado/core/tests/test_models.py:63
+#: config/settings/base.py:95 nublado/core/tests/test_models.py:63
 #: nublado/core/tests/test_models.py:67 nublado/core/tests/test_models.py:70
 msgid "English"
 msgstr "English"
 
-#: config/settings/base.py:95 nublado/core/tests/test_models.py:70
+#: config/settings/base.py:96 nublado/core/tests/test_models.py:70
 msgid "Spanish"
 msgstr "Español"
 
@@ -47,7 +47,7 @@ msgstr ""
 msgid "validation_invite_sender_receiver_equal"
 msgstr ""
 
-#: nublado/core/models.py:61 nublado/app/templates/base.html:199
+#: nublado/core/models.py:61 nublado/app/templates/base.html:200
 #: nublado/app/templates/vocab/includes/_vocab_entry_create_modal.html:37
 msgid "label_language"
 msgstr "Language"
@@ -239,7 +239,7 @@ msgid "label_profile_about"
 msgstr ""
 
 #: nublado/users/models.py:112
-#: nublado/app/templates/includes/_user_menu_items.html:9
+#: nublado/app/templates/includes/_user_menu_items.html:17
 msgid "label_profile"
 msgstr "Profile"
 
@@ -487,28 +487,28 @@ msgid "label_vocab_entry_context_plural"
 msgstr ""
 
 #: nublado/app/templates/403.html:5
-msgid "page_403_title"
-msgstr ""
-
-#: nublado/app/templates/403.html:19
-msgid "page_403_message"
+msgid "page_error_403_title"
 msgstr "403"
 
+#: nublado/app/templates/403.html:12
+msgid "error_403_message"
+msgstr "Access prohibited"
+
 #: nublado/app/templates/404.html:5
-msgid "page_404_title"
+msgid "page_error_404_title"
 msgstr "404"
 
-#: nublado/app/templates/404.html:19
-msgid "page_404_message"
-msgstr "404"
+#: nublado/app/templates/404.html:12
+msgid "error_404_message"
+msgstr "Resource not found"
 
 #: nublado/app/templates/500.html:5
-msgid "page_500_title"
+msgid "page_error_500_title"
 msgstr "500"
 
-#: nublado/app/templates/500.html:19
-msgid "page_500_message"
-msgstr "500"
+#: nublado/app/templates/500.html:12
+msgid "error_500_message"
+msgstr "Server error"
 
 #: nublado/app/templates/base.html:66
 #: nublado/app/templates/security/login.html:56
@@ -578,9 +578,26 @@ msgstr "Previous"
 msgid "label_next"
 msgstr "Next"
 
-#: nublado/app/templates/includes/_user_menu_items.html:16
+#: nublado/app/templates/includes/_user_menu_items.html:8
+#: nublado/app/templates/vocab/auth/vocab_base.html:263
+#: nublado/app/templates/vocab/auth/vocab_project_dashboard.html:13
+#: nublado/app/templates/vocab/auth/vocab_user_dashboard.html:15
+#, fuzzy
+#| msgid "label_new_password"
+msgid "label_dashboard"
+msgstr "New password"
+
+#: nublado/app/templates/includes/_user_menu_items.html:24
 msgid "label_logout"
 msgstr "Log out"
+
+#: nublado/app/templates/scratch.html:5
+msgid "page_404_title"
+msgstr "404"
+
+#: nublado/app/templates/scratch.html:12
+msgid "page_404_message"
+msgstr "404"
 
 #: nublado/app/templates/security/login.html:7
 msgid "page_login_title"
@@ -849,14 +866,6 @@ msgstr "Next"
 #| msgid "label_next"
 msgid "label_entry_edit"
 msgstr "Next"
-
-#: nublado/app/templates/vocab/auth/vocab_base.html:263
-#: nublado/app/templates/vocab/auth/vocab_project_dashboard.html:13
-#: nublado/app/templates/vocab/auth/vocab_user_dashboard.html:15
-#, fuzzy
-#| msgid "label_new_password"
-msgid "label_dashboard"
-msgstr "New password"
 
 #: nublado/app/templates/vocab/auth/vocab_base.html:283
 #: nublado/app/templates/vocab/auth/vocab_entries.html:29

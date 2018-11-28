@@ -4,6 +4,14 @@
 <ul>
 
 <li>
+<a href="{% url 'vocab:vocab_user_dashboard' %}"><i class="fas fa-tachometer-alt fa-fw"></i>
+{% trans "label_dashboard" %}
+</a>
+</li>
+
+<li class="divider"></li>
+
+<li>
 <a id="nav-menu-profile" href="{% url 'users:profile_update' user.username %}">
 <i class="nav-link-icon fas fa-user-circle fa-fw"></i>
 {% trans "label_profile" %}</a>

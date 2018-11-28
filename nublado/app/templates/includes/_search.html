@@ -1,0 +1,40 @@
+{% load core_extras %}
+{% load i18n %}
+
+{% if not comp_name %}{% alias "search" as comp_name %}{% endif %}
+{% if not search_url %}{% alias "/search/" as search_url %}{% endif %}
+{% if not autocomplete_url %}{% alias "/autocomplete/" as autocomplete_url %}{% endif %}
+{% if not search_btn_id %}{% alias "search-btn" as search_btn_id %}{% endif %}
+{% if not comp_extra %}{% alias '' as comp_extra %}{% endif %}
+
+<{{ comp_name }} 
+init-search-url="{{ search_url }}" 
+init-autocomplete-url="{{ autocomplete_url }}" 
+{{ comp_extra }} 
+inline-template
+>
+
+<div>
+
+{% if search_label %}<label>{{ search_label }}</label>{% endif %}
+
+<div class="input-group autocomplete-container">
+
+{% include "includes/_autocomplete.html" %}
+
+<div class="input-group-button">
+<a 
+id="{{ search_btn_id }}" 
+class="button" 
+href="#"
+@click.prevent="search"
+>
+<i class="fas fa-search fa-fw"></i>
+</a>
+</div>
+
+</div>
+
+</div>
+
+</{{ comp_name }}>

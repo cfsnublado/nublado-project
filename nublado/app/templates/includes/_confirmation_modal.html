@@ -1,0 +1,35 @@
+{% extends "includes/_modal_base.html" %}
+{% load i18n %}
+
+{% block modal_body %}
+
+<h3 class="text-center">
+{% block modal_header_text %}{% endblock modal_header_text %}
+</h3>
+
+{% endblock modal_body %}
+
+{% block modal_footer %}
+
+<div class="text-center">
+<a 
+href="#"
+id="{% block cancel_id %}{% endblock cancel_id %}"
+class="ui tiny basic button"
+@click.prevent="close"
+>
+{% trans "label_no" %}
+</a>
+
+<button
+id="{% block ok_id %}{% endblock ok_id %}" 
+class="ui tiny red button"
+@click.prevent="confirm"
+>
+{% trans "label_yes" %}
+</button>
+
+</div>
+
+{% endblock modal_footer %}
+

@@ -1,0 +1,25 @@
+{% load i18n %}
+
+<input
+  type="text" 
+  class="autocomplete-input form-control"
+  placeholder="{% trans 'placeholder_search' %}"
+  v-model.trim="searchTerm"
+  @input="onAutocomplete"
+  @keyup.enter="search"
+  @focus="onFocus"
+/>
+
+<ul v-show="isOpen" class="ui-autocomplete" v-cloak>
+
+<li
+  v-for="(result, i) in results"
+  :key="i"
+  class="ui-menu-item"
+>
+<a href="" @click.prevent="setResult(result.value)">
+[[ result.value ]]
+</a>
+</li>
+
+</ul>

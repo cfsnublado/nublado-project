@@ -1,0 +1,80 @@
+{% load core_extras %}
+{% load i18n %}
+
+{% if not comp_name %}{% alias "language-search" as comp_name %}{% endif %}
+{% if not search_language %}{% alias "en" as search_language %}{% endif %}
+{% if not search_url %}{% alias "/search/" as search_url %}{% endif %}
+{% if not autocomplete_url %}{% alias "/autocomplete/zz/" as autocomplete_url %}{% endif %}
+{% if not comp_extra %}{% alias '' as comp_extra %}{% endif %}
+
+<{{ comp_name }} 
+init-language="{{ search_language }}"
+init-search-url="{{ search_url }}" 
+init-autocomplete-url="{{ autocomplete_url }}" 
+{{ comp_extra }} 
+inline-template
+>
+
+<div>
+
+{% if search_label %}<label>{{ search_label }}</label>{% endif %}
+
+<div class="input-group autocomplete-container">
+
+{% include "includes/_autocomplete.html" %}
+
+<dropdown
+container-classes="input-group-button"
+trigger-classes="button"
+dropdown-classes="dropdown-right"
+@toggle="isOpen = false"
+>
+
+<template slot="trigger-content">
+<span class="text-bold">[[ language ]]</span>
+</template>
+
+<template slot="dropdown-content">
+
+<ul>
+
+{% get_language_info_list for LANGUAGES as languages %}
+{% for language in languages %}
+
+  <li>
+  <a
+  href="" 
+  class="search-language"
+  @click.prevent="setLanguage('{{ language.code }}')"
+  >
+  {{ language.name_translated }}
+  </a>
+  </li>
+
+{% endfor %}
+
+</ul>
+
+</template>
+
+</dropdown>
+
+{% if search_btn %}
+
+  <div class="input-group-button">
+  <a 
+  id="{{ search_btn_id }}"
+  class="button" 
+  @click.prevent="search"
+  >
+  <i class="fas fa-search fa-fw"></i>
+  </a>
+  </div>
+
+{% endif %}
+
+</div>
+
+</div>
+
+</{{ comp_name }}>

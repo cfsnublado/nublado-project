@@ -1,1 +1,4 @@
 -r base.txt
+django-heroku
+dj-database-url
+django-postgrespool

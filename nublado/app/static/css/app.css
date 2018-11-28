@@ -7790,31 +7790,22 @@ body {
 }
 
 /* line 6, ../scss/cfs/_layout.scss */
-body {
-  display: -webkit-flex;
-  display: flex;
-  -webkit-flex-direction: column;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-/* line 13, ../scss/cfs/_layout.scss */
 .main-content {
   padding-bottom: 1.875rem;
 }
 
-/* line 17, ../scss/cfs/_layout.scss */
+/* line 10, ../scss/cfs/_layout.scss */
 .topnav-container {
   padding-top: 3.125rem;
 }
 
-/* line 21, ../scss/cfs/_layout.scss */
+/* line 14, ../scss/cfs/_layout.scss */
 plain-container {
   width: 100%;
   padding-top: 2.5rem;
 }
 
-/* line 26, ../scss/cfs/_layout.scss */
+/* line 19, ../scss/cfs/_layout.scss */
 .flex-container {
   display: -webkit-flex;
   display: flex;
@@ -7827,7 +7818,7 @@ plain-container {
   margin: 0;
 }
 
-/* line 35, ../scss/cfs/_layout.scss */
+/* line 28, ../scss/cfs/_layout.scss */
 .flex-center-container {
   display: -webkit-flex;
   display: flex;
@@ -7840,7 +7831,7 @@ plain-container {
   padding-bottom: 1.25rem;
 }
 
-/* line 45, ../scss/cfs/_layout.scss */
+/* line 38, ../scss/cfs/_layout.scss */
 .viewport {
   display: -webkit-flex;
   display: flex;
@@ -7856,19 +7847,19 @@ plain-container {
   padding-left: 18px;
 }
 
-/* line 59, ../scss/cfs/_layout.scss */
+/* line 52, ../scss/cfs/_layout.scss */
 .row.column {
   max-width: 100%;
 }
 
 @media (max-width: 767.98px) {
-  /* line 64, ../scss/cfs/_layout.scss */
+  /* line 57, ../scss/cfs/_layout.scss */
   .plain-container {
     height: auto;
     padding-top: 0;
   }
 
-  /* line 69, ../scss/cfs/_layout.scss */
+  /* line 62, ../scss/cfs/_layout.scss */
   .flex-container,
   .viewport {
     padding-left: 0;
@@ -7883,6 +7874,8 @@ plain-container {
   -webkit-justify-content: space-between;
   justify-content: space-between;
   font-size: 0.875rem;
+  position: absolute;
+  bottom: 0;
   width: 100%;
   height: 50px;
   padding: 0.625rem 0.125rem;
@@ -7890,11 +7883,11 @@ plain-container {
   border-top: 1px solid #dfe1e3;
   background-color: #444;
 }
-/* line 16, ../scss/cfs/_footer.scss */
+/* line 19, ../scss/cfs/_footer.scss */
 .page-footer p {
   margin: 0;
 }
-/* line 20, ../scss/cfs/_footer.scss */
+/* line 23, ../scss/cfs/_footer.scss */
 .page-footer .footer-content {
   display: -webkit-flex;
   display: flex;
@@ -7905,17 +7898,17 @@ plain-container {
   -webkit-flex: 2;
   flex: 2;
 }
-/* line 27, ../scss/cfs/_footer.scss */
+/* line 30, ../scss/cfs/_footer.scss */
 .page-footer .footer-content-center {
   -webkit-justify-content: center;
   justify-content: center;
 }
-/* line 31, ../scss/cfs/_footer.scss */
+/* line 34, ../scss/cfs/_footer.scss */
 .page-footer .footer-content-left {
   -webkit-justify-content: flex-start;
   justify-content: flex-start;
 }
-/* line 35, ../scss/cfs/_footer.scss */
+/* line 38, ../scss/cfs/_footer.scss */
 .page-footer .footer-content-right {
   -webkit-justify-content: flex-end;
   justify-content: flex-end;
@@ -15983,36 +15976,37 @@ body.grey-bg {
 }
 
 /* line 5, ../scss/cfs/pages/_app.scss */
+#app-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+/* line 11, ../scss/cfs/pages/_app.scss */
 #logo-header {
   margin-top: 2.5rem;
 }
 
-/* line 9, ../scss/cfs/pages/_app.scss */
-#content-container {
-  height: 100vh;
-}
-
-/* line 13, ../scss/cfs/pages/_app.scss */
+/* line 15, ../scss/cfs/pages/_app.scss */
 .page-header {
   font-size: 1.625rem;
-  color: #777;
   margin-top: 18px;
   margin-bottom: 10px;
+  color: #777;
 }
 
-/* line 20, ../scss/cfs/pages/_app.scss */
+/* line 24, ../scss/cfs/pages/_app.scss */
 .page-subheader {
   font-size: 1rem;
-  color: #aaa;
   margin-top: 10px;
   margin-bottom: 5px;
+  color: #aaa;
 }
 
-/* line 27, ../scss/cfs/pages/_app.scss */
+/* line 33, ../scss/cfs/pages/_app.scss */
 .form-subheader {
   font-size: 16px;
-  color: #777;
   margin-bottom: 10px;
+  color: #777;
 }
 
 /* line 1, ../scss/cfs/_themes.scss */
@@ -16370,11 +16364,6 @@ animated buttons - animate the text inside prev and next buttons
 }
 
 /* line 5, ../scss/cfs/_vue.scss */
-#app-container {
-  min-height: 100vh;
-}
-
-/* line 9, ../scss/cfs/_vue.scss */
 .fade-transition-enter,
 .fade-transition-slow-enter,
 .fade-transition-leave-active,
@@ -16382,13 +16371,13 @@ animated buttons - animate the text inside prev and next buttons
   opacity: 0;
 }
 
-/* line 16, ../scss/cfs/_vue.scss */
+/* line 12, ../scss/cfs/_vue.scss */
 .fade-transition-enter-active,
 .fade-transition-leave-active {
   transition: opacity 0.5s ease;
 }
 
-/* line 21, ../scss/cfs/_vue.scss */
+/* line 17, ../scss/cfs/_vue.scss */
 .fade-transition-slow-enter-active,
 .fade-transition-slow-leave-active {
   transition: opacity 1.0s ease;

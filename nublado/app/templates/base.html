@@ -252,17 +252,22 @@ class="{% block container_classes %}topnav-container{% endblock container_classe
 {% block content_top %}{% endblock content_top %}
 
 <div id="main-content" class="main-content container">
+
 {% block content %}{% endblock content %}
+
 </div>
 
 {% endblock body %}
 
-{% block page_footer %}
-{% endblock page_footer %}
-
 {% block modal_content %}{% endblock modal_content %}
 
 </div><!-- main -->
+
+{% block page_footer %}
+
+{% include "includes/_page_footer.html" %}
+
+{% endblock page_footer %}
 
 </div>
 

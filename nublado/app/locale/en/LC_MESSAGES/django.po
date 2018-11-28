@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-27 11:45-0800\n"
+"POT-Creation-Date: 2018-11-27 16:28-0800\n"
 "PO-Revision-Date: 2018-08-02 21:46-0700\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -314,22 +314,20 @@ msgid "header_project_features"
 msgstr "Nublado at a glance"
 
 #: nublado/app/templates/home.html:52
-msgid "label_vocab_collab"
-msgstr ""
+msgid "label_vocab_tag_desc"
+msgstr "Your vocabulary"
 
 #: nublado/app/templates/home.html:56
-msgid "text_vocab_collab_desc"
-msgstr ""
+msgid "text_vocab_tag_desc"
+msgstr "Create and tag vocabulary that interests you."
 
 #: nublado/app/templates/home.html:65
-#, fuzzy
-#| msgid "label_details"
 msgid "label_django_cool"
-msgstr "Details"
+msgstr "Cool.py"
 
 #: nublado/app/templates/home.html:69
 msgid "text_developed_in_django"
-msgstr ""
+msgstr "This project is developed with the Django framework."
 
 #: nublado/app/templates/includes/_pagination.html:14
 #: nublado/app/templates/includes/_pagination.html:19

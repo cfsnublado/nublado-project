@@ -1,0 +1,23 @@
+{% extends "includes/_confirmation_modal.html" %}
+
+{% load i18n %}
+
+{% block ajax_extra %}
+
+{% endblock ajax_extra %}
+
+{% block modal_id %}vocab-context-delete-modal{% endblock modal_id %}
+
+{% block ok_id %}vocab-context-delete-ok{% endblock ok_id %}
+
+{% block cancel_id %}vocab-context-delete-close{% endblock cancel_id %}
+
+{% block modal_header_text %}
+
+{% trans "delete_vocab_context_q" %}
+
+{% endblock modal_header_text %}
+
+{% block obj_detail%}{% endblock obj_detail %}
+
+{% block modal_delete_text %}{% endblock modal_delete_text %}

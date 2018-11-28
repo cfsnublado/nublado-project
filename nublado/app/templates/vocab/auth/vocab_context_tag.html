@@ -1,0 +1,192 @@
+{% extends "vocab/auth/vocab_base.html" %}
+{% load staticfiles %}
+{% load core_extras %}
+{% load i18n %}
+
+{% block title %}{% trans "page_vocab_context_edit_title" %}{% endblock title %}
+
+{% block page_header_text %}
+
+{% trans "label_edit_tag_vocab_context" %}
+
+{% endblock page_header_text %}
+
+{% block breadcrumb_content %}
+
+{{ block.super }}
+&nbsp;>&nbsp;
+<a href="{% url 'vocab:vocab_source_contexts' vocab_source.id vocab_source.slug%}">
+{% trans "label_contexts" %}
+</a>
+&nbsp;>&nbsp;
+{% trans "label_edit" %}
+
+{% endblock breadcrumb_content %}
+
+{% block content %}
+
+{% url 'api:vocab-entry-detail-data' as entry_url%}
+{% url 'api:vocab-context-add-vocab-entry' vocab_context.id as add_entry_url %}
+{% url 'api:vocab-context-add-vocab-entry-tag' vocab_context.id as add_entry_tag_url %}
+{% url 'api:vocab-context-remove-vocab-entry' vocab_context.id as remove_entry_url %}
+{% url 'api:vocab-context-remove-vocab-entry-tag' vocab_context.id as remove_entry_tag_url %}
+{% url 'api:vocab-context-entry-detail-data' as context_entry_detail_url %}
+{% url 'api:vocab-context-detail' vocab_context.id as context_edit_url %}
+
+<context-tagger
+init-entry-detail-url="{{ entry_url }}"
+init-add-entry-url="{{ add_entry_url }}"
+init-add-entry-tag-url="{{ add_entry_tag_url }}"
+init-remove-entry-url="{{ remove_entry_url }}"
+init-remove-entry-tag-url="{{ remove_entry_tag_url }}"
+init-context-edit-url="{{ context_edit_url }}"
+:init-entries='{{ vocab_entry_tags|safe }}'
+init-context="{{ vocab_context.content }}"
+context-element="#vocab-context-text"
+inline-template
+>
+
+<div class="row justify-content-md-center">
+
+<div class="col-md-5">
+
+<a 
+id="vocab-context-update-trigger" 
+class="ui button tiny" 
+href="#"
+v-show="!isEditing"
+@click.prevent="editContext"
+>
+
+{% trans "label_edit" %}
+
+</a>
+
+<a 
+id="vocab-context-done-editing" 
+class="ui green button tiny" 
+href="#"
+v-show="isEditing"
+v-cloak
+@click.prevent="doneEditing"
+>
+
+{% trans "label_done_editing" %}
+
+</a>
+
+<div class="panel">
+<div class="panel-body">
+
+<div 
+id="vocab-context-text" 
+class="vocab-context-text" 
+style="margin-top: 20px;"
+v-show="!isEditing"
+v-html="contextHtml"
+>
+
+</div>
+
+<div 
+style="margin-top: 20px;"
+v-show="isEditing"
+v-cloak
+>
+<textarea rows="7" class="form-control" style="font-size: 14px;" v-model="context">
+</textarea>
+</div>
+
+</div>
+</div>
+
+</div><!-- column -->
+
+<div class="col-md-5">
+
+<label for="vocab-entries">{% trans "label_vocab_context_entry_tags" %}</label>
+
+<entry-tagbox 
+:tags="entries"
+@add-tag="addEntry"
+@remove-tag="removeEntry"
+@select-tag="selectEntry"
+@tagbox-focus="reset"
+inline-template
+>
+<div>
+
+<div id="vocab-entry-tagbox" class="tagbox">
+
+{% url 'vocab:vocab_entry_autocomplete' 'zz' as autocomplete_url %}
+{% include "includes/_language_search.html" with comp_name='entry-tag-search' comp_extra='@add-tag="addTag" @search-focus="onFocus"' %}
+
+<div id="vocab-entry-tags" class="tagbox-container ui labels">
+
+<tag
+  v-for="(tag, index) in tags"
+  :key="tag.id"
+  :init-id="index"
+  :init-value="tag.value"
+  @tag-select="selectTag"
+  @tag-remove="removeTag"
+>
+</tag>
+
+</div>
+
+</div>
+
+</div>
+</entry-tagbox>
+
+<entry-instance-tagbox 
+:entry="currentEntry"
+@add-tag="addEntryTag"
+@remove-tag="removeEntryTag"
+@select-tag="selectEntryTag"
+v-show="currentEntry != null"
+inline-template
+>
+<div>
+
+<label>{% trans "label_instances_of" %} <span style="color: #1779ba;">[[ entry.value ]]</span></label>
+
+<div id="vocab-entry-instance-tagbox" class="tagbox">
+
+<div class="input-group">
+<input 
+id="vocab-entry-instance-input" 
+class="autocomplete-input form-control" 
+type="text" 
+placeholder="{% trans 'placeholder_tag_text' %}"
+v-model="input"
+@keyup.enter="addTag($event.target.value)"
+>
+</div>
+
+<div id="vocab-entry-instance-tags" class="tagbox-container ui labels">
+
+<tag
+  v-for="(tag, index) in entry.tags"
+  :key="tag"
+  :init-id="index"
+  :init-value="tag"
+  @tag-select="selectTag"
+  @tag-remove="removeTag"
+>
+</tag>
+
+</div>
+</div>
+
+</div>
+</entry-instance-tagbox>
+
+</div><!-- column -->
+
+</div><!-- row -->
+
+</context-tagger>
+
+{% endblock content %}

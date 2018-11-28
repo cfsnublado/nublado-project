@@ -1,0 +1,157 @@
+{% extends "vocab/auth/vocab_base.html" %}
+{% load staticfiles %}
+{% load core_extras %}
+{% load i18n %}
+
+{% block vocab_entries_link_active %}active{% endblock vocab_entries_link_active %}
+
+{% block title %}
+
+{% trans "page_vocab_title" %}
+
+{% endblock title %}
+
+{% block page_subheader %}
+
+<div class="row justify-content-md-center">
+<div class="col-md-10">
+<div class="page-subheader"> {% trans "label_dictionary" %} </div>
+</div>
+</div>
+
+{% endblock page_subheader %}
+
+{% block page_header %}
+
+<div class="row justify-content-md-center">
+<div class="col-md-10">
+<div class="page-header">
+{% trans "label_vocabulary" %}
+</div>
+</div>
+</div>
+
+{% endblock page_header %}
+
+{% block breadcrumb_content %}
+
+{{ block.super }}
+
+&nbsp;>&nbsp;
+<span>{% trans "label_entries" %}</span>
+
+{% endblock breadcrumb_content %}
+
+{% block content %}
+
+<div class="row justify-content-md-center">
+<div class="col-md-10">
+
+<div class="panel">
+<div class="panel-body">
+
+<div class="panel-header">
+{% trans "label_search_vocabulary" %}
+</div>
+
+{% url 'vocab:vocab_entry_autocomplete' 'zz' as autocomplete_url %}
+{% url 'vocab:vocab_entries' as search_url %}
+
+{% include "includes/_language_search.html" with comp_name='entry-search' search_btn=True %}
+
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="row justify-content-md-center">
+<div class="col-md-10">
+
+<div>
+<dropdown 
+id="vocabulary-language-menu"
+trigger-classes="ui mini icon button"  
+>
+
+  <template slot="trigger-content">
+  
+    {{ language_name }} &nbsp; <i class="fas fa-angle-down"></i>
+
+  </template>
+
+  <template slot="dropdown-content">
+
+    <ul>
+
+    {% get_language_info_list for LANGUAGES as languages %}
+
+    {% for language in languages %}
+
+      <li>
+      <a id="vocabulary-{{ language.code }}" href="{% url_set_param language=language.code page=1 %}">
+      {{ language.name_translated }}
+      </a>
+      </li>
+
+    {% endfor %}
+
+    </ul>
+
+  </template>
+
+</dropdown>
+</div>
+
+<div class="panel">
+<div class="panel-body">
+
+<div class="panel-header">
+
+</div>
+
+<div id="vocab-entry-tag-group" class="vocab-entry-tag-group ui labels">
+{% if vocab_entries %}
+
+  {% for entry in vocab_entries %}
+    {% url 'vocab:vocab_entry_dashboard' entry.language entry.slug as select_url %}
+    {% url 'vocab:vocab_entry_delete' entry.id as delete_url %}
+
+    <delete-tag
+    :init-id="{{ entry.id }}"
+    init-value="{{ entry.entry }}"
+    init-confirmation-id="delete-entry"
+    init-delete-url="{{ delete_url }}"
+    select-redirect-url="{{ select_url }}"
+    >
+    </delete-tag>
+
+  {% endfor %}
+
+{% else %}
+
+{% trans "label_no_vocab_entries" %}
+
+{% endif %}
+
+</div>
+
+</div><!-- panel-body -->
+</div><!-- panel -->
+
+{% include "includes/_pagination.html" %}
+
+</div>
+</div>
+
+{% endblock content %}
+
+{% block modal_content %}
+
+{{ block.super }}
+
+{% include "vocab/includes/_vocab_entry_delete_modal.html" with modal_id='delete-entry' modal_name='confirmation-modal' %} 
+
+{% endblock modal_content %}
+
+

@@ -1,0 +1,69 @@
+{% load widget_tweaks %}
+
+<div id="__all__-errors" class="errors">
+{{ form.non_field_errors }}
+</div>
+
+<div class="form-group">
+{{ form.language.label_tag }}
+{% render_field form.language class+="form-control" %}
+<div id="{{ form.language.auto_id }}-errors" class="errors">
+{{ form.language.errors }}
+</div>
+</div>
+
+<div class="form-group">
+{{ form.entry.label_tag }}
+{% render_field form.entry class+="form-control" %}
+<div id="{{ form.entry.auto_id }}-errors" class="errors">
+{{ form.entry.errors }}
+</div>
+</div>
+
+{% if vocab_entry %}
+
+  <div id="edit-pronunciation">
+
+  <div class="form-group">
+
+  <ipa-symbol-keypad 
+  init-display-el="#pronunciation_ipa"
+  inline-template
+  >
+  <div>
+
+  {{ form.pronunciation_ipa.label_tag }}
+  <input v-model="display" name="pronunciation_ipa" maxlength="255" id="pronunciation_ipa" class="form-control" type="text">
+  <div id="{{ form.pronunciation_ipa.auto_id }}-errors" class="errors">
+  {{ form.pronunciation_ipa.errors }}
+  </div>
+
+  <div class="ipa-symbols">
+
+  <ipa-symbol-key 
+    v-for="(symbol, index) in ipaSymbolCodes"
+    :key="index"
+    :init-symbol="symbol"
+    @display-symbol="onDisplaySymbol"
+  >
+  </ipa-symbol-key>
+
+  </div>
+
+  </div>
+  </ipa-symbol-keypad>
+
+  </div>
+
+  <div class="form-group">
+  {{ form.pronunciation_spelling.label_tag }}
+  {% render_field form.pronunciation_spelling class+="form-control" %}
+  <div id="{{ form.pronunciation_spelling.auto_id }}-errors" class="errors">
+  {{ form.pronunciation_spelling.errors }}
+  </div>
+  </div>
+
+  </div>
+
+{% endif %}
+

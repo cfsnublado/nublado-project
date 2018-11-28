@@ -1,0 +1,38 @@
+{% extends "includes/_modal_base.html" %}
+{% load i18n %}
+
+{% block modal_id %}vocab-definition-create-modal{% endblock modal_id %}
+
+{% block modal_header %}
+
+<h4 class="text-center">{% trans "label_add_definition" %}</h4>
+
+{% endblock modal_header %}
+
+{% block modal_content %}
+
+<div id="vocab-definition-create-modal-content">
+
+</div>
+
+<div class="text-center">
+
+<a 
+href="#"
+id="vocab-definition-create-close-btn"
+class="ui small basic button">
+{% trans "label_cancel" %}
+</a>
+
+<button
+id="vocab-definition-create-submit-btn" 
+class="ui small green button"
+type="submit"
+form="vocab-definition-create-form"
+>
+{% trans "label_create" %}
+</button>
+
+</div>
+
+{% endblock modal_content %}

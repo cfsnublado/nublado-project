@@ -1,0 +1,87 @@
+{% extends "vocab/auth/vocab_base.html" %}
+{% load staticfiles %}
+{% load core_extras %}
+{% load i18n %}
+
+{% block title %}{{ vocab_source.name }} - {% trans "page_vocab_source_pending_contexts_title" %}{% endblock title %}
+
+{% block vocab_source_contexts_link_active %}active{% endblock vocab_source_contexts_link_active %}
+
+{% block breadcrumb_content %}
+
+{{ block.super }}
+&nbsp;>&nbsp;
+{% trans "label_pending_contexts" %}
+
+{% endblock breadcrumb_content %}
+
+{% block content %}
+
+<div class="row justify-content-md-center">
+<div class="col-md-10">
+
+{% if vocab_contexts %}
+
+{% for vocab_context in vocab_contexts %}
+
+<div id="vocab-context-{{ vocab_context.id }}" class="panel vocab-context-panel">
+
+<div class="panel-section controls">
+<a 
+class="control"
+href="{% url 'vocab:vocab_context_tag' vocab_context.id %}">
+<i class="fa fa-edit"></i>
+</a>
+
+<a 
+class="vocab-context-delete-trigger control" 
+href="{% url 'vocab:vocab_context_delete' vocab_context.id %}"
+>
+<i class="fa fa-trash"></i>
+</a>
+</div>
+
+<div class="panel-body">
+
+<div class="vocab-context-text">
+{{ vocab_context.content|to_html|safe }}
+</div>
+
+<div class="untagged-context-text">
+{{ vocab_context.content|to_html|safe }}
+</div>
+
+</div><!-- panel-body -->
+</div><!-- panel -->
+
+{% endfor %}
+
+{% include "includes/_pagination.html" %}
+
+{% else %}
+
+{% trans "label_no_source_pending_contexts" %}
+
+{% endif %}
+
+</div>
+</div>
+
+{% endblock content %}
+
+{% block modal_content %}
+
+{{ block.super }}
+
+{% include "vocab/includes/_vocab_context_delete_modal.html" %} 
+
+{% endblock modal_content %}
+
+{% block python_to_javascript %}
+
+{{ block.super }}
+var vocabEntryUrl = "{% url 'vocab:vocab_source_contexts' vocab_source.id vocab_source.slug %}";
+var vocabEntryAutocompleteUrl = "{% url 'vocab:vocab_source_entry_language_autocomplete' vocab_source.id 'zz' %}";
+var language = "{{ search_language }}";
+
+{% endblock python_to_javascript %}

@@ -15982,11 +15982,6 @@ body.grey-bg {
 }
 
 /* line 11, ../scss/cfs/pages/_app.scss */
-#logo-header {
-  margin-top: 2.5rem;
-}
-
-/* line 15, ../scss/cfs/pages/_app.scss */
 .page-header {
   font-size: 1.625rem;
   margin-top: 18px;
@@ -15994,7 +15989,7 @@ body.grey-bg {
   color: #777;
 }
 
-/* line 24, ../scss/cfs/pages/_app.scss */
+/* line 20, ../scss/cfs/pages/_app.scss */
 .page-subheader {
   font-size: 1rem;
   margin-top: 10px;
@@ -16002,7 +15997,7 @@ body.grey-bg {
   color: #aaa;
 }
 
-/* line 33, ../scss/cfs/pages/_app.scss */
+/* line 29, ../scss/cfs/pages/_app.scss */
 .form-subheader {
   font-size: 16px;
   margin-bottom: 10px;

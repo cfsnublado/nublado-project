@@ -61,6 +61,7 @@ LOCAL_APPS = [
     'users',
     'core',
     'security',
+    'vocab',
 ]
 
 THIRD_PARTY_APPS = [

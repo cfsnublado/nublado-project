@@ -1,0 +1,41 @@
+{% extends "vocab/auth/vocab_base.html" %}
+{% load staticfiles %}
+{% load i18n %}
+
+{% block title %}{% trans "page_vocab_context_create_title" %}{% endblock title %}
+
+{% block vocab_context_create_link_active %}active{% endblock vocab_context_create_link_active %}
+
+{% block breadcrumb_content %}
+
+{{ block.super }}
+&nbsp;>&nbsp;
+<a href="{% url 'vocab:vocab_source_contexts' vocab_source.id vocab_source.slug %}">
+{% trans "label_contexts" %}
+</a>
+&nbsp;>&nbsp;
+{% trans "label_create" %}
+
+{% endblock breadcrumb_content %}
+
+{% block content %}
+
+<div class="row justify-content-md-center">
+<div class="col-md-10">
+
+<form id="edit-form" action="{% url 'vocab:vocab_context_create' vocab_source.id vocab_source.slug %}" method="post" novalidate>
+
+{% csrf_token %}
+
+{% include "vocab/includes/forms/_vocab_context_form.html" %}
+
+<button id="submit-btn" class="ui button" type="submit" form="edit-form" style="margin-top: 10px;">
+{% trans "label_create" %}
+</button>
+
+</form>
+
+</div>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,30 @@
+{% load i18n %}
+{% load widget_tweaks %}
+
+<div id="__all__-errors" class="errors">
+{{ form.non_field_errors }}
+</div>
+
+<div class="form-group">
+{{ form.source_type.label_tag }}
+{% render_field form.source_type class+="form-control" %}
+<div id="{{ form.source_type.auto_id }}-errors" class="errors">
+{{ form.source_type.errors }}
+</div>
+</div>
+
+<div class="form-group">
+{{ form.name.label_tag }}
+{% render_field form.name class+="form-control" %}
+<div id="{{ form.name.auto_id }}-errors" class="errors">
+{{ form.name.errors }}
+</div>
+</div>
+
+<div class="form-group">
+{{ form.description.label_tag }}
+{% render_field form.description class+="form-control" rows="3" %}
+<div id="{{ form.description.auto_id }}-errors" class="errors">
+{{ form.description.errors }}
+</div>
+</div>

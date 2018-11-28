@@ -1,0 +1,33 @@
+{% extends "includes/_modal_base.html" %}
+{% load i18n %}
+{% load core_extras %}
+
+{% block modal_id %}vocab-entry-detail-modal{% endblock modal_id %}
+
+{% block modal_header %}
+
+<div class="page-header">{{ vocab_entry.entry|capfirst }}</div>
+
+<div class="vocab-pronunciation">
+{% if vocab_entry.pronunciation_spelling %}
+[{{ vocab_entry.pronunciation_spelling|to_html:True|safe }}] &nbsp;
+{% endif %}
+
+{% if vocab_entry.pronunciation_ipa %}
+[{{ vocab_entry.pronunciation_ipa|safe }}]
+{% endif %}
+</div>
+
+{% endblock modal_header %}
+
+{% block modal_content %}
+
+<div id="vocab-entry-detail-modal-content">
+
+<div style="margin-top: 20px;">
+{{ vocab_entry.description|capfirst|to_html|safe }}
+</div>
+
+</div>
+
+{% endblock modal_content %}

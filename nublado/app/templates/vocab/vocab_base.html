@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% load core_extras %}
+{% load i18n %}
+
+{% block body_classes %}
+
+sidebar-adaptable theme-white {{ sidebar_expanded|yesno:"sidebar-nav-expanded," }}
+
+{% endblock body_classes %}
+
+{% block body %}
+<div id="main-content" class="main-content container" style="margin-top: 50px;">
+{% block content %}{% endblock content %}
+</div>
+{% endblock body %}
+
+{% block page_footer %}{% endblock page_footer %}
+
+{% block python_to_javascript %}
+
+var initSidebarSessionEnabled = true;
+var sidebarExpanded = {{ sidebar_expanded|yesno:"true,false" }};
+var appSessionUrl = "{% url 'app:app_session' %}";
+var sidebarTopPanelExpanded = {{ sidebar_top_panel_expanded|yesno:"true,false" }};
+
+{% endblock python_to_javascript %}
+

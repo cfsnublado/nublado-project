@@ -1,0 +1,32 @@
+{% extends "vocab/auth/vocab_base.html" %}
+{% load staticfiles %}
+{% load i18n %}
+
+{% block title %}
+{% trans "page_vocab_entry_create_title" %}
+{% endblock title %}
+
+{% block vocab_entry_create_link_active %}active{% endblock vocab_entry_create_link_active %}
+
+{% block content %}
+
+<div class="row justify-content-md-center">
+<div class="col-md-10">
+
+<form id="vocab-entry-create-form" method="post" action="{% url 'vocab:vocab_entry_create' %}" novalidate>
+
+{% csrf_token %}
+{% include "vocab/includes/forms/_vocab_entry_form.html" %}
+
+<div class="small-12 columns">
+<button id="submit-btn" class="ui button" type="submit">
+{% trans "label_create" %}
+</button>
+</div>
+
+</form>
+
+</div>
+</div>
+
+{% endblock content %}

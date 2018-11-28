@@ -1,0 +1,41 @@
+{% extends "vocab/auth/vocab_base.html" %}
+{% load staticfiles %}
+{% load i18n %}
+
+{% block title %}{% trans "page_delete_confirm_title" %}{% endblock title %}
+
+{% block top_navbar %}{% endblock top_navbar %}
+
+{% block body_classes %}theme-white{% endblock body_classes %}
+
+{% block sidebar_nav %}{% endblock sidebar_nav %}
+
+{% block breadcrumbs %}{% endblock breadcrumbs %}
+
+{% block footer %}{% endblock footer %}
+
+{% block content %}
+
+<div class="row justify-content-md-center">
+<div class="col-md-10">
+
+<h2>
+{% trans "delete_vocab_entry_q" %}
+</h2>
+
+<form action="" method="post">
+{% csrf_token %}
+
+<button id="confirm-yes" class="ui basic button" type="submit">
+{% trans "label_yes" %}
+</button>
+
+<a id="confirm-no" href="{% url 'vocab:vocab_user_dashboard' %}" class="ui basic button" role="button">
+{% trans "label_no" %}
+</a>
+
+</form>
+</div>
+</div>
+
+{% endblock content %}

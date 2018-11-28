@@ -1,0 +1,71 @@
+{% load i18n %}
+
+{% with url_name=request.resolver_match.url_name %}
+
+  {% if request.session.vocab_project %}
+
+    {% if url_name != "vocab_project_dashboard" %}
+
+      <a href="{% url 'vocab:vocab_project_dashboard' vocab_project.slug %}">{% trans "label_project" %}</a>
+
+      {% if url_name == "vocab_project_sources" %}
+
+        &nbsp;>&nbsp;
+        <span>{% trans "label_sources" %}</span>
+
+      {% elif url_name == "vocab_source_create" %}
+
+        &nbsp;>&nbsp;
+        <a href="{% url 'vocab:vocab_project_sources' vocab_project.slug %}">{% trans "label_sources" %}</a>
+
+      {% endif %}
+
+    {% endif %}
+
+  {% elif request.session.vocab_source %}
+
+    <a href="{% url 'vocab:vocab_project_dashboard' vocab_project.slug %}">{% trans "label_project" %}</a>
+    &nbsp;>&nbsp;
+    <a href="{% url 'vocab:vocab_project_sources' vocab_project.slug %}">{% trans "label_sources" %}</a>
+
+    {% if url_name == "vocab_source_dashboard" %}
+   
+      &nbsp;>&nbsp;
+      <span> {{ vocab_source.name }} </span>
+  
+    {% else %}
+
+      &nbsp;>&nbsp;
+      <a href="{% url 'vocab:vocab_source_dashboard' vocab_source.id vocab_source.slug %}">{{ vocab_source.name }}</a>
+
+    {% endif %}
+
+  {% elif request.session.vocab_entry %}
+
+    <a href="{% url 'vocab:vocab_user_dashboard' %}">{% trans "label_main" %}</a>
+    &nbsp;>&nbsp;
+    <a href="{% url 'vocab:vocab_entries' %}">{% trans "label_entries" %}</a>
+
+    {% if url_name == "vocab_entry_dashboard" %}
+
+      &nbsp;>&nbsp;
+      <span>{{ vocab_entry.entry }}</span>
+
+    {% else %}
+
+      &nbsp;>&nbsp;
+      <a href="{% url 'vocab:vocab_entry_dashboard' vocab_entry.language vocab_entry.slug %}">{{ vocab_entry.entry }}</a>
+
+    {% endif %}
+
+  {% else %}
+
+    {% if url_name != "vocab_user_dashboard" %}
+
+      <a href="{% url 'vocab:vocab_user_dashboard' %}">{% trans "label_main" %}</a>
+
+    {% endif %}
+
+  {% endif %}
+
+{% endwith %}

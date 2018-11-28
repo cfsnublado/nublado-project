@@ -1,0 +1,13 @@
+{% load i18n %}
+{% load widget_tweaks %}
+
+<div id="__all__-errors" class="errors">
+{{ form.non_field_errors }}
+</div>
+
+{{ form.content.label_tag }}
+{% trans "placeholder_vocab_context" as placeholder_vocab_context %}
+{% render_field form.content class+="form-control" placeholder=placeholder_vocab_context rows="5" %}
+<div id="{{ form.content.auto_id }}-errors" class="errors">
+{{ form.content.errors }}
+</div>

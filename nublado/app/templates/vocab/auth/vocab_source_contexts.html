@@ -1,0 +1,53 @@
+{% extends "vocab/auth/vocab_base.html" %}
+{% load staticfiles %}
+{% load core_extras %}
+{% load i18n %}
+
+{% block title %}{{ vocab_source.name }} - {% trans "page_vocab_source_contexts_title" %}{% endblock title %}
+
+{% block vocab_source_contexts_link_active %}active{% endblock vocab_source_contexts_link_active %}
+
+{% block breadcrumb_content %}
+
+{{ block.super }}
+&nbsp;>&nbsp;
+{% trans "label_contexts" %}
+
+{% endblock breadcrumb_content %}
+
+{% block content %}
+
+<div class="row justify-content-md-center">
+<div class="col-md-10">
+
+{% if vocab_contexts %}
+
+{% for vocab_context in vocab_contexts %}
+{% url 'vocab:vocab_source_entry_contexts' vocab_source.id vocab_source.slug 'xx' 'zzz' as select_url %}
+{% include "vocab/includes/_vocab_context_panel.html" %}
+
+{% endfor %}
+
+{% include "includes/_pagination.html" %}
+
+{% else %}
+
+{% trans "label_no_contexts" %}
+
+{% endif %}
+
+</div>
+</div>
+
+{% endblock content %}
+
+{% block modal_content %}
+
+{{ block.super }}
+
+{% include "vocab/includes/_vocab_context_delete_modal.html" with modal_id='delete-context' modal_name='confirmation-modal' %} 
+
+{% endblock modal_content %}
+
+
+

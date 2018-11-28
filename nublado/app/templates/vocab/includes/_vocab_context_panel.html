@@ -1,0 +1,74 @@
+{% load core_extras %}
+
+<context-tag-panel
+:init-entries='{{ vocab_context.get_entries_and_tags|jsonify }}'
+init-select-url="{{ select_url }}"
+context-element="#context-{{ vocab_context.id }}"
+inline-template
+>
+
+<transition name="fade-transition" v-on:after-enter="isVisible = true" v-on:after-leave="isVisible = false">
+
+<div 
+id="vocab-context-{{ vocab_context.id }}" 
+class="panel vocab-context-panel"
+v-show="isVisible"
+>
+
+<div class="panel-section controls">
+<a 
+class="control"
+href="{% url 'vocab:vocab_context_tag' vocab_context.id %}">
+<i class="fa fa-edit"></i>
+</a>
+
+{% url 'vocab:vocab_context_delete' vocab_context.id as context_url %}
+<ajax-delete
+confirmation-id="delete-context"
+delete-url="{{ context_url }}"
+@ajax-success="hidePanel"
+inline-template
+>
+
+<a 
+class="vocab-context-delete-trigger control" 
+href="{% url 'vocab:vocab_context_delete' vocab_context.id %}"
+@click.prevent="confirmDelete"
+>
+<i class="fa fa-trash"></i>
+</a>
+
+</ajax-delete>
+
+</div>
+
+<div class="panel-body">
+
+<div 
+id="context-{{ vocab_context.id }}"
+class="vocab-context-text"
+>
+{{ vocab_context.content|to_html|safe }}
+</div>
+
+<div class="vocab-entries ui labels">
+
+<toggle-tag
+  v-for="(tag, index) in entries"
+  :key="index"
+  :init-id="index"
+  :init-value="tag.value"
+  :toggle-select="tag.toggleSelect"
+  @tag-select="selectTag"
+  @tag-toggle="toggleTag"
+>
+</toggle-tag>
+
+</div>
+
+</div><!-- panel-body -->
+</div><!-- panel -->
+
+</transition>
+
+</context-tag-panel>

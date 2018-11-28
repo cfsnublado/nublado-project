@@ -1,0 +1,61 @@
+{% extends "vocab/vocab_base.html" %}
+{% load staticfiles %}
+{% load core_extras %}
+{% load i18n %}
+
+{% block title %}
+{% trans "page_vocab_search_title" %}
+{% endblock title %}
+
+{% block content %}
+
+<div class="row justify-content-md-center">
+<div class="col-md-10">
+
+{% url 'vocab:vocab_entry_autocomplete' 'zz' as autocomplete_url %}
+{% url 'vocab:vocab_entry_search' as search_url %}
+
+{% include "includes/_language_search.html" with comp_name='entry-search' search_btn=True %}
+
+</div>
+</div>
+
+{% if vocab_entry %}
+
+  <div class="row justify-content-md-center" style="margin-bottom: 20px;">
+  <div class="col-md-10">
+
+  <div class="entry-header" style="margin-top: 40px;"> 
+  {{ vocab_entry.entry }} 
+  </div>
+
+  <div class="vocab-pronunciation">
+  {% if vocab_entry.pronunciation_spelling %}
+
+    [{{ vocab_entry.pronunciation_spelling|to_html:True|safe }}] &nbsp;
+
+  {% endif %}
+
+  {% if vocab_entry.pronunciation_ipa %}
+
+    [{{ vocab_entry.pronunciation_ipa|safe }}]
+
+  {% endif %}
+  </div>
+
+  </div>
+  </div>
+
+{% endif %}
+
+<div class="row justify-content-md-center">
+<div class="col-md-10">
+
+{% include "vocab/includes/_vocab_entry_contexts.html" %}
+{% include "includes/_pagination.html" %}
+
+</div>
+</div>
+
+{% endblock content %}
+

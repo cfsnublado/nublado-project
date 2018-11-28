@@ -5,7 +5,7 @@ from .base import *
 
 PROJECT_DOMAIN = "https://cfsnublado.herokuapp.com"
 
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["*"]
 

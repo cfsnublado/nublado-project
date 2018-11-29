@@ -21,25 +21,19 @@
 
 {% block content %}
 
-<div class="row">
-<div class="col-md-5 offset-md-1">
-
-<div class="panel">
-<div class="panel-body">
-
-<div class="panel-header">
-{% trans "label_projects" %}
-</div>
+<div class="row justify-content-md-center">
+<div class="col-md-10">
 
 {% for project in vocab_projects %}
-<p> 
-<a href="{% url 'vocab:vocab_project_dashboard' project.id project.slug %}">
-{{ project.name }} 
-</a>
-</p>
+<div class="panel">
+<div class="panel-header">
+{{ project.name }}
+</div>
+<div class="panel-body">
+{{ project.description }}
+</div>
+</div>
 {% endfor %}
-</div>
-</div>
 
 </div>
 </div>

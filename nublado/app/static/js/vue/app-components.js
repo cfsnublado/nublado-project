@@ -133,6 +133,25 @@ const EntrySearch = {
   },
 }
 
+const ProjectForm = {
+  mixins: [BaseForm],
+  data() {
+    return {
+      formData: {
+        name: '',
+        description: ''
+      },
+    }
+  },
+  methods: {
+    resetForm() {
+      this.formData.name = ''
+      this.formData.description = ''
+      this.errors = {}
+    }
+  },
+}
+
 const EntryForm = {
   mixins: [BaseForm],
   data() {

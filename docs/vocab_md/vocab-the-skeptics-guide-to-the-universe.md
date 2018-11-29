@@ -90,7 +90,7 @@ project_name: English Reading
 
 - **Hyperactive Agency Detection**
 
-    Hyperactive agency detection (HADD) is the tendency to interpret events as if the were the deliberate intent of a conscious agent rather than the product of natural forces or unguided chaotic events.
+    Hyperactive agency detection (HADD) is the tendency to interpret events as if they were the deliberate intent of a conscious agent rather than the product of natural forces or unguided chaotic events.
 
     <div markdown="1" class="tagged-entries">
 

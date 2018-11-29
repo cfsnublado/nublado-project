@@ -2,11 +2,16 @@ from collections import defaultdict
 
 from django.apps import apps
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.urls import reverse
 from django.views.generic import (
-    TemplateView
+    CreateView, TemplateView
 )
 
-from ..models import VocabSource
+from core.views import (
+    AjaxFormMixin, UserstampMixin
+)
+from ..forms import VocabProjectCreateForm
+from ..models import VocabProject, VocabSource
 from ..views.views_mixins import (
     VocabProjectMixin, VocabSourceSearchMixin
 )
@@ -18,6 +23,29 @@ class VocabProjectDashboardView(
     LoginRequiredMixin, VocabProjectMixin, TemplateView
 ):
     template_name = '{0}/auth/vocab_project_dashboard.html'.format(APP_NAME)
+
+
+class VocabProjectCreateView(
+    LoginRequiredMixin, AjaxFormMixin,
+    UserstampMixin, CreateView
+):
+    model = VocabProject
+    form_class = VocabProjectCreateForm
+    template_name = '{0}/auth/vocab_project_create.html'.format(APP_NAME)
+
+    def get_form_kwargs(self):
+        kwargs = super(VocabProjectCreateView, self).get_form_kwargs()
+        kwargs['owner'] = self.request.user
+        return kwargs
+
+    def get_success_url(self):
+        return reverse(
+            'vocab:vocab_project_dashboard',
+            kwargs={
+                'vocab_project_pk': self.object.id,
+                'vocab_project_slug': self.object.slug
+            }
+        )
 
 
 class VocabProjectSourcesView(

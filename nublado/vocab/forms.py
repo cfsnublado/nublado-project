@@ -4,10 +4,26 @@ from django.utils.translation import ugettext_lazy as _
 
 from core.forms import BaseModelForm
 from .models import (
-    VocabEntry, VocabContext, VocabSource
+    VocabEntry, VocabContext, VocabProject,
+    VocabSource
 )
 
 User = get_user_model()
+
+
+class VocabProjectForm(BaseModelForm):
+
+    class Meta:
+        abstract = True
+        fields = [
+            'name', 'description'
+        ]
+        error_messages = {
+            'name': {
+                'required': _('validation_field_required'),
+                'unique': _('validation_field_unique'),
+            }
+        }
 
 
 class VocabEntryForm(BaseModelForm):
@@ -49,6 +65,27 @@ class VocabSourceForm(BaseModelForm):
                 'unique': _('validation_field_unique'),
             }
         }
+
+
+class VocabProjectCreateForm(VocabProjectForm):
+
+    def __init__(self, *args, **kwargs):
+        self.owner = kwargs.pop('owner', None)
+        super(VocabProjectCreateForm, self).__init__(*args, **kwargs)
+        if not self.owner:
+            raise ValueError(_('validation_vocab_project_owner_required'))
+        self.instance.owner = self.owner
+
+    class Meta(VocabProjectForm.Meta):
+        model = VocabProject
+
+    def clean(self):
+        cleaned_data = super().clean()
+        if all(k in cleaned_data for k in ('name',)):
+            if VocabProject.objects.filter(
+                name=cleaned_data['name'],
+            ).exists():
+                self.add_error('name', _('validation_vocab_project_unique'))
 
 
 class VocabEntrySearchForm(forms.Form):

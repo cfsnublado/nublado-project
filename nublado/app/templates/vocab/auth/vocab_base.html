@@ -110,10 +110,19 @@ sidebar-nav {{ sidebar_expanded|yesno:"sidebar-nav-expanded," }} {{ sidebar_top_
 
   <li class="nav-item">
   <a 
+  id="sidebar-nav-vocab-project-edit"
+  class="nav-link {% block vocab_project_edit_link_active %}{% endblock vocab_project_edit_link_active %}" 
+  href="">
+  <i class="nav-link-icon fas fa-edit fa-fw"></i> {% trans "label_edit_project" %}
+  </a>
+  </li>
+
+  <li class="nav-item">
+  <a 
   id="sidebar-nav-vocab-sources"
   class="nav-link {% block vocab_sources_link_active %}{% endblock vocab_sources_link_active %}" 
   href="{% url 'vocab:vocab_project_sources' vocab_project.id vocab_project.slug %}">
-  <i class="nav-link-icon far fa-copy fa-fw"></i> {% trans "label_sources" %}
+  <i class="nav-link-icon fas fa-copy fa-fw"></i> {% trans "label_sources" %}
   </a>
   </li>
 
@@ -264,6 +273,19 @@ href="{% url 'vocab:vocab_user_dashboard' %}">
 </a>
 </li>
 
+<li class="nav-item">
+<a
+id="sidebar-nav-vocab-project-create" 
+class="nav-link" 
+href="#"
+@click.prevent="showModal('create-project')"
+>
+<i class="nav-link-icon fas fa-plus fa-fw"></i>
+{% trans "label_new_vocab_project" %}
+</a> 
+
+</li>
+
 <li class="divider"></li>
 
 {% endblock main_nav_items %}
@@ -311,6 +333,7 @@ href="{% url 'vocab:vocab_entries' %}">
 {% block modal_content %}
 
 {% include "vocab/includes/_vocab_entry_create_modal.html" with modal_id='create-entry' %}
+{% include "vocab/includes/_vocab_project_create_modal.html" with modal_id='create-project' %}
 
 {% endblock modal_content %}
 

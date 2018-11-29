@@ -60,7 +60,7 @@ urlpatterns = [
         name='vocab_entry_search'
     ),
     path(
-        'project/<slug:vocab_project_slug>/dashboard/',
+        'project/<int:vocab_project_pk>-<slug:vocab_project_slug>/dashboard/',
         VocabProjectDashboardView.as_view(),
         name='vocab_project_dashboard'
     ),

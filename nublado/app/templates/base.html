@@ -169,6 +169,36 @@ ref="sidebarNav"
 
 {% endblock sidebar_nav_top_panel %}
 
+{% if session_obj_enabled %}
+
+  <a class="sidebar-nav-top-panel-toggle" @click.prevent="toggleSidebarPanel">
+
+  <span class="top-panel-toggle-text">
+
+  {% if request.session.vocab_source %}
+
+    {% trans "label_source" %}
+
+  {% elif request.session.vocab_project %}
+
+    {% trans "label_project" %}
+
+  {% elif request.session.vocab_entry %}
+
+    {% trans "label_vocab_entry" %}
+
+  {% endif %}
+
+  </span>
+
+  <span class="top-panel-toggle-icon">
+  <i class="fas fa-angle-double-right"></i>
+  </span>
+
+  </a>
+
+{% endif %}
+
 <div class="sidebar-nav-body">
 
 <ul class="sidebar-nav-list">

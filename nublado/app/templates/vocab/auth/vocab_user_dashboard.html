@@ -12,7 +12,7 @@
 <div class="row justify-content-md-center">
 <div class="col-md-10">
 <div class="page-header">
-{% trans "label_dashboard" %}
+{% trans "header_dashboard" %}
 </div>
 </div>
 </div>
@@ -33,7 +33,7 @@
 
 {% for project in vocab_projects %}
 <p> 
-<a href="{% url 'vocab:vocab_project_dashboard' project.slug %}">
+<a href="{% url 'vocab:vocab_project_dashboard' project.id project.slug %}">
 {{ project.name }} 
 </a>
 </p>

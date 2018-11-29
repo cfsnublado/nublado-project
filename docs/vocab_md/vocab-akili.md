@@ -1,6 +1,7 @@
 ---
-name: Akili
+source_name: Akili
 source_type: 1
+project_name: Spanish Reading
 
 ---
 

@@ -1,0 +1,570 @@
+{
+    "vocab_project_data": {
+        "name": "Spanish Reading"
+    },   
+    "vocab_source_data": {
+        "source_type": 1,
+        "name": "Cr\u00f3nica del asesino de reyes 1: El nombre del viento",
+        "description": "Patrick Rothfuss",
+        "date_created": "2018-08-10T06:24:37.793345"
+    },
+    "vocab_contexts": {
+        "1": {
+            "vocab_context_data": {
+                "content": "\"\u00bfMe esperas aqu\u00ed?\" pregunt\u00e9 mientras me quitaba la capa y me arremangaba la camisa. \"No se si sabr\u00eda encontrar la salida sin ti.\"",
+                "date_created": "2018-02-19T08:06:34.123251"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "arremangarse",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:50:26.665418"
+                    },
+                    "vocab_entry_tags": [
+                        "me arremangaba"
+                    ]
+                }
+            ]
+        },
+        "2": {
+            "vocab_context_data": {
+                "content": "Ten\u00eda la mano en el pomo de la puerta cuando me detuvo la voz de Fela.",
+                "date_created": "2018-02-19T08:06:34.290174"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "pomo",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "agarrador - doorknob",
+                        "date_created": "2018-04-12T16:51:32.888409"
+                    },
+                    "vocab_entry_tags": [
+                        "pomo"
+                    ]
+                }
+            ]
+        },
+        "3": {
+            "vocab_context_data": {
+                "content": "Llegu\u00e9 al final del rengl\u00f3n y, en lugar de empezar otro, me par\u00e9 y mir\u00e9 al secretario que estaba detr\u00e1s del mostrador.",
+                "date_created": "2018-02-19T08:06:34.357127"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "rengl\u00f3n",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "l\u00ednea en una hoja - line (on a sheet of paper)",
+                        "date_created": "2018-04-12T16:51:32.755679"
+                    },
+                    "vocab_entry_tags": [
+                        "rengl\u00f3n"
+                    ]
+                }
+            ]
+        },
+        "4": {
+            "vocab_context_data": {
+                "content": "Aunque quiz\u00e1 deber\u00eda decir que intent\u00e9 trepar por la enorme piedra. Estaba muy desgastada despu\u00e9s de tanto tiempo a la intemperie.",
+                "date_created": "2018-02-19T08:06:34.568801"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "intemperie",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "afuera, un lugar no cubierto - outdoors, open sky\r\n\"a la intemperie\"",
+                        "date_created": "2018-04-12T16:51:32.633407"
+                    },
+                    "vocab_entry_tags": [
+                        "intemperie"
+                    ]
+                }
+            ]
+        },
+        "5": {
+            "vocab_context_data": {
+                "content": "Mientras Ambrose soltaba su diatriba, hab\u00edan entrado dos hombres y una joven.",
+                "date_created": "2018-02-19T08:06:34.634606"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "diatriba",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "ataque verbal o escrito - diatribe",
+                        "date_created": "2018-04-12T16:51:32.501486"
+                    },
+                    "vocab_entry_tags": [
+                        "diatriba"
+                    ]
+                }
+            ]
+        },
+        "6": {
+            "vocab_context_data": {
+                "content": "Hay que ser un poco mentiroso para contar bien una historia. Demasiada verdad tergiversa los hechos. Demasiada sinceridad te hace parecer falso.",
+                "date_created": "2018-02-19T08:06:34.801352"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "tergiversar",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:50:17.163372"
+                    },
+                    "vocab_entry_tags": [
+                        "tergiversa"
+                    ]
+                }
+            ]
+        },
+        "7": {
+            "vocab_context_data": {
+                "content": "Lo mejor era el ruido. El cuero cruj\u00eda. Los hombres re\u00edan. El fuego crepitaba y chisporroteaba.",
+                "date_created": "2018-02-19T08:06:34.868027"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "chisporrotear",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:51:32.200187"
+                    },
+                    "vocab_entry_tags": [
+                        "chisporroteaba"
+                    ]
+                }
+            ]
+        },
+        "8": {
+            "vocab_context_data": {
+                "content": "Mi abuelo siempre dec\u00eda que el oto\u00f1o es la estaci\u00f3n id\u00f3nea para arrancar de ra\u00edz cualquier cosa que no quieras que vuelva a molestarte.",
+                "date_created": "2018-02-19T08:06:35.034913"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "id\u00f3neo",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "ideal, adecuado - ideal, suitable, appropriate",
+                        "date_created": "2018-04-12T16:51:32.096769"
+                    },
+                    "vocab_entry_tags": [
+                        "id\u00f3nea"
+                    ]
+                }
+            ]
+        },
+        "9": {
+            "vocab_context_data": {
+                "content": "Es decir, que no pod\u00eda haber un d\u00eda m\u00e1s bonito para que media docena de ex soldados armados con arcos de caza te despojaran de cuanto ten\u00edas.",
+                "date_created": "2018-02-19T08:06:35.101402"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "despojar",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:51:32.019115"
+                    },
+                    "vocab_entry_tags": [
+                        "despojaran"
+                    ]
+                }
+            ]
+        },
+        "10": {
+            "vocab_context_data": {
+                "content": "Mientras andaba, oteaba el horizonte en busca del edificio m\u00e1s alto de la Universidad. Sab\u00eda qu\u00e9 aspecto ten\u00eda gracias a las amplias explicaciones de Ben.",
+                "date_created": "2018-02-19T08:06:35.267980"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "otear",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "vigilar desde una altura - look down on, watch from above",
+                        "date_created": "2018-04-12T16:51:31.919627"
+                    },
+                    "vocab_entry_tags": [
+                        "oteaba"
+                    ]
+                }
+            ]
+        },
+        "11": {
+            "vocab_context_data": {
+                "content": "Tiempo atr\u00e1s, el ingenioso dise\u00f1ador de la Factor\u00eda hab\u00eda instalado cerca de dos docenas de desag\u00fces en el taller para que fuera m\u00e1s f\u00e1cil limpiarlo y en previsi\u00f3n de derrramamientos. Es m\u00e1s, el suelo del taller describ\u00eda suaves subidas y bajadas que enviaban los l\u00edquidos vertidos hacia esos desag\u00fces.",
+                "date_created": "2018-02-19T08:06:35.457024"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "desag\u00fce",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "conducto de salida de aguas: - drain, drainpipe, waste pipe",
+                        "date_created": "2018-04-12T16:51:31.799793"
+                    },
+                    "vocab_entry_tags": [
+                        "desag\u00fces"
+                    ]
+                }
+            ]
+        },
+        "12": {
+            "vocab_context_data": {
+                "content": "Hizo un amplio adem\u00e1n con ambas manos, se\u00f1alando la puerta de salida.",
+                "date_created": "2018-02-19T08:06:35.512582"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "adem\u00e1n",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:51:31.707754"
+                    },
+                    "vocab_entry_tags": [
+                        "adem\u00e1n"
+                    ]
+                }
+            ]
+        },
+        "13": {
+            "vocab_context_data": {
+                "content": "Segu\u00ed a los ni\u00f1os por las sinuosas calles hasta que los vi doblar una esquina y bajar unos escalones que conduc\u00edan al s\u00f3tano de un edificio ruinoso.",
+                "date_created": "2018-02-19T08:06:35.669419"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "sinuoso",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "con ondas, curvas - sinuous, winding, meandering",
+                        "date_created": "2018-04-12T16:51:31.609029"
+                    },
+                    "vocab_entry_tags": [
+                        "sinuosas"
+                    ]
+                }
+            ]
+        },
+        "14": {
+            "vocab_context_data": {
+                "content": "Fui cojeando hasta Anker's y encontr\u00e9 la taberna abarrotada de gente; no se hablaba de otra cosa que del incendio de la Factor\u00eda.",
+                "date_created": "2018-02-19T08:06:35.834809"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "cojear",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:51:31.486721"
+                    },
+                    "vocab_entry_tags": [
+                        "cojeando"
+                    ]
+                }
+            ]
+        },
+        "15": {
+            "vocab_context_data": {
+                "content": "En las horas siguientes, prob\u00e9 en el Descanso del Pastor, en La Cabeza de Jabal\u00ed, en El Perro en la Pared, en Las Duelas y en El Tabardo. Ambrose se hab\u00eda esmerado: a ninguna le interes\u00e9.",
+                "date_created": "2018-02-19T08:06:35.890422"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "esmerarse",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "hacerse cosas con cuidado, \"pasarse\" - take great pains, go to a lot of effort",
+                        "date_created": "2018-04-12T16:51:31.396744"
+                    },
+                    "vocab_entry_tags": [
+                        "se hab\u00eda esmerado"
+                    ]
+                }
+            ]
+        },
+        "16": {
+            "vocab_context_data": {
+                "content": "Esa notoriedad me complac\u00eda, pero al mismo tiempo una fr\u00eda ansiedad empezaba a crecer dentro de m\u00ed. Me hab\u00eda enemistado con uno de los nueve maestros. Necesitaba saber hasta qu\u00e9 punto me hab\u00eda metido en un l\u00edo.",
+                "date_created": "2018-02-19T08:06:36.068208"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "enemistar",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "hacer enemigo - make enemies",
+                        "date_created": "2018-04-12T16:51:31.124439"
+                    },
+                    "vocab_entry_tags": [
+                        "enemistado"
+                    ]
+                }
+            ]
+        },
+        "17": {
+            "vocab_context_data": {
+                "content": "Alguien ech\u00f3 un tronco al fuego, y el chisporroteo me impidi\u00f3 o\u00edr lo que dijo mi padre a continuaci\u00f3n. Me acerqu\u00e9 lo m\u00e1s aprisa que pude y me agazap\u00e9 bajo la larga sombra del carromato de mis padres",
+                "date_created": "2018-02-19T08:06:36.234917"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "agazaparse",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "esconderse agachado\r\n\r\n- crouch, huddle",
+                        "date_created": "2018-04-12T16:49:29.658557"
+                    },
+                    "vocab_entry_tags": [
+                        "me agazap\u00e9"
+                    ]
+                }
+            ]
+        },
+        "18": {
+            "vocab_context_data": {
+                "content": "Lorren sac\u00f3 una pluma y tach\u00f3 lo que yo hab\u00eda escrito en el cuaderno de solicitudes.",
+                "date_created": "2018-02-19T08:06:36.401851"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "tachar",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "marcar con una raya - cross out",
+                        "date_created": "2018-04-12T16:51:06.049023"
+                    },
+                    "vocab_entry_tags": [
+                        "tach\u00f3"
+                    ]
+                }
+            ]
+        },
+        "19": {
+            "vocab_context_data": {
+                "content": "Salud\u00e9 con una inclinaci\u00f3n de cabeza a la clase y me volv\u00ed hacia Hemme en medio de un aplauso que, pese a no ser ensordecedor, seguramente fue mucho mayor que ninguno que \u00e9l hubiera recibido jam\u00e1s.",
+                "date_created": "2018-02-19T08:06:36.579383"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "ensordecedor",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "d\u00edcese de un sonido muy fuerte, que encordece - deafening",
+                        "date_created": "2018-04-12T16:48:59.115445"
+                    },
+                    "vocab_entry_tags": [
+                        "ensordecedor"
+                    ]
+                }
+            ]
+        },
+        "20": {
+            "vocab_context_data": {
+                "content": "Despu\u00e9s de poner la botella boca abajo hasta verter la \u00faltima gota, funci\u00f3 los labios, los acerc\u00f3 a la boca de la botella y sopl\u00f3 produciendo un pitido.",
+                "date_created": "2018-02-19T08:06:36.746071"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "verter",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "derramar o vaciar l\u00edquidos, y tambi\u00e9n cosas menudas;\r\ncomo sal o harina. - pour, spill, dump",
+                        "date_created": "2018-04-12T16:49:06.820536"
+                    },
+                    "vocab_entry_tags": [
+                        "verter"
+                    ]
+                }
+            ]
+        },
+        "21": {
+            "vocab_context_data": {
+                "content": "Solo sab\u00eda que si me iba con ellos tendr\u00eda que dar explicaciones, que tendr\u00eda que recordar. Prefer\u00eda cualquier cosa a abrir esa puerta. \" \"No, no gracias,\" balbuce\u00e9. \"Me han ayudado mucho.\"",
+                "date_created": "2018-02-19T08:06:36.912753"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "balbucear",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:51:29.562240"
+                    },
+                    "vocab_entry_tags": [
+                        "balbuce\u00e9"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "preferir una cosa a otra",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "tener preferencia por\r\n\r\n- prefer one thing to/over another",
+                        "date_created": "2018-04-12T16:51:29.240678"
+                    },
+                    "vocab_entry_tags": [
+                        "prefer\u00eda cualquier cosa a abrir"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "saber",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:47:21.452429"
+                    },
+                    "vocab_entry_tags": [
+                        "sab\u00eda"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "tener que",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "obligado a hacer algo\r\n\r\n- have to",
+                        "date_created": "2018-04-12T16:51:28.866311"
+                    },
+                    "vocab_entry_tags": [
+                        "tendr\u00eda que dar explicaciones",
+                        "tendr\u00eda que recordar"
+                    ]
+                }
+            ]
+        },
+        "22": {
+            "vocab_context_data": {
+                "content": "Auri arrug\u00f3 la nariz y sacudi\u00f3 la cabeza. \"Me despellejar\u00e9 las rodillas.\"",
+                "date_created": "2018-02-19T08:06:37.512759"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "despellejarse",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "herida: levantar la piel - graze, skin",
+                        "date_created": "2018-04-12T16:51:28.625555"
+                    },
+                    "vocab_entry_tags": [
+                        "me despellejar\u00e9"
+                    ]
+                }
+            ]
+        },
+        "23": {
+            "vocab_context_data": {
+                "content": "Auri llevaba tambi\u00e9n una luz, una cosa que sujetaba en la manos ahuecadas y que desprend\u00eda un d\u00e9bil resplandor verdeazulado. Yo sent\u00eda curiosidad por saber qu\u00e9 artilugio era aquel, pero  no quer\u00eda exigirle que me revelara tantos secretos a la vez",
+                "date_created": "2018-02-19T08:06:37.579516"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "ahuecar",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:51:28.266757"
+                    },
+                    "vocab_entry_tags": [
+                        "ahuecadas"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "artilugio",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "device, gadget",
+                        "date_created": "2018-04-12T16:50:43.712491"
+                    },
+                    "vocab_entry_tags": [
+                        "artilugio"
+                    ]
+                }
+            ]
+        },
+        "24": {
+            "vocab_context_data": {
+                "content": "Intent\u00e9 tararear &laquo;Nieve que cae con las \u00faltimas hojas del oto\u00f1o&raquo;  &laquo;Dedos encallecidos&raquo; y &laquo;Un la\u00fad de cuatro cuerdas&raquo; pero no era lo mismo que tocar",
+                "date_created": "2018-02-19T08:06:37.679286"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "tararear",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "canturrear - hum, sing to oneself",
+                        "date_created": "2018-04-12T16:49:51.174909"
+                    },
+                    "vocab_entry_tags": [
+                        "tararear"
+                    ]
+                }
+            ]
+        }
+    }
+}

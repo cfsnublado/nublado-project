@@ -1,0 +1,1090 @@
+{
+    "vocab_project_data": {
+        "name": "Spanish Reading"
+    },
+    "vocab_source_data": {
+        "source_type": 1,
+        "name": "La gram\u00e1tica descomplicada",
+        "description": "",
+        "date_created": "2018-08-10T06:26:59.782685"
+    },
+    "vocab_contexts": {
+        "1": {
+            "vocab_context_data": {
+                "content": "**Las vocales pueden ser d\u00e9biles o fuertes.**\r\n\r\nSon fuertes la _a_, la _e_, y la _o_. Y no s\u00f3lo son fuertes sino que suman m\u00e1s, porque consideramos d\u00e9biles \u00fanicamente a la _i_ y a la _u_. Si decidieran entablar una batalla, las d\u00e9biles ir\u00edan de cr\u00e1neo.",
+                "date_created": "2018-06-03T21:50:53.417755"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "d\u00e9bil",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "poco resistente, poca fuerza\r\n\r\n- weak",
+                        "date_created": "2018-06-03T21:54:40.747620"
+                    },
+                    "vocab_entry_tags": [
+                        "d\u00e9biles"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "entablar",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "Comenzar algo\r\n\r\n- initiate, start, begin",
+                        "date_created": "2018-06-03T21:53:41.098742"
+                    },
+                    "vocab_entry_tags": [
+                        "entablar"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "\u00fanico",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:48:15.029286"
+                    },
+                    "vocab_entry_tags": [
+                        "\u00fanicamente"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "vocal",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "una letra no consonante: _a, e, i, o, u_\r\n\r\n- vowel",
+                        "date_created": "2018-04-12T16:50:22.919806"
+                    },
+                    "vocab_entry_tags": [
+                        "vocales"
+                    ]
+                }
+            ]
+        },
+        "2": {
+            "vocab_context_data": {
+                "content": "**Normas para acentuar**\r\n\r\n- Las palabras que acaban en n, s, o vocal tienen el acento de intensidad (acento pros\u00f3dico) en la pen\u00faltima s\u00edlaba (son llanas).\r\n\r\n- Los dem\u00e1s lo tienen en la \u00faltima (son agudas).\r\n\r\n- Toda palabra que incumpla cualquiera de las dos normas anteriores ser\u00e1 castigada con un acento ortogr\u00e1fico.",
+                "date_created": "2018-06-03T21:24:31.983367"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "cualquiera",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "Persona indeterminada. Cosa indistinta.\r\n\r\n- anyone, any old",
+                        "date_created": "2018-06-03T21:30:02.082383"
+                    },
+                    "vocab_entry_tags": [
+                        "cualquiera"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "s\u00edlaba",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "grupo fon\u00e9tico\r\n\r\n- syllable",
+                        "date_created": "2018-04-12T16:50:18.655708"
+                    },
+                    "vocab_entry_tags": [
+                        "s\u00edlaba"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "acento pros\u00f3dico",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "Acento de intensidad\r\n\r\n- stress accent, dynamic accent",
+                        "date_created": "2018-06-03T21:28:07.188977"
+                    },
+                    "vocab_entry_tags": [
+                        "acento pros\u00f3dico"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "pen\u00faltimo",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "Anterior al \u00faltimo.\r\n\r\n- penultimate, next-to-last",
+                        "date_created": "2018-06-03T21:25:35.401350"
+                    },
+                    "vocab_entry_tags": [
+                        "pen\u00faltima"
+                    ]
+                }
+            ]
+        },
+        "3": {
+            "vocab_context_data": {
+                "content": "En resumen, las palabras se forman de dos maneras: o bien se han creado a partir de un vocablo ajeno a nuestra lengua (generalmente del lat\u00edn, el griego o el \u00e1rabe, pero tambi\u00e9n de otros idiomas), o bien nacen de nuestro propio almac\u00e9n de herramientas mediante la adici\u00f3n de nuevas piezas",
+                "date_created": "2018-02-19T08:05:59.315286"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "en resumen",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "resumiendo\r\n\r\n- in summary, to sum up,",
+                        "date_created": "2018-04-12T16:50:26.075833"
+                    },
+                    "vocab_entry_tags": [
+                        "en resumen"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "herramienta",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "utensilio de trabajo\r\n\r\n- tool",
+                        "date_created": "2018-04-12T16:47:44.345298"
+                    },
+                    "vocab_entry_tags": [
+                        "herramientas"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "almac\u00e9n",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "storage, warehouse",
+                        "date_created": "2018-04-12T16:50:25.864667"
+                    },
+                    "vocab_entry_tags": [
+                        "almac\u00e9n"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "idioma",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "lenguaje, lengua\r\n\r\n- language",
+                        "date_created": "2018-04-12T16:50:20.875090"
+                    },
+                    "vocab_entry_tags": [
+                        "idiomas"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "griego",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "- greek",
+                        "date_created": "2018-04-12T16:50:19.663778"
+                    },
+                    "vocab_entry_tags": [
+                        "griego"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "ajeno",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:50:25.464643"
+                    },
+                    "vocab_entry_tags": [
+                        "ajeno"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "a partir de",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "desde, basado en\r\n\r\n- from, based on",
+                        "date_created": "2018-04-12T16:50:25.398053"
+                    },
+                    "vocab_entry_tags": [
+                        "a partir de"
+                    ]
+                }
+            ]
+        },
+        "4": {
+            "vocab_context_data": {
+                "content": "Por eso la **sem\u00e1ntica** es el estudio de los significados de las palabras, porque las piezas que componen cada palabra quieren decirnos eso.",
+                "date_created": "2018-02-19T08:05:59.715576"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "decir",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "expresar con palabras, opinar\r\n\r\n- say, tell",
+                        "date_created": "2018-04-12T16:50:25.197686"
+                    },
+                    "vocab_entry_tags": [
+                        "decirnos"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "componer",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "formar con elementos\r\n\r\n- form, make up, put together",
+                        "date_created": "2018-04-12T16:50:25.009013"
+                    },
+                    "vocab_entry_tags": [
+                        "componen"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "significado",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "definici\u00f3n, sentido\r\n\r\n- meaning, sense",
+                        "date_created": "2018-04-12T16:50:20.052323"
+                    },
+                    "vocab_entry_tags": [
+                        "significados"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "sem\u00e1ntica",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "El estudio de los significados de las palabras.\r\n\r\n- semantics",
+                        "date_created": "2018-04-12T16:50:24.697811"
+                    },
+                    "vocab_entry_tags": [
+                        "sem\u00e1ntica"
+                    ]
+                }
+            ]
+        },
+        "5": {
+            "vocab_context_data": {
+                "content": "As\u00ed que sem\u00e1ntica y etimolog\u00eda son cuestiones que guardan relaci\u00f3n con el significado de las palabras; en el primer caso sem\u00e1ntica\u2014, con el sentido que las palabras tienen ahora;\r\nen el segundo \u2014etimolog\u00eda\u2014, con el origen de ese sentido y la evoluci\u00f3n que ha ido experimentando hasta nuestros d\u00edas. La etimolog\u00eda es realmente \u00abla verdad de las palabras\u00bb.",
+                "date_created": "2018-02-19T08:06:00.026682"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "cuesti\u00f3n",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:50:06.617019"
+                    },
+                    "vocab_entry_tags": [
+                        "cuestiones"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "sem\u00e1ntica",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "El estudio de los significados de las palabras.\r\n\r\n- semantics",
+                        "date_created": "2018-04-12T16:50:24.697811"
+                    },
+                    "vocab_entry_tags": [
+                        "sem\u00e1ntica"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "etimolog\u00eda",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "pocedencia de una palabra\r\n\r\n- etymology",
+                        "date_created": "2018-04-12T16:50:24.431180"
+                    },
+                    "vocab_entry_tags": [
+                        "etimolog\u00eda"
+                    ]
+                }
+            ]
+        },
+        "6": {
+            "vocab_context_data": {
+                "content": "Cuando buscamos el origen de una palabra, estamos persiguiendo su **etimolog\u00eda**.",
+                "date_created": "2018-02-19T08:06:00.226361"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "buscar",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "Intentar hallar; recoger.\r\n\r\n- look for, search for, seek",
+                        "date_created": "2018-04-12T16:50:24.497818"
+                    },
+                    "vocab_entry_tags": [
+                        "buscamos"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "etimolog\u00eda",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "pocedencia de una palabra\r\n\r\n- etymology",
+                        "date_created": "2018-04-12T16:50:24.431180"
+                    },
+                    "vocab_entry_tags": [
+                        "etimolog\u00eda"
+                    ]
+                }
+            ]
+        },
+        "7": {
+            "vocab_context_data": {
+                "content": "Y los llamamos **morfemas flexivos** o desinencias si lo que hacen es indicar g\u00e9nero, n\u00famero, persona..., es decir, distintas formas de una misma palabra.",
+                "date_created": "2018-02-19T08:06:00.326718"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "es decir",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "en otras palabras\r\n\r\n- that is, meaning, that's to say",
+                        "date_created": "2018-04-12T16:50:21.208485"
+                    },
+                    "vocab_entry_tags": [
+                        "es decir"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "morfema flexivo",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "desinencia: indica g\u00e9nero, n\u00famero, persona..., es decir, distintas formas de una misma palabra\r\n\r\n- desinence",
+                        "date_created": "2018-04-12T16:50:23.953370"
+                    },
+                    "vocab_entry_tags": [
+                        "morfemas flexivos"
+                    ]
+                }
+            ]
+        },
+        "8": {
+            "vocab_context_data": {
+                "content": "Los **morfemas** son los componentes m\u00ednimos dotados de significado (l\u00e9xico o gramatical) que construyen una palabra. Formas peque\u00f1as que van montando una forma grande",
+                "date_created": "2018-02-19T08:06:00.793313"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "construir",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "edificar, erigir\r\n\r\n- build, construct",
+                        "date_created": "2018-04-12T16:50:23.775570"
+                    },
+                    "vocab_entry_tags": [
+                        "construyen"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "l\u00e9xico",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "relativo al vocabulario\r\n\r\n- lexical, vocabulary",
+                        "date_created": "2018-04-12T16:48:42.801750"
+                    },
+                    "vocab_entry_tags": [
+                        "l\u00e9xico"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "significado",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "definici\u00f3n, sentido\r\n\r\n- meaning, sense",
+                        "date_created": "2018-04-12T16:50:20.052323"
+                    },
+                    "vocab_entry_tags": [
+                        "significado"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "morfema",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "El componente m\u00ednimo dotado de significado (l\u00e9xico o gramatical) que construye una palabra.\r\n\r\n- morpheme",
+                        "date_created": "2018-04-12T16:50:23.275454"
+                    },
+                    "vocab_entry_tags": [
+                        "morfemas"
+                    ]
+                }
+            ]
+        },
+        "9": {
+            "vocab_context_data": {
+                "content": "Cuando dos vocales juntas no forman parte del mismo\r\ngolpe de voz, sino que constituyen dos impulsos distintos\r\n\u2014como sucede en _cro_-_ar_\u2014, no se llama diptongo sino **hiato**.",
+                "date_created": "2018-02-19T08:06:01.082474"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "constituir",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "componer, formar, integrar\r\n\r\n- make, form, constitute",
+                        "date_created": "2018-04-12T16:48:47.402498"
+                    },
+                    "vocab_entry_tags": [
+                        "constituyen"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "vocal",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "una letra no consonante: _a, e, i, o, u_\r\n\r\n- vowel",
+                        "date_created": "2018-04-12T16:50:22.919806"
+                    },
+                    "vocab_entry_tags": [
+                        "vocales"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "suceder",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "ocurrir, acontecer\r\n\r\n- occur, happen, take place",
+                        "date_created": "2018-04-12T16:50:22.753146"
+                    },
+                    "vocab_entry_tags": [
+                        "sucede"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "hiato",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "vocales no diptongo, un &laquo;rompediptongo&raquo;, dos vocales contiguas que pertenecen a s\u00edlabas distintas\r\n\r\n- hiatus",
+                        "date_created": "2018-04-12T16:50:22.586086"
+                    },
+                    "vocab_entry_tags": [
+                        "hiato"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "diptongo",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "s\u00edlaba de dos vocales\r\n\r\n- dipthong",
+                        "date_created": "2018-04-12T16:50:20.397123"
+                    },
+                    "vocab_entry_tags": [
+                        "diptongo"
+                    ]
+                }
+            ]
+        },
+        "10": {
+            "vocab_context_data": {
+                "content": "Si dividi\u00e9ramos la lengua m\u00e1s all\u00e1 de la letra o el fonema, s\u00f3lo encontrar\u00edamos el silencio. La letra y el fonema van paralelos, de modo que una es el reflejo del otro y viceversa. Cuando la letra se mira al espejo, encuentra el fonema: su correspondiente en el otro lado de la lengua. Cuando el fonema se observa en las aguas del lago, en realidad ve una letra flotando sobre ellas.",
+                "date_created": "2018-02-19T08:06:01.326876"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "fonema",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "unidad fonol\u00f3gica, unidad m\u00ednima del lenguaje oral\r\n\r\n- phoneme",
+                        "date_created": "2018-04-12T16:50:18.455746"
+                    },
+                    "vocab_entry_tags": [
+                        "fonema"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "dividir",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "dividir (entre)",
+                        "date_created": "2018-04-12T16:50:19.344498"
+                    },
+                    "vocab_entry_tags": [
+                        "dividi\u00e9ramos"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "viceversa",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "rec\u00edprico\r\n\r\n- vice versa",
+                        "date_created": "2018-04-12T16:49:19.451426"
+                    },
+                    "vocab_entry_tags": [
+                        "viceversa"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "reflejo",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "imagen reflejada\r\n\r\n- reflection",
+                        "date_created": "2018-04-12T16:50:22.097271"
+                    },
+                    "vocab_entry_tags": [
+                        "reflejo"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "paralelo",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "equidistante, que no intersecta\r\n\r\n- parallel",
+                        "date_created": "2018-04-12T16:50:21.908554"
+                    },
+                    "vocab_entry_tags": [
+                        "paralelos"
+                    ]
+                }
+            ]
+        },
+        "11": {
+            "vocab_context_data": {
+                "content": "Otra cosa es la **morfolog\u00eda**. Esto ya tiene su gracia, porque se trata de empezar por lo m\u00e1s peque\u00f1o de la escritura, lo cual da idea de que iremos caminando sin esfuerzo hacia lo m\u00e1s grande.",
+                "date_created": "2018-02-19T08:06:01.571427"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "tratarse de",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "Referirse a cierto asunto u ocuparse de \u00e9l.\r\n\r\n- regarding, be about, dealing with",
+                        "date_created": "2018-04-12T16:50:21.719644"
+                    },
+                    "vocab_entry_tags": [
+                        "se trata de"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "tener gracia",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "ser divertido\r\n\r\n- have grace, be amusing, be funny",
+                        "date_created": "2018-04-12T16:50:21.652967"
+                    },
+                    "vocab_entry_tags": [
+                        "tiene su gracia"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "morfolog\u00eda",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "estudio de la forma, gram\u00e1tica, estructura\r\n\r\n- morphology",
+                        "date_created": "2018-04-12T16:50:21.464125"
+                    },
+                    "vocab_entry_tags": [
+                        "morfolog\u00eda"
+                    ]
+                }
+            ]
+        },
+        "12": {
+            "vocab_context_data": {
+                "content": "Muchas gram\u00e1ticas empiezan con un denso cap\u00edtulo dedicado a la fonolog\u00eda; es decir, referido a la manera en que pronunciamos los sonidos que forman el lenguaje.",
+                "date_created": "2018-02-19T08:06:01.849258"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "fonolog\u00eda",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "estudio de los fonemas\r\n\r\n- phonology",
+                        "date_created": "2018-04-12T16:50:21.375103"
+                    },
+                    "vocab_entry_tags": [
+                        "fonolog\u00eda"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "es decir",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "en otras palabras\r\n\r\n- that is, meaning, that's to say",
+                        "date_created": "2018-04-12T16:50:21.208485"
+                    },
+                    "vocab_entry_tags": [
+                        "es decir"
+                    ]
+                }
+            ]
+        },
+        "13": {
+            "vocab_context_data": {
+                "content": "He aqu\u00ed la aut\u00e9ntica y genuina diferencia entre vocales y consonantes. Aqu\u00e9llas pueden constituir por s\u00ed mismas una s\u00edlaba y hasta una palabra; pero las consonantes \r\n necesitan ir acompa\u00f1adas por una vocal (excepto, como hemos dicho, la letra consonante y, que puede ir sola si equivale al fonema o sonido /i/).",
+                "date_created": "2018-02-19T08:06:02.060404"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "fonema",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "unidad fonol\u00f3gica, unidad m\u00ednima del lenguaje oral\r\n\r\n- phoneme",
+                        "date_created": "2018-04-12T16:50:18.455746"
+                    },
+                    "vocab_entry_tags": [
+                        "fonema"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "equivaler",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "ser igual (suele ir con a)\r\n\r\n- be equal to, be equivalent to",
+                        "date_created": "2018-04-12T16:47:46.891035"
+                    },
+                    "vocab_entry_tags": [
+                        "equivale"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "s\u00edlaba",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "grupo fon\u00e9tico\r\n\r\n- syllable",
+                        "date_created": "2018-04-12T16:50:18.655708"
+                    },
+                    "vocab_entry_tags": [
+                        "s\u00edlaba"
+                    ]
+                }
+            ]
+        },
+        "14": {
+            "vocab_context_data": {
+                "content": "El idioma espa\u00f1ol tiene 27 letras:\r\n\r\na, b, c, d, e, f, g, h, i, j, k, l, m, n, \u00f1, o, p, q, r, s, t, u, v, w, x, y, z.",
+                "date_created": "2018-02-19T08:06:02.338091"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "idioma",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "lenguaje, lengua\r\n\r\n- language",
+                        "date_created": "2018-04-12T16:50:20.875090"
+                    },
+                    "vocab_entry_tags": [
+                        "idioma"
+                    ]
+                }
+            ]
+        },
+        "15": {
+            "vocab_context_data": {
+                "content": "Si se sit\u00faan dos vocales juntas, puede ocurrir que formen un solo golpe de voz, y por tanto un diptongo (como en la primera s\u00edlaba de _cuatro_: _cua-tro_, donde podr\u00edamos inventar\r\nla palabra \u00abtrocua\u00bb con las mismas piezas y ver que cua constituye una sola s\u00edlaba), o que formen dos golpes de voz, y por tanto dos s\u00edlabas (como en _cro-ar_, donde podr\u00edamos alterar\r\nlas dos s\u00edlabas y crear la palabra \u00abarcro\u00bb, de modo que tambi\u00e9n se comprueba que _cro_ es independiente de _ar_, y por tanto el grupo / oa / no forma una s\u00edlaba, sino dos)",
+                "date_created": "2018-02-19T08:06:02.395157"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "poder",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:50:20.641655"
+                    },
+                    "vocab_entry_tags": [
+                        "podr\u00edamos"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "de modo que",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "de manera que\r\n\r\n- so that, in order that, in such a way",
+                        "date_created": "2018-04-12T16:50:20.574694"
+                    },
+                    "vocab_entry_tags": [
+                        "de modo que"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "diptongo",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "s\u00edlaba de dos vocales\r\n\r\n- dipthong",
+                        "date_created": "2018-04-12T16:50:20.397123"
+                    },
+                    "vocab_entry_tags": [
+                        "diptongo"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "s\u00edlaba",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "grupo fon\u00e9tico\r\n\r\n- syllable",
+                        "date_created": "2018-04-12T16:50:18.655708"
+                    },
+                    "vocab_entry_tags": [
+                        "s\u00edlaba",
+                        "s\u00edlabas"
+                    ]
+                }
+            ]
+        },
+        "16": {
+            "vocab_context_data": {
+                "content": "La unidad m\u00ednima de la lengua escrita es la **letra**. La unidad m\u00ednima del lenguaje oral es el **fonema**.",
+                "date_created": "2018-02-19T08:06:02.716102"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "unidad",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "porci\u00f3n indivisible de algo\r\n\r\n- unit",
+                        "date_created": "2018-04-12T16:50:19.830487"
+                    },
+                    "vocab_entry_tags": [
+                        "unidad"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "fonema",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "unidad fonol\u00f3gica, unidad m\u00ednima del lenguaje oral\r\n\r\n- phoneme",
+                        "date_created": "2018-04-12T16:50:18.455746"
+                    },
+                    "vocab_entry_tags": [
+                        "fonema"
+                    ]
+                }
+            ]
+        },
+        "17": {
+            "vocab_context_data": {
+                "content": "La unidad m\u00ednima de significado es el **semantema**. Por ejemplo, _mar_ es es el semantema de _ultramarinos_.",
+                "date_created": "2018-02-19T08:06:03.483531"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "significado",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "definici\u00f3n, sentido\r\n\r\n- meaning, sense",
+                        "date_created": "2018-04-12T16:50:20.052323"
+                    },
+                    "vocab_entry_tags": [
+                        "significado"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "semantema",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "la unidad m\u00ednima de significado\r\n\r\n- semanteme [si-**man**-teem]",
+                        "date_created": "2018-04-12T16:50:19.963313"
+                    },
+                    "vocab_entry_tags": [
+                        "semantema"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "por ejemplo",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "introduce un ejemplo\r\n\r\n- for example",
+                        "date_created": "2018-04-12T16:50:19.896719"
+                    },
+                    "vocab_entry_tags": [
+                        "por ejemplo"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "unidad",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "porci\u00f3n indivisible de algo\r\n\r\n- unit",
+                        "date_created": "2018-04-12T16:50:19.830487"
+                    },
+                    "vocab_entry_tags": [
+                        "unidad"
+                    ]
+                }
+            ]
+        },
+        "18": {
+            "vocab_context_data": {
+                "content": "Las letras  (los fonemas) se unen entre s\u00ed en s\u00edlabas, que son los  compartimentos en que se divide una palabra. (S\u00edlaba procede del lat\u00edn _syllaba_, y \u00e9ste del griego _syllab\u00e9_).",
+                "date_created": "2018-02-19T08:06:02.916117"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "griego",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "- greek",
+                        "date_created": "2018-04-12T16:50:19.663778"
+                    },
+                    "vocab_entry_tags": [
+                        "griego"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "dividir",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "dividir (entre)",
+                        "date_created": "2018-04-12T16:50:19.344498"
+                    },
+                    "vocab_entry_tags": [
+                        "se divide"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "compartimento",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "secci\u00f3n, cabina,\r\n\r\n- compartment",
+                        "date_created": "2018-04-12T16:50:18.996807"
+                    },
+                    "vocab_entry_tags": [
+                        "compartimentos"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "s\u00edlaba",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "grupo fon\u00e9tico\r\n\r\n- syllable",
+                        "date_created": "2018-04-12T16:50:18.655708"
+                    },
+                    "vocab_entry_tags": [
+                        "s\u00edlaba",
+                        "s\u00edlabas"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "fonema",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "unidad fonol\u00f3gica, unidad m\u00ednima del lenguaje oral\r\n\r\n- phoneme",
+                        "date_created": "2018-04-12T16:50:18.455746"
+                    },
+                    "vocab_entry_tags": [
+                        "fonemas"
+                    ]
+                }
+            ]
+        },
+        "19": {
+            "vocab_context_data": {
+                "content": "Los llamamos **morfemas derivativos** si se a\u00f1aden a la ra\u00edz para <span>formar</span> otra palabra distinta: **pre**fijos si **pre**ceden a la ra\u00edz; **su**fijos si la **su**ceden; **inter**fijos, si van en su **inter**ior; o **a**fijos si no queremos resaltar ni una cosa ni otra o reunidos a todos ellos en una sola expresi\u00f3n (**a**fijos, o sea que &laquo;**a**h, no se sabe&raquo;: pueden unirse **a** la palabra por cualquier sitio).",
+                "date_created": "2018-02-19T08:06:00.460123"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "unirse a",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "- join",
+                        "date_created": "2018-04-12T16:48:23.575349"
+                    },
+                    "vocab_entry_tags": [
+                        "unirse a"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "saber",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:47:21.452429"
+                    },
+                    "vocab_entry_tags": [
+                        "sabe"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "o sea",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "esto es, en otras palabras\r\n\r\n- I mean, that is, in other words",
+                        "date_created": "2018-04-12T16:50:18.063510"
+                    },
+                    "vocab_entry_tags": [
+                        "o sea"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "sufijo",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "Morfema que sucede a la ra\u00edz.\r\n\r\n- suffix",
+                        "date_created": "2018-04-12T16:50:17.896923"
+                    },
+                    "vocab_entry_tags": [
+                        "sufijos"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "prefijo",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "Morfema que precede a la ra\u00edz.\r\n\r\n- prefix",
+                        "date_created": "2018-04-12T16:50:17.830169"
+                    },
+                    "vocab_entry_tags": [
+                        "prefijos"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "a\u00f1adir",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "agregar, sumar, incorporar\r\n\r\n- add, put in, throw in",
+                        "date_created": "2018-04-12T16:50:17.641221"
+                    },
+                    "vocab_entry_tags": [
+                        "se a\u00f1aden"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "morfema derivativo",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "Morfema que se a\u00f1ade a la ra\u00edz para formar otra palabra distinta.\r\n\r\n- derivational morpheme",
+                        "date_created": "2018-04-12T16:50:17.575229"
+                    },
+                    "vocab_entry_tags": [
+                        "morfemas derivativos"
+                    ]
+                }
+            ]
+        }
+    }
+}

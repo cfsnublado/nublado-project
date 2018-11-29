@@ -1,0 +1,1552 @@
+{
+    "vocab_project_data": {
+        "name": "Spanish Reading"
+    },
+    "vocab_source_data": {
+        "source_type": 1,
+        "name": "Homo Deus: A Brief History of Tomorrow",
+        "description": "",
+        "date_created": "2018-08-10T06:23:53.340938"
+    },
+    "vocab_contexts": {
+        "1": {
+            "vocab_context_data": {
+                "content": "Whatever you are today - be it a devout Hindu cricket player or an aspiring lesbian journalist - in an upgraded world you will feel like a Neanderthal hunter in Wall Street. You won't belong.",
+                "date_created": "2018-02-19T08:04:27.600392"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "en",
+                        "entry": "be it",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:47:34.156409"
+                    },
+                    "vocab_entry_tags": [
+                        "be it"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "en",
+                        "entry": "neanderthal",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:47:34.011888"
+                    },
+                    "vocab_entry_tags": [
+                        "neanderthal"
+                    ]
+                }
+            ]
+        },
+        "2": {
+            "vocab_context_data": {
+                "content": "According to this view, free-market capitalism and state-controlled communism aren't competing ideologies, ethical creeds or political institutions. They are, in essence, competing data-processing systems. Capitalism uses distributed processing, whereas communism relies on centralized processing. Capitalism processes data by directly connecting all producers and consumers to one another and allowing them to exchange information freely and make decisions independently.",
+                "date_created": "2018-02-19T08:04:27.818349"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "en",
+                        "entry": "ideology",
+                        "pronunciation_spelling": "ahy-dee-**ol**-uh-jee",
+                        "pronunciation_ipa": "",
+                        "description": "the body of doctrine, myth, belief, etc., that guides an individual, social movement, institution, class, or large group\r\n\r\n- ideolog\u00eda, doctrina",
+                        "date_created": "2018-04-12T16:47:28.388886"
+                    },
+                    "vocab_entry_tags": [
+                        "ideologies"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "en",
+                        "entry": "communism",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "a system of social organization in which all economic and social activity is controlled by a totalitarian state dominated by a single and self-perpetuating political party\r\n\r\n- comunismo",
+                        "date_created": "2018-04-12T16:47:33.811854"
+                    },
+                    "vocab_entry_tags": [
+                        "communism"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "en",
+                        "entry": "capitalism",
+                        "pronunciation_spelling": "**kap**-i-tl-iz-uh m",
+                        "pronunciation_ipa": "",
+                        "description": "an economic system in which investment in and ownership of the means of production, distribution, and exchange of wealth is made and maintained chiefly by private individuals or corporation\r\n\r\n- capitalismo",
+                        "date_created": "2018-04-12T16:47:33.678566"
+                    },
+                    "vocab_entry_tags": [
+                        "capitalism"
+                    ]
+                }
+            ]
+        },
+        "3": {
+            "vocab_context_data": {
+                "content": "This chapter is dedicated to the more conservative creed of techno-humanism, which still sees humans as the apex of creation and clings to many traditional humanist values. Techno-humanism agrees that _Homo sapiens_ as we know it has run its historical course and will no longer be relevant tin the future, but concludes that we should therefore use technology in order to create _Homo deus_  &mdash; a much superior human model.  _Homo deus_ will retain some essential human features, but will also enjoy upgraded physical and mental abilities that will enable it to hold its own even against the most sophisticated non-conscious algorithms.",
+                "date_created": "2018-02-19T08:04:27.974083"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "en",
+                        "entry": "homo deus",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:47:24.842497"
+                    },
+                    "vocab_entry_tags": [
+                        "homo deus"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "en",
+                        "entry": "homo sapiens",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:47:24.733607"
+                    },
+                    "vocab_entry_tags": [
+                        "homo sapiens"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "en",
+                        "entry": "apex",
+                        "pronunciation_spelling": "**ey**-peks",
+                        "pronunciation_ipa": "",
+                        "description": "hight point, summit\r\n\r\n- cima, apogeo",
+                        "date_created": "2018-04-12T16:47:33.269081"
+                    },
+                    "vocab_entry_tags": [
+                        "apex"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "en",
+                        "entry": "technology",
+                        "pronunciation_spelling": "tek-**nol**-uh-jee",
+                        "pronunciation_ipa": "",
+                        "description": "the branch of knowledge that deals with the creation and use of technical means and their interrelation with life, society, and the environment, drawing upon such subjects as industrial arts, engineering, applied science, and pure science\r\n\r\n- tecnolog\u00eda",
+                        "date_created": "2018-04-12T16:47:33.134134"
+                    },
+                    "vocab_entry_tags": [
+                        "technology"
+                    ]
+                }
+            ]
+        },
+        "4": {
+            "vocab_context_data": {
+                "content": "For all you know, the year might be 2216 and you are a bored teenager immersed inside a 'virtual world' game that simulates the primitive and exciting world of the early twenty-first century. Once you acknowledge the mere feasibility of this scenario, mathematics leads you to a very scary conclusion: since there is only one real world, whereas the number of potential virtual worlds is infinite, the probability that you happen to inhabit the sole real world is almost zero.",
+                "date_created": "2018-02-19T08:04:28.174505"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "en",
+                        "entry": "feasibility",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "possibility of doing\r\n\r\n- viabilidad",
+                        "date_created": "2018-04-12T16:47:32.986793"
+                    },
+                    "vocab_entry_tags": [
+                        "feasibility"
+                    ]
+                }
+            ]
+        },
+        "5": {
+            "vocab_context_data": {
+                "content": "These three processes raise three key questions, which I hope will stick in your mind long after you have finished this book:\r\n\r\n1. Are organisms really just algorithms, and is life really just data processing?\r\n\r\n2. What's more valuable &mdash; intelligence or consciousness?\r\n\r\n3. What will happen to society, politics and daily life when non-conscious but highly intelligent algorithms know us better than we know ourselves?",
+                "date_created": "2018-02-19T08:04:28.240756"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "en",
+                        "entry": "algorithm",
+                        "pronunciation_spelling": "**a**l-guh-rith-uh m",
+                        "pronunciation_ipa": "",
+                        "description": "a set of rules for solving a problem in a finite number of steps, as for finding the greatest common divisor\r\n\r\n- algoritmo",
+                        "date_created": "2018-04-12T16:47:24.084856"
+                    },
+                    "vocab_entry_tags": [
+                        "algorithms"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "en",
+                        "entry": "conscious",
+                        "pronunciation_spelling": "**kon**-shuh s",
+                        "pronunciation_ipa": "",
+                        "description": "Aware of one's own existence, sensations, thoughts, surroundings, etc. \r\n\r\nFully aware of or sensitive to something (often followed by of).\r\n\r\n- consciente",
+                        "date_created": "2018-04-12T16:47:22.932104"
+                    },
+                    "vocab_entry_tags": [
+                        "conscious"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "en",
+                        "entry": "consciousness",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:47:27.766742"
+                    },
+                    "vocab_entry_tags": [
+                        "consciousness"
+                    ]
+                }
+            ]
+        },
+        "6": {
+            "vocab_context_data": {
+                "content": "Even highly experienced lawyers and detectives cannot easily spot duplicity merely by observing people's facial expressions and tone of voice.",
+                "date_created": "2018-02-19T08:04:28.385478"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "en",
+                        "entry": "duplicity",
+                        "pronunciation_spelling": "doo-**plis**-i-tee",
+                        "pronunciation_ipa": "",
+                        "description": "deceitfulness in speech or conduct, as by speaking or acting in two different ways to different people concerning the same matter; double-dealing\r\n\r\n- duplicidad, hipocres\u00eda",
+                        "date_created": "2018-04-12T16:47:32.731159"
+                    },
+                    "vocab_entry_tags": [
+                        "duplicity"
+                    ]
+                }
+            ]
+        },
+        "7": {
+            "vocab_context_data": {
+                "content": "Seventy thousand years ago the Cognitive Revolution transformed the Sapiens mind, thereby turning an insignificant African ape into the ruler of the world. The improved Sapiens minds suddenly had access to the vast intersubjective realm, which enabled them to create gods and corporations, to build cities and empires, to invent writing and money, and eventually to split the atom and reach the moon. As far as we know , this earth-shattering revolution resulted from a few small changes in the Sapiens DNA and a slight rewiring of the Sapiens brain.",
+                "date_created": "2018-02-19T08:04:28.452016"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "en",
+                        "entry": "cognitive revolution",
+                        "pronunciation_spelling": "**kog**-ni-tiv rev-uh-**loo**-shuh n",
+                        "pronunciation_ipa": "",
+                        "description": "The \"spark\" and rewiring of Sapen's brains to allow it to access the intersubjective realm, thus elevating Sapiens to the top of the species hierarchy and granting it world domination.\r\n\r\n- revoluci\u00f3n cognitiva",
+                        "date_created": "2018-04-12T16:47:32.591339"
+                    },
+                    "vocab_entry_tags": [
+                        "cognitive revolution"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "en",
+                        "entry": "sapiens",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:47:32.389275"
+                    },
+                    "vocab_entry_tags": [
+                        "sapiens"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "en",
+                        "entry": "intersubjective",
+                        "pronunciation_spelling": "in-ter-suh b-**jek**-tiv",
+                        "pronunciation_ipa": "",
+                        "description": "comprehensible to, relating to, or used by a number of persons, as a concept or language.",
+                        "date_created": "2018-04-12T16:47:32.255796"
+                    },
+                    "vocab_entry_tags": [
+                        "intersubjective"
+                    ]
+                }
+            ]
+        },
+        "8": {
+            "vocab_context_data": {
+                "content": "If this sounds unscientific or downright eccentric, it is because people often misundersand the meaning of divinity. Divinity isn't a vague metaphysical quality. And it isn't the same as omnipotence. When speaking of upgrading humans into gods, think more in terms of Greek gods or Hindu devas rather than the omnipotent biblical sky father. Our descendants would still have their foibles, kinks and limitations, just as Zeus and Indra had theirs.",
+                "date_created": "2018-02-19T08:04:28.619063"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "en",
+                        "entry": "descendant",
+                        "pronunciation_spelling": "dih-**sen**-duh nt",
+                        "pronunciation_ipa": "",
+                        "description": "a person or animal that is descended from a specific ancestor; an offspring. \r\n\r\n something deriving in appearance, function, or general character from an earlier form. \r\n\r\n**Espa\u00f1ol** - descendiente",
+                        "date_created": "2018-04-12T16:47:22.278147"
+                    },
+                    "vocab_entry_tags": [
+                        "descendants"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "en",
+                        "entry": "omnipotent",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:47:32.053797"
+                    },
+                    "vocab_entry_tags": [
+                        "omnipotent"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "en",
+                        "entry": "omnipotence",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:47:31.945145"
+                    },
+                    "vocab_entry_tags": [
+                        "omnipotence"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "en",
+                        "entry": "foible",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:47:31.812846"
+                    },
+                    "vocab_entry_tags": [
+                        "foibles"
+                    ]
+                }
+            ]
+        },
+        "9": {
+            "vocab_context_data": {
+                "content": "Scientists don't know how a collection of brain signals creates subjective experiences. Even more crucially, they don't know what could be the evolutionary benefit of such a phenomenon. It is the greatest lacuna in our understanding of life.",
+                "date_created": "2018-02-19T08:04:28.831176"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "en",
+                        "entry": "phenomenon",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "- fen\u00f3meno",
+                        "date_created": "2018-04-12T16:47:24.585094"
+                    },
+                    "vocab_entry_tags": [
+                        "phenomenon"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "en",
+                        "entry": "lacuna",
+                        "pronunciation_spelling": "luh-**kyoo**-nuh",
+                        "pronunciation_ipa": "l\u0259\u02c8kyu n\u0259",
+                        "description": "a gap or missing part, as in a manuscript, series, or logical argument; hiatus. \r\n\r\n- laguna",
+                        "date_created": "2018-04-12T16:47:31.611624"
+                    },
+                    "vocab_entry_tags": [
+                        "lacuna"
+                    ]
+                }
+            ]
+        },
+        "10": {
+            "vocab_context_data": {
+                "content": "A couple of centuries earlier Buddha had made an even more radical claim, teaching that he pursuit of pleasant sensations is in fact the very root of suffering. Such sensations are just ephemeral and meaningless vibrations. Even when we experience them, we don't react to them with contentment; rather, we just crave more.",
+                "date_created": "2018-02-19T08:04:28.964548"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "en",
+                        "entry": "ephemeral",
+                        "pronunciation_spelling": "ih-**fem**-er-uh l",
+                        "pronunciation_ipa": "\u026a\u02c8f\u025bm \u0259r \u0259l",
+                        "description": "lasting a very short time; short-lived; transitory: \r\n\r\n- ef\u00edmero",
+                        "date_created": "2018-04-12T16:47:23.806867"
+                    },
+                    "vocab_entry_tags": [
+                        "ephemeral"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "en",
+                        "entry": "pursuit",
+                        "pronunciation_spelling": "per-**soot**",
+                        "pronunciation_ipa": "",
+                        "description": "an effort to secure or attain; quest; the act of pursuing\r\n\r\n- persecuci\u00f3n, b\u00fasqueda",
+                        "date_created": "2018-04-12T16:47:31.334260"
+                    },
+                    "vocab_entry_tags": [
+                        "pursuit"
+                    ]
+                }
+            ]
+        },
+        "11": {
+            "vocab_context_data": {
+                "content": "People have been quarrelling about education methods for thousands of years. Whether in ancient China or Victorian Britain, everybody had his or her pet method, and vehemently opposed all alternatives. Yet hitherto everybody still agreed on one thing: in order to improve education , we need to change the schools. Today, for the first time in history, at least some people think it would be more efficient to change the pupils' biochemistry.",
+                "date_created": "2018-02-19T08:04:29.074956"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "en",
+                        "entry": "hitherto",
+                        "pronunciation_spelling": "**hith**-er-too",
+                        "pronunciation_ipa": "",
+                        "description": "up to this time; until now\r\n\r\n- hasta ahora, hasta el momento",
+                        "date_created": "2018-04-12T16:47:23.221167"
+                    },
+                    "vocab_entry_tags": [
+                        "hitherto"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "en",
+                        "entry": "vehemently",
+                        "pronunciation_spelling": "**vee**-uh-muh nt-lee",
+                        "pronunciation_ipa": "",
+                        "description": "characterized by rancor or anger; violent: \r\n\r\nstrongly emotional; intense or passionate: \r\n\r\n- vehementemente, intensamente",
+                        "date_created": "2018-04-12T16:47:27.166723"
+                    },
+                    "vocab_entry_tags": [
+                        "vehemently"
+                    ]
+                }
+            ]
+        },
+        "12": {
+            "vocab_context_data": {
+                "content": "We normally think that theist religions sanctified the great gods. We tend to forget that they sanctified humans, too. Hitherto _Homo sapiens_ had been just one actor in a cast of thousands. In the new theist drama Sapiens became the central hero around whom the entire universe revolved.",
+                "date_created": "2018-02-19T08:04:29.186135"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "en",
+                        "entry": "sanctify",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "to make holy; set apart as sacred; consecrate. \r\n\r\n- santificar",
+                        "date_created": "2018-04-12T16:47:28.813071"
+                    },
+                    "vocab_entry_tags": [
+                        "sanctified"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "en",
+                        "entry": "homo sapiens",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:47:24.733607"
+                    },
+                    "vocab_entry_tags": [
+                        "homo sapiens"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "en",
+                        "entry": "hitherto",
+                        "pronunciation_spelling": "**hith**-er-too",
+                        "pronunciation_ipa": "",
+                        "description": "up to this time; until now\r\n\r\n- hasta ahora, hasta el momento",
+                        "date_created": "2018-04-12T16:47:23.221167"
+                    },
+                    "vocab_entry_tags": [
+                        "hitherto"
+                    ]
+                }
+            ]
+        },
+        "13": {
+            "vocab_context_data": {
+                "content": "This is the paradox of historical knowledge. Knowledge that does not change behaviour is useless. But knowledge that changes behaviour quickly loses its relevance. The more data we have and the better we understand history, the faster history alters its course and the faster our knowledge becomes outdated.",
+                "date_created": "2018-02-19T08:04:29.330604"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "en",
+                        "entry": "paradox",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "a statement or proposition that seems self-contradictory or absurd but in reality expresses a possible truth.\r\n\r\n- paradoja",
+                        "date_created": "2018-04-12T16:47:30.423839"
+                    },
+                    "vocab_entry_tags": [
+                        "paradox"
+                    ]
+                }
+            ]
+        },
+        "14": {
+            "vocab_context_data": {
+                "content": "In seeking bliss and immortality humans are in fact trying to upgrade themselves into gods. Not just because these are divine qualities, but because in order to overcome old age and misery humans will first have to acquire godlike control of their own biological substratum.",
+                "date_created": "2018-02-19T08:04:29.385937"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "en",
+                        "entry": "substratum",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "something that is spread or laid under something else; a stratum or layer lying under another.\r\n\r\n something that underlies or serves as a basis or foundation. \r\n\r\n- substrato, subsuelo",
+                        "date_created": "2018-04-12T16:47:30.167093"
+                    },
+                    "vocab_entry_tags": [
+                        "substratum"
+                    ]
+                }
+            ]
+        },
+        "15": {
+            "vocab_context_data": {
+                "content": "Yet if we take the really grand view of life, all other problems and developments are overshadowed by three interlinked processes:\r\n\r\n1. Science is converging on an all-encompassing dogma, which says that organisms are algorithms and life is data processing.\r\n\r\n2. Intelligence is decoupling from consciousness.\r\n\r\n3. Non-conscious but highly intelligent algorithms may soon know us better than we know ourselves.",
+                "date_created": "2018-02-19T08:04:29.441705"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "en",
+                        "entry": "consciousness",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:47:27.766742"
+                    },
+                    "vocab_entry_tags": [
+                        "consciousness"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "en",
+                        "entry": "algorithm",
+                        "pronunciation_spelling": "**a**l-guh-rith-uh m",
+                        "pronunciation_ipa": "",
+                        "description": "a set of rules for solving a problem in a finite number of steps, as for finding the greatest common divisor\r\n\r\n- algoritmo",
+                        "date_created": "2018-04-12T16:47:24.084856"
+                    },
+                    "vocab_entry_tags": [
+                        "algorithms"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "en",
+                        "entry": "science",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "- ciencia",
+                        "date_created": "2018-04-12T16:47:29.687515"
+                    },
+                    "vocab_entry_tags": [
+                        "science"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "en",
+                        "entry": "conscious",
+                        "pronunciation_spelling": "**kon**-shuh s",
+                        "pronunciation_ipa": "",
+                        "description": "Aware of one's own existence, sensations, thoughts, surroundings, etc. \r\n\r\nFully aware of or sensitive to something (often followed by of).\r\n\r\n- consciente",
+                        "date_created": "2018-04-12T16:47:22.932104"
+                    },
+                    "vocab_entry_tags": [
+                        "conscious"
+                    ]
+                }
+            ]
+        },
+        "16": {
+            "vocab_context_data": {
+                "content": "The fact that dogs can be party to emotional relationships with humans convinces most dog owners that dogs are not mindless automata.",
+                "date_created": "2018-02-19T08:04:29.663937"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "en",
+                        "entry": "automata",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "robot, mechanical device\r\n\r\n- aut\u00f3mata",
+                        "date_created": "2018-04-12T16:47:29.377906"
+                    },
+                    "vocab_entry_tags": [
+                        "automata"
+                    ]
+                }
+            ]
+        },
+        "17": {
+            "vocab_context_data": {
+                "content": "Having read this short history of the lawn, when you now come to plan your dream house you might think twice about having a lawn in the front yard. You are of course still free to do it. But you are also free to shake off the cultural cargo bequeathed to you by European dukes, capitalist moguls and the Simpsons - and imagine for yourself a Japanese rock garden, or some altogether new creation.",
+                "date_created": "2018-02-19T08:04:29.719619"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "en",
+                        "entry": "bequeath",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:47:29.155749"
+                    },
+                    "vocab_entry_tags": [
+                        "bequeathed"
+                    ]
+                }
+            ]
+        },
+        "18": {
+            "vocab_context_data": {
+                "content": "Throughout history, religions and ideologies did not sanctify life itself. They always sanctified something above or beyond earthly existence, and were consequently quite tolerant of death.",
+                "date_created": "2018-02-19T08:04:29.774954"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "en",
+                        "entry": "ideology",
+                        "pronunciation_spelling": "ahy-dee-**ol**-uh-jee",
+                        "pronunciation_ipa": "",
+                        "description": "the body of doctrine, myth, belief, etc., that guides an individual, social movement, institution, class, or large group\r\n\r\n- ideolog\u00eda, doctrina",
+                        "date_created": "2018-04-12T16:47:28.388886"
+                    },
+                    "vocab_entry_tags": [
+                        "ideologies"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "en",
+                        "entry": "sanctify",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "to make holy; set apart as sacred; consecrate. \r\n\r\n- santificar",
+                        "date_created": "2018-04-12T16:47:28.813071"
+                    },
+                    "vocab_entry_tags": [
+                        "sanctified",
+                        "sanctify"
+                    ]
+                }
+            ]
+        },
+        "19": {
+            "vocab_context_data": {
+                "content": "What about terrorism, then? Even if central governments and powerful states have learned restraint, terrorists might have no such qualms about using new and destructive weapons.",
+                "date_created": "2018-02-19T08:04:29.886017"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "en",
+                        "entry": "qualm",
+                        "pronunciation_spelling": "kwahm",
+                        "pronunciation_ipa": "",
+                        "description": "an uneasy feeling or pang of conscience as to conduct; compunction: \r\n\r\n- aprensi\u00f3n, recelo, escr\u00fapulo",
+                        "date_created": "2018-04-12T16:47:26.121543"
+                    },
+                    "vocab_entry_tags": [
+                        "qualms"
+                    ]
+                }
+            ]
+        },
+        "20": {
+            "vocab_context_data": {
+                "content": "It is therefore likely that major epidemics will continue to endanger humankind in the future only if humankind itself creates them, in the service of some ruthless ideology.",
+                "date_created": "2018-02-19T08:04:29.941607"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "en",
+                        "entry": "ideology",
+                        "pronunciation_spelling": "ahy-dee-**ol**-uh-jee",
+                        "pronunciation_ipa": "",
+                        "description": "the body of doctrine, myth, belief, etc., that guides an individual, social movement, institution, class, or large group\r\n\r\n- ideolog\u00eda, doctrina",
+                        "date_created": "2018-04-12T16:47:28.388886"
+                    },
+                    "vocab_entry_tags": [
+                        "ideology"
+                    ]
+                }
+            ]
+        },
+        "21": {
+            "vocab_context_data": {
+                "content": "Doctors, in contrast, count on more than mere luck. Though science owes a huge debt to serendipity, doctors don't just throw different chemicals into test tubes, hoping to chance upon some new medicine.",
+                "date_created": "2018-02-19T08:04:30.008384"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "en",
+                        "entry": "serendipity",
+                        "pronunciation_spelling": "ser-uh n-**dip**-i-tee",
+                        "pronunciation_ipa": "",
+                        "description": "an aptitude for making desirable discoveries by accident; good fortune, luck\r\n\r\n- carambola, serendipia, descubrimiento inesperado",
+                        "date_created": "2018-04-12T16:47:28.155452"
+                    },
+                    "vocab_entry_tags": [
+                        "serendipity"
+                    ]
+                }
+            ]
+        },
+        "22": {
+            "vocab_context_data": {
+                "content": "When thousands of cars slowly edge their way through London, we call that a traffic jam, but it doesn't create some great Londonian consciousness that hovers high above Piccadilly and says to itself, \"Blimey, I feel jammed!\" When millions of people sell billions of shares, we call that an economic crisis, but no great Wall Street spirit grumbles, \"Shit, I feel I am in crisis.\" When trillions of water molecules coalesce in the sky we call that a cloud, but no cloud consciousness emerges to announce, \"I feel rainy.\" How is it then, that when billions of electric signals move around in my brain, a mind emerges athat feels \"I am furious!\"? As of 2016, we have absolutely no idea.",
+                "date_created": "2018-02-19T08:04:30.064138"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "en",
+                        "entry": "emerge",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:47:27.897019"
+                    },
+                    "vocab_entry_tags": [
+                        "emerges"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "en",
+                        "entry": "consciousness",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:47:27.766742"
+                    },
+                    "vocab_entry_tags": [
+                        "consciousness"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "en",
+                        "entry": "coalesce",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:47:27.533166"
+                    },
+                    "vocab_entry_tags": [
+                        "coalesce"
+                    ]
+                }
+            ]
+        },
+        "23": {
+            "vocab_context_data": {
+                "content": "The Turing Test is simply a replication of a mundane test every gay man had to undergo in 1950s Britain: can you pass for a straight man? Turing knew from personal experience that it didn't matter who you really were &mdash; it mattered only what others thought about you. According to Turing, in the future computers would be just like gay men in the 1950s. It won't matter whether computers will actually be conscious or not. it will matter only what people think about it.",
+                "date_created": "2018-02-19T08:04:30.208643"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "en",
+                        "entry": "conscious",
+                        "pronunciation_spelling": "**kon**-shuh s",
+                        "pronunciation_ipa": "",
+                        "description": "Aware of one's own existence, sensations, thoughts, surroundings, etc. \r\n\r\nFully aware of or sensitive to something (often followed by of).\r\n\r\n- consciente",
+                        "date_created": "2018-04-12T16:47:22.932104"
+                    },
+                    "vocab_entry_tags": [
+                        "conscious"
+                    ]
+                }
+            ]
+        },
+        "24": {
+            "vocab_context_data": {
+                "content": "Even diehard capitalists who vehemently resisted the Marxist prognosis still made use of the Marxist prognosis.",
+                "date_created": "2018-02-19T08:04:30.263958"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "en",
+                        "entry": "vehemently",
+                        "pronunciation_spelling": "**vee**-uh-muh nt-lee",
+                        "pronunciation_ipa": "",
+                        "description": "characterized by rancor or anger; violent: \r\n\r\nstrongly emotional; intense or passionate: \r\n\r\n- vehementemente, intensamente",
+                        "date_created": "2018-04-12T16:47:27.166723"
+                    },
+                    "vocab_entry_tags": [
+                        "vehemently"
+                    ]
+                }
+            ]
+        },
+        "25": {
+            "vocab_context_data": {
+                "content": "A host of tough technical problems still prevent Watson and its ilk from replacing most doctors tomorrow morning. Yet these technical problems , however difficult, need only be solved once.",
+                "date_created": "2018-02-19T08:04:30.319648"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "en",
+                        "entry": "ilk",
+                        "pronunciation_spelling": "ilk",
+                        "pronunciation_ipa": "",
+                        "description": "family, class, or kind\r\n\r\n- tipo, clase, \u00edndole",
+                        "date_created": "2018-04-12T16:47:27.008568"
+                    },
+                    "vocab_entry_tags": [
+                        "ilk"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "en",
+                        "entry": "technical",
+                        "pronunciation_spelling": "**tek**-ni-kuh l",
+                        "pronunciation_ipa": "",
+                        "description": "relating to  a specialist field, \r\n\r\n- t\u00e9cnico, especializado",
+                        "date_created": "2018-04-12T16:47:26.909431"
+                    },
+                    "vocab_entry_tags": [
+                        "technical"
+                    ]
+                }
+            ]
+        },
+        "26": {
+            "vocab_context_data": {
+                "content": "This is the best reason to learn history: not in order to predict the future, but to free yourself of the past and imagine alternative destinies. Of course this is not total freedom - we cannot avoid being shaped by the past. But some freedom is better than none.",
+                "date_created": "2018-02-19T08:04:30.419789"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "en",
+                        "entry": "destiny",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:47:26.777654"
+                    },
+                    "vocab_entry_tags": [
+                        "destinies"
+                    ]
+                }
+            ]
+        },
+        "27": {
+            "vocab_context_data": {
+                "content": "In order to really listen to themselves, some people must first turn down the volume of inner screams and diatribes.",
+                "date_created": "2018-02-19T08:04:30.475487"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "en",
+                        "entry": "diatribe",
+                        "pronunciation_spelling": "**dahy**-uh-trahyb",
+                        "pronunciation_ipa": "",
+                        "description": "A bitter, sharply abusive denunciation, attack, or criticism, rant.\r\n\r\n- diatriba",
+                        "date_created": "2018-04-12T16:47:26.512523"
+                    },
+                    "vocab_entry_tags": [
+                        "diatribes"
+                    ]
+                }
+            ]
+        },
+        "28": {
+            "vocab_context_data": {
+                "content": "Epicurus recommended, for example, to eat and drink in moderation, and to curb one's sexual appetites. In the long run, a deep friendship will make us more content than a frenzied orgy. Epicurus outlined an entire ethic of dos and don'ts to guide people along the treacherous path to happiness.",
+                "date_created": "2018-02-19T08:04:30.531039"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "en",
+                        "entry": "frenzy",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:47:26.353168"
+                    },
+                    "vocab_entry_tags": [
+                        "frenzied"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "en",
+                        "entry": "treacherous",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:47:26.277212"
+                    },
+                    "vocab_entry_tags": [
+                        "treacherous"
+                    ]
+                }
+            ]
+        },
+        "29": {
+            "vocab_context_data": {
+                "content": "Most modern people have ethical qualms about torture and rape because of the subjective experiences involved.",
+                "date_created": "2018-02-19T08:04:30.653050"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "en",
+                        "entry": "qualm",
+                        "pronunciation_spelling": "kwahm",
+                        "pronunciation_ipa": "",
+                        "description": "an uneasy feeling or pang of conscience as to conduct; compunction: \r\n\r\n- aprensi\u00f3n, recelo, escr\u00fapulo",
+                        "date_created": "2018-04-12T16:47:26.121543"
+                    },
+                    "vocab_entry_tags": [
+                        "qualms"
+                    ]
+                }
+            ]
+        },
+        "30": {
+            "vocab_context_data": {
+                "content": "Luckily, one human family survived, thanks to the foresight of the god Enki, who instructed his devotee Utnapishtim to take shelter in a large wooden ark along with his relatives and a menagerie of animals. When the deluge subsided and this Mesopotamian Noah emerged from his ark, the first thing he did was sacrifice some animals to the gods.",
+                "date_created": "2018-02-19T08:04:30.709209"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "en",
+                        "entry": "menagerie",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:47:26.023486"
+                    },
+                    "vocab_entry_tags": [
+                        "menagerie"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "en",
+                        "entry": "deluge",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:47:25.888699"
+                    },
+                    "vocab_entry_tags": [
+                        "deluge"
+                    ]
+                }
+            ]
+        },
+        "31": {
+            "vocab_context_data": {
+                "content": "Humanism always emphasized that it is not easy to identify our authentic will. When we try to listen to ourselves, we are often flooded by a cacophony of conflicting noises. Indeed, we sometimes we don't really want to hear our authentic voice, because it might disclose unwelcome secrets and make uncomfortable requests.",
+                "date_created": "2018-02-19T08:04:30.842310"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "en",
+                        "entry": "cacophony",
+                        "pronunciation_spelling": "kuh-**kof**-uh-nee",
+                        "pronunciation_ipa": "",
+                        "description": "harsh discordance of sound; dissonance\r\n\r\n- cacofon\u00eda, disonancia",
+                        "date_created": "2018-04-12T16:47:25.774042"
+                    },
+                    "vocab_entry_tags": [
+                        "cacophony"
+                    ]
+                }
+            ]
+        },
+        "32": {
+            "vocab_context_data": {
+                "content": "It just indicates that evolution controls us with a broad range of pleasures. Sometimes it seduces us with sensations of bliss and tranquillity, while on other occasions it goads us forward with thrilling sensations of elation and excitement.",
+                "date_created": "2018-02-19T08:04:30.909246"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "en",
+                        "entry": "goad",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "to prick or drive with, or as if with, a goad; prod; incite.\r\n\r\n- provocar, aguijonear",
+                        "date_created": "2018-04-12T16:47:25.685384"
+                    },
+                    "vocab_entry_tags": [
+                        "goads"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "en",
+                        "entry": "elation",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:47:25.596346"
+                    },
+                    "vocab_entry_tags": [
+                        "elation"
+                    ]
+                }
+            ]
+        },
+        "33": {
+            "vocab_context_data": {
+                "content": "Alas, the exciting sensations of the race are as transient as the blissful sensations of victory.",
+                "date_created": "2018-02-19T08:04:31.065254"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "en",
+                        "entry": "transient",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:47:25.429514"
+                    },
+                    "vocab_entry_tags": [
+                        "transient"
+                    ]
+                }
+            ]
+        },
+        "34": {
+            "vocab_context_data": {
+                "content": "Throughout history most humans took war for granted, whereas peace was a temporary and precarious state.",
+                "date_created": "2018-02-19T08:04:31.131183"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "en",
+                        "entry": "precarious",
+                        "pronunciation_spelling": "pri-**kair**-ee-uh s",
+                        "pronunciation_ipa": "",
+                        "description": "dependent on circumstances beyond one's control; uncertain; unstable; insecure: \r\n\r\n- precario, fr\u00e1gil, inestable",
+                        "date_created": "2018-04-12T16:47:25.340805"
+                    },
+                    "vocab_entry_tags": [
+                        "precarious"
+                    ]
+                }
+            ]
+        },
+        "35": {
+            "vocab_context_data": {
+                "content": "According to Buddha, we can train our minds to observe carefully how all sensations constantly arise and pass. When the mind learns to see our sensations for what they are - ephemeral and meaningless vibrations - we lose interest in pursuing them. For that is the point of running after something that disappears as fast as it arises?",
+                "date_created": "2018-02-19T08:04:31.186729"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "en",
+                        "entry": "ephemeral",
+                        "pronunciation_spelling": "ih-**fem**-er-uh l",
+                        "pronunciation_ipa": "\u026a\u02c8f\u025bm \u0259r \u0259l",
+                        "description": "lasting a very short time; short-lived; transitory: \r\n\r\n- ef\u00edmero",
+                        "date_created": "2018-04-12T16:47:23.806867"
+                    },
+                    "vocab_entry_tags": [
+                        "ephemeral"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "en",
+                        "entry": "pursue",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "to strive to gain; seek to attain or accomplish\r\n\r\n- perseguir, seguir, proseguir, dedicarse a",
+                        "date_created": "2018-04-12T16:47:25.133653"
+                    },
+                    "vocab_entry_tags": [
+                        "pursuing"
+                    ]
+                }
+            ]
+        },
+        "36": {
+            "vocab_context_data": {
+                "content": "In the twenty-first century, the third big project of humankind will be to acquire for us divine powers of creation and destruction, and upgrade _Homo sapiens_ into _Homo deus_. This third project obviously subsumes the first two projects, and is fuelled by them.",
+                "date_created": "2018-02-19T08:04:31.286846"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "en",
+                        "entry": "subsume",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "to consider or include (an idea, term, proposition, etc.) as part of a more comprehensive one. \r\n\r\n- subsumir, incorporar",
+                        "date_created": "2018-04-12T16:47:24.977063"
+                    },
+                    "vocab_entry_tags": [
+                        "subsumes"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "en",
+                        "entry": "homo deus",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:47:24.842497"
+                    },
+                    "vocab_entry_tags": [
+                        "homo deus"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "en",
+                        "entry": "homo sapiens",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:47:24.733607"
+                    },
+                    "vocab_entry_tags": [
+                        "homo sapiens"
+                    ]
+                }
+            ]
+        },
+        "37": {
+            "vocab_context_data": {
+                "content": "But the Anthropocene isn't a novel phenomenon of the last few centuries. Already tens of thousands of years ago, when our Stone Age ancestors spread from East Africa to the four corners of the earth, they changed the flora and fauna of every continent and island on which they settled. They drove to extinction all the other human species of the world, 90 per cent of the large animals of Australia, 75 per cent of the large mammals of America and about 50 per cent of all the large land mammals of the planet - and all before they planted the first wheat field, shaped the frist metal tool, wrote the first text or struck the first coin.",
+                "date_created": "2018-02-19T08:04:31.442374"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "en",
+                        "entry": "phenomenon",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "- fen\u00f3meno",
+                        "date_created": "2018-04-12T16:47:24.585094"
+                    },
+                    "vocab_entry_tags": [
+                        "phenomenon"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "en",
+                        "entry": "flora and fauna",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "plants and animals\r\n\r\n- flora y fauna",
+                        "date_created": "2018-04-12T16:47:24.506965"
+                    },
+                    "vocab_entry_tags": [
+                        "flora and fauna"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "en",
+                        "entry": "extinction",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:47:24.429145"
+                    },
+                    "vocab_entry_tags": [
+                        "extinction"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "en",
+                        "entry": "ancestor",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:47:24.351391"
+                    },
+                    "vocab_entry_tags": [
+                        "ancestors"
+                    ]
+                }
+            ]
+        },
+        "38": {
+            "vocab_context_data": {
+                "content": "Epidemics continued to kill tens of millions of people well into the twentieth century. In January 1918 soldiers in the trenches of northern France began dying in the thousands from a particulary virulent starin of flu, nicknamed \"the Spanish Flu.\" The front line was the end point of the most efficient global supply network the world had hitherto seen.",
+                "date_created": "2018-02-19T08:04:31.631191"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "en",
+                        "entry": "hitherto",
+                        "pronunciation_spelling": "**hith**-er-too",
+                        "pronunciation_ipa": "",
+                        "description": "up to this time; until now\r\n\r\n- hasta ahora, hasta el momento",
+                        "date_created": "2018-04-12T16:47:23.221167"
+                    },
+                    "vocab_entry_tags": [
+                        "hitherto"
+                    ]
+                }
+            ]
+        },
+        "39": {
+            "vocab_context_data": {
+                "content": "The most important question in twenty-first-century economics may well be what to do with all the superfluous people. What will conscious humans do, once we have highly intelligent non-conscious algorithms that can do almost everything better?",
+                "date_created": "2018-02-19T08:04:31.697855"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "en",
+                        "entry": "superfluous",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "unnecessary or needless\r\n\r\n- superfluo",
+                        "date_created": "2018-04-12T16:47:24.206892"
+                    },
+                    "vocab_entry_tags": [
+                        "superfluous"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "en",
+                        "entry": "conscious",
+                        "pronunciation_spelling": "**kon**-shuh s",
+                        "pronunciation_ipa": "",
+                        "description": "Aware of one's own existence, sensations, thoughts, surroundings, etc. \r\n\r\nFully aware of or sensitive to something (often followed by of).\r\n\r\n- consciente",
+                        "date_created": "2018-04-12T16:47:22.932104"
+                    },
+                    "vocab_entry_tags": [
+                        "conscious"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "en",
+                        "entry": "algorithm",
+                        "pronunciation_spelling": "**a**l-guh-rith-uh m",
+                        "pronunciation_ipa": "",
+                        "description": "a set of rules for solving a problem in a finite number of steps, as for finding the greatest common divisor\r\n\r\n- algoritmo",
+                        "date_created": "2018-04-12T16:47:24.084856"
+                    },
+                    "vocab_entry_tags": [
+                        "algorithms"
+                    ]
+                }
+            ]
+        },
+        "40": {
+            "vocab_context_data": {
+                "content": "The biochemical system rewards actions conducive to survival and reproduction with pleasant sensations. But these are only an ephemeral sales gimmick. We struggle to get food and mates in order to avoid unpleasant senations of hunger and to enjoy pleasing tastes and blissful orgasms.",
+                "date_created": "2018-02-19T08:04:31.920327"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "en",
+                        "entry": "conducive",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "tending to produce; contributive; helpful; favorable (usually followed by to)\r\n\r\n- contribuye a, conducente a",
+                        "date_created": "2018-04-12T16:47:23.984934"
+                    },
+                    "vocab_entry_tags": [
+                        "conducive to"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "en",
+                        "entry": "orgasm",
+                        "pronunciation_spelling": "**awr**-gaz-uh m",
+                        "pronunciation_ipa": "",
+                        "description": "The physical and emotional sensation experienced at the peak of sexual excitation, usually resulting from stimulation of the sexual organ and usually accompanied in the male by ejaculation. \r\n\r\n- orgasmo",
+                        "date_created": "2018-04-12T16:47:23.884716"
+                    },
+                    "vocab_entry_tags": [
+                        "orgasms"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "en",
+                        "entry": "ephemeral",
+                        "pronunciation_spelling": "ih-**fem**-er-uh l",
+                        "pronunciation_ipa": "\u026a\u02c8f\u025bm \u0259r \u0259l",
+                        "description": "lasting a very short time; short-lived; transitory: \r\n\r\n- ef\u00edmero",
+                        "date_created": "2018-04-12T16:47:23.806867"
+                    },
+                    "vocab_entry_tags": [
+                        "ephemeral"
+                    ]
+                }
+            ]
+        },
+        "41": {
+            "vocab_context_data": {
+                "content": "Worse still, here too expectations adapt to conditions, and yesterday's challenges all too quickly beome today' s tedium.",
+                "date_created": "2018-02-19T08:04:32.076125"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "en",
+                        "entry": "tedium",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:47:23.710646"
+                    },
+                    "vocab_entry_tags": [
+                        "tedium"
+                    ]
+                }
+            ]
+        },
+        "42": {
+            "vocab_context_data": {
+                "content": "_Homo sapiens_ is not going to be exterminated by a robot revolt. Rather, _Homo sapiens_ is likely to upgrade itself step by step, merging with robots and computers in the process, until our descendants will look back and realize that they are no longer the kind of animal that wrote the Bible, built the Great Wall of China and laughed at Charlie Chaplin's antics. This will not happen in a day, or a year. Indeed, it is already happening right now, though innumerable mundane actions.",
+                "date_created": "2018-02-19T08:04:32.142800"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "en",
+                        "entry": "mundane",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:47:23.554384"
+                    },
+                    "vocab_entry_tags": [
+                        "mundane"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "en",
+                        "entry": "innumerable",
+                        "pronunciation_spelling": "ih-**noo**-mer-uh-buh l",
+                        "pronunciation_ipa": "",
+                        "description": "incapable of being counted; countless; very numerous\r\n\r\n- incontable, innumerable",
+                        "date_created": "2018-04-12T16:47:23.418602"
+                    },
+                    "vocab_entry_tags": [
+                        "innumerable"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "en",
+                        "entry": "descendant",
+                        "pronunciation_spelling": "dih-**sen**-duh nt",
+                        "pronunciation_ipa": "",
+                        "description": "a person or animal that is descended from a specific ancestor; an offspring. \r\n\r\n something deriving in appearance, function, or general character from an earlier form. \r\n\r\n**Espa\u00f1ol** - descendiente",
+                        "date_created": "2018-04-12T16:47:22.278147"
+                    },
+                    "vocab_entry_tags": [
+                        "descendants"
+                    ]
+                }
+            ]
+        },
+        "43": {
+            "vocab_context_data": {
+                "content": "In the process Dataism inverts the traditional pyramid of learning. Hitherto, data was seen as only the first step in a long chain of intellectual activity. Humans were suposed to distill data into information, information into knowledge, and knowledge into wisdom. However, Dataists believe that humans can no longer cope with the immense flows of data, hence they cannot distill data into information, let alone into knowledge or wisdom.",
+                "date_created": "2018-02-19T08:04:32.298163"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "en",
+                        "entry": "hitherto",
+                        "pronunciation_spelling": "**hith**-er-too",
+                        "pronunciation_ipa": "",
+                        "description": "up to this time; until now\r\n\r\n- hasta ahora, hasta el momento",
+                        "date_created": "2018-04-12T16:47:23.221167"
+                    },
+                    "vocab_entry_tags": [
+                        "hitherto"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "en",
+                        "entry": "distill",
+                        "pronunciation_spelling": "dih-**stil**",
+                        "pronunciation_ipa": "",
+                        "description": "to extract the essential elements of; refine; abstract: \r\n\r\n- destilar, sintetizar",
+                        "date_created": "2018-04-12T16:47:23.087957"
+                    },
+                    "vocab_entry_tags": [
+                        "distill"
+                    ]
+                }
+            ]
+        },
+        "44": {
+            "vocab_context_data": {
+                "content": "When humans try to determine whether an entity is conscious, what we usually look for is not mathematical aptitude or good memory, but rather the ability to create emotional relationships with us. People sometimes develop deep emotional attachments to fetishes like weapons, cars, and even underwear, but these attachments are one-sided and never develop into relationships.",
+                "date_created": "2018-02-19T08:04:32.398209"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "en",
+                        "entry": "conscious",
+                        "pronunciation_spelling": "**kon**-shuh s",
+                        "pronunciation_ipa": "",
+                        "description": "Aware of one's own existence, sensations, thoughts, surroundings, etc. \r\n\r\nFully aware of or sensitive to something (often followed by of).\r\n\r\n- consciente",
+                        "date_created": "2018-04-12T16:47:22.932104"
+                    },
+                    "vocab_entry_tags": [
+                        "conscious"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "en",
+                        "entry": "fetish",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:47:22.797214"
+                    },
+                    "vocab_entry_tags": [
+                        "fetishes"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "en",
+                        "entry": "aptitude",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "natural ability\r\n\r\n- aptitud",
+                        "date_created": "2018-04-12T16:47:22.718372"
+                    },
+                    "vocab_entry_tags": [
+                        "aptitude"
+                    ]
+                }
+            ]
+        },
+        "45": {
+            "vocab_context_data": {
+                "content": "In the nineteenth century the Industrial Revolution created a huge urban proletariat, and socialism spread because no other creed managed to answer the unprecedented needs, hopes, and fears of this new working class. Liberalism eventually defeated socialism only by adopting the best parts of the socialist program. In the twenty-first century we might witness the creation of a massive new unworking class: people devoid of any economic ,political, or even artistic value, who contribute nothing to the posperity, power and glory of society. This \"useless class\" will not merely be unemployed: it wil be unemployable.",
+                "date_created": "2018-02-19T08:04:32.553768"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "en",
+                        "entry": "unprecedented",
+                        "pronunciation_spelling": "uhn-**pres**-i-den-tid",
+                        "pronunciation_ipa": "",
+                        "description": "without previous instance; never before known or experienced; unexampled or unparalleled\r\n\r\n- sin precedentes",
+                        "date_created": "2018-04-12T16:47:22.565818"
+                    },
+                    "vocab_entry_tags": [
+                        "unprecedented"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "en",
+                        "entry": "proletariat",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "common people, working class\r\n\r\n- proletariado",
+                        "date_created": "2018-04-12T16:47:22.432080"
+                    },
+                    "vocab_entry_tags": [
+                        "proletariat"
+                    ]
+                }
+            ]
+        },
+        "46": {
+            "vocab_context_data": {
+                "content": "We don't know where these paths might lead us, nor what our godlike descendants will look like.",
+                "date_created": "2018-02-19T08:04:32.675804"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "en",
+                        "entry": "descendant",
+                        "pronunciation_spelling": "dih-**sen**-duh nt",
+                        "pronunciation_ipa": "",
+                        "description": "a person or animal that is descended from a specific ancestor; an offspring. \r\n\r\n something deriving in appearance, function, or general character from an earlier form. \r\n\r\n**Espa\u00f1ol** - descendiente",
+                        "date_created": "2018-04-12T16:47:22.278147"
+                    },
+                    "vocab_entry_tags": [
+                        "descendants"
+                    ]
+                }
+            ]
+        }
+    }
+}

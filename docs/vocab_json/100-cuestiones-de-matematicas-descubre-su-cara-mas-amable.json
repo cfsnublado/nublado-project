@@ -1,0 +1,230 @@
+{
+    "vocab_project_data": {
+        "name": "Spanish Reading"
+    },
+    "vocab_source_data": {
+        "source_type": 1,
+        "name": "100 cuestiones de matem\u00e1ticas: descubre su cara m\u00e1s amable",
+        "description": "Un libro interesante de temas matem\u00e1ticos escrito por Miquel Cap\u00f3.",
+        "date_created": "2018-08-10T06:24:03.218589"
+    },
+    "vocab_contexts": {
+        "1": {
+            "vocab_context_data": {
+                "content": "Dado que dividir entre 5 es lo mismo que dividr entre 10 y despu\u00e9s multiplicar por 2, bastar\u00e1 con mover la coma decimal una posici\u00f3n hacia la izquierda y despiu\u00e9s duplicar el resultado obtenido. Por ejemplo : 453:5 = (453:10) x 2 = 45,3 x 2 = 90,6.",
+                "date_created": "2018-02-19T08:06:43.502730"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "duplicar",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:51:40.805707"
+                    },
+                    "vocab_entry_tags": [
+                        "duplicar"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "dividir",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "dividir (entre)",
+                        "date_created": "2018-04-12T16:50:19.344498"
+                    },
+                    "vocab_entry_tags": [
+                        "dividir"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "multiplicar",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "operaci\u00f3n matem\u00e1tica: 3 * 2 = 6\r\n\r\n- multiply",
+                        "date_created": "2018-04-12T16:48:28.642636"
+                    },
+                    "vocab_entry_tags": [
+                        "multiplicar"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "coma decimal",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "Literally decimal comma, but in English it's translated to decimal point.",
+                        "date_created": "2018-04-12T16:51:40.371196"
+                    },
+                    "vocab_entry_tags": [
+                        "coma decimal"
+                    ]
+                }
+            ]
+        },
+        "2": {
+            "vocab_context_data": {
+                "content": "<span class=\"text-bold\">N\u00fameros deficientes</span>: decimos que un n\u00famero es deficiente si la suma de sus divisores propios (todos exceptuando el propio n\u00famero) es menor que el n\u00famero original.",
+                "date_created": "2018-02-19T08:06:42.643901"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "divisor propio",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "Un divisor de un n\u00famero que no sea el propio n\u00famero.",
+                        "date_created": "2018-04-12T16:51:42.234661"
+                    },
+                    "vocab_entry_tags": [
+                        "divisores propios"
+                    ]
+                }
+            ]
+        },
+        "3": {
+            "vocab_context_data": {
+                "content": "Para multiplicar cualquier n\u00famero por 9 es suficiente con a\u00f1adir un 0 al final del n\u00famero y despu\u00e9s restar  el n\u00famero original al resultado. Por ejemplo, 9 x 56 = 560 - 56 = 504.",
+                "date_created": "2018-02-19T08:06:42.725587"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "resultado",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:49:17.862403"
+                    },
+                    "vocab_entry_tags": [
+                        "resultado"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "a\u00f1adir",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "agregar, sumar, incorporar\r\n\r\n- add, put in, throw in",
+                        "date_created": "2018-04-12T16:50:17.641221"
+                    },
+                    "vocab_entry_tags": [
+                        "a\u00f1adir"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "restar",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "subtract",
+                        "date_created": "2018-04-12T16:51:41.745557"
+                    },
+                    "vocab_entry_tags": [
+                        "restar"
+                    ]
+                }
+            ]
+        },
+        "4": {
+            "vocab_context_data": {
+                "content": "Es evidente que las m\u00e1quinas nos facilitan la vida, pero no es conveniente ser sus esclavos.",
+                "date_created": "2018-02-19T08:06:43.102920"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "conveniente",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:51:41.503871"
+                    },
+                    "vocab_entry_tags": [
+                        "conveniente"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "facilitar",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:51:41.293117"
+                    },
+                    "vocab_entry_tags": [
+                        "facilitan"
+                    ]
+                }
+            ]
+        },
+        "5": {
+            "vocab_context_data": {
+                "content": "Con la introducci\u00f3n de las calculadoras y las nuevas tecnolog\u00edas hemos dejado el c\u00e1lculo mental un poco de lado y algunas veces es espeluznante ver como algunos de nuestros alumnos ya no son capaces ni de recordar las tablas de multiplicar.",
+                "date_created": "2018-02-19T08:06:43.337854"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "espeluznante",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:51:41.059409"
+                    },
+                    "vocab_entry_tags": [
+                        "espeluznante"
+                    ]
+                }
+            ]
+        },
+        "6": {
+            "vocab_context_data": {
+                "content": "Una explicaci\u00f3n de la raz\u00f3n por la cual se produce esa regularidad puede estar relacionada con el crecimeinto exponencial (crecimiento muy com\u00fan en la naturaleza y la vida cotidiana), que produce n\u00fameros que empiezan por 1 con mucha m\u00e1s frecuencia y durante m\u00e1s tiempo que cualquier otro n\u00famero.",
+                "date_created": "2018-02-19T08:06:44.046987"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "cotidiano",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "everyday",
+                        "date_created": "2018-04-12T16:51:40.178505"
+                    },
+                    "vocab_entry_tags": [
+                        "cotidiana"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "raz\u00f3n",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:51:40.085717"
+                    },
+                    "vocab_entry_tags": [
+                        "raz\u00f3n"
+                    ]
+                }
+            ]
+        }
+    }
+}

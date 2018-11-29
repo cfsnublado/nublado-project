@@ -1,0 +1,1885 @@
+{
+    "vocab_project_data": {
+        "name": "Spanish Reading"
+    },
+    "vocab_source_data": {
+        "source_type": 1,
+        "name": "1984 (edici\u00f3n espa\u00f1ola)",
+        "description": "Orwell",
+        "date_created": "2018-08-10T06:24:06.207862"
+    },
+    "vocab_contexts": {
+        "1": {
+            "vocab_context_data": {
+                "content": "Esa noche ten\u00eda que asistir al Centro Comunitario. Devor\u00f3 otra comida ins\u00edpida en el comedor, se apresur\u00f3 a ir al Centro, particip\u00f3 en la solemne estupidez de un &laquo;grupo de discusi\u00f3n&raquo;, jug\u00f3 dos partidas de tenis de mesa, bebi\u00f3 varios vasos de ginebra y se sent\u00f3 media hora a escuchar una conferencia titulada &laquo;El Socing y su relaci\u00f3n con el ajedrez&raquo;.",
+                "date_created": "2018-02-19T08:05:20.363945"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "partida",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:48:49.770603"
+                    },
+                    "vocab_entry_tags": [
+                        "partidas"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "ajedrez",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "juego de tablero\r\n\r\n- chess",
+                        "date_created": "2018-04-12T16:48:49.530643"
+                    },
+                    "vocab_entry_tags": [
+                        "ajedrez"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "ins\u00edpido",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "insipid",
+                        "date_created": "2018-04-12T16:48:49.214547"
+                    },
+                    "vocab_entry_tags": [
+                        "ins\u00edpida"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "asistir",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:48:49.047544"
+                    },
+                    "vocab_entry_tags": [
+                        "asistir"
+                    ]
+                }
+            ]
+        },
+        "2": {
+            "vocab_context_data": {
+                "content": "Hac\u00eda mucho que hab\u00eda comprendido que la \u00fanica base segura para la oligarqu\u00eda es el colectivismo. La riqueza y los privilegios se defienden m\u00e1s f\u00e1cilmente cuando se comparten. La supuesta &laquo;abolici\u00f3n de la propiedad privada&raquo; que se produjo a mediados de siglo supuso, en realidad, la concentraci\u00f3n de la propiedad en muchas menos manos que antes, pero con la siguiente diferencia: los nuevos proprietarios pasaron a ser un grupo en lugar de una masa de individuos.",
+                "date_created": "2018-02-19T08:05:11.517813"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "abolici\u00f3n",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "anulaci\u00f3n\r\n\r\n- abolition",
+                        "date_created": "2018-04-12T16:49:09.330594"
+                    },
+                    "vocab_entry_tags": [
+                        "abolici\u00f3n"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "oligarqu\u00eda",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "gobierno de unos pocos, minor\u00eda poderosa\r\n\r\n- oligarchy",
+                        "date_created": "2018-04-12T16:49:09.108542"
+                    },
+                    "vocab_entry_tags": [
+                        "oligarqu\u00eda"
+                    ]
+                }
+            ]
+        },
+        "3": {
+            "vocab_context_data": {
+                "content": "Ocean\u00eda estaba en guerra con Esteasia: Ocean\u00eda siempre hab\u00eda estado en guerra con Esteasia. Gran parte de la literatura pol\u00edtica de los \u00faltimos cinco a\u00f1os se hab\u00eda vuelto totalmente caduca.",
+                "date_created": "2018-02-19T08:05:11.640356"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "volverse",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "tornarse\r\n\r\n- turn, become",
+                        "date_created": "2018-04-12T16:47:49.701876"
+                    },
+                    "vocab_entry_tags": [
+                        "se hab\u00eda vuelto"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "caduco",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "anticuado, viejo, en declive\r\n\r\n- old-fashioned, antiquated, outdated",
+                        "date_created": "2018-04-12T16:49:08.808482"
+                    },
+                    "vocab_entry_tags": [
+                        "caduca"
+                    ]
+                }
+            ]
+        },
+        "4": {
+            "vocab_context_data": {
+                "content": "\u00a1Ten\u00eda que aferrarse al hecho de que las verdades de Perogrullo son ciertas! El mundo existe, sus leyes no cambian. Las piedras son duras, el agua moja, los objetos dejados en el vac\u00edo caen hacia el centro de la tierra. Con la sensaci\u00f3n de estar habl\u00e1ndole a O'Brien, y tambi\u00e9n de estar estableciendo un axioma de crucial importancia, escribi\u00f3:\r\n\r\n>  La libertad consiste en poder decir que dos y dos son cuatro. Admitido eso, se deduce todo lo dem\u00e1s.",
+                "date_created": "2018-02-19T08:05:11.751649"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "axioma",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "proposici\u00f3n evidente, principio que no necesita demostrarse\r\n\r\n- axiom,",
+                        "date_created": "2018-04-12T16:49:08.562368"
+                    },
+                    "vocab_entry_tags": [
+                        "axioma"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "aferrarse",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "insistir tenazmente\r\n\r\n- cling to, hang onto",
+                        "date_created": "2018-04-12T16:48:56.795709"
+                    },
+                    "vocab_entry_tags": [
+                        "aferrarse"
+                    ]
+                }
+            ]
+        },
+        "5": {
+            "vocab_context_data": {
+                "content": "Tal vez incluso descubriera alg\u00fan mensaje oculto en el Diccionario . En todo caso, estaba claro que la conspiraci\u00f3n que hab\u00eda so\u00f1aba exist\u00eda y que hab\u00eda entrado en contacto con su periferia.",
+                "date_created": "2018-02-19T08:05:11.862310"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "periferia",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:49:08.286159"
+                    },
+                    "vocab_entry_tags": [
+                        "periferia"
+                    ]
+                }
+            ]
+        },
+        "6": {
+            "vocab_context_data": {
+                "content": "Los grupos gobernantes siempre estaban contaminados hasta cierto punto por ideas liberales, no les preocupaba dejar cabos sueltos ni lo que pudieran pensar su s\u00fabditos.",
+                "date_created": "2018-02-19T08:05:11.928918"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "cabo suelto",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "algo no resuelto\r\n\r\n- loose end, loose ties",
+                        "date_created": "2018-04-12T16:49:08.041755"
+                    },
+                    "vocab_entry_tags": [
+                        "cabos sueltos"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "s\u00fabdito",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:49:07.819703"
+                    },
+                    "vocab_entry_tags": [
+                        "s\u00fabditos"
+                    ]
+                }
+            ]
+        },
+        "7": {
+            "vocab_context_data": {
+                "content": "Se arrodill\u00f3, abri\u00f3 la bolsa y sac\u00f3 unas llaves inglesas y un destornillador que llevaba encima. Debajo hab\u00eda varios paquetes pulcramente envueltos en papel.",
+                "date_created": "2018-02-19T08:05:12.040084"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "arrodillarse",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:49:07.686039"
+                    },
+                    "vocab_entry_tags": [
+                        "se arrodill\u00f3"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "llave inglesa",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "mand\u00edbula ajustable\r\n\r\n- adjustable wrenche, crescent wrench",
+                        "date_created": "2018-04-12T16:49:07.471979"
+                    },
+                    "vocab_entry_tags": [
+                        "llaves inglesas"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "destornillador",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "herramienta para tornillos\r\n\r\n- screwdriver",
+                        "date_created": "2018-04-12T16:49:07.375099"
+                    },
+                    "vocab_entry_tags": [
+                        "destornillador"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "pulcramente",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "con orden\r\n\r\n- neatly, tidily",
+                        "date_created": "2018-04-12T16:49:07.163934"
+                    },
+                    "vocab_entry_tags": [
+                        "pulcramente"
+                    ]
+                }
+            ]
+        },
+        "8": {
+            "vocab_context_data": {
+                "content": "Winston record\u00f3 vagamente algo que hab\u00eda visto en una pared o una valla publicitaria: una botella gigantesca hecha con luces el\u00e9ctricas que daba la impresi\u00f3n de moverse arriba y abajo y verter su contenido en unas copas.",
+                "date_created": "2018-02-19T08:05:12.340105"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "valla",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "panel publicitario\r\n\r\n- billboard",
+                        "date_created": "2018-04-12T16:49:06.931102"
+                    },
+                    "vocab_entry_tags": [
+                        "valla"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "verter",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "derramar o vaciar l\u00edquidos, y tambi\u00e9n cosas menudas;\r\ncomo sal o harina. - pour, spill, dump",
+                        "date_created": "2018-04-12T16:49:06.820536"
+                    },
+                    "vocab_entry_tags": [
+                        "verter"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "publicitario",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "que anuncia\r\n\r\n- advertising",
+                        "date_created": "2018-04-12T16:49:06.638484"
+                    },
+                    "vocab_entry_tags": [
+                        "publicitaria"
+                    ]
+                }
+            ]
+        },
+        "9": {
+            "vocab_context_data": {
+                "content": "No pudo evitar una punzada de p\u00e1nico. Era absurdo, puesto que escribir esas palabras no era m\u00e1s peligroso que el hecho de haber iniciado el diario; pero por un momento estuvo tentado de arrancar las p\u00e1ginas que hab\u00eda escrito y renunciar a la empresa sin m\u00e1s.",
+                "date_created": "2018-02-19T08:05:12.484852"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "renunciar",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "no ejercer un derecho, no usar o tomar algo (va con **_a_**)\r\n\r\n - renounce, give up, quit, refuse",
+                        "date_created": "2018-04-12T16:49:06.449840"
+                    },
+                    "vocab_entry_tags": [
+                        "renunciar"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "escribir",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:48:15.152066"
+                    },
+                    "vocab_entry_tags": [
+                        "escribir",
+                        "escrito"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "punzada",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "dolor repentino y agudo\r\n\r\n- sharp pain, stabbing pain, jab",
+                        "date_created": "2018-04-12T16:49:06.105082"
+                    },
+                    "vocab_entry_tags": [
+                        "punzada"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "arrancar",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:49:05.927354"
+                    },
+                    "vocab_entry_tags": [
+                        "arrancar"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "puesto que",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "ya que\r\n\r\n- given that, since, because",
+                        "date_created": "2018-04-12T16:49:05.708358"
+                    },
+                    "vocab_entry_tags": [
+                        "puesto que"
+                    ]
+                }
+            ]
+        },
+        "10": {
+            "vocab_context_data": {
+                "content": "Desde donde estaba Winston pod\u00edan leerse, labrados con elegante caligraf\u00eda en la fachada blanca los tres esl\u00f3ganes del Partido:\r\n\r\n- **LA GUERRA ES LA PAZ**\r\n- **LA LIBERTAD ES LA ESCLAVITUD**\r\n- **LA IGNORANCIA ES LA FUERZA**",
+                "date_created": "2018-02-19T08:05:12.729318"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "eslogan",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:49:05.349942"
+                    },
+                    "vocab_entry_tags": [
+                        "esl\u00f3ganes"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "esclavitud",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:49:05.282934"
+                    },
+                    "vocab_entry_tags": [
+                        "esclavitud"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "fachada",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:49:04.938524"
+                    },
+                    "vocab_entry_tags": [
+                        "fachada"
+                    ]
+                }
+            ]
+        },
+        "11": {
+            "vocab_context_data": {
+                "content": "En un mundo en el que todo el mundo trabajase pocas horas, tuviese comida suficiente, viviera en una casa con cuarto de ba\u00f1o y nevera, y poseyera un autom\u00f3vil e incluso un aeroplano, la forma m\u00e1s evidente y tal vez m\u00e1s importante de desigualdad ya habr\u00eda desaparecido.",
+                "date_created": "2018-02-19T08:05:12.896050"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "desigualdad",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:49:04.749397"
+                    },
+                    "vocab_entry_tags": [
+                        "desigualdad"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "poseer",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:49:04.675475"
+                    },
+                    "vocab_entry_tags": [
+                        "poseyera"
+                    ]
+                }
+            ]
+        },
+        "12": {
+            "vocab_context_data": {
+                "content": "Tras el per\u00edodo revolucionario de los a\u00f1os cincuenta y sesenta, la sociedad se reagrup\u00f3, como siempre, en clase alta, media  baja. Pero la nueva clase alta, a diferencia de sus antecesores, no actu\u00f3 por instinto, sino que supo lo que hac\u00eda falta para salvaguardar su posici\u00f3n.",
+                "date_created": "2018-02-19T08:05:13.107153"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "per\u00edodo",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:48:56.072497"
+                    },
+                    "vocab_entry_tags": [
+                        "per\u00edodo"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "saber",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:47:21.452429"
+                    },
+                    "vocab_entry_tags": [
+                        "supo"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "antecesor",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "que precedi\u00f3 a otro\r\n\r\n- predecessor, ancestor, forerunner",
+                        "date_created": "2018-04-12T16:49:04.230127"
+                    },
+                    "vocab_entry_tags": [
+                        "antecesores"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "salvaguardar",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "proteger, amparar\r\n\r\n- safeguard, protect",
+                        "date_created": "2018-04-12T16:49:04.019164"
+                    },
+                    "vocab_entry_tags": [
+                        "salvaguardar"
+                    ]
+                }
+            ]
+        },
+        "13": {
+            "vocab_context_data": {
+                "content": "Poco despu\u00e9s se quedaron dormidos un rato. Cuando Winston despert\u00f3, las manecillas del reloj marcaban casi las nueve. No se movi\u00f3, porque Julia ten\u00eda la cabeza apoyada en el hueco de su brazo.",
+                "date_created": "2018-02-19T08:05:13.418365"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "manecilla",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "aguja del reloj\r\n\r\n- clock hand, pointer",
+                        "date_created": "2018-04-12T16:49:03.774595"
+                    },
+                    "vocab_entry_tags": [
+                        "manecillas"
+                    ]
+                }
+            ]
+        },
+        "14": {
+            "vocab_context_data": {
+                "content": "Pod\u00edan averiguar hasta el \u00faltimo detalle de lo que hab\u00edas hecho, dicho o pensado; pero el interio de tu coraz\u00f3n, cuyo funcionamiento era un misterio incluso para ti, segu\u00eda siendo inexpugnable.",
+                "date_created": "2018-02-19T08:05:13.585048"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "inexpugnable",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "invulnerable, impenetrable\r\n\r\n- impregnable, resistant to attack",
+                        "date_created": "2018-04-12T16:49:03.552401"
+                    },
+                    "vocab_entry_tags": [
+                        "inexpugnable"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "averiguar",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "indagar, inquirir\r\n\r\n- figure out, find something out, discover, look into something",
+                        "date_created": "2018-04-12T16:49:03.441428"
+                    },
+                    "vocab_entry_tags": [
+                        "averiguar"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "cuyo",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "expresa pertenencia (n\u00f3tese que el g\u00e9nero est\u00e1 de acuerdo con la palabra que sigue, la pertenencia)\r\n\r\n- whose",
+                        "date_created": "2018-04-12T16:47:52.490539"
+                    },
+                    "vocab_entry_tags": [
+                        "cuyo"
+                    ]
+                }
+            ]
+        },
+        "15": {
+            "vocab_context_data": {
+                "content": "Detr\u00e1s de \u00e9l Winston vio el escritorio con la l\u00e1mpara de pantalla verde, el hablascribe y las bandejas de alambre llenas de papeles hasta el borde. El incidente estaba cerrado. Al cabo de treinta segundos, pens\u00f3, O'Brien reanudar\u00eda su interrumpido e importante trabajo a las \u00f3rdenes del Partido.",
+                "date_created": "2018-02-19T08:05:13.729359"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "al cabo de",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "despu\u00e9s de\r\n\r\n- after, afterwards",
+                        "date_created": "2018-04-12T16:48:57.796171"
+                    },
+                    "vocab_entry_tags": [
+                        "al cabo de"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "reanudar",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "renovar o continuar\r\n\r\n- resume, restart, renew",
+                        "date_created": "2018-04-12T16:49:02.996909"
+                    },
+                    "vocab_entry_tags": [
+                        "reanudar\u00eda"
+                    ]
+                }
+            ]
+        },
+        "16": {
+            "vocab_context_data": {
+                "content": "Todas las sensaciones parec\u00edan haberse intensificado. El mono le rozaba los hombros, la acera le hac\u00eda cosquillas en los pies e incluso abrir y cerrar la mano supon\u00eda un esfuerzo que hac\u00eda que le crujieran las articulaciones.",
+                "date_created": "2018-02-19T08:05:13.940437"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "crujir",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "hacer ruido\r\n\r\n- crunch, creak, grind",
+                        "date_created": "2018-04-12T16:49:02.742898"
+                    },
+                    "vocab_entry_tags": [
+                        "crujieran"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "cosquillas",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "sensaci\u00f3n nerviosa\r\n\r\n- tickle, tickling sensation",
+                        "date_created": "2018-04-12T16:49:02.620335"
+                    },
+                    "vocab_entry_tags": [
+                        "cosquillas"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "acera",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "sidewalk",
+                        "date_created": "2018-04-12T16:48:57.003883"
+                    },
+                    "vocab_entry_tags": [
+                        "acera"
+                    ]
+                }
+            ]
+        },
+        "17": {
+            "vocab_context_data": {
+                "content": "La b\u00fasqueda y destrucci\u00f3n de los libros se hab\u00eda hecho con tanta minuciosidad en los barrios proles como en todas partes. Era muy improbabe que existiera en ning\u00fan lugar de Ocean\u00eda un ejemplar de un libro impreso antes de 1960.",
+                "date_created": "2018-02-19T08:05:14.207222"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "imprimir",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:49:02.293844"
+                    },
+                    "vocab_entry_tags": [
+                        "impreso"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "minuciosidad",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "cuidado en los detalles\r\n\r\n- thoroughness, meticulousness, attention to detail",
+                        "date_created": "2018-04-12T16:49:02.093220"
+                    },
+                    "vocab_entry_tags": [
+                        "minuciosidad"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "b\u00fasqueda",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:48:19.997049"
+                    },
+                    "vocab_entry_tags": [
+                        "b\u00fasqueda"
+                    ]
+                }
+            ]
+        },
+        "18": {
+            "vocab_context_data": {
+                "content": "Sus ojos volvieron a centrarse en la p\u00e1gina. Descubri\u00f3 que, mientras recordaba, hab\u00eda seguido escribiendo como impulsado por un acto autom\u00e1tico. Y ya no era la caligraf\u00eda torpe y acalambrada de antes. La pluma se hab\u00eda deslizado voluptuosa sobre el suave papel y hab\u00eda escrito con letra clara y may\u00fascula, una y otra vez, hasta llenar media p\u00e1gina:\r\n\r\nABAJO EL HERMANO MAYOR <br>\r\nABAJO EL HERMANO MAYOR <br>\r\nABAJO EL HERMANO MAYOR <br>\r\nABAJO EL HERMANO MAYOR <br>\r\nABAJO EL HERMANO MAYOR",
+                "date_created": "2018-02-19T08:05:14.474105"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "escribir",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:48:15.152066"
+                    },
+                    "vocab_entry_tags": [
+                        "escribiendo",
+                        "escrito"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "may\u00fascula",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:49:01.718968"
+                    },
+                    "vocab_entry_tags": [
+                        "may\u00fascula"
+                    ]
+                }
+            ]
+        },
+        "19": {
+            "vocab_context_data": {
+                "content": "Se vio golpe\u00e1ndola hasta la muerte con una cachiporra de goma, at\u00e1ndola desnuda a una estaca y acribill\u00e1ndola a flechazos como a un san Sebasti\u00e1n, viol\u00e1ndola y cort\u00e1ndole el cuello en el momento del cl\u00edmax.",
+                "date_created": "2018-02-19T08:05:14.684990"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "acribillar",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "disparar a discreci\u00f3n\r\n\r\n- riddle, pepper, bombard",
+                        "date_created": "2018-04-12T16:49:01.585528"
+                    },
+                    "vocab_entry_tags": [
+                        "acribill\u00e1ndola"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "violar",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:49:01.474167"
+                    },
+                    "vocab_entry_tags": [
+                        "viol\u00e1ndola"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "atar",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:49:01.363234"
+                    },
+                    "vocab_entry_tags": [
+                        "at\u00e1ndola"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "estaca",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "palo afilado, palo de madera\r\n\r\n- stake, peg",
+                        "date_created": "2018-04-12T16:49:01.251744"
+                    },
+                    "vocab_entry_tags": [
+                        "estaca"
+                    ]
+                }
+            ]
+        },
+        "20": {
+            "vocab_context_data": {
+                "content": "Pero la dificultad f\u00edsica de verla era enorme. Era como intentar mover una ficha de ajedrez despu\u00e9s de un jaque mate.",
+                "date_created": "2018-02-19T08:05:15.085322"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "ficha",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:49:01.148548"
+                    },
+                    "vocab_entry_tags": [
+                        "ficha"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "ajedrez",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "juego de tablero\r\n\r\n- chess",
+                        "date_created": "2018-04-12T16:48:49.530643"
+                    },
+                    "vocab_entry_tags": [
+                        "ajedrez"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "jaque mate",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "ajedrez: jugada final\r\n\r\n- checkmate",
+                        "date_created": "2018-04-12T16:49:01.037577"
+                    },
+                    "vocab_entry_tags": [
+                        "jaque mate"
+                    ]
+                }
+            ]
+        },
+        "21": {
+            "vocab_context_data": {
+                "content": "Peor no hizo falta que le explicara por qu\u00e9 hab\u00eda tenido que envolverlo. Su aroma llenaba ya la habitaci\u00f3n, un olor porfundo y c\u00e1lido que parec\u00eda una emanaci\u00f3n de su primera infancia y que uno reconoc\u00eda a veces en un pasillo antes de que se cerrase una puerta, o se extend\u00eda misteriosamente en una calle abarrotada sin que apenas diera tiempo a olisquearlo y lluevo volv\u00eda a disiparse.",
+                "date_created": "2018-02-19T08:05:15.452032"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "olisquear",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "olfatear\r\n\r\n- sniff, whiff",
+                        "date_created": "2018-04-12T16:49:00.959620"
+                    },
+                    "vocab_entry_tags": [
+                        "olisquearlo"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "abarrotado",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "muy lleno\r\n\r\n- crowded, packed, jam-packed",
+                        "date_created": "2018-04-12T16:49:00.882328"
+                    },
+                    "vocab_entry_tags": [
+                        "abarrotada"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "envolver",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "cubir por completo\r\n\r\n- cover, wrap",
+                        "date_created": "2018-04-12T16:49:00.737860"
+                    },
+                    "vocab_entry_tags": [
+                        "envolverlo"
+                    ]
+                }
+            ]
+        },
+        "22": {
+            "vocab_context_data": {
+                "content": "Lo que hacemos es destruirlas, decenas, cientos de palabras al d\u00eda. Estamos podando el idioma. Ni una sola de las palabras en la und\u00e9cima edici\u00f3n se quedar\u00e1 anticuada antes de 2050.",
+                "date_created": "2018-02-19T08:05:15.696523"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "podar",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "eliminar lo superfluo\r\n\r\n- prune, remove, cut out",
+                        "date_created": "2018-04-12T16:49:00.615936"
+                    },
+                    "vocab_entry_tags": [
+                        "podando"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "decena",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "diez unidades\r\n\r\n- tens, groups of ten",
+                        "date_created": "2018-04-12T16:48:28.464960"
+                    },
+                    "vocab_entry_tags": [
+                        "decenas"
+                    ]
+                }
+            ]
+        },
+        "23": {
+            "vocab_context_data": {
+                "content": "En nuevalengua, no hay ninguna palabra que signifique &laquo;ciencia&raquo;. El m\u00e9todo emp\u00edrico del pensamiento, en el que se basaron todos los logros cient\u00edficos del pasado, se opone a la mayor\u00eda de los principios fundamentales del Socing. E incluso el progreso tecnol\u00f3gico se permite solo cuando sus productos pueden aplicarse de alg\u00fan modo a disminuir la libertad humana.",
+                "date_created": "2018-02-19T08:05:16.018833"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "emp\u00edrico",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:48:56.329122"
+                    },
+                    "vocab_entry_tags": [
+                        "emp\u00edrico"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "disminuir",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "reducir, aminorar\r\n\r\n- reduce, decrease, lower",
+                        "date_created": "2018-04-12T16:47:55.862193"
+                    },
+                    "vocab_entry_tags": [
+                        "disminuir"
+                    ]
+                }
+            ]
+        },
+        "24": {
+            "vocab_context_data": {
+                "content": "Su padre hab\u00eda desaparecido poco antes, no sab\u00eda con exactitud cu\u00e1ndo. Recordaba mucho mejor las inc\u00f3modas y precarias circunstancias de la \u00e9poca: el p\u00e1nico per\u00edodico por los ataques a\u00e9reos y las prisas para refugiarse en las estaciones de metro, los montones de cascotes que hab\u00eda por todas partes, las proclamas ininteligibles colgadas en las esquinas, las pandillas de j\u00f3venes con camisas del mismo color, las largas colas a las puertas de las panader\u00edas, los disparos interminentes de las ametralladoras a lo lejos... y sobre todo, la falta de comida.",
+                "date_created": "2018-02-19T08:05:16.241022"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "precario",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:48:59.815328"
+                    },
+                    "vocab_entry_tags": [
+                        "precarias"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "ametralladora",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "- machine gun",
+                        "date_created": "2018-04-12T16:48:59.637605"
+                    },
+                    "vocab_entry_tags": [
+                        "ametralladoras"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "panader\u00eda",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "- bakery",
+                        "date_created": "2018-04-12T16:48:59.315260"
+                    },
+                    "vocab_entry_tags": [
+                        "panader\u00eda",
+                        "panader\u00edas"
+                    ]
+                }
+            ]
+        },
+        "25": {
+            "vocab_context_data": {
+                "content": "En el comedor subterr\u00e1neo y de techo bajo, la cola de la comida avanzaba lentamente y a sacudidas. La sala estaba muy llena y el ruido era ensordecedor.",
+                "date_created": "2018-02-19T08:05:16.752237"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "ensordecedor",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "d\u00edcese de un sonido muy fuerte, que encordece - deafening",
+                        "date_created": "2018-04-12T16:48:59.115445"
+                    },
+                    "vocab_entry_tags": [
+                        "ensordecedor"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "subterr\u00e1neo",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:48:58.926259"
+                    },
+                    "vocab_entry_tags": [
+                        "subterr\u00e1neo"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "sacudida",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:48:58.729631"
+                    },
+                    "vocab_entry_tags": [
+                        "sacudidas"
+                    ]
+                }
+            ]
+        },
+        "26": {
+            "vocab_context_data": {
+                "content": "Informes y registros de todas clases, peri\u00f3dicos, libros, panfletos, pel\u00edculas, bandas sonoras, fotograf\u00edas: todo hab\u00eda que rectificarlo cuanto antes. Pese a que no se hab\u00eda emitido ninguna directriz, todo el mundo sab\u00eda que los jefes de departamento quer\u00edan que al cabo de una semana no quedara una sola referencia a la guerra con Eurasia o la alianza con Esteasia.",
+                "date_created": "2018-02-19T08:05:17.363340"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "rectificar",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:48:58.455592"
+                    },
+                    "vocab_entry_tags": [
+                        "rectificarlo"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "banda sonora",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "m\u00fasica de una pel\u00edcula\r\n\r\n- music score, soundtrack",
+                        "date_created": "2018-04-12T16:48:58.231578"
+                    },
+                    "vocab_entry_tags": [
+                        "bandas sonoras"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "directriz",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "instrucci\u00f3n\r\n\r\n- directive, guideline",
+                        "date_created": "2018-04-12T16:48:58.006744"
+                    },
+                    "vocab_entry_tags": [
+                        "directriz"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "al cabo de",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "despu\u00e9s de\r\n\r\n- after, afterwards",
+                        "date_created": "2018-04-12T16:48:57.796171"
+                    },
+                    "vocab_entry_tags": [
+                        "al cabo de"
+                    ]
+                }
+            ]
+        },
+        "27": {
+            "vocab_context_data": {
+                "content": "En el sue\u00f1o hab\u00eda recordado la \u00faltima vez que hab\u00eda visto a su madre, y, nada m\u00e1s despertar, hab\u00eda acudido tambi\u00e9n a su memoria la serie de acontecimientos sin importancia sucedidos en aquella ocasi\u00f3n.",
+                "date_created": "2018-02-19T08:05:17.552284"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "acudir",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:48:57.551267"
+                    },
+                    "vocab_entry_tags": [
+                        "acudido"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "acontecimiento",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "event",
+                        "date_created": "2018-04-12T16:48:57.340585"
+                    },
+                    "vocab_entry_tags": [
+                        "acontecimientos"
+                    ]
+                }
+            ]
+        },
+        "28": {
+            "vocab_context_data": {
+                "content": "Se hab\u00edan aferrado a las emociones primitivas que \u00e9l mismo hab\u00eda tenido que volver a aprender haciendo un esfuerzo consciente. Y al pensarlo record\u00f3, como algo sin relevancia aparente, que unas semanas antes hab\u00eda visto una mano cortada en la acera y la hab\u00eda echado al arroyo como si fuera  un tallo de col.",
+                "date_created": "2018-02-19T08:05:17.652323"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "arroyo",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:48:57.074485"
+                    },
+                    "vocab_entry_tags": [
+                        "arroyo"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "acera",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "sidewalk",
+                        "date_created": "2018-04-12T16:48:57.003883"
+                    },
+                    "vocab_entry_tags": [
+                        "acera"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "aferrarse",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "insistir tenazmente\r\n\r\n- cling to, hang onto",
+                        "date_created": "2018-04-12T16:48:56.795709"
+                    },
+                    "vocab_entry_tags": [
+                        "aferrado"
+                    ]
+                }
+            ]
+        },
+        "29": {
+            "vocab_context_data": {
+                "content": "No fue as\u00ed, en parte por el empobrecimiento causado por una larga serie de guerras y revoluciones y porque el progreso t\u00e9cnico y cient\u00edfico depend\u00eda de la costumbre emp\u00edrica del pensamiento, que no podia sobrevivir en una sociedad r\u00edgidamente reglamentada.",
+                "date_created": "2018-02-19T08:05:17.796824"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "empobrecimiento",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:48:56.553049"
+                    },
+                    "vocab_entry_tags": [
+                        "empobrecimiento"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "emp\u00edrico",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:48:56.329122"
+                    },
+                    "vocab_entry_tags": [
+                        "emp\u00edrica"
+                    ]
+                }
+            ]
+        },
+        "30": {
+            "vocab_context_data": {
+                "content": "Durante largos per\u00edodos la clase alta parece estar segura en el poder, pero antes o despu\u00e9s llega un momento en que pierde la fe en s\u00ed misma, la capacidad de gobernar con eficacia o ambas cosas al mismo tiempo. Entonces la desplaza la clase media, que atrae a su bando a la clase baja fingiendo luchar por la libertad y la justicia. Nada m\u00e1s lograr su objetivo, la clase media devuelve a la baja a su antigua situaci\u00f3n de servidumbre y se convierte en una nueva clase alta.",
+                "date_created": "2018-02-19T08:05:17.919243"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "per\u00edodo",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:48:56.072497"
+                    },
+                    "vocab_entry_tags": [
+                        "per\u00edodo",
+                        "per\u00edodos"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "servidumbre",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:48:55.962201"
+                    },
+                    "vocab_entry_tags": [
+                        "servidumbre"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "convertirse",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:47:44.634414"
+                    },
+                    "vocab_entry_tags": [
+                        "se convierte"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "desplazar",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:48:55.706959"
+                    },
+                    "vocab_entry_tags": [
+                        "desplaza"
+                    ]
+                }
+            ]
+        },
+        "31": {
+            "vocab_context_data": {
+                "content": "Todo se difuminaba en la niebla. El pasado hab\u00eda sido borrado, se hab\u00eda olvidado que hab\u00eda sido borrado y de ese modo la mentira se convert\u00eda en verdad.",
+                "date_created": "2018-02-19T08:05:18.130032"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "difuminarse",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "perder intensidad \r\n\r\n- blur, fade, diffuse",
+                        "date_created": "2018-04-12T16:48:55.514656"
+                    },
+                    "vocab_entry_tags": [
+                        "se difuminaba"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "convertirse",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:47:44.634414"
+                    },
+                    "vocab_entry_tags": [
+                        "se convert\u00eda"
+                    ]
+                }
+            ]
+        },
+        "32": {
+            "vocab_context_data": {
+                "content": "Era como si el exceso de trabajo le hubiese absorbido toda la sangra y la linfa y solo quedara una fr\u00e1gil estructura de nervios, piel y huesos.",
+                "date_created": "2018-02-19T08:05:18.230235"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "linfa",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "linf\u00e1tico, sangre\r\n\r\n- lymph",
+                        "date_created": "2018-04-12T16:48:55.136989"
+                    },
+                    "vocab_entry_tags": [
+                        "linfa"
+                    ]
+                }
+            ]
+        },
+        "33": {
+            "vocab_context_data": {
+                "content": "Incluso despu\u00e9s de enormes revueltas y de cambios en apariencia irrevocables, ha vuelto a establecerse el mismo orden, igual que un gir\u00f3scopo siempre vuelve a la posici\u00f3n de equilibrio por m\u00e1s que lo empujemos a un lado o a otro.",
+                "date_created": "2018-02-19T08:05:18.296826"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "equilibrio",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:48:54.825674"
+                    },
+                    "vocab_entry_tags": [
+                        "equilibrio"
+                    ]
+                }
+            ]
+        },
+        "34": {
+            "vocab_context_data": {
+                "content": "La partida de dardos hab\u00eda vuelto a reanudarse y los hombres de la barra hab\u00edan empezado a hablar de la Loter\u00eda.",
+                "date_created": "2018-02-19T08:05:18.430543"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "reanudarse",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:48:54.617512"
+                    },
+                    "vocab_entry_tags": [
+                        "reanudarse"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "partida",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:48:49.770603"
+                    },
+                    "vocab_entry_tags": [
+                        "partida"
+                    ]
+                }
+            ]
+        },
+        "35": {
+            "vocab_context_data": {
+                "content": "Cuando la rode\u00f3 con sus brazos un aroma de violetas sint\u00e9ticas inund\u00f3 sus fosas nasales. Record\u00f3 la penumbra de una cocina en un s\u00f3tano, y la boca cavernosa de una mujer.",
+                "date_created": "2018-02-19T08:05:18.541464"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "fosa nasal",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "nostril",
+                        "date_created": "2018-04-12T16:48:54.239112"
+                    },
+                    "vocab_entry_tags": [
+                        "fosas nasales"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "penumbra",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "iluminaci\u00f3n d\u00e9bil\r\n\r\n- dimly lit, semi-darkness, gloom",
+                        "date_created": "2018-04-12T16:48:54.014162"
+                    },
+                    "vocab_entry_tags": [
+                        "penumbra"
+                    ]
+                }
+            ]
+        },
+        "36": {
+            "vocab_context_data": {
+                "content": "No se cre\u00eda &laquo;inteligente&raquo;, pero era h\u00e1bil con las manos y le encantaba reparar m\u00e1quinas. Conoc\u00eda la directiva general emitida por el Comit\u00e9 de Planificaci\u00f3n hasta los \u00faltimos retoques de la Brigada de Reescritura. Pero no le interesaba mucho el producto final. No era &laquo;una gran lectora&raquo;, dec\u00eda. Los libros eran solo una mercanc\u00eda que era necesario producir, como la mermelada o los cordones de los zapatos.",
+                "date_created": "2018-02-19T08:05:18.641241"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "mercanc\u00eda",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "se compra, se vende\r\n\r\n- merchandise, goods",
+                        "date_created": "2018-04-12T16:48:53.825628"
+                    },
+                    "vocab_entry_tags": [
+                        "mercanc\u00eda"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "cordones de los zapatos",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "tiras de lazo de calzado\r\n\r\n- shoe laces",
+                        "date_created": "2018-04-12T16:48:53.659340"
+                    },
+                    "vocab_entry_tags": [
+                        "cordones de los zapatos"
+                    ]
+                }
+            ]
+        },
+        "37": {
+            "vocab_context_data": {
+                "content": "La polic\u00eda civil apenas se met\u00eda con ellos. En Londres, la tasa de criminalidad era muy alta, hab\u00eda todo un mundo dentro de un mundo de ladrones, rateros, prostitutas, traficantes de drogas, y todo tipo de maleantes; pero como todo ocurr\u00eda entre los mismos proles, nadie le daba mucha importancia.",
+                "date_created": "2018-02-19T08:05:18.741473"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "tasa",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "proporci\u00f3n\r\n\r\n- rate",
+                        "date_created": "2018-04-12T16:48:33.798903"
+                    },
+                    "vocab_entry_tags": [
+                        "tasa"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "maleante",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:48:53.392043"
+                    },
+                    "vocab_entry_tags": [
+                        "maleantes"
+                    ]
+                }
+            ]
+        },
+        "38": {
+            "vocab_context_data": {
+                "content": "No recordaba lo que hab\u00eda ocurrido, pero en su sue\u00f1o supo que de alg\u00fan modo su madre y su hermana hab\u00edan sacrificado su vida por \u00e9l. Era uno de esos sue\u00f1os que, pese a conservar un ambiente on\u00edrico carecter\u00edstico, son una continuaci\u00f3n de la propia vida intelectual, y en los que uno comprende hechos e ideas que siguen pareciendo nuevos y valiosos despu\u00e9s de despertar.",
+                "date_created": "2018-02-19T08:05:18.841823"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "on\u00edrico",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "de los sue\u00f1os o relativo a ellos\r\n\r\n- oneiric",
+                        "date_created": "2018-04-12T16:48:53.215265"
+                    },
+                    "vocab_entry_tags": [
+                        "on\u00edrico"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "saber",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:47:21.452429"
+                    },
+                    "vocab_entry_tags": [
+                        "supo"
+                    ]
+                }
+            ]
+        },
+        "39": {
+            "vocab_context_data": {
+                "content": "El para\u00edso terrenal empez\u00f3 a ponerse en duda justo en el momento en que se volvi\u00f3 realizable. Todas las nuevas teor\u00edas pol\u00edticas, con independencia de c\u00f3mo se llamasen, conduc\u00edan a la jerarqu\u00eda y la reglamentaci\u00f3n.",
+                "date_created": "2018-02-19T08:05:18.952433"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "jerarqu\u00eda",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:48:52.918264"
+                    },
+                    "vocab_entry_tags": [
+                        "jerarqu\u00eda"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "volverse",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "tornarse\r\n\r\n- turn, become",
+                        "date_created": "2018-04-12T16:47:49.701876"
+                    },
+                    "vocab_entry_tags": [
+                        "se volvi\u00f3"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "realizable",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:48:52.662366"
+                    },
+                    "vocab_entry_tags": [
+                        "realizable"
+                    ]
+                }
+            ]
+        },
+        "40": {
+            "vocab_context_data": {
+                "content": "El Odio lleg\u00f3 a su apogeo. La voz de Goldstein se hab\u00eda convertido en un verdadero balido, y por un instante su rostro se transorm\u00f3 en el de una oveja. Luego el rostro de la oveja se fundi\u00f3 con la figura de un soldado de Eurasia que parec\u00eda estar avanzando, enorme y terrible entre el ruido del subfusil ametrallador, como si fuese a salir de la pantalla, de modo que algunos de lo s que estaban sentados en primera fila se echaron atr\u00e1s.",
+                "date_created": "2018-02-19T08:05:19.096851"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "apogeo",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "punto culminante\r\n\r\n- peak, height, apogee",
+                        "date_created": "2018-04-12T16:48:52.417237"
+                    },
+                    "vocab_entry_tags": [
+                        "apogeo"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "balido",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "voz del carnero y de otros\r\n\r\n- bleating, bleat",
+                        "date_created": "2018-04-12T16:48:52.206282"
+                    },
+                    "vocab_entry_tags": [
+                        "balido"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "ametrallador",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "naranjero\r\n\r\n- machine gunner, submachine gun",
+                        "date_created": "2018-04-12T16:48:52.095040"
+                    },
+                    "vocab_entry_tags": [
+                        "ametrallador"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "fila",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "hilera, cola, objetos alineados\r\n\r\n- row",
+                        "date_created": "2018-04-12T16:48:36.432586"
+                    },
+                    "vocab_entry_tags": [
+                        "fila"
+                    ]
+                }
+            ]
+        },
+        "41": {
+            "vocab_context_data": {
+                "content": "Cuando le dijo que no pod\u00efa ir, se hab\u00eda sentido enga\u00f1ado. Pero en es momento la muchedumbre se arremolin\u00f3 un poco y sus manos se rozaron por casualidad.",
+                "date_created": "2018-02-19T08:05:19.285829"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "muchedumbre",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "muchas personas\r\n\r\n- crowd, horde",
+                        "date_created": "2018-04-12T16:48:50.581960"
+                    },
+                    "vocab_entry_tags": [
+                        "muchedumbre"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "arremolinarse",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "juntarse alrededor - crowd around",
+                        "date_created": "2018-04-12T16:48:45.757349"
+                    },
+                    "vocab_entry_tags": [
+                        "se arremolin\u00f3"
+                    ]
+                }
+            ]
+        },
+        "42": {
+            "vocab_context_data": {
+                "content": "Tuvo la impresi\u00f3n de que era posible colarse dentro y de que en realidad estaba ya dentro de \u00e9l, junto a la cama de caoba y la mesa de alas abatibles, el reloj, el grabado y el propio pisapapeles. El pisapapeles era la habitaci\u00f3n en la que se hallaban y el coral su vida y la de Julia fijas en una especie de enternidad en el coraz\u00f3n del cristal.",
+                "date_created": "2018-02-19T08:05:19.497186"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "colarse",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:48:51.505972"
+                    },
+                    "vocab_entry_tags": [
+                        "colarse"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "pisapapeles",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "utensilio para sujetar\r\n\r\n- paperweight",
+                        "date_created": "2018-04-12T16:48:51.294772"
+                    },
+                    "vocab_entry_tags": [
+                        "pisapapeles"
+                    ]
+                }
+            ]
+        },
+        "43": {
+            "vocab_context_data": {
+                "content": "E incluso, cuando cund\u00eda entre ellos el descontento, como ocurr\u00eda algunas veces, no conduc\u00eda a ninguna parte porque, al carecer de ideas generales, solo pod\u00edan concentrarlo en minucias concretas y sin importancia.",
+                "date_created": "2018-02-19T08:05:19.608334"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "minucia",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "peque\u00f1o, sin importancia\r\n\r\n- nothing, trifle, trivial details",
+                        "date_created": "2018-04-12T16:48:51.052226"
+                    },
+                    "vocab_entry_tags": [
+                        "minucias"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "carecer",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:48:50.939185"
+                    },
+                    "vocab_entry_tags": [
+                        "carecer"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "cundir",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "propagarse\r\n\r\n- spread, propagate",
+                        "date_created": "2018-04-12T16:48:50.810264"
+                    },
+                    "vocab_entry_tags": [
+                        "cund\u00eda"
+                    ]
+                }
+            ]
+        },
+        "44": {
+            "vocab_context_data": {
+                "content": "Pasado un minuto, la muchedumbre volvi\u00f3 a emitir sus bestiales rugidos de rabia. El Odio continuaba exactamente igual que antes, pero hab\u00eda cambiado de objetivo.",
+                "date_created": "2018-02-19T08:05:19.863932"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "odio",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "rencor, aversi\u00f3n\r\n\r\n- hate, hatred",
+                        "date_created": "2018-04-12T16:48:50.713656"
+                    },
+                    "vocab_entry_tags": [
+                        "odio"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "rugido",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "sonido del le\u00f3n, sonido fuerte de animales\r\n\r\n- roar, bellow",
+                        "date_created": "2018-04-12T16:48:50.647298"
+                    },
+                    "vocab_entry_tags": [
+                        "rugidos"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "muchedumbre",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "muchas personas\r\n\r\n- crowd, horde",
+                        "date_created": "2018-04-12T16:48:50.581960"
+                    },
+                    "vocab_entry_tags": [
+                        "muchedumbre"
+                    ]
+                }
+            ]
+        },
+        "45": {
+            "vocab_context_data": {
+                "content": "La ciencia y la tecnolog\u00eda se estaban desarrollando a una velocidad vertiginosa, y parec\u00eda natural que continuaran haci\u00e9ndolo.",
+                "date_created": "2018-02-19T08:05:20.131762"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "desarrollar",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:48:50.461387"
+                    },
+                    "vocab_entry_tags": [
+                        "desarrollando"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "vertiginoso",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:48:50.128294"
+                    },
+                    "vocab_entry_tags": [
+                        "vertiginosa"
+                    ]
+                }
+            ]
+        }
+    }
+}

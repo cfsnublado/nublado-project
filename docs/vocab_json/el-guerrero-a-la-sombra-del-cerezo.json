@@ -1,0 +1,2188 @@
+{
+    "vocab_project_data": {
+        "name": "Spanish Reading"
+    },
+    "vocab_source_data": {
+        "source_type": 1,
+        "name": "El guerrero a la sombra del cerezo",
+        "description": "David B. Gil\r\n\r\nUna novela de samur\u00e1is.",
+        "date_created": "2018-08-10T06:26:20.154000"
+    },
+    "vocab_contexts": {
+        "1": {
+            "vocab_context_data": {
+                "content": "El joven se\u00f1or asinti\u00f3 y sali\u00f3 lentamente de debajo de las mantas, restreg\u00e1ndose los ojos para desperezarse. Mientras tranto, Kenzaburo comenz\u00f3 a recoger las escasas pertenencias que llevaban consigo, aunque, en un momento dado, se detuvo a observar las ramas de incienso a punto de extinguirse, como si aquello tuviera alg\u00fan significado.",
+                "date_created": "2018-05-06T17:52:10.813315"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "significado",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "definici\u00f3n, sentido\r\n\r\n- meaning, sense",
+                        "date_created": "2018-04-12T16:50:20.052323"
+                    },
+                    "vocab_entry_tags": [
+                        "significado"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "incienso",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "sustancia arom\u00e1tica\r\n\r\n- incense",
+                        "date_created": "2018-05-06T17:55:45.803686"
+                    },
+                    "vocab_entry_tags": [
+                        "incienso"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "detener",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:50:06.339173"
+                    },
+                    "vocab_entry_tags": [
+                        "se detuvo"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "desperezarse",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:49:37.445189"
+                    },
+                    "vocab_entry_tags": [
+                        "desperezarse"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "restregar",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "frotar con fuerza\r\n\r\n- rub with force, scrub",
+                        "date_created": "2018-05-06T17:53:46.441306"
+                    },
+                    "vocab_entry_tags": [
+                        "restreg\u00e1ndose"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "asentir",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:50:10.933801"
+                    },
+                    "vocab_entry_tags": [
+                        "asintio"
+                    ]
+                }
+            ]
+        },
+        "2": {
+            "vocab_context_data": {
+                "content": "Esc\u00facheme bien, Arima: el general Mitsurugi Takeuchi, al frente de cientos de soldados de los Sugawara, lleg\u00f3 a las puertas de mi templo hace quince d\u00edas y nos oblig\u00f3 a franquearles el paso. Eran un peque\u00f1o ej\u00e9rcito y hab\u00edan penetrado en las tierras de vuestro se\u00f1or desde el norte; hab\u00edan realizado un largo viaje y buscaban d\u00f3nde reabastecerse y esperar al resto de sus tropas.",
+                "date_created": "2018-05-06T17:47:32.341952"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "franquear",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "permitir el paso\r\n\r\n- grant access to a place",
+                        "date_created": "2018-05-06T17:51:27.567936"
+                    },
+                    "vocab_entry_tags": [
+                        "franquearles"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "reabastecer",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "proveer de nuevo, volver a adquirir suministros\r\n\r\n- restock, resupply",
+                        "date_created": "2018-05-06T17:49:17.510702"
+                    },
+                    "vocab_entry_tags": [
+                        "reabastecerse"
+                    ]
+                }
+            ]
+        },
+        "3": {
+            "vocab_context_data": {
+                "content": "De pie sobre el porche a la intemperie, Kenzaburo observ\u00f3 el jard\u00edn central del recinto, compuesto a partir de flores y plantas obtenidas, muy probablemente, del bosque que les rodeaba.",
+                "date_created": "2018-05-06T17:46:26.036879"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "recinto",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "zona cerrada\r\n\r\n- enclosure",
+                        "date_created": "2018-04-12T16:52:05.085178"
+                    },
+                    "vocab_entry_tags": [
+                        "recinto"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "a la intemperie",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "al aire libre, al descubierto\r\n\r\n- out in the open, under a clear sky",
+                        "date_created": "2018-04-12T16:52:18.035651"
+                    },
+                    "vocab_entry_tags": [
+                        "a la intemperie"
+                    ]
+                }
+            ]
+        },
+        "4": {
+            "vocab_context_data": {
+                "content": "A Seizo se le iluminaron los ojos al ver la carpa que Kenzaburo hab\u00eda capturado, no pudo evitar que su est\u00f3mago rugiera con furia al imaginar la tierna y c\u00e1lida carne del pescado desmenuz\u00e1ndose en su boca. Kenzaburo ley\u00f3 perfectamente su mirada.",
+                "date_created": "2018-05-06T17:43:17.074994"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "rugir",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "emitir el sonido de una fiera (ejemplo, el rugido de un le\u00f3n)\r\n\r\n- roar",
+                        "date_created": "2018-05-06T17:44:39.454783"
+                    },
+                    "vocab_entry_tags": [
+                        "rugiera"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "desmenuzarse",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "deshacerse\r\n\r\n- crumble",
+                        "date_created": "2018-05-06T17:45:38.960589"
+                    },
+                    "vocab_entry_tags": [
+                        "desmenuz\u00e1ndose"
+                    ]
+                }
+            ]
+        },
+        "5": {
+            "vocab_context_data": {
+                "content": "&mdash;Se\u00f1or Seizo &mdash; lo llam\u00f3 en voz baja.\r\n\r\nEl ni\u00f1o gir\u00f3 la cabeza bruscamente y se atragant\u00f3 con el agua. Comenz\u00f3 a toser con fuerza.",
+                "date_created": "2018-05-06T17:42:02.145283"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "toser",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "expirar con espasmos\r\n\r\n- cough",
+                        "date_created": "2018-05-06T17:42:52.949342"
+                    },
+                    "vocab_entry_tags": [
+                        "toser"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "atragantarse",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "ahogarse - choke",
+                        "date_created": "2018-04-12T16:49:39.655135"
+                    },
+                    "vocab_entry_tags": [
+                        "se atragant\u00f3"
+                    ]
+                }
+            ]
+        },
+        "6": {
+            "vocab_context_data": {
+                "content": "Aquella c\u00e1lida ma\u00f1ana de verano en Sabae, Ekei Inafune se sent\u00eda afortunado de vivir los albores de un nuevo tiempo que traer\u00eda importantes cambios al pa\u00eds.",
+                "date_created": "2018-05-06T17:40:20.634893"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "traer",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:49:31.287108"
+                    },
+                    "vocab_entry_tags": [
+                        "traer\u00eda"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "albor",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "(Literario) amanecer, aurora, alba. (Figurativo) principio.\r\n\r\n- (Figurative) dawn, beginning (e.g., the dawn of humanity)",
+                        "date_created": "2018-04-12T16:50:27.981890"
+                    },
+                    "vocab_entry_tags": [
+                        "albores"
+                    ]
+                }
+            ]
+        },
+        "7": {
+            "vocab_context_data": {
+                "content": "&mdash;EL pr\u00f3ximo a\u00f1o, creo que ser\u00eda recomendable para la salud de su esposo peregrinar al templo Eiheji en otra \u00e9poca: febrero o quiz\u00e1s octubre. Eviten en cualquier caso la \u00e9poca de floraci\u00f3n.",
+                "date_created": "2018-05-06T17:37:53.280285"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "peregrinar",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "viajar a un santuario, a un lugar sagrado\r\n\r\n- make a pilgrimage",
+                        "date_created": "2018-05-06T17:39:39.191176"
+                    },
+                    "vocab_entry_tags": [
+                        "peregrinar"
+                    ]
+                }
+            ]
+        },
+        "8": {
+            "vocab_context_data": {
+                "content": "Ekei se enjuag\u00f3 las manos en un recipiente con agua casi hirviendo que hab\u00edan dispuesto para su visita. Se sacudi\u00f3 las manos enrojecidas e, inmediatamente, su improvisada asistenta le tendi\u00f3 un pa\u00f1uelo de lino.",
+                "date_created": "2018-05-06T17:36:30.981842"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "enjuagar",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "limpiar con agua\r\n\r\n- rinse, rinse off",
+                        "date_created": "2018-04-12T16:49:46.167116"
+                    },
+                    "vocab_entry_tags": [
+                        "se enjuag\u00f3"
+                    ]
+                }
+            ]
+        },
+        "9": {
+            "vocab_context_data": {
+                "content": "\u00bfC\u00f3mo hab\u00eda llegado hasta all\u00ed un ej\u00e9rcito sin que nadie hubiera dado la alarma? \u00bfC\u00f3mo hab\u00eda atravesado las sucesivas defensas de una fortaleza hasta la fecha inexpugnable?",
+                "date_created": "2018-05-06T17:34:57.454809"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "atravesar",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "traspasar algo con un objeto, cruzar al otro lado - pierce, go through, cross",
+                        "date_created": "2018-04-12T16:50:16.477888"
+                    },
+                    "vocab_entry_tags": [
+                        "hab\u00eda atravesado"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "inexpugnable",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "invulnerable, impenetrable\r\n\r\n- impregnable, resistant to attack",
+                        "date_created": "2018-04-12T16:49:03.552401"
+                    },
+                    "vocab_entry_tags": [
+                        "inexpugnable"
+                    ]
+                }
+            ]
+        },
+        "10": {
+            "vocab_context_data": {
+                "content": "As\u00ed, lentamente, atraves\u00f3 el umbral de la cueva y Seizo observ\u00f3 c\u00f3mo era engullido por la oscuridad. Reapareci\u00f3 al rato y comenz\u00f3 a descender por la pendiente rocosa, esta vez con pasos firmes y \u00e1giles.",
+                "date_created": "2018-04-15T17:07:28.789278"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "atravesar",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "traspasar algo con un objeto, cruzar al otro lado - pierce, go through, cross",
+                        "date_created": "2018-04-12T16:50:16.477888"
+                    },
+                    "vocab_entry_tags": [
+                        "atraves\u00f3"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "engullir",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "tragar sin masticar - swallow whole, gobble down, devour",
+                        "date_created": "2018-04-12T16:49:41.433171"
+                    },
+                    "vocab_entry_tags": [
+                        "engullido"
+                    ]
+                }
+            ]
+        },
+        "11": {
+            "vocab_context_data": {
+                "content": "Kenzaburo Arima se esforzaba por controlar al animal vali\u00e9ndose de sus piernas y de la \u00fanica mano con la que sosten\u00eda las riendas, con la otra abrazaba al ni\u00f1o que se aferraba a \u00e9l con desespero, la mejilla aplastada contra el ensangrentado peto de la armadura.",
+                "date_created": "2018-04-15T16:42:31.065185"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "ensangrentado",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "cubierto de sangre\r\n\r\n- bloodstained, bloody",
+                        "date_created": "2018-04-12T16:50:47.128220"
+                    },
+                    "vocab_entry_tags": [
+                        "ensangrentado"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "armadura",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "vestidura de combate, armaz\u00f3n - armor, suit of armor",
+                        "date_created": "2018-04-12T16:49:43.333605"
+                    },
+                    "vocab_entry_tags": [
+                        "armadura"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "valerse de",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "Recurrir a a algo.\r\n\r\n- make use of, take advantage of",
+                        "date_created": "2018-04-15T16:45:37.845970"
+                    },
+                    "vocab_entry_tags": [
+                        "vali\u00e9ndose de"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "esforzarse",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "Hacer esfuerzos.\r\n\r\n- make an effort, apply oneself",
+                        "date_created": "2018-04-15T16:47:46.585925"
+                    },
+                    "vocab_entry_tags": [
+                        "se esforzaba"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "sostener",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "Sujetar, mantener\r\n\r\n- hold",
+                        "date_created": "2018-04-15T16:43:21.087770"
+                    },
+                    "vocab_entry_tags": [
+                        "sosten\u00eda"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "aferrarse",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "insistir tenazmente\r\n\r\n- cling to, hang onto",
+                        "date_created": "2018-04-12T16:48:56.795709"
+                    },
+                    "vocab_entry_tags": [
+                        "se aferraba"
+                    ]
+                }
+            ]
+        },
+        "12": {
+            "vocab_context_data": {
+                "content": "Cuando una piedra golpea la superficie de un estanque sereno, provoca ondas que llegan hasta la m\u00e1s lejana orilla.",
+                "date_created": "2018-04-15T16:48:13.681154"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "superficie",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "Parte externa; \u00e1rea de algo.\r\n\r\n- surface, area, space",
+                        "date_created": "2018-04-15T16:49:03.635503"
+                    },
+                    "vocab_entry_tags": [
+                        "superficie"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "estanque",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "Pozo, charca.\r\n\r\n- pond",
+                        "date_created": "2018-04-15T16:49:54.164939"
+                    },
+                    "vocab_entry_tags": [
+                        "estanque"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "orilla",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "borde, extremo final\r\n\r\n- edge, shore, lip",
+                        "date_created": "2018-04-12T16:52:15.843153"
+                    },
+                    "vocab_entry_tags": [
+                        "orilla"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "onda",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "(L\u00edquido) C\u00edrculo conc\u00e9ntrico.\r\nVibraci\u00f3n de un medio.\r\n\r\n- wave (e.g. light, radio), ripple (water)",
+                        "date_created": "2018-04-15T16:52:22.658374"
+                    },
+                    "vocab_entry_tags": [
+                        "ondas"
+                    ]
+                }
+            ]
+        },
+        "13": {
+            "vocab_context_data": {
+                "content": "Los asaltantes parec\u00edan haber atravesado los anillos fortificados hasta alcanzar el _hon maru_ sin que nadie diera la alarma. Cuando se percataron del ataque, la fortaleza ya estaba perdida.",
+                "date_created": "2018-04-15T16:53:51.280882"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "percatarse",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "darse cuenta\r\n\r\n- realize, notice",
+                        "date_created": "2018-04-12T16:48:11.116938"
+                    },
+                    "vocab_entry_tags": [
+                        "se percataron"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "parecer",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:50:57.217800"
+                    },
+                    "vocab_entry_tags": [
+                        "parec\u00edan"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "atravesar",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "traspasar algo con un objeto, cruzar al otro lado - pierce, go through, cross",
+                        "date_created": "2018-04-12T16:50:16.477888"
+                    },
+                    "vocab_entry_tags": [
+                        "haber atravesado"
+                    ]
+                }
+            ]
+        },
+        "14": {
+            "vocab_context_data": {
+                "content": "&mdash;\u00bfCrees que est\u00e1n tan locos como para enfrentarse a los Yamada ellos solos?\r\n\r\n&mdash;Solos no &mdash;puntualiz\u00f3 Shimizu&mdash;, pero quiz\u00e1s convenzan a otros tan locos como ellos. Entonces puede que se sientan fuertes.",
+                "date_created": "2018-04-15T16:55:16.027622"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "convencer",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "inducir, persuadir\r\n\r\n- convince, persuade",
+                        "date_created": "2018-04-15T16:55:59.713866"
+                    },
+                    "vocab_entry_tags": [
+                        "convenzan"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "enfrentarse",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "encarar (suele ir con a)\r\n\r\n- face, confront",
+                        "date_created": "2018-04-12T16:52:01.388515"
+                    },
+                    "vocab_entry_tags": [
+                        "enfrentarse"
+                    ]
+                }
+            ]
+        },
+        "15": {
+            "vocab_context_data": {
+                "content": "Comenzaba a escampar y la tormenta hab\u00eda devenido en una llovizna que le ayudaba a mantenerse despierto y que permit\u00eda divisar, aun desde la distancia, los orificios y cueva que picaban la erosionada base del macizo.",
+                "date_created": "2018-04-15T16:56:54.150410"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "escampar",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "dejar de llover - clear up, stop raining",
+                        "date_created": "2018-04-12T16:51:46.248944"
+                    },
+                    "vocab_entry_tags": [
+                        "escampar"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "devenir",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "suceder\r\n\r\n- come about, happen, occur",
+                        "date_created": "2018-04-15T16:58:33.498960"
+                    },
+                    "vocab_entry_tags": [
+                        "hab\u00eda devenido"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "llovizna",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "lluvia ligera\r\n\r\n- drizzle, misty rain, sprinkle",
+                        "date_created": "2018-04-12T16:52:10.162864"
+                    },
+                    "vocab_entry_tags": [
+                        "llovizna"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "permitir",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "autorizar\r\n\r\n- permit, allow",
+                        "date_created": "2018-04-12T16:48:05.570486"
+                    },
+                    "vocab_entry_tags": [
+                        "permit\u00eda"
+                    ]
+                }
+            ]
+        },
+        "16": {
+            "vocab_context_data": {
+                "content": "Hizo un esfuerzo por apartar esos pensamientos: la compasi\u00f3n nunca hab\u00eda ayudado a nadie a salir adelante, no m\u00e1s de lo que una hogaza de pan har\u00eda para la hambruna, y tampoco ayudar\u00eda al chico.",
+                "date_created": "2018-04-15T17:00:12.246027"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "hacer un esfuerzo por",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "mental o moralmente\r\n\r\n- make an effort to",
+                        "date_created": "2018-04-15T17:01:14.716034"
+                    },
+                    "vocab_entry_tags": [
+                        "hizo un esfuerzo por"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "apartar",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:51:14.328853"
+                    },
+                    "vocab_entry_tags": [
+                        "apartar"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "pensamiento",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "capacidad de formar ideas, recopilaci\u00f3n de ideas de alguien\r\n\r\n- thought",
+                        "date_created": "2018-04-12T16:50:30.246158"
+                    },
+                    "vocab_entry_tags": [
+                        "pensamientos"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "hogaza",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "pan grande y redondo\r\n\r\n- loaf",
+                        "date_created": "2018-04-15T17:02:42.153308"
+                    },
+                    "vocab_entry_tags": [
+                        "hogaza"
+                    ]
+                }
+            ]
+        },
+        "17": {
+            "vocab_context_data": {
+                "content": "&laquo;Aprende a vivir la vida que te ha tocado y no ambiciones otra&raquo;, record\u00f3 de las viejas ense\u00f1anzas.",
+                "date_created": "2018-04-15T17:04:58.605493"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "ense\u00f1anza",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "educaci\u00f3n\r\n\r\n- teaching",
+                        "date_created": "2018-04-15T17:06:01.526524"
+                    },
+                    "vocab_entry_tags": [
+                        "ense\u00f1anzas"
+                    ]
+                }
+            ]
+        },
+        "18": {
+            "vocab_context_data": {
+                "content": "El aburrido m\u00e9dico observ\u00f3 la evoluci\u00f3n de aquel hombre que trabajaba en silencio y con destreza, devolviendo la luz a los rincones que hab\u00edan quedado en penumbras.",
+                "date_created": "2018-05-13T01:21:39.911210"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "penumbra",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "iluminaci\u00f3n d\u00e9bil\r\n\r\n- dimly lit, semi-darkness, gloom",
+                        "date_created": "2018-04-12T16:48:54.014162"
+                    },
+                    "vocab_entry_tags": [
+                        "penumbras"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "devolver",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:48:45.446193"
+                    },
+                    "vocab_entry_tags": [
+                        "devolviendo"
+                    ]
+                }
+            ]
+        },
+        "19": {
+            "vocab_context_data": {
+                "content": "Tuvo la misma impresi\u00f3n que la primera vez que lo vio: aquello no pod\u00eda ser un mineral. Ciertamente, era compacto, pero su tacto resultaba ligeramente pegajoso, similar al de la resina reseca sobre los troncos de los cedros.",
+                "date_created": "2018-05-13T01:25:26.719746"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "tacto",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "sentido, toque\r\n\r\n- touch, tact",
+                        "date_created": "2018-05-13T01:26:15.169841"
+                    },
+                    "vocab_entry_tags": [
+                        "tacto"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "pegajoso",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "que se adhiere\r\n\r\n- sticky",
+                        "date_created": "2018-05-13T01:27:34.222226"
+                    },
+                    "vocab_entry_tags": [
+                        "pegajoso"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "cedro",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "\u00e1rbol: con\u00edfera pan\u00e1cea\r\n\r\n- cedar tree",
+                        "date_created": "2018-05-13T01:29:08.974881"
+                    },
+                    "vocab_entry_tags": [
+                        "cedros"
+                    ]
+                }
+            ]
+        },
+        "20": {
+            "vocab_context_data": {
+                "content": "Tard\u00f3 un buen rato, pero finalmente aquella especie de resina se diluy\u00f3 en el agua; verti\u00f3 el espeso l\u00edquido resultante en una taza y lo escrut\u00f3 mientras lo remov\u00eda con una esp\u00e1tula, a la espera de que se enfriara.",
+                "date_created": "2018-05-13T01:29:37.786733"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "verter",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "derramar o vaciar l\u00edquidos, y tambi\u00e9n cosas menudas;\r\ncomo sal o harina. - pour, spill, dump",
+                        "date_created": "2018-04-12T16:49:06.820536"
+                    },
+                    "vocab_entry_tags": [
+                        "verti\u00f3"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "escrutar",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:50:08.183924"
+                    },
+                    "vocab_entry_tags": [
+                        "escrut\u00f3"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "a la espera de",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "hasta que suceda\r\n\r\n- waiting for",
+                        "date_created": "2018-05-13T01:31:15.469548"
+                    },
+                    "vocab_entry_tags": [
+                        "a la espera de"
+                    ]
+                }
+            ]
+        },
+        "21": {
+            "vocab_context_data": {
+                "content": "La estancia estaba pr\u00e1cticamente a oscuras, vagamente iluminada por la luz difusa que llegaba desde el pasillo, pero aquello no parec\u00eda ser un problema para el barbado jesuita, que hab\u00eda percibido claramente el olor a cera reci\u00e9n quemada. El monje se dirigi\u00f3 a la mesa y toc\u00f3 la mecha a\u00fan caliente de una de las velas.",
+                "date_created": "2018-05-13T01:32:02.313086"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "cera",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "material de las velas\r\n\r\n- wax, candle wax",
+                        "date_created": "2018-05-13T01:33:30.649593"
+                    },
+                    "vocab_entry_tags": [
+                        "cera"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "dirigirse",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:51:24.001631"
+                    },
+                    "vocab_entry_tags": [
+                        "se dirigi\u00f3"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "mecha",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "Cuerda combustible (explosivos)\r\n\r\nPabilo (vela, mechero)\r\n\r\n- wick (candle), fuse (explosives)",
+                        "date_created": "2018-04-12T16:50:00.904952"
+                    },
+                    "vocab_entry_tags": [
+                        "mecha"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "a oscuras",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "sin luz\r\n\r\n- in the dark, in darkness",
+                        "date_created": "2018-05-13T01:35:10.728478"
+                    },
+                    "vocab_entry_tags": [
+                        "a oscuras"
+                    ]
+                }
+            ]
+        },
+        "22": {
+            "vocab_context_data": {
+                "content": "Cuando retir\u00f3 la afilada cuchilla, un l\u00edquido lechoso comenz\u00f3 a manar gota a gota sobre el cuenco que Tsukumo hab\u00eda aproximado. \u201cLeche del sue\u00f1o\u201d era como Ekei hab\u00eda denominado a aquella sustancia, dado su potente efecto narc\u00f3tico.",
+                "date_created": "2018-05-13T01:35:32.423321"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "manar",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:49:48.567135"
+                    },
+                    "vocab_entry_tags": [
+                        "manar"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "denominar",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "nombrar, dar nombre a algo\r\n\r\n- call, refer to",
+                        "date_created": "2018-05-13T01:37:32.550329"
+                    },
+                    "vocab_entry_tags": [
+                        "hab\u00eda denominado"
+                    ]
+                }
+            ]
+        },
+        "23": {
+            "vocab_context_data": {
+                "content": "La ayudante tom\u00f3 una tetera de la misma mesa y sirvi\u00f3 t\u00e9 verde en sendas tazas de madera laqueada. Se aproxim\u00f3 a Ekei y le tendi\u00f3 una, sent\u00e1ndose de rodillas junto a \u00e9l.",
+                "date_created": "2018-05-13T01:38:17.512089"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "sendos",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "respectivos\r\n\r\n- each",
+                        "date_created": "2018-04-12T16:52:16.053189"
+                    },
+                    "vocab_entry_tags": [
+                        "sendas"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "aproximarse",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "acercar - approach",
+                        "date_created": "2018-04-12T16:51:36.780160"
+                    },
+                    "vocab_entry_tags": [
+                        "se aproxim\u00f3"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "sentarse",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "Tomar asiento.\r\n\r\n- sit down, take a seat",
+                        "date_created": "2018-04-12T16:50:40.256342"
+                    },
+                    "vocab_entry_tags": [
+                        "sent\u00e1ndose"
+                    ]
+                }
+            ]
+        },
+        "24": {
+            "vocab_context_data": {
+                "content": "&mdash;. Desde hace generaciones los Yamada han sido el clan m\u00e1s poderoso de la provincia de Echizen y su supremac\u00eda militar ha sido una constante amenaza para los feudos circundantes. Una sombra oscura que se extend\u00eda sobre el horizonte y que fue la principal preocupaci\u00f3n de mi abuelo, luego de mi padre, y que ahora ha pasado a m\u00ed.\r\n\r\nEs m\u00e1s, me atrever\u00eda a decir que el resto de los clanes amenazados se pensar\u00edan mucho una alianza militar que s\u00ed podr\u00eda llamar la atenci\u00f3n del \r\n_bakufu_.",
+                "date_created": "2018-05-13T01:41:50.985753"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "supremac\u00eda",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "superioridad absoluta\r\n\r\n- supremacy, absolute superiority",
+                        "date_created": "2018-05-13T01:42:50.512364"
+                    },
+                    "vocab_entry_tags": [
+                        "supremac\u00eda"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "amenaza",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "- threat",
+                        "date_created": "2018-04-12T16:52:00.248067"
+                    },
+                    "vocab_entry_tags": [
+                        "amenaza"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "circundante",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "que rodea\r\n\r\n- surrounding",
+                        "date_created": "2018-04-12T16:50:09.917804"
+                    },
+                    "vocab_entry_tags": [
+                        "circundantes"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "preocupaci\u00f3n",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:48:40.845521"
+                    },
+                    "vocab_entry_tags": [
+                        "preocupaci\u00f3n"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "atreverse",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "arriesgarse - take a risk",
+                        "date_created": "2018-04-12T16:49:41.221990"
+                    },
+                    "vocab_entry_tags": [
+                        "me atrever\u00eda"
+                    ]
+                }
+            ]
+        },
+        "25": {
+            "vocab_context_data": {
+                "content": "&mdash;Ya veo &mdash;asinti\u00f3 pensativo el m\u00e9dico&mdash;. Todo eso es cierto, pero no dejan de ser conjeturas. A no ser que existan pruebas de que los Yamada preparan una expansi\u00f3n militar.",
+                "date_created": "2018-05-13T01:44:41.910533"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "asentir",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:50:10.933801"
+                    },
+                    "vocab_entry_tags": [
+                        "asinti\u00f3"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "conjetura",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "adivinaci\u00f3n\r\n\r\n- conjecture, speculation",
+                        "date_created": "2018-05-13T01:46:18.721445"
+                    },
+                    "vocab_entry_tags": [
+                        "conjeturas"
+                    ]
+                }
+            ]
+        },
+        "26": {
+            "vocab_context_data": {
+                "content": "&mdash;Sin embargo, Torakusu ya no dirige sus ej\u00e9rcitos \u2014dijo Munisai con voz grave\u2014. Desde hace meses, su hijo de veinte a\u00f1os, Susumu Yamada, se hace cargo de la pol\u00edtica militar del clan. Es belicoso, como todos los j\u00f3venes, y temo que vea en esta situaci\u00f3n una oportunidad \u00fanica de ampliar su feudo antes de que amainen los vientos de guerra.",
+                "date_created": "2018-05-13T01:46:39.197263"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "hacerse cargo de algo",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "asumir una tarea\r\n\r\n- be in charge of something",
+                        "date_created": "2018-05-13T01:47:58.432462"
+                    },
+                    "vocab_entry_tags": [
+                        "se hace cargo de"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "belicoso",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "de inclinaci\u00f3n guerrera\r\n\r\n- warlike, belligerant",
+                        "date_created": "2018-05-13T01:49:19.012005"
+                    },
+                    "vocab_entry_tags": [
+                        "belicoso"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "amainar",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "viento: perder fuerza\r\n\r\n- wind: die down, subside",
+                        "date_created": "2018-05-13T01:51:09.400170"
+                    },
+                    "vocab_entry_tags": [
+                        "amainen"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "viento",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "corriente de aire\r\n\r\n- wind, breeze",
+                        "date_created": "2018-04-12T16:50:45.970370"
+                    },
+                    "vocab_entry_tags": [
+                        "vientos"
+                    ]
+                }
+            ]
+        },
+        "27": {
+            "vocab_context_data": {
+                "content": "&mdash;Por favor, no sea dram\u00e1tico. Nadie le ha pedido que act\u00fae como sicario. Si el se\u00f1or Yamada apareciera asesinado en su propio castillo, sin duda provocar\u00edamos lo que tanto tememos. La misi\u00f3n que le debo encomendar es m\u00e1s\u2026 sutil.",
+                "date_created": "2018-05-13T01:51:36.883444"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "aparecer",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "hacerse visible\r\n\r\n- appear",
+                        "date_created": "2018-04-12T16:52:10.721263"
+                    },
+                    "vocab_entry_tags": [
+                        "apareciera"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "temer",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:50:15.907302"
+                    },
+                    "vocab_entry_tags": [
+                        "tememos"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "encomendar",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "dar responsabilidad, asignar una tarea, ordenar\r\n\r\n- entrust, command, assign a job to",
+                        "date_created": "2018-04-12T16:52:04.959849"
+                    },
+                    "vocab_entry_tags": [
+                        "encomendar"
+                    ]
+                }
+            ]
+        },
+        "28": {
+            "vocab_context_data": {
+                "content": "Y seg\u00fan asum\u00eda que aquella conversaci\u00f3n hab\u00eda cambiado su vida por completo, como el s\u00fabito golpe de viento que desv\u00eda el rumbo de una embarcaci\u00f3n, comenz\u00f3 a valorar las implicaciones del plan de su se\u00f1or. Desde luego, muy pocos poderosos recurrir\u00edan a tales sutilezas para evitar una guerra, pero esperaba que el daimio no hubiera fiado todas sus esperanzas a aquella improbable maniobra.",
+                "date_created": "2018-05-13T01:53:19.531488"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "viento",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "corriente de aire\r\n\r\n- wind, breeze",
+                        "date_created": "2018-04-12T16:50:45.970370"
+                    },
+                    "vocab_entry_tags": [
+                        "viento"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "desde luego",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "por supuesto\r\n\r\n- of course",
+                        "date_created": "2018-05-13T01:55:53.877380"
+                    },
+                    "vocab_entry_tags": [
+                        "desde luego"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "esperanza",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "hope",
+                        "date_created": "2018-04-12T16:50:42.334484"
+                    },
+                    "vocab_entry_tags": [
+                        "esperanzas"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "maniobra",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "maneuver, ploy",
+                        "date_created": "2018-04-12T16:51:22.029407"
+                    },
+                    "vocab_entry_tags": [
+                        "maniobra"
+                    ]
+                }
+            ]
+        },
+        "29": {
+            "vocab_context_data": {
+                "content": "En ese punto, sus ojos eran una promesa de muerte que hizo retroceder lentamente a su acobardado oponente. Lo recordaba del d\u00eda anterior: era el m\u00e1s refinado de los tres, el que mostraba unas maneras m\u00e1s elegantes que su oficial. Aquel hombre, del que desconoc\u00eda incluso su nombre, manten\u00eda una guardia baja, sin convicci\u00f3n, y Kenzabur\u00f4 supo que estaba muerto antes incluso de lanzar su ataque.",
+                "date_created": "2018-05-13T01:56:58.265579"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "retroceder",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:49:38.143302"
+                    },
+                    "vocab_entry_tags": [
+                        "retroceder"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "acobardarse",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:51:37.434139"
+                    },
+                    "vocab_entry_tags": [
+                        "acobardado"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "desconocer",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "no conocer algo\r\n\r\n- not know, be ignorant of",
+                        "date_created": "2018-04-12T16:48:23.753057"
+                    },
+                    "vocab_entry_tags": [
+                        "desconoc\u00eda"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "mantener",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:51:16.616767"
+                    },
+                    "vocab_entry_tags": [
+                        "manten\u00eda"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "saber",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:47:21.452429"
+                    },
+                    "vocab_entry_tags": [
+                        "supo"
+                    ]
+                }
+            ]
+        },
+        "30": {
+            "vocab_context_data": {
+                "content": "Para hacer tiempo y bajar el desayuno, sali\u00f3 a pasear por las inmediaciones del castillo. Vest\u00eda las ropas que hab\u00eda adquirido en el taller del difunto maestro Fukube y, a medida que se cruzaba con los primeros transe\u00fantes del d\u00eda, comprob\u00f3 que le saludaban con una respetuosa inclinaci\u00f3n de cabeza, como si, por el mero hecho de llevar aquel kimono, ya fuera alguien en la ciudad.",
+                "date_created": "2018-05-13T02:00:33.518068"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "a medida que",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:47:55.383354"
+                    },
+                    "vocab_entry_tags": [
+                        "a medida que"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "transe\u00fante",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "que va por la calle a pie\r\n\r\n- pedestrian, passer-by",
+                        "date_created": "2018-05-13T02:02:15.882185"
+                    },
+                    "vocab_entry_tags": [
+                        "transe\u00fantes"
+                    ]
+                }
+            ]
+        },
+        "31": {
+            "vocab_context_data": {
+                "content": "El castillo era una met\u00e1fora esculpida en piedra del gobierno de los Yamada: una estructura jer\u00e1rquica dividida en niveles, cada uno de ellos m\u00e1s inaccesible que el anterior, hasta llegar a la c\u00faspide inexpugnable, desde la que el se\u00f1or domina y decide por encima de todos, sin mezclarse jam\u00e1s con aquellos que cada d\u00eda viven bajo su mirada.",
+                "date_created": "2018-05-13T12:57:46.407612"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "inexpugnable",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "invulnerable, impenetrable\r\n\r\n- impregnable, resistant to attack",
+                        "date_created": "2018-04-12T16:49:03.552401"
+                    },
+                    "vocab_entry_tags": [
+                        "inexpugnable"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "met\u00e1fora",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-05-13T12:58:45.526248"
+                    },
+                    "vocab_entry_tags": [
+                        "met\u00e1fora"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "jer\u00e1rquico",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "de la jerarqu\u00eda\r\n\r\n- hierarchical",
+                        "date_created": "2018-05-13T12:59:57.405833"
+                    },
+                    "vocab_entry_tags": [
+                        "jer\u00e1rquica"
+                    ]
+                }
+            ]
+        },
+        "32": {
+            "vocab_context_data": {
+                "content": "El bosque estaba envuelto en un viejo silencio que Seiz\u00f4 no se atrevi\u00f3 a romper, as\u00ed que se limit\u00f3 a caminar junto a Kenzabur\u00f4, que se apoyaba en un improvisado cayado, apenas una larga rama seca.",
+                "date_created": "2018-05-13T13:00:27.124962"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "atreverse",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "arriesgarse - take a risk",
+                        "date_created": "2018-04-12T16:49:41.221990"
+                    },
+                    "vocab_entry_tags": [
+                        "se atrevi\u00f3"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "cayado",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "un palo para caminar (de pastores)\r\n\r\n- staff",
+                        "date_created": "2018-05-13T13:02:29.843699"
+                    },
+                    "vocab_entry_tags": [
+                        "cayado"
+                    ]
+                }
+            ]
+        },
+        "33": {
+            "vocab_context_data": {
+                "content": "Seiz\u00f4 guard\u00f3 silencio a la espera de que el \u00fanico sentido en el que confiaba, la vista, le corroborara las palabras de Kenzabur\u00f4. Y la confirmaci\u00f3n no tard\u00f3 mucho en llegar, pues al poco, una columna de no menos de cien soldados investidos con el mon Sugawara recorr\u00edan ya el desfiladero. Pisaban firme el suelo y levantaban una nube de polvo a su paso. Al frente cabalgaban el general y un abanderado, cuyas armaduras lanzaban destellos rojos bajo el sol del atardecer.",
+                "date_created": "2018-05-13T13:03:22.142585"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "a la espera de",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "hasta que suceda\r\n\r\n- waiting for",
+                        "date_created": "2018-05-13T01:31:15.469548"
+                    },
+                    "vocab_entry_tags": [
+                        "a la espera de"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "corroborar",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "confirmar, confirmarse\r\n\r\n- corroborate, confirm, verify",
+                        "date_created": "2018-05-13T13:04:38.307876"
+                    },
+                    "vocab_entry_tags": [
+                        "corroborara"
+                    ]
+                }
+            ]
+        },
+        "34": {
+            "vocab_context_data": {
+                "content": "Kenzabur\u00f4 y Seiz\u00f4, acostumbrados a la soledad y el silencio de su largo viaje, se sintieron extra\u00f1os en las concurridas calles, pero agradecieron el anonimato que les procuraba el gent\u00edo y el ambiente distendido que flotaba entre los paseantes, que hac\u00eda parecer lejanas las penurias de su huida.",
+                "date_created": "2018-05-13T13:09:58.258107"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "penuria",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "escasez\r\n\r\n- shortage, scarcity",
+                        "date_created": "2018-05-13T13:12:41.994800"
+                    },
+                    "vocab_entry_tags": [
+                        "penurias"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "agradecer",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "dar gracias\r\n\r\n- give thanks, be thankful",
+                        "date_created": "2018-05-13T13:16:06.628714"
+                    },
+                    "vocab_entry_tags": [
+                        "agradecieron"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "anonimato",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "estado de no poder ser identificado\r\n\r\n- anonymity",
+                        "date_created": "2018-05-13T13:20:27.518200"
+                    },
+                    "vocab_entry_tags": [
+                        "anonimato"
+                    ]
+                }
+            ]
+        },
+        "35": {
+            "vocab_context_data": {
+                "content": "El muchacho segu\u00eda a su protector, que se desenvolv\u00eda entre la muchedumbre con su habitual paso firme y sus ademanes en\u00e9rgicos, m\u00e1s propios de un l\u00edder guerrero que del vendedor de le\u00f1a que quer\u00eda aparentar. Resultaba evidente que el samur\u00e1i sab\u00eda exactamente hacia d\u00f3nde se dirig\u00edan, por lo que Seiz\u00f4 no pudo evitar preguntarle en esta ocasi\u00f3n.",
+                "date_created": "2018-05-13T13:21:02.652238"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "dirigirse",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:51:24.001631"
+                    },
+                    "vocab_entry_tags": [
+                        "se dirig\u00edan"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "le\u00f1a",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "firewood",
+                        "date_created": "2018-04-12T16:51:04.750907"
+                    },
+                    "vocab_entry_tags": [
+                        "le\u00f1a"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "muchedumbre",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "muchas personas\r\n\r\n- crowd, horde",
+                        "date_created": "2018-04-12T16:48:50.581960"
+                    },
+                    "vocab_entry_tags": [
+                        "muchedumbre"
+                    ]
+                }
+            ]
+        },
+        "36": {
+            "vocab_context_data": {
+                "content": "Era la vigesimocuarta visita de Ekei al castillo y, tras varias semanas acudiendo en balde a la sala de audiencias y rogativos, resultaba evidente que sus requerimientos de verse con el jefe m\u00e9dico del clan Yamada no resultaban de inter\u00e9s para el funcionario que discern\u00eda qu\u00e9 peticiones ser\u00edan atendidas y cu\u00e1les no.",
+                "date_created": "2018-05-13T13:22:42.713527"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "acudir",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:48:57.551267"
+                    },
+                    "vocab_entry_tags": [
+                        "acudiendo"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "discernir",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "distinguir\r\n\r\n- discern",
+                        "date_created": "2018-05-13T13:24:29.508984"
+                    },
+                    "vocab_entry_tags": [
+                        "discern\u00eda"
+                    ]
+                }
+            ]
+        },
+        "37": {
+            "vocab_context_data": {
+                "content": "&mdash;Creo\u2026 que la historia de Izanagi nos dice que hay cosas que ya no tienen remedio y debemos aprender a aceptarlas. Tenemos que vivir la vida que nos ha tocado, luchar contra lo inevitable s\u00f3lo nos hace da\u00f1o. &mdash;Y Seiz\u00f4 supo que era Kenzabur\u00f4 el que hablaba por su boca.",
+                "date_created": "2018-05-13T13:25:03.981976"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "remedio",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "medida reparatoria\r\n\r\n- remedy, solution",
+                        "date_created": "2018-05-13T13:25:57.662891"
+                    },
+                    "vocab_entry_tags": [
+                        "remedio"
+                    ]
+                }
+            ]
+        },
+        "38": {
+            "vocab_context_data": {
+                "content": "Por m\u00e1s quiebros que dieran en su huida y por m\u00e1s recovecos que buscaran, sus perseguidores parec\u00edan darles alcance irremediablemente. Seiz\u00f4 sab\u00eda que s\u00f3lo era cuesti\u00f3n de tiempo, as\u00ed que se oblig\u00f3 a pensar en la mejor manera de actuar una vez se produjera la inevitable confrontaci\u00f3n.",
+                "date_created": "2018-05-13T13:31:03.331011"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "recoveco",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "rinc\u00f3n escondido\r\n\r\n- nook, nook and cranny",
+                        "date_created": "2018-04-12T16:47:58.247484"
+                    },
+                    "vocab_entry_tags": [
+                        "recovecos"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "producirse",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "ocurrir\r\n\r\n- happen",
+                        "date_created": "2018-05-13T13:32:41.501181"
+                    },
+                    "vocab_entry_tags": [
+                        "se produjera"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "irremediablemente",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "sin poder evitarlo\r\n\r\n- inevitably",
+                        "date_created": "2018-05-13T13:34:03.579937"
+                    },
+                    "vocab_entry_tags": [
+                        "irremediablemente"
+                    ]
+                }
+            ]
+        },
+        "39": {
+            "vocab_context_data": {
+                "content": "&mdash;Por favor, no se queden ah\u00ed, avisen a la guardia de la ciudad &mdash;grit\u00f3 Seiz\u00f4, al tiempo que se acercaba a la se\u00f1ora y, antes de que \u00e9sta pudiera reaccionar, le arrebataba la escoba ante su expresi\u00f3n at\u00f3nita.",
+                "date_created": "2018-05-13T13:34:33.113058"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "arrebatar",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:51:37.139461"
+                    },
+                    "vocab_entry_tags": [
+                        "arrebataba"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "avisar",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "advertir algo, notificar, informar\r\n\r\n- inform, notify, advise",
+                        "date_created": "2018-04-12T16:50:32.843945"
+                    },
+                    "vocab_entry_tags": [
+                        "avisen"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "acercarse",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "aproximar\r\n\r\n- get close to, approach",
+                        "date_created": "2018-04-12T16:50:37.003097"
+                    },
+                    "vocab_entry_tags": [
+                        "se acercaba"
+                    ]
+                }
+            ]
+        },
+        "40": {
+            "vocab_context_data": {
+                "content": "Sus compa\u00f1eros se detuvieron s\u00fabitamente y miraron por encima del hombro a su nuevo contrincante. Sin esperar reacci\u00f3n, Seiz\u00f4 descarg\u00f3 un segundo golpe de arriba abajo, haciendo crujir la madera contra otra cabeza y logrando similares resultados.",
+                "date_created": "2018-05-13T13:36:26.914638"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "detener",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:50:06.339173"
+                    },
+                    "vocab_entry_tags": [
+                        "detuvieron"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "mirar por encima del hombro",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "tratar con desprecio, menospreciar a alguien\r\n\r\n- look down on somebody,",
+                        "date_created": "2018-05-13T13:41:44.431762"
+                    },
+                    "vocab_entry_tags": [
+                        "miraron por encima del hombro"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "contrincante",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "oponente\r\n\r\n- opponent",
+                        "date_created": "2018-04-12T16:51:44.895026"
+                    },
+                    "vocab_entry_tags": [
+                        "contrincante"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "crujir",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "hacer ruido\r\n\r\n- crunch, creak, grind",
+                        "date_created": "2018-04-12T16:49:02.742898"
+                    },
+                    "vocab_entry_tags": [
+                        "crujir"
+                    ]
+                }
+            ]
+        },
+        "41": {
+            "vocab_context_data": {
+                "content": "Empap\u00f3 un pa\u00f1o limpio en un barre\u00f1o con agua y se refresc\u00f3 con \u00e9l el cuello, los brazos y las piernas, antes de anudarse el fundoshi, vestirse con un kimono oscuro y calzarse unas odori tabi con suela r\u00edgida y flexible.",
+                "date_created": "2018-05-13T13:42:49.144511"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "empapar",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "mojar abundantemente\r\n\r\n- soak, drench, saturate",
+                        "date_created": "2018-05-13T13:43:45.963563"
+                    },
+                    "vocab_entry_tags": [
+                        "empap\u00f3"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "suela",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "parte abajo del calzado\r\n\r\n- sole (footwear)",
+                        "date_created": "2018-05-13T13:45:47.536314"
+                    },
+                    "vocab_entry_tags": [
+                        "suela"
+                    ]
+                }
+            ]
+        },
+        "42": {
+            "vocab_context_data": {
+                "content": "En el taller reinaba la quietud de las cosas que se saben solas. El intruso, inm\u00f3vil junto a la entrada, esper\u00f3 hasta que sus ojos se habituaron a la escasa luz de luna antes de aventurarse entre las mesas y bastidores. Avanz\u00f3 con sigilo, sin emitir m\u00e1s sonidos que los inevitables, y mientras lo hac\u00eda, escudri\u00f1aba la estancia en penumbras. Busc\u00f3 minuciosamente sobre las largas mesas de trabajo y en los estantes, pero aquello que buscaba insist\u00eda en escabullirse a su mirada, as\u00ed que termin\u00f3 por impacientarse, sabi\u00e9ndose torpe y oxidado.",
+                "date_created": "2018-05-13T13:46:07.128711"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "reinar",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:49:32.353410"
+                    },
+                    "vocab_entry_tags": [
+                        "reinaba"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "escudri\u00f1ar",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "examinar a fondo\r\n\r\n- scrutinize, scan, examine, inspect",
+                        "date_created": "2018-05-13T13:47:51.289378"
+                    },
+                    "vocab_entry_tags": [
+                        "escudri\u00f1aba"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "penumbra",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "iluminaci\u00f3n d\u00e9bil\r\n\r\n- dimly lit, semi-darkness, gloom",
+                        "date_created": "2018-04-12T16:48:54.014162"
+                    },
+                    "vocab_entry_tags": [
+                        "penumbras"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "escabullirse",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:50:14.488019"
+                    },
+                    "vocab_entry_tags": [
+                        "escabullirse"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "saber",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:47:21.452429"
+                    },
+                    "vocab_entry_tags": [
+                        "sabi\u00e9ndose"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "sigilo",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "discreci\u00f3n, silencio - discretion, stealth, silence",
+                        "date_created": "2018-04-12T16:51:54.180204"
+                    },
+                    "vocab_entry_tags": [
+                        "sigilo"
+                    ]
+                }
+            ]
+        },
+        "43": {
+            "vocab_context_data": {
+                "content": "Al d\u00eda siguiente, el maestro Inafune se enfund\u00f3 el kimono azul noche con bordados de espuma de mar que le comprara a los Fukube, y se encamin\u00f3 bien temprano al castillo Yamada. Se uni\u00f3 a la cotidiana procesi\u00f3n que cada ma\u00f1ana ascend\u00eda por la arboleda, atravesaba la ciudad-castillo y se estrellaba contra el consabido pabell\u00f3n de audiencias y rogativos, como la marea que, insistente, se retira y vuelve para golpear una y otra vez contra un espig\u00f3n inamovible. Y all\u00ed esper\u00f3. Esper\u00f3 pacientemente un d\u00eda tras otro, atrapado en aquella enmara\u00f1ada telara\u00f1a de protocolo y frustraci\u00f3n.",
+                "date_created": "2018-05-13T13:49:54.507322"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "cotidiano",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "everyday",
+                        "date_created": "2018-04-12T16:51:40.178505"
+                    },
+                    "vocab_entry_tags": [
+                        "cotidiana"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "encaminarse",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "dirigirse, estar destinado a\r\n\r\n - head for, head towards, set off to",
+                        "date_created": "2018-04-12T16:51:04.007286"
+                    },
+                    "vocab_entry_tags": [
+                        "se encamin\u00f3"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "unirse a",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "- join",
+                        "date_created": "2018-04-12T16:48:23.575349"
+                    },
+                    "vocab_entry_tags": [
+                        "se uni\u00f3 a"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "marea",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "movimiento del mar\r\n\r\n- tide",
+                        "date_created": "2018-05-13T13:51:56.437090"
+                    },
+                    "vocab_entry_tags": [
+                        "marea"
+                    ]
+                }
+            ]
+        },
+        "44": {
+            "vocab_context_data": {
+                "content": "Tokuhei felicit\u00f3 a su hijo con evidente satisfacci\u00f3n. &mdash;\u00bfCree que usted podr\u00e1 repetirlo? Seiz\u00f4 asinti\u00f3, concentrado. Ni siquiera quer\u00eda hablar, para que los pasos memorizados no se escabulleran en los recovecos de su mente.",
+                "date_created": "2018-05-13T13:52:35.687621"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "asentir",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:50:10.933801"
+                    },
+                    "vocab_entry_tags": [
+                        "asinti\u00f3"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "escabullirse",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:50:14.488019"
+                    },
+                    "vocab_entry_tags": [
+                        "se escabulleran"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "recoveco",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "rinc\u00f3n escondido\r\n\r\n- nook, nook and cranny",
+                        "date_created": "2018-04-12T16:47:58.247484"
+                    },
+                    "vocab_entry_tags": [
+                        "recovecos"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "ni siquiera",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "tampoco\r\n\r\n- not even",
+                        "date_created": "2018-05-13T13:54:18.358570"
+                    },
+                    "vocab_entry_tags": [
+                        "ni siquiera"
+                    ]
+                }
+            ]
+        },
+        "45": {
+            "vocab_context_data": {
+                "content": "El ronin se volvi\u00f3 un poco y le mir\u00f3 por encima del hombro. Cuando vio al joven de apenas catorce a\u00f1os, sonri\u00f3 para s\u00ed, cogi\u00f3 agua con las manos y se enjuag\u00f3 la boca ruidosamente. Escupi\u00f3 antes de volver a hablar.",
+                "date_created": "2018-05-13T13:54:50.616709"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "mirar por encima del hombro",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "tratar con desprecio, menospreciar a alguien\r\n\r\n- look down on somebody,",
+                        "date_created": "2018-05-13T13:41:44.431762"
+                    },
+                    "vocab_entry_tags": [
+                        "mir\u00f3 por encima del hombro"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "apenas",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "con dificultad, indica poco tiempo\r\n\r\n- barely, hardly, scarcely",
+                        "date_created": "2018-05-13T13:57:20.945965"
+                    },
+                    "vocab_entry_tags": [
+                        "apenas"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "enjuagar",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "limpiar con agua\r\n\r\n- rinse, rinse off",
+                        "date_created": "2018-04-12T16:49:46.167116"
+                    },
+                    "vocab_entry_tags": [
+                        "se enjuag\u00f3"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "escupir",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "lanzar saliva\r\n\r\n- spit",
+                        "date_created": "2018-04-12T16:50:40.789605"
+                    },
+                    "vocab_entry_tags": [
+                        "escupi\u00f3"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "volver a",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "repetirse algo\r\n\r\n- go back to, do again",
+                        "date_created": "2018-04-12T16:52:04.663550"
+                    },
+                    "vocab_entry_tags": [
+                        "volver a hablar"
+                    ]
+                }
+            ]
+        },
+        "46": {
+            "vocab_context_data": {
+                "content": "&mdash;Pero\u2026 no puedes cambiar los estilos a tu antojo &mdash;replic\u00f3 Seiz\u00f4, cada vez menos convencido.\r\n&mdash;\u00bfPor qu\u00e9 no? \u00bfPor qu\u00e9 ce\u00f1irse a las artes antiguas? \u00bfAcaso no libra sus batallas Nobunaga Oda usando arcabuces de mecha? Si ves al general, \u00bftambi\u00e9n le recriminar\u00e1s el no ir a la guerra s\u00f3lo con arcos y con lanzas?\r\nSeiz\u00f4 se mantuvo en silencio, pensativo.",
+                "date_created": "2018-05-13T13:58:41.244207"
+            },
+            "vocab_entries": [
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "ce\u00f1irse",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:50:08.462186"
+                    },
+                    "vocab_entry_tags": [
+                        "ce\u00f1irse"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "mecha",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "Cuerda combustible (explosivos)\r\n\r\nPabilo (vela, mechero)\r\n\r\n- wick (candle), fuse (explosives)",
+                        "date_created": "2018-04-12T16:50:00.904952"
+                    },
+                    "vocab_entry_tags": [
+                        "mecha"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "mantener",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "",
+                        "date_created": "2018-04-12T16:51:16.616767"
+                    },
+                    "vocab_entry_tags": [
+                        "se mantuvo"
+                    ]
+                },
+                {
+                    "vocab_entry_data": {
+                        "language": "es",
+                        "entry": "recriminar",
+                        "pronunciation_spelling": "",
+                        "pronunciation_ipa": "",
+                        "description": "reprender, reprochar\r\n\r\n- reprimand, reproach",
+                        "date_created": "2018-05-13T14:00:45.853479"
+                    },
+                    "vocab_entry_tags": [
+                        "recriminar\u00e1s"
+                    ]
+                }
+            ]
+        }
+    }
+}

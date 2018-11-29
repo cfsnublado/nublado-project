@@ -165,6 +165,16 @@ sidebar-nav {{ sidebar_expanded|yesno:"sidebar-nav-expanded," }} {{ sidebar_top_
 
   <li class="nav-item">
   <a 
+  id="sidebar-nav-vocab-source-edit"
+  class="nav-link {% block vocab_source_edit_link_active %}{% endblock vocab_source_edit_link_active %}"
+  href="{% url 'vocab:vocab_source_update' vocab_source.id vocab_source.slug %}"
+  >
+  <i class="nav-link-icon fas fa-edit fa-fw"></i> {% trans "label_edit_source" %}
+  </a>
+  </li>
+
+  <li class="nav-item">
+  <a 
   id="sidebar-nav-vocab-source-entries"
   class="nav-link {% block vocab_source_entries_link_active %}{% endblock vocab_source_entries_link_active %}"
   href="{% url 'vocab:vocab_source_entries' vocab_source.id vocab_source.slug %}"
@@ -190,16 +200,6 @@ sidebar-nav {{ sidebar_expanded|yesno:"sidebar-nav-expanded," }} {{ sidebar_top_
   href="{% url 'vocab:vocab_context_create' vocab_source.id vocab_source.slug %}"
   >
   <i class="nav-link-icon fas fa-plus fa-fw"></i> {% trans "label_new_vocab_context" %}
-  </a>
-  </li>
-
-  <li class="nav-item">
-  <a 
-  id="sidebar-nav-vocab-source-edit"
-  class="nav-link {% block vocab_source_edit_link_active %}{% endblock vocab_source_edit_link_active %}"
-  href="{% url 'vocab:vocab_source_update' vocab_source.id %}"
-  >
-  <i class="nav-link-icon fas fa-edit fa-fw"></i> {% trans "label_edit_source" %}
   </a>
   </li>
 

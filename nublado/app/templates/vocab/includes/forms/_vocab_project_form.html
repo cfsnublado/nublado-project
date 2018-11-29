@@ -14,7 +14,7 @@
 
 <div class="form-group">
 {{ form.description.label_tag }}
-{% render_field form.description class+="form-control" %}
+{% render_field form.description class+="form-control" rows="3" %}
 <div id="{{ form.description.auto_id }}-errors" class="errors">
 {{ form.description.errors }}
 </div>

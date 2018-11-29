@@ -516,6 +516,16 @@ project_name: English Reading
 
 - The term "poisoning the well" refers to a form of ad hominem fallacy. This is an attempt to discredit the argument of another by implying that they possess un unsavory trait, or that they're affiliated with beliefs or people that are wrong or unpopular. A well-known form of this, which has its own name&mdash;Godwin's Law or the reductio ad Hitlerum&mdash;refers to an attempt at poisoning the well by drawing an analogy between another's position and Hitler or the Nazis.
 
+    <div markdown="1" class="tagged-entries">
+
+    en: poisoning the well: poisoning the well
+
+    en: ad hominem: ad hominem
+
+    en: fallacy: fallacy
+
+    </div>
+
 - It should be noted, however, that not all name-calling is a logical fallacy. If I impolitely state that someone with whom I disagree is a jackass, that's not an ad hominem logical fallacy. If I say their argument is wrong because they are a jackass, then that is a fallacy.
 
     <div markdown="1" class="tagged-entries">

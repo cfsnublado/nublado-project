@@ -69,7 +69,7 @@ urlpatterns = [
         VocabProjectUpdateView.as_view(),
         name='vocab_project_update'
     ),
-    path('source/<int:vocab_project_pk>/delete/', VocabProjectDeleteView.as_view(), name='vocab_project_delete'),
+    path('project/<int:vocab_project_pk>/delete/', VocabProjectDeleteView.as_view(), name='vocab_project_delete'),
     path(
         'project/<int:vocab_project_pk>-<slug:vocab_project_slug>/dashboard/',
         VocabProjectDashboardView.as_view(),
@@ -106,7 +106,7 @@ urlpatterns = [
         name='vocab_source_dashboard'
     ),
     path(
-        'source/<int:vocab_source_pk>/update/',
+        'source/<int:vocab_source_pk>-<slug:vocab_source_slug>/update/',
         VocabSourceUpdateView.as_view(),
         name='vocab_source_update'
     ),

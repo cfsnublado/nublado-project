@@ -31,7 +31,7 @@
 <div class="row justify-content-md-center">
 <div class="col-md-10">
 
-<form id="edit-form" action="{% url 'vocab:vocab_source_update' vocab_source.id %}" method="post" novalidate>
+<form id="edit-form" action="{% url 'vocab:vocab_source_update' vocab_source.id vocab_source.slug %}" method="post" novalidate>
 
 {% csrf_token %}
 

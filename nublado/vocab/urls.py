@@ -15,8 +15,8 @@ from .views.views_vocab_entry_auth import (
     VocabEntryUpdateView
 )
 from .views.views_vocab_project_auth import (
-    VocabProjectCreateView, VocabProjectDashboardView,
-    VocabProjectSourcesView
+    VocabProjectCreateView, VocabProjectDashboardView, VocabProjectDeleteView,
+    VocabProjectSourcesView, VocabProjectUpdateView
 )
 from .views.views_vocab_source_auth import (
     VocabSourceCreateView, VocabSourceDeleteView, VocabSourceExportJsonView,
@@ -64,6 +64,12 @@ urlpatterns = [
         VocabProjectCreateView.as_view(),
         name='vocab_project_create'
     ),
+    path(
+        'project/<int:vocab_project_pk>-<slug:vocab_project_slug>/update/',
+        VocabProjectUpdateView.as_view(),
+        name='vocab_project_update'
+    ),
+    path('source/<int:vocab_project_pk>/delete/', VocabProjectDeleteView.as_view(), name='vocab_project_delete'),
     path(
         'project/<int:vocab_project_pk>-<slug:vocab_project_slug>/dashboard/',
         VocabProjectDashboardView.as_view(),

@@ -112,7 +112,7 @@ sidebar-nav {{ sidebar_expanded|yesno:"sidebar-nav-expanded," }} {{ sidebar_top_
   <a 
   id="sidebar-nav-vocab-project-edit"
   class="nav-link {% block vocab_project_edit_link_active %}{% endblock vocab_project_edit_link_active %}" 
-  href="">
+  href="{% url 'vocab:vocab_project_update' vocab_project.id vocab_project.slug %}">
   <i class="nav-link-icon fas fa-edit fa-fw"></i> {% trans "label_edit_project" %}
   </a>
   </li>

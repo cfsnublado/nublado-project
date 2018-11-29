@@ -88,6 +88,12 @@ class VocabProjectCreateForm(VocabProjectForm):
                 self.add_error('name', _('validation_vocab_project_unique'))
 
 
+class VocabProjectUpdateForm(VocabProjectForm):
+
+    class Meta(VocabProjectForm.Meta):
+        model = VocabProject
+
+
 class VocabEntrySearchForm(forms.Form):
     pass
 

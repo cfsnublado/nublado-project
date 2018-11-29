@@ -4,13 +4,15 @@ from django.apps import apps
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse
 from django.views.generic import (
-    CreateView, TemplateView
+    CreateView, DeleteView, TemplateView,
+    UpdateView
 )
 
 from core.views import (
-    AjaxFormMixin, UserstampMixin
+    AjaxDeleteMixin, AjaxFormMixin, MessageMixin,
+    UserstampMixin
 )
-from ..forms import VocabProjectCreateForm
+from ..forms import VocabProjectCreateForm, VocabProjectUpdateForm
 from ..models import VocabProject, VocabSource
 from ..views.views_mixins import (
     VocabProjectMixin, VocabSourceSearchMixin
@@ -46,6 +48,41 @@ class VocabProjectCreateView(
                 'vocab_project_slug': self.object.slug
             }
         )
+
+
+class VocabProjectUpdateView(
+    LoginRequiredMixin, VocabProjectMixin,
+    MessageMixin, UpdateView
+):
+    model = VocabSource
+    form_class = VocabProjectUpdateForm
+    template_name = '{0}/auth/vocab_project_update.html'.format(APP_NAME)
+
+    def get_object(self, **kwargs):
+        return self.vocab_project
+
+    def get_success_url(self):
+        return reverse(
+            'vocab:vocab_project_dashboard',
+            kwargs={
+                'vocab_project_pk': self.vocab_project.id,
+                'vocab_project_slug': self.vocab_project.slug
+            }
+        )
+
+
+class VocabProjectDeleteView(
+    LoginRequiredMixin, VocabProjectMixin,
+    AjaxDeleteMixin, DeleteView
+):
+    model = VocabSource
+    template_name = '{0}/auth/vocab_project_delete_confirm.html'.format(APP_NAME)
+
+    def get_object(self, **kwargs):
+        return self.vocab_project
+
+    def get_success_url(self):
+        return reverse('vocab:vocab_user_dashboard')
 
 
 class VocabProjectSourcesView(

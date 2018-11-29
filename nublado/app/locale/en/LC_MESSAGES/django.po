@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-29 00:12-0800\n"
+"POT-Creation-Date: 2018-11-29 13:24-0800\n"
 "PO-Revision-Date: 2018-11-28 21:15-0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -142,7 +142,8 @@ msgstr ""
 #: nublado/users/tests/test_forms.py:317 nublado/users/tests/test_forms.py:339
 #: nublado/users/tests/test_views.py:114 nublado/users/tests/test_views.py:280
 #: nublado/users/tests/test_views.py:475 nublado/vocab/forms.py:23
-#: nublado/vocab/forms.py:36 nublado/vocab/forms.py:48
+#: nublado/vocab/forms.py:39 nublado/vocab/forms.py:52
+#: nublado/vocab/forms.py:64
 msgid "validation_field_required"
 msgstr "This field is required."
 
@@ -276,29 +277,42 @@ msgstr "User password has been changed."
 msgid "label_vocab_config"
 msgstr "Your vocabulary"
 
-#: nublado/vocab/forms.py:24 nublado/vocab/forms.py:49
+#: nublado/vocab/forms.py:24 nublado/vocab/forms.py:40
+#: nublado/vocab/forms.py:65
 #, fuzzy
 #| msgid "validation_field_required"
 msgid "validation_field_unique"
 msgstr "This field is required."
 
-#: nublado/vocab/forms.py:70
+#: nublado/vocab/forms.py:76
+#, fuzzy
+#| msgid "validation_field_required"
+msgid "validation_vocab_project_owner_required"
+msgstr "This field is required."
+
+#: nublado/vocab/forms.py:88
+#, fuzzy
+#| msgid "validation_field_required"
+msgid "validation_vocab_project_unique"
+msgstr "This field is required."
+
+#: nublado/vocab/forms.py:113
 msgid "validation_vocab_entry_unique"
 msgstr ""
 
-#: nublado/vocab/forms.py:89
+#: nublado/vocab/forms.py:132
 #, fuzzy
 #| msgid "validation_field_required"
 msgid "validation_vocab_source_required"
 msgstr "This field is required."
 
-#: nublado/vocab/forms.py:106
+#: nublado/vocab/forms.py:149
 #, fuzzy
 #| msgid "validation_field_required"
 msgid "validation_vocab_project_required"
 msgstr "This field is required."
 
-#: nublado/vocab/forms.py:108
+#: nublado/vocab/forms.py:151
 #, fuzzy
 #| msgid "validation_field_required"
 msgid "validation_vocab_content_creator_required"
@@ -669,6 +683,7 @@ msgstr "Write a little about you."
 
 #: nublado/app/templates/users/auth/profile_update.html:122
 #: nublado/app/templates/vocab/auth/vocab_entry_update.html:65
+#: nublado/app/templates/vocab/auth/vocab_project_update.html:41
 #: nublado/app/templates/vocab/auth/vocab_source_update.html:41
 msgid "label_update"
 msgstr "Update"
@@ -733,6 +748,7 @@ msgstr ""
 #: nublado/app/templates/users/user_delete_confirm.html:7
 #: nublado/app/templates/vocab/auth/vocab_context_delete_confirm.html:5
 #: nublado/app/templates/vocab/auth/vocab_entry_delete_confirm.html:5
+#: nublado/app/templates/vocab/auth/vocab_project_delete_confirm.html:5
 #: nublado/app/templates/vocab/auth/vocab_source_delete_confirm.html:5
 #, fuzzy
 #| msgid "page_login_title"
@@ -745,11 +761,13 @@ msgid "confirm_user_delete %(del_object)s"
 msgstr ""
 
 #: nublado/app/templates/users/user_delete_confirm.html:25
+#: nublado/app/templates/vocab/auth/vocab_project_delete_confirm.html:32
 #: nublado/app/templates/vocab/auth/vocab_source_delete_confirm.html:32
 msgid "confirm_yes"
 msgstr ""
 
 #: nublado/app/templates/users/user_delete_confirm.html:29
+#: nublado/app/templates/vocab/auth/vocab_project_delete_confirm.html:40
 #: nublado/app/templates/vocab/auth/vocab_source_delete_confirm.html:40
 msgid "confirm_no"
 msgstr ""
@@ -760,7 +778,7 @@ msgstr ""
 msgid "label_dictionary"
 msgstr "Dictionary"
 
-#: nublado/app/templates/vocab/auth/vocab_base.html:84
+#: nublado/app/templates/vocab/auth/vocab_base.html:88
 #: nublado/app/templates/vocab/auth/vocab_base.html:263
 #: nublado/app/templates/vocab/includes/_vocab_breadcrumbs.html:45
 #: nublado/app/templates/vocab/includes/_vocab_breadcrumbs.html:65
@@ -838,6 +856,7 @@ msgstr "Create context"
 #: nublado/app/templates/vocab/auth/vocab_context_create.html:17
 #: nublado/app/templates/vocab/auth/vocab_context_create.html:33
 #: nublado/app/templates/vocab/auth/vocab_entry_create.html:23
+#: nublado/app/templates/vocab/auth/vocab_project_create.html:23
 #: nublado/app/templates/vocab/auth/vocab_source_create.html:13
 #: nublado/app/templates/vocab/auth/vocab_source_create.html:40
 #: nublado/app/templates/vocab/includes/_vocab_context_create_modal.html:88
@@ -862,6 +881,7 @@ msgstr ""
 #: nublado/app/templates/vocab/auth/vocab_context_tag.html:22
 #: nublado/app/templates/vocab/auth/vocab_context_tag.html:61
 #: nublado/app/templates/vocab/auth/vocab_entry_update.html:44
+#: nublado/app/templates/vocab/auth/vocab_project_update.html:13
 #: nublado/app/templates/vocab/auth/vocab_source_update.html:13
 msgid "label_edit"
 msgstr "Edit"
@@ -929,9 +949,16 @@ msgid "header_edit_vocab_entry"
 msgstr "Edit entry"
 
 #: nublado/app/templates/vocab/auth/vocab_entry_update.html:80
+#: nublado/app/templates/vocab/auth/vocab_project_update.html:56
 #: nublado/app/templates/vocab/auth/vocab_source_update.html:56
 msgid "label_delete"
 msgstr "Delete"
+
+#: nublado/app/templates/vocab/auth/vocab_project_create.html:6
+#, fuzzy
+#| msgid "page_vocab_context_create_title"
+msgid "page_vocab_project_create_title"
+msgstr "Create context"
 
 #: nublado/app/templates/vocab/auth/vocab_project_dashboard.html:6
 msgid "page_vocab_project_dashboard_title"
@@ -946,6 +973,12 @@ msgstr "Dashboard"
 #: nublado/app/templates/vocab/auth/vocab_source_dashboard.html:14
 msgid "header_content_pending"
 msgstr "Content pending"
+
+#: nublado/app/templates/vocab/auth/vocab_project_delete_confirm.html:25
+#, fuzzy
+#| msgid "confirm_delete_vocab_entry"
+msgid "confirm_delete_project"
+msgstr "Delete entry?"
 
 #: nublado/app/templates/vocab/auth/vocab_project_sources.html:6
 msgid "page_vocab_sources_title"
@@ -964,6 +997,14 @@ msgstr "Search sources"
 #| msgid "label_new_password"
 msgid "label_no_sources"
 msgstr "New password"
+
+#: nublado/app/templates/vocab/auth/vocab_project_update.html:5
+msgid "page_vocab_project_edit_title"
+msgstr "Edit project"
+
+#: nublado/app/templates/vocab/auth/vocab_project_update.html:22
+msgid "header_edit_project"
+msgstr "Edit project"
 
 #: nublado/app/templates/vocab/auth/vocab_source_contexts.html:6
 msgid "page_vocab_source_contexts_title"
@@ -986,8 +1027,9 @@ msgid "page_vocab_source_dashboard_title"
 msgstr "Dashboard"
 
 #: nublado/app/templates/vocab/auth/vocab_source_delete_confirm.html:25
-msgid "delete_vocab_source_q"
-msgstr ""
+#: nublado/app/templates/vocab/includes/_vocab_source_delete_modal.html:10
+msgid "confirm_delete_vocab_source"
+msgstr "Delete source?"
 
 #: nublado/app/templates/vocab/auth/vocab_source_entries.html:6
 #, fuzzy
@@ -1018,10 +1060,6 @@ msgstr "Edit source"
 #: nublado/app/templates/vocab/auth/vocab_user_dashboard.html:6
 msgid "page_vocab_user_dashboard_title"
 msgstr "Vocabulary dashboard"
-
-#: nublado/app/templates/vocab/auth/vocab_user_dashboard.html:31
-msgid "label_projects"
-msgstr "Projects"
 
 #: nublado/app/templates/vocab/includes/_vocab_context_create_modal.html:6
 #, fuzzy
@@ -1067,13 +1105,16 @@ msgstr ""
 msgid "header_create_project"
 msgstr "Create project"
 
-#: nublado/app/templates/vocab/includes/_vocab_source_delete_modal.html:10
-msgid "confirm_delete_vocab_source"
-msgstr "Delete source?"
+#: nublado/app/templates/vocab/includes/_vocab_project_delete_modal.html:10
+msgid "confirm_delete_vocab_project"
+msgstr "Delete project?"
 
 #: nublado/app/templates/vocab/vocab_search.html:7
 msgid "page_vocab_search_title"
 msgstr "Search vocabulary"
+
+#~ msgid "label_projects"
+#~ msgstr "Projects"
 
 #~ msgid "label_vocab_source_edit"
 #~ msgstr "Edit source"

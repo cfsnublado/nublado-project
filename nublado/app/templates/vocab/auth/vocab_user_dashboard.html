@@ -25,6 +25,7 @@
 <div class="col-md-10">
 
 {% for project in vocab_projects %}
+<a href="{% url 'vocab:vocab_project_dashboard' project.id project.slug %}">
 <div class="panel">
 <div class="panel-header">
 {{ project.name }}
@@ -33,6 +34,7 @@
 {{ project.description }}
 </div>
 </div>
+</a>
 {% endfor %}
 
 </div>

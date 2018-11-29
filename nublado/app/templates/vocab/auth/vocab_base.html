@@ -80,12 +80,12 @@ sidebar-nav {{ sidebar_expanded|yesno:"sidebar-nav-expanded," }} {{ sidebar_top_
 
 <a class="sidebar-nav-top-panel-toggle" @click.prevent="toggleSidebarPanel">
 
-<span class="top-panel-toggle-text">
-{% trans "label_main" %}
-</span>
-
 <span class="top-panel-toggle-icon">
 <i class="fas fa-angle-double-left"></i>
+</span>
+
+<span class="top-panel-toggle-text">
+{% trans "label_main" %}
 </span>
 
 </a>

@@ -351,10 +351,8 @@ msgid "label_vocab_pronunciation_ipa"
 msgstr "Pronunciación AFI"
 
 #: nublado/vocab/models.py:126 nublado/app/templates/base.html:188
-#, fuzzy
-#| msgid "label_vocab_tag_desc"
 msgid "label_vocab_entry"
-msgstr "Tu vocabulario"
+msgstr "Entrada"
 
 #: nublado/vocab/models.py:127
 #, fuzzy

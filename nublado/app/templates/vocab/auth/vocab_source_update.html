@@ -19,7 +19,7 @@
 <div class="row justify-content-md-center">
 <div class="col-md-10">
 <div class="page-header">
-{% trans "label_edit_source" %}
+{% trans "header_edit_source" %}
 </div>
 </div>
 </div>
@@ -44,7 +44,7 @@
 <ajax-delete
 confirmation-id="delete-source"
 delete-url="{% url 'vocab:vocab_source_delete' vocab_source.id %}" 
-redirect-url="{% url 'vocab:vocab_project_sources' vocab_project.slug %}"
+redirect-url="{% url 'vocab:vocab_project_sources' vocab_project.id vocab_project.slug %}"
 inline-template
 >
 

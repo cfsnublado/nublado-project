@@ -16,7 +16,7 @@
   <div class="row justify-content-md-center">
   <div class="col-md-10">
   <div class="page-header">
-  {% trans "label_vocabulary" %}: {{ vocab_entry.language }}
+  {% trans "header_vocabulary" %}: {{ vocab_entry.language }}
   </div>
   </div>
   </div>
@@ -28,9 +28,9 @@
 <div class="row justify-content-md-center">
 <div class="col-md-10">
 
-<span class="entry-header">
+<div class="entry-header">
 {{ vocab_entry.entry }}
-</span>
+</div>
 
 <div class="vocab-pronunciation">
 {% if vocab_entry.pronunciation_spelling %}

@@ -390,8 +390,10 @@ const ContextTagger = {
       this.highlight(this.currentEntry.tags)
       console.log(this.currentEntry.value)
       this.$nextTick(() => {
-        window.location.hash = "#vocab-entry-instance-tags"
-        window.location = window.location.href
+        if (vm.smallWindow) {
+          window.location.hash = "#vocab-entry-instance-tags"
+          window.location = window.location.href
+        }
       })
     },
     addEntryTag(tag) {

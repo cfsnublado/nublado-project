@@ -33,20 +33,8 @@ class VocabSourceDashboardView(
 ):
     template_name = '{0}/auth/vocab_source_dashboard.html'.format(APP_NAME)
 
-    def get_pending_context_count(self, **kwargs):
-        '''
-        Gets count of untagged contexts in source.
-        '''
-        qs = VocabContext.objects.filter(vocab_source_id=self.vocab_source.id)
-        qs = qs.prefetch_related(
-            'vocab_entries'
-        )
-        qs = qs.filter(vocab_entries__isnull=True).count()
-        return qs
-
     def get_context_data(self, **kwargs):
         context = super(VocabSourceDashboardView, self).get_context_data(**kwargs)
-        context['pending_context_count'] = self.get_pending_context_count()
         return context
 
 
@@ -119,29 +107,6 @@ class VocabSourceContextsView(
         )
         qs = qs.filter(
             vocab_source_id=self.vocab_source.id,
-            vocabcontextentry__isnull=False
-        ).distinct()
-        qs = qs.order_by('-date_created')
-        return qs
-
-
-class VocabSourcePendingContextsView(
-    LoginRequiredMixin, VocabSourceMixin,
-    ListView
-):
-    '''
-    Gets pending source contexts (contexts that haven't been tagged with vocabulary).
-    '''
-    model = VocabContext
-    context_object_name = 'vocab_contexts'
-    template_name = '{0}/auth/vocab_source_pending_contexts.html'.format(APP_NAME)
-    paginate_by = 10
-
-    def get_queryset(self, **kwargs):
-        qs = super(VocabSourcePendingContextsView, self).get_queryset(**kwargs)
-        qs = qs.filter(
-            vocab_source_id=self.vocab_source.id,
-            vocabcontextentry__isnull=True
         ).distinct()
         qs = qs.order_by('-date_created')
         return qs
@@ -241,7 +206,10 @@ class VocabSourceDeleteView(
     def get_success_url(self):
         return reverse(
             'vocab:vocab_project_sources',
-            kwargs={'vocab_project_slug': self.vocab_project.slug}
+            kwargs={
+                'vocab_project_pk': self.vocab_project.id,
+                'vocab_project_slug': self.vocab_project.slug
+            }
         )
 
 

@@ -16,7 +16,7 @@
       {% elif url_name == "vocab_source_create" %}
 
         &nbsp;>&nbsp;
-        <a href="{% url 'vocab:vocab_project_sources' vocab_project.slug %}">{% trans "label_sources" %}</a>
+        <a href="{% url 'vocab:vocab_project_sources' vocab_project.id vocab_project.slug %}">{% trans "label_sources" %}</a>
 
       {% endif %}
 
@@ -26,7 +26,7 @@
 
     <a href="{% url 'vocab:vocab_project_dashboard' vocab_project.id vocab_project.slug %}">{% trans "label_project" %}</a>
     &nbsp;>&nbsp;
-    <a href="{% url 'vocab:vocab_project_sources' vocab_project.slug %}">{% trans "label_sources" %}</a>
+    <a href="{% url 'vocab:vocab_project_sources' vocab_project.id vocab_project.slug %}">{% trans "label_sources" %}</a>
 
     {% if url_name == "vocab_source_dashboard" %}
    

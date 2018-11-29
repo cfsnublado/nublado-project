@@ -12,7 +12,7 @@
 <div class="row justify-content-md-center">
 <div class="col-md-10">
 <div class="page-header">
-{% trans "label_sources" %}
+{% trans "header_sources" %}
 </div>
 </div>
 </div>
@@ -31,7 +31,7 @@
 {% trans "label_search_sources" %}
 </div>
 
-{% url 'vocab:vocab_project_sources' vocab_project.slug as search_url %}
+{% url 'vocab:vocab_project_sources' vocab_project.id vocab_project.slug as search_url %}
 {% url 'vocab:vocab_project_source_autocomplete' vocab_project.id as autocomplete_url %}
 
 {% include "includes/_search.html" with comp_name="source-search" search_btn=True %}

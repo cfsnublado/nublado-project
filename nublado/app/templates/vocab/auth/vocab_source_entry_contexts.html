@@ -3,7 +3,7 @@
 {% load core_extras %}
 {% load i18n %}
 
-{% block title %}{{ vocab_source.name }} - {% trans "page_vocab_source_entry_contexts_title" %} "{{ vocab_entry.entry|capfirst }}"{% endblock title %}
+{% block title %}{{ vocab_source.name }} - {% trans "page_vocab_source_entry_contexts_title" %} "{{ vocab_entry.entry }}"{% endblock title %}
 
 {% block breadcrumb_content %}
 
@@ -11,7 +11,7 @@
 &nbsp;>&nbsp;
 <a href="{% url 'vocab:vocab_source_entries' vocab_source.id vocab_source.slug %}">{% trans "label_entries" %}</a>
 &nbsp;>&nbsp;
-{{ vocab_entry.entry|capfirst }}
+{{ vocab_entry.entry }}
 
 {% endblock breadcrumb_content %}
 
@@ -20,14 +20,8 @@
 <div class="row justify-content-md-center">
 <div class="col-md-10">
 
-<div class="page-header">
-<a 
-id="vocab-entry-header" 
-href="#"
-@click.prevent="showEntryDetailModal = true"
->
-{{ vocab_entry.entry|capfirst }}
-</a>
+<div class="entry-header">
+{{ vocab_entry.entry }}
 </div>
 
 <div class="vocab-pronunciation" style="margin-bottom: 20px;">

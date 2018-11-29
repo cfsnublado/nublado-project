@@ -21,7 +21,6 @@ from .views.views_vocab_source_auth import (
     VocabSourceCreateView, VocabSourceDeleteView, VocabSourceExportJsonView,
     VocabSourceContextsView, VocabSourceDashboardView,
     VocabSourceEntriesView, VocabSourceEntryContextsView,
-    VocabSourcePendingContextsView,
     VocabSourceUpdateView
 )
 from .views.views_vocab_autocomplete import (
@@ -65,12 +64,12 @@ urlpatterns = [
         name='vocab_project_dashboard'
     ),
     path(
-        'project/<slug:vocab_project_slug>/sources/',
+        'project/<int:vocab_project_pk>-<slug:vocab_project_slug>/sources/',
         VocabProjectSourcesView.as_view(),
         name='vocab_project_sources'
     ),
     path(
-        'project/<slug:vocab_project_slug>/source/create/',
+        'project/<int:vocab_project_pk>-<slug:vocab_project_slug>/source/create/',
         VocabSourceCreateView.as_view(),
         name='vocab_source_create'
     ),
@@ -114,11 +113,6 @@ urlpatterns = [
         'source/<int:vocab_source_pk>-<slug:vocab_source_slug>/contexts/',
         VocabSourceContextsView.as_view(),
         name='vocab_source_contexts'
-    ),
-    path(
-        'source/<int:vocab_source_pk>-<slug:vocab_source_slug>/contexts/pending/',
-        VocabSourcePendingContextsView.as_view(),
-        name='vocab_source_pending_contexts'
     ),
     re_path(
         '^source/(?P<vocab_source_pk>[\d]+)-(?P<vocab_source_slug>[-\w]+)'

@@ -578,4 +578,24 @@ project_name: English Reading
 
     </div>
 
-- 
+- **Cognitive Biases and Heuristics**
+
+    Cognitive biases are flaws in the way our brains process information. Heuristics are similar&mdash;they're rules of thumb or mental shortcuts that are not reliably true and therefore also lead to biased thinking.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: hueristic: hueristics
+
+    </div>
+
+- Cognitive flaws and biases can be mitigated by metacognition, which is, simply put, thinking about thinking. Skepticism is largely a systematic effort in metacognition, which means understanding how we think and avoiding common mental pitfalls.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: mitigate: mitigated
+
+    en: metacognition: metacognition
+
+    en: skepticism: skepticism
+
+    </div>

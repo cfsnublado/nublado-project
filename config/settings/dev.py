@@ -2,7 +2,9 @@ from .base import *
 
 PROJECT_DOMAIN = "http://127.0.0.1:8000"
 
-DEBUG = True
+DEBUG = False
+
+ALLOWED_HOSTS = ["*"]
 
 INSTALLED_APPS += ['debug_toolbar', ]
 MIDDLEWARE += ['debug_toolbar.middleware.DebugToolbarMiddleware', ]

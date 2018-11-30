@@ -5,7 +5,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from django.contrib.staticfiles.testing import StaticLiveServerTestCase
 
 DEFAULT_WAIT = 3
-PROJECT_NAME = 'Proto'
+PROJECT_NAME = 'Nublado'
 DEFAULT_PWD = 'Pizza?69p'
 
 msgs = {
@@ -132,7 +132,5 @@ class FunctionalTest(StaticLiveServerTestCase):
         language_switcher.click()
         self.wait.until(EC.element_to_be_clickable((By.ID, language_id)))
         self.get_element_by_id(language_id).click()
-        if autocomplete_text is None:
-            autocomplete_text = '{0} - {1}'.format(language, search_text)
         result_link = self.search_autocomplete(search_text=search_text, autocomplete_text=autocomplete_text)
         return result_link

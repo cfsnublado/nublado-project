@@ -24,6 +24,7 @@ inline-template
 {% include "includes/_autocomplete.html" %}
 
 <dropdown
+id="search-language-switcher"
 container-classes="input-group-button"
 trigger-classes="button"
 dropdown-classes="dropdown-right"
@@ -44,6 +45,7 @@ dropdown-classes="dropdown-right"
   <li>
   <a
   href="" 
+  id="search-language-{{ language.code }}"
   class="search-language"
   @click.prevent="setLanguage('{{ language.code }}')"
   >

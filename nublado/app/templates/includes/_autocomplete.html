@@ -1,9 +1,10 @@
 {% load i18n %}
 
 <input
-  type="text" 
+  id="search-input"
   class="autocomplete-input form-control"
   placeholder="{% trans 'placeholder_search' %}"
+  type="text" 
   v-model.trim="searchTerm"
   @input="onAutocomplete"
   @keyup.enter="search"

@@ -5,9 +5,9 @@ from .base import *
 
 PROJECT_DOMAIN = "https://cfsnublado.herokuapp.com"
 
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
+# ALLOWED_HOSTS = ["*"]
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 

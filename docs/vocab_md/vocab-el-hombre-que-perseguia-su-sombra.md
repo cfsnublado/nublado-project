@@ -121,3 +121,57 @@ project_name: Spanish Reading
     es: de repente: de repente
 
     </div>
+
+- Él consideró la opción de gritar pidiendo ayuda y apretar el pulsador. Pensó también en golpearla con la porra y echarle gas pimienta con el espray. Sin embargo, tan sólo empezó a andar. Avanzó por el pasillo acompañado de Lisbeth Salander como si no hubiera ocurrido nada. Abrió las puertas esclusa con su tarjeta y su código esperando no toparse con nadie. No obstante —¿cómo no?—, se cruzaron con Harriet, su importuna colega, tan escurridiza que ni siquiera él tenía claro a qué bando pertenecía, si al de Benito o al de la ley. A veces creía que estaba en los dos, que elegía bando en función del provecho que pudiera sacar en cada ocasión.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: pasillo: pasillo
+
+    es: escurridizo: escurridiza
+
+    es: no obstante: no obstante
+
+    es: toparse: toparse
+
+    </div>
+
+- El despacho era suelo sagrado. La puerta siempre permanecía cerrada con llave, y allí dentro las reclusas no podían entrar. Ni mucho menos utilizar su teléfono. Pero hacia allí se dirigían. Con un poco de suerte, o de mala suerte, los compañeros del puesto central de vigilancia ya habrían descubierto lo ocurrido al otro lado tras el cierre de las celdas, por lo que seguramente no tardaría en bajar alguien para preguntar qué estaba sucediendo. Pasara lo que pasase, aquello no saldría bien. Debía hacer algo. Se tocó el cinturón, aunque no pulsó el botón de alarma. Sentía demasiada vergüenza y tal vez también, y muy a su pesar, una extraña fascinación. ¿Cuáles eran los planes de Lisbeth?
+
+    <div markdown="1" class="tagged-entries">
+
+    es: suelo: suelo
+
+    es: reclusa: reclusas
+
+    es: dirigirse: se dirigian
+
+    es: pulsar: pulsó
+
+    </div>
+
+- Parecía que estaban a punto de lanzarse uno contra el otro y enzarzarse en una pelea. Pero ella lo desarmó una vez más al dirigir la mirada al corcho.
+
+    —¿Esa de ahí es tu vieja? ¿La que salvaste?
+
+    Él no contestó. Aún sopesaba la idea de abalanzarse encima de ella. 
+
+    —¿Es tu madre? —repitió. 
+
+    Él asintió con la cabeza.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: vocab: tags
+
+    </div>
+
+    <div markdown="1" class="tagged-entries">
+
+    es: enzarzarse: enzarzarse
+
+    es: sopesar: sopesaba
+
+    es: abalanzarse: abalanzarse
+
+    </div>

@@ -1045,7 +1045,7 @@ msgstr "Cambiar contraseña de usuario"
 
 #: nublado/app/templates/vocab/auth/vocab_source_entries.html:28
 msgid "label_search_vocab_in_source"
-msgstr "Buscar vocabulario en fuente"
+msgstr "Buscar vocabulario en la fuente"
 
 #: nublado/app/templates/vocab/auth/vocab_source_entry_contexts.html:6
 msgid "page_vocab_source_entry_contexts_title"

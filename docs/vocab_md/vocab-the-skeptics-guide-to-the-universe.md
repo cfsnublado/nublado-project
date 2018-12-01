@@ -599,3 +599,35 @@ project_name: English Reading
     en: skepticism: skepticism
 
     </div>
+
+- **Confirmation Bias**
+
+    Confirmation bias is the tendency of individuals to seek out or interpret new information as support for previously held notions or beliefs, even when such interpretations don't hold up to statistical scrutiny.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: confirmation bias: confirmation bias
+
+    en: scrutiny: scrutiny
+
+    </div>
+
+- Here's the task: There are four cards on a table before you. They each have a letter on one side and a number on the other. I have a hypothesis&mdash;every card that has a vowel on one side has an even number on the other. The four cards are show A, 7, D, and 4.
+
+    The question for you is this: Which cards do I need to flip over in order to test my hypothesis? The correct answer is that you need to turn over A and 7. If A doesn't have an even number on the other side, or 7 has a vowel, the hypothesis is wrong.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: hypothesis: hypothesis
+
+    </div>
+
+- But the core lesson remains&mdash;if you want to test your hypothesis, try to prove it wrong. Do not only look for evidence to prove it right.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: hypothesis: hypothesis
+
+    </div>
+
+- 

@@ -175,3 +175,197 @@ project_name: Spanish Reading
     es: abalanzarse: abalanzarse
 
     </div>
+
+- Mikael se apeó del autobús y fue autorizado a entrar en el recinto. Se dirigió al puesto central de vigilancia, donde depositó su teléfono móvil y sus llaves en una taquilla gris. Pasó por el control de seguridad, donde, como tantas otras veces, creyó que querían fastidiarlo a mala idea. Un chico tatuado y de pelo rapado de unos treinta años llegó a tocarle, incluso, la entrepierna. Por si fuera poco, apareció un labrador negro, un chucho simpático y alegre, cierto, pero Mikael sabía muy bien que se trataba de un perro detector de droga. ¿Realmente pensaban que iba a intentar meter drogas en la cárcel?
+
+    <div markdown="1" class="tagged-entries">
+
+    es: apearse: se apeó
+
+    es: recinto: recinto
+
+    es: dirigirse: se dirigió
+
+    es: entrepierna: entrepierna
+
+    </div>
+
+- No quería. «Ahora no y aquí tampoco.» Después se quedaron callados. Por entre las rejas de la ventana se veía caer la lluvia, que repiqueteaba sobre el patio y los muros. Mikael tenía la mirada vacía, fija en un raído colchón que se hallaba apoyado contra la pared.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: repiquetear: repiqueteaba
+
+    </div>
+
+- A las 19.29, Faria Kazi sintió un estremecimiento que recorrió todo su cuerpo cuando oyó los primeros traqueteos del tren de mercancías. Sólo faltaban dieciséis minutos para el cierre de las celdas. Pero hasta ese momento podían pasar muchas cosas. Nadie lo sabía mejor que ella. Desde el pasillo le llegaba el tintineo de los juegos de llaves de los guardias y el murmullo de varias voces, y aunque no se enteró muy bien de lo que comentaban, percibió una excitación en el ambiente.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: estremecimiento: estremecimiento
+
+    es: recorrer: recorrió
+
+    es: traqueteo: traqueteos
+
+    es: mercancía: mercancías
+
+    es: murmullo: murmullo
+
+    es: ambiente: ambiente
+
+    es: enterarse de algo: no se enteró muy bien de lo que comentaban
+
+    </div>
+
+- Benito volvió a mover los dedos palpando lo que llevaba en el bolsillo, pero esta vez se le dibujó una amplia sonrisa en los labios, una sonrisa que irradiaba un gélido triunfalismo.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: palpar: palpando
+
+    es: irradiar: irradiaba
+
+    es: gélido: gélido
+
+    es: triunfalismo: triunfalismo
+
+    es: bolsillo: bolsillo
+
+    </div>
+
+- —¿Qué crees que llevo aquí? —continuó—. ¿Qué podría ser? No es mi Keris, así que tranquilízate. Pero es algo que tiene mucho valor para mí.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: tranquilizarse: tranquilízate
+
+    </div>
+
+- Lentamente, muy lentamente, le fue acercando al cuello la hoja de la navaja hasta que la punta le tocó la arteria carótida, como si Benito quisiera mostrarle cuál era el mejor punto para que el corte resultara mortal. A continuación, entre susurros y escupitajos, pronunció unas palabras que parecían versar sobre la expiación de los pecados con sangre y sobre el restablecimiento del honor familiar. Faria no acababa de entender de qué iba todo aquello.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: arteria: arteria
+
+    es: mortal: mortal
+
+    es: escupitajo: escupitajos
+
+    es: versar: versar
+
+    es: expiación: expiación
+
+    es: de qué va algo: de qué iba todo aquello
+
+    es: restablecimiento: restablecimiento
+
+    </div>
+
+- Malin parecía tranquila pero triste, y Mikael volvió a acariciarle el hombro. Acababa de saber por dónde debía empezar a tirar del hilo. Se remontaría a mucho tiempo atrás, recurriría a los viejos registros parroquiales si hacía falta.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: remontarse: remontarse
+
+    es: recurrir: recurriría
+
+    </div>
+
+- Le pitaban los oídos y le ardía la mejilla, y se preparó para otro combate. Pero se libró. En lugar de continuar la pelea, Tine se quedó mirando a Benito, que yacía en el suelo con un aspecto bastante lamentable. No sólo por los rojos regueros de sangre que salían de su boca y se extendían sobre el hormigón formando una especie de garra, sino también por la posición de su torcido cuerpo y el estado de su rostro. Benito parecía estar destinada, en el mejor de los casos, a pasarse el resto de su vida postrada en una cama.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: librarse: se libró
+
+    es: hormigón: hormigón
+
+    es: reguero: regueros
+
+    es: torcido: torcido
+
+    es: yacer: yacía
+
+    es: postrado: postrada
+
+    </div>
+
+- No era la primera vez que dejaba KO a alguien, tanto dentro como fuera del cuadrilátero, pero en esas ocasiones siempre había advertido —en mayor o menor grado— gimoteos, quejidos o leves movimientos. En cambio, ahora reinaba un trágico silencio que se intensificaba con la inmovilidad del cuerpo y el vibrante nerviosismo que flotaba en el aire.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: cuadrilátero: cuadrilátero
+
+    es: reinar el siliencio: reinaba un trágico silencio
+
+    es: nerviosismo: nerviosismo
+
+    es: tanto como: tanto dentro como fuera del cuadrilátero
+
+    </div>
+
+- A veces, aunque no muy a menudo —seguía siendo un hombre orgulloso—, se arrepentía de no haber aceptado que Lisbeth le pagara una atención privada más cualificada. Unos días antes le había preguntado a Marita, esa joven y ruda cuidadora cuyo rostro siempre se torcía en una mueca de asco cuando tenía que levantarlo de la cama:
+
+    —¿Tienes hijos?
+
+    —No quiero hablar de mi vida privada —le espetó, cortándolo en seco.
+
+    A eso se había llegado, a que si él pretendía mostrar un poco de cortesía lo tacharan de chismoso. La vejez era una humillación, un abuso. Así la veía él. Un momento antes, cuando necesitó que le cambiaran el pañal, se le vino a la mente el poema de Gunnar Ekelöf «Deberían avergonzarse».
+
+    <div markdown="1" class="tagged-entries">
+
+    es: arrepentirse: se arrepentía
+
+    es: torcerse: se torcía
+
+    es: tachar: tacharan
+
+    es: venir a la mente: se le vino a la mente
+
+    </div>
+
+- —Exacto. Alguien ha burlado la seguridad de vuestros detectores de metal y ha introducido una navaja. Así que lo que ha pasado es que el personal de una cárcel muy grande ha perdido su autoridad y ha fracasado estrepitosamente en su empeño de proteger a una presa amenazada.
+
+    —Pero... Pero... ¿Y eso? —murmuró Alvar desquiciado, señalando la mandíbula de Benito. 
+
+    —Eso es lo que tú deberías haber hecho hace ya mucho tiempo, Alvar.
+
+    Él se quedó mirando a Benito, que seguía tirada en el suelo con la cara torcida, destrozada, y con la sangre chorreándole por la mandíbula.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: burlar: burlar
+
+    es: fracasar: ha fracasado
+
+    es: estrepitosamente: estrepitosamente
+
+    es: empeño: empeño
+
+    es: presa: presa
+
+    es: debería haber: deberías haber hecho
+
+    es: chorrear: chorreándole
+
+    </div>
+
+- Sintió instintivamente que tenía que actuar. Debía recuperar su dignidad. Pero no le dio tiempo a nada. Sus colegas, Harriet y Fred, irrumpieron en la celda y se quedaron paralizados. Miraron a Benito, tendida en el suelo, y —al igual que Alvar hacía tan sólo un momento— oyeron los conjuros que murmuraba, aunque con la diferencia de que ya no era posible apreciar frases completas. Sólo algunas sílabas, como «ke» o «kri», resultaban perceptibles en sus malvadas letanías.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: irrumpir: irrumpir
+
+    es: sílaba: sílabas
+
+    </div>
+
+- —Pero, carajo, esto tiene muy mala pinta. Benito, Benito, ¿cómo estás? ¡Dios mío! —se lamentó Fred. Y ésa fue para Alvar la gota que derramó el vaso. Se acabó. Se acabaron tantos meses de cerrar los ojos y mirar para otro lado.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: la gota que derrama el vaso: la gota que derramó el vaso
+
+    es: lamentarse: se lamentó
+
+    </div>

@@ -11,7 +11,7 @@ from django.views.generic import (
     TemplateView, UpdateView
 )
 
-from core.views import AjaxDeleteMixin
+from core.views import AjaxDeleteMixin, MessageMixin
 from core.utils import FuzzyInt
 from ..conf import settings
 from ..forms import VocabSourceCreateForm, VocabSourceUpdateForm
@@ -20,10 +20,12 @@ from ..models import (
     VocabProject, VocabSource
 )
 from ..views.views_mixins import (
-    VocabEntrySearchMixin, VocabSessionMixin, VocabSourceMixin
+    VocabEntrySearchMixin, VocabProjectMixin, VocabSessionMixin,
+    VocabSourceMixin
 )
 from ..views.views_vocab_source_auth import (
-    VocabSourceContextsView, VocabSourceDashboardView, VocabSourceEntriesView
+    VocabSourceEntryContextsView, VocabSourceContextsView,
+    VocabSourceCreateView, VocabSourceDashboardView, VocabSourceEntriesView
 )
 
 User = get_user_model()
@@ -228,6 +230,378 @@ class VocabSourceEntriesViewTest(TestCommon):
             )
 
 
+class VocabSourceContextsViewTest(TestCommon):
+
+    def setUp(self):
+        super(VocabSourceContextsViewTest, self).setUp()
+
+    def test_inheritance(self):
+        classes = (
+            LoginRequiredMixin,
+            VocabSourceMixin,
+            VocabEntrySearchMixin,
+            ListView
+        )
+        for class_name in classes:
+            self.assertTrue(issubclass(VocabSourceContextsView, class_name))
+
+    def test_correct_view_used(self):
+        found = resolve(reverse(
+            'vocab:vocab_source_contexts',
+            kwargs={
+                'vocab_source_pk': self.vocab_source.id,
+                'vocab_source_slug': self.vocab_source.slug
+            }
+        ))
+        self.assertEqual(found.func.__name__, VocabSourceContextsView.as_view().__name__)
+
+    def test_view_renders_correct_template(self):
+        self.login_test_user(self.user.username)
+        response = self.client.get(
+            reverse(
+                'vocab:vocab_source_contexts',
+                kwargs={
+                    'vocab_source_pk': self.vocab_source.id,
+                    'vocab_source_slug': self.vocab_source.slug
+                }
+            )
+        )
+        self.assertTemplateUsed(response, '{0}/auth/vocab_source_contexts.html'.format(APP_NAME))
+
+    def test_view_returns_source_contexts(self):
+        vocab_source_2 = VocabSource.objects.create(
+            vocab_project=self.vocab_project,
+            creator=self.user,
+            name='another test source'
+        )
+        # Create contexts for two different sources.
+        vocab_context = VocabContext.objects.create(vocab_source=self.vocab_source, content='Hello')
+        VocabContext.objects.create(vocab_source=vocab_source_2, content='Hello')
+        VocabContext.objects.create(vocab_source=vocab_source_2, content='Hello')
+
+        self.login_test_user(self.user.username)
+        response = self.client.get(
+            reverse(
+                'vocab:vocab_source_contexts',
+                kwargs={
+                    'vocab_source_pk': self.vocab_source.id,
+                    'vocab_source_slug': self.vocab_source.slug
+                }
+            )
+        )
+        vocab_contexts = response.context['vocab_contexts']
+        self.assertEqual(1, vocab_contexts.count())
+        self.assertEqual(vocab_contexts[0], vocab_context)
+
+    def test_num_queries(self):
+        self.login_test_user(self.user.username)
+        self.add_contexts()
+        with self.assertNumQueries(FuzzyInt(1, 13)):
+            self.client.get(
+                reverse(
+                    'vocab:vocab_source_contexts',
+                    kwargs={
+                        'vocab_source_pk': self.vocab_source.id,
+                        'vocab_source_slug': self.vocab_source.slug
+                    }
+                )
+            )
+
+
+class VocabSourceEntryContextsViewTest(TestCommon):
+
+    def setUp(self):
+        super(VocabSourceEntryContextsViewTest, self).setUp()
+        self.vocab_entry_1 = VocabEntry.objects.create(language='es', entry='tergiversar')
+        self.vocab_entry_2 = VocabEntry.objects.create(language='es', entry='demasiado')
+
+    def add_contexts(self):
+        context_text = '''Hay que tergiversar el mensaje, pero no demasiado. Demasiado sería
+                          no solo confuso, sino devastador.'''
+        for i in range(1, 20):
+            vocab_context = VocabContext.objects.create(vocab_source=self.vocab_source, content=context_text)
+            vocab_context_entry_1 = VocabContextEntry.objects.create(
+                vocab_context=vocab_context,
+                vocab_entry=self.vocab_entry_1
+            )
+            vocab_context_entry_1.add_vocab_entry_tag('tergiversado')
+            vocab_context_entry_2 = VocabContextEntry.objects.create(
+                vocab_context=vocab_context,
+                vocab_entry=self.vocab_entry_2
+            )
+            vocab_context_entry_2.add_vocab_entry_tag('demasiado')
+
+    def test_inheritance(self):
+        classes = (
+            LoginRequiredMixin,
+            VocabSourceMixin,
+            ListView
+        )
+        for class_name in classes:
+            self.assertTrue(issubclass(VocabSourceEntryContextsView, class_name))
+
+    def test_correct_view_used(self):
+        found = resolve(reverse(
+            'vocab:vocab_source_entry_contexts',
+            kwargs={
+                'vocab_source_pk': self.vocab_source.id,
+                'vocab_source_slug': self.vocab_source.slug,
+                'vocab_entry_language': self.vocab_entry_1.language,
+                'vocab_entry_slug': self.vocab_entry_1.slug
+            }
+        ))
+        self.assertEqual(found.func.__name__, VocabSourceEntryContextsView.as_view().__name__)
+
+    def test_view_renders_correct_template(self):
+        self.login_test_user(self.user.username)
+        response = self.client.get(
+            reverse(
+                'vocab:vocab_source_entry_contexts',
+                kwargs={
+                    'vocab_source_pk': self.vocab_source.id,
+                    'vocab_source_slug': self.vocab_source.slug,
+                    'vocab_entry_language': self.vocab_entry_1.language,
+                    'vocab_entry_slug': self.vocab_entry_1.slug
+                }
+            )
+        )
+        self.assertTemplateUsed(
+            response,
+            '{0}/auth/vocab_source_entry_contexts.html'.format(APP_NAME)
+        )
+
+    def test_view_returns_entry_contexts_from_source(self):
+        self.login_test_user(self.user.username)
+        self.add_contexts()
+        response = self.client.get(
+            reverse(
+                'vocab:vocab_source_entry_contexts',
+                kwargs={
+                    'vocab_source_pk': self.vocab_source.id,
+                    'vocab_source_slug': self.vocab_source.slug,
+                    'vocab_entry_language': self.vocab_entry_1.language,
+                    'vocab_entry_slug': self.vocab_entry_1.slug
+                }
+            )
+        )
+        qs = VocabContextEntry.objects.select_related('vocab_context__vocab_source', 'vocab_entry')
+        qs = qs.prefetch_related('vocab_context__vocab_entries', 'vocab_entry_tags')
+        qs = qs.filter(
+            vocab_context__vocab_source_id=self.vocab_source.id,
+            vocab_entry_id=self.vocab_entry_1.id
+        )
+        qs = qs.order_by('-date_created')
+        expected_contexts = qs.all()
+        contexts = response.context['vocab_entry_contexts']
+        self.assertQuerysetEqual(expected_contexts, contexts, transform=lambda x: x)
+
+    def test_num_queries(self):
+        self.login_test_user(self.user.username)
+        self.add_contexts()
+        with self.assertNumQueries(FuzzyInt(1, 13)):
+            self.client.get(
+                reverse(
+                    'vocab:vocab_source_entry_contexts',
+                    kwargs={
+                        'vocab_source_pk': self.vocab_source.id,
+                        'vocab_source_slug': self.vocab_source.slug,
+                        'vocab_entry_language': self.vocab_entry_1.language,
+                        'vocab_entry_slug': self.vocab_entry_1.slug
+                    }
+                )
+            )
+
+
+class VocabSourceCreateViewTest(TestCommon):
+
+    def setUp(self):
+        super(VocabSourceCreateViewTest, self).setUp()
+        self.vocab_source_data = {
+            'source_type': VocabSource.BOOK,
+            'name': 'A tale of two wizards',
+            'description': 'Oh yeah.'
+        }
+
+    def test_inheritance(self):
+        classes = (
+            LoginRequiredMixin,
+            VocabProjectMixin,
+            MessageMixin,
+            CreateView
+        )
+        for class_name in classes:
+            self.assertTrue(issubclass(VocabSourceCreateView, class_name))
+
+    def test_correct_view_used(self):
+        found = resolve(
+            reverse(
+                'vocab:vocab_source_create',
+                kwargs={
+                    'vocab_project_pk': self.vocab_project.id,
+                    'vocab_project_slug': self.vocab_project.slug
+                }
+            )
+        )
+        self.assertEqual(found.func.__name__, VocabSourceCreateView.as_view().__name__)
+
+    def test_view_non_authenticated_user_redirected_to_login(self):
+        response = self.client.get(
+            reverse(
+                'vocab:vocab_source_create',
+                kwargs={
+                    'vocab_project_pk': self.vocab_project.id,
+                    'vocab_project_slug': self.vocab_project.slug
+                }
+            )
+        )
+        self.assertRedirects(
+            response,
+            expected_url='{0}?next=/{1}/project/{2}-{3}/source/create/'.format(
+                reverse(settings.LOGIN_URL),
+                URL_PREFIX,
+                self.vocab_project.id,
+                self.vocab_project.slug
+            ),
+            status_code=302,
+            target_status_code=200,
+            msg_prefix=''
+        )
+
+    def test_view_returns_correct_status_code(self):
+        self.login_test_user(self.user.username)
+        response = self.client.get(
+            reverse(
+                'vocab:vocab_source_create',
+                kwargs={
+                    'vocab_project_pk': self.vocab_project.id,
+                    'vocab_project_slug': self.vocab_project.slug
+                }
+            )
+        )
+        self.assertEqual(response.status_code, 200)
+
+    def test_view_renders_correct_template(self):
+        self.login_test_user(self.user.username)
+        response = self.client.get(
+            reverse(
+                'vocab:vocab_source_create',
+                kwargs={
+                    'vocab_project_pk': self.vocab_project.id,
+                    'vocab_project_slug': self.vocab_project.slug
+                }
+            )
+        )
+        self.assertTemplateUsed(response, '{0}/auth/vocab_source_create.html'.format(APP_NAME))
+
+    def test_view_uses_correct_form(self):
+        self.login_test_user(self.user.username)
+        response = self.client.get(
+            reverse(
+                'vocab:vocab_source_create',
+                kwargs={
+                    'vocab_project_pk': self.vocab_project.id,
+                    'vocab_project_slug': self.vocab_project.slug
+                }
+            )
+        )
+        self.assertIsInstance(response.context['form'], VocabSourceCreateForm)
+
+    def test_view_injects_form_kwargs(self):
+        self.login_test_user(self.user.username)
+        response = self.client.get(
+            reverse(
+                'vocab:vocab_source_create',
+                kwargs={
+                    'vocab_project_pk': self.vocab_project.id,
+                    'vocab_project_slug': self.vocab_project.slug
+                }
+            )
+        )
+        form = response.context['form']
+        self.assertEqual(form.creator, self.user)
+        self.assertEqual(form.vocab_project, self.vocab_project)
+
+    def test_view_creates_object(self):
+        self.login_test_user(self.user.username)
+        self.assertFalse(
+            VocabSource.objects.filter(
+                vocab_project=self.vocab_project,
+                creator=self.user,
+                name=self.vocab_source_data['name'],
+                source_type=self.vocab_source_data['source_type']
+            ).exists()
+        )
+        self.client.post(
+            reverse(
+                'vocab:vocab_source_create',
+                kwargs={
+                    'vocab_project_pk': self.vocab_project.id,
+                    'vocab_project_slug': self.vocab_project.slug
+                }
+            ),
+            self.vocab_source_data
+        )
+        self.assertTrue(
+            VocabSource.objects.filter(
+                vocab_project=self.vocab_project,
+                creator=self.user,
+                name=self.vocab_source_data['name'],
+                source_type=self.vocab_source_data['source_type']
+            ).exists()
+        )
+
+    def test_invalid_data_shows_form_errors_and_does_not_save(self):
+        self.vocab_source_data['name'] = ''
+        self.login_test_user(self.user.username)
+        response = self.client.post(
+            reverse(
+                'vocab:vocab_source_create',
+                kwargs={
+                    'vocab_project_pk': self.vocab_project.id,
+                    'vocab_project_slug': self.vocab_project.slug
+                }
+            ),
+            self.vocab_source_data
+        )
+        self.assertEqual(response.status_code, 200)
+        self.assertFalse(
+            VocabSource.objects.filter(
+                name=self.vocab_source_data['name'],
+                source_type=self.vocab_source_data['source_type']
+            ).exists()
+        )
+        self.assertIsInstance(response.context['form'], VocabSourceCreateForm)
+        self.assertFormError(response, 'form', 'name', _('validation_field_required'))
+
+    def test_view_redirects_on_success(self):
+        self.login_test_user(self.user.username)
+        response = self.client.post(
+            reverse(
+                'vocab:vocab_source_create',
+                kwargs={
+                    'vocab_project_pk': self.vocab_project.id,
+                    'vocab_project_slug': self.vocab_project.slug
+                }
+            ),
+            self.vocab_source_data
+        )
+        vocab_source = VocabSource.objects.get(
+            name=self.vocab_source_data['name']
+        )
+        self.assertRedirects(
+            response,
+            expected_url=reverse(
+                'vocab:vocab_source_dashboard',
+                kwargs={
+                    'vocab_source_pk': vocab_source.id,
+                    'vocab_source_slug': vocab_source.slug
+                }
+            ),
+            status_code=302,
+            target_status_code=200,
+            msg_prefix=''
+        )
+
 # class UserVocabSourcesViewTest(TestCommon):
 
 #     def test_inheritance(self):
@@ -288,132 +662,6 @@ class VocabSourceEntriesViewTest(TestCommon):
 #         )
 #         sources = response.context['vocab_sources']
 #         self.assertEqual(len(sources[source_type]), 2)
-
-
-# class VocabSourceCreateViewTest(TestCommon):
-
-#     def setUp(self):
-#         super(VocabSourceCreateViewTest, self).setUp()
-#         self.vocab_source_data = {
-#             'source_type': VocabSource.BOOK,
-#             'name': 'A tale of two wizards',
-#             'description': 'Oh yeah.'
-#         }
-
-#     def test_inheritance(self):
-#         classes = (
-#             LoginRequiredMixin,
-#             VocabSessionMixin,
-#             CreateView
-#         )
-#         for class_name in classes:
-#             self.assertTrue(issubclass(VocabSourceCreateView, class_name))
-
-#     def test_correct_view_used(self):
-#         found = resolve(
-#             reverse('vocab:vocab_source_create')
-#         )
-#         self.assertEqual(found.func.__name__, VocabSourceCreateView.as_view().__name__)
-
-#     def test_view_non_authenticated_user_redirected_to_login(self):
-#         response = self.client.get(
-#             reverse('vocab:vocab_source_create')
-#         )
-#         self.assertRedirects(
-#             response,
-#             expected_url='{0}?next=/admin/{1}/source/create/'.format(
-#                 reverse(settings.LOGIN_URL),
-#                 URL_PREFIX,
-#             ),
-#             status_code=302,
-#             target_status_code=200,
-#             msg_prefix=''
-#         )
-
-#     def test_view_returns_correct_status_code(self):
-#         self.login_test_user(self.user.username)
-#         response = self.client.get(
-#             reverse('vocab:vocab_source_create')
-#         )
-#         self.assertEqual(response.status_code, 200)
-
-#     def test_view_renders_correct_template(self):
-#         self.login_test_user(self.user.username)
-#         response = self.client.get(
-#             reverse('vocab:vocab_source_create')
-#         )
-#         self.assertTemplateUsed(response, '{0}/admin/vocab_source_create.html'.format(APP_NAME))
-
-#     def test_view_uses_correct_form(self):
-#         self.login_test_user(self.user.username)
-#         response = self.client.get(
-#             reverse('vocab:vocab_source_create')
-#         )
-#         self.assertIsInstance(response.context['form'], VocabSourceCreateForm)
-
-#     def test_view_injects_form_kwargs(self):
-#         self.login_test_user(self.user.username)
-#         response = self.client.get(
-#             reverse('vocab:vocab_source_create')
-#         )
-#         form = response.context['form']
-#         self.assertEqual(form.creator, self.user)
-
-#     def test_view_creates_object(self):
-#         self.login_test_user(self.user.username)
-#         self.assertFalse(
-#             VocabSource.objects.filter(
-#                 name=self.vocab_source_data['name'],
-#                 source_type=self.vocab_source_data['source_type']
-#             ).exists()
-#         )
-#         self.client.post(
-#             reverse('vocab:vocab_source_create'),
-#             self.vocab_source_data
-#         )
-#         self.assertTrue(
-#             VocabSource.objects.filter(
-#                 name=self.vocab_source_data['name'],
-#                 source_type=self.vocab_source_data['source_type']
-#             ).exists()
-#         )
-
-#     def test_invalid_data_shows_form_errors_and_does_not_save(self):
-#         self.vocab_source_data['name'] = ''
-#         self.login_test_user(self.user.username)
-#         response = self.client.post(
-#             reverse('vocab:vocab_source_create'),
-#             self.vocab_source_data
-#         )
-#         self.assertEqual(response.status_code, 200)
-#         self.assertFalse(
-#             VocabSource.objects.filter(
-#                 name=self.vocab_source_data['name'],
-#                 source_type=self.vocab_source_data['source_type']
-#             ).exists()
-#         )
-#         self.assertIsInstance(response.context['form'], VocabSourceCreateForm)
-#         self.assertFormError(response, 'form', 'name', error_messages['field_required'])
-
-#     def test_view_redirects_on_success(self):
-#         self.login_test_user(self.user.username)
-#         response = self.client.post(
-#             reverse('vocab:vocab_source_create'),
-#             self.vocab_source_data
-#         )
-#         vocab_source = VocabSource.objects.get(
-#             name=self.vocab_source_data['name']
-#         )
-#         self.assertRedirects(
-#             response,
-#             expected_url=reverse(
-#                 'vocab:vocab_source_dashboard',
-#                 kwargs={'vocab_source_slug': vocab_source.slug}
-#             ),
-#             status_code=302,
-#             target_status_code=200,
-#             msg_prefix=''
-#         )
 
 
 # class VocabSourceUpdateViewTest(TestCommon):
@@ -586,77 +834,6 @@ class VocabSourceEntriesViewTest(TestCommon):
 #         response_data = json.loads(json_string)
 #         self.assertEqual(_('message_success'), response_data['success_message'])
 #         self.assertFalse(VocabSource.objects.filter(pk=obj_id).exists())
-
-
-class VocabSourceContextsViewTest(TestCommon):
-
-    def setUp(self):
-        super(VocabSourceContextsViewTest, self).setUp()
-        self.vocab_entry_1 = VocabEntry.objects.create(language='es', entry='tergiversar')
-        self.vocab_entry_2 = VocabEntry.objects.create(language='es', entry='demasiado')
-
-    def add_contexts(self):
-        context_text = '''Hay que tergiversar el mensaje, pero no demasiado. Demasiado sería
-                          no solo confuso, sino devastador.'''
-        for i in range(1, 20):
-            vocab_context = VocabContext.objects.create(vocab_source=self.vocab_source, content=context_text)
-            vocab_context_entry_1 = VocabContextEntry.objects.create(
-                vocab_context=vocab_context,
-                vocab_entry=self.vocab_entry_1
-            )
-            vocab_context_entry_1.add_vocab_entry_tag('demasiado')
-            vocab_context_entry_2 = VocabContextEntry.objects.create(
-                vocab_context=vocab_context,
-                vocab_entry=self.vocab_entry_2
-            )
-            vocab_context_entry_2.add_vocab_entry_tag('demasiado')
-
-    def test_inheritance(self):
-        classes = (
-            LoginRequiredMixin,
-            VocabSourceMixin,
-            VocabEntrySearchMixin,
-            ListView
-        )
-        for class_name in classes:
-            self.assertTrue(issubclass(VocabSourceContextsView, class_name))
-
-    def test_correct_view_used(self):
-        found = resolve(reverse(
-            'vocab:vocab_source_contexts',
-            kwargs={
-                'vocab_source_pk': self.vocab_source.id,
-                'vocab_source_slug': self.vocab_source.slug
-            }
-        ))
-        self.assertEqual(found.func.__name__, VocabSourceContextsView.as_view().__name__)
-
-    def test_view_renders_correct_template(self):
-        self.login_test_user(self.user.username)
-        response = self.client.get(
-            reverse(
-                'vocab:vocab_source_contexts',
-                kwargs={
-                    'vocab_source_pk': self.vocab_source.id,
-                    'vocab_source_slug': self.vocab_source.slug
-                }
-            )
-        )
-        self.assertTemplateUsed(response, '{0}/auth/vocab_source_contexts.html'.format(APP_NAME))
-
-    def test_num_queries(self):
-        self.login_test_user(self.user.username)
-        self.add_contexts()
-        with self.assertNumQueries(FuzzyInt(1, 13)):
-            self.client.get(
-                reverse(
-                    'vocab:vocab_source_contexts',
-                    kwargs={
-                        'vocab_source_pk': self.vocab_source.id,
-                        'vocab_source_slug': self.vocab_source.slug
-                    }
-                )
-            )
 
 
 # class VocabSourceContextEntriesViewTest(TestCommon):

@@ -6,7 +6,7 @@ def global_settings(request):
     Returns values to be gobally available in templates.
     """
 
-    session_obj_enabled = any(k in request.session for k in ("vocab_project", "vocab_source", "vocab_entry"))
+    session_obj_enabled = 'session_obj' in request.session
 
     return {
         "project_name": settings.PROJECT_NAME,

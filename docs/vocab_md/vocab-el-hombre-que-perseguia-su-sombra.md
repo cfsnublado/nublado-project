@@ -198,6 +198,16 @@ project_name: Spanish Reading
 
     </div>
 
+- La verdad estaba a medio camino. Malin lo empujó contra la pared, lo cogió de las caderas y le dijo que lo iba a castigar por ser tan soso y tan sexy, y por esto, por lo otro y por lo de más allá. Y antes de que a él le diera tiempo a asimilar lo que estaba ocurriendo, ella ya estaba en su cama, sentada a horcajadas sobre él, y ya se había corrido no una, sino dos veces.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: correrse: se había corrido
+
+    es: sentarse a horcajadas: sentada a horcajadas
+
+    </div>
+
 - A las 19.29, Faria Kazi sintió un estremecimiento que recorrió todo su cuerpo cuando oyó los primeros traqueteos del tren de mercancías. Sólo faltaban dieciséis minutos para el cierre de las celdas. Pero hasta ese momento podían pasar muchas cosas. Nadie lo sabía mejor que ella. Desde el pasillo le llegaba el tintineo de los juegos de llaves de los guardias y el murmullo de varias voces, y aunque no se enteró muy bien de lo que comentaban, percibió una excitación en el ambiente.
 
     <div markdown="1" class="tagged-entries">
@@ -369,3 +379,17 @@ project_name: Spanish Reading
     es: lamentarse: se lamentó
 
     </div>
+
+- —En lugar de preocuparte por Benito deberías hacerlo por Faria —le soltó—. Hemos dejado que todo este módulo se intoxique y se destruya. ¿Ves ese estilete del suelo? Benito ha conseguido meterlo en la unidad, ha introducido clandestinamente una maldita arma asesina, y estaba a punto de atacar a Faria cuando yo...
+
+    <div markdown="1" class="tagged-entries">
+
+    es: clandestinamente: clandestinamente
+
+    es: intoxicarse: se intoxique
+
+    es: estilete: estilete
+
+    </div>
+
+- 

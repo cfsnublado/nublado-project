@@ -14,7 +14,7 @@ sidebar-adaptable theme-white {{ sidebar_expanded|yesno:"sidebar-nav-expanded," 
 
 {% block page_subheader %}
 
-{% if request.session.vocab_project or request.session.vocab_source %}
+{% if request.session.session_obj.vocab_project or request.session.session_obj.vocab_source %}
 
 <div class="row justify-content-md-center">
 <div class="col-md-10">
@@ -22,7 +22,7 @@ sidebar-adaptable theme-white {{ sidebar_expanded|yesno:"sidebar-nav-expanded," 
 </div>
 </div>
 
-{% elif request.session.vocab_entry %}
+{% elif request.session.session_obj.vocab_entry %}
 
 <div class="row justify-content-md-center">
 <div class="col-md-10">
@@ -36,7 +36,7 @@ sidebar-adaptable theme-white {{ sidebar_expanded|yesno:"sidebar-nav-expanded," 
 
 {% block page_header %}
 
-{% if request.session.vocab_source %}
+{% if request.session.session_obj.vocab_source %}
 
   <div class="row justify-content-md-center">
   <div class="col-md-10">
@@ -94,7 +94,7 @@ sidebar-nav {{ sidebar_expanded|yesno:"sidebar-nav-expanded," }} {{ sidebar_top_
 
 {% block sidebar_nav_top_panel_content %}
 
-{% if request.session.vocab_project %}
+{% if request.session.session_obj.vocab_project %}
 
   <li class="nav-list-header">
   <span> {% trans "label_project" %} </span>
@@ -135,7 +135,7 @@ sidebar-nav {{ sidebar_expanded|yesno:"sidebar-nav-expanded," }} {{ sidebar_top_
   </a>
   </li>
 
-{% elif request.session.vocab_source %}
+{% elif request.session.session_obj.vocab_source %}
 
   <li class="nav-list-header">
   <span> {% trans "label_project" %} </span>
@@ -215,7 +215,7 @@ sidebar-nav {{ sidebar_expanded|yesno:"sidebar-nav-expanded," }} {{ sidebar_top_
 
   <li class="divider"></li>
 
-{% elif request.session.vocab_entry %}
+{% elif request.session.session_obj.vocab_entry %}
 
   <li class="nav-list-header">
   <span> {% trans "label_entry" %} </span>
@@ -225,7 +225,7 @@ sidebar-nav {{ sidebar_expanded|yesno:"sidebar-nav-expanded," }} {{ sidebar_top_
   <a 
   id="sidebar-nav-vocab-entry-dashboard"
   href="{% url 'vocab:vocab_entry_dashboard' vocab_entry.language vocab_entry.slug %}">
-  <span id="menu-vocab-entry"> {{ request.session.vocab_entry.entry|capfirst }} </span>
+  <span id="menu-vocab-entry"> {{ request.session.session_obj.vocab_entry.entry|capfirst }} </span>
   </a>
   </li>
 

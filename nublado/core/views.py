@@ -61,12 +61,10 @@ class ObjectSessionMixin(object):
     def setupSession(self, request, *args, **kwargs):
         if self.session_obj is not None and self.session_obj_attrs:
             obj = getattr(self, self.session_obj, None)
+            request.session['session_obj'] = {self.session_obj: {}}
             if obj is not None:
-                request.session[self.session_obj] = {}
                 for attr in self.session_obj_attrs:
-                    request.session[self.session_obj][attr] = getattr(obj, attr, None)
-            elif self.session_obj in request.session:
-                del request.session[self.session_obj]
+                    request.session['session_obj'][self.session_obj][attr] = getattr(obj, attr, None)
 
 
 class CachedObjectMixin(object):

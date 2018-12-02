@@ -10,12 +10,8 @@ from ..models import VocabEntry, VocabProject, VocabSource
 class VocabSessionMixin(ObjectSessionMixin):
 
     def setupSession(self, request, *args, **kwargs):
-        if 'vocab_entry' in request.session:
-            del request.session['vocab_entry']
-        if 'vocab_source' in request.session:
-            del request.session['vocab_source']
-        if 'vocab_project' in request.session:
-            del request.session['vocab_project']
+        if 'session_obj' in request.session:
+            del request.session['session_obj']
 
 
 class PermissionMixin(object):

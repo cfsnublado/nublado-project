@@ -2,7 +2,7 @@
 
 {% with url_name=request.resolver_match.url_name %}
 
-  {% if request.session.vocab_project %}
+  {% if request.session.session_obj.vocab_project %}
 
     {% if url_name != "vocab_project_dashboard" %}
 
@@ -22,7 +22,7 @@
 
     {% endif %}
 
-  {% elif request.session.vocab_source %}
+  {% elif request.session.session_obj.vocab_source %}
 
     <a href="{% url 'vocab:vocab_project_dashboard' vocab_project.id vocab_project.slug %}">{% trans "label_project" %}</a>
     &nbsp;>&nbsp;
@@ -40,7 +40,7 @@
 
     {% endif %}
 
-  {% elif request.session.vocab_entry %}
+  {% elif request.session.session_obj.vocab_entry %}
 
     <a href="{% url 'vocab:vocab_user_dashboard' %}">{% trans "label_main" %}</a>
     &nbsp;>&nbsp;

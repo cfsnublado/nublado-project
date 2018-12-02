@@ -175,15 +175,15 @@ ref="sidebarNav"
 
   <span class="top-panel-toggle-text">
 
-  {% if request.session.vocab_source %}
+  {% if request.session.session_obj.vocab_source %}
 
     {% trans "label_source" %}
 
-  {% elif request.session.vocab_project %}
+  {% elif request.session.session_obj.vocab_project %}
 
     {% trans "label_project" %}
 
-  {% elif request.session.vocab_entry %}
+  {% elif request.session.session_obj.vocab_entry %}
 
     {% trans "label_vocab_entry" %}
 

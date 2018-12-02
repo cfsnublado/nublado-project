@@ -25,7 +25,8 @@ from ..views.views_mixins import (
 )
 from ..views.views_vocab_source_auth import (
     VocabSourceEntryContextsView, VocabSourceContextsView,
-    VocabSourceCreateView, VocabSourceDashboardView, VocabSourceEntriesView
+    VocabSourceCreateView, VocabSourceDashboardView, VocabSourceDeleteView,
+    VocabSourceEntriesView, VocabSourceUpdateView
 )
 
 User = get_user_model()
@@ -602,6 +603,244 @@ class VocabSourceCreateViewTest(TestCommon):
             msg_prefix=''
         )
 
+
+class VocabSourceUpdateViewTest(TestCommon):
+
+    def setUp(self):
+        super(VocabSourceUpdateViewTest, self).setUp()
+        self.vocab_source = VocabSource.objects.create(
+            creator=self.user,
+            vocab_project=self.vocab_project,
+            source_type=VocabSource.BOOK,
+            name='A good book'
+        )
+
+    def test_inheritance(self):
+        classes = (
+            LoginRequiredMixin,
+            VocabSourceMixin,
+            MessageMixin,
+            UpdateView
+        )
+        for class_name in classes:
+            self.assertTrue(issubclass(VocabSourceUpdateView, class_name))
+
+    def test_correct_view_used(self):
+        found = resolve(
+            reverse(
+                'vocab:vocab_source_update',
+                kwargs={
+                    'vocab_source_pk': self.vocab_source.id,
+                    'vocab_source_slug': self.vocab_source.slug
+                }
+            )
+        )
+        self.assertEqual(found.func.__name__, VocabSourceUpdateView.as_view().__name__)
+
+    def test_view_non_authenticated_user_redirected_to_login(self):
+        response = self.client.get(
+            reverse(
+                'vocab:vocab_source_update',
+                kwargs={
+                    'vocab_source_pk': self.vocab_source.id,
+                    'vocab_source_slug': self.vocab_source.slug
+                }
+            )
+        )
+        self.assertRedirects(
+            response,
+            expected_url='{0}?next=/{1}/source/{2}-{3}/update/'.format(
+                reverse(settings.LOGIN_URL),
+                URL_PREFIX,
+                self.vocab_source.id,
+                self.vocab_source.slug
+            ),
+            status_code=302,
+            target_status_code=200,
+            msg_prefix=''
+        )
+
+    def test_view_returns_correct_status_code(self):
+        self.login_test_user(self.user.username)
+        response = self.client.get(
+            reverse(
+                'vocab:vocab_source_update',
+                kwargs={
+                    'vocab_source_pk': self.vocab_source.id,
+                    'vocab_source_slug': self.vocab_source.slug
+                }
+            )
+        )
+        self.assertEqual(response.status_code, 200)
+
+    def test_view_renders_correct_template(self):
+        self.login_test_user(self.user.username)
+        response = self.client.get(
+            reverse(
+                'vocab:vocab_source_update',
+                kwargs={
+                    'vocab_source_pk': self.vocab_source.id,
+                    'vocab_source_slug': self.vocab_source.slug
+                }
+            )
+        )
+        self.assertTemplateUsed(response, '{0}/auth/vocab_source_update.html'.format(APP_NAME))
+
+    def test_view_uses_correct_form(self):
+        self.login_test_user(self.user.username)
+        response = self.client.get(
+            reverse(
+                'vocab:vocab_source_update',
+                kwargs={
+                    'vocab_source_pk': self.vocab_source.id,
+                    'vocab_source_slug': self.vocab_source.slug
+                }
+            )
+        )
+        self.assertIsInstance(response.context['form'], VocabSourceUpdateForm)
+
+
+class VocabSourceDeleteViewTest(TestCommon):
+
+    def setUp(self):
+        super(VocabSourceDeleteViewTest, self).setUp()
+        self.vocab_source = VocabSource.objects.create(
+            creator=self.user,
+            vocab_project=self.vocab_project,
+            source_type=VocabSource.BOOK,
+            name='A good book'
+        )
+
+    def test_inheritance(self):
+        classes = (
+            LoginRequiredMixin,
+            VocabSourceMixin,
+            AjaxDeleteMixin,
+            DeleteView
+        )
+        for class_name in classes:
+            self.assertTrue(issubclass(VocabSourceDeleteView, class_name))
+
+    def test_correct_view_used(self):
+        found = resolve(
+            reverse(
+                'vocab:vocab_source_delete',
+                kwargs={
+                    'vocab_source_pk': self.vocab_source.id
+                }
+            )
+        )
+        self.assertEqual(found.func.__name__, VocabSourceDeleteView.as_view().__name__)
+
+    def test_view_non_authenticated_user_redirected_to_login(self):
+        response = self.client.get(
+            reverse(
+                'vocab:vocab_source_delete',
+                kwargs={
+                    'vocab_source_pk': self.vocab_source.id
+                }
+            )
+        )
+        self.assertRedirects(
+            response,
+            expected_url='{0}?next=/{1}/source/{2}/delete/'.format(
+                reverse(settings.LOGIN_URL),
+                URL_PREFIX,
+                self.vocab_source.id
+            ),
+            status_code=302,
+            target_status_code=200,
+            msg_prefix=''
+        )
+
+    def test_view_returns_correct_status_code(self):
+        self.login_test_user(self.user.username)
+        response = self.client.get(
+            reverse(
+                'vocab:vocab_source_delete',
+                kwargs={
+                    'vocab_source_pk': self.vocab_source.id
+                }
+            )
+        )
+        self.assertEqual(response.status_code, 200)
+
+    def test_view_renders_correct_template(self):
+        self.login_test_user(self.user.username)
+        response = self.client.get(
+            reverse(
+                'vocab:vocab_source_delete',
+                kwargs={
+                    'vocab_source_pk': self.vocab_source.id
+                }
+            )
+        )
+        self.assertTemplateUsed(response, '{0}/auth/vocab_source_delete_confirm.html'.format(APP_NAME))
+
+    def test_view_deletes_object(self):
+        self.login_test_user(self.user.username)
+        obj_id = self.vocab_source.id
+        self.assertTrue(VocabSource.objects.filter(pk=obj_id).exists())
+        self.client.post(
+            reverse(
+                'vocab:vocab_source_delete',
+                kwargs={
+                    'vocab_source_pk': self.vocab_source.id
+                }
+            )
+        )
+        self.assertFalse(VocabSource.objects.filter(pk=obj_id).exists())
+
+    def test_view_redirects_on_success(self):
+        self.login_test_user(self.user.username)
+        response = self.client.post(
+            reverse(
+                'vocab:vocab_source_delete',
+                kwargs={
+                    'vocab_source_pk': self.vocab_source.id
+                }
+            )
+        )
+        self.assertRedirects(
+            response,
+            expected_url=reverse(
+                'vocab:vocab_project_sources',
+                kwargs={
+                    'vocab_project_pk': self.vocab_project.id,
+                    'vocab_project_slug': self.vocab_project.slug
+                }
+            ),
+            status_code=302,
+            target_status_code=200,
+            msg_prefix=''
+        )
+
+    def test_view_ajax(self):
+        self.login_test_user(self.user.username)
+        kwargs = {'HTTP_X_REQUESTED_WITH': 'XMLHttpRequest'}
+        obj_id = self.vocab_source.id
+        self.assertTrue(VocabSource.objects.filter(pk=obj_id).exists())
+        response = self.client.post(
+            reverse(
+                'vocab:vocab_source_delete',
+                kwargs={
+                    'vocab_source_pk': self.vocab_source.id
+                }
+            ),
+            **kwargs
+        )
+        self.assertEqual(response.status_code, 200)
+        json_string = response.content.decode('utf-8')
+        response_data = json.loads(json_string)
+        self.assertEqual(_('message_success'), response_data['success_message'])
+        self.assertFalse(VocabSource.objects.filter(pk=obj_id).exists())
+
+
+class ExportVocabSourceJsonViewTest(TestCommon):
+
+    def test_export_source_json_to_file(self):
+        pass
+
 # class UserVocabSourcesViewTest(TestCommon):
 
 #     def test_inheritance(self):
@@ -662,179 +901,6 @@ class VocabSourceCreateViewTest(TestCommon):
 #         )
 #         sources = response.context['vocab_sources']
 #         self.assertEqual(len(sources[source_type]), 2)
-
-
-# class VocabSourceUpdateViewTest(TestCommon):
-
-#     def setUp(self):
-#         super(VocabSourceUpdateViewTest, self).setUp()
-#         self.vocab_source = VocabSource.objects.create(
-#             creator=self.user,
-#             source_type=VocabSource.BOOK,
-#             name='A good book'
-#         )
-
-#     def test_inheritance(self):
-#         classes = (
-#             LoginRequiredMixin,
-#             VocabSourceMixin,
-#             UpdateView
-#         )
-#         for class_name in classes:
-#             self.assertTrue(issubclass(VocabSourceUpdateView, class_name))
-
-#     def test_correct_view_used(self):
-#         found = resolve(
-#             reverse(
-#                 'vocab:vocab_source_update',
-#                 kwargs={'pk': self.vocab_source.id}
-#             )
-#         )
-#         self.assertEqual(found.func.__name__, VocabSourceUpdateView.as_view().__name__)
-
-#     def test_view_non_authenticated_user_redirected_to_login(self):
-#         response = self.client.get(
-#             reverse(
-#                 'vocab:vocab_source_update',
-#                 kwargs={'pk': self.vocab_source.id}
-#             )
-#         )
-#         self.assertRedirects(
-#             response,
-#             expected_url='{0}?next=/admin/{1}/source/{2}/update/'.format(
-#                 reverse(settings.LOGIN_URL),
-#                 URL_PREFIX,
-#                 self.vocab_source.id
-#             ),
-#             status_code=302,
-#             target_status_code=200,
-#             msg_prefix=''
-#         )
-
-#     def test_view_returns_correct_status_code(self):
-#         self.login_test_user(self.user.username)
-#         response = self.client.get(
-#             reverse(
-#                 'vocab:vocab_source_update',
-#                 kwargs={'pk': self.vocab_source.id}
-#             )
-#         )
-#         self.assertEqual(response.status_code, 200)
-
-#     def test_view_renders_correct_template(self):
-#         self.login_test_user(self.user.username)
-#         response = self.client.get(
-#             reverse(
-#                 'vocab:vocab_source_update',
-#                 kwargs={'pk': self.vocab_source.id}
-#             )
-#         )
-#         self.assertTemplateUsed(response, '{0}/admin/vocab_source_update.html'.format(APP_NAME))
-
-#     def test_view_uses_correct_form(self):
-#         self.login_test_user(self.user.username)
-#         response = self.client.get(
-#             reverse(
-#                 'vocab:vocab_source_update',
-#                 kwargs={'pk': self.vocab_source.id}
-#             )
-#         )
-#         self.assertIsInstance(response.context['form'], VocabSourceUpdateForm)
-
-
-# class VocabSourceDeleteViewTest(TestCommon):
-
-#     def setUp(self):
-#         super(VocabSourceDeleteViewTest, self).setUp()
-#         self.vocab_source = VocabSource.objects.create(
-#             creator=self.user,
-#             source_type=VocabSource.BOOK,
-#             name='A good book'
-#         )
-
-#     def test_inheritance(self):
-#         classes = (
-#             LoginRequiredMixin,
-#             AjaxDeleteMixin,
-#             DeleteView
-#         )
-#         for class_name in classes:
-#             self.assertTrue(issubclass(VocabSourceDeleteView, class_name))
-
-#     def test_correct_view_used(self):
-#         found = resolve(reverse(
-#             'vocab:vocab_source_delete',
-#             kwargs={'pk': self.vocab_source.id})
-#         )
-#         self.assertEqual(found.func.__name__, VocabSourceDeleteView.as_view().__name__)
-
-#     def test_view_non_authenticated_user_redirected_to_login(self):
-#         response = self.client.get(
-#             reverse('vocab:vocab_source_delete', kwargs={'pk': self.vocab_source.id})
-#         )
-#         self.assertRedirects(
-#             response,
-#             expected_url='{url}?next=/admin/{module}/source/{pk}/delete/'.format(
-#                 url=reverse(settings.LOGIN_URL),
-#                 module=URL_PREFIX,
-#                 pk=self.vocab_source.id
-#             ),
-#             status_code=302,
-#             target_status_code=200,
-#             msg_prefix=''
-#         )
-
-#     def test_view_returns_correct_status_code(self):
-#         self.login_test_user(self.user.username)
-#         response = self.client.get(
-#             reverse('vocab:vocab_source_delete', kwargs={'pk': self.vocab_source.id})
-#         )
-#         self.assertEqual(response.status_code, 200)
-
-#     def test_view_renders_correct_template(self):
-#         self.login_test_user(self.user.username)
-#         response = self.client.get(
-#             reverse('vocab:vocab_source_delete', kwargs={'pk': self.vocab_source.id})
-#         )
-#         self.assertTemplateUsed(response, '{0}/admin/vocab_source_delete_confirm.html'.format(APP_NAME))
-
-#     def test_view_deletes_object(self):
-#         self.login_test_user(self.user.username)
-#         obj_id = self.vocab_source.id
-#         self.assertTrue(VocabSource.objects.filter(pk=obj_id).exists())
-#         self.client.post(
-#             reverse('vocab:vocab_source_delete', kwargs={'pk': obj_id})
-#         )
-#         self.assertFalse(VocabSource.objects.filter(pk=obj_id).exists())
-
-#     def test_view_redirects_on_success(self):
-#         self.login_test_user(self.user.username)
-#         response = self.client.post(
-#             reverse('vocab:vocab_source_delete', kwargs={'pk': self.vocab_source.id})
-#         )
-#         self.assertRedirects(
-#             response,
-#             expected_url=reverse('vocab:user_vocab_sources'),
-#             status_code=302,
-#             target_status_code=200,
-#             msg_prefix=''
-#         )
-
-#     def test_view_ajax(self):
-#         self.login_test_user(self.user.username)
-#         kwargs = {'HTTP_X_REQUESTED_WITH': 'XMLHttpRequest'}
-#         obj_id = self.vocab_source.id
-#         self.assertTrue(VocabSource.objects.filter(pk=obj_id).exists())
-#         response = self.client.post(
-#             reverse('vocab:vocab_source_delete', kwargs={'pk': obj_id}),
-#             **kwargs
-#         )
-#         self.assertEqual(response.status_code, 200)
-#         json_string = response.content.decode('utf-8')
-#         response_data = json.loads(json_string)
-#         self.assertEqual(_('message_success'), response_data['success_message'])
-#         self.assertFalse(VocabSource.objects.filter(pk=obj_id).exists())
-
 
 # class VocabSourceContextEntriesViewTest(TestCommon):
 
@@ -923,8 +989,3 @@ class VocabSourceCreateViewTest(TestCommon):
 #                 )
 #             )
 
-
-# class ExportVocabSourceJsonViewTest(TestCommon):
-
-#     def test_export_source_json_to_file(self):
-#         pass

@@ -28,13 +28,6 @@ class VocabProjectSessionMixin(ObjectSessionMixin):
     session_obj = 'vocab_project'
     session_obj_attrs = ['id', 'name', 'slug']
 
-    def setupSession(self, request, *args, **kwargs):
-        super(VocabProjectSessionMixin, self).setupSession(request, *args, **kwargs)
-        if 'vocab_entry' in request.session:
-            del request.session['vocab_entry']
-        if 'vocab_source' in request.session:
-            del request.session['vocab_source']
-
 
 class VocabProjectMixin(
     CachedObjectMixin, VocabProjectSessionMixin,
@@ -91,13 +84,6 @@ class VocabSourcePermissionMixin(PermissionMixin):
 class VocabSourceSessionMixin(ObjectSessionMixin):
     session_obj = 'vocab_source'
     session_obj_attrs = ['id', 'name', 'slug']
-
-    def setupSession(self, request, *args, **kwargs):
-        super(VocabSourceSessionMixin, self).setupSession(request, *args, **kwargs)
-        if 'vocab_entry' in request.session:
-            del request.session['vocab_entry']
-        if 'vocab_project' in request.session:
-            del request.session['vocab_project']
 
 
 class VocabSourceMixin(
@@ -195,13 +181,6 @@ class VocabEntryPermissionMixin(PermissionMixin):
 class VocabEntrySessionMixin(ObjectSessionMixin):
     session_obj = 'vocab_entry'
     session_obj_attrs = ['id', 'language', 'entry', 'slug']
-
-    def setupSession(self, request, *args, **kwargs):
-        super(VocabEntrySessionMixin, self).setupSession(request, *args, **kwargs)
-        if 'vocab_source' in request.session:
-            del request.session['vocab_source']
-        if 'vocab_project' in request.session:
-            del request.session['vocab_project']
 
 
 class VocabEntryMixin(

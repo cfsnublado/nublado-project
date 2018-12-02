@@ -59,9 +59,9 @@ class ObjectSessionMixin(object):
         return super(ObjectSessionMixin, self).dispatch(request, *args, **kwargs)
 
     def setupSession(self, request, *args, **kwargs):
+        request.session['session_obj'] = {self.session_obj: {}}
         if self.session_obj is not None and self.session_obj_attrs:
             obj = getattr(self, self.session_obj, None)
-            request.session['session_obj'] = {self.session_obj: {}}
             if obj is not None:
                 for attr in self.session_obj_attrs:
                     request.session['session_obj'][self.session_obj][attr] = getattr(obj, attr, None)

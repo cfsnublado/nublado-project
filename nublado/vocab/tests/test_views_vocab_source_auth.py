@@ -23,7 +23,7 @@ from ..views.views_mixins import (
     VocabEntrySearchMixin, VocabSessionMixin, VocabSourceMixin
 )
 from ..views.views_vocab_source_auth import (
-    VocabSourceEntriesView
+    VocabSourceContextsView, VocabSourceDashboardView, VocabSourceEntriesView
 )
 
 User = get_user_model()
@@ -64,6 +64,43 @@ class TestCommon(TestCase):
         request.session.save()
 
 
+class VocabSourceDashboardViewTest(TestCommon):
+
+    def test_inheritance(self):
+        classes = (
+            LoginRequiredMixin,
+            VocabSourceMixin,
+            TemplateView
+        )
+        for class_name in classes:
+            self.assertTrue(issubclass(VocabSourceDashboardView, class_name))
+
+    def test_correct_view_used(self):
+        found = resolve(
+            reverse(
+                'vocab:vocab_source_dashboard',
+                kwargs={
+                    'vocab_source_pk': self.vocab_source.id,
+                    'vocab_source_slug': self.vocab_source.slug
+                }
+            )
+        )
+        self.assertEqual(found.func.__name__, VocabSourceDashboardView.as_view().__name__)
+
+    def test_view_renders_correct_template(self):
+        self.login_test_user(self.user.username)
+        response = self.client.get(
+            reverse(
+                'vocab:vocab_source_dashboard',
+                kwargs={
+                    'vocab_source_pk': self.vocab_source.id,
+                    'vocab_source_slug': self.vocab_source.slug
+                }
+            )
+        )
+        self.assertTemplateUsed(response, '{0}/auth/vocab_source_dashboard.html'.format(APP_NAME))
+
+
 class VocabSourceEntriesViewTest(TestCommon):
 
     def setUp(self):
@@ -86,6 +123,10 @@ class VocabSourceEntriesViewTest(TestCommon):
         VocabContextEntry.objects.create(
             vocab_context=self.vocab_context,
             vocab_entry=self.vocab_entry
+        )
+        VocabContextEntry.objects.create(
+            vocab_context=self.vocab_context,
+            vocab_entry=self.vocab_entry_2
         )
         VocabContextEntry.objects.create(
             vocab_context=self.vocab_context_2,
@@ -171,9 +212,20 @@ class VocabSourceEntriesViewTest(TestCommon):
             )
         )
         vocab_entries = response.context['vocab_entries']
-        # vocab_entries with length of 2 instead of 4.
-        # corresponding to the 2 distinct entries, and neglecting the duplicates.
         self.assertEqual(2, len(vocab_entries['en']))
+
+    def test_num_queries(self):
+        self.login_test_user(self.user.username)
+        with self.assertNumQueries(FuzzyInt(1, 10)):
+            self.client.get(
+                reverse(
+                    'vocab:vocab_source_entries',
+                    kwargs={
+                        'vocab_source_pk': self.vocab_source.id,
+                        'vocab_source_slug': self.vocab_source.slug
+                    }
+                )
+            )
 
 
 # class UserVocabSourcesViewTest(TestCommon):
@@ -189,14 +241,14 @@ class VocabSourceEntriesViewTest(TestCommon):
 
 #     def test_correct_view_used(self):
 #         found = resolve(
-#             reverse('vocab_admin:user_vocab_sources')
+#             reverse('vocab:user_vocab_sources')
 #         )
 #         self.assertEqual(found.func.__name__, UserVocabSourcesView.as_view().__name__)
 
 #     def test_view_renders_correct_template(self):
 #         self.login_test_user(self.user.username)
 #         response = self.client.get(
-#             reverse('vocab_admin:user_vocab_sources')
+#             reverse('vocab:user_vocab_sources')
 #         )
 #         self.assertTemplateUsed(response, '{0}/admin/user_vocab_sources.html'.format(APP_NAME))
 
@@ -224,7 +276,7 @@ class VocabSourceEntriesViewTest(TestCommon):
 #         # user with 4 sources
 #         self.login_test_user(self.user.username)
 #         response = self.client.get(
-#             reverse('vocab_admin:user_vocab_sources')
+#             reverse('vocab:user_vocab_sources')
 #         )
 #         sources = response.context['vocab_sources']
 #         self.assertEqual(len(sources[source_type]), 4)
@@ -232,49 +284,10 @@ class VocabSourceEntriesViewTest(TestCommon):
 #         # user_2 with 2 sources
 #         self.login_test_user(user_2.username)
 #         response = self.client.get(
-#             reverse('vocab_admin:user_vocab_sources')
+#             reverse('vocab:user_vocab_sources')
 #         )
 #         sources = response.context['vocab_sources']
 #         self.assertEqual(len(sources[source_type]), 2)
-
-
-# class VocabSourceDashboardViewTest(TestCommon):
-
-#     def setUp(self):
-#         super(VocabSourceDashboardViewTest, self).setUp()
-#         self.vocab_source = VocabSource.objects.create(
-#             creator=self.user,
-#             source_type=VocabSource.BOOK,
-#             name='A good book'
-#         )
-
-#     def test_inheritance(self):
-#         classes = (
-#             LoginRequiredMixin,
-#             VocabSourceMixin,
-#             TemplateView
-#         )
-#         for class_name in classes:
-#             self.assertTrue(issubclass(VocabSourceDashboardView, class_name))
-
-#     def test_correct_view_used(self):
-#         found = resolve(
-#             reverse(
-#                 'vocab_admin:vocab_source_dashboard',
-#                 kwargs={'vocab_source_slug': self.vocab_source.slug}
-#             )
-#         )
-#         self.assertEqual(found.func.__name__, VocabSourceDashboardView.as_view().__name__)
-
-#     def test_view_renders_correct_template(self):
-#         self.login_test_user(self.user.username)
-#         response = self.client.get(
-#             reverse(
-#                 'vocab_admin:vocab_source_dashboard',
-#                 kwargs={'vocab_source_slug': self.vocab_source.slug}
-#             )
-#         )
-#         self.assertTemplateUsed(response, '{0}/admin/vocab_source_dashboard.html'.format(APP_NAME))
 
 
 # class VocabSourceCreateViewTest(TestCommon):
@@ -298,13 +311,13 @@ class VocabSourceEntriesViewTest(TestCommon):
 
 #     def test_correct_view_used(self):
 #         found = resolve(
-#             reverse('vocab_admin:vocab_source_create')
+#             reverse('vocab:vocab_source_create')
 #         )
 #         self.assertEqual(found.func.__name__, VocabSourceCreateView.as_view().__name__)
 
 #     def test_view_non_authenticated_user_redirected_to_login(self):
 #         response = self.client.get(
-#             reverse('vocab_admin:vocab_source_create')
+#             reverse('vocab:vocab_source_create')
 #         )
 #         self.assertRedirects(
 #             response,
@@ -320,28 +333,28 @@ class VocabSourceEntriesViewTest(TestCommon):
 #     def test_view_returns_correct_status_code(self):
 #         self.login_test_user(self.user.username)
 #         response = self.client.get(
-#             reverse('vocab_admin:vocab_source_create')
+#             reverse('vocab:vocab_source_create')
 #         )
 #         self.assertEqual(response.status_code, 200)
 
 #     def test_view_renders_correct_template(self):
 #         self.login_test_user(self.user.username)
 #         response = self.client.get(
-#             reverse('vocab_admin:vocab_source_create')
+#             reverse('vocab:vocab_source_create')
 #         )
 #         self.assertTemplateUsed(response, '{0}/admin/vocab_source_create.html'.format(APP_NAME))
 
 #     def test_view_uses_correct_form(self):
 #         self.login_test_user(self.user.username)
 #         response = self.client.get(
-#             reverse('vocab_admin:vocab_source_create')
+#             reverse('vocab:vocab_source_create')
 #         )
 #         self.assertIsInstance(response.context['form'], VocabSourceCreateForm)
 
 #     def test_view_injects_form_kwargs(self):
 #         self.login_test_user(self.user.username)
 #         response = self.client.get(
-#             reverse('vocab_admin:vocab_source_create')
+#             reverse('vocab:vocab_source_create')
 #         )
 #         form = response.context['form']
 #         self.assertEqual(form.creator, self.user)
@@ -355,7 +368,7 @@ class VocabSourceEntriesViewTest(TestCommon):
 #             ).exists()
 #         )
 #         self.client.post(
-#             reverse('vocab_admin:vocab_source_create'),
+#             reverse('vocab:vocab_source_create'),
 #             self.vocab_source_data
 #         )
 #         self.assertTrue(
@@ -369,7 +382,7 @@ class VocabSourceEntriesViewTest(TestCommon):
 #         self.vocab_source_data['name'] = ''
 #         self.login_test_user(self.user.username)
 #         response = self.client.post(
-#             reverse('vocab_admin:vocab_source_create'),
+#             reverse('vocab:vocab_source_create'),
 #             self.vocab_source_data
 #         )
 #         self.assertEqual(response.status_code, 200)
@@ -385,7 +398,7 @@ class VocabSourceEntriesViewTest(TestCommon):
 #     def test_view_redirects_on_success(self):
 #         self.login_test_user(self.user.username)
 #         response = self.client.post(
-#             reverse('vocab_admin:vocab_source_create'),
+#             reverse('vocab:vocab_source_create'),
 #             self.vocab_source_data
 #         )
 #         vocab_source = VocabSource.objects.get(
@@ -394,7 +407,7 @@ class VocabSourceEntriesViewTest(TestCommon):
 #         self.assertRedirects(
 #             response,
 #             expected_url=reverse(
-#                 'vocab_admin:vocab_source_dashboard',
+#                 'vocab:vocab_source_dashboard',
 #                 kwargs={'vocab_source_slug': vocab_source.slug}
 #             ),
 #             status_code=302,
@@ -425,7 +438,7 @@ class VocabSourceEntriesViewTest(TestCommon):
 #     def test_correct_view_used(self):
 #         found = resolve(
 #             reverse(
-#                 'vocab_admin:vocab_source_update',
+#                 'vocab:vocab_source_update',
 #                 kwargs={'pk': self.vocab_source.id}
 #             )
 #         )
@@ -434,7 +447,7 @@ class VocabSourceEntriesViewTest(TestCommon):
 #     def test_view_non_authenticated_user_redirected_to_login(self):
 #         response = self.client.get(
 #             reverse(
-#                 'vocab_admin:vocab_source_update',
+#                 'vocab:vocab_source_update',
 #                 kwargs={'pk': self.vocab_source.id}
 #             )
 #         )
@@ -454,7 +467,7 @@ class VocabSourceEntriesViewTest(TestCommon):
 #         self.login_test_user(self.user.username)
 #         response = self.client.get(
 #             reverse(
-#                 'vocab_admin:vocab_source_update',
+#                 'vocab:vocab_source_update',
 #                 kwargs={'pk': self.vocab_source.id}
 #             )
 #         )
@@ -464,7 +477,7 @@ class VocabSourceEntriesViewTest(TestCommon):
 #         self.login_test_user(self.user.username)
 #         response = self.client.get(
 #             reverse(
-#                 'vocab_admin:vocab_source_update',
+#                 'vocab:vocab_source_update',
 #                 kwargs={'pk': self.vocab_source.id}
 #             )
 #         )
@@ -474,7 +487,7 @@ class VocabSourceEntriesViewTest(TestCommon):
 #         self.login_test_user(self.user.username)
 #         response = self.client.get(
 #             reverse(
-#                 'vocab_admin:vocab_source_update',
+#                 'vocab:vocab_source_update',
 #                 kwargs={'pk': self.vocab_source.id}
 #             )
 #         )
@@ -502,14 +515,14 @@ class VocabSourceEntriesViewTest(TestCommon):
 
 #     def test_correct_view_used(self):
 #         found = resolve(reverse(
-#             'vocab_admin:vocab_source_delete',
+#             'vocab:vocab_source_delete',
 #             kwargs={'pk': self.vocab_source.id})
 #         )
 #         self.assertEqual(found.func.__name__, VocabSourceDeleteView.as_view().__name__)
 
 #     def test_view_non_authenticated_user_redirected_to_login(self):
 #         response = self.client.get(
-#             reverse('vocab_admin:vocab_source_delete', kwargs={'pk': self.vocab_source.id})
+#             reverse('vocab:vocab_source_delete', kwargs={'pk': self.vocab_source.id})
 #         )
 #         self.assertRedirects(
 #             response,
@@ -526,14 +539,14 @@ class VocabSourceEntriesViewTest(TestCommon):
 #     def test_view_returns_correct_status_code(self):
 #         self.login_test_user(self.user.username)
 #         response = self.client.get(
-#             reverse('vocab_admin:vocab_source_delete', kwargs={'pk': self.vocab_source.id})
+#             reverse('vocab:vocab_source_delete', kwargs={'pk': self.vocab_source.id})
 #         )
 #         self.assertEqual(response.status_code, 200)
 
 #     def test_view_renders_correct_template(self):
 #         self.login_test_user(self.user.username)
 #         response = self.client.get(
-#             reverse('vocab_admin:vocab_source_delete', kwargs={'pk': self.vocab_source.id})
+#             reverse('vocab:vocab_source_delete', kwargs={'pk': self.vocab_source.id})
 #         )
 #         self.assertTemplateUsed(response, '{0}/admin/vocab_source_delete_confirm.html'.format(APP_NAME))
 
@@ -542,18 +555,18 @@ class VocabSourceEntriesViewTest(TestCommon):
 #         obj_id = self.vocab_source.id
 #         self.assertTrue(VocabSource.objects.filter(pk=obj_id).exists())
 #         self.client.post(
-#             reverse('vocab_admin:vocab_source_delete', kwargs={'pk': obj_id})
+#             reverse('vocab:vocab_source_delete', kwargs={'pk': obj_id})
 #         )
 #         self.assertFalse(VocabSource.objects.filter(pk=obj_id).exists())
 
 #     def test_view_redirects_on_success(self):
 #         self.login_test_user(self.user.username)
 #         response = self.client.post(
-#             reverse('vocab_admin:vocab_source_delete', kwargs={'pk': self.vocab_source.id})
+#             reverse('vocab:vocab_source_delete', kwargs={'pk': self.vocab_source.id})
 #         )
 #         self.assertRedirects(
 #             response,
-#             expected_url=reverse('vocab_admin:user_vocab_sources'),
+#             expected_url=reverse('vocab:user_vocab_sources'),
 #             status_code=302,
 #             target_status_code=200,
 #             msg_prefix=''
@@ -565,7 +578,7 @@ class VocabSourceEntriesViewTest(TestCommon):
 #         obj_id = self.vocab_source.id
 #         self.assertTrue(VocabSource.objects.filter(pk=obj_id).exists())
 #         response = self.client.post(
-#             reverse('vocab_admin:vocab_source_delete', kwargs={'pk': obj_id}),
+#             reverse('vocab:vocab_source_delete', kwargs={'pk': obj_id}),
 #             **kwargs
 #         )
 #         self.assertEqual(response.status_code, 200)
@@ -575,115 +588,75 @@ class VocabSourceEntriesViewTest(TestCommon):
 #         self.assertFalse(VocabSource.objects.filter(pk=obj_id).exists())
 
 
-# class VocabSourceEntriesViewTest(TestCommon):
+class VocabSourceContextsViewTest(TestCommon):
 
-#     def setUp(self):
-#         super(VocabSourceEntriesViewTest, self).setUp()
-#         self.vocab_source = VocabSource.objects.create(
-#             creator=self.user,
-#             source_type=VocabSource.BOOK,
-#             name='A good book'
-#         )
+    def setUp(self):
+        super(VocabSourceContextsViewTest, self).setUp()
+        self.vocab_entry_1 = VocabEntry.objects.create(language='es', entry='tergiversar')
+        self.vocab_entry_2 = VocabEntry.objects.create(language='es', entry='demasiado')
 
-#     def test_inheritance(self):
-#         classes = (
-#             LoginRequiredMixin,
-#             VocabSourceMixin,
-#             TemplateView
-#         )
-#         for class_name in classes:
-#             self.assertTrue(issubclass(VocabSourceEntriesView, class_name))
+    def add_contexts(self):
+        context_text = '''Hay que tergiversar el mensaje, pero no demasiado. Demasiado sería
+                          no solo confuso, sino devastador.'''
+        for i in range(1, 20):
+            vocab_context = VocabContext.objects.create(vocab_source=self.vocab_source, content=context_text)
+            vocab_context_entry_1 = VocabContextEntry.objects.create(
+                vocab_context=vocab_context,
+                vocab_entry=self.vocab_entry_1
+            )
+            vocab_context_entry_1.add_vocab_entry_tag('demasiado')
+            vocab_context_entry_2 = VocabContextEntry.objects.create(
+                vocab_context=vocab_context,
+                vocab_entry=self.vocab_entry_2
+            )
+            vocab_context_entry_2.add_vocab_entry_tag('demasiado')
 
-#     def test_correct_view_used(self):
-#         found = resolve(
-#             reverse(
-#                 'vocab_admin:vocab_source_entries',
-#                 kwargs={
-#                     'vocab_source_pk': self.vocab_source.id,
-#                     'vocab_source_slug': self.vocab_source.slug
-#                 }
-#             )
-#         )
-#         self.assertEqual(found.func.__name__, VocabSourceEntriesView.as_view().__name__)
+    def test_inheritance(self):
+        classes = (
+            LoginRequiredMixin,
+            VocabSourceMixin,
+            VocabEntrySearchMixin,
+            ListView
+        )
+        for class_name in classes:
+            self.assertTrue(issubclass(VocabSourceContextsView, class_name))
 
-#     def test_num_queries(self):
-#         self.login_test_user(self.user.username)
-#         with self.assertNumQueries(FuzzyInt(1, 11)):
-#             self.client.get(
-#                 reverse(
-#                     'vocab_admin:vocab_source_entries',
-#                     kwargs={
-#                         'vocab_source_pk': self.vocab_source.id,
-#                         'vocab_source_slug': self.vocab_source.slug
-#                     }
-#                 )
-#             )
+    def test_correct_view_used(self):
+        found = resolve(reverse(
+            'vocab:vocab_source_contexts',
+            kwargs={
+                'vocab_source_pk': self.vocab_source.id,
+                'vocab_source_slug': self.vocab_source.slug
+            }
+        ))
+        self.assertEqual(found.func.__name__, VocabSourceContextsView.as_view().__name__)
 
+    def test_view_renders_correct_template(self):
+        self.login_test_user(self.user.username)
+        response = self.client.get(
+            reverse(
+                'vocab:vocab_source_contexts',
+                kwargs={
+                    'vocab_source_pk': self.vocab_source.id,
+                    'vocab_source_slug': self.vocab_source.slug
+                }
+            )
+        )
+        self.assertTemplateUsed(response, '{0}/auth/vocab_source_contexts.html'.format(APP_NAME))
 
-# class VocabSourceContextsViewTest(TestCommon):
-
-#     def setUp(self):
-#         super(VocabSourceContextsViewTest, self).setUp()
-#         self.vocab_source = VocabSource.objects.create(
-#             creator=self.user,
-#             source_type=VocabSource.BOOK,
-#             name='A good book'
-#         )
-#         self.vocab_entry_1 = VocabEntry.objects.create(creator=self.user, language='es', entry='tergiversar')
-#         self.vocab_entry_2 = VocabEntry.objects.create(creator=self.user, language='es', entry='demasiado')
-
-#     def add_contexts(self):
-#         context_text = '''Hay que tergiversar el mensaje, pero no demasiado. Demasiado sería
-#                           no solo confuso, sino devastador.'''
-#         for i in range(1, 20):
-#             vocab_context = VocabContext.objects.create(vocab_source=self.vocab_source, content=context_text)
-#             vocab_context_entry_1 = VocabContextEntry.objects.create(
-#                 vocab_context=vocab_context,
-#                 vocab_entry=self.vocab_entry_1
-#             )
-#             vocab_context_entry_1.add_vocab_entry_tag('demasiado')
-#             vocab_context_entry_2 = VocabContextEntry.objects.create(
-#                 vocab_context=vocab_context,
-#                 vocab_entry=self.vocab_entry_2
-#             )
-#             vocab_context_entry_2.add_vocab_entry_tag('demasiado')
-
-#     def test_inheritance(self):
-#         classes = (
-#             LoginRequiredMixin,
-#             VocabSourceMixin,
-#             ListView
-#         )
-#         for class_name in classes:
-#             self.assertTrue(issubclass(VocabSourceContextsView, class_name))
-
-#     def test_correct_view_used(self):
-#         found = resolve(reverse(
-#             'vocab_admin:vocab_source_contexts',
-#             kwargs={'vocab_source_pk': self.vocab_source.id})
-#         )
-#         self.assertEqual(found.func.__name__, VocabSourceContextsView.as_view().__name__)
-
-#     def test_view_renders_correct_template(self):
-#         self.login_test_user(self.user.username)
-#         response = self.client.get(
-#             reverse(
-#                 'vocab_admin:vocab_source_contexts',
-#                 kwargs={'vocab_source_pk': self.vocab_source.id}
-#             )
-#         )
-#         self.assertTemplateUsed(response, '{0}/admin/vocab_source_contexts.html'.format(APP_NAME))
-
-#     def test_num_queries(self):
-#         self.login_test_user(self.user.username)
-#         self.add_contexts()
-#         with self.assertNumQueries(FuzzyInt(1, 11)):
-#             self.client.get(
-#                 reverse(
-#                     'vocab_admin:vocab_source_contexts',
-#                     kwargs={'vocab_source_pk': self.vocab_source.id}
-#                 )
-#             )
+    def test_num_queries(self):
+        self.login_test_user(self.user.username)
+        self.add_contexts()
+        with self.assertNumQueries(FuzzyInt(1, 13)):
+            self.client.get(
+                reverse(
+                    'vocab:vocab_source_contexts',
+                    kwargs={
+                        'vocab_source_pk': self.vocab_source.id,
+                        'vocab_source_slug': self.vocab_source.slug
+                    }
+                )
+            )
 
 
 # class VocabSourceContextEntriesViewTest(TestCommon):
@@ -730,7 +703,7 @@ class VocabSourceEntriesViewTest(TestCommon):
 
 #     def test_correct_view_used(self):
 #         found = resolve(reverse(
-#             'vocab_admin:vocab_source_context_entries',
+#             'vocab:vocab_source_context_entries',
 #             kwargs={
 #                 'vocab_source_pk': self.vocab_source.id,
 #                 'language': self.vocab_entry_1.language,
@@ -745,7 +718,7 @@ class VocabSourceEntriesViewTest(TestCommon):
 #         self.login_test_user(self.user.username)
 #         response = self.client.get(
 #             reverse(
-#                 'vocab_admin:vocab_source_context_entries',
+#                 'vocab:vocab_source_context_entries',
 #                 kwargs={
 #                     'vocab_source_pk': self.vocab_source.id,
 #                     'language': self.vocab_entry_1.language,
@@ -764,7 +737,7 @@ class VocabSourceEntriesViewTest(TestCommon):
 #         with self.assertNumQueries(FuzzyInt(1, 11)):
 #             self.client.get(
 #                 reverse(
-#                     'vocab_admin:vocab_source_context_entries',
+#                     'vocab:vocab_source_context_entries',
 #                     kwargs={
 #                         'vocab_source_pk': self.vocab_source.id,
 #                         'language': self.vocab_entry_1.language,

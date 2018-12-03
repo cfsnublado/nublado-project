@@ -233,7 +233,7 @@ sidebar-nav {{ sidebar_expanded|yesno:"sidebar-nav-expanded," }} {{ sidebar_top_
   <a 
   id="sidebar-nav-vocab-entry-edit"
   class="nav-link {% block vocab_entry_edit_link_active %}{% endblock vocab_entry_edit_link_active %}"
-  href="{% url 'vocab:vocab_entry_update' vocab_entry.id %}"
+  href="{% url 'vocab:vocab_entry_update' vocab_entry.language vocab_entry.slug %}"
   >
   <i class="nav-link-icon fas fa-edit fa-fw"></i> {% trans "label_edit_entry" %}
   </a>

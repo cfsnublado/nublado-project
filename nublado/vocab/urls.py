@@ -98,7 +98,11 @@ urlpatterns = [
         name='vocab_entry_contexts'
     ),
     path('entry/create/', VocabEntryCreateView.as_view(), name='vocab_entry_create'),
-    path('entry/<int:vocab_entry_pk>/update/', VocabEntryUpdateView.as_view(), name='vocab_entry_update'),
+    re_path(
+        '^entry/(?P<vocab_entry_language>[a-z]{2})/(?P<vocab_entry_slug>[-\w]+)/update/$',
+        VocabEntryUpdateView.as_view(),
+        name='vocab_entry_update'
+    ),
     path('entry/<int:vocab_entry_pk>/delete/', VocabEntryDeleteView.as_view(), name='vocab_entry_delete'),
     path(
         'source/<int:vocab_source_pk>-<slug:vocab_source_slug>/dashboard/',

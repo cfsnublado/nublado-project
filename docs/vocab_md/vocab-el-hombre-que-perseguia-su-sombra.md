@@ -432,4 +432,22 @@ project_name: Spanish Reading
 
     </div>
 
+- —Porque sufre de hiperacusia.
+
+    —¿De qué?
+
+    —De una hipersensibilidad a los sonidos. Oye increíblemente bien, es casi de risa: el menor paso que alguien da, la más pequeña mariposa que revolotea, cualquier mínimo sonido... No sé por qué me había olvidado de eso. Tal vez por algún tipo de consideración inconsciente hacia él. Es que él mismo piensa que es algo friki. Pero cuando hace un rato esa silla se ha arrastrado y él por poco se cae, me he acordado de todo. Bueno, Mikael, ¿nos vamos? Ya no aguanto más todo este rollo de comprar y vender —dijo ella para, acto seguido, apurar su copa de vino.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: hiperacusia: hiperacusia
+
+    es: revolotear: revolotea
+
+    es: apurar: apurar
+
+    es: arrastrar: ha arrastrado
+
+    </div>
+
 - 

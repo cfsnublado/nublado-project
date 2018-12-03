@@ -28,6 +28,26 @@ from .views_mixins import VocabProjectMixin, VocabSourceMixin
 APP_NAME = apps.get_app_config('vocab').name
 
 
+class VocabSourceExportJsonView(
+    LoginRequiredMixin, VocabSourceMixin, JsonAttachmentMixin,
+    View
+):
+    content_type = 'application/json'
+    json_indent = 4
+
+    def get_file_content(self):
+        vocab_source = get_object_or_404(
+            VocabSource.objects.prefetch_related(
+                'creator',
+                'vocab_contexts__vocabcontextentry_set__vocab_entry'
+            ),
+            id=self.kwargs['vocab_source_pk']
+        )
+        self.filename = '{0}.json'.format(vocab_source.slug)
+        data = export_vocab_source(self.request, vocab_source)
+        return data
+
+
 class VocabSourceDashboardView(
     LoginRequiredMixin, VocabSourceMixin, TemplateView
 ):
@@ -211,23 +231,3 @@ class VocabSourceDeleteView(
                 'vocab_project_slug': self.vocab_project.slug
             }
         )
-
-
-class VocabSourceExportJsonView(
-    LoginRequiredMixin, VocabSourceMixin, JsonAttachmentMixin,
-    View
-):
-    content_type = 'application/json'
-    json_indent = 4
-
-    def get_file_content(self):
-        vocab_source = get_object_or_404(
-            VocabSource.objects.prefetch_related(
-                'creator',
-                'vocab_contexts__vocabcontextentry_set__vocab_entry'
-            ),
-            id=self.kwargs['vocab_source_pk']
-        )
-        self.filename = '{0}.json'.format(vocab_source.slug)
-        data = export_vocab_source(self.request, vocab_source)
-        return data

@@ -392,4 +392,44 @@ project_name: Spanish Reading
 
     </div>
 
+- La curvada escalera de madera que conducía a la planta superior crujió. Leo intuyó que se aproximaba una oscuridad mucho antes de que la figura de su padre asomara por la puerta. Siempre recordaría ese instante. Su padre llevaba unos pantalones verdes de caza y una cazadora impermeable, y tenía sudor en la calva. Se le veía angustiado. En las situaciones difíciles solía reaccionar con arrogancia y rabia. Pero ahora parecía asustado. Dio un titubeante paso hacia delante. Leo se levantó inseguro de la silla del piano y recibió un torpe abrazo.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: asomar: asomara
+
+    es: impermeable: impermeable
+
+    es: soler: solía
+
+    es: titubeante: titubeante
+
+    es: torpe: torpe
+
+    </div>
+
+- Y, definitivamente, no podía ser libre. La vigilaban como halcones, un hecho ante el que ella debería haberse resignado y rendido. Pero la cosa llegó a sus últimas consecuencias. Sucedió una mañana de mediados de septiembre de hacía ya casi dos años. Ella se encontraba desayunando mientras Bashir, el hermano mayor, jugueteaba con su teléfono.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: juguetear: jugueteaba
+
+    es: rendirse: haberse resignado y rendido
+
+    es: mediados de: mediados de
+
+    </div>
+
+- Malin bebió un sorbo de su copa de vino tinto junto a la improvisada barra que se había instalado en el Museo Fotográfico. Mikael la había dejado contenta y animada, y ahora, cabizbaja y con la mano hundida en su larga melena, parecía una flor marchita.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: marchito: marchita
+
+    es: cabizbajo: cabizbaja
+
+    es: sorbo: sorbo
+
+    </div>
+
 - 

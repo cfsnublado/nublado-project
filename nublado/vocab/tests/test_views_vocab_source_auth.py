@@ -8,10 +8,13 @@ from django.urls import resolve, reverse
 from django.utils.translation import ugettext_lazy as _
 from django.views.generic import (
     CreateView, DeleteView, ListView,
-    TemplateView, UpdateView
+    TemplateView, UpdateView, View
 )
 
-from core.views import AjaxDeleteMixin, MessageMixin
+from core.views import (
+    AjaxDeleteMixin, JsonAttachmentMixin,
+    MessageMixin
+)
 from core.utils import FuzzyInt
 from ..conf import settings
 from ..forms import VocabSourceCreateForm, VocabSourceUpdateForm
@@ -19,14 +22,18 @@ from ..models import (
     VocabEntry, VocabContext, VocabContextEntry,
     VocabProject, VocabSource
 )
+from ..serializers import (
+    VocabContextSerializer, VocabEntrySerializer,
+    VocabProjectSerializer, VocabSourceSerializer
+)
 from ..views.views_mixins import (
-    VocabEntrySearchMixin, VocabProjectMixin, VocabSessionMixin,
+    VocabEntrySearchMixin, VocabProjectMixin,
     VocabSourceMixin
 )
 from ..views.views_vocab_source_auth import (
     VocabSourceEntryContextsView, VocabSourceContextsView,
     VocabSourceCreateView, VocabSourceDashboardView, VocabSourceDeleteView,
-    VocabSourceEntriesView, VocabSourceUpdateView
+    VocabSourceEntriesView, VocabSourceExportJsonView, VocabSourceUpdateView
 )
 
 User = get_user_model()
@@ -293,20 +300,6 @@ class VocabSourceContextsViewTest(TestCommon):
         vocab_contexts = response.context['vocab_contexts']
         self.assertEqual(1, vocab_contexts.count())
         self.assertEqual(vocab_contexts[0], vocab_context)
-
-    def test_num_queries(self):
-        self.login_test_user(self.user.username)
-        self.add_contexts()
-        with self.assertNumQueries(FuzzyInt(1, 13)):
-            self.client.get(
-                reverse(
-                    'vocab:vocab_source_contexts',
-                    kwargs={
-                        'vocab_source_pk': self.vocab_source.id,
-                        'vocab_source_slug': self.vocab_source.slug
-                    }
-                )
-            )
 
 
 class VocabSourceEntryContextsViewTest(TestCommon):
@@ -836,156 +829,71 @@ class VocabSourceDeleteViewTest(TestCommon):
         self.assertFalse(VocabSource.objects.filter(pk=obj_id).exists())
 
 
-class ExportVocabSourceJsonViewTest(TestCommon):
+class VocabSourceExportJsonViewTest(TestCommon):
+
+    def test_inheritance(self):
+        classes = (
+            LoginRequiredMixin,
+            VocabSourceMixin,
+            JsonAttachmentMixin,
+            View
+        )
+        for class_name in classes:
+            self.assertTrue(issubclass(VocabSourceExportJsonView, class_name))
 
     def test_export_source_json_to_file(self):
-        pass
+        self.login_test_user(self.user.username)
+        request = self.request_factory.get('/fake-path')
 
-# class UserVocabSourcesViewTest(TestCommon):
-
-#     def test_inheritance(self):
-#         classes = (
-#             LoginRequiredMixin,
-#             TemplateView,
-#             VocabSessionMixin
-#         )
-#         for class_name in classes:
-#             self.assertTrue(issubclass(UserVocabSourcesView, class_name))
-
-#     def test_correct_view_used(self):
-#         found = resolve(
-#             reverse('vocab:user_vocab_sources')
-#         )
-#         self.assertEqual(found.func.__name__, UserVocabSourcesView.as_view().__name__)
-
-#     def test_view_renders_correct_template(self):
-#         self.login_test_user(self.user.username)
-#         response = self.client.get(
-#             reverse('vocab:user_vocab_sources')
-#         )
-#         self.assertTemplateUsed(response, '{0}/admin/user_vocab_sources.html'.format(APP_NAME))
-
-#     def test_view_shows_only_users_sources(self):
-#         source_type = VocabSource.CREATED
-#         user_2 = User.objects.create_user(
-#             username='kfl7',
-#             first_name='Karen',
-#             last_name='Fuentes',
-#             email='kfl7@foo.com',
-#             password=self.pwd
-#         )
-#         for x in range(0, 4):
-#             VocabSource.objects.create(
-#                 creator=self.user,
-#                 name='source {0}'.format(x),
-#                 source_type=source_type
-#             )
-#         for x in range(0, 2):
-#             VocabSource.objects.create(
-#                 creator=user_2,
-#                 name='hello {0}'.format(x),
-#                 source_type=source_type
-#             )
-#         # user with 4 sources
-#         self.login_test_user(self.user.username)
-#         response = self.client.get(
-#             reverse('vocab:user_vocab_sources')
-#         )
-#         sources = response.context['vocab_sources']
-#         self.assertEqual(len(sources[source_type]), 4)
-
-#         # user_2 with 2 sources
-#         self.login_test_user(user_2.username)
-#         response = self.client.get(
-#             reverse('vocab:user_vocab_sources')
-#         )
-#         sources = response.context['vocab_sources']
-#         self.assertEqual(len(sources[source_type]), 2)
-
-# class VocabSourceContextEntriesViewTest(TestCommon):
-
-#     def setUp(self):
-#         super(VocabSourceContextEntriesViewTest, self).setUp()
-#         self.vocab_source = VocabSource.objects.create(
-#             creator=self.user,
-#             source_type=VocabSource.BOOK,
-#             name='A good book'
-#         )
-#         self.vocab_entry_1 = VocabEntry.objects.create(creator=self.user, language='es', entry='tergiversar')
-#         self.vocab_entry_2 = VocabEntry.objects.create(creator=self.user, language='es', entry='demasiado')
-
-#     def add_contexts(self):
-#         context_text = '''Hay que tergiversar el mensaje, pero no demasiado. Demasiado sería
-#                           no solo confuso, sino devastador.'''
-#         for i in range(1, 20):
-#             vocab_context = VocabContext.objects.create(
-#                 vocab_source=self.vocab_source,
-#                 content=context_text
-#             )
-#             vocab_context_entry_1 = VocabContextEntry.objects.create(
-#                 vocab_context=vocab_context,
-#                 vocab_entry=self.vocab_entry_1
-#             )
-#             vocab_context_entry_1.add_vocab_entry_tag('demasiado')
-#             vocab_context_entry_2 = VocabContextEntry.objects.create(
-#                 vocab_context=vocab_context,
-#                 vocab_entry=self.vocab_entry_2
-#             )
-#             vocab_context_entry_2.add_vocab_entry_tag('demasiado')
-
-#     def test_inheritance(self):
-#         classes = (
-#             LoginRequiredMixin,
-#             VocabSourceMixin,
-#             ListView
-#         )
-#         for class_name in classes:
-#             self.assertTrue(
-#                 issubclass(VocabSourceContextEntriesView, class_name)
-#             )
-
-#     def test_correct_view_used(self):
-#         found = resolve(reverse(
-#             'vocab:vocab_source_context_entries',
-#             kwargs={
-#                 'vocab_source_pk': self.vocab_source.id,
-#                 'language': self.vocab_entry_1.language,
-#                 'vocab_entry_slug': self.vocab_entry_1.slug
-#             })
-#         )
-#         self.assertEqual(
-#             found.func.__name__, VocabSourceContextEntriesView.as_view().__name__
-#         )
-
-#     def test_view_renders_correct_template(self):
-#         self.login_test_user(self.user.username)
-#         response = self.client.get(
-#             reverse(
-#                 'vocab:vocab_source_context_entries',
-#                 kwargs={
-#                     'vocab_source_pk': self.vocab_source.id,
-#                     'language': self.vocab_entry_1.language,
-#                     'vocab_entry_slug': self.vocab_entry_1.slug
-#                 }
-#             )
-#         )
-#         self.assertTemplateUsed(
-#             response,
-#             '{0}/admin/vocab_source_context_entries.html'.format(APP_NAME)
-#         )
-
-#     def test_num_queries(self):
-#         self.login_test_user(self.user.username)
-#         self.add_contexts()
-#         with self.assertNumQueries(FuzzyInt(1, 11)):
-#             self.client.get(
-#                 reverse(
-#                     'vocab:vocab_source_context_entries',
-#                     kwargs={
-#                         'vocab_source_pk': self.vocab_source.id,
-#                         'language': self.vocab_entry_1.language,
-#                         'vocab_entry_slug': self.vocab_entry_1.slug
-#                     }
-#                 )
-#             )
-
+        vocab_context = VocabContext.objects.create(
+            vocab_source=self.vocab_source,
+            content='This is a sample sentence.'
+        )
+        vocab_entry = VocabEntry.objects.create(
+            entry='sentence',
+            language='en'
+        )
+        vocab_context_entry = VocabContextEntry.objects.create(
+            vocab_context=vocab_context,
+            vocab_entry=vocab_entry
+        )
+        vocab_project_serializer = VocabProjectSerializer(
+            self.vocab_project,
+            context={'request': request}
+        )
+        vocab_source_serializer = VocabSourceSerializer(
+            self.vocab_source,
+            context={'request': request}
+        )
+        vocab_context_serializer = VocabContextSerializer(
+            vocab_context,
+            context={'request': request}
+        )
+        vocab_entry_serializer = VocabEntrySerializer(
+            vocab_entry,
+            context={'request': request}
+        )
+        response = self.client.get(
+            reverse(
+                'vocab:vocab_source_export_json',
+                kwargs={
+                    'vocab_source_pk': self.vocab_source.id
+                }
+            )
+        )
+        expected_data = json.loads(json.dumps({
+            'vocab_project_data': vocab_project_serializer.get_minimal_data(),
+            'vocab_source_data': vocab_source_serializer.get_minimal_data(),
+            'vocab_contexts': {
+                '1': {
+                    'vocab_context_data': vocab_context_serializer.get_minimal_data(),
+                    'vocab_entries': [
+                        {
+                            'vocab_entry_data': vocab_entry_serializer.get_minimal_data(),
+                            'vocab_entry_tags': vocab_context_entry.get_vocab_entry_tags(),
+                        }
+                    ]
+                }
+            }
+        }))
+        self.assertEqual(json.loads(response.content), expected_data)

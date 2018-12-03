@@ -196,7 +196,7 @@ class ExportVocabSourceTest(TestCommon):
             'vocab_project_data': vocab_project_serializer.get_minimal_data(),
             'vocab_source_data': vocab_source_serializer.get_minimal_data(),
             'vocab_contexts': {
-                vocab_context.id: {
+                '1': {
                     'vocab_context_data': vocab_context_serializer.get_minimal_data(),
                     'vocab_entries': [
                         {

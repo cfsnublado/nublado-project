@@ -12,7 +12,7 @@
 <div class="row justify-content-md-center">
 <div class="col-md-10">
 
-{% url 'vocab:vocab_entry_autocomplete' 'zz' as autocomplete_url %}
+{% url 'vocab:vocab_entry_language_autocomplete' 'zz' as autocomplete_url %}
 {% url 'vocab:vocab_entry_search' as search_url %}
 
 {% include "includes/_language_search.html" with comp_name='entry-search' search_btn=True %}

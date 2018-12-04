@@ -91,7 +91,7 @@ class AutocompleteMixin(object):
 
     def get(self, request, *args, **kwargs):
         if request.is_ajax():
-            objects = self.get_queryset().all()
+            objects = self.get_queryset()
             results = []
             for obj in objects:
                 obj_json = self.set_obj_attr(obj)

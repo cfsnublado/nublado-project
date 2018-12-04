@@ -35,9 +35,14 @@ app_name = 'vocab'
 urlpatterns = [
     path('', VocabUserDashboardView.as_view(), name='vocab_user_dashboard'),
     re_path(
-        '^autocomplete/entry/(?P<language>[a-z]{2})/$',
+        '^autocomplete/entry/$',
         VocabEntryAutocompleteView.as_view(),
         name='vocab_entry_autocomplete'
+    ),
+    re_path(
+        '^autocomplete/entry/(?P<language>[a-z]{2})/$',
+        VocabEntryAutocompleteView.as_view(),
+        name='vocab_entry_language_autocomplete'
     ),
     path(
         'autocomplete/project/<int:vocab_project_pk>/source/',

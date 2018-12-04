@@ -1,16 +1,21 @@
+import json
+
 from django.contrib.auth import get_user_model
 from django.contrib.sessions.middleware import SessionMiddleware
 from django.core.exceptions import PermissionDenied
 from django.http import Http404, HttpResponse
 from django.test import RequestFactory, TestCase
-from django.views.generic import CreateView, DetailView, TemplateView, UpdateView
+from django.views.generic import (
+    CreateView, DetailView, TemplateView,
+    View, UpdateView
+)
 
-from coretest.models import TestUserstampModel
+from coretest.models import TestModel, TestUserstampModel
 from ..forms import BaseModelForm
 from ..utils import setup_test_view
 from ..views import (
-    AttachmentMixin, SuperuserRequiredMixin, UserMixin,
-    UserRequiredMixin, UserstampMixin
+    AttachmentMixin, AutocompleteMixin, SuperuserRequiredMixin,
+    UserMixin, UserRequiredMixin, UserstampMixin
 )
 
 User = get_user_model()
@@ -23,13 +28,62 @@ class TestUserstampForm(BaseModelForm):
         fields = ['name']
 
 
-class HomeFilesTest(TestCase):
+class AutocompleteMixinTest(TestCase):
 
-    def test_view_returns_correct_status_code(self):
-        response = self.client.get('/robots.txt')
-        self.assertEqual(response.status_code, 200)
-        response = self.client.get('/humans.txt')
-        self.assertEqual(response.status_code, 200)
+    class AutocompleteView(AutocompleteMixin, View):
+        search_model = TestModel
+        search_field = 'name'
+        search_filter = 'istartswith'
+        id_attr = 'id'
+        label_attr = 'name'
+        value_attr = 'name'
+
+    def setUp(self):
+        self.request_factory = RequestFactory()
+        self.user = User.objects.create_user(
+            username='foo7',
+            first_name='Foo',
+            last_name='Foo',
+            email='foo7@foo.com',
+            password='Coffee?69c'
+        )
+        self.test_model = TestModel.objects.create(name='hello')
+        self.request_factory = RequestFactory()
+
+    def get_autocomplete_response(self, term=''):
+        kwargs = {'HTTP_X_REQUESTED_WITH': 'XMLHttpRequest'}
+        request = self.request_factory.get('/fake-path?term={0}'.format(term), **kwargs)
+        response = self.AutocompleteView.as_view()(request)
+        return json.loads(response.content)
+
+    def test_autocomplete_results(self):
+        result_1 = TestModel.objects.create(name='green')
+        result_2 = TestModel.objects.create(name='great')
+        result_3 = TestModel.objects.create(name='apple')
+        TestModel.objects.create(name='pear')
+
+        results = self.get_autocomplete_response(term='gre')
+        expected_results = [
+            {'id': result_1.id, 'label': result_1.name, 'value': result_1.name},
+            {'id': result_2.id, 'label': result_2.name, 'value': result_2.name}
+        ]
+        self.assertCountEqual(results, expected_results)
+
+        results = self.get_autocomplete_response(term='gree')
+        expected_results = [
+            {'id': result_1.id, 'label': result_1.name, 'value': result_1.name}
+        ]
+        self.assertCountEqual(results, expected_results)
+
+        results = self.get_autocomplete_response(term='ap')
+        expected_results = [
+            {'id': result_3.id, 'label': result_3.name, 'value': result_3.name}
+        ]
+        self.assertCountEqual(results, expected_results)
+
+        results = self.get_autocomplete_response(term='xx')
+        expected_results = []
+        self.assertCountEqual(results, expected_results)
 
 
 class AttachmentMixinTest(TestCase):

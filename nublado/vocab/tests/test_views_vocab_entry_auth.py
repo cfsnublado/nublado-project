@@ -12,7 +12,7 @@ from django.views.generic import (
 
 from core.views import (
     AjaxDeleteMixin, AjaxFormMixin, MessageMixin,
-    SuperuserRequiredMixin, UserstampMixin
+    UserstampMixin
 )
 from ..conf import settings
 from ..forms import VocabEntryCreateForm, VocabEntryUpdateForm

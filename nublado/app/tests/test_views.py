@@ -26,6 +26,15 @@ class TestCommon(TestCase):
         self.client.login(username=username, password=self.pwd)
 
 
+class HomeFilesTest(TestCase):
+
+    def test_view_returns_correct_status_code(self):
+        response = self.client.get('/robots.txt')
+        self.assertEqual(response.status_code, 200)
+        response = self.client.get('/humans.txt')
+        self.assertEqual(response.status_code, 200)
+
+
 class HomeViewTest(TestCommon):
 
     def test_correct_view_used(self):

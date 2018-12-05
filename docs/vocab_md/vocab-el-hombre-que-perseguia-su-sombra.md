@@ -450,4 +450,32 @@ project_name: Spanish Reading
 
     </div>
 
+- Se estaba yendo. Se iba adentrando en un estado de inconsciencia. Y entonces empezó a luchar con todas sus fuerzas. Sacudió la cabeza, agitó la mano buena, aceleró la respiración. Pero lo único que eso produjo fue que la mujer sonriera aún más. Se la veía sonreír triunfante mientras aplicaba otro parche de morfina en la espalda de Holger. Luego le puso el pijama, le acomodó la cabeza en la almohada y bajó el respaldo de la cama. Lo acarició y lo mimó, como si ahora quisiera mostrarse el doble de amable. Como una especie de perversa compensación.
+
+    —Vas a morir, Holger Palmgren —dijo—. ¿No te parece que ya va siendo hora?
+
+    <div markdown="1" class="tagged-entries">
+
+    es: sacudir: sacudió
+
+    es: parche: parche
+
+    es: acariciar: acariciar
+
+    </div>
+
+- —Sólo sabemos un par de cosas con certeza —prosiguió Annika—. Sabemos que Ahmed, el hermano mayor, se encuentra frente a los grandes ventanales del salón, poco antes de las siete de la tarde, un día después de que Jamal haya sido arrollado por el tren. La casa se halla en una cuarta planta. Faria se acerca a su hermano. Intercambian unas frases. Parecen mantener una breve conversación, y de repente, de buenas a primeras, Faria se vuelve loca. Se abalanza sobre Ahmed y lo tira por la ventana. ¿Por qué? ¿Porque él le ha contado que Jamal está muerto?
+
+    <div markdown="1" class="tagged-entries">
+
+    es: arrollar: haya sido arrollado
+
+    es: hallarse: se halla
+
+    es: de buenas a primeras: de buenas a primeras
+
+    es: abalanzarse: se abalanza
+
+    </div>
+
 - 

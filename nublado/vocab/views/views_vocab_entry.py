@@ -24,7 +24,6 @@ class VocabEntrySearchView(
 
     def search_success(self, *args, **kwargs):
         self.vocab_entry_contexts = self.get_vocab_entry_contexts()
-        print(self.vocab_entry_contexts)
         return self.get(self.request, *args, **kwargs)
 
     def get_context_data(self, **kwargs):

@@ -2,21 +2,14 @@ import json
 
 from django.contrib.auth import get_user_model
 from django.contrib.sessions.middleware import SessionMiddleware
-from django.core.exceptions import PermissionDenied
 from django.test import RequestFactory, TestCase
 from django.urls import reverse
-from django.views.generic import DetailView, View
+from django.views.generic import View
 
-from core.utils import setup_test_view
-from core.views import AutocompleteMixin, CachedObjectMixin
+from core.views import AutocompleteMixin
 from ..models import (
     VocabContext, VocabContextEntry, VocabEntry,
     VocabProject, VocabSource
-)
-from ..views.views_mixins import (
-    VocabEntryMixin, VocabEntryPermissionMixin, VocabEntrySessionMixin,
-    VocabProjectMixin, VocabProjectSessionMixin,
-    VocabSourceMixin, VocabSourcePermissionMixin, VocabSourceSessionMixin
 )
 from ..views.views_vocab_autocomplete import (
     VocabEntryAutocompleteView, VocabProjectSourceAutocompleteView,

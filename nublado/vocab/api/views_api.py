@@ -37,53 +37,6 @@ class BatchMixin(object):
         return Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)
 
 
-class VocabEntryImportView(APIDefaultsMixin, APIView):
-    permission_classes = (
-        IsAuthenticated,
-        IsSuperuser
-    )
-
-    def post(self, request, *args, **kwargs):
-        data = request.data
-        if 'vocab_entries' in data:
-            import_vocab_entries(data)
-            return Response(data={'success_msg': 'OK!'}, status=status.HTTP_201_CREATED)
-        else:
-            return Response(data={'error': 'vocab-data required'}, status=status.HTTP_400_BAD_REQUEST)
-
-
-class VocabEntryExportView(APIDefaultsMixin, APIView):
-    permission_classes = (
-        IsAuthenticated,
-        IsSuperuser
-    )
-
-    def get(self, request, *args, **kwargs):
-        data = export_vocab_entries(request)
-        return Response(data=data)
-
-
-class VocabEntryLanguageExportView(VocabEntryExportView):
-
-    def get(self, request, *args, **kwargs):
-        data = export_vocab_entries(
-            request,
-            language=kwargs['language']
-        )
-        return Response(data=data)
-
-
-class VocabSourceImportView(APIDefaultsMixin, APIView):
-    permission_classes = (
-        IsAuthenticated,
-    )
-
-    def post(self, request, *args, **kwargs):
-        data = request.data
-        import_vocab_source(data, request.user)
-        return Response(data={'success_msg': 'OK!'}, status=status.HTTP_201_CREATED)
-
-
 class VocabProjectViewSet(APIDefaultsMixin, ModelViewSet):
     lookup_field = 'slug'
     lookup_url_kwarg = 'slug'
@@ -124,35 +77,48 @@ class VocabEntryViewSet(APIDefaultsMixin, BatchMixin, ModelViewSet):
         )
 
 
-class VocabSourceExportView(APIDefaultsMixin, APIView):
+class VocabEntryImportView(APIDefaultsMixin, APIView):
     permission_classes = (
         IsAuthenticated,
-        CreatorPermission
+        IsSuperuser
+    )
+
+    def post(self, request, *args, **kwargs):
+        data = request.data
+        if 'vocab_entries' in data:
+            import_vocab_entries(data)
+            return Response(data={'success_msg': 'OK!'}, status=status.HTTP_201_CREATED)
+        else:
+            return Response(data={'error': 'vocab-data required'}, status=status.HTTP_400_BAD_REQUEST)
+
+
+class VocabEntryExportView(APIDefaultsMixin, APIView):
+    permission_classes = (
+        IsAuthenticated,
+        IsSuperuser
     )
 
     def get(self, request, *args, **kwargs):
-        vocab_source = self.get_object()
-        data = export_vocab_source(request, vocab_source)
+        data = export_vocab_entries(request)
         return Response(data=data)
 
-    def get_object(self):
-        obj = get_object_or_404(
-            VocabSource.objects.prefetch_related(
-                'creator',
-                'vocab_contexts__vocabcontextentry_set__vocab_entry'
-            ),
-            id=self.kwargs['vocab_source_pk']
+
+class VocabEntryLanguageExportView(VocabEntryExportView):
+
+    def get(self, request, *args, **kwargs):
+        data = export_vocab_entries(
+            request,
+            language=kwargs['language']
         )
-        self.check_object_permissions(self.request, obj)
-        return obj
+        return Response(data=data)
 
 
 class VocabSourceViewSet(
     APIDefaultsMixin, RetrieveModelMixin, UpdateModelMixin,
     DestroyModelMixin, ListModelMixin, GenericViewSet
 ):
-    lookup_field = 'slug'
-    lookup_url_kwarg = 'slug'
+    lookup_field = 'pk'
+    lookup_url_kwarg = 'pk'
     serializer_class = VocabSourceSerializer
     queryset = VocabSource.objects.prefetch_related('vocab_contexts')
     permission_classes = (
@@ -193,6 +159,40 @@ class NestedVocabSourceViewSet(
     def list(self, request, *args, **kwargs):
         self.get_vocab_project(vocab_project_slug=kwargs['vocab_project_slug'])
         return super(NestedVocabSourceViewSet, self).list(request, *args, **kwargs)
+
+
+class VocabSourceImportView(APIDefaultsMixin, APIView):
+    permission_classes = (
+        IsAuthenticated,
+    )
+
+    def post(self, request, *args, **kwargs):
+        data = request.data
+        import_vocab_source(data, request.user)
+        return Response(data={'success_msg': 'OK!'}, status=status.HTTP_201_CREATED)
+
+
+class VocabSourceExportView(APIDefaultsMixin, APIView):
+    permission_classes = (
+        IsAuthenticated,
+        CreatorPermission
+    )
+
+    def get(self, request, *args, **kwargs):
+        vocab_source = self.get_object()
+        data = export_vocab_source(request, vocab_source)
+        return Response(data=data)
+
+    def get_object(self):
+        obj = get_object_or_404(
+            VocabSource.objects.prefetch_related(
+                'creator',
+                'vocab_contexts__vocabcontextentry_set__vocab_entry'
+            ),
+            id=self.kwargs['vocab_source_pk']
+        )
+        self.check_object_permissions(self.request, obj)
+        return obj
 
 
 class VocabContextViewSet(
@@ -278,25 +278,25 @@ class NestedVocabContextViewSet(
     )
     vocab_source = None
 
-    def get_vocab_source(self, vocab_source_slug=None):
+    def get_vocab_source(self, vocab_source_pk=None):
         if not self.vocab_source:
-            self.vocab_source = get_object_or_404(VocabSource, slug=vocab_source_slug)
+            self.vocab_source = get_object_or_404(VocabSource, id=vocab_source_pk)
         return self.vocab_source
 
     def create(self, request, *args, **kwargs):
-        vocab_source = self.get_vocab_source(vocab_source_slug=kwargs['vocab_source_slug'])
+        vocab_source = self.get_vocab_source(vocab_source_pk=kwargs['vocab_source_pk'])
         self.check_object_permissions(request, vocab_source)
         return super(NestedVocabContextViewSet, self).create(request, *args, **kwargs)
 
     def perform_create(self, serializer):
-        vocab_source = self.get_vocab_source(vocab_source_slug=self.kwargs['vocab_source_slug'])
+        vocab_source = self.get_vocab_source(vocab_source_pk=self.kwargs['vocab_source_pk'])
         serializer.save(vocab_source=vocab_source)
 
     def get_queryset(self):
-        return self.queryset.filter(vocab_source__slug=self.kwargs['vocab_source_slug'])
+        return self.queryset.filter(vocab_source_id=self.kwargs['vocab_source_pk'])
 
     def list(self, request, *args, **kwargs):
-        self.get_vocab_source(vocab_source_slug=kwargs['vocab_source_slug'])
+        self.get_vocab_source(vocab_source_pk=kwargs['vocab_source_pk'])
         return super(NestedVocabContextViewSet, self).list(request, *args, **kwargs)
 
 

@@ -478,4 +478,58 @@ project_name: Spanish Reading
 
     </div>
 
-- 
+- El comisario de la policía criminal, Jan Bublanski, soltaba a menudo largas peroratas filosóficas. Pero de momento no dijo nada. Vestía una camisa azul, pantalones grises de lino y calzaba unos sencillos mocasines. Eran las 15.20, hacía calor y bochorno, y el grupo que lideraba llevaba todo el día trabajando duro. Ahora estaban reunidos en una sala de la quinta planta de la jefatura de policía, sita en Bergsgatan.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: perorata: peroratas
+
+    </div>
+
+- —Leo dijo que después de la muerte de su madre cambió de mano, que fue algo que formó parte de su proceso de liberación. Que sintió la necesidad de intentar buscar nuevas formas de vivir.
+
+    —¿Y eso no te parece una buena explicación?
+
+    —No sé. ¿Hiperacusia y ambidexteridad a la vez? Para mí es mucha coincidencia.
+
+    Mikael se quedó callado un momento mientras miraba hacia Zinkensdamm.
+
+    —Sí, puede tener dos características muy poco frecuentes, pero... —Reflexionó un poco más—. Quizá tengas razón en que hay algo en esta historia que huele a podrido. Nos vemos pronto, ¿vale?
+
+    —Por supuesto —respondió ella. 
+
+    Colgaron y él continuó hacia Skanstull, rumbo a la casa de Hilda von Kanterborg.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: característica: características
+
+    es: ambidexteridad: ambidexteridad
+
+    es: rumbo: rumbo a la la casa
+
+    </div>
+
+- Yo siempre he creído que esas intenciones estaban motivadas por una benevolencia mal entendida debido a la situación que vivíamos con el cerdo de mi padre. Pero en realidad formaban parte de un experimento científico llevado a cabo por una entidad estatal llamada Registro para el Estudio de la Genética y el Entorno. Es una institución secreta y no conseguí averiguar los nombres de los responsables. Eso me enojó mucho, así que llamé a Holger para pedirle que echara un vistazo a esos papeles. No tengo ni idea de lo que pudo encontrar. Sólo sé que Blomkvist me llamó y me dijo que Holger había muerto, quizá asesinado. Así que mi consejo es que contacten con Maj-Britt Torell. Vive en Aspudden. Puede que tenga copias o un _backup_ de los documentos. Por cierto, creo que no le vendría mal que la vigilarais.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: echar un vistazo: echara un vistazo
+
+    </div>
+
+- —Intenta presionar a los jefes del Centro de Genética de Uppsala, aunque dudo mucho que les saques algo.
+
+    —¿Podrías ser un poco más explícita, Lisbeth? ¿De qué va todo esto?
+
+    —De ciencia —o más bien pseudociencia— y de unos idiotas que se convencieron de que se puede averiguar algo acerca de cómo nos afecta el entorno social y la herencia genética mediante la entrega de niños en adopción.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: pseudociencia: pseudociencia
+
+    es: mediante: mediante
+
+    es: entrega: entrega
+
+    </div>

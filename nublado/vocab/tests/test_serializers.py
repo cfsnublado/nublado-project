@@ -242,7 +242,7 @@ class VocabSourceSerializerTest(TestCommon):
         expected_data = {
             'url': drf_reverse(
                 'api:vocab-source-detail',
-                kwargs={'slug': self.vocab_source.slug},
+                kwargs={'pk': self.vocab_source.id},
                 request=self.request
             ),
             'id': self.vocab_source.id,
@@ -264,7 +264,7 @@ class VocabSourceSerializerTest(TestCommon):
             'source_type': self.vocab_source.source_type,
             'vocab_contexts_url': drf_reverse(
                 'api:nested-vocab-context-list',
-                kwargs={'vocab_source_slug': self.vocab_source.slug},
+                kwargs={'vocab_source_pk': self.vocab_source.id},
                 request=self.request
             ),
             'date_created': self.vocab_source.date_created.isoformat(),
@@ -277,7 +277,7 @@ class VocabSourceSerializerTest(TestCommon):
         expected_json_data = json.dumps({
             'url': drf_reverse(
                 'api:vocab-source-detail',
-                kwargs={'slug': self.vocab_source.slug},
+                kwargs={'pk': self.vocab_source.pk},
                 request=self.request
             ),
             'project_id': self.vocab_project.id,
@@ -299,7 +299,7 @@ class VocabSourceSerializerTest(TestCommon):
             'source_type': self.vocab_source.source_type,
             'vocab_contexts_url': drf_reverse(
                 'api:nested-vocab-context-list',
-                kwargs={'vocab_source_slug': self.vocab_source.slug},
+                kwargs={'vocab_source_pk': self.vocab_source.id},
                 request=self.request
             ),
             'date_created': self.vocab_source.date_created.isoformat(),
@@ -362,7 +362,7 @@ class VocabContextSerializerTest(TestCommon):
             'vocab_source_id': self.vocab_source.id,
             'vocab_source_url': drf_reverse(
                 'api:vocab-source-detail',
-                kwargs={'slug': self.vocab_source.slug},
+                kwargs={'pk': self.vocab_source.id},
                 request=self.request
             ),
             'content': self.vocab_context.content,
@@ -388,7 +388,7 @@ class VocabContextSerializerTest(TestCommon):
             'vocab_source_id': self.vocab_source.id,
             'vocab_source_url': drf_reverse(
                 'api:vocab-source-detail',
-                kwargs={'slug': self.vocab_source.slug},
+                kwargs={'pk': self.vocab_source.id},
                 request=self.request
             ),
             'content': self.vocab_context.content,

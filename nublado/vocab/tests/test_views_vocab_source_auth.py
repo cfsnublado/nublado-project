@@ -224,6 +224,37 @@ class VocabSourceEntriesViewTest(TestCommon):
         vocab_entries = response.context['vocab_entries']
         self.assertEqual(2, len(vocab_entries['en']))
 
+    def test_view_entry_search_success(self):
+        self.login_test_user(self.user.username)
+        response = self.client.get(
+            reverse(
+                'vocab:vocab_source_entries',
+                kwargs={
+                    'vocab_source_pk': self.vocab_source.id,
+                    'vocab_source_slug': self.vocab_source.slug
+                }
+            ),
+            {
+                'search_language': self.vocab_entry.language,
+                'search_entry': self.vocab_entry.entry
+            }
+        )
+        self.assertRedirects(
+            response,
+            expected_url=reverse(
+                'vocab:vocab_source_entry_contexts',
+                kwargs={
+                    'vocab_source_pk': self.vocab_source.pk,
+                    'vocab_source_slug': self.vocab_source.slug,
+                    'vocab_entry_language': self.vocab_entry.language,
+                    'vocab_entry_slug': self.vocab_entry.slug
+                }
+            ),
+            status_code=302,
+            target_status_code=200,
+            # fetch_redirect_response=False
+        )
+
     def test_num_queries(self):
         self.login_test_user(self.user.username)
         with self.assertNumQueries(FuzzyInt(1, 10)):

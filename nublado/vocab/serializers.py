@@ -105,7 +105,7 @@ class VocabSourceSerializer(BaseSerializer, HyperlinkedModelSerializer):
     ]
     url = HyperlinkedIdentityField(
         view_name='api:vocab-source-detail',
-        lookup_field='slug'
+        lookup_field='pk'
     )
     project_id = ReadOnlyField(source='vocab_project.id')
     project_url = HyperlinkedRelatedField(
@@ -125,8 +125,8 @@ class VocabSourceSerializer(BaseSerializer, HyperlinkedModelSerializer):
     )
     vocab_contexts_url = HyperlinkedIdentityField(
         view_name='api:nested-vocab-context-list',
-        lookup_url_kwarg='vocab_source_slug',
-        lookup_field='slug'
+        lookup_url_kwarg='vocab_source_pk',
+        lookup_field='pk'
     )
 
     class Meta:
@@ -157,7 +157,7 @@ class VocabContextSerializer(BaseSerializer, HyperlinkedModelSerializer):
         many=False,
         read_only=True,
         view_name='api:vocab-source-detail',
-        lookup_field='slug',
+        lookup_field='pk',
         source='vocab_source'
     )
     vocab_entries_url = HyperlinkedIdentityField(

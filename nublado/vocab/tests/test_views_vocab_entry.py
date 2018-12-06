@@ -1,12 +1,9 @@
-import json
-
 from django.contrib.auth import get_user_model
 from django.test import TestCase
-from django.views.generic import ListView, TemplateView, View
+from django.views.generic import TemplateView
 from django.urls import resolve, reverse
 
 from core.utils import FuzzyInt
-from core.views import AutocompleteMixin
 from ..models import (
     VocabContext, VocabContextEntry, VocabEntry,
     VocabProject, VocabSource

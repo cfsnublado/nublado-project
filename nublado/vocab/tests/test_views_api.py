@@ -77,6 +77,35 @@ class VocabSourceViewSetTest(TestCommon):
         )
         return json.loads(serializer.json_data())
 
+    def test_view_setup(self):
+        request = self.request_factory.get('/fake-path')
+        request.user = self.user
+        view = VocabSourceViewSet()
+        permission_classes = (IsAuthenticated,)
+        self.assertEqual(permission_classes, view.permission_classes)
+        self.assertEqual('pk', view.lookup_field)
+        self.assertEqual('pk', view.lookup_url_kwarg)
+        self.assertEqual(VocabSourceSerializer, view.serializer_class)
+        self.assertCountEqual(VocabSource.objects.prefetch_related('vocab_contexts'), view.queryset)
+
+    def test_view_permissions(self):
+        response = self.client.get(
+            reverse(
+                'api:vocab-source-detail',
+                kwargs={'pk': self.vocab_source.id}
+            ),
+        )
+        self.assertEqual(response.status_code, drf_status.HTTP_403_FORBIDDEN)
+
+        self.login_test_user(self.user.username)
+        response = self.client.get(
+            reverse(
+                'api:vocab-source-detail',
+                kwargs={'pk': self.vocab_source.id}
+            ),
+        )
+        self.assertEqual(response.status_code, drf_status.HTTP_200_OK)
+
     def test_inheritance(self):
         classes = (
             APIDefaultsMixin,
@@ -120,6 +149,29 @@ class VocabSourceViewSetTest(TestCommon):
             reverse('api:vocab-source-list')
         )
         self.assertCountEqual([data_1, data_2], json.loads(response.content))
+
+    def test_view_update(self):
+        self.login_test_user(self.user.username)
+
+        vocab_source_data = {'name': 'updated source name'}
+        self.assertNotEqual(
+            self.vocab_source.name,
+            vocab_source_data['name']
+        )
+        response = self.client.put(
+            reverse(
+                'api:vocab-source-detail',
+                kwargs={'pk': self.vocab_source.id}
+            ),
+            data=json.dumps(vocab_source_data),
+            content_type='application/json'
+        )
+        self.vocab_source.refresh_from_db()
+        self.assertEqual(response.status_code, drf_status.HTTP_200_OK)
+        self.assertEqual(
+            self.vocab_source.name,
+            vocab_source_data['name']
+        )
 
     def test_view_delete(self):
         self.login_test_user(self.user.username)

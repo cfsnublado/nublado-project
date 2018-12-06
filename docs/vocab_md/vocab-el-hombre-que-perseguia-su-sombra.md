@@ -533,3 +533,25 @@ project_name: Spanish Reading
     es: entrega: entrega
 
     </div>
+
+= Para extraer esas conclusiones, Von Kanterborg se había inspirado en una serie de estudios, entre otros, el MISTRA (Minnesota Study of Twins Reared Apart) y los realizados por el Registro de Gemelos del Instituto Karolinska. Los gemelos univitelinos, también llamados monocigóticos, tienen un genoma prácticamente idéntico. Por eso son ideales como objeto de estudio si queremos analizar la influencia de los factores hereditarios y medioambientales.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: gemelos univitelinos: gemelos univitelinos
+
+    es: monocigóticos: monocigóticos
+
+    </div>
+
+- Mikael entendió que la prensa sensacionalista se había entusiasmado con la historia. Sin embargo, él no le concedió demasiada importancia. Era consciente de lo fácil que resultaba obsesionarse con las similitudes y las coincidencias, y sabía que lo extraordinario y lo llamativo siempre permanece y destaca a costa de lo ordinario, que tal vez, precisamente por su supuesta insignificancia, nos dice algo más importante acerca de la realidad.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: similitud: similitudes
+
+    es: sensacionalista: sensacionalista
+
+    </div>
+
+= 

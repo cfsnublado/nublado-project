@@ -38,8 +38,8 @@ class BatchMixin(object):
 
 
 class VocabProjectViewSet(APIDefaultsMixin, ModelViewSet):
-    lookup_field = 'slug'
-    lookup_url_kwarg = 'slug'
+    lookup_field = 'pk'
+    lookup_url_kwarg = 'pk'
     serializer_class = VocabProjectSerializer
     queryset = VocabProject.objects.all()
     permission_classes = (
@@ -48,8 +48,8 @@ class VocabProjectViewSet(APIDefaultsMixin, ModelViewSet):
 
 
 class VocabEntryViewSet(APIDefaultsMixin, BatchMixin, ModelViewSet):
-    lookup_field = 'slug'
-    lookup_url_kwarg = 'slug'
+    lookup_field = 'pk'
+    lookup_url_kwarg = 'pk'
     serializer_class = VocabEntrySerializer
     queryset = VocabEntry.objects.all()
     permission_classes = (
@@ -139,25 +139,25 @@ class NestedVocabSourceViewSet(
     )
     vocab_project = None
 
-    def get_vocab_project(self, vocab_project_slug=None):
+    def get_vocab_project(self, vocab_project_pk=None):
         if not self.vocab_project:
-            self.vocab_project = get_object_or_404(VocabProject, slug=vocab_project_slug)
+            self.vocab_project = get_object_or_404(VocabProject, id=vocab_project_pk)
         return self.vocab_project
 
     def create(self, request, *args, **kwargs):
-        vocab_project = self.get_vocab_project(vocab_project_slug=kwargs['vocab_project_slug'])
+        vocab_project = self.get_vocab_project(vocab_project_pk=kwargs['vocab_project_pk'])
         self.check_object_permissions(request, vocab_project)
         return super(NestedVocabSourceViewSet, self).create(request, *args, **kwargs)
 
     def perform_create(self, serializer):
-        vocab_project = self.get_vocab_project(vocab_project_slug=self.kwargs['vocab_project_slug'])
+        vocab_project = self.get_vocab_project(vocab_project_pk=self.kwargs['vocab_project_pk'])
         serializer.save(vocab_source=vocab_project)
 
     def get_queryset(self):
-        return self.queryset.filter(vocab_project__slug=self.kwargs['vocab_project_slug'])
+        return self.queryset.filter(vocab_project_id=self.kwargs['vocab_project_pk'])
 
     def list(self, request, *args, **kwargs):
-        self.get_vocab_project(vocab_project_slug=kwargs['vocab_project_slug'])
+        self.get_vocab_project(vocab_project_pk=kwargs['vocab_project_pk'])
         return super(NestedVocabSourceViewSet, self).list(request, *args, **kwargs)
 
 

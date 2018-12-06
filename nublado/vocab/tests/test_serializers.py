@@ -61,7 +61,7 @@ class VocabProjectSerializerTest(TestCommon):
         expected_data = {
             'url': drf_reverse(
                 'api:vocab-project-detail',
-                kwargs={'slug': self.vocab_project.slug},
+                kwargs={'pk': self.vocab_project.id},
                 request=self.request
             ),
             'id': self.vocab_project.id,
@@ -73,7 +73,7 @@ class VocabProjectSerializerTest(TestCommon):
             ),
             'vocab_sources_url': drf_reverse(
                 'api:nested-vocab-source-list',
-                kwargs={'vocab_project_slug': self.vocab_project.slug},
+                kwargs={'vocab_project_pk': self.vocab_project.id},
                 request=self.request
             ),
             'name': self.vocab_project.name,
@@ -89,7 +89,7 @@ class VocabProjectSerializerTest(TestCommon):
         expected_json_data = json.dumps({
             'url': drf_reverse(
                 'api:vocab-project-detail',
-                kwargs={'slug': self.vocab_project.slug},
+                kwargs={'pk': self.vocab_project.id},
                 request=self.request
             ),
             'id': self.vocab_project.id,
@@ -101,7 +101,7 @@ class VocabProjectSerializerTest(TestCommon):
             ),
             'vocab_sources_url': drf_reverse(
                 'api:nested-vocab-source-list',
-                kwargs={'vocab_project_slug': self.vocab_project.slug},
+                kwargs={'vocab_project_pk': self.vocab_project.id},
                 request=self.request
             ),
             'name': self.vocab_project.name,
@@ -157,7 +157,7 @@ class VocabEntrySerializerTest(TestCommon):
         expected_data = {
             'url': drf_reverse(
                 'api:vocab-entry-detail',
-                kwargs={'slug': self.vocab_entry.slug},
+                kwargs={'pk': self.vocab_entry.id},
                 request=self.request
             ),
             'id': self.vocab_entry.id,
@@ -177,7 +177,7 @@ class VocabEntrySerializerTest(TestCommon):
         expected_json_data = json.dumps({
             'url': drf_reverse(
                 'api:vocab-entry-detail',
-                kwargs={'slug': self.vocab_entry.slug},
+                kwargs={'pk': self.vocab_entry.id},
                 request=self.request
             ),
             'id': self.vocab_entry.id,
@@ -249,7 +249,7 @@ class VocabSourceSerializerTest(TestCommon):
             'project_id': self.vocab_project.id,
             'project_url': drf_reverse(
                 'api:vocab-project-detail',
-                kwargs={'slug': self.vocab_project.slug},
+                kwargs={'pk': self.vocab_project.id},
                 request=self.request
             ),
             'creator_id': self.user.id,
@@ -283,7 +283,7 @@ class VocabSourceSerializerTest(TestCommon):
             'project_id': self.vocab_project.id,
             'project_url': drf_reverse(
                 'api:vocab-project-detail',
-                kwargs={'slug': self.vocab_project.slug},
+                kwargs={'pk': self.vocab_project.id},
                 request=self.request
             ),
             'id': self.vocab_source.id,
@@ -462,7 +462,7 @@ class VocabContextEntrySerializerTest(TestCommon):
             'vocab_entry_id': self.vocab_entry.id,
             'vocab_entry_url': drf_reverse(
                 'api:vocab-entry-detail',
-                kwargs={'slug': self.vocab_entry.slug},
+                kwargs={'pk': self.vocab_entry.id},
                 request=self.request
             ),
             'vocab_entry': self.vocab_entry.entry,
@@ -490,7 +490,7 @@ class VocabContextEntrySerializerTest(TestCommon):
             'vocab_entry_id': self.vocab_entry.id,
             'vocab_entry_url': drf_reverse(
                 'api:vocab-entry-detail',
-                kwargs={'slug': self.vocab_entry.slug},
+                kwargs={'pk': self.vocab_entry.id},
                 request=self.request
             ),
             'vocab_entry': self.vocab_entry.entry,

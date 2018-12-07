@@ -46,6 +46,9 @@ class VocabProjectViewSet(APIDefaultsMixin, ModelViewSet):
         IsAuthenticated,
     )
 
+    def perform_create(self, serializer):
+        serializer.save(owner=self.request.user)
+
 
 class VocabEntryViewSet(APIDefaultsMixin, BatchMixin, ModelViewSet):
     lookup_field = 'pk'

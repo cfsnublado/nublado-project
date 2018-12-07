@@ -554,4 +554,28 @@ project_name: Spanish Reading
 
     </div>
 
-= 
+- Uno de cada ocho embarazos puede ser un embarazo gemelar, aunque la mayoría de las veces uno de los fetos muere pronto a causa del síndrome del gemelo evanescente.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: gemelar: embarazo gemelar
+
+    es: feto: fetos
+
+    es: a causa de: a causa del
+
+    es: gemelo: gemelo
+
+    es: evanescente: evanescente
+
+    </div>
+
+- Son muchos los que echan de menos a alguien.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: echar de menos: echan de menos a alguien
+
+    </div>
+
+- 

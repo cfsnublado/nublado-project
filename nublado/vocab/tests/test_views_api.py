@@ -7,7 +7,7 @@ from rest_framework.mixins import (
 )
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.views import APIView
-from rest_framework.viewsets import GenericViewSet
+from rest_framework.viewsets import GenericViewSet, ModelViewSet
 
 from django.contrib.auth import get_user_model
 from django.urls import resolve, reverse
@@ -16,14 +16,15 @@ from django.test import RequestFactory, TestCase
 from core.utils import setup_test_view
 from ..api.permissions import CreatorPermission, IsSuperuser
 from ..api.views_api import (
-    APIDefaultsMixin, VocabEntryImportView,
-    VocabEntryExportView, VocabEntryLanguageExportView,
-    VocabSourceExportView, VocabSourceImportView,
+    APIDefaultsMixin, BatchMixin, VocabEntryImportView,
+    VocabEntryExportView, VocabEntryViewSet, VocabEntryLanguageExportView,
+    VocabProjectViewSet, VocabSourceExportView, VocabSourceImportView,
     VocabSourceViewSet
 )
 from ..conf import settings
 from ..models import VocabEntry, VocabProject, VocabSource
 from ..serializers import (
+    VocabEntrySerializer, VocabProjectSerializer,
     VocabSourceSerializer
 )
 from ..utils import export_vocab_entries, export_vocab_source
@@ -46,29 +47,524 @@ class TestCommon(TestCase):
             email='cfs7@foo.com',
             password=self.pwd
         )
+
+    def login_test_user(self, username=None):
+        self.client.login(username=username, password=self.pwd)
+
+    def get_dummy_request(self):
+        request = self.request_factory.get('/fake-path')
+        request.user = self.user
+        return request
+
+
+class VocabProjectViewSetTest(TestCommon):
+
+    def setUp(self):
+        super(VocabProjectViewSetTest, self).setUp()
         self.vocab_project = VocabProject.objects.create(
             owner=self.user,
             name='test project'
         )
 
-    def login_test_user(self, username=None):
-        self.client.login(username=username, password=self.pwd)
+    def get_project_serializer_data(self, project):
+        serializer = VocabProjectSerializer(
+            project,
+            context={'request': self.get_dummy_request()}
+        )
+        return json.loads(serializer.json_data())
+
+    def test_view_setup(self):
+        view = VocabProjectViewSet()
+        permission_classes = (IsAuthenticated,)
+        self.assertEqual(permission_classes, view.permission_classes)
+        self.assertEqual('pk', view.lookup_field)
+        self.assertEqual('pk', view.lookup_url_kwarg)
+        self.assertEqual(VocabProjectSerializer, view.serializer_class)
+        self.assertCountEqual(VocabProject.objects.all(), view.queryset)
+
+    def test_view_permissions(self):
+        response = self.client.get(
+            reverse(
+                'api:vocab-project-detail',
+                kwargs={'pk': self.vocab_project.id}
+            ),
+        )
+        self.assertEqual(response.status_code, drf_status.HTTP_403_FORBIDDEN)
+
+        self.login_test_user(self.user.username)
+        response = self.client.get(
+            reverse(
+                'api:vocab-project-detail',
+                kwargs={'pk': self.vocab_project.id}
+            ),
+        )
+        self.assertEqual(response.status_code, drf_status.HTTP_200_OK)
+
+    def test_inheritance(self):
+        classes = (
+            APIDefaultsMixin,
+            ModelViewSet
+        )
+        for class_name in classes:
+            self.assertTrue(issubclass(VocabProjectViewSet, class_name))
+
+    def test_view_create(self):
+        self.login_test_user(self.user.username)
+        vocab_project_data = {
+            'name': 'another test project',
+            'description': 'another test project'
+        }
+        self.assertFalse(
+            VocabProject.objects.filter(name=vocab_project_data['name']).exists()
+        )
+        self.client.post(
+            reverse('api:vocab-project-list'),
+            data=vocab_project_data
+        )
+        self.assertTrue(
+            VocabProject.objects.filter(
+                owner=self.user,
+                name=vocab_project_data['name']
+            ).exists()
+        )
+
+    def test_view_detail(self):
+        self.login_test_user(self.user.username)
+        response = self.client.get(
+            reverse(
+                'api:vocab-project-detail',
+                kwargs={'pk': self.vocab_project.id}
+            ),
+        )
+        data = self.get_project_serializer_data(self.vocab_project)
+        self.assertEqual(
+            data,
+            json.loads(response.content)
+        )
+
+    def test_view_list(self):
+        self.login_test_user(self.user.username)
+        vocab_project_2 = VocabProject.objects.create(
+            owner=self.user,
+            name='test project 2'
+        )
+        data_1 = self.get_project_serializer_data(self.vocab_project)
+        data_2 = self.get_project_serializer_data(vocab_project_2)
+        response = self.client.get(
+            reverse('api:vocab-project-list')
+        )
+        self.assertCountEqual([data_1, data_2], json.loads(response.content))
+
+    def test_view_update(self):
+        self.login_test_user(self.user.username)
+
+        vocab_project_data = {'name': 'goodbye'}
+        self.assertNotEqual(
+            self.vocab_project.name,
+            vocab_project_data['name']
+        )
+        response = self.client.put(
+            reverse(
+                'api:vocab-project-detail',
+                kwargs={'pk': self.vocab_project.id}
+            ),
+            data=json.dumps(vocab_project_data),
+            content_type='application/json'
+        )
+        self.vocab_project.refresh_from_db()
+        self.assertEqual(response.status_code, drf_status.HTTP_200_OK)
+        self.assertEqual(
+            self.vocab_project.name,
+            vocab_project_data['name']
+        )
+
+    def test_view_delete(self):
+        self.login_test_user(self.user.username)
+        id = self.vocab_project.id
+        self.assertTrue(VocabProject.objects.filter(id=id).exists())
+        self.client.delete(
+            reverse('api:vocab-project-detail', kwargs={'pk': self.vocab_project.id})
+        )
+        self.assertFalse(VocabProject.objects.filter(id=id).exists())
+
+
+class VocabEntryViewSetTest(TestCommon):
+
+    def setUp(self):
+        super(VocabEntryViewSetTest, self).setUp()
+        self.vocab_entry = VocabEntry.objects.create(
+            language='en',
+            entry='hello'
+        )
+
+    def get_entry_serializer_data(self, entry):
+        serializer = VocabEntrySerializer(
+            entry,
+            context={'request': self.get_dummy_request()}
+        )
+        return json.loads(serializer.json_data())
+
+    def test_view_setup(self):
+        view = VocabEntryViewSet()
+        permission_classes = (IsAuthenticated,)
+        self.assertEqual(permission_classes, view.permission_classes)
+        self.assertEqual('pk', view.lookup_field)
+        self.assertEqual('pk', view.lookup_url_kwarg)
+        self.assertEqual(VocabEntrySerializer, view.serializer_class)
+        self.assertCountEqual(VocabEntry.objects.all(), view.queryset)
+
+    def test_view_permissions(self):
+        response = self.client.get(
+            reverse(
+                'api:vocab-entry-detail',
+                kwargs={'pk': self.vocab_entry.id}
+            ),
+        )
+        self.assertEqual(response.status_code, drf_status.HTTP_403_FORBIDDEN)
+
+        self.login_test_user(self.user.username)
+        response = self.client.get(
+            reverse(
+                'api:vocab-entry-detail',
+                kwargs={'pk': self.vocab_entry.id}
+            ),
+        )
+        self.assertEqual(response.status_code, drf_status.HTTP_200_OK)
+
+    def test_inheritance(self):
+        classes = (
+            APIDefaultsMixin,
+            BatchMixin,
+            ModelViewSet
+        )
+        for class_name in classes:
+            self.assertTrue(issubclass(VocabEntryViewSet, class_name))
+
+    def test_view_create(self):
+        self.login_test_user(self.user.username)
+        vocab_entry_data = {
+            'language': 'es',
+            'entry': 'tergiversar'
+        }
+        self.assertFalse(
+            VocabEntry.objects.filter(
+                language=vocab_entry_data['language'],
+                entry=vocab_entry_data['entry']
+            ).exists()
+        )
+        self.client.post(
+            reverse('api:vocab-entry-list'),
+            data=vocab_entry_data
+        )
+        self.assertTrue(
+            VocabEntry.objects.filter(
+                language=vocab_entry_data['language'],
+                entry=vocab_entry_data['entry']
+            ).exists()
+        )
+
+    def test_view_detail(self):
+        self.login_test_user(self.user.username)
+        response = self.client.get(
+            reverse(
+                'api:vocab-entry-detail',
+                kwargs={'pk': self.vocab_entry.id}
+            ),
+        )
+        data = self.get_entry_serializer_data(self.vocab_entry)
+        self.assertEqual(
+            data,
+            json.loads(response.content)
+        )
+
+    def test_view_list(self):
+        self.login_test_user(self.user.username)
+        vocab_entry_2 = VocabEntry.objects.create(
+            language='es',
+            entry='hola'
+        )
+        data_1 = self.get_entry_serializer_data(self.vocab_entry)
+        data_2 = self.get_entry_serializer_data(vocab_entry_2)
+        response = self.client.get(
+            reverse('api:vocab-entry-list')
+        )
+        self.assertCountEqual([data_1, data_2], json.loads(response.content))
+
+    def test_view_update(self):
+        self.login_test_user(self.user.username)
+
+        vocab_entry_data = {'entry': 'goodbye'}
+        self.assertNotEqual(
+            self.vocab_entry.entry,
+            vocab_entry_data['entry']
+        )
+        response = self.client.put(
+            reverse(
+                'api:vocab-entry-detail',
+                kwargs={'pk': self.vocab_entry.id}
+            ),
+            data=json.dumps(vocab_entry_data),
+            content_type='application/json'
+        )
+        self.vocab_entry.refresh_from_db()
+        self.assertEqual(response.status_code, drf_status.HTTP_200_OK)
+        self.assertEqual(
+            self.vocab_entry.entry,
+            vocab_entry_data['entry']
+        )
+
+    def test_view_delete(self):
+        self.login_test_user(self.user.username)
+        id = self.vocab_entry.id
+        self.assertTrue(VocabEntry.objects.filter(id=id).exists())
+        self.client.delete(
+            reverse('api:vocab-entry-detail', kwargs={'pk': self.vocab_entry.id})
+        )
+        self.assertFalse(VocabEntry.objects.filter(id=id).exists())
+
+
+class VocabEntryImportViewTest(TestCommon):
+
+    def test_inheritance(self):
+        classes = (
+            APIDefaultsMixin,
+            APIView
+        )
+        for class_name in classes:
+            self.assertTrue(issubclass(VocabEntryImportView, class_name))
+
+    def test_correct_view_used(self):
+        found = resolve(reverse('api:vocab_entries_import'))
+        self.assertEqual(
+            found.func.__name__,
+            VocabEntryImportView.as_view().__name__
+        )
+
+    def test_view_imports_vocab_entries_json(self):
+        request = self.get_dummy_request()
+        self.login_test_user(self.user.username)
+        vocab_entry_data = {
+            'creator': self.user,
+            'entry': 'spacecraft',
+            'description': 'A space vehicle',
+            'language': 'en',
+            'pronunciation_spelling': '**speys**-kraft',
+            'pronunciation_ipa': '',
+            'date_created': '2018-04-12T16:49:54.154036'
+        }
+        VocabEntry.objects.create(
+            entry=vocab_entry_data['entry'],
+            language=vocab_entry_data['language'],
+            description=vocab_entry_data['description'],
+            pronunciation_ipa=vocab_entry_data['pronunciation_ipa'],
+            pronunciation_spelling=vocab_entry_data['pronunciation_spelling'],
+            date_created=vocab_entry_data['date_created']
+        )
+        data = export_vocab_entries(request=request)
+        VocabEntry.objects.all().delete()
+        self.assertFalse(
+            VocabEntry.objects.filter(
+                language=vocab_entry_data['language'],
+                entry=vocab_entry_data['entry'],
+                pronunciation_ipa=vocab_entry_data['pronunciation_ipa'],
+                pronunciation_spelling=vocab_entry_data['pronunciation_spelling'],
+                description=vocab_entry_data['description'],
+                date_created=vocab_entry_data['date_created']
+            ).exists()
+        )
+        self.client.post(
+            reverse('api:vocab_entries_import'),
+            json.dumps(data),
+            content_type='application/json'
+        )
+        self.assertTrue(
+            VocabEntry.objects.filter(
+                language=vocab_entry_data['language'],
+                entry=vocab_entry_data['entry'],
+                pronunciation_ipa=vocab_entry_data['pronunciation_ipa'],
+                pronunciation_spelling=vocab_entry_data['pronunciation_spelling'],
+                description=vocab_entry_data['description'],
+                date_created=vocab_entry_data['date_created']
+            ).exists()
+        )
+
+
+class VocabEntryExportViewTest(TestCommon):
+
+    def test_inheritance(self):
+        classes = (
+            APIDefaultsMixin,
+            APIView
+        )
+        for class_name in classes:
+            self.assertTrue(issubclass(VocabEntryExportView, class_name))
+
+    def test_correct_view_used(self):
+        found = resolve(reverse('api:vocab_entries_export'))
+        self.assertEqual(
+            found.func.__name__,
+            VocabEntryExportView.as_view().__name__
+        )
+
+    def test_view_permission_classes(self):
+        request = self.get_dummy_request()
+        view = setup_test_view(VocabEntryExportView(), request)
+        response = view.dispatch(view.request, *view.args, **view.kwargs)
+        self.assertEqual(response.status_code, drf_status.HTTP_200_OK)
+        permission_classes = (IsAuthenticated, IsSuperuser)
+        self.assertEqual(permission_classes, view.permission_classes)
+
+    def test_view_permissions(self):
+        user_2 = User.objects.create(
+            username='kfl7',
+            email='kfl7@foo.com',
+            first_name='Karen',
+            last_name='Fuentes',
+            password=self.pwd
+        )
+
+        # Not authenticated
+        response = self.client.get(
+            reverse('api:vocab_entries_export')
+        )
+        self.assertEqual(response.status_code, drf_status.HTTP_403_FORBIDDEN)
+
+        # Authenticated
+        self.login_test_user(user_2.username)
+        response = self.client.get(
+            reverse('api:vocab_entries_export')
+        )
+        self.assertEqual(response.status_code, drf_status.HTTP_403_FORBIDDEN)
+
+        # Authenticated superuser
+        self.login_test_user(self.user.username)
+        response = self.client.get(
+            reverse('api:vocab_entries_export')
+        )
+        self.assertEqual(response.status_code, drf_status.HTTP_200_OK)
+
+    def test_view_exports_vocab_entries_json(self):
+        self.login_test_user(username=self.user.username)
+        request = self.get_dummy_request()
+        VocabEntry.objects.create(
+            entry='entry one',
+            language='en'
+        )
+        VocabEntry.objects.create(
+            entry='entry two',
+            language='es'
+        )
+        response = self.client.get(reverse(
+            'api:vocab_entries_export'
+        ))
+        expected_data = export_vocab_entries(request=request)
+        data = response.data
+        self.assertEqual(len(data['vocab_entries']), 2)
+        self.assertEqual(expected_data, response.data)
+
+
+class VocabEntryLanguageExportViewTest(TestCommon):
+
+    def setUp(self):
+        super(VocabEntryLanguageExportViewTest, self).setUp()
+
+    def test_inheritance(self):
+        classes = (
+            VocabEntryExportView,
+        )
+        for class_name in classes:
+            self.assertTrue(issubclass(VocabEntryLanguageExportView, class_name))
+
+    def test_correct_view_used(self):
+        found = resolve(
+            reverse(
+                'api:vocab_entries_language_export',
+                kwargs={'language': 'en'}
+            )
+        )
+        self.assertEqual(
+            found.func.__name__,
+            VocabEntryLanguageExportView.as_view().__name__
+        )
+
+    def test_view_permissions(self):
+        user_2 = User.objects.create(
+            username='kfl7',
+            email='kfl7@foo.com',
+            first_name='Karen',
+            last_name='Fuentes',
+            password=self.pwd
+        )
+
+        # Non authenticated
+        response = self.client.get(
+            reverse(
+                'api:vocab_entries_language_export',
+                kwargs={'language': 'en'}
+            )
+        )
+        self.assertEqual(response.status_code, drf_status.HTTP_403_FORBIDDEN)
+
+        # Authenticated
+        self.login_test_user(user_2.username)
+        response = self.client.get(
+            reverse(
+                'api:vocab_entries_language_export',
+                kwargs={'language': 'en'}
+            )
+        )
+        self.assertEqual(response.status_code, drf_status.HTTP_403_FORBIDDEN)
+
+        # Authenticated superuser
+        self.login_test_user(self.user.username)
+        response = self.client.get(
+            reverse(
+                'api:vocab_entries_language_export',
+                kwargs={'language': 'en'}
+            )
+        )
+        self.assertEqual(response.status_code, drf_status.HTTP_200_OK)
+
+    def test_view_exports_vocab_entries_json(self):
+        self.login_test_user(username=self.user.username)
+        request = self.get_dummy_request()
+        VocabEntry.objects.create(
+            entry='entry one',
+            language='en'
+        )
+        VocabEntry.objects.create(
+            entry='entry two',
+            language='en'
+        )
+        VocabEntry.objects.create(
+            entry='entry three',
+            language='es'
+        )
+        response = self.client.get(
+            reverse(
+                'api:vocab_entries_language_export',
+                kwargs={'language': 'es'}
+            )
+        )
+        expected_data = export_vocab_entries(request=request, language='es')
+        data = response.data
+        self.assertEqual(len(data['vocab_entries']), 1)
+        self.assertEqual(expected_data, response.data)
 
 
 class VocabSourceViewSetTest(TestCommon):
 
     def setUp(self):
         super(VocabSourceViewSetTest, self).setUp()
+        self.vocab_project = VocabProject.objects.create(
+            owner=self.user,
+            name='test project'
+        )
         self.vocab_source = VocabSource.objects.create(
             vocab_project=self.vocab_project,
             creator=self.user,
             name='test source'
         )
-
-    def get_dummy_request(self):
-        request = self.request_factory.get('/fake-path')
-        request.user = self.user
-        return request
 
     def get_source_serializer_data(self, source):
         serializer = VocabSourceSerializer(
@@ -78,8 +574,6 @@ class VocabSourceViewSetTest(TestCommon):
         return json.loads(serializer.json_data())
 
     def test_view_setup(self):
-        request = self.request_factory.get('/fake-path')
-        request.user = self.user
         view = VocabSourceViewSet()
         permission_classes = (IsAuthenticated,)
         self.assertEqual(permission_classes, view.permission_classes)
@@ -183,243 +677,14 @@ class VocabSourceViewSetTest(TestCommon):
         self.assertFalse(VocabSource.objects.filter(id=id).exists())
 
 
-class VocabEntryImportViewTest(TestCommon):
-
-    def test_inheritance(self):
-        classes = (
-            APIDefaultsMixin,
-            APIView
-        )
-        for class_name in classes:
-            self.assertTrue(issubclass(VocabEntryImportView, class_name))
-
-    def test_correct_view_used(self):
-        found = resolve(reverse('api:vocab_entries_import'))
-        self.assertEqual(
-            found.func.__name__,
-            VocabEntryImportView.as_view().__name__
-        )
-
-    def test_view_imports_vocab_entries_json(self):
-        request = self.request_factory.get('/fake-path')
-        request.user = self.user
-        self.login_test_user(self.user.username)
-        vocab_entry_data = {
-            'creator': self.user,
-            'entry': 'spacecraft',
-            'description': 'A space vehicle',
-            'language': 'en',
-            'pronunciation_spelling': '**speys**-kraft',
-            'pronunciation_ipa': '',
-            'date_created': '2018-04-12T16:49:54.154036'
-        }
-        VocabEntry.objects.create(
-            entry=vocab_entry_data['entry'],
-            language=vocab_entry_data['language'],
-            description=vocab_entry_data['description'],
-            pronunciation_ipa=vocab_entry_data['pronunciation_ipa'],
-            pronunciation_spelling=vocab_entry_data['pronunciation_spelling'],
-            date_created=vocab_entry_data['date_created']
-        )
-        data = export_vocab_entries(request=request)
-        VocabEntry.objects.all().delete()
-        self.assertFalse(
-            VocabEntry.objects.filter(
-                language=vocab_entry_data['language'],
-                entry=vocab_entry_data['entry'],
-                pronunciation_ipa=vocab_entry_data['pronunciation_ipa'],
-                pronunciation_spelling=vocab_entry_data['pronunciation_spelling'],
-                description=vocab_entry_data['description'],
-                date_created=vocab_entry_data['date_created']
-            ).exists()
-        )
-        self.client.post(
-            reverse('api:vocab_entries_import'),
-            json.dumps(data),
-            content_type='application/json'
-        )
-        self.assertTrue(
-            VocabEntry.objects.filter(
-                language=vocab_entry_data['language'],
-                entry=vocab_entry_data['entry'],
-                pronunciation_ipa=vocab_entry_data['pronunciation_ipa'],
-                pronunciation_spelling=vocab_entry_data['pronunciation_spelling'],
-                description=vocab_entry_data['description'],
-                date_created=vocab_entry_data['date_created']
-            ).exists()
-        )
-
-
-class VocabEntryExportViewTest(TestCommon):
-
-    def test_inheritance(self):
-        classes = (
-            APIDefaultsMixin,
-            APIView
-        )
-        for class_name in classes:
-            self.assertTrue(issubclass(VocabEntryExportView, class_name))
-
-    def test_correct_view_used(self):
-        found = resolve(reverse('api:vocab_entries_export'))
-        self.assertEqual(
-            found.func.__name__,
-            VocabEntryExportView.as_view().__name__
-        )
-
-    def test_view_permission_classes(self):
-        request = self.request_factory.get('/fake-path')
-        request.user = self.user
-        view = setup_test_view(VocabEntryExportView(), request)
-        response = view.dispatch(view.request, *view.args, **view.kwargs)
-        self.assertEqual(response.status_code, drf_status.HTTP_200_OK)
-        permission_classes = (IsAuthenticated, IsSuperuser)
-        self.assertEqual(permission_classes, view.permission_classes)
-
-    def test_view_permissions(self):
-        user_2 = User.objects.create(
-            username='kfl7',
-            email='kfl7@foo.com',
-            first_name='Karen',
-            last_name='Fuentes',
-            password=self.pwd
-        )
-
-        # Not authenticated
-        response = self.client.get(
-            reverse('api:vocab_entries_export')
-        )
-        self.assertEqual(response.status_code, drf_status.HTTP_403_FORBIDDEN)
-
-        # Authenticated
-        self.login_test_user(user_2.username)
-        response = self.client.get(
-            reverse('api:vocab_entries_export')
-        )
-        self.assertEqual(response.status_code, drf_status.HTTP_403_FORBIDDEN)
-
-        # Authenticated superuser
-        self.login_test_user(self.user.username)
-        response = self.client.get(
-            reverse('api:vocab_entries_export')
-        )
-        self.assertEqual(response.status_code, drf_status.HTTP_200_OK)
-
-    def test_view_exports_vocab_entries_json(self):
-        self.login_test_user(username=self.user.username)
-        request = self.request_factory.get('/fake-path')
-        request.user = self.user
-        VocabEntry.objects.create(
-            entry='entry one',
-            language='en'
-        )
-        VocabEntry.objects.create(
-            entry='entry two',
-            language='es'
-        )
-        response = self.client.get(reverse(
-            'api:vocab_entries_export'
-        ))
-        expected_data = export_vocab_entries(request=request)
-        data = response.data
-        self.assertEqual(len(data['vocab_entries']), 2)
-        self.assertEqual(expected_data, response.data)
-
-
-class VocabEntryLanguageExportViewTest(TestCommon):
-
-    def setUp(self):
-        super(VocabEntryLanguageExportViewTest, self).setUp()
-
-    def test_inheritance(self):
-        classes = (
-            VocabEntryExportView,
-        )
-        for class_name in classes:
-            self.assertTrue(issubclass(VocabEntryLanguageExportView, class_name))
-
-    def test_correct_view_used(self):
-        found = resolve(
-            reverse(
-                'api:vocab_entries_language_export',
-                kwargs={'language': 'en'}
-            )
-        )
-        self.assertEqual(
-            found.func.__name__,
-            VocabEntryLanguageExportView.as_view().__name__
-        )
-
-    def test_view_permissions(self):
-        user_2 = User.objects.create(
-            username='kfl7',
-            email='kfl7@foo.com',
-            first_name='Karen',
-            last_name='Fuentes',
-            password=self.pwd
-        )
-
-        # Non authenticated
-        response = self.client.get(
-            reverse(
-                'api:vocab_entries_language_export',
-                kwargs={'language': 'en'}
-            )
-        )
-        self.assertEqual(response.status_code, drf_status.HTTP_403_FORBIDDEN)
-
-        # Authenticated
-        self.login_test_user(user_2.username)
-        response = self.client.get(
-            reverse(
-                'api:vocab_entries_language_export',
-                kwargs={'language': 'en'}
-            )
-        )
-        self.assertEqual(response.status_code, drf_status.HTTP_403_FORBIDDEN)
-
-        # Authenticated superuser
-        self.login_test_user(self.user.username)
-        response = self.client.get(
-            reverse(
-                'api:vocab_entries_language_export',
-                kwargs={'language': 'en'}
-            )
-        )
-        self.assertEqual(response.status_code, drf_status.HTTP_200_OK)
-
-    def test_view_exports_vocab_entries_json(self):
-        self.login_test_user(username=self.user.username)
-        request = self.request_factory.get('/fake-path')
-        request.user = self.user
-        VocabEntry.objects.create(
-            entry='entry one',
-            language='en'
-        )
-        VocabEntry.objects.create(
-            entry='entry two',
-            language='en'
-        )
-        VocabEntry.objects.create(
-            entry='entry three',
-            language='es'
-        )
-        response = self.client.get(
-            reverse(
-                'api:vocab_entries_language_export',
-                kwargs={'language': 'es'}
-            )
-        )
-        expected_data = export_vocab_entries(request=request, language='es')
-        data = response.data
-        self.assertEqual(len(data['vocab_entries']), 1)
-        self.assertEqual(expected_data, response.data)
-
-
 class VocabSourceExportViewTest(TestCommon):
 
     def setUp(self):
         super(VocabSourceExportViewTest, self).setUp()
+        self.vocab_project = VocabProject.objects.create(
+            owner=self.user,
+            name='test project'
+        )
         self.vocab_source = VocabSource.objects.create(
             vocab_project=self.vocab_project,
             creator=self.user,
@@ -448,8 +713,7 @@ class VocabSourceExportViewTest(TestCommon):
         )
 
     def test_view_permission_classes(self):
-        request = self.request_factory.get('/fake-path')
-        request.user = self.user
+        request = self.get_dummy_request()
         view = setup_test_view(
             VocabSourceExportView(), request,
             vocab_source_pk=self.vocab_source.id
@@ -526,6 +790,10 @@ class VocabSourceImportViewTest(TestCommon):
 
     def setUp(self):
         super(VocabSourceImportViewTest, self).setUp()
+        self.vocab_project = VocabProject.objects.create(
+            owner=self.user,
+            name='test project'
+        )
         vocab_source = VocabSource.objects.create(
             vocab_project=self.vocab_project,
             creator=self.user,

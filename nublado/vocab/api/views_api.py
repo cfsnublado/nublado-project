@@ -65,9 +65,9 @@ class VocabEntryViewSet(APIDefaultsMixin, BatchMixin, ModelViewSet):
         Retrieve VocabEntry object
         '''
         entry = request.query_params.get('entry', None)
-        language = request.query_params.get('language', None)
-        if not entry or not language:
-            raise ParseError('Vocab entry and language required.')
+        language = request.query_params.get('language', 'en')
+        if not entry:
+            raise ParseError('Vocab entry required.')
         vocab_entry = get_object_or_404(
             VocabEntry,
             language=language,
@@ -154,7 +154,10 @@ class NestedVocabSourceViewSet(
 
     def perform_create(self, serializer):
         vocab_project = self.get_vocab_project(vocab_project_pk=self.kwargs['vocab_project_pk'])
-        serializer.save(vocab_source=vocab_project)
+        serializer.save(
+            creator=self.request.user,
+            vocab_project=vocab_project
+        )
 
     def get_queryset(self):
         return self.queryset.filter(vocab_project_id=self.kwargs['vocab_project_pk'])

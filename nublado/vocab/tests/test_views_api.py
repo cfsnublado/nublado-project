@@ -2,7 +2,7 @@ import json
 
 from rest_framework import status as drf_status
 from rest_framework.mixins import (
-    DestroyModelMixin, ListModelMixin,
+    CreateModelMixin, DestroyModelMixin, ListModelMixin,
     RetrieveModelMixin, UpdateModelMixin
 )
 from rest_framework.permissions import IsAuthenticated
@@ -16,7 +16,7 @@ from django.test import RequestFactory, TestCase
 from core.utils import setup_test_view
 from ..api.permissions import CreatorPermission, IsSuperuser
 from ..api.views_api import (
-    APIDefaultsMixin, BatchMixin, VocabEntryImportView,
+    APIDefaultsMixin, BatchMixin, NestedVocabSourceViewSet, VocabEntryImportView,
     VocabEntryExportView, VocabEntryViewSet, VocabEntryLanguageExportView,
     VocabProjectViewSet, VocabSourceExportView, VocabSourceImportView,
     VocabSourceViewSet
@@ -321,6 +321,38 @@ class VocabEntryViewSetTest(TestCommon):
             reverse('api:vocab-entry-detail', kwargs={'pk': self.vocab_entry.id})
         )
         self.assertFalse(VocabEntry.objects.filter(id=id).exists())
+
+    def test_view_detail_querystring(self):
+        self.login_test_user(self.user.username)
+        vocab_entry_2 = VocabEntry.objects.create(
+            language='es',
+            entry='tergiversar'
+        )
+        response = self.client.get(
+            reverse('api:vocab-entry-detail-data'),
+            {
+                'language': self.vocab_entry.language,
+                'entry': self.vocab_entry.entry
+            }
+        )
+        data = self.get_entry_serializer_data(self.vocab_entry)
+        self.assertEqual(
+            data,
+            json.loads(response.content)
+        )
+
+        response = self.client.get(
+            reverse('api:vocab-entry-detail-data'),
+            {
+                'language': vocab_entry_2.language,
+                'entry': vocab_entry_2.entry
+            }
+        )
+        data = self.get_entry_serializer_data(vocab_entry_2)
+        self.assertEqual(
+            data,
+            json.loads(response.content)
+        )
 
 
 class VocabEntryImportViewTest(TestCommon):
@@ -675,6 +707,119 @@ class VocabSourceViewSetTest(TestCommon):
             reverse('api:vocab-source-detail', kwargs={'pk': self.vocab_source.id})
         )
         self.assertFalse(VocabSource.objects.filter(id=id).exists())
+
+
+class NestedVocabSourceViewSetTest(TestCommon):
+
+    def setUp(self):
+        super(NestedVocabSourceViewSetTest, self).setUp()
+        self.vocab_project = VocabProject.objects.create(
+            owner=self.user,
+            name='test project'
+        )
+        self.vocab_project_2 = VocabProject.objects.create(
+            owner=self.user,
+            name='test project 2'
+        )
+        self.vocab_source_1 = VocabSource.objects.create(
+            vocab_project=self.vocab_project,
+            creator=self.user,
+            name='test source 1'
+        )
+        self.vocab_source_2 = VocabSource.objects.create(
+            vocab_project=self.vocab_project,
+            creator=self.user,
+            name='test source 2'
+        )
+        self.vocab_source_3 = VocabSource.objects.create(
+            vocab_project=self.vocab_project_2,
+            creator=self.user,
+            name='test source 3'
+        )
+        self.vocab_source_4 = VocabSource.objects.create(
+            vocab_project=self.vocab_project_2,
+            creator=self.user,
+            name='test source 4'
+        )
+
+    def get_source_serializer_data(self, source):
+        serializer = VocabSourceSerializer(
+            source,
+            context={'request': self.get_dummy_request()}
+        )
+        return json.loads(serializer.json_data())
+
+    def test_view_setup(self):
+        view = NestedVocabSourceViewSet()
+        permission_classes = (IsAuthenticated,)
+        self.assertEqual(permission_classes, view.permission_classes)
+        self.assertEqual('pk', view.lookup_field)
+        self.assertEqual('pk', view.lookup_url_kwarg)
+        self.assertEqual(VocabSourceSerializer, view.serializer_class)
+        self.assertIsNone(view.vocab_project)
+        self.assertCountEqual(VocabSource.objects.prefetch_related('vocab_contexts'), view.queryset)
+
+    def test_inheritance(self):
+        classes = (
+            APIDefaultsMixin,
+            BatchMixin,
+            CreateModelMixin,
+            ListModelMixin,
+            GenericViewSet
+        )
+        for class_name in classes:
+            self.assertTrue(
+                issubclass(NestedVocabSourceViewSet, class_name)
+            )
+
+    def test_view_create(self):
+        vocab_source_data = {
+            'name': 'another test source'
+        }
+        self.assertFalse(
+            VocabSource.objects.filter(
+                name=vocab_source_data['name']
+            ).exists()
+        )
+        self.login_test_user(self.user.username)
+        self.client.post(
+            reverse(
+                'api:nested-vocab-source-list',
+                kwargs={'vocab_project_pk': self.vocab_project.id}
+            ),
+            data=vocab_source_data
+        )
+        self.assertTrue(
+            VocabSource.objects.filter(
+                creator=self.user,
+                name=vocab_source_data['name']
+            ).exists()
+        )
+
+    def test_view_list(self):
+        self.login_test_user(self.user.username)
+
+        # Project 1
+        data_1 = self.get_source_serializer_data(self.vocab_source_1)
+        data_2 = self.get_source_serializer_data(self.vocab_source_2)
+        response = self.client.get(
+            reverse(
+                'api:nested-vocab-source-list',
+                kwargs={'vocab_project_pk': self.vocab_project.id}
+            )
+        )
+        self.assertCountEqual([data_1, data_2], json.loads(response.content))
+
+        # Project 2
+        data_3 = self.get_source_serializer_data(self.vocab_source_3)
+        data_4 = self.get_source_serializer_data(self.vocab_source_4)
+        response = self.client.get(
+            reverse(
+                'api:nested-vocab-source-list',
+                kwargs={'vocab_project_pk': self.vocab_project_2.id}
+            )
+        )
+        self.assertCountEqual([data_3, data_4], json.loads(response.content))
 
 
 class VocabSourceExportViewTest(TestCommon):

@@ -307,7 +307,7 @@ class NestedVocabContextViewSet(
 
 
 class VocabContextEntryViewSet(
-    APIDefaultsMixin, RetrieveModelMixin, UpdateModelMixin, DestroyModelMixin,
+    APIDefaultsMixin, RetrieveModelMixin, DestroyModelMixin,
     ListModelMixin, GenericViewSet
 ):
     lookup_field = 'pk'

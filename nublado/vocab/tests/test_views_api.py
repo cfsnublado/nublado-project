@@ -16,16 +16,20 @@ from django.test import RequestFactory, TestCase
 from core.utils import setup_test_view
 from ..api.permissions import CreatorPermission, IsSuperuser
 from ..api.views_api import (
-    APIDefaultsMixin, BatchMixin, NestedVocabSourceViewSet, VocabEntryImportView,
-    VocabEntryExportView, VocabEntryViewSet, VocabEntryLanguageExportView,
-    VocabProjectViewSet, VocabSourceExportView, VocabSourceImportView,
-    VocabSourceViewSet
+    APIDefaultsMixin, BatchMixin, NestedVocabContextViewSet,
+    NestedVocabSourceViewSet, VocabContextViewSet, VocabContextEntryViewSet,
+    VocabEntryImportView, VocabEntryExportView, VocabEntryViewSet,
+    VocabEntryLanguageExportView, VocabProjectViewSet, VocabSourceExportView,
+    VocabSourceImportView, VocabSourceViewSet
 )
 from ..conf import settings
-from ..models import VocabEntry, VocabProject, VocabSource
+from ..models import (
+    VocabContext, VocabContextEntry, VocabEntry,
+    VocabProject, VocabSource
+)
 from ..serializers import (
-    VocabEntrySerializer, VocabProjectSerializer,
-    VocabSourceSerializer
+    VocabContextSerializer, VocabContextEntrySerializer, VocabEntrySerializer,
+    VocabProjectSerializer, VocabSourceSerializer
 )
 from ..utils import export_vocab_entries, export_vocab_source
 
@@ -982,4 +986,467 @@ class VocabSourceImportViewTest(TestCommon):
                 creator_id=self.user.id,
                 name=self.vocab_source_data['vocab_source_data']['name']
             ).exists()
+        )
+
+
+class VocabContextViewSetTest(TestCommon):
+
+    def setUp(self):
+        super(VocabContextViewSetTest, self).setUp()
+        self.vocab_project = VocabProject.objects.create(
+            owner=self.user,
+            name='test project'
+        )
+        self.vocab_source = VocabSource.objects.create(
+            vocab_project=self.vocab_project,
+            creator=self.user,
+            name='test source'
+        )
+        self.vocab_context = VocabContext.objects.create(
+            vocab_source=self.vocab_source,
+            content='This is some content.'
+        )
+
+    def get_context_serializer_data(self, vocab_context):
+        serializer = VocabContextSerializer(
+            vocab_context,
+            context={'request': self.get_dummy_request()}
+        )
+        return json.loads(serializer.json_data())
+
+    def test_view_setup(self):
+        view = VocabContextViewSet()
+        permission_classes = (IsAuthenticated,)
+        self.assertEqual(permission_classes, view.permission_classes)
+        self.assertEqual('pk', view.lookup_field)
+        self.assertEqual('pk', view.lookup_url_kwarg)
+        self.assertEqual(VocabContextSerializer, view.serializer_class)
+        self.assertCountEqual(
+            VocabContext.objects.select_related('vocab_source'),
+            view.queryset
+        )
+
+    def test_inheritance(self):
+        classes = (
+            APIDefaultsMixin,
+            RetrieveModelMixin,
+            UpdateModelMixin,
+            DestroyModelMixin,
+            ListModelMixin,
+            GenericViewSet
+        )
+        for class_name in classes:
+            self.assertTrue(issubclass(VocabContextViewSet, class_name))
+
+    def test_view_detail(self):
+        self.login_test_user(self.user.username)
+        response = self.client.get(
+            reverse(
+                'api:vocab-context-detail',
+                kwargs={'pk': self.vocab_context.id}
+            ),
+        )
+        data = self.get_context_serializer_data(self.vocab_context)
+        self.assertEqual(
+            data,
+            json.loads(response.content)
+        )
+
+    def test_view_list(self):
+        self.login_test_user(self.user.username)
+        vocab_source_2 = VocabSource.objects.create(
+            vocab_project=self.vocab_project,
+            creator=self.user,
+            name='test source 2'
+        )
+        vocab_context_2 = VocabContext.objects.create(
+            vocab_source=vocab_source_2,
+            content='context 2'
+        )
+        data_1 = self.get_context_serializer_data(self.vocab_context)
+        data_2 = self.get_context_serializer_data(vocab_context_2)
+        response = self.client.get(
+            reverse('api:vocab-context-list')
+        )
+        self.assertCountEqual([data_1, data_2], json.loads(response.content))
+
+    def test_view_update(self):
+        self.login_test_user(self.user.username)
+
+        vocab_context_data = {'content': 'some content'}
+        self.assertNotEqual(
+            self.vocab_context.content,
+            vocab_context_data['content']
+        )
+        response = self.client.put(
+            reverse(
+                'api:vocab-context-detail',
+                kwargs={'pk': self.vocab_context.id}
+            ),
+            data=json.dumps(vocab_context_data),
+            content_type='application/json'
+        )
+        self.vocab_context.refresh_from_db()
+        self.assertEqual(response.status_code, drf_status.HTTP_200_OK)
+        self.assertEqual(
+            self.vocab_context.content,
+            vocab_context_data['content']
+        )
+
+    def test_view_delete(self):
+        self.login_test_user(self.user.username)
+        id = self.vocab_context.id
+        self.assertTrue(VocabContext.objects.filter(id=id).exists())
+        self.client.delete(
+            reverse('api:vocab-context-detail', kwargs={'pk': self.vocab_context.id})
+        )
+        self.assertFalse(VocabContext.objects.filter(id=id).exists())
+
+    def test_add_vocab_entry(self):
+        self.login_test_user(self.user.username)
+        vocab_entry = VocabEntry.objects.create(
+            language='es',
+            entry='tergiversar'
+        )
+        vocab_entry_data = {'vocab_entry_id': vocab_entry.id}
+        self.assertFalse(
+            VocabContextEntry.objects.filter(
+                vocab_context_id=self.vocab_context.id,
+                vocab_entry_id=vocab_entry.id
+            ).exists()
+        )
+        self.client.post(
+            reverse(
+                'api:vocab-context-add-vocab-entry',
+                kwargs={'pk': self.vocab_context.id}
+            ),
+            data=vocab_entry_data
+        )
+        self.assertTrue(
+            VocabContextEntry.objects.filter(
+                vocab_context_id=self.vocab_context.id,
+                vocab_entry_id=vocab_entry.id
+            ).exists()
+        )
+
+    def test_add_vocab_entry_tag(self):
+        self.login_test_user(self.user.username)
+        vocab_entry = VocabEntry.objects.create(
+            language='es',
+            entry='tergiversar'
+        )
+        tag = 'tergiversa'
+        data = {
+            'vocab_entry_id': vocab_entry.id,
+            'vocab_entry_tag': tag
+        }
+        VocabContextEntry.objects.create(
+            vocab_context_id=self.vocab_context.id,
+            vocab_entry_id=vocab_entry.id
+        )
+        self.client.post(
+            reverse(
+                'api:vocab-context-add-vocab-entry-tag',
+                kwargs={'pk': self.vocab_context.id}
+            ),
+            data=data
+        )
+        vocab_context_entry = VocabContextEntry.objects.get(
+            vocab_context_id=self.vocab_context.id,
+            vocab_entry_id=vocab_entry.id
+        )
+        tags = vocab_context_entry.get_vocab_entry_tags()
+        self.assertIn(tag, tags)
+
+    def test_remove_vocab_entry(self):
+        self.login_test_user(self.user.username)
+        vocab_entry = VocabEntry.objects.create(
+            language='es',
+            entry='tergiversar'
+        )
+        data = {
+            'vocab_entry_id': vocab_entry.id,
+        }
+        VocabContextEntry.objects.create(
+            vocab_context_id=self.vocab_context.id,
+            vocab_entry_id=vocab_entry.id
+        )
+        self.client.post(
+            reverse(
+                'api:vocab-context-remove-vocab-entry',
+                kwargs={'pk': self.vocab_context.id}
+            ),
+            data=data
+        )
+        self.assertFalse(
+            VocabContextEntry.objects.filter(
+                vocab_context_id=self.vocab_context.id,
+                vocab_entry_id=vocab_entry.id
+            ).exists()
+        )
+
+    def test_remove_vocab_entry_tag(self):
+        self.login_test_user(self.user.username)
+        vocab_entry = VocabEntry.objects.create(
+            language='es',
+            entry='tergiversar'
+        )
+        tag = 'tergiversa'
+        data = {
+            'vocab_entry_id': vocab_entry.id,
+            'vocab_entry_tag': tag
+        }
+        vocab_context_entry = VocabContextEntry.objects.create(
+            vocab_context_id=self.vocab_context.id,
+            vocab_entry_id=vocab_entry.id
+        )
+        vocab_context_entry.add_vocab_entry_tag(tag)
+
+        tags = vocab_context_entry.get_vocab_entry_tags()
+        self.assertIn(tag, tags)
+
+        self.client.post(
+            reverse(
+                'api:vocab-context-remove-vocab-entry-tag',
+                kwargs={'pk': self.vocab_context.id}
+            ),
+            data=data
+        )
+
+        tags = vocab_context_entry.get_vocab_entry_tags()
+        self.assertNotIn(tag, tags)
+
+
+class NestedVocabContextViewSetTest(TestCommon):
+
+    def setUp(self):
+        super(NestedVocabContextViewSetTest, self).setUp()
+        self.vocab_project = VocabProject.objects.create(
+            owner=self.user,
+            name='test project'
+        )
+        self.vocab_source = VocabSource.objects.create(
+            vocab_project=self.vocab_project,
+            creator=self.user,
+            name='test source 1'
+        )
+        self.vocab_source_2 = VocabSource.objects.create(
+            vocab_project=self.vocab_project,
+            creator=self.user,
+            name='test source 2'
+        )
+        self.vocab_context_1 = VocabContext.objects.create(
+            vocab_source=self.vocab_source,
+            content='test content 1'
+        )
+        self.vocab_context_2 = VocabContext.objects.create(
+            vocab_source=self.vocab_source,
+            content='test content 2'
+        )
+        self.vocab_context_3 = VocabContext.objects.create(
+            vocab_source=self.vocab_source_2,
+            content='test content 3'
+        )
+        self.vocab_context_4 = VocabContext.objects.create(
+            vocab_source=self.vocab_source_2,
+            content='test content 4'
+        )
+
+    def get_context_serializer_data(self, vocab_context):
+        serializer = VocabContextSerializer(
+            vocab_context,
+            context={'request': self.get_dummy_request()}
+        )
+        return json.loads(serializer.json_data())
+
+    def test_view_setup(self):
+        view = NestedVocabContextViewSet()
+        permission_classes = (IsAuthenticated,)
+        self.assertEqual(permission_classes, view.permission_classes)
+        self.assertEqual('pk', view.lookup_field)
+        self.assertEqual('pk', view.lookup_url_kwarg)
+        self.assertEqual(VocabContextSerializer, view.serializer_class)
+        self.assertCountEqual(
+            VocabContext.objects.select_related('vocab_source'),
+            view.queryset
+        )
+
+    def test_inheritance(self):
+        classes = (
+            APIDefaultsMixin,
+            BatchMixin,
+            CreateModelMixin,
+            ListModelMixin,
+            GenericViewSet
+        )
+        for class_name in classes:
+            self.assertTrue(
+                issubclass(NestedVocabContextViewSet, class_name)
+            )
+
+    def test_view_create(self):
+        vocab_context_data = {
+            'content': 'test content'
+        }
+        self.assertFalse(
+            VocabContext.objects.filter(
+                vocab_source=self.vocab_source,
+                content=vocab_context_data['content']
+            ).exists()
+        )
+        self.login_test_user(self.user.username)
+        self.client.post(
+            reverse(
+                'api:nested-vocab-context-list',
+                kwargs={'vocab_source_pk': self.vocab_source.id}
+            ),
+            data=vocab_context_data
+        )
+        self.assertTrue(
+            VocabContext.objects.filter(
+                vocab_source=self.vocab_source,
+                content=vocab_context_data['content']
+            ).exists()
+        )
+
+    def test_view_list(self):
+        self.login_test_user(self.user.username)
+
+        # Source 1
+        data_1 = self.get_context_serializer_data(self.vocab_context_1)
+        data_2 = self.get_context_serializer_data(self.vocab_context_2)
+        response = self.client.get(
+            reverse(
+                'api:nested-vocab-context-list',
+                kwargs={'vocab_source_pk': self.vocab_source.id}
+            )
+        )
+        self.assertCountEqual([data_1, data_2], json.loads(response.content))
+
+        # Source 2
+        data_3 = self.get_context_serializer_data(self.vocab_context_3)
+        data_4 = self.get_context_serializer_data(self.vocab_context_4)
+        response = self.client.get(
+            reverse(
+                'api:nested-vocab-context-list',
+                kwargs={'vocab_source_pk': self.vocab_source_2.id}
+            )
+        )
+        self.assertCountEqual([data_3, data_4], json.loads(response.content))
+
+
+class VocabContextEntryViewSetTest(TestCommon):
+
+    def setUp(self):
+        super(VocabContextEntryViewSetTest, self).setUp()
+        self.vocab_project = VocabProject.objects.create(
+            owner=self.user,
+            name='test project'
+        )
+        self.vocab_source = VocabSource.objects.create(
+            vocab_project=self.vocab_project,
+            creator=self.user,
+            name='test source'
+        )
+        self.vocab_context = VocabContext.objects.create(
+            vocab_source=self.vocab_source,
+            content='This is some content.'
+        )
+        self.vocab_entry = VocabEntry.objects.create(
+            language='es',
+            entry='tergiversar'
+        )
+        self.vocab_context_entry = VocabContextEntry.objects.create(
+            vocab_context_id=self.vocab_context.id,
+            vocab_entry_id=self.vocab_entry.id
+        )
+
+    def get_context_entry_serializer_data(self, vocab_context_entry):
+        serializer = VocabContextEntrySerializer(
+            vocab_context_entry,
+            context={'request': self.get_dummy_request()}
+        )
+        return json.loads(serializer.json_data())
+
+    def test_view_setup(self):
+        view = VocabContextEntryViewSet()
+        permission_classes = (IsAuthenticated,)
+        self.assertEqual(permission_classes, view.permission_classes)
+        self.assertEqual('pk', view.lookup_field)
+        self.assertEqual('pk', view.lookup_url_kwarg)
+        self.assertEqual(VocabContextEntrySerializer, view.serializer_class)
+        self.assertCountEqual(
+            VocabContextEntry.objects.select_related('vocab_entry', 'vocab_context').prefetch_related('vocab_entry_tags'),
+            view.queryset
+        )
+
+    def test_inheritance(self):
+        classes = (
+            APIDefaultsMixin,
+            RetrieveModelMixin,
+            DestroyModelMixin,
+            ListModelMixin,
+            GenericViewSet
+        )
+        for class_name in classes:
+            self.assertTrue(
+                issubclass(VocabContextEntryViewSet, class_name)
+            )
+
+    def test_view_detail(self):
+        self.login_test_user(self.user.username)
+        response = self.client.get(
+            reverse(
+                'api:vocab-context-entry-detail',
+                kwargs={'pk': self.vocab_context_entry.id}
+            ),
+        )
+        data = self.get_context_entry_serializer_data(self.vocab_context_entry)
+        self.assertEqual(
+            data,
+            json.loads(response.content)
+        )
+
+    def test_view_delete(self):
+        self.login_test_user(self.user.username)
+        data = {
+            'vocab_entry_id': self.vocab_context_entry.vocab_entry_id,
+            'vocab_context_id': self.vocab_context_entry.vocab_context_id
+        }
+        self.assertTrue(
+            VocabContextEntry.objects.filter(
+                vocab_entry_id=data['vocab_entry_id'],
+                vocab_context_id=data['vocab_context_id']
+            ).exists()
+        )
+        self.client.delete(
+            reverse(
+                'api:vocab-context-entry-detail',
+                kwargs={'pk': self.vocab_context_entry.id}
+            )
+        )
+        self.assertFalse(
+            VocabContextEntry.objects.filter(
+                vocab_entry_id=data['vocab_entry_id'],
+                vocab_context_id=data['vocab_context_id']
+            ).exists()
+        )
+
+
+class NestedVocabContextEntryViewSetTest(TestCommon):
+
+    def setUp(self):
+        super(NestedVocabContextEntryViewSetTest, self).setUp()
+        self.vocab_project = VocabProject.objects.create(
+            owner=self.user,
+            name='test project'
+        )
+        self.vocab_source = VocabSource.objects.create(
+            vocab_project=self.vocab_project,
+            creator=self.user,
+            name='test source'
+        )
+        self.vocab_context = VocabContext.objects.create(
+            vocab_source=self.vocab_source,
+            content='This is some content.'
         )

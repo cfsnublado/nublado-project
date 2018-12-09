@@ -375,3 +375,6 @@ class VocabEntryTag(VocabSourceContentModel):
 
     def get_vocab_source(self):
         return self.vocab_context_entry.vocab_context.vocab_source
+
+    def __str__(self):
+        return self.content

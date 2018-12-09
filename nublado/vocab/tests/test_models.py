@@ -9,7 +9,7 @@ from core.models import (
 from ..managers import VocabEntryManager, VocabProjectManager, VocabSourceManager
 from ..models import (
     CreatorModel, VocabProject, VocabSourceContentModel, VocabEntry,
-    VocabContext, VocabContextEntry, VocabSource
+    VocabContext, VocabContextEntry, VocabEntryTag, VocabSource
 )
 from ..serializers import (
     VocabEntrySerializer, VocabContextEntrySerializer, VocabContextSerializer,
@@ -322,3 +322,39 @@ class VocabSourceTest(TestCommon):
     def test_get_serializer(self):
         serializer = self.vocab_source.get_serializer()
         self.assertEqual(serializer, VocabSourceSerializer)
+
+
+class VocabEntryTagTest(TestCommon):
+
+    def setUp(self):
+        super(VocabEntryTagTest, self).setUp()
+        self.vocab_project = VocabProject.objects.create(
+            owner=self.user,
+            name='test_project'
+        )
+        self.vocab_source = VocabSource.objects.create(
+            vocab_project=self.vocab_project,
+            creator=self.user,
+            name='Some book',
+            description='A good book',
+            source_type=VocabSource.BOOK,
+        )
+        self.vocab_context = VocabContext.objects.create(
+            vocab_source=self.vocab_source,
+            content='hello there'
+        )
+        self.vocab_entry = VocabEntry.objects.create(
+            language='en',
+            entry='tergiversar'
+        )
+        self.vocab_context_entry = VocabContextEntry.objects.create(
+            vocab_entry=self.vocab_entry,
+            vocab_context=self.vocab_context
+        )
+        self.vocab_tag = VocabEntryTag.objects.create(
+            vocab_context_entry=self.vocab_context_entry,
+            content='tergiversa'
+        )
+
+    def test_string_representation(self):
+        self.assertEqual(str(self.vocab_tag), self.vocab_tag.content)

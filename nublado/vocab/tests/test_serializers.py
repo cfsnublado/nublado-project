@@ -7,7 +7,7 @@ from django.urls import reverse
 from django.test import TestCase
 
 from ..models import (
-    VocabEntry, VocabContext, VocabContextEntry,
+    VocabEntry, VocabEntryTag, VocabContext, VocabContextEntry,
     VocabProject, VocabSource
 )
 from ..serializers import (
@@ -434,12 +434,16 @@ class VocabContextEntrySerializerTest(TestCommon):
             content='Hello'
         )
         self.vocab_entry = VocabEntry.objects.create(
-            language='en',
-            entry='hello'
+            language='es',
+            entry='tergiversar'
         )
         self.vocab_context_entry = VocabContextEntry.objects.create(
             vocab_context=self.vocab_context,
             vocab_entry=self.vocab_entry
+        )
+        self.vocab_tag = VocabEntryTag.objects.create(
+            vocab_context_entry=self.vocab_context_entry,
+            content='tergiversa'
         )
         self.request = self.client.get(reverse('api:vocab-source-list')).wsgi_request
         self.serializer = VocabContextEntrySerializer(
@@ -472,7 +476,7 @@ class VocabContextEntrySerializerTest(TestCommon):
                 request=self.request
             ),
             'vocab_context': self.vocab_context.content,
-            'vocab_entry_tags': [],
+            'vocab_entry_tags': [self.vocab_tag.content],
             'date_created': self.vocab_context_entry.date_created.isoformat(),
             'date_updated': self.vocab_context_entry.date_updated.isoformat(),
         }
@@ -500,7 +504,7 @@ class VocabContextEntrySerializerTest(TestCommon):
                 request=self.request
             ),
             'vocab_context': self.vocab_context.content,
-            'vocab_entry_tags': [],
+            'vocab_entry_tags': [self.vocab_tag.content],
             'date_created': self.vocab_context_entry.date_created.isoformat(),
             'date_updated': self.vocab_context_entry.date_updated.isoformat(),
         })

@@ -97,7 +97,7 @@ class FunctionalTest(StaticLiveServerTestCase):
 
     def open_sidebar(self):
         self.get_element_by_id('sidebar-nav-btn').click()
-        self.wait.until(EC.element_to_be_clickable((By.ID, 'sidebar-nav-language-toggle')))
+        self.wait.until(EC.element_to_be_clickable((By.ID, 'sidebar-nav-language-menu')))
 
     def close_sidebar(self):
         self.get_element_by_id('sidebar-nav-btn').click()

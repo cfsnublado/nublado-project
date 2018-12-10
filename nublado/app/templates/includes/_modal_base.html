@@ -15,9 +15,17 @@ init-id="{{ modal_id }}"
 
 <transition name="fade-transition" v-on:after-enter="isOpen = true" v-on:after-leave="isOpen = false">
 
-<div class="modal-backdrop" v-show="isOpen" @click="close">
+<div 
+class="modal-backdrop" 
+v-show="isOpen" 
+@click="close"
+>
 
-<div class="modal" @click.stop>
+<div 
+id="{{ modal_id }}"
+class="modal" 
+@click.stop
+>
 
 {% block modal_content %}
 

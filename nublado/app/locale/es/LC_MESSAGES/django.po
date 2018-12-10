@@ -893,10 +893,8 @@ msgid "label_edit"
 msgstr "Editar"
 
 #: nublado/app/templates/vocab/auth/vocab_context_tag.html:74
-#, fuzzy
-#| msgid "label_login"
 msgid "label_done_editing"
-msgstr "Iniciar sesión"
+msgstr "Edición terminada"
 
 #: nublado/app/templates/vocab/auth/vocab_context_tag.html:107
 msgid "label_vocab_context_entry_tags"

@@ -887,10 +887,8 @@ msgid "label_edit"
 msgstr "Edit"
 
 #: nublado/app/templates/vocab/auth/vocab_context_tag.html:74
-#, fuzzy
-#| msgid "label_details"
 msgid "label_done_editing"
-msgstr "Details"
+msgstr "Done editing"
 
 #: nublado/app/templates/vocab/auth/vocab_context_tag.html:107
 msgid "label_vocab_context_entry_tags"

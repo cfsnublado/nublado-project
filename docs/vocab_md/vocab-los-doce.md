@@ -1,7 +1,8 @@
 ---
-name: Los doce
-description: El segundo libro de la trilogía El pasaje
+source_name: Los doce
+source_description: El segundo libro de la trilogía _El pasaje_
 source_type: 1
+project_name: Spanish Reading
 
 ---
 

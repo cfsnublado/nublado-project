@@ -1,16 +1,21 @@
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support import expected_conditions as EC
+
 from django.contrib.auth import get_user_model
 from django.urls import reverse
 
 from .base import FunctionalTest, page_titles, DEFAULT_PWD, PROJECT_NAME
 from vocab.models import (
-    VocabEntry, VocabContext, VocabProject, VocabSource
+    VocabEntry, VocabContext, VocabContextEntry,
+    VocabProject, VocabSource
 )
 
 User = get_user_model()
 
 page_titles.update({
     'page_vocab_entry_search_title_en': '{0} | {1}'.format('Search vocabulary', PROJECT_NAME),
-    'page_vocab_user_dashboard_title_en': '{0} | {1}'.format('Vocabulary dashboard', PROJECT_NAME)
+    'page_vocab_user_dashboard_title_en': '{0} | {1}'.format('Vocabulary dashboard', PROJECT_NAME),
+    'page_vocab_context_tag_title_en': '{0} | {1}'.format('Edit context', PROJECT_NAME)
 })
 
 
@@ -43,8 +48,6 @@ class VocabEntrySearchTest(TestCommon):
             name='Una prueba'
         )
         self.vocab_entry_es = VocabEntry.objects.create(language='es', entry='comer')
-        context_text_es = 'A ella le gusta comer pizza los domingos.'
-        self.vocab_context_es = VocabContext.objects.create(vocab_source=self.vocab_source, content=context_text_es)
 
     def test_vocab_entry_search(self):
         self.browser.get('{0}{1}'.format(
@@ -80,4 +83,71 @@ class VocabEntryAuthTest(TestCommon):
         self.open_modal(
             trigger_id='sidebar-nav-vocab-entry-create',
             modal_id='create-entry-modal'
+        )
+
+
+class VocabContextAuthTest(TestCommon):
+
+    def setUp(self):
+        super(VocabContextAuthTest, self).setUp()
+        self.vocab_source = VocabSource.objects.create(
+            vocab_project=self.project,
+            creator=self.user,
+            source_type=VocabSource.CREATED,
+            name='Una prueba'
+        )
+        self.vocab_context = VocabContext.objects.create(
+            vocab_source=self.vocab_source,
+            content='Algo de contenido'
+        )
+        self.vocab_entry = VocabEntry.objects.create(
+            language='es',
+            entry='contenido'
+        )
+
+    def get_tag_xpath(self, tagbox_id=None, tag=None, close=False):
+        if tagbox_id and tag:
+            if not close:
+                xpath = "//a[contains(., '{0}') and ancestor::div[@id='{1}']]".format(
+                    tag,
+                    tagbox_id
+                )
+            else:
+                # Get tag's close button xpath.
+                xpath = "//a[@class='delete-tag' and preceding-sibling::a[contains(., '{0}')] and ancestor::div[@id='{1}']]".format(
+                    tag,
+                    tagbox_id
+                )
+            return xpath
+
+    def test_tag_context(self):
+        vocab_entry_tagbox_id = "vocab-entry-tags"
+
+        self.browser.get('{0}{1}'.format(
+            self.live_server_url,
+            reverse(
+                'vocab:vocab_context_tag',
+                kwargs={'vocab_context_pk': self.vocab_context.id}
+            )
+        ))
+        self.login_user(self.user.username)
+        self.page_load(page_titles['page_vocab_context_tag_title_en'])
+        self.assertFalse(
+            VocabContextEntry.objects.filter(
+                vocab_context_id=self.vocab_context.id,
+                vocab_entry_id=self.vocab_entry.id
+            ).exists()
+        )
+        link = self.search_autocomplete_by_language(
+            self.vocab_entry.language,
+            self.vocab_entry.entry
+        )
+        link.click()
+        vocab_entry_xp = self.get_tag_xpath(tagbox_id=vocab_entry_tagbox_id, tag=self.vocab_entry.entry)
+        self.wait.until(EC.element_to_be_clickable((By.XPATH, vocab_entry_xp)))
+        self.assertTrue(
+            VocabContextEntry.objects.filter(
+                vocab_context_id=self.vocab_context.id,
+                vocab_entry_id=self.vocab_entry.id
+            ).exists()
         )

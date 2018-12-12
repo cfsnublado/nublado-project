@@ -155,8 +155,8 @@ class VocabContextAuthTest(TestCommon):
         # Context entry doesn't exist yet.
         self.assertFalse(
             VocabContextEntry.objects.filter(
-                vocab_context_id=self.vocab_context.id,
-                vocab_entry_id=self.vocab_entry.id
+                vocab_context_id=self.vocab_context,
+                vocab_entry_id=self.vocab_entry
             ).exists()
         )
 
@@ -167,17 +167,19 @@ class VocabContextAuthTest(TestCommon):
         )
         link.click()
 
-        # Load tag in vocab entry tagbox and select it. Vocab entry instance tagbox appears.
+        # Load tag in vocab entry tagbox and select it.
         vocab_entry_xp = self.get_tag_xpath(tagbox_id=vocab_entry_tagbox_id, tag=self.vocab_entry.entry)
         self.wait.until(EC.element_to_be_clickable((By.XPATH, vocab_entry_xp)))
         self.get_element_by_xpath(vocab_entry_xp).click()
+
+        # Vocab entry instance tagbox appears.
         self.wait.until(EC.element_to_be_clickable((By.ID, vocab_entry_instance_tagbox_id)))
 
         # Context entry now exists.
         self.assertTrue(
             VocabContextEntry.objects.filter(
-                vocab_context_id=self.vocab_context.id,
-                vocab_entry_id=self.vocab_entry.id
+                vocab_context_id=self.vocab_context,
+                vocab_entry_id=self.vocab_entry
             ).exists()
         )
         vocab_context_entry = VocabContextEntry.objects.get(
@@ -199,7 +201,42 @@ class VocabContextAuthTest(TestCommon):
         self.wait.until(EC.element_to_be_clickable((By.XPATH, vocab_entry_instance_xp)))
         vocab_entry_instance_tag = self.get_element_by_xpath(vocab_entry_instance_xp)
 
+        # Vocab entry tags have been saved to VocabContextEntry object.
+        self.assertEqual(list(vocab_context_entry.get_vocab_entry_tags()), [self.vocab_entry.entry])
+
         # Vocab entry instance is highlighted in text.
         vocab_entry_highlight_xp = self.get_highlight_xpath(tag=self.vocab_entry.entry)
         vocab_entry_highlighted = self.get_elements_by_xpath(vocab_entry_highlight_xp)
         self.assertEqual(len(vocab_entry_highlighted), 2)
+
+        # Delete vocab instance tag.
+        self.tag_hover(tag_element=vocab_entry_instance_tag)
+        vocab_entry_instance_close_xp = self.get_tag_xpath(
+            tagbox_id=vocab_entry_instance_container_id,
+            tag=self.vocab_entry.entry,
+            close=True
+        )
+        self.wait.until(EC.element_to_be_clickable((By.XPATH, vocab_entry_instance_close_xp)))
+        self.get_element_by_xpath(vocab_entry_instance_close_xp).click()
+        self.wait.until(EC.invisibility_of_element_located((By.XPATH, vocab_entry_instance_xp)))
+        self.assertEqual(list(vocab_context_entry.get_vocab_entry_tags()), [])
+
+        # Delete vocab entry tag
+        vocab_entry_tag = self.get_element_by_xpath(vocab_entry_xp)
+        self.tag_hover(vocab_entry_tag)
+        vocab_entry_close_xp = self.get_tag_xpath(
+            tagbox_id=vocab_entry_tagbox_id,
+            tag=self.vocab_entry.entry,
+            close=True
+        )
+        self.wait.until(EC.element_to_be_clickable((By.XPATH, vocab_entry_close_xp)))
+        self.get_element_by_xpath(vocab_entry_close_xp).click()
+        self.wait.until(EC.invisibility_of_element_located((By.XPATH, vocab_entry_xp)))
+
+        # Context entry no longer exists.
+        self.assertFalse(
+            VocabContextEntry.objects.filter(
+                vocab_context_id=self.vocab_context,
+                vocab_entry_id=self.vocab_entry
+            ).exists()
+        )

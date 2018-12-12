@@ -630,4 +630,28 @@ project_name: English Reading
 
     </div>
 
+- **Fundamental Attribution Error**
+
+    The fundamental attribution error is a cognitive bias in which we ascribe other people's actions to internal factors such as personality while rationalizing our own actions as being the result of external factors beyond our control.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: ascribe: ascribe
+
+    en: fundamental attribution error: fundamental attribution error
+
+    en: rationalize: rationalizing
+
+    </div>
+
+- Viewed from the outside, you can make anything strange look sinister and ascribe internal motivations to people. Knowing the circumstances is often enough to shed light on their behavior.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: ascribe: ascribe
+
+    en: shed light on something: shed light on their behavior
+
+    </div>
+
 - 

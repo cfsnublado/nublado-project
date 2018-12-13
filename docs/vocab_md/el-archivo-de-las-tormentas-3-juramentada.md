@@ -140,4 +140,36 @@ project_name: Spanish Reading
 
     </div>
 
+- Sobre él se alzaba la gigantesca ciudad-torre de Urithiru, una estructura de inconcebible altura construida contra las montañas. Estaba compuesta de una secuencia de diez capas con forma de anillo, cada una de las cuales contenía dieciocho niveles, y rematada con acueductos, ventanales y terrazas como a la que acababan de llegar.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: gigantesco: gigantesca
+
+    es: inconcebible: inconcebible
+
+    es: rematado: rematada
+
+    es: acueducto: acueductos
+
+    </div>
+
+- Los hombres del puente se acercaron para mirar fuera de la terraza. Entre ellos estaba el herdaziano, que volvía a tener dos brazos después de hacer crecer el que le faltaba con luz tormentosa. Los hombres de Kaladin habían empezado a manifestar poderes de Corredores del Viento, aunque por lo visto eran solo «escuderos». Según Navani, eran una especie de aprendices de Radiante que en sus tiempos fueron muy comunes, hombres y mujeres cuyas capacidades se derivaban de las de su maestro, un Radiante completo.
+
+    Los hombres del Puente Cuatro no habían vinculado sus propios spren y, aunque habían empezado a mostrar poderes, sus capacidades habían desaparecido cuando Kaladin partió volando hacia Alezkar para avisar a su familia de la tormenta eterna.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: escudero: escuderos
+
+    es: aprendiz: aprendices
+
+    es: cuyo: cuyas
+
+    es: vincular: habían vinculado
+
+    es: desaparecer: habían desaparecido
+
+    </div>
+
 - 

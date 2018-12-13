@@ -31,9 +31,39 @@ class TestUserstampForm(BaseModelForm):
 
 class ObjectSessionMixinTest(TestCase):
 
-    class ObjectSessionSetView(ObjectSessionMixin, View):
-        session_obj = TestModel
+    class ObjectSessionView(ObjectSessionMixin, View):
+        session_obj = 'test_model'
         session_obj_attrs = ['name']
+
+    def setUp(self):
+        self.request_factory = RequestFactory()
+        self.user = User.objects.create_user(
+            username='foo7',
+            first_name='Foo',
+            last_name='Foo',
+            email='foo7@foo.com',
+            password='Coffee?69c'
+        )
+        self.test_model = TestModel.objects.create(name='hello')
+        self.request_factory = RequestFactory()
+
+    def add_session_to_request(self, request):
+        middleware = SessionMiddleware()
+        middleware.process_request(request)
+        request.session.save()
+
+    def test_view_set_session_obj(self):
+        request = self.request_factory.get('/fake-path')
+        request.user = self.user
+        view = setup_test_view(self.ObjectSessionView(), request)
+        view.test_model = self.test_model
+        self.add_session_to_request(request)
+        view.dispatch(view.request, *view.args, **view.kwargs)
+        self.assertIn('session_obj', request.session)
+        self.assertEqual(
+            request.session['session_obj'],
+            {view.session_obj: {'name': self.test_model.name}}
+        )
 
 
 class AutocompleteMixinTest(TestCase):

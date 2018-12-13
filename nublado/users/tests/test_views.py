@@ -1,6 +1,7 @@
 import json
 
 from django.contrib.auth import get_user_model
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.tokens import default_token_generator
 from django.core import mail
 from django.urls import resolve, reverse
@@ -8,7 +9,12 @@ from django.test import TestCase
 from django.utils.encoding import force_bytes
 from django.utils.http import urlsafe_base64_encode
 from django.utils.translation import ugettext_lazy as _
+from django.views.generic import UpdateView
 
+from core.views import (
+    AjaxMultiFormMixin, CachedObjectMixin, ObjectSessionMixin,
+    UserRequiredMixin
+)
 from ..conf import settings
 from ..forms import (
     ProfileUpdateMultiForm,
@@ -131,6 +137,18 @@ class UserPasswordResetViewTest(TestCommon):
             'password1': self.changed_pwd,
             'password2': self.changed_pwd
         }
+
+    def test_inheritance(self):
+        classes = (
+            LoginRequiredMixin,
+            UserRequiredMixin,
+            CachedObjectMixin,
+            AjaxMultiFormMixin,
+            ObjectSessionMixin,
+            UpdateView
+        )
+        for class_name in classes:
+            self.assertTrue(issubclass(UserPasswordResetView, class_name))
 
     def test_correct_view_used(self):
         self.login_test_user(self.user.username)
@@ -351,6 +369,18 @@ class ProfileUpdateViewTest(TestCommon):
             password=self.user_data['password1'],
         )
         self.profile = self.user.profile
+
+    def test_inheritance(self):
+        classes = (
+            LoginRequiredMixin,
+            UserRequiredMixin,
+            CachedObjectMixin,
+            AjaxMultiFormMixin,
+            ObjectSessionMixin,
+            UpdateView
+        )
+        for class_name in classes:
+            self.assertTrue(issubclass(ProfileUpdateView, class_name))
 
     def test_view_redirects_to_login_for_unathenticated_user(self):
         # non authenticated user

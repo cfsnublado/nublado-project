@@ -4,6 +4,7 @@ from django.views.generic import TemplateView
 from django.urls import resolve, reverse
 
 from core.utils import FuzzyInt
+from core.views import ObjectSessionMixin
 from ..models import (
     VocabContext, VocabContextEntry, VocabEntry,
     VocabProject, VocabSource
@@ -11,7 +12,7 @@ from ..models import (
 from ..views.views_vocab_entry import (
     VocabEntrySearchView
 )
-from ..views.views_mixins import VocabEntrySearchMixin, VocabSessionMixin
+from ..views.views_mixins import VocabEntrySearchMixin
 
 User = get_user_model()
 
@@ -52,7 +53,7 @@ class VocabEntrySearchViewTest(TestCommon):
     def test_inheritance(self):
         classes = (
             VocabEntrySearchMixin,
-            VocabSessionMixin,
+            ObjectSessionMixin,
             TemplateView,
         )
         for class_name in classes:

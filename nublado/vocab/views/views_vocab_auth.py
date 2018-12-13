@@ -2,7 +2,7 @@ from django.apps import apps
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import TemplateView
 
-from .views_mixins import VocabSessionMixin
+from core.views import ObjectSessionMixin
 from ..models import VocabProject
 
 APP_NAME = apps.get_app_config('vocab').name
@@ -10,7 +10,7 @@ APP_NAME = apps.get_app_config('vocab').name
 
 class VocabUserDashboardView(
     LoginRequiredMixin,
-    VocabSessionMixin, TemplateView
+    ObjectSessionMixin, TemplateView
 ):
     template_name = '{0}/auth/vocab_user_dashboard.html'.format(APP_NAME)
 

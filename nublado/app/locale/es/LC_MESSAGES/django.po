@@ -894,7 +894,7 @@ msgstr "Editar"
 
 #: nublado/app/templates/vocab/auth/vocab_context_tag.html:74
 msgid "label_done_editing"
-msgstr "Edición terminada"
+msgstr "Terminar edición"
 
 #: nublado/app/templates/vocab/auth/vocab_context_tag.html:107
 msgid "label_vocab_context_entry_tags"

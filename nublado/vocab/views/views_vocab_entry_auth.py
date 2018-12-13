@@ -8,15 +8,15 @@ from django.views.generic import (
 
 from core.views import (
     AjaxDeleteMixin, AjaxFormMixin,
-    JsonAttachmentMixin, MessageMixin, UserstampMixin
+    JsonAttachmentMixin, MessageMixin, ObjectSessionMixin,
+    UserstampMixin
 )
 from ..conf import settings
 from ..forms import VocabEntryCreateForm, VocabEntryUpdateForm
 from ..models import VocabContextEntry, VocabEntry
 from ..utils import export_vocab_entries
 from .views_mixins import (
-    VocabEntryMixin, VocabEntrySearchMixin,
-    VocabSessionMixin
+    VocabEntryMixin, VocabEntrySearchMixin
 )
 
 APP_NAME = apps.get_app_config('vocab').name
@@ -51,8 +51,8 @@ class VocabEntryDashboardView(
 
 
 class VocabEntriesView(
-    LoginRequiredMixin, VocabSessionMixin,
-    VocabEntrySearchMixin, ListView
+    LoginRequiredMixin, VocabEntrySearchMixin,
+    ObjectSessionMixin, ListView
 ):
     model = VocabEntry
     context_object_name = 'vocab_entries'

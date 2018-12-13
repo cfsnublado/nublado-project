@@ -14,8 +14,9 @@ from coretest.models import TestModel, TestUserstampModel
 from ..forms import BaseModelForm
 from ..utils import setup_test_view
 from ..views import (
-    AttachmentMixin, AutocompleteMixin, SuperuserRequiredMixin,
-    UserMixin, UserRequiredMixin, UserstampMixin
+    AttachmentMixin, AutocompleteMixin, ObjectSessionMixin,
+    SuperuserRequiredMixin, UserMixin, UserRequiredMixin,
+    UserstampMixin
 )
 
 User = get_user_model()
@@ -26,6 +27,13 @@ class TestUserstampForm(BaseModelForm):
     class Meta:
         model = TestUserstampModel
         fields = ['name']
+
+
+class ObjectSessionMixinTest(TestCase):
+
+    class ObjectSessionSetView(ObjectSessionMixin, View):
+        session_obj = TestModel
+        session_obj_attrs = ['name']
 
 
 class AutocompleteMixinTest(TestCase):
@@ -158,7 +166,7 @@ class UserstampMixinTest(TestCase):
         form_class = TestUserstampForm
         template_name = 'fake_template.html'
 
-    class UserstampUpdateView(UserstampMixin, UpdateView):
+    class UserstampView(UserstampMixin, UpdateView):
         model = TestUserstampModel
         form_class = TestUserstampForm
         template_name = 'fake_template.html'

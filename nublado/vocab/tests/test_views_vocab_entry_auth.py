@@ -12,7 +12,7 @@ from django.views.generic import (
 
 from core.views import (
     AjaxDeleteMixin, AjaxFormMixin, MessageMixin,
-    UserstampMixin
+    ObjectSessionMixin, UserstampMixin
 )
 from ..conf import settings
 from ..forms import VocabEntryCreateForm, VocabEntryUpdateForm
@@ -21,7 +21,7 @@ from ..models import (
     VocabProject, VocabSource
 )
 from ..views.views_mixins import (
-    VocabEntryMixin, VocabEntrySearchMixin, VocabSessionMixin
+    VocabEntryMixin, VocabEntrySearchMixin
 )
 from ..views.views_vocab_entry_auth import (
     VocabEntryContextsView, VocabEntryCreateView, VocabEntriesView,
@@ -139,7 +139,7 @@ class VocabEntriesViewTest(TestCommon):
     def test_inheritance(self):
         classes = (
             LoginRequiredMixin,
-            VocabSessionMixin,
+            ObjectSessionMixin,
             VocabEntrySearchMixin,
             ListView
         )

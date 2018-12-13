@@ -1,14 +1,15 @@
 from django.apps import apps
 from django.views.generic import TemplateView
 
+from core.views import ObjectSessionMixin
 from ..models import VocabContextEntry
-from .views_mixins import VocabEntrySearchMixin, VocabSessionMixin
+from .views_mixins import VocabEntrySearchMixin
 
 APP_NAME = apps.get_app_config('vocab').name
 
 
 class VocabEntrySearchView(
-    VocabEntrySearchMixin, VocabSessionMixin, TemplateView
+    VocabEntrySearchMixin, ObjectSessionMixin, TemplateView
 ):
     search_term = None
     search_language = None

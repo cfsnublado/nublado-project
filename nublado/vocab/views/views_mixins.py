@@ -7,13 +7,6 @@ from ..conf import settings
 from ..models import VocabEntry, VocabProject, VocabSource
 
 
-class VocabSessionMixin(ObjectSessionMixin):
-
-    def setupSession(self, request, *args, **kwargs):
-        if 'session_obj' in request.session:
-            del request.session['session_obj']
-
-
 class PermissionMixin(object):
 
     def dispatch(self, request, *args, **kwargs):

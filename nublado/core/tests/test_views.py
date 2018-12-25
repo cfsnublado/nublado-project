@@ -32,8 +32,7 @@ class TestUserstampForm(BaseModelForm):
 class ObjectSessionMixinTest(TestCase):
 
     class ObjectSessionView(ObjectSessionMixin, View):
-        session_obj = 'test_model'
-        session_obj_attrs = ['name']
+        pass
 
     def setUp(self):
         self.request_factory = RequestFactory()
@@ -45,6 +44,7 @@ class ObjectSessionMixinTest(TestCase):
             password='Coffee?69c'
         )
         self.test_model = TestModel.objects.create(name='hello')
+        self.test_model_2 = TestModel.objects.create(name='goodbye')
         self.request_factory = RequestFactory()
 
     def add_session_to_request(self, request):
@@ -55,15 +55,37 @@ class ObjectSessionMixinTest(TestCase):
     def test_view_set_session_obj(self):
         request = self.request_factory.get('/fake-path')
         request.user = self.user
+        self.add_session_to_request(request)
+
+        # Session object is self.test_model
         view = setup_test_view(self.ObjectSessionView(), request)
         view.test_model = self.test_model
-        self.add_session_to_request(request)
+        view.session_obj = 'test_model'
+        view.session_obj_attrs = ['name']
         view.dispatch(view.request, *view.args, **view.kwargs)
         self.assertIn('session_obj', request.session)
         self.assertEqual(
             request.session['session_obj'],
             {view.session_obj: {'name': self.test_model.name}}
         )
+
+        # Session object is self.test_model_2
+        view = setup_test_view(self.ObjectSessionView(), request)
+        view.test_model = self.test_model_2
+        view.session_obj = 'test_model'
+        view.session_obj_attrs = ['name']
+        view.dispatch(view.request, *view.args, **view.kwargs)
+        self.assertIn('session_obj', request.session)
+        self.assertEqual(
+            request.session['session_obj'],
+            {view.session_obj: {'name': self.test_model_2.name}}
+        )
+
+        # Session object is None, and request.session['session_obj'] is deleted.
+        view = setup_test_view(self.ObjectSessionView(), request)
+        view.test_model = self.test_model_2
+        view.dispatch(view.request, *view.args, **view.kwargs)
+        self.assertNotIn('session_obj', request.session)
 
 
 class AutocompleteMixinTest(TestCase):

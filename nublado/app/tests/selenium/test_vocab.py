@@ -14,9 +14,11 @@ from vocab.models import (
 User = get_user_model()
 
 page_titles.update({
-    'page_vocab_entry_search_title_en': '{0} | {1}'.format('Search vocabulary', PROJECT_NAME),
-    'page_vocab_user_dashboard_title_en': '{0} | {1}'.format('Vocabulary dashboard', PROJECT_NAME),
-    'page_vocab_context_tag_title_en': '{0} | {1}'.format('Edit context', PROJECT_NAME)
+    'vocab_entry_search_en': '{0} | {1}'.format('Search vocabulary', PROJECT_NAME),
+    'vocab_user_dashboard_en': '{0} | {1}'.format('Vocabulary dashboard', PROJECT_NAME),
+    'vocab_context_tag_en': '{0} | {1}'.format('Edit context', PROJECT_NAME),
+    'vocab_entries_en': '{0} | {1}'.format('Vocabulary', PROJECT_NAME),
+    'vocab_entry_update_en': '{0} | {1}'.format('Edit entry', PROJECT_NAME)
 })
 
 
@@ -42,24 +44,21 @@ class VocabEntrySearchTest(TestCommon):
 
     def setUp(self):
         super(VocabEntrySearchTest, self).setUp()
-        self.vocab_source = VocabSource.objects.create(
-            vocab_project=self.project,
-            creator=self.user,
-            source_type=VocabSource.CREATED,
-            name='Una prueba'
+        self.vocab_entry_es = VocabEntry.objects.create(
+            language='es',
+            entry='comer'
         )
-        self.vocab_entry_es = VocabEntry.objects.create(language='es', entry='comer')
 
     def test_vocab_entry_search(self):
         self.browser.get('{0}{1}'.format(
             self.live_server_url,
             reverse('vocab:vocab_entry_search'))
         )
-        self.page_load(page_titles['page_vocab_entry_search_title_en'])
+        self.load_page(page_titles['vocab_entry_search_en'])
         search_language = 'es'
         link = self.search_autocomplete_by_language(search_language, self.vocab_entry_es.entry)
         link.click()
-        self.page_load(page_titles['page_vocab_entry_search_title_en'])
+        self.load_page(page_titles['vocab_entry_search_en'])
         url = '{0}{1}?search_entry={2}&search_language={3}'.format(
             self.live_server_url,
             reverse('vocab:vocab_entry_search'),
@@ -73,18 +72,130 @@ class VocabEntrySearchTest(TestCommon):
 
 class VocabEntryAuthTest(TestCommon):
 
+    def setUp(self):
+        super(VocabEntryAuthTest, self).setUp()
+        self.vocab_entry_es = VocabEntry.objects.create(
+            language='es',
+            entry='tergiversar'
+        )
+
     def test_create_entry(self):
         self.browser.get('{0}{1}'.format(
             self.live_server_url,
             reverse('vocab:vocab_user_dashboard'))
         )
         self.login_user(self.user.username)
-        self.page_load(page_titles['page_vocab_user_dashboard_title_en'])
+        self.load_page(page_titles['vocab_user_dashboard_en'])
         self.open_sidebar()
         self.open_modal(
             trigger_id='sidebar-nav-vocab-entry-create',
             modal_id='create-entry-modal'
         )
+
+    def test_entries(self):
+        self.browser.get('{0}{1}'.format(
+            self.live_server_url,
+            reverse('vocab:vocab_entries'))
+        )
+        self.login_user(self.user.username)
+        self.load_page(page_titles['vocab_entries_en'])
+        search_language = 'es'
+        self.search_autocomplete_by_language(search_language, self.vocab_entry_es.entry)
+
+    def test_delete_entry(self):
+        self.user.is_superuser = True
+        self.user.save()
+
+        entry_id = self.vocab_entry_es.id
+
+        self.assertTrue(VocabEntry.objects.filter(id=entry_id).exists())
+
+        self.browser.get(
+            '{0}{1}'.format(
+                self.live_server_url,
+                reverse(
+                    'vocab:vocab_entry_update',
+                    kwargs={
+                        'vocab_entry_language': self.vocab_entry_es.language,
+                        'vocab_entry_slug': self.vocab_entry_es.slug
+                    }
+                )
+            )
+        )
+        self.login_user(self.user.username)
+        self.load_page(page_titles['vocab_entry_update_en'])
+        self.open_modal(
+            trigger_id='vocab-entry-delete-trigger',
+            modal_id='delete-entry-modal'
+        )
+        self.get_element_by_id('vocab-entry-delete-ok').click()
+        self.load_page(page_titles['vocab_entries_en'])
+
+        self.assertFalse(VocabEntry.objects.filter(id=entry_id).exists())
+
+
+# class VocabEntryAuthTest(TestCommon):
+
+#     def setUp(self):
+#         super(VocabEntryAuthTest, self).setUp()
+#         self.vocab_entry_es = VocabEntry.objects.create(
+#             language='es',
+#             entry='tergiversar'
+#         )
+
+#     def test_create_entry(self):
+#         self.browser.get('{0}{1}'.format(
+#             self.live_server_url,
+#             reverse('vocab:vocab_user_dashboard'))
+#         )
+#         self.login_user(self.user.username)
+#         self.load_page(page_titles['vocab_user_dashboard_en'])
+#         self.open_sidebar()
+#         self.open_modal(
+#             trigger_id='sidebar-nav-vocab-entry-create',
+#             modal_id='create-entry-modal'
+#         )
+
+#     def test_entries(self):
+#         self.browser.get('{0}{1}'.format(
+#             self.live_server_url,
+#             reverse('vocab:vocab_entries'))
+#         )
+#         self.login_user(self.user.username)
+#         self.load_page(page_titles['vocab_entries_en'])
+#         search_language = 'es'
+#         self.search_autocomplete_by_language(search_language, self.vocab_entry_es.entry)
+
+#     def test_delete_entry(self):
+#         self.user.is_superuser = True
+#         self.user.save()
+
+#         entry_id = self.vocab_entry_es.id
+
+#         self.assertTrue(VocabEntry.objects.filter(id=entry_id).exists())
+
+#         self.browser.get(
+#             '{0}{1}'.format(
+#                 self.live_server_url,
+#                 reverse(
+#                     'vocab:vocab_entry_update',
+#                     kwargs={
+#                         'vocab_entry_language': self.vocab_entry_es.language,
+#                         'vocab_entry_slug': self.vocab_entry_es.slug
+#                     }
+#                 )
+#             )
+#         )
+#         self.login_user(self.user.username)
+#         self.load_page(page_titles['vocab_entry_update_en'])
+#         self.open_modal(
+#             trigger_id='vocab-entry-delete-trigger',
+#             modal_id='delete-entry-modal'
+#         )
+#         self.get_element_by_id('vocab-entry-delete-ok').click()
+#         self.load_page(page_titles['vocab_entries_en'])
+
+#         self.assertFalse(VocabEntry.objects.filter(id=entry_id).exists())
 
 
 class VocabContextAuthTest(TestCommon):
@@ -150,7 +261,7 @@ class VocabContextAuthTest(TestCommon):
             )
         ))
         self.login_user(self.user.username)
-        self.page_load(page_titles['page_vocab_context_tag_title_en'])
+        self.load_page(page_titles['vocab_context_tag_en'])
 
         # Context entry doesn't exist yet.
         self.assertFalse(

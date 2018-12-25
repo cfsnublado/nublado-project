@@ -10,7 +10,7 @@ from .views.views_vocab_entry import (
 )
 from .views.views_vocab_entry_auth import (
     VocabEntriesView, VocabEntryContextsView,
-    VocabEntryCreateView, VocabEntryDeleteView, VocabEntriesExportJsonView,
+    VocabEntryCreateView, VocabEntryDeleteView,
     VocabEntryDashboardView,
     VocabEntryUpdateView
 )
@@ -95,7 +95,6 @@ urlpatterns = [
         VocabSourceCreateView.as_view(),
         name='vocab_source_create'
     ),
-    path('entries/export/', VocabEntriesExportJsonView.as_view(), name='vocab_entries_export_json'),
     path('entries/', VocabEntriesView.as_view(), name='vocab_entries'),
     re_path(
         '^entry/(?P<vocab_entry_language>[a-z]{2})/(?P<vocab_entry_slug>[-\w]+)/$',

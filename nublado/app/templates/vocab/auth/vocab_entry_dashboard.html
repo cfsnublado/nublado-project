@@ -50,6 +50,28 @@
 {{ vocab_entry.description|to_html|safe }}
 </div>
 
+{% url 'api:oxford_entry' as oxford_url %}
+
+<oxford-api
+init-endpoint-url="{{ oxford_url }}"
+init-entry="{{ vocab_entry.entry }}"
+inline-template
+>
+
+<div>
+<a 
+href="#"
+class="ui button"
+@click.prevent="searchApi"
+
+>
+Test API
+</a>
+
+</div>
+
+</oxford-api>
+
 </div>
 </div>
 

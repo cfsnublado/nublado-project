@@ -66,7 +66,7 @@
 </button>
 
 <ajax-delete
-confirmation-id="delete-entry"
+confirmation-id="delete-entry-modal"
 delete-url="{% url 'vocab:vocab_entry_delete' vocab_entry.id %}"
 redirect-url="{% url 'vocab:vocab_entries' %}"
 inline-template
@@ -93,6 +93,6 @@ class="ui red button"
 
 {{ block.super }}
 
-{% include "vocab/includes/_vocab_entry_delete_modal.html" with modal_id='delete-entry' modal_name='confirmation-modal' %} 
+{% include "vocab/includes/_vocab_entry_delete_modal.html" with modal_id='delete-entry-modal' modal_name='confirmation-modal' %} 
 
 {% endblock modal_content %}

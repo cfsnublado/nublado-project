@@ -5,12 +5,13 @@ from django.contrib.auth import get_user_model
 
 from .conf import settings
 from .models import (
-    VocabEntry, VocabContextEntry,
+    VocabContextEntry, VocabDefinition, VocabEntry,
     VocabProject, VocabSource
 )
 from .serializers import (
-    VocabEntrySerializer, VocabContextSerializer,
-    VocabProjectSerializer, VocabSourceSerializer
+    VocabDefinitionSerializer, VocabEntrySerializer,
+    VocabContextSerializer, VocabProjectSerializer,
+    VocabSourceSerializer
 )
 
 User = get_user_model()
@@ -22,17 +23,33 @@ def export_vocab_entries(request, language=None):
     '''
     vocab_data = {}
     qs = VocabEntry.objects
+
     if language and language in settings.LANGUAGES_DICT:
         qs = qs.filter(language=language)
-    vocab_data.update({'vocab_entries': {}})
-    for vocab_entry_index, vocab_entry in enumerate(qs.all(), start=1):
+
+    vocab_data['vocab_entries'] = []
+
+    for vocab_entry in qs.all():
+        vocab_entry_dict = {}
         vocab_entry_serializer = VocabEntrySerializer(
             vocab_entry,
             context={'request': request},
         )
-        vocab_data['vocab_entries'][vocab_entry_index] = {
-            'vocab_entry_data': vocab_entry_serializer.get_minimal_data()
-        }
+        vocab_entry_dict['vocab_entry_data'] = vocab_entry_serializer.get_minimal_data()
+
+        if vocab_entry.vocab_definitions.count():
+            vocab_entry_dict['vocab_definitions'] = []
+            for vocab_definition in vocab_entry.vocab_definitions.all():
+                vocab_definition_dict = {}
+                vocab_definition_serializer = VocabDefinitionSerializer(
+                    vocab_definition,
+                    context={'request': request}
+                )
+                vocab_definition_dict['vocab_definition_data'] = vocab_definition_serializer.get_minimal_data()
+                vocab_entry_dict['vocab_definitions'].append(vocab_definition_dict)
+
+        vocab_data['vocab_entries'].append(vocab_entry_dict)
+
     return json.loads(json.dumps(vocab_data))
 
 
@@ -54,6 +71,7 @@ def export_vocab_source(request, vocab_source):
             'vocab_source_data': vocab_source_serializer.get_minimal_data(),
             'vocab_contexts': {},
         }
+
         for vocab_context_index, vocab_context in enumerate(vocab_source.vocab_contexts.all(), start=1):
             vocab_context_serializer = VocabContextSerializer(
                 vocab_context,
@@ -63,6 +81,7 @@ def export_vocab_source(request, vocab_source):
                 'vocab_context_data': vocab_context_serializer.get_minimal_data(),
                 'vocab_entries': []
             }
+
             for vocab_context_entry in vocab_context.vocabcontextentry_set.all():
                 vocab_entry = vocab_context_entry.vocab_entry
                 vocab_entry_serializer = VocabEntrySerializer(
@@ -75,7 +94,9 @@ def export_vocab_source(request, vocab_source):
                         'vocab_entry_tags': vocab_context_entry.get_vocab_entry_tags()
                     }
                 )
+
             vocab_data['vocab_contexts'][vocab_context_index] = vocab_context_dict
+
         return json.loads(json.dumps(vocab_data))
 
 
@@ -84,8 +105,10 @@ def import_vocab_entries(data):
     Deserialzes data from vocab entries backup. (See export_vocab_entries)
     '''
     validate_vocab_entries_json_schema(data)
-    for vocab_entry_k, vocab_entry_v in data['vocab_entries'].items():
-        vocab_entry_data = vocab_entry_v['vocab_entry_data']
+
+    for vocab_entry in data['vocab_entries']:
+        vocab_entry_data = vocab_entry['vocab_entry_data']
+
         if not VocabEntry.objects.filter(
             entry=vocab_entry_data['entry'],
             language=vocab_entry_data['language']
@@ -93,6 +116,10 @@ def import_vocab_entries(data):
             VocabEntry.objects.create(
                 **vocab_entry_data
             )
+            if 'vocab_definitions' in vocab_entry:
+                for vocab_definition in vocab_entry['vocab_definitions']:
+                    vocab_definition_data = vocab_definition['vocab_definition_data']
+                    VocabDefinition.objects.create(**vocab_definition_data)
 
 
 def import_vocab_source(data, creator):
@@ -100,6 +127,7 @@ def import_vocab_source(data, creator):
     data: Serialized json data from vocab source backup.
     '''
     validate_vocab_source_json_schema(data)
+
     creator_id = creator.id
     vocab_contexts_dict = data['vocab_contexts']
     VocabSource.objects.filter(
@@ -112,6 +140,7 @@ def import_vocab_source(data, creator):
         data=vocab_source_data
     )
     vocab_source_serializer.is_valid(raise_exception=True)
+
     try:
         vocab_project = VocabProject.objects.get(
             name=vocab_project_data['name']
@@ -121,10 +150,12 @@ def import_vocab_source(data, creator):
             owner_id=creator_id,
             **vocab_project_data
         )
+
     vocab_source = vocab_source_serializer.save(
         creator_id=creator_id,
         vocab_project_id=vocab_project.id
     )
+
     for vocab_context_k, vocab_context_v in vocab_contexts_dict.items():
         vocab_context_data = vocab_context_v['vocab_context_data']
         vocab_context_serializer = VocabContextSerializer(
@@ -134,9 +165,11 @@ def import_vocab_source(data, creator):
         vocab_context = vocab_context_serializer.save(
             vocab_source_id=vocab_source.id
         )
+
         # VocabContextEntry
         for vocab_context_entry in vocab_context_v['vocab_entries']:
             vocab_entry_data = vocab_context_entry['vocab_entry_data']
+
             try:
                 vocab_entry = VocabEntry.objects.get(
                     entry=vocab_entry_data['entry'],
@@ -146,10 +179,12 @@ def import_vocab_source(data, creator):
                 vocab_entry = VocabEntry.objects.create(
                     **vocab_entry_data
                 )
+
             vocab_context_entry_obj = VocabContextEntry.objects.create(
                 vocab_entry_id=vocab_entry.id,
                 vocab_context_id=vocab_context.id
             )
+
             if vocab_context_entry['vocab_entry_tags']:
                 for vocab_entry_tag in vocab_context_entry['vocab_entry_tags']:
                     vocab_context_entry_obj.add_vocab_entry_tag(vocab_entry_tag)
@@ -161,43 +196,41 @@ def validate_vocab_entries_json_schema(data):
         'type': 'object',
         'properties': {
             'vocab_entries': {
-                'type': 'object',
-                'patternProperties': {
-                    '^[0-9]+$': {
-                        'type': 'object',
-                        'properties': {
-                            'vocab_entry_data': {
-                                'type': 'object',
-                                'properties': {
-                                    'language': {
-                                        'type': 'string',
-                                        'minLength': 2,
-                                        'maxLength': 2,
-                                    },
-                                    'entry': {
-                                        'type': 'string'
-                                    },
-                                    'pronunciation_spelling': {
-                                        'type': 'string',
-                                        'blank': True
-                                    },
-                                    'pronunciation_ipa': {
-                                        'type': 'string',
-                                        'blank': True
-                                    },
-                                    'description': {
-                                        'type': 'string',
-                                        'blank': True
-                                    },
-                                    'date_created': {
-                                        'type': 'string'
-                                    }
+                'type': 'array',
+                'items': {
+                    'type': 'object',
+                    'properties': {
+                        'vocab_entry_data': {
+                            'type': 'object',
+                            'properties': {
+                                'language': {
+                                    'type': 'string',
+                                    'minLength': 2,
+                                    'maxLength': 2,
                                 },
-                                'required': ['entry']
+                                'entry': {
+                                    'type': 'string'
+                                },
+                                'pronunciation_spelling': {
+                                    'type': 'string',
+                                    'blank': True
+                                },
+                                'pronunciation_ipa': {
+                                    'type': 'string',
+                                    'blank': True
+                                },
+                                'description': {
+                                    'type': 'string',
+                                    'blank': True
+                                },
+                                'date_created': {
+                                    'type': 'string'
+                                }
                             },
+                            'required': ['entry']
                         },
-                        'required': ['vocab_entry_data'],
-                    }
+                    },
+                    'required': ['vocab_entry_data'],
                 },
             },
         },

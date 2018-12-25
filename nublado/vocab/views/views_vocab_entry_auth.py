@@ -14,25 +14,11 @@ from core.views import (
 from ..conf import settings
 from ..forms import VocabEntryCreateForm, VocabEntryUpdateForm
 from ..models import VocabContextEntry, VocabEntry
-from ..utils import export_vocab_entries
 from .views_mixins import (
     VocabEntryMixin, VocabEntrySearchMixin
 )
 
 APP_NAME = apps.get_app_config('vocab').name
-
-
-class VocabEntriesExportJsonView(
-    LoginRequiredMixin,
-    JsonAttachmentMixin, View
-):
-    content_type = 'application/json'
-    filename = 'vocab-entries.json'
-    json_indent = 4
-
-    def get_file_content(self):
-        data = export_vocab_entries(request=self.request)
-        return data
 
 
 class VocabEntryDashboardView(

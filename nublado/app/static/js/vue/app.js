@@ -23,7 +23,7 @@ Vue.component('symbol-key', SymbolKey)
 Vue.component('ipa-symbol-key', IpaSymbolKey)
 Vue.component('symbol-keypad', SymbolKeypad)
 Vue.component('ipa-symbol-keypad', IpaSymbolKeypad)
-
+Vue.component('oxford-api', OxfordApi)
 Vue.use(ModalPlugin)
 
 // Instantiate main app instance.

@@ -144,15 +144,14 @@ class VocabDefinition(TimestampModel, SerializeModel):
     """
     Definitions for VocabEntry.
 
-    Note: The implementation is simple. I won't go crazy with the definition and translation models,
-    as I don't want to reinvent the dictionary wheel. However, it's nice to be able to add your own definitions
-    however you want. For more robust definitions, external references to dictionaries like WordReference can be provided.
+    Definitions by lexical type (noune, verb, adjective, adverb)
     """
     NOUN = 1
     ADJECTIVE = 2
     VERB = 3
     ADVERB = 4
     EXPRESSION = 5
+    OTHER = 6
 
     DEFINITION_TYPE_CHOICES = (
         (NOUN, _("label_noun")),
@@ -183,7 +182,7 @@ class VocabDefinition(TimestampModel, SerializeModel):
         verbose_name_plural = _("label_vocab_definition_plural")
 
     def __str__(self):
-        return self.name
+        return '{0} - {1}'.format(self.definition_type, self.definition)
 
     def get_serializer(self):
         from .serializers import VocabDefinitionSerializer

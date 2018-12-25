@@ -7,10 +7,12 @@ from users.api.views_api import UserViewSet, ProfileViewSet
 from vocab.api.views_api import (
     NestedVocabContextEntryViewSet, NestedVocabContextViewSet, VocabEntryViewSet,
     NestedVocabSourceViewSet, VocabContextEntryViewSet, VocabContextViewSet,
-    VocabEntryExportView, VocabEntryLanguageExportView, VocabEntryImportView,
-    VocabProjectViewSet, VocabSourceImportView, VocabSourceExportView,
-    VocabSourceViewSet
+    VocabDefinitionViewSet, VocabEntryExportView, VocabEntryLanguageExportView,
+    VocabEntryImportView, VocabProjectViewSet, VocabSourceImportView,
+    VocabSourceExportView, VocabSourceViewSet
 )
+from vocab.api.views_third_party_api import OxfordAPIEntryView
+
 app_name = 'app'
 
 router = DefaultRouter()
@@ -20,6 +22,7 @@ router.register('user', UserViewSet, base_name='user')
 router.register('profile', ProfileViewSet, base_name='profile')
 # vocab
 router.register('entry', VocabEntryViewSet, base_name='vocab-entry')
+router.register('definition', VocabDefinitionViewSet, base_name='vocab-definition')
 router.register('project', VocabProjectViewSet, base_name='vocab-project')
 router.register('source', VocabSourceViewSet, base_name='vocab-source')
 router.register('vocab-context', VocabContextViewSet, base_name='vocab-context')
@@ -36,6 +39,8 @@ vocab_entry_context_router.register(
 )
 urlpatterns = [
     path('api-token-auth/', views.obtain_auth_token, name='auth_token'),
+    path('oxford/entry/', OxfordAPIEntryView.as_view(), name='oxford_entry'),
+    path('vocab/source/import/', VocabSourceImportView.as_view(), name='vocab_source_import'),
     path('vocab/source/import/', VocabSourceImportView.as_view(), name='vocab_source_import'),
     re_path(
         '^vocab/source/(?P<vocab_source_pk>[\d]+)/export/$',

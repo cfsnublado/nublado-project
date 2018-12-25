@@ -12,12 +12,12 @@ from rest_framework.viewsets import ModelViewSet, GenericViewSet
 
 from core.api.views_api import APIDefaultsMixin
 from ..models import (
-    VocabEntry, VocabContextEntry, VocabContext,
-    VocabProject, VocabSource
+    VocabDefinition, VocabEntry, VocabContextEntry,
+    VocabContext, VocabProject, VocabSource
 )
 from ..serializers import (
-    VocabEntrySerializer, VocabContextEntrySerializer, VocabContextSerializer,
-    VocabProjectSerializer, VocabSourceSerializer
+    VocabDefinitionSerializer, VocabEntrySerializer, VocabContextEntrySerializer,
+    VocabContextSerializer, VocabProjectSerializer, VocabSourceSerializer
 )
 from ..utils import (
     export_vocab_entries, export_vocab_source,
@@ -114,6 +114,19 @@ class VocabEntryLanguageExportView(VocabEntryExportView):
             language=kwargs['language']
         )
         return Response(data=data)
+
+
+class VocabDefinitionViewSet(
+    APIDefaultsMixin, RetrieveModelMixin, UpdateModelMixin, DestroyModelMixin,
+    ListModelMixin, GenericViewSet
+):
+    lookup_field = 'pk'
+    lookup_url_kwarg = 'pk'
+    serializer_class = VocabDefinitionSerializer
+    queryset = VocabDefinition.objects.select_related('vocab_entry')
+    permission_classes = (
+        IsAuthenticated,
+    )
 
 
 class VocabSourceViewSet(

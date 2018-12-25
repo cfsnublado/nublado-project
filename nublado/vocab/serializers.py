@@ -7,8 +7,8 @@ from django.contrib.auth import get_user_model
 
 from core.serializers import BaseSerializer, UUIDEncoder
 from .models import (
-    VocabEntry, VocabContextEntry, VocabContext,
-    VocabProject, VocabSource
+    VocabDefinition, VocabEntry, VocabContextEntry,
+    VocabContext, VocabProject, VocabSource
 )
 
 User = get_user_model()
@@ -86,11 +86,34 @@ class VocabEntrySerializer(BaseSerializer, HyperlinkedModelSerializer):
 
 
 class VocabDefinitionSerializer(BaseSerializer, HyperlinkedModelSerializer):
-    pass
+    json_encoder = UUIDEncoder
+    minimal_data_fields = [
+        'definition', 'definition_type',
+        'date_created'
+    ]
+    url = HyperlinkedIdentityField(
+        view_name='api:vocab-definition-detail',
+        lookup_field='pk'
+    )
+    vocab_entry_url = HyperlinkedRelatedField(
+        many=False,
+        read_only=True,
+        view_name='api:vocab-entry-detail',
+        lookup_field='pk',
+        source='vocab_entry'
+    )
 
-
-class VocabWebReferenceSerializer(BaseSerializer, HyperlinkedModelSerializer):
-    pass
+    class Meta:
+        model = VocabDefinition
+        fields = (
+            'url', 'id', 'vocab_entry_url',
+            'vocab_entry_id', 'definition', 'definition_type',
+            'date_created', 'date_updated',
+        )
+        read_only_fields = (
+            'url', 'id', 'vocab_entry_url',
+            'vocab_entry_id', 'date_created', 'date_updated'
+        )
 
 
 class VocabSourceListSerializer(ListSerializer):

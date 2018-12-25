@@ -18,9 +18,9 @@ error_msgs = {
 }
 
 page_titles = {
-    'home_page_title_en': '{0} | {1}'.format('Home', PROJECT_NAME),
-    'user_login_redirect_title_en': '{0} | {1}'.format('Home', PROJECT_NAME),
-    'login_page_title_en': '{0} | {1}'.format('Log in', PROJECT_NAME),
+    'home_en': '{0} | {1}'.format('Home', PROJECT_NAME),
+    'user_login_redirect_en': '{0} | {1}'.format('Home', PROJECT_NAME),
+    'login_en': '{0} | {1}'.format('Log in', PROJECT_NAME),
 }
 
 links = {}
@@ -82,7 +82,7 @@ class FunctionalTest(StaticLiveServerTestCase):
         return self.browser.find_elements_by_xpath(xpath)
 
     def login_user(self, username=None, password=None):
-        self.page_load(page_titles['login_page_title_en'])
+        self.load_page(page_titles['login_en'])
         if username is not None:
             self.get_element_by_id('username').send_keys(username)
         if password is not None:
@@ -114,7 +114,7 @@ class FunctionalTest(StaticLiveServerTestCase):
         action.click()
         action.perform()
 
-    def page_load(self, page_title):
+    def load_page(self, page_title):
         self.wait.until(EC.title_contains(page_title))
 
     def search_autocomplete(self, search_text=None, autocomplete_text=None):

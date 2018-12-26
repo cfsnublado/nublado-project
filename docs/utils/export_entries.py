@@ -1,36 +1,21 @@
 import argparse
-import getpass
 import json
 import os
-import requests
 import sys
 
+import requests
+
+from base import get_user_auth_token, print_color
+
 """
-Usage: export_entries.py [-h] [--localhost] source
+Usage: export_entries.py [-h] [--localhost] output_path
 
 Required:
-    export_path: path to export file
+    output_path: path to export files
 
 Options:
     --localhost: if provided, the localhost api is called. Otherwise, the production api is called.
 """
-
-
-def print_color(color_code, text):
-    """
-    Prints in color to the console according to the integer color code.
-
-    color codes:
-        91: red
-        92: green
-        93: yellow
-        94: light purple
-        95: purple
-        96: cyan
-        97: light gray
-        98: black
-    """
-    print("\033[{0}m {1}\033[00m".format(color_code, text))
 
 
 def export_entries(token, output_path):
@@ -44,18 +29,6 @@ def export_entries(token, output_path):
         response = requests.get(export_url, headers=headers)
         json_data = response.json()
         f.write(json.dumps(json_data, indent=2))
-
-
-def get_user_auth_token(token_url):
-    username = input("Username: ")
-    password = getpass.getpass("Password: ")
-
-    r = requests.post(
-        token_url,
-        {"username": username, "password": password}
-    )
-    token = r.json().get("token", None)
-    return token
 
 
 if __name__ == "__main__":

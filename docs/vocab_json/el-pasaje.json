@@ -8,664 +8,664 @@
         "description": "El primer libro de la trilog\u00eda El pasaje, de Justin Cronin. (tradujido por Eduardo G. Murillo)",
         "date_created": "2018-08-18T20:51:57.739839"
     },
-    "vocab_contexts": {
-        "1": {
+    "vocab_contexts": [
+        {
             "vocab_context_data": {
                 "content": "<p>Mientras Galen jadeaba y resollaba encima de ella en la oscuridad, Mausami se encontraba a varios kil\u00f3metros de distancia. Cuanto m\u00e1s se esforzaba \u00e9l en ser un marido, menos esposa se sent\u00eda ella, hasta que (y eso era lo peor, lo que no le parec\u00eda justo) descubri\u00f3 que lo detestaba. Cuando lleg\u00f3 la primera nevada, se sorprendi\u00f3 imaginando que pod\u00eda cerrar los ojos y borrarlo de la faz de la tierra. Lo cual s\u00f3lo serv\u00eda para que Galen se esforzara m\u00e1s, y ella lo detestara todav\u00eda m\u00e1s.</p>",
                 "date_created": "2018-08-18T20:51:59.851204"
             },
             "vocab_entries": []
         },
-        "2": {
+        {
             "vocab_context_data": {
                 "content": "<p>Dio media vuelta y sali\u00f3 corriendo. Estuvo a punto de hacer caer a Dale. Atraves\u00f3 la cortina, sali\u00f3 por la puerta y baj\u00f3 dando tumbos los escalones que daban al patio iluminado por los focos; su mente atrapada todav\u00eda en la corriente de palabras que circulaba por su cabeza (\u00abElla te echa de menos, te echa de menos\u00bb), su visi\u00f3n nublada por las l\u00e1grimas que brotaban de sus ojos.</p>",
                 "date_created": "2018-08-18T20:51:59.828121"
             },
             "vocab_entries": []
         },
-        "3": {
+        {
             "vocab_context_data": {
                 "content": "<p>Se le hac\u00eda raro hablar de esa manera, y lo m\u00e1s raro era que no le parec\u00eda tan raro. Nunca hab\u00eda o\u00eddo el sonido de la voz de la chica, pero no lo consideraba un defecto. Era algo tranquilizador, como si hubiera descartado el ruido de las palabras.</p>",
                 "date_created": "2018-08-18T20:51:59.806277"
             },
             "vocab_entries": []
         },
-        "4": {
+        {
             "vocab_context_data": {
                 "content": "<p>La chica hab\u00eda levantado la cara unos cent\u00edmetros por encima del parapeto que formaban sus rodillas, con una expresi\u00f3n indescifrable y c\u00f3mplice en el rostro. Su forma de moverse transmit\u00eda una sensaci\u00f3n de algo salvaje, un nerviosismo animal. Pero durante los escasos minutos que hab\u00edan transcurrido desde que entr\u00f3 en el pabell\u00f3n, se hab\u00eda producido un cambio. El miedo hab\u00eda disminuido de forma perceptible.</p>",
                 "date_created": "2018-08-18T20:51:59.784247"
             },
             "vocab_entries": []
         },
-        "5": {
+        {
             "vocab_context_data": {
                 "content": "<p>Cuando acudi\u00f3 al hospital la noche antes y vio a la chica, no hab\u00eda experimentado sorpresa o terror, sino una r\u00e1faga de puro reconocimiento.</p>",
                 "date_created": "2018-08-18T20:51:59.761242"
             },
             "vocab_entries": []
         },
-        "6": {
+        {
             "vocab_context_data": {
                 "content": "<p>Llegar\u00eda un momento, muchos a\u00f1os despu\u00e9s, en que Peter recordar\u00eda los acontecimientos que rodearon la llegada de la chica como una serie de movimientos similares a un ballet: cuerpos que converg\u00edan y se separaban, lanzados durante breves per\u00edodos a \u00f3rbitas m\u00e1s abiertas, s\u00f3lo para ser atra\u00eddos de nuevo bajo la influencia de unos poderes desconocidos, una fuerza tan serena e inevitable como la gravedad.</p>",
                 "date_created": "2018-08-18T20:51:59.739048"
             },
             "vocab_entries": []
         },
-        "7": {
+        {
             "vocab_context_data": {
                 "content": "<p>El chico, pens\u00f3 Sanjay cansado. De repente, Caleb Jones era la \u00faltima persona en quien quer\u00eda pensar. Caleb hab\u00eda aportado a las primeras horas de crisis el tipo de lucidez que \u00e9sta exig\u00eda. La gente necesitaba algo en que concentrar su ira. Pero ya hab\u00eda pasado lo peor y, a la luz del d\u00eda, el hecho de expulsar al muchacho hab\u00eda empezado a parecerle una crueldad, un gesto in\u00fatil del que todo el mundo se arrepentir\u00eda m\u00e1s tarde. Y el chico hab\u00eda hecho gala de verdadera valent\u00eda.</p>",
                 "date_created": "2018-08-18T20:51:59.717668"
             },
             "vocab_entries": []
         },
-        "8": {
+        {
             "vocab_context_data": {
                 "content": "<p>Sanjay se dio cuenta de cu\u00e1n derrotada parec\u00eda la mujer, con pelo sudoroso y desgre\u00f1ado, y los ojos llorosos a causa del cansancio. Hab\u00eda sido una noche muy larga para todos, que hab\u00eda dado paso a un d\u00eda todav\u00eda m\u00e1s largo. Y no obstante, su rostro transmit\u00eda sensaci\u00f3n de autoridad. Ella dictaba las reglas en el Hospital.</p>",
                 "date_created": "2018-08-18T20:51:59.694746"
             },
             "vocab_entries": []
         },
-        "9": {
+        {
             "vocab_context_data": {
                 "content": "<p>Pero ahora estaba la chica. Su sola presencia desment\u00eda la verdad com\u00fanmente aceptada. El que una persona (una muchacha indefensa) se materializase y saliera de la oscuridad era tan inquietante como una nevada en pleno verano. Sanjay lo hab\u00eda visto en los ojos de los dem\u00e1s, Old Chou, Walter Fisher, Soo, Jimmy y el resto. Todo el mundo. Era anormal. Era absurdo. La esperanza era algo que causaba dolor, y eso era la chica. Una dolorosa clase de esperanza.</p>",
                 "date_created": "2018-08-18T20:51:59.672385"
             },
             "vocab_entries": []
         },
-        "10": {
+        {
             "vocab_context_data": {
                 "content": "<p>Solo la chica pod\u00eda contar su historia. La Chica de Ninguna Parte estaba encerrada en su burbuja de silencio. El significado de su aparici\u00f3n era evidente: quedaba gente viva en el mundo exterior. Con independencia de qui\u00e9nes fueran y d\u00f3nde vivieran, hab\u00edan expulsado a uno de los suyos, una chica indefensa, que hab\u00eda logrado llegar hasta all\u00ed. Un hecho que, cuando Sanjay pensaba en \u00e9l, deber\u00eda ser una buena noticia, un motivo de celebraci\u00f3n indisimulada.</p>",
                 "date_created": "2018-08-18T20:51:59.650116"
             },
             "vocab_entries": []
         },
-        "11": {
+        {
             "vocab_context_data": {
                 "content": "<p>Sab\u00eda lo que necesitaba. El Faro estaba lleno de todo tipo de chatarra, almacenada en cubos que descansaban sobre las estanter\u00edas. Que \u00e9l supiera, hab\u00eda al menos una PDA del ej\u00e9rcito. Guardaban viejas pilas de litio que a\u00fan pod\u00edan contener carga. S\u00f3lo aguantar\u00edan unos minutos, pero eso era justo lo que necesitaba.</p>",
                 "date_created": "2018-08-18T20:51:59.627799"
             },
             "vocab_entries": []
         },
-        "12": {
+        {
             "vocab_context_data": {
                 "content": "<p>La pesquisa se llev\u00f3 a cabo en una antigua aula del Asilo. Peter reconoci\u00f3 el aula: era la misma aula a la que Profesora lo hab\u00eda llevado el d\u00eda de su liberaci\u00f3n. Una pesquisa, \u00e9sa era la palabra que utilizaba Sanjay, una palabra que Peter no hab\u00eda escuchado hasta entonces. Peter pens\u00f3 que era una palabra curiosa para designar el hecho de buscar a alguien a quien culpar. Sanjay hab\u00eda ordenado a los cuatro (Peter, Alicia, Hollis y Soo) que no hablaran entre s\u00ed hasta que los hubieran interrogado por turnos. Esperaron en el pasillo, encajados en pupitres demasiado peque\u00f1os para ellos, apretados en fila contra la pared, mientras que un solo centinela (Ian, el sobrino de Sanjay) esperaba con ellos. Reinaba un silencio extra\u00f1o para tratarse del edificio.</p>",
                 "date_created": "2018-08-18T20:51:59.606403"
             },
             "vocab_entries": []
         },
-        "13": {
+        {
             "vocab_context_data": {
                 "content": "<p>Pero era demasiado tarde. De los tres virales, s\u00f3lo uno logr\u00f3 atravesar las puertas. Pero fue suficiente. Se encamin\u00f3 directamente al Asilo.</p>",
                 "date_created": "2018-08-18T20:51:59.585866"
             },
             "vocab_entries": []
         },
-        "14": {
+        {
             "vocab_context_data": {
                 "content": "<p>La puerta no deb\u00eda abrirse nunca. De noche, no. A nadie, ni siquiera a Alicia. En aquel momento Peter lleg\u00f3 al escenario de los sucesos, corriendo desde el porche de T\u00eda hacia el alboroto. Caleb lleg\u00f3 desde el barrac\u00f3n a toda la velocidad que le permit\u00edan las piernas y alcanz\u00f3 la puerta principal antes que \u00e9l. Peter no sab\u00eda qu\u00e9 estaba pasando al otro lado. S\u00f3lo sab\u00eda que Hollis estaba gritando desde la pasarela.</p>",
                 "date_created": "2018-08-18T20:51:59.561205"
             },
             "vocab_entries": []
         },
-        "15": {
+        {
             "vocab_context_data": {
                 "content": "<p>\u2014\u00a1Se\u00f1al! \u2014grit\u00f3 uno de los corredores\u2014. \u00a1Tenemos se\u00f1al! Hollis la vio, los vio. Al borde del campo, un grupo de tres, que saltaron a la luz. El Coronel estaba corriendo hacia ellos. Se abalanzaron sobre \u00e9l al instante, lo engulleron como una ola, desgarrando, gru\u00f1endo, mientras desde la pasarela lanzaban una lluvia de flechas, aunque la distancia era demasiado grande. Un disparo afortunado no habr\u00eda logrado nada. Vieron morir al Coronel.</p>",
                 "date_created": "2018-08-18T20:51:59.539061"
             },
             "vocab_entries": []
         },
-        "16": {
+        {
             "vocab_context_data": {
                 "content": "<p>Lo que T\u00eda le hab\u00eda dicho era extra\u00f1o. Era imposible que supiera lo de la chica. Tal como funcionaba la mente de la anciana, con unas historias que se amontonaban sobre m\u00e1s historias, con el pasado que se mezclaba con el presente, pod\u00eda referirse a cualquiera. Podr\u00eda haber hablado de alguien fallecido hac\u00eda a\u00f1os. Fue entonces cuando Peter oy\u00f3 los gritos procedentes de la puerta principal, y el infierno comenz\u00f3 a desatarse.</p>",
                 "date_created": "2018-08-18T20:51:59.506553"
             },
             "vocab_entries": []
         },
-        "17": {
+        {
             "vocab_context_data": {
                 "content": "<p>Era in\u00fatil. Cuando T\u00eda empezaba a divagar as\u00ed, pod\u00edan pasar horas, e incluso d\u00edas, hasta que regresara al presente. Casi le envidiaba esa capacidad.</p>",
                 "date_created": "2018-08-18T20:51:59.472474"
             },
             "vocab_entries": []
         },
-        "18": {
+        {
             "vocab_context_data": {
                 "content": "<p>Se pasaban sentados los d\u00edas y las noches, Michael ante el tubo de rayos cat\u00f3dicos, Elton con los auriculares pegados a la cabeza, mientras su mente parec\u00eda flotar entre las se\u00f1ales perdidas de su especie casi desaparecida. Siempre que encontraba una, Michael la apuntaba en su cuaderno de bit\u00e1cora, anotaba la hora, la frecuencia y todo lo dem\u00e1s. Despu\u00e9s volv\u00edan a repetir la rutina.</p>",
                 "date_created": "2018-08-18T20:51:59.450415"
             },
             "vocab_entries": []
         },
-        "19": {
+        {
             "vocab_context_data": {
                 "content": "<p>S\u00f3lo cab\u00eda esperar. Esperar, y escuchar. Porque la cuesti\u00f3n era la siguiente: la radio estaba prohibida. El problema, tal como lo entend\u00eda Michael, se reduc\u00eda a demasiada gente. Era la radio lo que hab\u00eda conducido a los Caminantes a la Colonia en los primeros d\u00edas, algo que los Constructores no hab\u00edan planificado, puesto que la Colonia no deb\u00eda durar tanto tiempo como hab\u00eda durado. Por lo tanto, en el a\u00f1o 17 (hac\u00eda ya setenta y cinco) se hab\u00eda tomado la decisi\u00f3n de que hab\u00eda que destruir la radio, bajar la antena de la monta\u00f1a, destruir sus partes a martillazos y dispersarlas en el vertedero.</p>",
                 "date_created": "2018-08-18T20:51:59.427883"
             },
             "vocab_entries": []
         },
-        "20": {
+        {
             "vocab_context_data": {
                 "content": "<p>Herrumbre, corrosi\u00f3n, viento y lluvia. Los dientecitos de los ratones, las deyecciones acres de los insectos y las mand\u00edbulas devoradoras de los a\u00f1os. La guerra de la naturaleza contra las m\u00e1quinas, de las fuerzas ca\u00f3ticas del planeta contra las maquinaciones de la humanidad. La energ\u00eda que los hombres hab\u00edan extra\u00eddo de la tierra volv\u00eda a ella de manera inexorable, absorbida como agua por un desag\u00fce. Faltaba poco tiempo para que no quedara ni un solo poste de alta tensi\u00f3n en pie sobre la tierra, si no hab\u00eda sucedido ya. <br/> La humanidad hab\u00eda construido un mundo que tardar\u00eda cien a\u00f1os en morir. En s\u00f3lo un siglo las \u00faltimas luces se apagar\u00edan.</p>",
                 "date_created": "2018-08-18T20:51:59.405693"
             },
             "vocab_entries": []
         },
-        "21": {
+        {
             "vocab_context_data": {
                 "content": "<p>Y as\u00ed sucesivamente, en la misma l\u00ednea. Entend\u00eda algunos, y otros no, pero todos aportaban la misma informaci\u00f3n b\u00e1sica: una persona de cada diez. Una persona secuestrada por cada diez que mor\u00edan. Por lo tanto, si se calculaba una poblaci\u00f3n humana de quinientos millones de personas en el momento del brote (las poblaciones combinadas de Estados Unidos, Canad\u00e1 y M\u00e9xico), y se dejaba de lado, por el momento, lo que hubiera sucedido en el resto del mundo, del cual se sab\u00eda muy poco, e incluso dando por hecho la existencia de alg\u00fan tipo de tasa de mortalidad entre los virales, digamos un modesto 15 por ciento, eso dejaba todav\u00eda 42,5 millones de hijos de puta sedientos de sangre dando saltitos entre el istmo de Panam\u00e1 y el estrecho de Bering, engullendo todo cuanto llevara hemoglobina en las venas y una firma t\u00e9rmica de entre treinta y seis y treinta y ocho grados, es decir, el 99,96 por ciento del reino mam\u00edfero, desde las ratas de campo hasta los osos pardos.</p>",
                 "date_created": "2018-08-18T20:51:59.384820"
             },
             "vocab_entries": []
         },
-        "22": {
+        {
             "vocab_context_data": {
                 "content": "<p>\u00bfCrees que he sido muy dura con Maus hoy? La pregunta lo sorprendi\u00f3. Desde que la conoc\u00eda, Alicia nunca se hab\u00eda pensado las cosas dos veces.</p>",
                 "date_created": "2018-08-18T20:51:59.361830"
             },
             "vocab_entries": []
         },
-        "23": {
+        {
             "vocab_context_data": {
                 "content": "<p>Primero sinti\u00f3 un golpe en los pulmones, que le rob\u00f3 el aliento del pecho. Una sensaci\u00f3n de terror f\u00edsico en estado puro, como si su pie no hubiera encontrado nada, el cielo de la noche. Se le doblaron las rodillas, y su mano libre apu\u00f1al\u00f3 el aire, en busca de algo a lo que aferrarse, para conseguir una sensaci\u00f3n de forma y peso, las dimensiones b\u00e1sicas del mundo que lo rodeaba. El cielo era una c\u00fapula de negrura... \u00a1y por todas partes, las estrellas!</p>",
                 "date_created": "2018-08-18T20:51:59.338889"
             },
             "vocab_entries": []
         },
-        "24": {
+        {
             "vocab_context_data": {
                 "content": "<p>Le entreg\u00f3 el rifle. \u00a1Un arma cargada! Peter lo levant\u00f3 hasta el hombro, busc\u00f3 algo en la habitaci\u00f3n a lo que valiera la pena apuntar, y eligi\u00f3 por fin un rollo de cable de cobre que hab\u00eda sobre un estante alejado. El ansia de disparar, de experimentar la fuerza explosiva del retroceso en los brazos, era tan intensa que exigi\u00f3 casi un esfuerzo f\u00edsico alejar el pensamiento de su mente.</p>",
                 "date_created": "2018-08-18T20:51:59.316717"
             },
             "vocab_entries": []
         },
-        "25": {
+        {
             "vocab_context_data": {
                 "content": "<blockquote>\n<p>Y cuando lleg\u00f3 al lugar donde viven los monstruos, lanzaron sus horribles rugidos, rechinaron sus terribles dientes y pusieron en blanco sus terribles ojos, y exhibieron sus terribles garras hasta que Max dijo: \u00ab\u00a1Quietos!\u00bb, y los dom\u00f3 con el truco m\u00e1gico de clavar la vista en sus ojos amarillos sin parpadear ni una sola vez, y se asustaron y le llamaron el ser m\u00e1s monstruoso de todos...</p>\n</blockquote>",
                 "date_created": "2018-08-18T20:51:59.294550"
             },
             "vocab_entries": []
         },
-        "26": {
+        {
             "vocab_context_data": {
                 "content": "<p>Le recordaba una historia que Profesora le hab\u00eda contado en una ocasi\u00f3n acerca de una tortuga que se acercaba a una pared. Cada vez que la tortuga avanzaba, recorr\u00eda menos distancia, lo cual garantizaba que nunca llegar\u00eda a su destino.</p>",
                 "date_created": "2018-08-18T20:51:59.272681"
             },
             "vocab_entries": []
         },
-        "27": {
+        {
             "vocab_context_data": {
                 "content": "<p>Ya no pod\u00eda recordar los rostros de sus padres. Aquello hab\u00eda sido lo primero en desaparecer, y lo hab\u00eda hecho en cuesti\u00f3n de d\u00edas. Cuando pensaba en ellos, no era tanto una cuesti\u00f3n de algo visto como de algo sentido, una oleada de sensaciones recordadas que flu\u00eda a trav\u00e9s de \u00e9l como agua.</p>",
                 "date_created": "2018-08-18T20:51:59.250064"
             },
             "vocab_entries": []
         },
-        "28": {
+        {
             "vocab_context_data": {
                 "content": "<p>No dijo nada, sino que avanz\u00f3 para entregar a Theo el objeto que llevaba: un rect\u00e1ngulo de pl\u00e1stico verde con puntos met\u00e1licos relucientes adornando la superficie. \u2014De acuerdo \u2014dijo Theo, y le dio vueltas en la mano para examinarlo\u2014. Me rindo. \u00bfQu\u00e9 estoy mirando? \u2014Se llama placa madre. \u2014Eh \u2014dijo Alicia\u2014, vigila tu lenguaje. Michael se volvi\u00f3 hacia ella. \u2014No te ir\u00eda mal prestar un poco m\u00e1s de atenci\u00f3n a nuestro m\u00e9todo de mantener las luces encendidas.</p>",
                 "date_created": "2018-08-18T20:51:59.227719"
             },
             "vocab_entries": []
         },
-        "29": {
+        {
             "vocab_context_data": {
                 "content": "<p>Hab\u00eda otros como \u00e9l, hombres y mujeres que por un motivo u otro no se casaban y viv\u00edan solos, y el Coronel tal vez se habr\u00eda refugiado en el anonimato del ermita\u00f1o de no ser por los acontecimientos de la Noche Oscura. Peter s\u00f3lo ten\u00eda seis a\u00f1os en aquel tiempo. No estaba seguro de si sus recuerdos eran reales, o s\u00f3lo historias que la gente le hab\u00eda contado, embellecidas por su imaginaci\u00f3n con el transcurso de los a\u00f1os.</p>",
                 "date_created": "2018-08-18T20:51:59.205473"
             },
             "vocab_entries": []
         },
-        "30": {
+        {
             "vocab_context_data": {
                 "content": "<p>El reba\u00f1o se estaba impacientando. La luz de la ma\u00f1ana proyectaba un resplandor uniforme. En cualquier momento sonar\u00eda el toque matutino y las puertas se abrir\u00edan.</p>",
                 "date_created": "2018-08-18T20:51:59.183616"
             },
             "vocab_entries": []
         },
-        "31": {
+        {
             "vocab_context_data": {
                 "content": "<p>Not\u00f3 un profundo temblor debajo de \u00e9l cuando las pesas se acoplaron. Con un chirrido met\u00e1lico, las puertas, de veinte metros de alto y medio de espesor, empezaron a surgir de sus huecos amurallados. Cuando levant\u00f3 la ballesta de la plataforma, Peter dese\u00f3 en silencio llegar a la ma\u00f1ana sin dispararla. Y entonces, las luces se encendieron.</p>",
                 "date_created": "2018-08-18T20:51:59.161011"
             },
             "vocab_entries": []
         },
-        "32": {
+        {
             "vocab_context_data": {
                 "content": "<p>\u00bfQu\u00e9 esperaba lograr Demo Jaxon, abandonando la seguridad de las luces, a veces durante meses seguidos? \u00bfQu\u00e9 esperaba encontrar en la oscuridad? Hab\u00eda algunos que todav\u00eda hablaban del D\u00eda del Regreso, en que el ej\u00e9rcito volver\u00eda a por ellos, pero durante sus viajes Demo Jaxon nunca se hab\u00eda topado con el ej\u00e9rcito. El ej\u00e9rcito ya no exist\u00eda. Hab\u00edan tenido que morir muchos hombres para descubrir lo que ya sab\u00edan.</p>",
                 "date_created": "2018-08-18T20:51:59.139272"
             },
             "vocab_entries": []
         },
-        "33": {
+        {
             "vocab_context_data": {
                 "content": "<p>\u00ab\u00bfD\u00f3nde est\u00e1 el oc\u00e9ano?\u00bb, pregunt\u00f3 Peter a Profesora un d\u00eda. \u00bfPodr\u00eda verlo alguna vez? Pero Profesora se limit\u00f3 a re\u00edr, como hac\u00eda siempre que le formulaba demasiadas preguntas, y desech\u00f3 sus preocupaciones con un movimiento de cabeza. \u00abPuede que exista un oc\u00e9ano y puede que no. S\u00f3lo es un libro, peque\u00f1o Peter. No te preocupes por oc\u00e9anos y esas cosas.\u00bb</p>",
                 "date_created": "2018-08-18T20:51:59.116803"
             },
             "vocab_entries": []
         },
-        "34": {
+        {
             "vocab_context_data": {
                 "content": "<p>Cualquier alma que posea, manipule o aliente la manipulaci\u00f3n de una radio u otros aparatos que emitan se\u00f1ales, ser\u00e1 sujeta al castigo de <em>SOBREVIVIR EXTRAMUROS</em>.</p>",
                 "date_created": "2018-08-18T20:51:59.094964"
             },
             "vocab_entries": []
         },
-        "35": {
+        {
             "vocab_context_data": {
                 "content": "<p>Los ni\u00f1os del <em>ASILO</em> no deben saber nada del mundo en su actual forma fuera de las murallas de la <em>Colonia</em>, incluida cualquier menci\u00f3n de los <em>VIRALES</em>, los deberes de la <em>GUARDIA</em> y el acontecimiento conocido como <em>GRAN CATACLISMO VIRAL</em>. Cualquier persona que facilite tal informaci\u00f3n a un <em>NI\u00d1O MENOR</em> ser\u00e1 sujeto al castigo de <em>SOBREVIVIR EXTRAMUROS</em>.</p>",
                 "date_created": "2018-08-18T20:51:59.072093"
             },
             "vocab_entries": []
         },
-        "36": {
+        {
             "vocab_context_data": {
                 "content": "<p><strong>Ley \u00danica</strong>: <strong>EL HOGAR, LA GUARDIA, EL ASILO, DERECHOS DE LOS CAMINANTES, LEY DE CUARENTENA</strong></p>",
                 "date_created": "2018-08-18T20:51:59.051068"
             },
             "vocab_entries": []
         },
-        "37": {
+        {
             "vocab_context_data": {
                 "content": "<p>Hab\u00edan construido el tren de forma que si los brincos entraban en un vag\u00f3n, pod\u00edan dejarlo atr\u00e1s, y \u00e9sas eran las explosiones que hab\u00edamos o\u00eddo, un vag\u00f3n tras otro desprendi\u00e9ndose. No quise pensar en esos vagones ni en los ni\u00f1os que iban dentro, y hasta hoy no lo he hecho. De modo que no voy a escribir nada m\u00e1s al respecto.</p>",
                 "date_created": "2018-08-18T20:51:59.028435"
             },
             "vocab_entries": []
         },
-        "38": {
+        {
             "vocab_context_data": {
                 "content": "<p>Una nueva sensaci\u00f3n lo recorri\u00f3, fr\u00eda y definitiva, como la corriente de aire de una puerta abierta a la hora m\u00e1s profunda del invierno, al espacio silencioso que separa las estrellas. Cuando el amanecer lo encontrara, \u00e9l ya no estar\u00eda. \u00abAmy\u00bb, pens\u00f3, mientras las estrellas empezaban a caer, por todas partes y a su alrededor. Y trat\u00f3 de ocupar su mente \u00fanicamente con un nombre, el nombre de su hija, para que lo ayudara a abandonar la vida. \u00abAmy, Amy, Amy.\u00bb</p>",
                 "date_created": "2018-08-18T20:51:59.005507"
             },
             "vocab_entries": []
         },
-        "39": {
+        {
             "vocab_context_data": {
                 "content": "<p>Estaba en los \u00e1rboles, en el bosque, la casa a una distancia inmensa detr\u00e1s de \u00e9l. Dud\u00f3 si ser\u00eda capaz de orientarse para regresar, pero ya daba igual. Todo hab\u00eda terminado, \u00e9l estaba acabado. Ni siquiera era capaz de llorar. Al final, pens\u00f3, todo se reduc\u00eda a elegir un lugar. Si ten\u00edas suerte, pod\u00edas lograr eso.</p>",
                 "date_created": "2018-08-18T20:51:58.984011"
             },
             "vocab_entries": []
         },
-        "40": {
+        {
             "vocab_context_data": {
                 "content": "<p>Estaba a punto de dar un paso, cuando una luz cegadora, inmensa y pura, abras\u00f3 el cristal, y en aquel instante la mente de Wolgast pareci\u00f3 congelar el tiempo. Como el obturador de una c\u00e1mara, su mente plasm\u00f3 y retuvo una imagen de Amy, con las manos alzadas hacia la luz, la boca abierta de par en par para lanzar un grito de horror. Una r\u00e1faga de viento estremeci\u00f3 la caba\u00f1a, y despu\u00e9s, con un estruendo ensordecedor, las ventanas estallaron hacia dentro, y Wolgast se sinti\u00f3 levantado del suelo y arrojado al otro lado de la habitaci\u00f3n.</p>",
                 "date_created": "2018-08-18T20:51:58.961052"
             },
             "vocab_entries": []
         },
-        "41": {
+        {
             "vocab_context_data": {
                 "content": "<p>\u2014\u00bfLo siguieron? \u2014Que me aspen si lo s\u00e9. Ol\u00ed su humo a kil\u00f3metro y medio de aqu\u00ed, como m\u00ednimo. No s\u00e9 c\u00f3mo lo hice. Como beicon en una sart\u00e9n. \u2014Alz\u00f3 la cara con una mirada desdichada\u2014. Por el amor de Dios, se lo suplico. Lo har\u00eda yo mismo si tuviera una pistola. Wolgast tard\u00f3 un momento en comprender lo que le estaba pidiendo el hombre.</p>",
                 "date_created": "2018-08-18T20:51:58.938749"
             },
             "vocab_entries": []
         },
-        "42": {
+        {
             "vocab_context_data": {
                 "content": "<p>\u2014No vine en su busca, si se refiere a eso. Seis de nosotros est\u00e1bamos escondidos a unos sesenta kil\u00f3metros al oeste de aqu\u00ed. El campamento de caza de un amigo. Nos hab\u00edamos refugiado en octubre, despu\u00e9s de que ellos se apoderaran de Seattle. \u2014\u00bfQui\u00e9nes son ellos? \u2014pregunt\u00f3 Wolgast\u2014. \u00bfQu\u00e9 pas\u00f3 en Seattle? El hombre se encogi\u00f3 de hombros.</p>",
                 "date_created": "2018-08-18T20:51:58.916707"
             },
             "vocab_entries": []
         },
-        "43": {
+        {
             "vocab_context_data": {
                 "content": "<p>Wolgast se contuvo. No terminaba de acostumbrarse a la franqueza de Amy. Su falta de inhibiciones se le antojaba, por una parte, muy infantil, pero con frecuencia era cierto que las cosas que dec\u00eda y las preguntas que formulaba pose\u00edan una sinceridad que lindaba con la sabidur\u00eda.</p>",
                 "date_created": "2018-08-18T20:51:58.895087"
             },
             "vocab_entries": []
         },
-        "44": {
+        {
             "vocab_context_data": {
                 "content": "<p>El verano termin\u00f3, lleg\u00f3 el oto\u00f1o, y el mundo los dej\u00f3 en paz. Las primeras nieves cayeron la \u00faltima semana de octubre. Wolgast estaba cortando le\u00f1a en el patio cuando vio por el rabillo del ojo los primeros copos que ca\u00edan, gordas plumas ligeras como polvo. Se hab\u00eda subido las mangas de la camisa para trabajar, y cuando par\u00f3 para alzar la cara y sentir el fr\u00edo en su piel h\u00fameda, se dio cuenta de lo que estaba pasando, la llegada del invierno.</p>",
                 "date_created": "2018-08-18T20:51:58.872086"
             },
             "vocab_entries": []
         },
-        "45": {
+        {
             "vocab_context_data": {
                 "content": "<p>El tiempo de dormir, de descansar, hab\u00eda terminado. Wolgast se qued\u00f3 despierto toda la noche, con el.38 de Carl en una mano y la Springfield en la otra. Esa noche hab\u00eda refrescado, la temperatura era inferior a los diez grados, y Wolgast hab\u00eda encendido la estufa de le\u00f1a para cuando regresaran de la tienda. Sac\u00f3 el peri\u00f3dico y lo dobl\u00f3 en cuartos, despu\u00e9s en octavos, y finalmente en dieciseisavos. Abri\u00f3 la puerta de la estufa.. Despu\u00e9s, entreg\u00f3 el peri\u00f3dico al fuego y contempl\u00f3 asombrado la velocidad con que desaparec\u00eda.</p>",
                 "date_created": "2018-08-18T20:51:58.850027"
             },
             "vocab_entries": []
         },
-        "46": {
+        {
             "vocab_context_data": {
                 "content": "<p>Hab\u00eda m\u00e1s. Wolgast ley\u00f3 y reley\u00f3 los art\u00edculos. Estaban rodeando a los enfermos y los ametrallaban. Eso parec\u00eda claro, aunque hubiera que leerlo entre l\u00edneas. El 18 de mayo, pens\u00f3 Wolgast. El peri\u00f3dico era de hac\u00eda tres d\u00edas (no, cuatro). Amy y \u00e9l hab\u00edan llegado al campamento la ma\u00f1ana del 2 de mayo. Todo lo que narraba el peri\u00f3dico hab\u00eda sucedido en tan s\u00f3lo dieciocho d\u00edas.</p>",
                 "date_created": "2018-08-18T20:51:58.828486"
             },
             "vocab_entries": []
         },
-        "47": {
+        {
             "vocab_context_data": {
                 "content": "<p>Wolgast descubri\u00f3 que en uno de los edificios anexos hab\u00eda pilas de madera contrachapada y una escalerilla, adem\u00e1s de un martillo, una sierra y clavos. Tuvo que cortar y medir a mano las tablas, y despu\u00e9s subirlas por las escaleras y sujetarlas mientras las clavaba, con el fin de aislar las ventanas del segundo piso. Pero despu\u00e9s de la larga ascensi\u00f3n en el recinto (una haza\u00f1a que, en comparaci\u00f3n, se le antojaba inveros\u00edmil), esa tarea dom\u00e9stica sin importancia no parec\u00eda gran cosa.</p>",
                 "date_created": "2018-08-18T20:51:58.805470"
             },
             "vocab_entries": []
         },
-        "48": {
+        {
             "vocab_context_data": {
                 "content": "<p>Pens\u00f3 mucho en Lila durante aquellos primeros d\u00edas en la monta\u00f1a. Por extra\u00f1o que pudiera parecerle, en sus pensamientos no ten\u00eda cabida la curiosidad acerca del mundo y de lo que estar\u00eda pasando en aquellos momentos. Dedicaba los d\u00edas a las tareas dom\u00e9sticas, restaurar el orden en la casa y cuidar de Amy, pero su mente, que ten\u00eda libertad para viajar adonde deseara, prefiri\u00f3 trasladarse al pasado, flotando sobre \u00e9l como un ave encima de una enorme extensi\u00f3n de agua, sin costa a la vista, con la \u00fanica compa\u00f1\u00eda del distante reflejo de s\u00ed mismo en la reluciente superficie.</p>",
                 "date_created": "2018-08-18T20:51:58.783650"
             },
             "vocab_entries": []
         },
-        "49": {
+        {
             "vocab_context_data": {
                 "content": "<p>Cuando todo el tiempo expir\u00f3, y el mundo perdi\u00f3 su memoria, y el hombre que era se hab\u00eda perdido de vista como un barco en la lejan\u00eda, rodeando el filo de la tierra con su antigua vida encerrada en la bodega; y cuando las estrellas remolineantes contemplaron la nada, y la luna en su arco ya no recordaba su nombre, y todo cuanto quedaba era el gran mar de ansia sobre el que flotaba eternamente, todav\u00eda, en su interior, en el lugar m\u00e1s profundo, era esto: un a\u00f1o. La monta\u00f1a y las estaciones que se suced\u00edan, y Amy. Amy y el a\u00f1o de Cero.</p>",
                 "date_created": "2018-08-18T20:51:58.761071"
             },
             "vocab_entries": []
         },
-        "50": {
+        {
             "vocab_context_data": {
                 "content": "<p>Despu\u00e9s de Fortes hab\u00eda dos cad\u00e1veres m\u00e1s, o tres, era dif\u00edcil precisarlo. El suelo estaba resbaladizo por la sangre, y not\u00f3 que sus pies patinaban en ella y en la grasa de los restos humanos.</p>",
                 "date_created": "2018-08-18T20:51:58.738759"
             },
             "vocab_entries": []
         },
-        "51": {
+        {
             "vocab_context_data": {
                 "content": "<p>Paulson mir\u00f3 a la c\u00e1mara cuando enfund\u00f3 el arma y extrajo una granada del bolsillo, y despu\u00e9s dos m\u00e1s. Tir\u00f3 de la anilla con los dientes y las arroj\u00f3 dentro del ascensor. Despu\u00e9s mir\u00f3 de nuevo a Richards, quien vio sus ojos vac\u00edos, desenfund\u00f3 el.45, lo alz\u00f3 hasta la sien y apret\u00f3 el gatillo.</p>",
                 "date_created": "2018-08-18T20:51:58.716952"
             },
             "vocab_entries": []
         },
-        "52": {
+        {
             "vocab_context_data": {
                 "content": "<p>Todo ocurri\u00f3 muy deprisa. En tan s\u00f3lo treinta y dos minutos, muri\u00f3 un mundo y naci\u00f3 otro.</p>",
                 "date_created": "2018-08-18T20:51:58.694245"
             },
             "vocab_entries": []
         },
-        "53": {
+        {
             "vocab_context_data": {
                 "content": "<p>Gir\u00f3 el ancho pomo. La puerta estaba abierta. Cero se desenrosc\u00f3 ante \u00e9l en la oscuridad. Grey not\u00f3 su aliento en la cara, sobre los ojos, la boca y la barbilla. Not\u00f3 su coraz\u00f3n martilleante. Grey pens\u00f3 en su padre, y en la nieve. Estaba llorando, llorando de felicidad, llorando de terror, llorando, llorando y llorando, y cuando el mordisco de Cero encontr\u00f3 el lugar blando de su cuello donde la sangre se mov\u00eda, supo por fin cu\u00e1l era el d\u00e9cimo conejo. El d\u00e9cimo conejo era \u00e9l.</p>",
                 "date_created": "2018-08-18T20:51:58.671997"
             },
             "vocab_entries": []
         },
-        "54": {
+        {
             "vocab_context_data": {
                 "content": "<p>Era curioso, pens\u00f3 Grey. M\u00e1s que curioso, el concepto de tiempo era extra\u00f1o. Hab\u00eda pensado que era una cosa, pero en realidad era otra. No era una l\u00ednea, sino un c\u00edrculo, y m\u00e1s que eso: era un c\u00edrculo hecho de c\u00edrculos hecho de c\u00edrculos, cada uno montado sobre el otro, de modo que cada momento era el siguiente a cada momento, y todos a la vez. Y en cuanto lo sab\u00edas, ya no pod\u00edas dejar de saberlo. Ahora ve\u00eda los acontecimientos que iban a tener lugar, como si ya hubieran sucedido, porque en cierto modo as\u00ed era.</p>",
                 "date_created": "2018-08-18T20:51:58.650284"
             },
             "vocab_entries": []
         },
-        "55": {
+        {
             "vocab_context_data": {
                 "content": "<p>Nadie sab\u00eda d\u00f3nde estaba la llave. Fue la hermana Tracy la que pens\u00f3 en sacar el destornillador de la caja de herramientas guardada bajo el fregadero de la cocina y hacer cu\u00f1a con \u00e9l en la cerradura. Pero cuando eso sucedi\u00f3, la hermana Arnette ya hab\u00eda deducido lo que iban a descubrir.</p>",
                 "date_created": "2018-08-18T20:51:58.628374"
             },
             "vocab_entries": []
         },
-        "56": {
+        {
             "vocab_context_data": {
                 "content": "<p>Pero entonces hab\u00eda ocurrido algo peculiar: los oficiales de polic\u00eda le hab\u00edan pasado la cinta de Misisipi, y cuando Dupree congel\u00f3 la imagen de los dos hombres, Lacey avanz\u00f3 y mir\u00f3 con fijeza el monitor. Arnette ya hab\u00eda dicho a Dupree que eran ellos, ten\u00eda buena vista y no albergaba la menor duda en su mente de que eran ellos, los dos que hab\u00edan ido a la casa para apoderarse de la ni\u00f1a. Pero la expresi\u00f3n de Lacey, que reflejaba sorpresa, aunque no exactamente (Arnette pens\u00f3 en la palabra \u00abestupor\u00bb), los hab\u00eda animado a esperar.</p>",
                 "date_created": "2018-08-18T20:51:58.605321"
             },
             "vocab_entries": []
         },
-        "57": {
+        {
             "vocab_context_data": {
                 "content": "<p>\u2014\u00bfSabes cu\u00e1l es tu problema, Brad? No sabes qui\u00e9n est\u00e1 de tu lado. Te conced\u00ed el beneficio de la duda all\u00ed atr\u00e1s. Lo \u00fanico que deb\u00edas hacer era volver con ella al coche cuando dijiste que lo har\u00edas. No te enteras de qu\u00e9 va el rollo.</p>",
                 "date_created": "2018-08-18T20:51:58.584983"
             },
             "vocab_entries": []
         },
-        "58": {
+        {
             "vocab_context_data": {
                 "content": "<p>Una especie de silbido hendi\u00f3 el aire que lo rodeaba, como si un neum\u00e1tico se hubiera reventado, y una \u00fanica luz verde apareci\u00f3 en la pared del fondo, donde antes hab\u00eda una roja. Se abri\u00f3 una puerta que ba\u00f1\u00f3 la habitaci\u00f3n de una p\u00e1lida luz azulada.</p>",
                 "date_created": "2018-08-18T20:51:58.560970"
             },
             "vocab_entries": []
         },
-        "59": {
+        {
             "vocab_context_data": {
                 "content": "<p>La mujer sac\u00f3 tambi\u00e9n el billetero mientras, detr\u00e1s de ellos, o\u00edan el primer bocinazo impaciente. La mujer mir\u00f3 hacia atr\u00e1s al o\u00edr el sonido, y despu\u00e9s al sem\u00e1foro, que se hab\u00eda puesto en verde.</p>",
                 "date_created": "2018-08-18T20:51:58.538784"
             },
             "vocab_entries": []
         },
-        "60": {
+        {
             "vocab_context_data": {
                 "content": "<p>En aquellos escasos minutos, Wolgast percibi\u00f3 que sus pensamientos se reordenaban en un plan. Cuando acabaran con el tiovivo, la coger\u00eda, se deslizar\u00edan en la oscuridad, entre la muchedumbre, lejos de la tienda de cerveza, y saldr\u00edan por la puerta. Cuando Doyle se diera cuenta de lo que hab\u00eda sucedido, no encontrar\u00eda m\u00e1s que un espacio vac\u00edo en el aparcamiento. Un millar de kil\u00f3metros en todas direcciones. La distancia los engullir\u00eda. Era un experto, sab\u00eda lo que estaba haciendo.</p>",
                 "date_created": "2018-08-18T20:51:58.517309"
             },
             "vocab_entries": []
         },
-        "61": {
+        {
             "vocab_context_data": {
                 "content": "<p>Los cumulonimbos hab\u00edan tapado el sol, y lo hab\u00edan envuelto en una oscuridad prematura. En el horizonte, bajo una plataforma de nubes, una cortina de lluvia ca\u00eda a trav\u00e9s de una banda de luz dorada sobre los campos.</p>",
                 "date_created": "2018-08-18T20:51:58.494816"
             },
             "vocab_entries": []
         },
-        "62": {
+        {
             "vocab_context_data": {
                 "content": "<p>Lacey. As\u00ed se llamaba la monja. Y abrazaba a Amy como si le fuera la vida en ello. Cuando Wolgast pensaba en aquel momento, en el espantoso tira y afloja en el aparcamiento, con todo el mundo gritando y aullando, el recuerdo se retorc\u00eda en sus tripas con un dolor f\u00edsico.</p>",
                 "date_created": "2018-08-18T20:51:58.472429"
             },
             "vocab_entries": []
         },
-        "63": {
+        {
             "vocab_context_data": {
                 "content": "<p>Cuando anocheci\u00f3 estaban a ochenta kil\u00f3metros de Oklahoma City, atravesando la pradera en direcci\u00f3n oeste, hacia una muralla de cumulonimbos primaverales que ascend\u00edan desde el horizonte como una hilera de flores que se abrieran a c\u00e1mara r\u00e1pida.</p>",
                 "date_created": "2018-08-18T20:51:58.450276"
             },
             "vocab_entries": []
         },
-        "64": {
+        {
             "vocab_context_data": {
                 "content": "<p>\u2014No hemos hecho nada \u2014gimote\u00f3 Paulson\u2014. S\u00f3lo fue una broma. Eh, Anthony, \u00bfno puedes aguantar una broma?</p>\n<p>Richards se volvi\u00f3 hacia ellos al instante. \u2014\u00bfSabes?, \u00bfesa vocecita en tu cabeza, la que dice que tienes que cerrar la puta boca? Es la voz a la que deber\u00edas hacer caso en este momento.</p>",
                 "date_created": "2018-08-18T20:51:58.427418"
             },
             "vocab_entries": []
         },
-        "65": {
+        {
             "vocab_context_data": {
                 "content": "<p>En un t\u00e9trico barrio de apartamentos y calles comerciales, Wolgast par\u00f3 en una gasolinera y apag\u00f3 el motor. Se volvi\u00f3 hacia Doyle. Ninguno de los dos hab\u00eda hablado desde el zoo.</p>",
                 "date_created": "2018-08-18T20:51:58.405413"
             },
             "vocab_entries": []
         },
-        "66": {
+        {
             "vocab_context_data": {
                 "content": "<p>Wolgast y Doyle estaban en alg\u00fan lugar del sur de Memphis, saliendo de la periferia de la ciudad a trav\u00e9s de un laberinto de calles residenciales. Todo hab\u00eda ido mal desde el comienzo. Wolgast no ten\u00eda ni idea de qu\u00e9 hab\u00eda ocurrido en el zoo, pues el lugar se hab\u00eda puesto patas arriba. Despu\u00e9s de eso la mujer, la monja vieja, Arnette, hab\u00eda ordenado a la otra, Lacey, que soltara a la ni\u00f1a.</p>",
                 "date_created": "2018-08-18T20:51:58.383215"
             },
             "vocab_entries": []
         },
-        "67": {
+        {
             "vocab_context_data": {
                 "content": "<p>Lo vio todo en el ojo de su mente, por fin lo vio todo: los ej\u00e9rcitos que avanzaban y las llamas de la batalla; las tumbas, fosas y gritos de agon\u00eda de cien millones de almas; la oscuridad que se propagaba como un ala negra que se cerniera sobre la tierra; las \u00faltimas y amargas horas de crueldad y dolor, la terrible huida final; el dominio de la muerte sobre todas las cosas, y al final, las ciudades desiertas, encalmadas por el silencio de un siglo. Esas cosas estaban a punto de suceder. Lacey llor\u00f3, y volvi\u00f3 a llorar. Porque, sentada en un bordillo de Memphis, en Tennessee, tambi\u00e9n ve\u00eda a Amy. Su Amy, a quien Lacey no pod\u00eda salvar, del mismo modo que no pod\u00eda salvarse a s\u00ed misma. Amy, suspendida en el tiempo y an\u00f3nima, que vagaba eternamente por el mundo olvidado y oscuro, sola y sin voz, salvo para preguntar:</p>\n<p>\u00ab\u00bfQu\u00e9 soy? \u00bfQu\u00e9 soy? \u00bfQu\u00e9 soy?\u00bb.</p>",
                 "date_created": "2018-08-18T20:51:58.361026"
             },
             "vocab_entries": []
         },
-        "68": {
+        {
             "vocab_context_data": {
                 "content": "<p>Pasaron junto a los elefantes, y al instante tomaron conciencia de su tama\u00f1o y fuerza. Pisoteaban el suelo con sus inmensas patas, alzaban la trompa y rug\u00edan al calor de Memphis. Un rinoceronte carg\u00f3 contra la verja, con un gran estruendo, como el de un coche al estrellarse, y empez\u00f3 a atacarla con su gigantesco cuerno. El aire se inflam\u00f3 de esos sonidos, grandes, terribles y henchidos de dolor, y la gente corr\u00eda y llamaba a sus hijos, empujaban, tiraban y lanzaban codazos, abr\u00edan paso a Lacey.</p>",
                 "date_created": "2018-08-18T20:51:58.338703"
             },
             "vocab_entries": []
         },
-        "69": {
+        {
             "vocab_context_data": {
                 "content": "<p>La ni\u00f1a alz\u00f3 la mirada. Lacey se qued\u00f3 estupefacta. Nunca hab\u00eda visto tal tristeza en la expresi\u00f3n de un ni\u00f1o, un dolor tan consciente. No obstante, mientras escudri\u00f1aba los ojos de Amy, no vio miedo. Amy hab\u00eda aceptado lo que acababa de averiguar.</p>",
                 "date_created": "2018-08-18T20:51:58.317036"
             },
             "vocab_entries": []
         },
-        "70": {
+        {
             "vocab_context_data": {
                 "content": "<p>Se produjo un tremendo chapoteo en la charca. La multitud respir\u00f3 hondo. Un segundo oso hab\u00eda saltado al agua. Chapote\u00f3 en direcci\u00f3n a Amy. As\u00ed pues, ahora hab\u00eda dos, golpeando el cristal a escasos cent\u00edmetros de su cara, con sus cuerpos grandes como autom\u00f3viles, mientras su pelaje blanco ondulaba en las corrientes de aire.</p>",
                 "date_created": "2018-08-18T20:51:58.294238"
             },
             "vocab_entries": []
         },
-        "71": {
+        {
             "vocab_context_data": {
                 "content": "<p>Lacey se abri\u00f3 paso entre la gente que se congregaba ante el recinto de los osos. Encontr\u00f3 a Amy parada con la cara a escasos cent\u00edmetros del cristal que facilitaba una vista submarina del h\u00e1bitat del oso, una visi\u00f3n curiosa en un lugar caluroso como Memphis, con rocas pintadas para semejar t\u00e9mpanos de hielo y una profunda charca de azul \u00e1rtico.</p>",
                 "date_created": "2018-08-18T20:51:58.271960"
             },
             "vocab_entries": []
         },
-        "72": {
+        {
             "vocab_context_data": {
                 "content": "<p>\u2014\u00bfQu\u00e9 quieres ver? \u2014pregunt\u00f3. A unos seis metros de la entrada hab\u00eda un quiosco con un plano grande, distribuido en bloques de colores para cada h\u00e1bitat y especie.</p>",
                 "date_created": "2018-08-18T20:51:58.250005"
             },
             "vocab_entries": []
         },
-        "73": {
+        {
             "vocab_context_data": {
                 "content": "<p>Fuera hab\u00eda parado de llover. Un sol c\u00e1lido y perezoso estaba ba\u00f1ando el patio. El d\u00eda ser\u00eda caluroso, supuso Lacey, una invasi\u00f3n de calor procedente del sur que le pisaba los talones al frente fr\u00edo que hab\u00eda concentrado la lluvia sobre la casa durante toda la noche.</p>",
                 "date_created": "2018-08-18T20:51:58.227667"
             },
             "vocab_entries": []
         },
-        "74": {
+        {
             "vocab_context_data": {
                 "content": "<p>Hasta el momento, la mentira hab\u00eda funcionado, pero Lacey sab\u00eda que era insostenible, como un suelo de tablas podridas bajo sus pies.</p>",
                 "date_created": "2018-08-18T20:51:58.205922"
             },
             "vocab_entries": []
         },
-        "75": {
+        {
             "vocab_context_data": {
                 "content": "<p>El ruido de la lluvia, que repiqueteaba sobre las hojas al otro lado de la ventana, despert\u00f3 a Lacey. \u00bfD\u00f3nde estaba Amy?</p>",
                 "date_created": "2018-08-18T20:51:58.183573"
             },
             "vocab_entries": []
         },
-        "76": {
+        {
             "vocab_context_data": {
                 "content": "<p>Consult\u00f3 de nuevo su reloj, a sabiendas de que no deb\u00eda, pero incapaz de reprimirse. Acababan de dar las tres. No estaba de humor para otra partida de cartas, con independencia de lo que hiciera aquel hijo de puta de Seattle, y las horas de espera a que la furgoneta entrara en el recinto se abrieron de repente ante \u00e9l como una boca que pod\u00eda engullirlo por completo.</p>",
                 "date_created": "2018-08-18T20:51:58.161517"
             },
             "vocab_entries": []
         },
-        "77": {
+        {
             "vocab_context_data": {
                 "content": "<p>\u00abEs hora de marchar, muchachos \u2014dijo Richards\u2014. No pasa nada, nadie est\u00e1 enfadado con vosotros\u00bb, y los condujo a un lugar que conoc\u00eda, un bonito paraje con la vista de un r\u00edo, con el fin de ense\u00f1arles el mundo que estaban a punto de abandonar, y les peg\u00f3 sendos tiros en la frente.</p>",
                 "date_created": "2018-08-18T20:51:58.139464"
             },
             "vocab_entries": []
         },
-        "78": {
+        {
             "vocab_context_data": {
                 "content": "<p>Rellen\u00f3 el formulario, pero los presentes, un hombre y una mujer, apenas le echaron un vistazo. Mientras tecleaban en el ordenador, le pidieron que meara en una taza, y despu\u00e9s le dieron un pol\u00edgrafo, pero \u00e9se era el procedimiento habitual.</p>",
                 "date_created": "2018-08-18T20:51:58.116319"
             },
             "vocab_entries": []
         },
-        "79": {
+        {
             "vocab_context_data": {
                 "content": "<p>Hab\u00eda que tener en cuenta el viento, por supuesto, pero cuando la brisa te acariciaba la espalda exist\u00edan pocos placeres comparables a mear desde una plataforma situada a sesenta metros sobre el Golfo y ver el arco que describ\u00eda en el aire, antes de caer desde veinte pisos al azul. Consegu\u00eda que te sintieras peque\u00f1o y grande a la vez.</p>",
                 "date_created": "2018-08-18T20:51:58.094364"
             },
             "vocab_entries": []
         },
-        "80": {
+        {
             "vocab_context_data": {
                 "content": "<p>De todos modos, ser\u00eda agradable abandonar el recinto de vez en cuando, aunque s\u00f3lo fuera para echar un vistazo. Sab\u00eda que estaban en alg\u00fan lugar de Colorado, a juzgar por las matr\u00edculas de algunos coches, y a veces alguien, tal vez un oficial o alg\u00fan cient\u00edfico, que gozaban de permiso para ir y venir a su libre albedr\u00edo, olvidaban un ejemplar del Denver Post. De modo que, en realidad, su emplazamiento no era un gran secreto, dijera lo que dijera Richards.</p>",
                 "date_created": "2018-08-18T20:51:58.071938"
             },
             "vocab_entries": []
         },
-        "81": {
+        {
             "vocab_context_data": {
                 "content": "<p>No, lo que diferenciaba a Cero era algo f\u00edsico: era el efecto que obraba en ti. Grey no hab\u00eda encontrado una forma mejor de explicarlo. Los dem\u00e1s parec\u00edan tan interesados en la gente a la que ve\u00edan detr\u00e1s del cristal como un pu\u00f1ado de chimpanc\u00e9s en el zoo. Pero Cero no: Cero prestaba atenci\u00f3n. Siempre que dejaban caer los barrotes, lo cual dejaba encerrado a Cero al fondo de la habitaci\u00f3n, y Grey se embut\u00eda en su traje de protecci\u00f3n contra riesgos biol\u00f3gicos y entraba a trav\u00e9s de la esclusa para limpiar o llevar los conejos (conejos, por el amor de Dios; \u00bfpor qu\u00e9 ten\u00edan que ser conejos?), una especie de sarpullido le trepaba hasta el cuello, como si una hilera de hormigas estuviera recorri\u00e9ndole la piel.</p>",
                 "date_created": "2018-08-18T20:51:58.050380"
             },
             "vocab_entries": []
         },
-        "82": {
+        {
             "vocab_context_data": {
                 "content": "<p>De vez en cuando, Grey o\u00eda un leve tintineo en el audio, y sab\u00eda que era el sonido que hac\u00eda otro diente al caer de la boca de Grey al cemento. Sol\u00edan desprenderse a raz\u00f3n de media docena al d\u00eda. Iban a parar al crematorio, como todo lo dem\u00e1s.</p>",
                 "date_created": "2018-08-18T20:51:58.027409"
             },
             "vocab_entries": []
         },
-        "83": {
+        {
             "vocab_context_data": {
                 "content": "<p>\u2014\u00bfQuieres que conduzca? \u2014pregunt\u00f3 Doyle, rompiendo el silencio, y Wolgast dedujo por el tono de su voz que estaba pensando lo mismo. Amy SAC. \u00bfQui\u00e9n era Amy SAC? Mene\u00f3 la cabeza. A su alrededor, las primeras luces del alba se estaban esparciendo sobre el delta del Misisipi como una manta empapada. Conect\u00f3 los limpiaparabrisas para eliminar la condensaci\u00f3n.</p>",
                 "date_created": "2018-08-18T20:51:58.005281"
             },
             "vocab_entries": []
         },
-        "84": {
+        {
             "vocab_context_data": {
                 "content": "<p>Eran m\u00e1s de las tres de la ma\u00f1ana cuando Wolgast y Doyle llegaron a Baton Rouge, donde se desviaron hacia el norte, en direcci\u00f3n a la frontera del estado de Misisipi. Doyle hab\u00eda conducido durante el primer tramo, encargado del volante desde Houston hasta un poco al este de Lafayette, mientras Wolgast intentaba dormir. Poco despu\u00e9s de las dos hab\u00edan parado en Waffle House, fuera de la autopista, para cambiar de sitio, y desde entonces, Doyle apenas se hab\u00eda movido. Lloviznaba, lo suficiente para cubrir de vaho el parabrisas.</p>",
                 "date_created": "2018-08-18T20:51:57.983144"
             },
             "vocab_entries": []
         },
-        "85": {
+        {
             "vocab_context_data": {
                 "content": "<p>Hab\u00eda d\u00edas de visita, por supuesto, pero Carter s\u00f3lo hab\u00eda tenido un visitante en Terrell durante toda su estancia, cuando el marido de la mujer hab\u00eda ido a verlo para decirle que hab\u00eda encontrado a Jesucristo, que era el Se\u00f1or, y que hab\u00eda rezado por lo que Carter hab\u00eda hecho, le hab\u00eda arrebatado a \u00e9l y a sus hijos su hermosa esposa para siempre jam\u00e1s, y que tras muchas semanas y meses de rezar, se hab\u00eda reconciliado con aquello y decidido perdonarlo.</p>",
                 "date_created": "2018-08-18T20:51:57.960882"
             },
             "vocab_entries": []
         },
-        "86": {
+        {
             "vocab_context_data": {
                 "content": "<p>Esta noche est\u00e1 tranquila, no hay ni un murci\u00e9lago en el cielo. Hemos erigido un c\u00edrculo de fuego alrededor del campamento, y eso parece mantenerlos a raya.</p>",
                 "date_created": "2018-08-18T20:51:57.938622"
             },
             "vocab_entries": []
         },
-        "87": {
+        {
             "vocab_context_data": {
                 "content": "<p>Anoche volvieron otra vez. Los soldados hab\u00edan erigido un per\u00edmetro defensivo, pero eran demasiados. Debieron de llegar en centenares de miles, un gigantesco enjambre que ocult\u00f3 las estrellas. Murieron tres soldados, y tambi\u00e9n Cole. Estaba parado delante de m\u00ed. Lo levantaron en volandas antes de despedazarlo como un cuchillo caliente que rebanase un trozo de mantequilla. Apenas ha quedado nada que enterrar.</p>",
                 "date_created": "2018-08-18T20:51:57.916251"
             },
             "vocab_entries": []
         },
-        "88": {
+        {
             "vocab_context_data": {
                 "content": "<p>Esta noche hay m\u00e1s murci\u00e9lagos. Al final te acostumbras, y encima ahuyentan a los mosquitos. Claudia dispuso una trampa para cazar uno.</p>",
                 "date_created": "2018-08-18T20:51:57.894744"
             },
             "vocab_entries": []
         },
-        "89": {
+        {
             "vocab_context_data": {
                 "content": "<p>Anoche acampamos a orillas del r\u00edo y escuchamos las bandadas de murci\u00e9lagos que surg\u00edan de las cuevas al anochecer; por la ma\u00f1ana nos dirigimos hacia el este siguiendo el barranco.</p>",
                 "date_created": "2018-08-18T20:51:57.872466"
             },
             "vocab_entries": []
         },
-        "90": {
+        {
             "vocab_context_data": {
                 "content": "<p>Han pasado seis d\u00edas. Siento no haber mantenido el contacto, y dile por favor a Rochelle que no se preocupe. Ha sido dif\u00edcil avanzar por este camino, abri\u00e9ndose paso entre la intrincada espesura y la lluvia constante. Es muy dif\u00edcil comunicarse v\u00eda sat\u00e9lite. Por la noche, todos comemos como mozos de labranza y nos desplomamos agotados en nuestras tiendas. Nadie huele demasiado bien, por otra parte.</p>",
                 "date_created": "2018-08-18T20:51:57.850522"
             },
             "vocab_entries": []
         },
-        "91": {
+        {
             "vocab_context_data": {
                 "content": "<p>Saludos desde las selvas de Bolivia, axila de los Andes sin salida al mar. Desde donde est\u00e1s sentado ahora, en el glacial Cambridge, viendo caer la nieve, estoy seguro de que un mes en los tr\u00f3picos no suena tan mal. Pero cr\u00e9eme: esto no es St. Barts. Ayer vi una serpiente del tama\u00f1o de un submarino.</p>",
                 "date_created": "2018-08-18T20:51:57.827796"
             },
             "vocab_entries": []
         },
-        "92": {
+        {
             "vocab_context_data": {
                 "content": "<p>La mujer se apart\u00f3 para dejarlas pasar al vest\u00edbulo. Jeanette sab\u00eda que en alg\u00fan lugar del edificio habr\u00eda m\u00e1s monjas (que quiz\u00e1 fueran negras tambi\u00e9n), durmiendo, cocinando, leyendo o rezando, pues eso supon\u00eda que hac\u00edan las monjas casi todo el d\u00eda. Reinaba el silencio, y supuso que no se equivocaba. Lo que deb\u00eda conseguir era que la mujer la dejara a solas con Amy.</p>",
                 "date_created": "2018-08-18T20:51:57.807048"
             },
             "vocab_entries": []
         },
-        "93": {
+        {
             "vocab_context_data": {
                 "content": "<p>En la radio no paraban de hablar de guerra. Se dirigi\u00f3 hacia el sur, y consigui\u00f3 llegar a Memphis antes de que la Kia muriera de una vez por todas.</p>",
                 "date_created": "2018-08-18T20:51:57.783209"
             },
             "vocab_entries": []
         },
-        "94": {
+        {
             "vocab_context_data": {
                 "content": "<p>Nadie volvi\u00f3 a saber nada m\u00e1s de ellas. La casa se qued\u00f3 vac\u00eda. Las tuber\u00edas se helaron y estallaron como fruta madura. Cuando lleg\u00f3 la primavera, el agua se escap\u00f3 de ellas durante d\u00edas, hasta que en la compa\u00f1\u00eda comprendieron que nadie iba a pagar la factura y enviaron a un par de hombres para cortar el agua.</p>",
                 "date_created": "2018-08-18T20:51:57.760920"
             },
             "vocab_entries": []
         }
-    }
+    ]
 }

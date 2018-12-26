@@ -66,38 +66,41 @@ def export_vocab_source(request, vocab_source):
             vocab_source,
             context={'request': request}
         )
-        vocab_data = {
+        vocab_source_dict = {
             'vocab_project_data': vocab_project_serializer.get_minimal_data(),
-            'vocab_source_data': vocab_source_serializer.get_minimal_data(),
-            'vocab_contexts': {},
+            'vocab_source_data': vocab_source_serializer.get_minimal_data()
         }
 
-        for vocab_context_index, vocab_context in enumerate(vocab_source.vocab_contexts.all(), start=1):
-            vocab_context_serializer = VocabContextSerializer(
-                vocab_context,
-                context={'request': request}
-            )
-            vocab_context_dict = {
-                'vocab_context_data': vocab_context_serializer.get_minimal_data(),
-                'vocab_entries': []
-            }
+        if vocab_source.vocab_contexts.count():
+            vocab_source_dict['vocab_contexts'] = []
 
-            for vocab_context_entry in vocab_context.vocabcontextentry_set.all():
-                vocab_entry = vocab_context_entry.vocab_entry
-                vocab_entry_serializer = VocabEntrySerializer(
-                    vocab_entry,
+            for vocab_context in vocab_source.vocab_contexts.all():
+                vocab_context_serializer = VocabContextSerializer(
+                    vocab_context,
                     context={'request': request}
                 )
-                vocab_context_dict['vocab_entries'].append(
-                    {
-                        'vocab_entry_data': vocab_entry_serializer.get_minimal_data(),
-                        'vocab_entry_tags': vocab_context_entry.get_vocab_entry_tags()
-                    }
-                )
+                vocab_context_dict = {
+                    'vocab_context_data': vocab_context_serializer.get_minimal_data(),
+                }
 
-            vocab_data['vocab_contexts'][vocab_context_index] = vocab_context_dict
+                if vocab_context.vocabcontextentry_set.count():
+                    vocab_context_dict['vocab_entries'] = []
+                    for vocab_context_entry in vocab_context.vocabcontextentry_set.all():
+                        vocab_entry = vocab_context_entry.vocab_entry
+                        vocab_entry_serializer = VocabEntrySerializer(
+                            vocab_entry,
+                            context={'request': request}
+                        )
+                        vocab_context_dict['vocab_entries'].append(
+                            {
+                                'vocab_entry_data': vocab_entry_serializer.get_minimal_data(),
+                                'vocab_entry_tags': vocab_context_entry.get_vocab_entry_tags()
+                            }
+                        )
 
-        return json.loads(json.dumps(vocab_data))
+                vocab_source_dict['vocab_contexts'].append(vocab_context_dict)
+
+        return json.loads(json.dumps(vocab_source_dict))
 
 
 def import_vocab_entries(data):
@@ -106,8 +109,8 @@ def import_vocab_entries(data):
     '''
     validate_vocab_entries_json_schema(data)
 
-    for vocab_entry in data['vocab_entries']:
-        vocab_entry_data = vocab_entry['vocab_entry_data']
+    for vocab_entry_dict in data['vocab_entries']:
+        vocab_entry_data = vocab_entry_dict['vocab_entry_data']
 
         if not VocabEntry.objects.filter(
             entry=vocab_entry_data['entry'],
@@ -116,8 +119,8 @@ def import_vocab_entries(data):
             VocabEntry.objects.create(
                 **vocab_entry_data
             )
-            if 'vocab_definitions' in vocab_entry:
-                for vocab_definition in vocab_entry['vocab_definitions']:
+            if 'vocab_definitions' in vocab_entry_dict:
+                for vocab_definition in vocab_entry_dict['vocab_definitions']:
                     vocab_definition_data = vocab_definition['vocab_definition_data']
                     VocabDefinition.objects.create(**vocab_definition_data)
 
@@ -129,7 +132,6 @@ def import_vocab_source(data, creator):
     validate_vocab_source_json_schema(data)
 
     creator_id = creator.id
-    vocab_contexts_dict = data['vocab_contexts']
     VocabSource.objects.filter(
         creator_id=creator_id,
         name=data['vocab_source_data']['name']
@@ -156,39 +158,42 @@ def import_vocab_source(data, creator):
         vocab_project_id=vocab_project.id
     )
 
-    for vocab_context_k, vocab_context_v in vocab_contexts_dict.items():
-        vocab_context_data = vocab_context_v['vocab_context_data']
-        vocab_context_serializer = VocabContextSerializer(
-            data=vocab_context_data
-        )
-        vocab_context_serializer.is_valid(raise_exception=True)
-        vocab_context = vocab_context_serializer.save(
-            vocab_source_id=vocab_source.id
-        )
+    if 'vocab_contexts' in data:
 
-        # VocabContextEntry
-        for vocab_context_entry in vocab_context_v['vocab_entries']:
-            vocab_entry_data = vocab_context_entry['vocab_entry_data']
-
-            try:
-                vocab_entry = VocabEntry.objects.get(
-                    entry=vocab_entry_data['entry'],
-                    language=vocab_entry_data['language']
-                )
-            except VocabEntry.DoesNotExist:
-                vocab_entry = VocabEntry.objects.create(
-                    **vocab_entry_data
-                )
-
-            vocab_context_entry_obj = VocabContextEntry.objects.create(
-                vocab_entry_id=vocab_entry.id,
-                vocab_context_id=vocab_context.id
+        for vocab_context_dict in data['vocab_contexts']:
+            vocab_context_data = vocab_context_dict['vocab_context_data']
+            vocab_context_serializer = VocabContextSerializer(
+                data=vocab_context_data
+            )
+            vocab_context_serializer.is_valid(raise_exception=True)
+            vocab_context = vocab_context_serializer.save(
+                vocab_source_id=vocab_source.id
             )
 
-            if vocab_context_entry['vocab_entry_tags']:
-                for vocab_entry_tag in vocab_context_entry['vocab_entry_tags']:
-                    vocab_context_entry_obj.add_vocab_entry_tag(vocab_entry_tag)
-                vocab_context_entry_obj.save()
+            if 'vocab_entries' in vocab_context_dict:
+
+                for vocab_context_entry_dict in vocab_context_dict['vocab_entries']:
+                    vocab_entry_data = vocab_context_entry_dict['vocab_entry_data']
+
+                    try:
+                        vocab_entry = VocabEntry.objects.get(
+                            entry=vocab_entry_data['entry'],
+                            language=vocab_entry_data['language']
+                        )
+                    except VocabEntry.DoesNotExist:
+                        vocab_entry = VocabEntry.objects.create(
+                            **vocab_entry_data
+                        )
+
+                    vocab_context_entry = VocabContextEntry.objects.create(
+                        vocab_entry_id=vocab_entry.id,
+                        vocab_context_id=vocab_context.id
+                    )
+
+                    if 'vocab_entry_tags' in vocab_context_entry_dict:
+                        for vocab_entry_tag in vocab_context_entry_dict['vocab_entry_tags']:
+                            vocab_context_entry.add_vocab_entry_tag(vocab_entry_tag)
+                        vocab_context_entry.save()
 
 
 def validate_vocab_entries_json_schema(data):
@@ -272,68 +277,66 @@ def validate_vocab_source_json_schema(data):
                 'required': ['name'],
             },
             'vocab_contexts': {
-                'type': 'object',
-                'patternProperties': {
-                    '^[0-9]+$': {
-                        'type': 'object',
-                        'properties': {
-                            'vocab_context_data': {
+                'type': 'array',
+                'items': {
+                    'type': 'object',
+                    'properties': {
+                        'vocab_context_data': {
+                            'type': 'object',
+                            'properties': {
+                                'content': {
+                                    'type': 'string'
+                                },
+                                'date_created': {
+                                    'type': 'string'
+                                }
+                            },
+                            'required': ['content'],
+                        },
+                        'vocab_entries': {
+                            'type': 'array',
+                            'items': {
                                 'type': 'object',
                                 'properties': {
-                                    'content': {
-                                        'type': 'string'
-                                    },
-                                    'date_created': {
-                                        'type': 'string'
-                                    }
-                                },
-                                'required': ['content'],
-                            },
-                            'vocab_entries': {
-                                'type': 'array',
-                                'items': {
-                                    'type': 'object',
-                                    'properties': {
-                                        'vocab_entry_data': {
-                                            'type': 'object',
-                                            'properties': {
-                                                'language': {
-                                                    'type': 'string',
-                                                    'minLength': 2,
-                                                    'maxLength': 2
-                                                },
-                                                'entry': {
-                                                    'type': 'string',
-                                                },
-                                                'pronunciation_ipa': {
-                                                    'type': 'string',
-                                                    'blank': True
-                                                },
-                                                'pronunciation_spelling': {
-                                                    'type': 'string',
-                                                    'blank': True
-                                                },
-                                                'date_created': {
-                                                    'type': 'string'
-                                                }
+                                    'vocab_entry_data': {
+                                        'type': 'object',
+                                        'properties': {
+                                            'language': {
+                                                'type': 'string',
+                                                'minLength': 2,
+                                                'maxLength': 2
                                             },
-                                            'required': ['entry'],
-                                        },
-                                        'vocab_entry_tags': {
-                                            'type': 'array',
-                                            'items': {
+                                            'entry': {
+                                                'type': 'string',
+                                            },
+                                            'pronunciation_ipa': {
+                                                'type': 'string',
+                                                'blank': True
+                                            },
+                                            'pronunciation_spelling': {
+                                                'type': 'string',
+                                                'blank': True
+                                            },
+                                            'date_created': {
                                                 'type': 'string'
                                             }
-                                        }
+                                        },
+                                        'required': ['entry'],
                                     },
-                                    'required': ['vocab_entry_data', 'vocab_entry_tags']
-                                }
-                            }
+                                    'vocab_entry_tags': {
+                                        'type': 'array',
+                                        'items': {
+                                            'type': 'string'
+                                        }
+                                    }
+                                },
+                                'required': ['vocab_entry_data', 'vocab_entry_tags']
+                            },
                         },
-                        'required': ['vocab_context_data', 'vocab_entries']
                     },
-                }
-            }
+                    'required': ['vocab_context_data', 'vocab_entries']
+                },
+            },
         },
         'required': ['vocab_source_data', 'vocab_contexts']
     }

@@ -42,8 +42,8 @@ urlpatterns = [
     path('oxford/entry/', OxfordAPIEntryView.as_view(), name='oxford_entry'),
     path('vocab/source/import/', VocabSourceImportView.as_view(), name='vocab_source_import'),
     path('vocab/source/import/', VocabSourceImportView.as_view(), name='vocab_source_import'),
-    re_path(
-        '^vocab/source/(?P<vocab_source_pk>[\d]+)/export/$',
+    path(
+        'vocab/source/<int:vocab_source_pk>/export/',
         VocabSourceExportView.as_view(),
         name='vocab_source_export'
     ),

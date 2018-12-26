@@ -581,3 +581,185 @@ project_name: Spanish Reading
     es: esquirlado: esquirlada
 
     </div>
+
+- Era una inquietud muy racional. Si Dalinar tuviera esa inclinación, podría enviar a un Corredor del Viento para abrir en secreto la Puerta Jurada de una ciudad e invadirla en un asalto sin precedentes, que aparecería detrás de las líneas enemigas. 
+
+    Necesitaba aliados, no súbditos, de modo que no iba a hacerlo... o al menos, no a una ciudad potencialmente amistosa. Sin embargo, Kholinar era una historia muy distinta. Aún no tenían noticias de lo que estaba ocurriendo en la capital alezi. Si seguía habiendo revueltas, estaba pensando que podría haber una forma de enviar tropas y restaurar el orden.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: súbdito: subditos
+
+    es: revuelta: revueltas
+
+    es: inquietud: inquietud
+
+    es: de modo que: de modo que
+
+    </div>
+
+- Cerca de las Llanuras Quebradas se han manifestado varios Radiantes. Se forman mediante la interacción con ciertos spren, que parecen estar buscando candidatos dignos. Debo asumir que lo mismo está ocurriendo a lo largo y ancho del mundo. Es muy probable que, entre los habitantes de tu ciudad, alguien haya pronunciado ya los juramentos.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: a lo largo y ancho: a lo largo y ancho
+
+    es: manifestarse: se han manifestado
+
+    es: mediante: mediante
+
+    </div>
+
+- &mdash;Va, levanta —lo cortó Dalinar, agarrándolo por el brazo y tirando para ponerlo de pie—. No seas tan dramático. Si de verdad quieres jurar eso, lo permitiré. Pero no finjamos que puedes irrumpir en una habitación, gritar unas palabras de nada y darles categoría de contrato legal.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: irrumpir: irrumpir
+
+    es: fingir: finjamos
+
+    </div>
+
+- Elhokar se zafó de la presa de su tío y se frotó el brazo. 
+
+    —No me dejas ni abdicar con dignidad. 
+
+    —No vas a abdicar —dijo Navani, llegando junto a ellos. Lanzó una mirada furiosa a los guardias, que los miraban boquiabiertos y palidecieron al verla. Los señaló como advirtiéndoles que no dijeran ni una palabra de aquello a nadie—. Elhokar, pretendes aupar a tu tío a una posición por encima de la tuya. Tiene derecho a preguntar.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: abdicar: abdicar
+
+    es: boquiabierto: boquiabiertos
+
+    es: aupar: aupar
+
+    </div>
+
+- ¿Elhokar? ¿Dirigiendo tropas? Dalinar se había imaginado a sí mismo encabezando un ejército, atravesando las filas de Portadores del Vacío, barriéndolos de la superficie de Alezkar y marchando hacia Kholinar para restablecer el orden.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: encabezar: encabezando
+
+    es: atravesar: atravesando
+
+    es: barrer: barriéndolos
+
+    es: restablecer: restablecer
+
+    </div>
+
+- Aunque Dalinar fracasara en todo lo demás, por lo menos tendría al rey Taravangian de su parte.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: fracasar: fracasara
+
+    </div>
+
+- Shallan exhaló luz tormentosa y cruzó el vaho, sintiendo cómo la envolvía, cómo la transformaba. 
+
+    La habían trasladado, a petición de Sebarial, al sector del alto príncipe en Urithiru, en parte porque le había prometido una habitación con terraza. Aire fresco y vistas a las cumbres montañosas. Si no podía librarse del todo de las profundidades sombrías de aquella torre, por lo menos podía establecer su hogar en el borde.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: librarse: librarse
+
+    es: hogar: hogar
+
+    es: cumbre: cumbres
+
+    es: trasladar: habían trasladado
+
+    </div>
+
+- Adolin traía dos piezas metálicas largas y finas que, de algún modo, podían fundirse al filo de las hojas esquirladas y hacerlas menos peligrosas en los combates de entrenamiento. Radiante las inspeccionó con ojo crítico y extendió el brazo a un lado, invocando a Patrón. Cobró forma la hoja esquirlada, un arma fina y larga, casi tanto como ella de alta. 
+
+    —Patrón puede modular su forma —dijo—, y embotará su filo a un nivel seguro. No necesitaré ese ingenio tan burdo. —Y en efecto, el filo de Patrón titiló, embotándose
+
+    <div markdown="1" class="tagged-entries">
+
+    es: embotar: embotará, embotándose
+
+    es: esquirlado: esquirlada
+
+    es: fundirse: fundirse
+
+    es: entrenamiento: entrenamiento
+
+    </div>
+
+- Tenía una reticencia auténtica a que se les acabara aquel tiempo, de modo que dejó que se extendiera hasta bien entrada la noche, mucho más allá de cuando debería haberlo interrumpido. Al final, Shallan se despidió cansada y sudorosa de Adolin y lo miró mientras cruzaba al trote el pasillo delimitado por estratos, con un brío en el paso, una lámpara en las manos y las guardas de hoja sostenidas contra el hombro.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: reticencia: reticencia
+
+    es: pasillo: pasillo
+
+    es: estrato: estratos
+
+    es: sostener: sostenidas
+
+    </div>
+
+- Las gemas eran lo que permitía vincular las hojas esquirladas. Solían estar en el pomo de la espada, aunque a veces se veían en la espiga, donde la guarnición se unía a la hoja en sí. La gema se iluminaba al tocarla por primera vez, iniciando el proceso. Después de eso, había que conservar el arma durante una semana y se pasaba a poseerla, a poder descartarla y volverla a invocar al ritmo de los latidos del corazón.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: gema: gemas, gema
+
+    es: vincular: vincular
+
+    es: esquirlado: esquirladas
+
+    es: soler: solían
+
+    es: pomo: pomo
+
+    es: espada: espada
+
+    es: espiga: espiga
+
+    es: unirse a: se unía a
+
+    es: latido: latidos
+
+    es: descartar: descartarla
+
+    </div>
+
+- —¿Y esa cosa contra la que luchamos? Odium, el origen de los Portadores del Vacío y sus spren. ¿Él puede incumplir sus juramentos? 
+
+    _No_, respondió el Padre Tormenta. _Es mucho más grande que yo, pero el poder del antiguo Adonalsium lo impregna. Y lo controla. Odium es una fuerza, como la presión, la gravedad o el paso del tiempo. Esas cosas no pueden incumplir sus propias reglas. Odium tampoco_.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: impregnar: impregna
+
+    es: incumplir: incumplir
+
+    </div>
+
+- En sus visiones, Honor había encomendado una tarea a Dalinar. «Irrita a Odium, convéncelo de que puede perder y nombra un campeón. Él aprovechará esa oportunidad en vez de arriesgarse a una nueva derrota, como ha sufrido tantas veces. Es el mejor consejo que puedo darte.»
+
+    <div markdown="1" class="tagged-entries">
+
+    es: encomendar: había encomendado
+
+    es: irritar: irrita
+
+    es: aprovechar: aprovechará
+
+    es: arriesgarse: arriesgarse
+
+    es: derrota: derrota
+
+    es: consejo: consejo
+
+    </div>
+
+- 
+
+

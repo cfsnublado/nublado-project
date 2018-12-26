@@ -1,9 +1,11 @@
 import argparse
-import getpass
 import json
 import os
-import requests
 import sys
+
+import requests
+
+from base import get_user_auth_token
 
 """
 Usage: import_entries.py [-h] [--localhost] entries
@@ -40,14 +42,8 @@ if __name__ == "__main__":
         token_url = "{0}/{1}".format(host_base, token_path)
         vocab_entries_import_url = "{0}/{1}".format(host_base, entries_path)
 
-    username = input("Username: ")
-    password = getpass.getpass("Password: ")
+    token = get_user_auth_token(token_url)
 
-    r = requests.post(
-        token_url,
-        {"username": username, "password": password}
-    )
-    token = r.json().get("token", None)
     if token:
         if os.path.isfile(args.entries):
             import_entries_json(token, args.entries)

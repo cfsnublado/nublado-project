@@ -8,8 +8,8 @@
         "description": "",
         "date_created": "2018-08-10T06:25:12.764326"
     },
-    "vocab_contexts": {
-        "1": {
+    "vocab_contexts": [
+        {
             "vocab_context_data": {
                 "content": "Tambi\u00e9n hab\u00eda demostrado de nuevo que era una idiota al no preocuparse siquiera por cu\u00e1nta luz hab\u00eda utilizado. Con un suspiro, se puso en pie. Se tambale\u00f3, con las piernas entumecidas. Inspir\u00f3 profundamente, luego se asom\u00f3. El pabell\u00f3n hab\u00eda desaparecido, junto con todo rastro de los Sangre Espectral.",
                 "date_created": "2018-02-19T08:07:12.436607"
@@ -56,7 +56,7 @@
                 }
             ]
         },
-        "2": {
+        {
             "vocab_context_data": {
                 "content": "localizar: Amaram ten\u00eda postigos en esas ventanas, y no las abr\u00eda nunca. Parec\u00eda que no se hab\u00eda equivocado respecto a las escaleras de la cocina. Se dirigi\u00f3 hacia all\u00ed tarareando por lo bajo, como hac\u00eda a menudo la mujer que imitaba.",
                 "date_created": "2018-02-19T08:07:12.703698"
@@ -77,7 +77,7 @@
                 }
             ]
         },
-        "3": {
+        {
             "vocab_context_data": {
                 "content": ". \u2014As\u00ed que es una caza, entonces \u2014dijo Mraize en voz baja, sonriendo. Se dio media vuelta y regres\u00f3 al extremo del pabell\u00f3n\u2014. Ya habr\u00e1 m\u00e1s instrucciones. Haz la tarea encomendada. Luego ya veremos.",
                 "date_created": "2018-02-19T08:07:12.871062"
@@ -111,7 +111,7 @@
                 }
             ]
         },
-        "4": {
+        {
             "vocab_context_data": {
                 "content": "Alguien en la multitud aplaudi\u00f3 el golpe directo. Otros, en cambio, abuchearon. El golpe cl\u00e1sico habr\u00eda sido a la cabeza, para intentar romper el yelmo. Elit trastabill\u00f3 hacia delante, intentando recuperar el equilibrio perdido tras la estocada fallida y el golpe subsiguiente. Adolin carg\u00f3 contra \u00e9l con el hombro, derrib\u00e1ndolo al suelo. Entonces, en vez de golpear, dio un paso atr\u00e1s. M\u00e1s abucheos.",
                 "date_created": "2018-02-19T08:07:12.992541"
@@ -185,7 +185,7 @@
                 }
             ]
         },
-        "5": {
+        {
             "vocab_context_data": {
                 "content": "\u00abTengo que formar parte de esto \u2014pens\u00f3 Shallan\u2014. No puedo permitirme que los Sangre Espectral me ignoren por haber metido la pata en esta incursi\u00f3n. Tengo que descubrir qu\u00e9 m\u00e1s saben. Y he de averiguar por qu\u00e9 Amaram est\u00e1 haciendo lo que hace\u00bb.",
                 "date_created": "2018-02-19T08:07:13.248179"
@@ -219,7 +219,7 @@
                 }
             ]
         },
-        "6": {
+        {
             "vocab_context_data": {
                 "content": "Con la armadura guio f\u00e1cilmente la estocada por encima de su cabeza. Luego atac\u00f3 con la otra mano, descargando su espada contra el costado de Elit.",
                 "date_created": "2018-02-19T08:07:13.359505"
@@ -253,7 +253,7 @@
                 }
             ]
         },
-        "7": {
+        {
             "vocab_context_data": {
                 "content": "Jasnah choc\u00f3 contra algo: un oc\u00e9ano de cuentas de cristal. A su alrededor llovieron un n\u00famero incontable de ellas, repiqueteando como granizo en el extra\u00f1o mar. Era la primera vez que ve\u00eda ese lugar: no pod\u00eda explicar lo que hab\u00eda sucedido ni lo que significaba. Se debati\u00f3 mientras se hund\u00eda en lo que parec\u00eda ser una imposibilidad.",
                 "date_created": "2018-02-19T08:07:13.470397"
@@ -287,7 +287,7 @@
                 }
             ]
         },
-        "8": {
+        {
             "vocab_context_data": {
                 "content": "Amaram era uno de los generales m\u00e1s capaces de todo Alezkar. Lo respetaban incluso sus contrincantes. Si se descubr\u00eda que era predicetormentas, eso pod\u00eda perjudicar gravemente su reputaci\u00f3n.",
                 "date_created": "2018-02-19T08:07:13.570233"
@@ -321,7 +321,7 @@
                 }
             ]
         },
-        "9": {
+        {
             "vocab_context_data": {
                 "content": "\u2014Los parshmenios no huyen del cautiverio. Solo ver\u00e1n a un esclavo haciendo una tarea asignada. Dejar\u00e9 tu lanza al lado de la hoguera. \u2014Se encamin\u00f3 hacia la puerta, pero vacil\u00f3 al pasar junto a Kaladin y le puso una mano en el hombro\u2014. Eres un buen hombre, capit\u00e1n. He aprendido mucho. Mi nombre no es Shen. Es Rlain.",
                 "date_created": "2018-02-19T08:07:13.738138"
@@ -355,7 +355,7 @@
                 }
             ]
         },
-        "10": {
+        {
             "vocab_context_data": {
                 "content": "Kaladin se dio media vuelta, alzando la lanza, y absorbi\u00f3 la \u00faltima luz que quedaba en la esfera que hab\u00eda estado utilizando para guiarse. La luz que brot\u00f3 de \u00e9l revel\u00f3 un rostro rojo y negro. Shen parec\u00eda perturbadoramente siniestro en aquellas sombras, como un spren maligno de las leyendas.",
                 "date_created": "2018-02-19T08:07:13.848302"
@@ -415,7 +415,7 @@
                 }
             ]
         },
-        "11": {
+        {
             "vocab_context_data": {
                 "content": "La sombra avanz\u00f3 hacia ella y desenvain\u00f3 una espada.",
                 "date_created": "2018-02-19T08:07:14.036956"
@@ -436,7 +436,7 @@
                 }
             ]
         },
-        "12": {
+        {
             "vocab_context_data": {
                 "content": "Esta era la prueba de que los Sangre Espectral estaban interesados en las mismas cosas que Jasnah. Igual que Amaram, aparentemente. Con el coraz\u00f3n martilleando de emoci\u00f3n, la joven dio media vuelta, examinando la habitaci\u00f3n.",
                 "date_created": "2018-02-19T08:07:14.092504"
@@ -470,7 +470,7 @@
                 }
             ]
         },
-        "13": {
+        {
             "vocab_context_data": {
                 "content": "Probablemente llover\u00eda m\u00e1s tarde\u2026 no una alta tormenta, por suerte. Solo un trivial aguacero.",
                 "date_created": "2018-02-19T08:07:14.192755"
@@ -491,7 +491,7 @@
                 }
             ]
         },
-        "14": {
+        {
             "vocab_context_data": {
                 "content": "Era el momento en que, colgando en el aire, su cuerpo pasaba de sentir la atracci\u00f3n hacia abajo a hacerlo hacia el lado. Sus instintos no estaban preparados para asimilarlo. Una parte primigenia de su interior sent\u00eda p\u00e1nico cada vez que abajo dejaba de estar abajo.",
                 "date_created": "2018-02-19T08:07:14.249695"
@@ -525,7 +525,7 @@
                 }
             ]
         },
-        "15": {
+        {
             "vocab_context_data": {
                 "content": "\u2014No cuestiono las \u00f3rdenes de los ojos claros, alto se\u00f1or. Pero mi se\u00f1ora\u2026, bueno, a veces se distrae un poco. Supongo que quiso encomendarme la tarea mientras a\u00fan la ten\u00eda fresca en la mente. Adem\u00e1s, las hojas esquirladas le interesan mucho.",
                 "date_created": "2018-02-19T08:07:14.359525"
@@ -572,7 +572,7 @@
                 }
             ]
         },
-        "16": {
+        {
             "vocab_context_data": {
                 "content": "Pero ah\u00ed estaba, disfrazada, a tiempo. Por los pelos. Avanz\u00f3, escuchando la lluvia salpicar la roca a su alrededor. Siempre le hab\u00edan gustado este tipo de aguaceros. Hermanos menores de las altas tormentas, tra\u00edan vida sin la furia de estas. Incluso las desoladas tierras de tormenta que hab\u00eda all\u00ed, al oeste de los campamentos, florec\u00edan con la llegada del agua",
                 "date_created": "2018-02-19T08:07:14.503950"
@@ -619,5 +619,5 @@
                 }
             ]
         }
-    }
+    ]
 }

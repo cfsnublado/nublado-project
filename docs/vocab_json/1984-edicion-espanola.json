@@ -8,8 +8,8 @@
         "description": "Orwell",
         "date_created": "2018-08-10T06:24:06.207862"
     },
-    "vocab_contexts": {
-        "1": {
+    "vocab_contexts": [
+        {
             "vocab_context_data": {
                 "content": "Esa noche ten\u00eda que asistir al Centro Comunitario. Devor\u00f3 otra comida ins\u00edpida en el comedor, se apresur\u00f3 a ir al Centro, particip\u00f3 en la solemne estupidez de un &laquo;grupo de discusi\u00f3n&raquo;, jug\u00f3 dos partidas de tenis de mesa, bebi\u00f3 varios vasos de ginebra y se sent\u00f3 media hora a escuchar una conferencia titulada &laquo;El Socing y su relaci\u00f3n con el ajedrez&raquo;.",
                 "date_created": "2018-02-19T08:05:20.363945"
@@ -69,7 +69,7 @@
                 }
             ]
         },
-        "2": {
+        {
             "vocab_context_data": {
                 "content": "Hac\u00eda mucho que hab\u00eda comprendido que la \u00fanica base segura para la oligarqu\u00eda es el colectivismo. La riqueza y los privilegios se defienden m\u00e1s f\u00e1cilmente cuando se comparten. La supuesta &laquo;abolici\u00f3n de la propiedad privada&raquo; que se produjo a mediados de siglo supuso, en realidad, la concentraci\u00f3n de la propiedad en muchas menos manos que antes, pero con la siguiente diferencia: los nuevos proprietarios pasaron a ser un grupo en lugar de una masa de individuos.",
                 "date_created": "2018-02-19T08:05:11.517813"
@@ -103,7 +103,7 @@
                 }
             ]
         },
-        "3": {
+        {
             "vocab_context_data": {
                 "content": "Ocean\u00eda estaba en guerra con Esteasia: Ocean\u00eda siempre hab\u00eda estado en guerra con Esteasia. Gran parte de la literatura pol\u00edtica de los \u00faltimos cinco a\u00f1os se hab\u00eda vuelto totalmente caduca.",
                 "date_created": "2018-02-19T08:05:11.640356"
@@ -137,7 +137,7 @@
                 }
             ]
         },
-        "4": {
+        {
             "vocab_context_data": {
                 "content": "\u00a1Ten\u00eda que aferrarse al hecho de que las verdades de Perogrullo son ciertas! El mundo existe, sus leyes no cambian. Las piedras son duras, el agua moja, los objetos dejados en el vac\u00edo caen hacia el centro de la tierra. Con la sensaci\u00f3n de estar habl\u00e1ndole a O'Brien, y tambi\u00e9n de estar estableciendo un axioma de crucial importancia, escribi\u00f3:\r\n\r\n>  La libertad consiste en poder decir que dos y dos son cuatro. Admitido eso, se deduce todo lo dem\u00e1s.",
                 "date_created": "2018-02-19T08:05:11.751649"
@@ -171,7 +171,7 @@
                 }
             ]
         },
-        "5": {
+        {
             "vocab_context_data": {
                 "content": "Tal vez incluso descubriera alg\u00fan mensaje oculto en el Diccionario . En todo caso, estaba claro que la conspiraci\u00f3n que hab\u00eda so\u00f1aba exist\u00eda y que hab\u00eda entrado en contacto con su periferia.",
                 "date_created": "2018-02-19T08:05:11.862310"
@@ -192,7 +192,7 @@
                 }
             ]
         },
-        "6": {
+        {
             "vocab_context_data": {
                 "content": "Los grupos gobernantes siempre estaban contaminados hasta cierto punto por ideas liberales, no les preocupaba dejar cabos sueltos ni lo que pudieran pensar su s\u00fabditos.",
                 "date_created": "2018-02-19T08:05:11.928918"
@@ -226,7 +226,7 @@
                 }
             ]
         },
-        "7": {
+        {
             "vocab_context_data": {
                 "content": "Se arrodill\u00f3, abri\u00f3 la bolsa y sac\u00f3 unas llaves inglesas y un destornillador que llevaba encima. Debajo hab\u00eda varios paquetes pulcramente envueltos en papel.",
                 "date_created": "2018-02-19T08:05:12.040084"
@@ -286,7 +286,7 @@
                 }
             ]
         },
-        "8": {
+        {
             "vocab_context_data": {
                 "content": "Winston record\u00f3 vagamente algo que hab\u00eda visto en una pared o una valla publicitaria: una botella gigantesca hecha con luces el\u00e9ctricas que daba la impresi\u00f3n de moverse arriba y abajo y verter su contenido en unas copas.",
                 "date_created": "2018-02-19T08:05:12.340105"
@@ -333,7 +333,7 @@
                 }
             ]
         },
-        "9": {
+        {
             "vocab_context_data": {
                 "content": "No pudo evitar una punzada de p\u00e1nico. Era absurdo, puesto que escribir esas palabras no era m\u00e1s peligroso que el hecho de haber iniciado el diario; pero por un momento estuvo tentado de arrancar las p\u00e1ginas que hab\u00eda escrito y renunciar a la empresa sin m\u00e1s.",
                 "date_created": "2018-02-19T08:05:12.484852"
@@ -407,7 +407,7 @@
                 }
             ]
         },
-        "10": {
+        {
             "vocab_context_data": {
                 "content": "Desde donde estaba Winston pod\u00edan leerse, labrados con elegante caligraf\u00eda en la fachada blanca los tres esl\u00f3ganes del Partido:\r\n\r\n- **LA GUERRA ES LA PAZ**\r\n- **LA LIBERTAD ES LA ESCLAVITUD**\r\n- **LA IGNORANCIA ES LA FUERZA**",
                 "date_created": "2018-02-19T08:05:12.729318"
@@ -454,7 +454,7 @@
                 }
             ]
         },
-        "11": {
+        {
             "vocab_context_data": {
                 "content": "En un mundo en el que todo el mundo trabajase pocas horas, tuviese comida suficiente, viviera en una casa con cuarto de ba\u00f1o y nevera, y poseyera un autom\u00f3vil e incluso un aeroplano, la forma m\u00e1s evidente y tal vez m\u00e1s importante de desigualdad ya habr\u00eda desaparecido.",
                 "date_created": "2018-02-19T08:05:12.896050"
@@ -488,7 +488,7 @@
                 }
             ]
         },
-        "12": {
+        {
             "vocab_context_data": {
                 "content": "Tras el per\u00edodo revolucionario de los a\u00f1os cincuenta y sesenta, la sociedad se reagrup\u00f3, como siempre, en clase alta, media  baja. Pero la nueva clase alta, a diferencia de sus antecesores, no actu\u00f3 por instinto, sino que supo lo que hac\u00eda falta para salvaguardar su posici\u00f3n.",
                 "date_created": "2018-02-19T08:05:13.107153"
@@ -548,7 +548,7 @@
                 }
             ]
         },
-        "13": {
+        {
             "vocab_context_data": {
                 "content": "Poco despu\u00e9s se quedaron dormidos un rato. Cuando Winston despert\u00f3, las manecillas del reloj marcaban casi las nueve. No se movi\u00f3, porque Julia ten\u00eda la cabeza apoyada en el hueco de su brazo.",
                 "date_created": "2018-02-19T08:05:13.418365"
@@ -569,7 +569,7 @@
                 }
             ]
         },
-        "14": {
+        {
             "vocab_context_data": {
                 "content": "Pod\u00edan averiguar hasta el \u00faltimo detalle de lo que hab\u00edas hecho, dicho o pensado; pero el interio de tu coraz\u00f3n, cuyo funcionamiento era un misterio incluso para ti, segu\u00eda siendo inexpugnable.",
                 "date_created": "2018-02-19T08:05:13.585048"
@@ -616,7 +616,7 @@
                 }
             ]
         },
-        "15": {
+        {
             "vocab_context_data": {
                 "content": "Detr\u00e1s de \u00e9l Winston vio el escritorio con la l\u00e1mpara de pantalla verde, el hablascribe y las bandejas de alambre llenas de papeles hasta el borde. El incidente estaba cerrado. Al cabo de treinta segundos, pens\u00f3, O'Brien reanudar\u00eda su interrumpido e importante trabajo a las \u00f3rdenes del Partido.",
                 "date_created": "2018-02-19T08:05:13.729359"
@@ -650,7 +650,7 @@
                 }
             ]
         },
-        "16": {
+        {
             "vocab_context_data": {
                 "content": "Todas las sensaciones parec\u00edan haberse intensificado. El mono le rozaba los hombros, la acera le hac\u00eda cosquillas en los pies e incluso abrir y cerrar la mano supon\u00eda un esfuerzo que hac\u00eda que le crujieran las articulaciones.",
                 "date_created": "2018-02-19T08:05:13.940437"
@@ -697,7 +697,7 @@
                 }
             ]
         },
-        "17": {
+        {
             "vocab_context_data": {
                 "content": "La b\u00fasqueda y destrucci\u00f3n de los libros se hab\u00eda hecho con tanta minuciosidad en los barrios proles como en todas partes. Era muy improbabe que existiera en ning\u00fan lugar de Ocean\u00eda un ejemplar de un libro impreso antes de 1960.",
                 "date_created": "2018-02-19T08:05:14.207222"
@@ -744,7 +744,7 @@
                 }
             ]
         },
-        "18": {
+        {
             "vocab_context_data": {
                 "content": "Sus ojos volvieron a centrarse en la p\u00e1gina. Descubri\u00f3 que, mientras recordaba, hab\u00eda seguido escribiendo como impulsado por un acto autom\u00e1tico. Y ya no era la caligraf\u00eda torpe y acalambrada de antes. La pluma se hab\u00eda deslizado voluptuosa sobre el suave papel y hab\u00eda escrito con letra clara y may\u00fascula, una y otra vez, hasta llenar media p\u00e1gina:\r\n\r\nABAJO EL HERMANO MAYOR <br>\r\nABAJO EL HERMANO MAYOR <br>\r\nABAJO EL HERMANO MAYOR <br>\r\nABAJO EL HERMANO MAYOR <br>\r\nABAJO EL HERMANO MAYOR",
                 "date_created": "2018-02-19T08:05:14.474105"
@@ -779,7 +779,7 @@
                 }
             ]
         },
-        "19": {
+        {
             "vocab_context_data": {
                 "content": "Se vio golpe\u00e1ndola hasta la muerte con una cachiporra de goma, at\u00e1ndola desnuda a una estaca y acribill\u00e1ndola a flechazos como a un san Sebasti\u00e1n, viol\u00e1ndola y cort\u00e1ndole el cuello en el momento del cl\u00edmax.",
                 "date_created": "2018-02-19T08:05:14.684990"
@@ -839,7 +839,7 @@
                 }
             ]
         },
-        "20": {
+        {
             "vocab_context_data": {
                 "content": "Pero la dificultad f\u00edsica de verla era enorme. Era como intentar mover una ficha de ajedrez despu\u00e9s de un jaque mate.",
                 "date_created": "2018-02-19T08:05:15.085322"
@@ -886,7 +886,7 @@
                 }
             ]
         },
-        "21": {
+        {
             "vocab_context_data": {
                 "content": "Peor no hizo falta que le explicara por qu\u00e9 hab\u00eda tenido que envolverlo. Su aroma llenaba ya la habitaci\u00f3n, un olor porfundo y c\u00e1lido que parec\u00eda una emanaci\u00f3n de su primera infancia y que uno reconoc\u00eda a veces en un pasillo antes de que se cerrase una puerta, o se extend\u00eda misteriosamente en una calle abarrotada sin que apenas diera tiempo a olisquearlo y lluevo volv\u00eda a disiparse.",
                 "date_created": "2018-02-19T08:05:15.452032"
@@ -933,7 +933,7 @@
                 }
             ]
         },
-        "22": {
+        {
             "vocab_context_data": {
                 "content": "Lo que hacemos es destruirlas, decenas, cientos de palabras al d\u00eda. Estamos podando el idioma. Ni una sola de las palabras en la und\u00e9cima edici\u00f3n se quedar\u00e1 anticuada antes de 2050.",
                 "date_created": "2018-02-19T08:05:15.696523"
@@ -967,7 +967,7 @@
                 }
             ]
         },
-        "23": {
+        {
             "vocab_context_data": {
                 "content": "En nuevalengua, no hay ninguna palabra que signifique &laquo;ciencia&raquo;. El m\u00e9todo emp\u00edrico del pensamiento, en el que se basaron todos los logros cient\u00edficos del pasado, se opone a la mayor\u00eda de los principios fundamentales del Socing. E incluso el progreso tecnol\u00f3gico se permite solo cuando sus productos pueden aplicarse de alg\u00fan modo a disminuir la libertad humana.",
                 "date_created": "2018-02-19T08:05:16.018833"
@@ -1001,7 +1001,7 @@
                 }
             ]
         },
-        "24": {
+        {
             "vocab_context_data": {
                 "content": "Su padre hab\u00eda desaparecido poco antes, no sab\u00eda con exactitud cu\u00e1ndo. Recordaba mucho mejor las inc\u00f3modas y precarias circunstancias de la \u00e9poca: el p\u00e1nico per\u00edodico por los ataques a\u00e9reos y las prisas para refugiarse en las estaciones de metro, los montones de cascotes que hab\u00eda por todas partes, las proclamas ininteligibles colgadas en las esquinas, las pandillas de j\u00f3venes con camisas del mismo color, las largas colas a las puertas de las panader\u00edas, los disparos interminentes de las ametralladoras a lo lejos... y sobre todo, la falta de comida.",
                 "date_created": "2018-02-19T08:05:16.241022"
@@ -1049,7 +1049,7 @@
                 }
             ]
         },
-        "25": {
+        {
             "vocab_context_data": {
                 "content": "En el comedor subterr\u00e1neo y de techo bajo, la cola de la comida avanzaba lentamente y a sacudidas. La sala estaba muy llena y el ruido era ensordecedor.",
                 "date_created": "2018-02-19T08:05:16.752237"
@@ -1096,7 +1096,7 @@
                 }
             ]
         },
-        "26": {
+        {
             "vocab_context_data": {
                 "content": "Informes y registros de todas clases, peri\u00f3dicos, libros, panfletos, pel\u00edculas, bandas sonoras, fotograf\u00edas: todo hab\u00eda que rectificarlo cuanto antes. Pese a que no se hab\u00eda emitido ninguna directriz, todo el mundo sab\u00eda que los jefes de departamento quer\u00edan que al cabo de una semana no quedara una sola referencia a la guerra con Eurasia o la alianza con Esteasia.",
                 "date_created": "2018-02-19T08:05:17.363340"
@@ -1156,7 +1156,7 @@
                 }
             ]
         },
-        "27": {
+        {
             "vocab_context_data": {
                 "content": "En el sue\u00f1o hab\u00eda recordado la \u00faltima vez que hab\u00eda visto a su madre, y, nada m\u00e1s despertar, hab\u00eda acudido tambi\u00e9n a su memoria la serie de acontecimientos sin importancia sucedidos en aquella ocasi\u00f3n.",
                 "date_created": "2018-02-19T08:05:17.552284"
@@ -1190,7 +1190,7 @@
                 }
             ]
         },
-        "28": {
+        {
             "vocab_context_data": {
                 "content": "Se hab\u00edan aferrado a las emociones primitivas que \u00e9l mismo hab\u00eda tenido que volver a aprender haciendo un esfuerzo consciente. Y al pensarlo record\u00f3, como algo sin relevancia aparente, que unas semanas antes hab\u00eda visto una mano cortada en la acera y la hab\u00eda echado al arroyo como si fuera  un tallo de col.",
                 "date_created": "2018-02-19T08:05:17.652323"
@@ -1237,7 +1237,7 @@
                 }
             ]
         },
-        "29": {
+        {
             "vocab_context_data": {
                 "content": "No fue as\u00ed, en parte por el empobrecimiento causado por una larga serie de guerras y revoluciones y porque el progreso t\u00e9cnico y cient\u00edfico depend\u00eda de la costumbre emp\u00edrica del pensamiento, que no podia sobrevivir en una sociedad r\u00edgidamente reglamentada.",
                 "date_created": "2018-02-19T08:05:17.796824"
@@ -1271,7 +1271,7 @@
                 }
             ]
         },
-        "30": {
+        {
             "vocab_context_data": {
                 "content": "Durante largos per\u00edodos la clase alta parece estar segura en el poder, pero antes o despu\u00e9s llega un momento en que pierde la fe en s\u00ed misma, la capacidad de gobernar con eficacia o ambas cosas al mismo tiempo. Entonces la desplaza la clase media, que atrae a su bando a la clase baja fingiendo luchar por la libertad y la justicia. Nada m\u00e1s lograr su objetivo, la clase media devuelve a la baja a su antigua situaci\u00f3n de servidumbre y se convierte en una nueva clase alta.",
                 "date_created": "2018-02-19T08:05:17.919243"
@@ -1332,7 +1332,7 @@
                 }
             ]
         },
-        "31": {
+        {
             "vocab_context_data": {
                 "content": "Todo se difuminaba en la niebla. El pasado hab\u00eda sido borrado, se hab\u00eda olvidado que hab\u00eda sido borrado y de ese modo la mentira se convert\u00eda en verdad.",
                 "date_created": "2018-02-19T08:05:18.130032"
@@ -1366,7 +1366,7 @@
                 }
             ]
         },
-        "32": {
+        {
             "vocab_context_data": {
                 "content": "Era como si el exceso de trabajo le hubiese absorbido toda la sangra y la linfa y solo quedara una fr\u00e1gil estructura de nervios, piel y huesos.",
                 "date_created": "2018-02-19T08:05:18.230235"
@@ -1387,7 +1387,7 @@
                 }
             ]
         },
-        "33": {
+        {
             "vocab_context_data": {
                 "content": "Incluso despu\u00e9s de enormes revueltas y de cambios en apariencia irrevocables, ha vuelto a establecerse el mismo orden, igual que un gir\u00f3scopo siempre vuelve a la posici\u00f3n de equilibrio por m\u00e1s que lo empujemos a un lado o a otro.",
                 "date_created": "2018-02-19T08:05:18.296826"
@@ -1408,7 +1408,7 @@
                 }
             ]
         },
-        "34": {
+        {
             "vocab_context_data": {
                 "content": "La partida de dardos hab\u00eda vuelto a reanudarse y los hombres de la barra hab\u00edan empezado a hablar de la Loter\u00eda.",
                 "date_created": "2018-02-19T08:05:18.430543"
@@ -1442,7 +1442,7 @@
                 }
             ]
         },
-        "35": {
+        {
             "vocab_context_data": {
                 "content": "Cuando la rode\u00f3 con sus brazos un aroma de violetas sint\u00e9ticas inund\u00f3 sus fosas nasales. Record\u00f3 la penumbra de una cocina en un s\u00f3tano, y la boca cavernosa de una mujer.",
                 "date_created": "2018-02-19T08:05:18.541464"
@@ -1476,7 +1476,7 @@
                 }
             ]
         },
-        "36": {
+        {
             "vocab_context_data": {
                 "content": "No se cre\u00eda &laquo;inteligente&raquo;, pero era h\u00e1bil con las manos y le encantaba reparar m\u00e1quinas. Conoc\u00eda la directiva general emitida por el Comit\u00e9 de Planificaci\u00f3n hasta los \u00faltimos retoques de la Brigada de Reescritura. Pero no le interesaba mucho el producto final. No era &laquo;una gran lectora&raquo;, dec\u00eda. Los libros eran solo una mercanc\u00eda que era necesario producir, como la mermelada o los cordones de los zapatos.",
                 "date_created": "2018-02-19T08:05:18.641241"
@@ -1510,7 +1510,7 @@
                 }
             ]
         },
-        "37": {
+        {
             "vocab_context_data": {
                 "content": "La polic\u00eda civil apenas se met\u00eda con ellos. En Londres, la tasa de criminalidad era muy alta, hab\u00eda todo un mundo dentro de un mundo de ladrones, rateros, prostitutas, traficantes de drogas, y todo tipo de maleantes; pero como todo ocurr\u00eda entre los mismos proles, nadie le daba mucha importancia.",
                 "date_created": "2018-02-19T08:05:18.741473"
@@ -1544,7 +1544,7 @@
                 }
             ]
         },
-        "38": {
+        {
             "vocab_context_data": {
                 "content": "No recordaba lo que hab\u00eda ocurrido, pero en su sue\u00f1o supo que de alg\u00fan modo su madre y su hermana hab\u00edan sacrificado su vida por \u00e9l. Era uno de esos sue\u00f1os que, pese a conservar un ambiente on\u00edrico carecter\u00edstico, son una continuaci\u00f3n de la propia vida intelectual, y en los que uno comprende hechos e ideas que siguen pareciendo nuevos y valiosos despu\u00e9s de despertar.",
                 "date_created": "2018-02-19T08:05:18.841823"
@@ -1578,7 +1578,7 @@
                 }
             ]
         },
-        "39": {
+        {
             "vocab_context_data": {
                 "content": "El para\u00edso terrenal empez\u00f3 a ponerse en duda justo en el momento en que se volvi\u00f3 realizable. Todas las nuevas teor\u00edas pol\u00edticas, con independencia de c\u00f3mo se llamasen, conduc\u00edan a la jerarqu\u00eda y la reglamentaci\u00f3n.",
                 "date_created": "2018-02-19T08:05:18.952433"
@@ -1625,7 +1625,7 @@
                 }
             ]
         },
-        "40": {
+        {
             "vocab_context_data": {
                 "content": "El Odio lleg\u00f3 a su apogeo. La voz de Goldstein se hab\u00eda convertido en un verdadero balido, y por un instante su rostro se transorm\u00f3 en el de una oveja. Luego el rostro de la oveja se fundi\u00f3 con la figura de un soldado de Eurasia que parec\u00eda estar avanzando, enorme y terrible entre el ruido del subfusil ametrallador, como si fuese a salir de la pantalla, de modo que algunos de lo s que estaban sentados en primera fila se echaron atr\u00e1s.",
                 "date_created": "2018-02-19T08:05:19.096851"
@@ -1685,7 +1685,7 @@
                 }
             ]
         },
-        "41": {
+        {
             "vocab_context_data": {
                 "content": "Cuando le dijo que no pod\u00efa ir, se hab\u00eda sentido enga\u00f1ado. Pero en es momento la muchedumbre se arremolin\u00f3 un poco y sus manos se rozaron por casualidad.",
                 "date_created": "2018-02-19T08:05:19.285829"
@@ -1719,7 +1719,7 @@
                 }
             ]
         },
-        "42": {
+        {
             "vocab_context_data": {
                 "content": "Tuvo la impresi\u00f3n de que era posible colarse dentro y de que en realidad estaba ya dentro de \u00e9l, junto a la cama de caoba y la mesa de alas abatibles, el reloj, el grabado y el propio pisapapeles. El pisapapeles era la habitaci\u00f3n en la que se hallaban y el coral su vida y la de Julia fijas en una especie de enternidad en el coraz\u00f3n del cristal.",
                 "date_created": "2018-02-19T08:05:19.497186"
@@ -1753,7 +1753,7 @@
                 }
             ]
         },
-        "43": {
+        {
             "vocab_context_data": {
                 "content": "E incluso, cuando cund\u00eda entre ellos el descontento, como ocurr\u00eda algunas veces, no conduc\u00eda a ninguna parte porque, al carecer de ideas generales, solo pod\u00edan concentrarlo en minucias concretas y sin importancia.",
                 "date_created": "2018-02-19T08:05:19.608334"
@@ -1800,7 +1800,7 @@
                 }
             ]
         },
-        "44": {
+        {
             "vocab_context_data": {
                 "content": "Pasado un minuto, la muchedumbre volvi\u00f3 a emitir sus bestiales rugidos de rabia. El Odio continuaba exactamente igual que antes, pero hab\u00eda cambiado de objetivo.",
                 "date_created": "2018-02-19T08:05:19.863932"
@@ -1847,7 +1847,7 @@
                 }
             ]
         },
-        "45": {
+        {
             "vocab_context_data": {
                 "content": "La ciencia y la tecnolog\u00eda se estaban desarrollando a una velocidad vertiginosa, y parec\u00eda natural que continuaran haci\u00e9ndolo.",
                 "date_created": "2018-02-19T08:05:20.131762"
@@ -1881,5 +1881,5 @@
                 }
             ]
         }
-    }
+    ]
 }

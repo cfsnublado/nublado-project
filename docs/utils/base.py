@@ -5,7 +5,7 @@ import requests
 
 
 def print_color(color_code, text):
-    """
+    '''
     Prints in color to the console according to the integer color code.
 
     color codes:
@@ -17,8 +17,8 @@ def print_color(color_code, text):
         96: cyan
         97: light gray
         98: black
-    """
-    print("\033[{0}m {1}\033[00m".format(color_code, text))
+    '''
+    print('\033[{0}m {1}\033[00m'.format(color_code, text))
 
 
 def get_mimetype(filename):
@@ -27,12 +27,12 @@ def get_mimetype(filename):
 
 
 def get_user_auth_token(token_url):
-    username = input("Username: ")
-    password = getpass.getpass("Password: ")
+    username = input('Username: ')
+    password = getpass.getpass('Password: ')
 
     r = requests.post(
         token_url,
-        {"username": username, "password": password}
+        {'username': username, 'password': password}
     )
-    token = r.json().get("token", None)
+    token = r.json().get('token', None)
     return token

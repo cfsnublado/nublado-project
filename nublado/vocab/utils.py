@@ -1,4 +1,3 @@
-import json
 from jsonschema import validate as validate_schema
 
 from django.contrib.auth import get_user_model
@@ -17,17 +16,17 @@ from .serializers import (
 User = get_user_model()
 
 
-def export_vocab_entries(request, language=None):
+def export_vocab_entries(request=None, language=None):
     '''
     Generates a serialized backup of vocab entries.
     '''
-    vocab_data = {}
+    vocab_entries_dict = {}
     qs = VocabEntry.objects
 
     if language and language in settings.LANGUAGES_DICT:
         qs = qs.filter(language=language)
 
-    vocab_data['vocab_entries'] = []
+    vocab_entries_dict['vocab_entries'] = []
 
     for vocab_entry in qs.all():
         vocab_entry_dict = {}
@@ -48,16 +47,16 @@ def export_vocab_entries(request, language=None):
                 vocab_definition_dict['vocab_definition_data'] = vocab_definition_serializer.get_minimal_data()
                 vocab_entry_dict['vocab_definitions'].append(vocab_definition_dict)
 
-        vocab_data['vocab_entries'].append(vocab_entry_dict)
+        vocab_entries_dict['vocab_entries'].append(vocab_entry_dict)
 
-    return json.loads(json.dumps(vocab_data))
+    return vocab_entries_dict
 
 
-def export_vocab_source(request, vocab_source):
+def export_vocab_source(request=None, vocab_source=None):
     '''
     Generates a serialized backup of a vocab source.
     '''
-    if request and vocab_source:
+    if vocab_source:
         vocab_project_serializer = VocabProjectSerializer(
             vocab_source.vocab_project,
             context={'request': request}
@@ -100,7 +99,7 @@ def export_vocab_source(request, vocab_source):
 
                 vocab_source_dict['vocab_contexts'].append(vocab_context_dict)
 
-        return json.loads(json.dumps(vocab_source_dict))
+        return vocab_source_dict
 
 
 def import_vocab_entries(data):

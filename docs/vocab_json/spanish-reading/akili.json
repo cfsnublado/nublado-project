@@ -1,0 +1,663 @@
+{
+  "vocab_project_data": {
+    "name": "Spanish Reading",
+    "description": "A vocab project for Spanish reading materials.",
+    "date_created": "2018-11-28T18:27:06.506109"
+  },
+  "vocab_source_data": {
+    "source_type": 1,
+    "name": "Akili",
+    "description": "",
+    "date_created": "2018-12-14T17:10:53.028541"
+  },
+  "vocab_contexts": [
+    {
+      "vocab_context_data": {
+        "content": "\u00bfY si llam\u00e1ramos GIFT1 al agonista y GIFT2 al alost\u00e9rico?",
+        "date_created": "2018-12-14T17:10:56.303850"
+      }
+    },
+    {
+      "vocab_context_data": {
+        "content": "Los hombres vieron que la madre herida corr\u00eda hacia el cad\u00e1ver de su cr\u00eda. Acurrucada hasta hac\u00eda poco contra el cuerpo de la madre, la cr\u00eda yac\u00eda ahora en el suelo, sin cabeza y sin brazo, convertida en un amasijo de sangre. Los humanos jam\u00e1s adivinar\u00edan lo que sent\u00eda una madre chimpanc\u00e9 ante el cuerpo sin vida de su cr\u00eda.",
+        "date_created": "2018-12-14T17:10:53.870099"
+      }
+    },
+    {
+      "vocab_context_data": {
+        "content": "\u2014\u00bfY a usted le parece digno de confianza este informe? \u2014le pregunt\u00f3 Burns. \u2014No estoy en condiciones de desmentirlo.",
+        "date_created": "2018-12-14T17:10:53.047690"
+      }
+    },
+    {
+      "vocab_context_data": {
+        "content": "Nadie ha confirmado la existencia de esta nueva forma vital, aparte de la persona que remiti\u00f3 el informe.",
+        "date_created": "2018-12-14T17:10:53.070019"
+      }
+    },
+    {
+      "vocab_context_data": {
+        "content": "Venza quien venza.",
+        "date_created": "2018-12-14T17:10:53.092423"
+      }
+    },
+    {
+      "vocab_context_data": {
+        "content": "Cuando disparen a los pigmeos, procuren que la sangre no les salpique. Tomando estas precauciones no correr\u00e1n ning\u00fan riesgo de infectarse.",
+        "date_created": "2018-12-14T17:10:53.114469"
+      }
+    },
+    {
+      "vocab_context_data": {
+        "content": "El turno de preguntas y respuestas lleg\u00f3 a su fin y en la sala rein\u00f3 un silencio opresivo. Yeager se dio cuenta de que los dem\u00e1s hab\u00edan decidido finalmente participar en la operaci\u00f3n.",
+        "date_created": "2018-12-14T17:10:53.226317"
+      }
+    },
+    {
+      "vocab_context_data": {
+        "content": "Al decir cliente se refer\u00eda al pa\u00eds que hab\u00eda encargado la operaci\u00f3n. Lo m\u00e1s probable era que se refiriese a la Casa Blanca.",
+        "date_created": "2018-12-14T17:10:53.248736"
+      }
+    },
+    {
+      "vocab_context_data": {
+        "content": "\u2014Un momento. \u00bfDe qu\u00e9 va todo esto?",
+        "date_created": "2018-12-14T17:10:53.269938"
+      }
+    },
+    {
+      "vocab_context_data": {
+        "content": "A Kento no le qued\u00f3 m\u00e1s remedio que negar con la cabeza. Buena parte de las actividades de su padre segu\u00edan siendo un misterio para \u00e9l.",
+        "date_created": "2018-12-14T17:10:53.293194"
+      }
+    },
+    {
+      "vocab_context_data": {
+        "content": "Pero Kento no cre\u00eda que el monovolumen de ventanillas ahumadas fuera realmente de ella. Ten\u00eda el presentimiento de que en el instante menos pensado se abrir\u00edan las portezuelas y unos cuantos hombres se abalanzar\u00edan sobre \u00e9l.",
+        "date_created": "2018-12-14T17:10:53.314325"
+      }
+    },
+    {
+      "vocab_context_data": {
+        "content": "La nota que le hab\u00eda dejado su padre era inveros\u00edmil como testamento, dado que no contaba con la posibilidad de fallecer.",
+        "date_created": "2018-12-14T17:10:53.337385"
+      }
+    },
+    {
+      "vocab_context_data": {
+        "content": "-\u2014La codificaci\u00f3n que m\u00e1s se usa en Internet. El sistema RSA, por ejemplo. \u2014Al ver que Latimer deseaba una explicaci\u00f3n m\u00e1s pormenorizada, prosigui\u00f3 a rega\u00f1adientes\u2014. El sistema RSA utiliza n\u00fameros primos, que son n\u00fameros que solo pueden dividirse por s\u00ed mismos y por uno, por ejemplo el cinco y el siete. Son f\u00e1ciles de multiplicar, pero cuesta mucho dividirlos para dar con el multiplicando y el multiplicador. Latimer arrug\u00f3 el entrecejo.",
+        "date_created": "2018-12-14T17:10:53.448855"
+      }
+    },
+    {
+      "vocab_context_data": {
+        "content": "En el sistema RSA, se multiplican doss numeros primos y el producto es la clave p\u00fablica.",
+        "date_created": "2018-12-14T17:10:53.470202"
+      }
+    },
+    {
+      "vocab_context_data": {
+        "content": "De modo que no importa que el producto de la multiplicaci\u00f3n sea p\u00fablico, ya que lo decisivo es conocer el multiplicador y el multiplicando, es decir, los n\u00fameros primos iniciales.",
+        "date_created": "2018-12-14T17:10:53.493025"
+      }
+    },
+    {
+      "vocab_context_data": {
+        "content": "La ASN ten\u00eda m\u00e1s de trescientos superordenadores, tantos que ya no los describ\u00edan con n\u00fameros cardinales, sino diciendo cu\u00e1ntos metors cuadrados ocupaban. Por eso piden presupuestos astron\u00f3micos.",
+        "date_created": "2018-12-14T17:10:53.514435"
+      }
+    },
+    {
+      "vocab_context_data": {
+        "content": "Holland, interesad\u00edsimo por los programas secretos especiales, aguz\u00f3 el o\u00eddo.",
+        "date_created": "2018-12-14T17:10:53.537470"
+      }
+    },
+    {
+      "vocab_context_data": {
+        "content": "La operaci\u00f3n de contrainteligencia que se desarrollaba en Jap\u00f3n llegar\u00eda al final a o\u00eddos del presidente, eso era indudable. Seguro que el despreocupado doctor Gardner acabar\u00eda y\u00e9ndose de la lengua.",
+        "date_created": "2018-12-14T17:10:53.647918"
+      }
+    },
+    {
+      "vocab_context_data": {
+        "content": "Si tropiezan con fuerzas rebeldes, no olviden ense\u00f1ar el salvoconducto correspondiente. Si no saben distinguir la filiaci\u00f3n de dichas fuerzas, hagan hincapi\u00e9 en que son protectores de la flora y la fauna. No querr\u00e1n que la opini\u00f3n p\u00fablica hable mal de ellos, as\u00ed que, por lo menos en apariencia, adoptar\u00e1n una actitud simpatizante con la defensa de la naturaleza.",
+        "date_created": "2018-12-14T17:10:53.659195"
+      }
+    },
+    {
+      "vocab_context_data": {
+        "content": "Los funcionarios y militares congole\u00f1os har\u00e1n lo que sea a cambio de un soborno. El dinero ser\u00e1 un arma igualmente efectiva con los rebeldes. Tendr\u00e1n que ir preparados para la guerra y para la paz.",
+        "date_created": "2018-12-14T17:10:53.669995"
+      }
+    },
+    {
+      "vocab_context_data": {
+        "content": "Por lo menos nos servir\u00edan de sacos terreros en caso de necesidad.",
+        "date_created": "2018-12-14T17:10:53.681146"
+      }
+    },
+    {
+      "vocab_context_data": {
+        "content": "Los otros tres le estrecharon la mano para agradecerle la ayuda prestada.",
+        "date_created": "2018-12-14T17:10:53.692196"
+      }
+    },
+    {
+      "vocab_context_data": {
+        "content": "El oscuro y espeso bosque que cubre la mitad del continente africano engull\u00f3 uno tras otro a los cuatro hombres de la Operaci\u00f3n Guardi\u00e1n.",
+        "date_created": "2018-12-14T17:10:53.703279"
+      }
+    },
+    {
+      "vocab_context_data": {
+        "content": "Ya dentro del apartamento, Kento se apresur\u00f3 a recoger la ropa desperdigada para hacer sitio.",
+        "date_created": "2018-12-14T17:10:53.714371"
+      }
+    },
+    {
+      "vocab_context_data": {
+        "content": "Si es verdad lo que dices, no podemos saber si GIFT es fidedigno o enga\u00f1oso.",
+        "date_created": "2018-12-14T17:10:53.725468"
+      }
+    },
+    {
+      "vocab_context_data": {
+        "content": "Kento tambi\u00e9n era consciente de aquello. Precisamente porque los c\u00e1lculos perfectos eran imposibles, cuando se creaba un f\u00e1rmaco se recog\u00edan datos de actividad estructural relacionados y se investigaba una estructura qu\u00edmica m\u00e1s id\u00f3nea. Los pa\u00edses tecnol\u00f3gicamente avanzados compet\u00edan tan despiadadamente para construir superordenadores precisamente porque viv\u00edan en una \u00e9poca en la que la capacidad de c\u00e1lculo y los adelantos cient\u00edficos y tecnol\u00f3gicos estaban estrechamente relacionados.",
+        "date_created": "2018-12-14T17:10:53.736680"
+      }
+    },
+    {
+      "vocab_context_data": {
+        "content": "Se acord\u00f3 de Yuri Sakai. No estaba claro qu\u00e9 relaci\u00f3n hab\u00eda tenido con su padre, pero cab\u00eda la posibilidad de que fuera ella quien le diese el program y le sugiriese que pod\u00eda curar una enfermedad cr\u00f3nica. Ella lo hab\u00eda engatusado con la promesa de los derechos de patente que pod\u00eda ganar. Pleaneaba apoderarse de todo el dinero privado que su padre hab\u00eda invertido y desaparecer. La elevada cantidad que hab\u00eda en la cuenta bancaria a nombre de otra persona ten\u00eda que ser el dinero que Yuri esperaba que se le transfiriera.",
+        "date_created": "2018-12-14T17:10:53.825784"
+      }
+    },
+    {
+      "vocab_context_data": {
+        "content": "Kento se esforz\u00f3 por recuperar el aliento y reflexionar. Se hab\u00eda metido en un buen l\u00edo. Cab\u00eda la posiblidad de que la polic\u00eda hubiera avisado a su familia de Atsugi. Su madre se pondr\u00eda hist\u00e9rica cuando supiera que su hijo hab\u00eda delinquido. En cuanto llegara a un lugar seguro la llamar\u00eda, pero entonces record\u00f3 la advertencia que le hab\u00edan hecho por tel\u00e9fono. *Desconecte su m\u00f3vil...*",
+        "date_created": "2018-12-14T17:10:53.837016"
+      }
+    },
+    {
+      "vocab_context_data": {
+        "content": "Apart\u00f3 la mosquitera y la lona impermeable. Hac\u00eda fr\u00edo en el bosque. La luz del alba era blancuza, cosa que le extra\u00f1\u00f3, hasta que al mirar m\u00e1s atentamente comprendi\u00f3 que estaban rodeados por una espesa niebla.",
+        "date_created": "2018-12-14T17:10:53.847868"
+      }
+    },
+    {
+      "vocab_context_data": {
+        "content": "Aquel oc\u00e9ano infinito de \u00e1rboles empezaba a deprimir a Yeager. La selva pod\u00eda robar las fuerzas a cualquiera.",
+        "date_created": "2018-12-14T17:10:53.859138"
+      }
+    },
+    {
+      "vocab_context_data": {
+        "content": "La primera p\u00e1gina era un comprobante emitido por una compa\u00f1\u00eda de transportes extranjera, dando cuenta de un env\u00edo del Centro M\u00e9dico de la Universidad de Lisboa, con destino a la Universidad Polit\u00e9cnica de Tama, en Tokio. El remitente era el doctor Antonio Garrado.",
+        "date_created": "2018-12-14T17:10:53.892770"
+      }
+    },
+    {
+      "vocab_context_data": {
+        "content": "Kento sab\u00eda que criar ratones transg\u00e9nicos como aquellos en un apartamento destartalado era completamente ilegal.",
+        "date_created": "2018-12-14T17:10:54.005069"
+      }
+    },
+    {
+      "vocab_context_data": {
+        "content": "El d\u00eda anterior hab\u00eda huido hacia la estaci\u00f3n de Akihabara y exist\u00eda el riesgo de que la polic\u00eda anduviera al acecho. En consecuencia, se ape\u00f3 en la estaci\u00f3n inmediatamente anterior y fue a pie el resto del camino hasta las famosas calles donde estaban las tiendas que vend\u00edan las \u00faltimas novedades en artilugios electr\u00f3nicos.",
+        "date_created": "2018-12-14T17:10:54.026332"
+      }
+    },
+    {
+      "vocab_context_data": {
+        "content": "Unos polic\u00edas se presentaron aqu\u00ed y registraron las habitaci\u00f3n de tu padre y sus pertenencias.",
+        "date_created": "2018-12-14T17:10:54.048175"
+      }
+    },
+    {
+      "vocab_context_data": {
+        "content": "Entr\u00f3 en otra cabina telef\u00f3nica y descolg\u00f3 el auricular. Repas\u00f3 la lista de tel\u00e9fonos que hab\u00eda apuntado y llam\u00f3 al m\u00f3vilde Sugai. El periodista respondi\u00f3 al tercer timbrazo.",
+        "date_created": "2018-12-14T17:10:54.070054"
+      }
+    },
+    {
+      "vocab_context_data": {
+        "content": "Cuando se entraba en la biblioteca, hab\u00eda que rellenar un formulario, dando el nombre y la direcci\u00f3n. No sab\u00eda si el rastreo de la polic\u00eda iba a llegar tan lejos, pero m\u00e1s val\u00eda jugar sobre seguro.",
+        "date_created": "2018-12-14T17:10:54.182919"
+      }
+    },
+    {
+      "vocab_context_data": {
+        "content": "Segu\u00eda lloviendo a c\u00e1ntaros, con una intensidad que daba la sensaci\u00f3n de que la lluvia iba a barrer el bosque. Era un aut\u00e9ntico diluvio lo que ca\u00eda del cielo. Gruesas gotas apedreaban sin cesar las copas de los \u00e1rboles, que oscilaban de un lado a otro, produciendo un rugido sordo.",
+        "date_created": "2018-12-14T17:10:54.203348"
+      }
+    },
+    {
+      "vocab_context_data": {
+        "content": "Para Yeager y sus compa\u00f1eros representaba un descanso afortunado aquel ins\u00f3lito aguacero que ca\u00eda en plena estaci\u00f3n seca, pues les permit\u00eda acortar la distancia que los separaba del objetivo.",
+        "date_created": "2018-12-14T17:10:54.225757"
+      }
+    },
+    {
+      "vocab_context_data": {
+        "content": "A un kil\u00f3metro del objetivo hicieron alto en una compacta arboleda, extendieron una lona impermeable para cubrirse y se pusieron la indumentaria de camuflaje.",
+        "date_created": "2018-12-14T17:10:54.248224"
+      }
+    },
+    {
+      "vocab_context_data": {
+        "content": "\u2014Hay rastros de hoguera \u2014inform\u00f3 Meyers en voz baja\u2014. Las cenizas son recientes. Aqu\u00eda ha habido gente no hace mucho. E l grupo ha debido de irse al siguiente campo.",
+        "date_created": "2018-12-14T17:10:54.361244"
+      }
+    },
+    {
+      "vocab_context_data": {
+        "content": "\u00c9l y Meyers miraron el cielo. La lluvia que ven\u00eda cayendo desde la ma\u00f1ana hab\u00eda cesado y las nubes oscuras se hab\u00edan disipado r\u00e1pidamente. Era la primera vez que ve\u00edan tanto cielo desde que hab\u00edan penetrado en la selva. Era como si hubieran salido a flote desde las profundidades del oc\u00e9ano y asomaron la cara a la superficie.",
+        "date_created": "2018-12-14T17:10:54.381255"
+      }
+    },
+    {
+      "vocab_context_data": {
+        "content": "Mick, que iba en vanguardia y tambi\u00e9n hab\u00eda o\u00eddo la voz, les indic\u00f3 que se detuvieran. Los cuatro, sin moverse de donde estaban, pusieron rodilla en tierra y escudri\u00f1aron en silencio lo que ten\u00edan delante, en la retaguardia, a la izquierda y a la derecha.",
+        "date_created": "2018-12-14T17:10:54.404291"
+      }
+    },
+    {
+      "vocab_context_data": {
+        "content": "El hombre sigui\u00f3 gritando a lo lejos. En realidad no era un grito. No alcanzaban a descifrar las palabras que pronunciaba, pero fuera cual fuese el idioma, parec\u00eda m\u00e1s bien un c\u00e1ntico.",
+        "date_created": "2018-12-14T17:10:54.425706"
+      }
+    },
+    {
+      "vocab_context_data": {
+        "content": "\u2014\u00bfTienes alguna idea de qu\u00e9 es esa criatura? \u2014Ninguna en absoluto\u2014respondi\u00f3 Garrett, negando con la cabeza y mirando fijamente a Yeager\u2014. Te he dicho toto lo que s\u00e9. Que me creas o no ya es cosa suya.",
+        "date_created": "2018-12-14T17:10:54.538890"
+      }
+    },
+    {
+      "vocab_context_data": {
+        "content": "Esta noche atacaremos a los kanga. Pero nuestro objetivo no ser\u00e1 aniquilar a los mbuti, sino secuestrar a Nigel Pierce e interrogarlo para que nos cuente de qu\u00e9 va toda esta historia. \u00bfAlguna objeci\u00f3n?",
+        "date_created": "2018-12-14T17:10:54.559217"
+      }
+    },
+    {
+      "vocab_context_data": {
+        "content": "Procurando no caer en las tentaciones que promet\u00edan las bellezas que sonre\u00edan dulcemente en las publicaciones para adultos, Kento cogi\u00f3 la revista decimoctava y por fin encontr\u00f3 el art\u00edculo que andaba buscando.",
+        "date_created": "2018-12-14T17:10:54.581726"
+      }
+    },
+    {
+      "vocab_context_data": {
+        "content": "Adem\u00e1s, los recursos alimenticios sufrir\u00e1n una dr\u00e1stica reducci\u00f3n, que producir\u00edan hambrunas masivas y el estallido de nuevas guerras. La Tercera Guerra Mundial ser\u00eda entonces inevitable y el conflicto se transformar\u00eda r\u00e1pidamente en la guerra final de la humanidad.",
+        "date_created": "2018-12-14T17:10:54.603531"
+      }
+    },
+    {
+      "vocab_context_data": {
+        "content": "Joseph Heisman arg\u00fc\u00efa vehemente contra la guerra nuclear. Puede que hubiera en esto algo de autorreproche, dado que hab\u00edan sido los propios cient\u00edficos quienes hab\u00edan inventado las armas nucleares.",
+        "date_created": "2018-12-14T17:10:54.705301"
+      }
+    },
+    {
+      "vocab_context_data": {
+        "content": "Las criaturas con inteligencia inferior y menos capacidad moral ser\u00e1n eliminadas por las de inteligencia superior. Cuando tenga lugar este paso evolutivo, desapareceremos de la faz de la tierra muy pronto. Correremos la misma suerte que el Hombre de Pek\u00edn y los neandertales.",
+        "date_created": "2018-12-14T17:10:54.726415"
+      }
+    },
+    {
+      "vocab_context_data": {
+        "content": "Eso es. En los dos sentidos del t\u00e9rmino. Distancia psicol\u00f3gica y distancia f\u00edsica.",
+        "date_created": "2018-12-14T17:10:54.748018"
+      }
+    },
+    {
+      "vocab_context_data": {
+        "content": "Ense\u00f1e a la gente que sus enemigos son seres moralmente inferiores y tendr\u00e1 usted matanzas en nombre de la justicia. Estos lavados de cerebro se producen tanto en tiempo de paz como en tiempo de guerra.",
+        "date_created": "2018-12-14T17:10:54.860958"
+      }
+    },
+    {
+      "vocab_context_data": {
+        "content": "Las personas que ten\u00edan intereses creados en la guerra eran las m\u00e1s crueles. Dicho de otro modo, los dirigentes que declaraban guerras eran las personas que m\u00e1s lejos estaban del escenario real de la guerra, psicol\u00f3gica y f\u00edsicamente.",
+        "date_created": "2018-12-14T17:10:54.881222"
+      }
+    },
+    {
+      "vocab_context_data": {
+        "content": "El presidente viv\u00eda dentro de su torre protectora, donde apenas sent\u00eda la culpa psicol\u00f3gica asociada a los asesinatos y donde pod\u00eda dar rienda suelta a su innata brutalidad.",
+        "date_created": "2018-12-14T17:10:54.904237"
+      }
+    },
+    {
+      "vocab_context_data": {
+        "content": "Por entonces se acercaba a la treintena y hab\u00eda dejado la vida acad\u00e9mica. Hab\u00eda llegado el momento de abandonar su torre de marfil y de salir al mar abierto deel mundo en general, un mundo lleno, por as\u00ed decirlo, de las criaturas vivas que se llamaban humanas.",
+        "date_created": "2018-12-14T17:10:55.005384"
+      }
+    },
+    {
+      "vocab_context_data": {
+        "content": "Los hombres que lleven a cabo la misi\u00f3n correr\u00e1n la misma suerte.",
+        "date_created": "2018-12-14T17:10:55.025896"
+      }
+    },
+    {
+      "vocab_context_data": {
+        "content": "Aquello no era un asesinato, pens\u00f3 Rubens. Era un genocidio. El objetivo era un individuo que era el exponente de toda una raza. Un genocidio de uno.",
+        "date_created": "2018-12-14T17:10:55.048597"
+      }
+    },
+    {
+      "vocab_context_data": {
+        "content": "Para designar la operaci\u00f3n destinada a asesinar al ni\u00f1o de tres a\u00f1os, se acord\u00f3 de la diosa griga N\u00e9mesis, la diosa de la justicia distributiva, un nombre que ya se hab\u00eda dado al meteorito que hab\u00eda causado la extinci\u00f3n de los dinosaurios.",
+        "date_created": "2018-12-14T17:10:55.160163"
+      }
+    },
+    {
+      "vocab_context_data": {
+        "content": "\u2014No conocemos al remitante ni al destinatario y es imposible descifrar los mensajes \u2014le dijo el enlace de la Agencia de Seguridad Nacional.",
+        "date_created": "2018-12-14T17:10:55.181737"
+      }
+    },
+    {
+      "vocab_context_data": {
+        "content": "En aquella tregua temporal, previa al comienzo de la operaci\u00f3n, Rubens pens\u00f3 en la filtraci\u00f3n de la informaci\u00f3n clasificada.",
+        "date_created": "2018-12-14T17:10:55.203858"
+      }
+    },
+    {
+      "vocab_context_data": {
+        "content": "Pero en aquel momento se congel\u00f3 todo lo que hab\u00eda en la pantalla, como si se hubiera detenido el visionado de una pel\u00edcula. Momentos despu\u00e9s, Rubens imagin\u00f3 lo sucedido. Jonathan Yeager se eoncontraba cara a cara con una inteligencia que no era de este mundo. Hab\u00eda visto a Nous.",
+        "date_created": "2018-12-14T17:10:55.304959"
+      }
+    },
+    {
+      "vocab_context_data": {
+        "content": "Los gruesos manuales acad\u00e9micos eran caros. Pero el dinero no era ya un impedimento. Pod\u00eda comprar todos los libros que necesitara, gracias a la tarjeta de d\u00e9bito a nombre de Yoshinobu Suzuki.",
+        "date_created": "2018-12-14T17:10:55.326416"
+      }
+    },
+    {
+      "vocab_context_data": {
+        "content": "Y otra cosa que tambi\u00e9n resultaba extra\u00f1a: que lo llamaran por megafon\u00eda significaba que quien lo buscaba sab\u00eda que estaba all\u00ed, en aquella librer\u00eda. Si fueran agentes de la polic\u00eda, \u00bfno se limitar\u00edan a detenerlo?",
+        "date_created": "2018-12-14T17:10:55.348841"
+      }
+    },
+    {
+      "vocab_context_data": {
+        "content": "De pronto, una pieza del rompecabezas encaj\u00f3 en el dibujo general. *En cierto momento aparecer\u00e1 una persona de nacionalidad estadounidense.*",
+        "date_created": "2018-12-14T17:10:55.449118"
+      }
+    },
+    {
+      "vocab_context_data": {
+        "content": "Justin Yeager... Kento a\u00f1adi\u00f3 aquel nombre a la lista de aquellos cuya vida pod\u00eda salvar, inmediatamente detr\u00e1s de Maika Kobayashi.",
+        "date_created": "2018-12-14T17:10:55.470300"
+      }
+    },
+    {
+      "vocab_context_data": {
+        "content": "Aquella fortaleza que se ten\u00eda a la hora de proteger a los hijos deb\u00eda de ser una virtud com\u00fan a toda la humanidad, una virtud que no sab\u00eda nada de fronteras ling\u00fc\u00edsticas, religiosas y raciales. Kento sab\u00eda que no pod\u00eda defraudar a aquella madre valerosa de un pa\u00eds lejano.",
+        "date_created": "2018-12-14T17:10:55.583563"
+      }
+    },
+    {
+      "vocab_context_data": {
+        "content": "\u2014No digo que no, pero en este momento tenemos varios problemas a la vuelta de la esquina. Echelon nos vigila. Todav\u00eda no s\u00e9 si har\u00e9 bien involucr\u00e1ndote.",
+        "date_created": "2018-12-14T17:10:55.603612"
+      }
+    },
+    {
+      "vocab_context_data": {
+        "content": "Trazaron r\u00e1pidamente una ruta y, conservando la formaci\u00f3n en romo, reanudaron la marcha por el bosque.",
+        "date_created": "2018-12-14T17:10:55.714944"
+      }
+    },
+    {
+      "vocab_context_data": {
+        "content": "\u2014Una ametralladora pesada \u2014a\u00f1adi\u00f3 Mick\u2014, tres ametralladoras ligeras, muchos fusiles AK, algunas pistolas, machetes, hachas y lanzas.",
+        "date_created": "2018-12-14T17:10:55.738033"
+      }
+    },
+    {
+      "vocab_context_data": {
+        "content": "Chorros de sangre saltaron hacia el despejado cielo mientras los padres y los hijos ca\u00edan abatidos. Conforme los proyectiles se incrustaban en sus cuerpos, los gritos se transformaban en aullidos ahogados por la sangre: no eran alaridos de humanos que hab\u00edan perdido toda esperanza, sino ga\u00f1idos de animales moribundos.",
+        "date_created": "2018-12-14T17:10:55.859534"
+      }
+    },
+    {
+      "vocab_context_data": {
+        "content": "Los humanos son muy capaces de crear su propio infierno en la tierra. Pero nunca el cielo.",
+        "date_created": "2018-12-14T17:10:55.870659"
+      }
+    },
+    {
+      "vocab_context_data": {
+        "content": "\u2014El fondo, el cuadro de di\u00e1logo y las letras son del mismo color. Es una coloraci\u00f3n protectora. \u00a1Por eso se ve\u00eda todo azul! Kento se sinti\u00f3 un poco decepcionado por la simpleza de aquella estratagema.",
+        "date_created": "2018-12-14T17:10:55.959422"
+      }
+    },
+    {
+      "vocab_context_data": {
+        "content": "Pierce puso el port\u00e1til delante del ni\u00f1o. Este se puso a teclear y Yeager ley\u00f3 el mensaje en voz alta\n\n Lanzad granadas a sesenta metros, direcci\u00f3n estesureste  Yeager supo inmediatamente lo que se propon\u00eda Akili. Una maniobra de distracci\u00f3n. Que a un ni\u00f1o de tres a\u00f1os se le ocurriera algo as\u00ed lo dej\u00f3 pasmado.",
+        "date_created": "2018-12-14T17:10:55.970376"
+      }
+    },
+    {
+      "vocab_context_data": {
+        "content": "Akili imparti\u00f3 otra orden por escrito. Lanzad las granadas a ciencuenta metros delante de vosotros. Aprisa.",
+        "date_created": "2018-12-14T17:10:55.981525"
+      }
+    },
+    {
+      "vocab_context_data": {
+        "content": "Aquel Nigel Pierce, que afirmaba ser amigo de su padre; una operaci\u00f3n de rescate para salvar a un esp\u00e9cimen evolucionado de la especie humana; la guerra en el Congo: hab\u00eda estado yuxtaponiendo aquellos detalles y empezaban a adquirir una vaga forma.",
+        "date_created": "2018-12-14T17:10:55.992719"
+      }
+    },
+    {
+      "vocab_context_data": {
+        "content": "Kento estaba a punto de tirar la toalla, pero cuando los nombres de aquellos dos de aquellos ni\u00f1os, Maika Kobayashi y Justin Yeager, le vinieron a la cabeza, se detuvo en seco.",
+        "date_created": "2018-12-14T17:10:56.003894"
+      }
+    },
+    {
+      "vocab_context_data": {
+        "content": "Kento pens\u00f3 que la cuerda floja que casi no hab\u00eda sido capaz de recorrer estaba delante de \u00e9l nuevamente. Un nuevo riesgo,como todos los que ven\u00eda corriendo desde que hab\u00eda saltado del balc\u00f3n de su apartamento y escapado con vida por los pelos.",
+        "date_created": "2018-12-14T17:10:56.015136"
+      }
+    },
+    {
+      "vocab_context_data": {
+        "content": "Ellen le hab\u00eda preguntado por el ordenador, pero \u00e9l hab\u00eda respondido con evasivas, dici\u00e9ndole por ejemplo: \u00abNo lo entender\u00edas aunque te lo explicase.\u00bb Mel ten\u00eda una cabeza brillante y Ellen estaba acostumbrada a aquellas explicaciones trilladas.",
+        "date_created": "2018-12-14T17:10:56.037131"
+      }
+    },
+    {
+      "vocab_context_data": {
+        "content": "Si el cerebro del Homo sapiens tiene capacidad para explicar el universo o si est\u00e1 condenado a no entenderlo nunca. Si en esta batalla de los cerebros contra la naturaleza hay alguna posibilidad de que venzamos alg\u00fan d\u00eda.",
+        "date_created": "2018-12-14T17:10:56.048197"
+      }
+    },
+    {
+      "vocab_context_data": {
+        "content": "\u2014\u00bfMe est\u00e1 diciendo entonces que la Operaci\u00f3n N\u00e9mesis ha sido una equivocaci\u00f3n? \u2014S\u00ed. Su decisi\u00f3n de matar a esa nueva inteligencia que ha aparecido en la tierra fue un error garrafal. Deber\u00eda usted detener la Operaci\u00f3n N\u00e9mesis inmediatamente.",
+        "date_created": "2018-12-14T17:10:56.059277"
+      }
+    },
+    {
+      "vocab_context_data": {
+        "content": "\u00bfSe hab\u00edan conocido ella y su padre en aquel sitio situado a tant\u00edsima distancia de Jap\u00f3n? A Kento aquello le dio mala espina.",
+        "date_created": "2018-12-14T17:10:56.070462"
+      }
+    },
+    {
+      "vocab_context_data": {
+        "content": "Ema hab\u00eda nacido en 1996. El mismo a\u00f1o que ella y Seiji Kento hab\u00edan estado en Zaire. Kento refunfu\u00f1\u00f3. La sospecha de que su padre hab\u00eda tenido una aventura se confirmaba del peor modo posible. Tan\u00eda una hermanastra.",
+        "date_created": "2018-12-14T17:10:56.081501"
+      }
+    },
+    {
+      "vocab_context_data": {
+        "content": "Kento inspeccion\u00f3 el contenido del port\u00e1til, esperando encontrar cualquier cosa que desmintiera sus suposiciones, pero no encontr\u00f3 nada m\u00e1s.",
+        "date_created": "2018-12-14T17:10:56.092666"
+      }
+    },
+    {
+      "vocab_context_data": {
+        "content": "Le deparara lo que le deparase el futuro, no ten\u00eda otra opci\u00f3n.",
+        "date_created": "2018-12-14T17:10:56.114884"
+      }
+    },
+    {
+      "vocab_context_data": {
+        "content": "Poco despu\u00e9s, un avi\u00f3n no tripulado abandon\u00f3 la base, perdieron todo control sobre \u00e9l y descendi\u00f3 r\u00e1pidamente. Creen que se estrell\u00f3, pero a\u00fan no se ha localizado ning\u00fan resto del accidente.",
+        "date_created": "2018-12-14T17:10:56.137177"
+      }
+    },
+    {
+      "vocab_context_data": {
+        "content": "Tambi\u00e9n Rubens, al principio, pens\u00f3 que se trataba de un ataque terrorista de los funamentalistas isl\u00e1micos. Pero cuando supo que todos los drones desplegados por el mundo aterrizaron despu\u00e9s del ataque, comprendi\u00f3 qui\u00e9n hab\u00eda matado al vicepresidente. En aquel mismo instante, en el centro de \u00c1frica, Nouse y su grupo debieron de olvidarse de los Predator y cruzaron el r\u00edo Ibinia.",
+        "date_created": "2018-12-14T17:10:56.159376"
+      }
+    },
+    {
+      "vocab_context_data": {
+        "content": "Sac\u00f3 una ficha de entre las p\u00e1ginas y se la ense\u00f1\u00f3 a Heisman: \u00ab**El gobierno lo tiene sometido a vigilancia. Por favor, responda que no a todas las preguntas que voy a formularle.**\u00bb",
+        "date_created": "2018-12-14T17:10:56.170388"
+      }
+    },
+    {
+      "vocab_context_data": {
+        "content": "\u00bfPor qu\u00e9 ser\u00e1 que cuanto m\u00e1s tratan los pol\u00edticos de proteger un sistema democr\u00e1tico m\u00e1s caen en el totalitarismo?",
+        "date_created": "2018-12-14T17:10:56.192994"
+      }
+    },
+    {
+      "vocab_context_data": {
+        "content": "El infanticidio ha sido una forma de selecci\u00f3n artificial.",
+        "date_created": "2018-12-14T17:10:56.214869"
+      }
+    },
+    {
+      "vocab_context_data": {
+        "content": "\u2014No solo este gobierno. Detesto a todos los que est\u00e1n en el poder. Son un mal necesario, imagino, pero han ido demasiado lejos.",
+        "date_created": "2018-12-14T17:10:56.237639"
+      }
+    },
+    {
+      "vocab_context_data": {
+        "content": "\u2014Es mucho m\u00e1s f\u00e1cil pedir la paz mundial que llevarse bien con el pr\u00f3jimo. \u2014replic\u00f3 Heismann con sarcasmo. La guerra no es m\u00e1s que otra forma de canibalismo. Los humanos se sirven de la inteligencia para ocultar su instinto can\u00edbal. Barajan sofismas de todo tipo para justificarlo: que si pol\u00edtica, que si religi\u00f3n, que si ideolog\u00eda, que si patriotismo... pero en el fondo tienen los mismos deseos que los animales.",
+        "date_created": "2018-12-14T17:10:56.259622"
+      }
+    },
+    {
+      "vocab_context_data": {
+        "content": "Pero las buenas obras se consideran virtuosas precisamente porque van contra la naturaleza humana. Si fueran actos biol\u00f3gicamente normales, no los elogiar\u00edamos.",
+        "date_created": "2018-12-14T17:10:56.281847"
+      }
+    },
+    {
+      "vocab_context_data": {
+        "content": "Kento dej\u00f3 de preocuparse por las minucias.",
+        "date_created": "2018-12-14T17:10:56.292661"
+      }
+    },
+    {
+      "vocab_context_data": {
+        "content": "Kento se quit\u00f3 las gafas y se frot\u00f3 la grasienta cara con la manga. De repente se qued\u00f3 mirando el port\u00e1til negro. Desde la v\u00edspera no hab\u00eda recibido ning\u00fan mensaje del Congo.",
+        "date_created": "2018-12-14T17:10:56.314926"
+      }
+    },
+    {
+      "vocab_context_data": {
+        "content": "Aunque quiz\u00e1 no deber\u00eda pensar as\u00ed. \u00bfAcaso no era un simple engranaje de la maquinaria llamada Operaci\u00f3n N\u00e9mesis?",
+        "date_created": "2018-12-14T17:10:56.326014"
+      }
+    },
+    {
+      "vocab_context_data": {
+        "content": "El cielo mostraba un abanico de matices que iban desde el azul marino m\u00e1s intenso hasta el naranja, mientras que el oc\u00e9ano segu\u00eda completamente negro.",
+        "date_created": "2018-12-14T17:10:56.337131"
+      }
+    },
+    {
+      "vocab_context_data": {
+        "content": "Los Raptors eran invisibles para los radares, el \u00faltimo grito en aviones indectables, los cazas m\u00e1s potentes de la historia, con un asombroso \u00edndice de 144 derribos por ninguna baja en simulacros de batalla. Y corr\u00edan invisibles detr\u00e1s del Boeing, listos para abatirlo.",
+        "date_created": "2018-12-14T17:10:56.359391"
+      }
+    },
+    {
+      "vocab_context_data": {
+        "content": "Mientras presenciaba este toma y daca, Rubens contaacon que Burns obrara racionalmente. En una competici\u00f3n de brutalidades, la respuesta m\u00e1s l\u00f3gica era que un contendiente siguiera embistiendo y el otro eludiera la confrontaci\u00f3n. El m\u00e1s brutal no era el perdedor. El perdedor era el m\u00e1s racional.",
+        "date_created": "2018-12-14T17:10:56.370629"
+      }
+    },
+    {
+      "vocab_context_data": {
+        "content": "\u00abM\u00e1talos, Ema. S\u00e9 la diosa N\u00e9mesis, la que ejecuta el castigo de los dioses, y da a estas arrogantes criaturas inferiores lo que se merecen.\u00bb",
+        "date_created": "2018-12-14T17:10:56.381593"
+      }
+    },
+    {
+      "vocab_context_data": {
+        "content": "Yeager se asi\u00f3 a los bordes de la puerta. Akili, pegado a su pecho, asomaba la cabeza como una cr\u00eda de canguro en el marsupio.",
+        "date_created": "2018-12-14T17:10:56.392602"
+      }
+    },
+    {
+      "vocab_context_data": {
+        "content": "Akili estaba bien. Meyers y Pierce aterrizaron unos segundos despu\u00e9s sobre otro contenedor de la cubierta. Los paraca\u00eddas, reacios airse con el viento, se hinchaban a sus espaldas. Yeager y Meyers se miraron con los pulgares levantados. Los cuatro supervivients hab\u00edan conseguido salir de \u00c1frica.",
+        "date_created": "2018-12-14T17:10:56.403831"
+      }
+    },
+    {
+      "vocab_context_data": {
+        "content": "Cuando por fin apareci\u00f3 la mochila en la cinta transportadora, Jeong-hoon se apresur\u00f3 a comprobar el contenido. Abri\u00f3 la caja de pl\u00e1stico y vio que no se hab\u00eda roto ninguna c\u00e1psula ni se hab\u00eda derramado l\u00edquido. Ahora ten\u00eda que pasar por la aduana, el \u00faltimo obst\u00e1culo.",
+        "date_created": "2018-12-14T17:10:56.414947"
+      }
+    },
+    {
+      "vocab_context_data": {
+        "content": "\u2014Lo hemos hecho entre mi amigo y yo. Mi buen amigo Kento Koga.",
+        "date_created": "2018-12-14T17:10:56.426338"
+      }
+    },
+    {
+      "vocab_context_data": {
+        "content": "Heismann adopt\u00f3 de nuevo una expresi\u00f3n acad\u00e9mica y reflexiva. \u2014Se mantendr\u00e1n al margen de todo hasta que su raza se establezca. En el \u00ednterin estudiar\u00e1n las costumbres de ese primate inferior llamado Homo sapiens y empezar\u00e1n a ejercer su poder. Pero en la sombra.",
+        "date_created": "2018-12-14T17:10:56.437139"
+      }
+    },
+    {
+      "vocab_context_data": {
+        "content": "En el mundo en que han nacido no ven m\u00e1s que simios que pelean por el territorio con el dedo en el bot\u00f3n de lanzamiento de misiles nucleares.",
+        "date_created": "2018-12-14T17:10:56.448243"
+      }
+    },
+    {
+      "vocab_context_data": {
+        "content": "Si las cosas iban de mal en peor, la raza humana podr\u00eda ser eliminada antes de llegar al siglo XXX.",
+        "date_created": "2018-12-14T17:10:56.459454"
+      }
+    },
+    {
+      "vocab_context_data": {
+        "content": "El curtido soldado apret\u00f3 tan fuerte y le dio tan potentes palmadasen la espalda que Kento temi\u00f3 que se le fuera a romper el espinazo.",
+        "date_created": "2018-12-14T17:10:56.470669"
+      }
+    },
+    {
+      "vocab_context_data": {
+        "content": "\u2014Ahora est\u00e1s a salvo. Aqu\u00ed no hay guerra. La gente de este pa\u00eds ha renunciado a la guerra para siempre.",
+        "date_created": "2018-12-14T17:10:56.482037"
+      }
+    },
+    {
+      "vocab_context_data": {
+        "content": "\u2014Creo que ya ha terminado todo. Yeager, ahora que Akili no est\u00e1, \u00bfno te sientes solo? Yeager tard\u00f3 en responder. \u2014Quiz\u00e1 me compre un gato \u2014dijo, pensando en los ojos felinos de Akili.",
+        "date_created": "2018-12-14T17:10:56.504714"
+      }
+    }
+  ]
+}

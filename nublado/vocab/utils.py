@@ -115,13 +115,16 @@ def import_vocab_entries(data):
             entry=vocab_entry_data['entry'],
             language=vocab_entry_data['language']
         ).exists():
-            VocabEntry.objects.create(
+            vocab_entry = VocabEntry.objects.create(
                 **vocab_entry_data
             )
             if 'vocab_definitions' in vocab_entry_dict:
                 for vocab_definition in vocab_entry_dict['vocab_definitions']:
                     vocab_definition_data = vocab_definition['vocab_definition_data']
-                    VocabDefinition.objects.create(**vocab_definition_data)
+                    VocabDefinition.objects.create(
+                        vocab_entry_id=vocab_entry.id,
+                        **vocab_definition_data
+                    )
 
 
 def import_vocab_source(data, creator):
@@ -333,10 +336,10 @@ def validate_vocab_source_json_schema(data):
                             },
                         },
                     },
-                    'required': ['vocab_context_data', 'vocab_entries']
+                    'required': ['vocab_context_data']
                 },
             },
         },
-        'required': ['vocab_source_data', 'vocab_contexts']
+        'required': ['vocab_source_data']
     }
     validate_schema(data, schema)

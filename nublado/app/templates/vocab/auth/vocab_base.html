@@ -101,11 +101,7 @@ sidebar-nav {{ sidebar_expanded|yesno:"sidebar-nav-expanded," }} {{ sidebar_top_
   </li>
 
   <li class="nav-list-header-title">
-  <a 
-  id="sidebar-nav-vocab-project-name"
-  href="{% url 'vocab:vocab_project_dashboard' vocab_project.id vocab_project.slug %}">
   <span id="menu-vocab-project-name"> {{ vocab_project.name }} </span>
-  </a>
   </li>
 
   <li class="nav-item">

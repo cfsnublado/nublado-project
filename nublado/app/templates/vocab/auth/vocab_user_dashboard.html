@@ -24,10 +24,14 @@
 <div class="row justify-content-md-center">
 <div class="col-md-10">
 
+{% if vocab_projects %}
+
+<h4>{% trans "label_vocab_projects" %}</h4>
+
 {% for project in vocab_projects %}
 <a 
 id="{{ project.id }}-{{ project.slug }}"
-href="{% url 'vocab:vocab_project_dashboard' project.id project.slug %}"
+href="{% url 'vocab:vocab_project_sources' project.id project.slug %}"
 >
 <div class="panel">
 <div class="panel-header">
@@ -39,6 +43,8 @@ href="{% url 'vocab:vocab_project_dashboard' project.id project.slug %}"
 </div>
 </a>
 {% endfor %}
+
+{% endif %}
 
 </div>
 </div>

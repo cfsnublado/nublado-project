@@ -14,10 +14,10 @@ from .base import PROJECT_NAME, FunctionalTest, error_msgs, msgs, page_titles, l
 NEW_PWD = 'Coffee?69c'
 
 page_titles.update({
-    'user_register_title_en': '{0} | {1}'.format('Register user', PROJECT_NAME),
-    'user_register_activate_title_en': '{0} | {1}'.format('Activate account', PROJECT_NAME),
-    'user_password_reset_title_en': '{0} | {1}'.format('Change user password', PROJECT_NAME),
-    'profile_update_title_en': '{0} | {1}'.format('Edit profile', PROJECT_NAME),
+    'user_register_en': '{0} | {1}'.format('Register user', PROJECT_NAME),
+    'user_register_activate_en': '{0} | {1}'.format('Activate account', PROJECT_NAME),
+    'user_password_reset_en': '{0} | {1}'.format('Change user password', PROJECT_NAME),
+    'profile_update_en': '{0} | {1}'.format('Edit profile', PROJECT_NAME),
 })
 
 links.update({
@@ -111,12 +111,12 @@ class TestUser(TestCommon):
 
     # def test_register_user(self):
     #     self.browser.get(self.live_server_url)
-    #     self.page_load(page_titles['home_page_title_en'])
+    #     self.load_page(page_titles['home_en'])
     #     # Join now button
     #     user_register_btn = self.get_element_by_id('user-register-header-button')
     #     self.assertIn(links['join_now_en'], user_register_btn.text)
     #     user_register_btn.click()
-    #     self.page_load(page_titles['user_register_title_en'])
+    #     self.load_page(page_titles['user_register_en'])
     #     # Invalid data
     #     self.fill_and_submit_user_registration_form(
     #         email=self.user_data['email'],
@@ -136,7 +136,7 @@ class TestUser(TestCommon):
     #         pwd1=DEFAULT_PWD,
     #         pwd2=DEFAULT_PWD
     #     )
-    #     self.page_load(page_titles['login_page_title_en'])
+    #     self.load_page(page_titles['login_en'])
     #     messages = self.get_top_messages()
     #     self.assertIn(msgs['user_register_confirm_en'], messages.get_attribute('innerHTML'))
     #     # Confirm that new, inactive user acccount was created.
@@ -160,7 +160,7 @@ class TestUser(TestCommon):
     #         self.live_server_url,
     #         reverse('registration:registration_activate', kwargs={'uidb64': uid, 'token': token}))
     #     )
-    #     self.page_load(page_titles['user_register_activate_title_en'])
+    #     self.load_page(page_titles['user_register_activate_en'])
     #     page_header = self.get_element_by_tag_name('h1')
     #     self.assertIn(msgs['user_activation_success'], page_header.text)
     #     user.refresh_from_db()
@@ -170,7 +170,7 @@ class TestUser(TestCommon):
     #         self.live_server_url,
     #         reverse('registration:registration_activate', kwargs={'uidb64': uid, 'token': token}))
     #     )
-    #     self.page_load(page_titles['user_register_activate_title_en'])
+    #     self.load_page(page_titles['user_register_activate_en'])
     #     page_header = self.get_element_by_tag_name('h1')
     #     self.assertIn(msgs['msg_error_en'], page_header.text)
 
@@ -187,7 +187,7 @@ class TestUser(TestCommon):
             reverse('users:user_password_reset', kwargs={'username': user.username}))
         )
         self.login_user(user.username)
-        self.page_load(page_titles['user_password_reset_title_en'])
+        self.load_page(page_titles['user_password_reset_en'])
 
         # Invalid data
         self.fill_and_submit_password_reset_form(
@@ -202,7 +202,7 @@ class TestUser(TestCommon):
             new_pwd1=NEW_PWD,
             new_pwd2=NEW_PWD
         )
-        self.page_load(page_titles['login_page_title_en'])
+        self.load_page(page_titles['login_en'])
 
 
 class TestProfile(TestCommon):
@@ -225,10 +225,10 @@ class TestProfile(TestCommon):
             username=self.user.username,
             password=DEFAULT_PWD
         )
-        self.page_load(page_titles['user_login_redirect_title_en'])
+        self.load_page(page_titles['user_login_redirect_en'])
         self.get_user_toggle().click()
         self.get_element_by_id('nav-menu-profile').click()
-        self.page_load(page_titles['profile_update_title_en'])
+        self.load_page(page_titles['profile_update_en'])
 
         # Invalid data
         self.fill_and_submit_profile_update_form(first_name='')

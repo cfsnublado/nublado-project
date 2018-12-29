@@ -26,6 +26,7 @@ from ..serializers import (
     VocabContextSerializer, VocabEntrySerializer,
     VocabProjectSerializer, VocabSourceSerializer
 )
+from ..utils import export_vocab_source
 from ..views.views_mixins import (
     VocabEntrySearchMixin, VocabProjectMixin,
     VocabSourceMixin
@@ -884,25 +885,9 @@ class VocabSourceExportJsonViewTest(TestCommon):
             entry='sentence',
             language='en'
         )
-        vocab_context_entry = VocabContextEntry.objects.create(
+        VocabContextEntry.objects.create(
             vocab_context=vocab_context,
             vocab_entry=vocab_entry
-        )
-        vocab_project_serializer = VocabProjectSerializer(
-            self.vocab_project,
-            context={'request': request}
-        )
-        vocab_source_serializer = VocabSourceSerializer(
-            self.vocab_source,
-            context={'request': request}
-        )
-        vocab_context_serializer = VocabContextSerializer(
-            vocab_context,
-            context={'request': request}
-        )
-        vocab_entry_serializer = VocabEntrySerializer(
-            vocab_entry,
-            context={'request': request}
         )
         response = self.client.get(
             reverse(
@@ -912,19 +897,5 @@ class VocabSourceExportJsonViewTest(TestCommon):
                 }
             )
         )
-        expected_data = json.loads(json.dumps({
-            'vocab_project_data': vocab_project_serializer.get_minimal_data(),
-            'vocab_source_data': vocab_source_serializer.get_minimal_data(),
-            'vocab_contexts': {
-                '1': {
-                    'vocab_context_data': vocab_context_serializer.get_minimal_data(),
-                    'vocab_entries': [
-                        {
-                            'vocab_entry_data': vocab_entry_serializer.get_minimal_data(),
-                            'vocab_entry_tags': vocab_context_entry.get_vocab_entry_tags(),
-                        }
-                    ]
-                }
-            }
-        }))
+        expected_data = export_vocab_source(request, self.vocab_source)
         self.assertEqual(json.loads(response.content), expected_data)

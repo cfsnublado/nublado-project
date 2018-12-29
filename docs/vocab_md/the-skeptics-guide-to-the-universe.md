@@ -654,4 +654,74 @@ project_name: English Reading
 
     </div>
 
-- 
+- Probability puzzles are not exactly in high demand in our culture. I don't suspect that Selvin's letter to the editor went viral in the seventies; nor did the game show itself popularize the eponymous puzzle. The immense popularity of the Monty Hall problem can be directly traced to a genius writing for _Parade_ magazine.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: eponymous: eponymous
+
+    </div>
+
+- I think the most parsimonious explanation for all scientific knowledge is that there is a an actual real physical universe out there.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: parsimonious: parsimonious
+
+    </div>
+
+- **Postmodernism**
+
+    Postmodernism, as it applies to science, is the philosophical position that science is nothing more than a cultural narrative and therefore has no special or privileged relationship with the truth.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: postmodernism: postmodernism
+
+    en: narrative: narrative
+
+    </div>
+
+- Postmodernism, in practice, is the ultimate sour grapes of science deniers&mdash;"Well, all science is socially constructed anyway." Add in a little talk about fascism and oppression and you can make it all seem socially conscious.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: postmodernism: postmodernism
+
+    en: conscious: conscious
+
+    en: oppression: oppression
+
+    </div>
+
+- Pseudoscientists, because they are invested in a desired conclusion, will give only perfunctory consideration of competing hypotheses. Often one or two token alternatives will be put forward and summarily shot down, leaving the desired belief as the only possibility.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: perfunctory: perfunctory
+
+    en: summarily: summarily
+
+    </div>
+
+- **Denialism**
+
+    Denialism or science denial refers to the motivated denial of accepted science using a series of invalid strategies.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: denialism: denialism
+
+    </div>
+
+- In fact denialism is a subset of pseudoscience, on that tries to cloak itself in the language of skepticism while eschewing the actual process of scientific skepticism. Denialism exists on a spectrum with skepticism, without a clear demarcation between the two.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: eschew: eschewing
+
+    en: spectrum: spectrum
+
+    en: demarcation: demarcation
+
+    </div>

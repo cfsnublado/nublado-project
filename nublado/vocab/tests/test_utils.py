@@ -56,73 +56,46 @@ class ExportVocabEntriesTest(TestCommon):
             VocabEntry.objects.create(entry='foo es 2', language='es'),
             VocabEntry.objects.create(entry='foo es 3', language='es')
         ]
-        expected_data = {'vocab_entries': {}}
-        for index, vocab_entry in enumerate(vocab_entries, start=1):
+        expected_data = {'vocab_entries': []}
+        for vocab_entry in vocab_entries:
             serializer = VocabEntrySerializer(
                 vocab_entry,
                 context={'request': self.request}
             )
-            expected_data['vocab_entries'].update(
-                {str(index): {'vocab_entry_data': serializer.get_minimal_data()}}
+            expected_data['vocab_entries'].append(
+                {'vocab_entry_data': serializer.get_minimal_data()}
             )
         data = export_vocab_entries(self.request)
         self.assertEqual(expected_data, data)
 
     def test_export_entries_all(self):
-        vocab_entry_dict = {}
-        vocab_entry = VocabEntry.objects.create(entry='foo en 1', language='en')
-        vocab_entry_dict['1'] = vocab_entry
-        vocab_entry = VocabEntry.objects.create(entry='foo en 3', language='en')
-        vocab_entry_dict['2'] = vocab_entry
-        vocab_entry = VocabEntry.objects.create(entry='foo es 1', language='es')
-        vocab_entry_dict['3'] = vocab_entry
-        vocab_entry = VocabEntry.objects.create(entry='foo es 3', language='es')
-        vocab_entry_dict['4'] = vocab_entry
+        vocab_entries = []
+        vocab_entries.append(VocabEntry.objects.create(entry='foo en 1', language='en'))
+        vocab_entries.append(VocabEntry.objects.create(entry='foo en 3', language='en'))
+        vocab_entries.append(VocabEntry.objects.create(entry='foo es 1', language='es'))
+        vocab_entries.append(VocabEntry.objects.create(entry='foo es 3', language='es'))
 
         data = export_vocab_entries(self.request)
         self.assertEqual(
-            len(data['vocab_entries'].keys()), len(vocab_entry_dict.keys())
+            len(data['vocab_entries']), len(vocab_entries)
         )
-        for k, v in data['vocab_entries'].items():
-            self.assertTrue(k in vocab_entry_dict)
-            vocab_entry = vocab_entry_dict[k]
-            serializer = VocabEntrySerializer(vocab_entry, context={'request': self.request})
-            self.assertEqual(v, {'vocab_entry_data': serializer.get_minimal_data()})
 
     def test_export_entries_by_language(self):
-        vocab_entry_en_dict = {}
-        vocab_entry = VocabEntry.objects.create(entry='foo en 1', language='en')
-        vocab_entry_en_dict['1'] = vocab_entry
-        vocab_entry = VocabEntry.objects.create(entry='foo en 2', language='en')
-        vocab_entry_en_dict['2'] = vocab_entry
-        vocab_entry = VocabEntry.objects.create(entry='foo en 3', language='en')
-        vocab_entry_en_dict['3'] = vocab_entry
-
-        vocab_entry_es_dict = {}
-        vocab_entry = VocabEntry.objects.create(entry='foo es 2', language='es')
-        vocab_entry_es_dict['1'] = vocab_entry
-        vocab_entry = VocabEntry.objects.create(entry='foo es 3', language='es')
-        vocab_entry_es_dict['2'] = vocab_entry
+        VocabEntry.objects.create(entry='foo en 1', language='en')
+        VocabEntry.objects.create(entry='foo en 2', language='en')
+        VocabEntry.objects.create(entry='foo en 3', language='en')
+        VocabEntry.objects.create(entry='foo es 2', language='es')
+        VocabEntry.objects.create(entry='foo es 3', language='es')
 
         data = export_vocab_entries(self.request, language='es')
-        self.assertEqual(
-            len(data['vocab_entries'].keys()), len(vocab_entry_es_dict.keys())
-        )
-        for k, v in data['vocab_entries'].items():
-            self.assertTrue(k in vocab_entry_es_dict)
-            vocab_entry = vocab_entry_es_dict[k]
-            serializer = VocabEntrySerializer(vocab_entry, context={'request': self.request})
-            self.assertEqual(v, {'vocab_entry_data': serializer.get_minimal_data()})
+
+        for vocab_entry in data['vocab_entries']:
+            self.assertEqual(vocab_entry['vocab_entry_data']['language'], 'es')
 
         data = export_vocab_entries(self.request, language='en')
-        self.assertEqual(
-            len(data['vocab_entries'].keys()), len(vocab_entry_en_dict.keys())
-        )
-        for k, v in data['vocab_entries'].items():
-            self.assertTrue(k in vocab_entry_en_dict)
-            vocab_entry = vocab_entry_en_dict[k]
-            serializer = VocabEntrySerializer(vocab_entry, context={'request': self.request})
-            self.assertEqual(v, {'vocab_entry_data': serializer.get_minimal_data()})
+
+        for vocab_entry in data['vocab_entries']:
+            self.assertEqual(vocab_entry['vocab_entry_data']['language'], 'en')
 
 
 class ImportVocabEntriesTest(TestCommon):
@@ -195,8 +168,8 @@ class ExportVocabSourceTest(TestCommon):
         expected_data = json.loads(json.dumps({
             'vocab_project_data': vocab_project_serializer.get_minimal_data(),
             'vocab_source_data': vocab_source_serializer.get_minimal_data(),
-            'vocab_contexts': {
-                '1': {
+            'vocab_contexts': [
+                {
                     'vocab_context_data': vocab_context_serializer.get_minimal_data(),
                     'vocab_entries': [
                         {
@@ -205,7 +178,7 @@ class ExportVocabSourceTest(TestCommon):
                         }
                     ]
                 }
-            }
+            ]
         }))
         data = export_vocab_source(self.request, vocab_source)
         self.assertEqual(expected_data, data)
@@ -322,8 +295,8 @@ class ValidateVocabSourceJSONTest(TestCommon):
         data = {
             'vocab_project_data': vocab_project_serializer.get_minimal_data(),
             'vocab_source_data': vocab_source_serializer.get_minimal_data(),
-            'vocab_contexts': {
-                '1': {
+            'vocab_contexts': [
+                {
                     'vocab_context_data': vocab_context_serializer.get_minimal_data(),
                     'vocab_entries': [
                         {
@@ -332,6 +305,6 @@ class ValidateVocabSourceJSONTest(TestCommon):
                         }
                     ]
                 }
-            }
+            ]
         }
         validate_vocab_source_json_schema(json.loads(json.dumps(data)))

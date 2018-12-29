@@ -218,7 +218,7 @@ class UserstampMixinTest(TestCase):
         form_class = TestUserstampForm
         template_name = 'fake_template.html'
 
-    class UserstampView(UserstampMixin, UpdateView):
+    class UserstampUpdateView(UserstampMixin, UpdateView):
         model = TestUserstampModel
         form_class = TestUserstampForm
         template_name = 'fake_template.html'

@@ -54,7 +54,6 @@ class LoginViewTest(TestCase):
 
     def test_login_view_uses_login_form(self):
         response = self.client.get(reverse('security:login'))
-        print(response.context['form'])
         self.assertIsInstance(response.context['form'], LoginForm)
 
     def test_view_redirects_if_user_authenticated(self):

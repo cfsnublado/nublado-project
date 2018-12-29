@@ -142,8 +142,6 @@ class UserPasswordResetViewTest(TestCommon):
         classes = (
             LoginRequiredMixin,
             UserRequiredMixin,
-            CachedObjectMixin,
-            AjaxMultiFormMixin,
             ObjectSessionMixin,
             UpdateView
         )

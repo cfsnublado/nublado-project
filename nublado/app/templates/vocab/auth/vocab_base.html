@@ -16,19 +16,19 @@ sidebar-adaptable theme-white {{ sidebar_expanded|yesno:"sidebar-nav-expanded," 
 
 {% if request.session.session_obj.vocab_project or request.session.session_obj.vocab_source %}
 
-<div class="row justify-content-md-center">
-<div class="col-md-10">
-<div class="page-subheader"> {{ vocab_project.name }} </div>
-</div>
+  <div class="row justify-content-md-center">
+  <div class="col-md-10">
+  <div class="page-subheader"> {{ vocab_project.name }} </div>
+  </div>
 </div>
 
 {% elif request.session.session_obj.vocab_entry %}
 
-<div class="row justify-content-md-center">
-<div class="col-md-10">
-<div class="page-subheader"> {% trans "label_dictionary" %} </div>
-</div>
-</div>
+  <div class="row justify-content-md-center">
+  <div class="col-md-10">
+  <div class="page-subheader"> {% trans "label_dictionary" %} </div>
+  </div>
+  </div>
 
 {% endif %}
 
@@ -265,26 +265,26 @@ id="sidebar-nav-dashboard"
 class="nav-link {% block dashboard_link_active %}{% endblock dashboard_link_active %}" 
 href="{% url 'vocab:vocab_user_dashboard' %}">
 <i class="nav-link-icon fas fa-tachometer-alt fa-fw"></i>
-{% trans "label_dashboard" %}
+{% trans "label_vocab_projects" %}
 </a>
 </li>
 
 {% if not form %}
 
-<li class="nav-item">
-<a
-id="sidebar-nav-vocab-project-create" 
-class="nav-link" 
-href="#"
-@click.prevent="showModal('create-project-modal')"
->
-<i class="nav-link-icon fas fa-plus fa-fw"></i>
-{% trans "label_new_vocab_project" %}
-</a> 
+  <li class="nav-item">
+  <a
+  id="sidebar-nav-vocab-project-create" 
+  class="nav-link" 
+  href="#"
+  @click.prevent="showModal('create-project-modal')"
+  >
+  <i class="nav-link-icon fas fa-plus fa-fw"></i>
+  {% trans "label_new_vocab_project" %}
+  </a> 
 
-</li>
+  </li>
 
-<li class="divider"></li>
+  <li class="divider"></li>
 
 {% endif %}
 

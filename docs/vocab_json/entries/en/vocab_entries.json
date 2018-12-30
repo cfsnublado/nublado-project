@@ -1,0 +1,2844 @@
+{
+  "vocab_entries": [
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "fallibility",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-11-28T22:51:24.335207"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "fabricate",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-11-28T22:51:24.405055"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "stimulus",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-11-28T22:51:24.526343"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "pareidolia",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-11-28T22:51:24.649969"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "menagerie",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-11-28T22:51:24.737832"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "phenomenon",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-11-28T22:51:24.795444"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "apophenia",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-11-28T22:51:25.023577"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "detritus",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-11-28T22:51:25.101487"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "nefarious",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-11-28T22:51:25.248627"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "hyperactive agency detection",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-11-28T22:51:25.326752"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "deliberate",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-11-28T22:51:25.379099"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "conscious",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-11-28T22:51:25.468192"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "chaotic",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-11-28T22:51:25.523780"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "intrinsic",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-11-28T22:51:25.627422"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "imbue",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-11-28T22:51:25.704457"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "interchangeable",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-11-28T22:51:25.770831"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "hypnagogia",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-11-28T22:51:25.856835"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "neurological",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-11-28T22:51:25.935149"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "paranormal",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-11-28T22:51:26.035156"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "ideomotor effect",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-11-28T22:51:26.103713"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "subconscious",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-11-28T22:51:26.157256"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "hypothesize",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-11-28T22:51:26.223794"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "quirk",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-11-28T22:51:26.280353"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "foible",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-11-28T22:51:26.335789"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "neuropsychological",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-11-28T22:51:26.397087"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "humility",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-11-28T22:51:26.457229"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "metacognition",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-11-28T22:51:26.571418"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "fallacy",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-11-28T22:51:26.659993"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "bias",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-11-28T22:51:26.713224"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "rampant",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-11-28T22:51:26.784690"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "math",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-11-28T22:51:26.884204"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "Dunning-Kruger effect",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-11-28T22:51:26.979491"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "competency",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-11-28T22:51:27.090839"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "analogous",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-11-28T22:51:27.157368"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "incompetent",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-11-28T22:51:27.213009"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "paradigm",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-11-28T22:51:27.279524"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "knowledge",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-11-28T22:51:27.335183"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "alternate",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-11-28T22:51:27.446941"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "substitute X for Y",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-11-28T22:51:27.629342"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "err",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-11-28T22:51:27.871613"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "rule of thumb",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-11-28T22:51:28.059187"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "motivated reasoning",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-11-28T22:51:28.124416"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "ideology",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-11-28T22:51:28.191260"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "biased",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-11-28T22:51:28.246292"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "information",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-11-28T22:51:28.328440"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "ally",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-11-28T22:51:28.405350"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "cherry-picking",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-11-28T22:51:28.524646"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "interact",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-11-28T22:51:28.580466"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "human being",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-11-28T22:51:28.739392"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "belief",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-11-28T22:51:28.880021"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "Bayesian",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-11-28T22:51:28.971667"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "cognitive dissonance",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-11-28T22:51:29.083754"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "trigger",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-11-28T22:51:29.137306"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "political",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-11-28T22:51:29.216677"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "sacred cow",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-11-28T22:51:29.269801"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "virtuous",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-11-28T22:51:29.430559"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "dichotomy",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-11-28T22:51:29.528092"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "spectrum",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-11-28T22:51:29.581153"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "premise",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-11-28T22:51:29.757818"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "sound argument",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-11-28T22:51:29.838285"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "assumption",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-11-28T22:51:30.379886"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "insidious",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-11-28T22:51:30.549010"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "irresolvable",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-11-28T22:51:30.602303"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "subjective",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-11-28T22:51:30.803280"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "non sequitur",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-11-28T22:51:31.247160"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "argument from authority",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-11-28T22:51:31.357999"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "argument from final outcome",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-11-28T22:51:31.551544"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "teleological",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-11-28T22:51:31.604171"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "post hoc ergo propter hoc",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-11-28T22:51:31.784193"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "precede",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-11-28T22:51:31.981945"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "temporally",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-11-28T22:51:32.159872"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "correlation",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-11-28T22:51:32.571348"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "ad hoc reasoning",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-11-28T22:51:32.782731"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "jerry-rig",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-11-28T22:51:33.006895"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "tu quoque",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-11-28T22:51:33.220050"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "ad hominem",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-11-28T22:51:33.394053"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "ad ignorantiam",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-11-28T22:51:33.805617"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "pithy",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-11-28T22:51:33.969563"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "adage",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-11-28T22:51:34.025138"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "false continuum",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-11-28T22:51:34.330232"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "demarcation",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-11-28T22:51:34.381090"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "false dichotomy",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-11-28T22:51:34.569724"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "ability",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-11-28T22:51:27.035045"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "clash",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-12-14T17:09:53.975853"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "tenet",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-12-14T17:09:54.031125"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "electromagnetic",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-12-14T17:09:54.202080"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "annihilate",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-12-14T17:09:54.264729"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "antimatter",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-12-14T17:09:54.416941"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "transmogrification",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-12-14T17:09:54.477174"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "boson",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-12-14T17:09:54.657058"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "quark",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-12-14T17:09:54.710578"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "philological",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-12-14T17:09:54.878197"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "pedagogical",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-12-14T17:09:55.045552"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "hadron",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-12-14T17:09:55.245427"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "threshold",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-12-14T17:09:55.298433"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "petunia",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-12-14T17:09:55.477057"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "poisoning the well",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-12-14T17:10:44.418577"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "hueristic",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-12-14T17:10:46.099196"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "mitigate",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-12-14T17:10:46.177193"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "skepticism",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-12-14T17:10:46.274127"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "confirmation bias",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-12-14T17:10:46.341439"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "scrutiny",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-12-14T17:10:46.396346"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "hypothesis",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-12-14T17:10:46.464712"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "ascribe",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-12-14T17:10:46.596836"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "fundamental attribution error",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-12-14T17:10:46.652242"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "rationalize",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-12-14T17:10:46.707680"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "shed light on something",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-12-14T17:10:46.822112"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "asdf",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-12-29T17:57:38.247072"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "asdfasdf",
+        "pronunciation_spelling": "sadf",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-12-29T17:58:21.175104"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "asdfasdfasdf",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-12-29T17:59:06.061550"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "laissez-faire",
+        "pronunciation_spelling": "les-sey-**fair**",
+        "pronunciation_ipa": "",
+        "description": "policy: non-interference\r\n\r\nof, relating to, or conforming to the principles or practices of laissez faire.\r\n\r\n- laissez faire, liberalismo",
+        "date_created": "2018-04-12T16:48:37.445558"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "ordinal number",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "any of the numbers that express degree, quality, or position in a series, as first, second, and third\r\n\r\n- n\u00famero ordinal",
+        "date_created": "2018-04-12T16:51:54.728292"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "cardinal number",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "any of the numbers that express amount, as one, two, three, etc\r\n\r\nsets: a number or symbol analogous to the number of elements in a finite set\r\n\r\n- n\u00famero cardinal",
+        "date_created": "2018-04-12T16:51:54.591914"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "mathematician",
+        "pronunciation_spelling": "math-uh-muh-**tish**-uh n",
+        "pronunciation_ipa": "",
+        "description": "an expert or specialist in mathematics. \r\n\r\n- matem\u00e1tico",
+        "date_created": "2018-04-12T16:51:57.336466"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "chrysalis",
+        "pronunciation_spelling": "**kris**-uh-lis",
+        "pronunciation_ipa": "",
+        "description": "the hard-shelled pupa of a moth or butterfly; an obtect pupa\r\n\r\n- cris\u00e1lida",
+        "date_created": "2018-04-12T16:51:57.136928"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "infinity",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-04-12T16:51:54.370351"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "innocuous",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-04-12T16:49:58.226514"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "paradox",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "a statement or proposition that seems self-contradictory or absurd but in reality expresses a possible truth.\r\n\r\n- paradoja",
+        "date_created": "2018-04-12T16:47:30.423839"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "conundrum",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "puzzling situation\r\n\r\n- enigma, misterio, problema",
+        "date_created": "2018-04-12T16:51:56.129133"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "trade-off",
+        "pronunciation_spelling": "**treyd**-awf",
+        "pronunciation_ipa": "",
+        "description": "the exchange of one thing for another of more or less equal value, especially to effect a compromise\r\n\r\n- compensaci\u00f3n, t\u00e9rmino medio",
+        "date_created": "2018-04-12T16:51:55.861695"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "queue",
+        "pronunciation_spelling": "kyoo",
+        "pronunciation_ipa": "",
+        "description": "a line, an organized sequence\r\n\r\n- fila, cola",
+        "date_created": "2018-04-12T16:51:55.517243"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "veridical",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "truthful; veracious\r\n\r\n- ver\u00eddico, acertado",
+        "date_created": "2018-04-12T16:51:55.104133"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "integer",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "the natural counting numbers and their additive inverses\r\n\r\n- n\u00famero entero",
+        "date_created": "2018-04-12T16:51:54.962980"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "be it",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-04-12T16:47:34.156409"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "neanderthal",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-04-12T16:47:34.011888"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "communism",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "a system of social organization in which all economic and social activity is controlled by a totalitarian state dominated by a single and self-perpetuating political party\r\n\r\n- comunismo",
+        "date_created": "2018-04-12T16:47:33.811854"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "capitalism",
+        "pronunciation_spelling": "**kap**-i-tl-iz-uh m",
+        "pronunciation_ipa": "",
+        "description": "an economic system in which investment in and ownership of the means of production, distribution, and exchange of wealth is made and maintained chiefly by private individuals or corporation\r\n\r\n- capitalismo",
+        "date_created": "2018-04-12T16:47:33.678566"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "homo deus",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-04-12T16:47:24.842497"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "homo sapiens",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-04-12T16:47:24.733607"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "apex",
+        "pronunciation_spelling": "**ey**-peks",
+        "pronunciation_ipa": "",
+        "description": "hight point, summit\r\n\r\n- cima, apogeo",
+        "date_created": "2018-04-12T16:47:33.269081"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "technology",
+        "pronunciation_spelling": "tek-**nol**-uh-jee",
+        "pronunciation_ipa": "",
+        "description": "the branch of knowledge that deals with the creation and use of technical means and their interrelation with life, society, and the environment, drawing upon such subjects as industrial arts, engineering, applied science, and pure science\r\n\r\n- tecnolog\u00eda",
+        "date_created": "2018-04-12T16:47:33.134134"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "feasibility",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "possibility of doing\r\n\r\n- viabilidad",
+        "date_created": "2018-04-12T16:47:32.986793"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "algorithm",
+        "pronunciation_spelling": "**a**l-guh-rith-uh m",
+        "pronunciation_ipa": "",
+        "description": "a set of rules for solving a problem in a finite number of steps, as for finding the greatest common divisor\r\n\r\n- algoritmo",
+        "date_created": "2018-04-12T16:47:24.084856"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "consciousness",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-04-12T16:47:27.766742"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "duplicity",
+        "pronunciation_spelling": "doo-**plis**-i-tee",
+        "pronunciation_ipa": "",
+        "description": "deceitfulness in speech or conduct, as by speaking or acting in two different ways to different people concerning the same matter; double-dealing\r\n\r\n- duplicidad, hipocres\u00eda",
+        "date_created": "2018-04-12T16:47:32.731159"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "cognitive revolution",
+        "pronunciation_spelling": "**kog**-ni-tiv rev-uh-**loo**-shuh n",
+        "pronunciation_ipa": "",
+        "description": "The \"spark\" and rewiring of Sapen's brains to allow it to access the intersubjective realm, thus elevating Sapiens to the top of the species hierarchy and granting it world domination.\r\n\r\n- revoluci\u00f3n cognitiva",
+        "date_created": "2018-04-12T16:47:32.591339"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "sapiens",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-04-12T16:47:32.389275"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "intersubjective",
+        "pronunciation_spelling": "in-ter-suh b-**jek**-tiv",
+        "pronunciation_ipa": "",
+        "description": "comprehensible to, relating to, or used by a number of persons, as a concept or language.",
+        "date_created": "2018-04-12T16:47:32.255796"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "descendant",
+        "pronunciation_spelling": "dih-**sen**-duh nt",
+        "pronunciation_ipa": "",
+        "description": "a person or animal that is descended from a specific ancestor; an offspring. \r\n\r\n something deriving in appearance, function, or general character from an earlier form. \r\n\r\n**Espa\u00f1ol** - descendiente",
+        "date_created": "2018-04-12T16:47:22.278147"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "omnipotent",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-04-12T16:47:32.053797"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "omnipotence",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-04-12T16:47:31.945145"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "lacuna",
+        "pronunciation_spelling": "luh-**kyoo**-nuh",
+        "pronunciation_ipa": "l\u0259\u02c8kyu n\u0259",
+        "description": "a gap or missing part, as in a manuscript, series, or logical argument; hiatus. \r\n\r\n- laguna",
+        "date_created": "2018-04-12T16:47:31.611624"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "ephemeral",
+        "pronunciation_spelling": "ih-**fem**-er-uh l",
+        "pronunciation_ipa": "\u026a\u02c8f\u025bm \u0259r \u0259l",
+        "description": "lasting a very short time; short-lived; transitory: \r\n\r\n- ef\u00edmero",
+        "date_created": "2018-04-12T16:47:23.806867"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "pursuit",
+        "pronunciation_spelling": "per-**soot**",
+        "pronunciation_ipa": "",
+        "description": "an effort to secure or attain; quest; the act of pursuing\r\n\r\n- persecuci\u00f3n, b\u00fasqueda",
+        "date_created": "2018-04-12T16:47:31.334260"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "hitherto",
+        "pronunciation_spelling": "**hith**-er-too",
+        "pronunciation_ipa": "",
+        "description": "up to this time; until now\r\n\r\n- hasta ahora, hasta el momento",
+        "date_created": "2018-04-12T16:47:23.221167"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "vehemently",
+        "pronunciation_spelling": "**vee**-uh-muh nt-lee",
+        "pronunciation_ipa": "",
+        "description": "characterized by rancor or anger; violent: \r\n\r\nstrongly emotional; intense or passionate: \r\n\r\n- vehementemente, intensamente",
+        "date_created": "2018-04-12T16:47:27.166723"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "sanctify",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "to make holy; set apart as sacred; consecrate. \r\n\r\n- santificar",
+        "date_created": "2018-04-12T16:47:28.813071"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "substratum",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "something that is spread or laid under something else; a stratum or layer lying under another.\r\n\r\n something that underlies or serves as a basis or foundation. \r\n\r\n- substrato, subsuelo",
+        "date_created": "2018-04-12T16:47:30.167093"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "science",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "- ciencia",
+        "date_created": "2018-04-12T16:47:29.687515"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "automata",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "robot, mechanical device\r\n\r\n- aut\u00f3mata",
+        "date_created": "2018-04-12T16:47:29.377906"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "bequeath",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-04-12T16:47:29.155749"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "simulacrum",
+        "pronunciation_spelling": "sim-yuh-**ley**-kruhm",
+        "pronunciation_ipa": "",
+        "description": "An effigy, image, or representation.\r\n\r\n- simulacro",
+        "date_created": "2018-04-12T16:47:37.309577"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "qualm",
+        "pronunciation_spelling": "kwahm",
+        "pronunciation_ipa": "",
+        "description": "an uneasy feeling or pang of conscience as to conduct; compunction: \r\n\r\n- aprensi\u00f3n, recelo, escr\u00fapulo",
+        "date_created": "2018-04-12T16:47:26.121543"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "serendipity",
+        "pronunciation_spelling": "ser-uh n-**dip**-i-tee",
+        "pronunciation_ipa": "",
+        "description": "an aptitude for making desirable discoveries by accident; good fortune, luck\r\n\r\n- carambola, serendipia, descubrimiento inesperado",
+        "date_created": "2018-04-12T16:47:28.155452"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "emerge",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-04-12T16:47:27.897019"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "coalesce",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-04-12T16:47:27.533166"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "ilk",
+        "pronunciation_spelling": "ilk",
+        "pronunciation_ipa": "",
+        "description": "family, class, or kind\r\n\r\n- tipo, clase, \u00edndole",
+        "date_created": "2018-04-12T16:47:27.008568"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "technical",
+        "pronunciation_spelling": "**tek**-ni-kuh l",
+        "pronunciation_ipa": "",
+        "description": "relating to  a specialist field, \r\n\r\n- t\u00e9cnico, especializado",
+        "date_created": "2018-04-12T16:47:26.909431"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "destiny",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-04-12T16:47:26.777654"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "diatribe",
+        "pronunciation_spelling": "**dahy**-uh-trahyb",
+        "pronunciation_ipa": "",
+        "description": "A bitter, sharply abusive denunciation, attack, or criticism, rant.\r\n\r\n- diatriba",
+        "date_created": "2018-04-12T16:47:26.512523"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "frenzy",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-04-12T16:47:26.353168"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "treacherous",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-04-12T16:47:26.277212"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "deluge",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-04-12T16:47:25.888699"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "cacophony",
+        "pronunciation_spelling": "kuh-**kof**-uh-nee",
+        "pronunciation_ipa": "",
+        "description": "harsh discordance of sound; dissonance\r\n\r\n- cacofon\u00eda, disonancia",
+        "date_created": "2018-04-12T16:47:25.774042"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "goad",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "to prick or drive with, or as if with, a goad; prod; incite.\r\n\r\n- provocar, aguijonear",
+        "date_created": "2018-04-12T16:47:25.685384"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "elation",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-04-12T16:47:25.596346"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "transient",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-04-12T16:47:25.429514"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "precarious",
+        "pronunciation_spelling": "pri-**kair**-ee-uh s",
+        "pronunciation_ipa": "",
+        "description": "dependent on circumstances beyond one's control; uncertain; unstable; insecure: \r\n\r\n- precario, fr\u00e1gil, inestable",
+        "date_created": "2018-04-12T16:47:25.340805"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "pursue",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "to strive to gain; seek to attain or accomplish\r\n\r\n- perseguir, seguir, proseguir, dedicarse a",
+        "date_created": "2018-04-12T16:47:25.133653"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "subsume",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "to consider or include (an idea, term, proposition, etc.) as part of a more comprehensive one. \r\n\r\n- subsumir, incorporar",
+        "date_created": "2018-04-12T16:47:24.977063"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "flora and fauna",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "plants and animals\r\n\r\n- flora y fauna",
+        "date_created": "2018-04-12T16:47:24.506965"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "extinction",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-04-12T16:47:24.429145"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "ancestor",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-04-12T16:47:24.351391"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "superfluous",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "unnecessary or needless\r\n\r\n- superfluo",
+        "date_created": "2018-04-12T16:47:24.206892"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "conducive",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "tending to produce; contributive; helpful; favorable (usually followed by to)\r\n\r\n- contribuye a, conducente a",
+        "date_created": "2018-04-12T16:47:23.984934"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "orgasm",
+        "pronunciation_spelling": "**awr**-gaz-uh m",
+        "pronunciation_ipa": "",
+        "description": "The physical and emotional sensation experienced at the peak of sexual excitation, usually resulting from stimulation of the sexual organ and usually accompanied in the male by ejaculation. \r\n\r\n- orgasmo",
+        "date_created": "2018-04-12T16:47:23.884716"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "tedium",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-04-12T16:47:23.710646"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "mundane",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-04-12T16:47:23.554384"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "innumerable",
+        "pronunciation_spelling": "ih-**noo**-mer-uh-buh l",
+        "pronunciation_ipa": "",
+        "description": "incapable of being counted; countless; very numerous\r\n\r\n- incontable, innumerable",
+        "date_created": "2018-04-12T16:47:23.418602"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "distill",
+        "pronunciation_spelling": "dih-**stil**",
+        "pronunciation_ipa": "",
+        "description": "to extract the essential elements of; refine; abstract: \r\n\r\n- destilar, sintetizar",
+        "date_created": "2018-04-12T16:47:23.087957"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "fetish",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-04-12T16:47:22.797214"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "aptitude",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "natural ability\r\n\r\n- aptitud",
+        "date_created": "2018-04-12T16:47:22.718372"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "unprecedented",
+        "pronunciation_spelling": "uhn-**pres**-i-den-tid",
+        "pronunciation_ipa": "",
+        "description": "without previous instance; never before known or experienced; unexampled or unparalleled\r\n\r\n- sin precedentes",
+        "date_created": "2018-04-12T16:47:22.565818"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "proletariat",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "common people, working class\r\n\r\n- proletariado",
+        "date_created": "2018-04-12T16:47:22.432080"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "transmutation",
+        "pronunciation_spelling": "trans-myoo-**tey**-shuhn",
+        "pronunciation_ipa": "",
+        "description": "Change into another nature, substance, form, or condition. \r\n\r\n_Physics_. any process in which a nuclide is transformed into a different nuclide, usually one of a different element. \r\n\r\n- transmutaci\u00f3n",
+        "date_created": "2018-05-07T12:01:44.747659"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "supernova",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-04-12T16:50:02.330419"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "empiricism",
+        "pronunciation_spelling": "em-**pir**-uh-siz-uhm",
+        "pronunciation_ipa": "",
+        "description": "The doctrine that all knowledge is derived from sense experience.\r\n\r\n- empirismo",
+        "date_created": "2018-05-07T12:18:17.932238"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "subterfuge",
+        "pronunciation_spelling": "**suhb**-ter-fyooj",
+        "pronunciation_ipa": "",
+        "description": "An artifice or expedient used to evade a rule, escape a consequence, hide something, etc.\r\n\r\n- subterfugio, treta",
+        "date_created": "2018-04-12T16:47:34.620488"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "reverie",
+        "pronunciation_spelling": "**rev**-uh-ree",
+        "pronunciation_ipa": "",
+        "description": "A state of dreamy meditation or fanciful musing; a daydream.\r\n\r\n- enso\u00f1aci\u00f3n, ensimismamiento",
+        "date_created": "2018-04-12T16:47:35.687110"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "assuage",
+        "pronunciation_spelling": "uh-**sweyj**",
+        "pronunciation_ipa": "",
+        "description": "To make milder or less severe; relieve; ease; mitigate.\r\n\r\n- aliviar, mitigar, aplacar",
+        "date_created": "2018-04-12T16:47:37.598752"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "conscience",
+        "pronunciation_spelling": "**kon**-shuhns",
+        "pronunciation_ipa": "",
+        "description": "The inner sense of what is right or wrong in one's conduct or motives, impelling one toward right action. Moral sense.\r\n\r\n- conciencia",
+        "date_created": "2018-04-12T16:47:37.398786"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "cognizant",
+        "pronunciation_spelling": "**kog**-nuh-zuhnt",
+        "pronunciation_ipa": "",
+        "description": "Having cognizance; aware (usually followed by of).\r\n\r\n- consciente de, percatado, estar al tanto de",
+        "date_created": "2018-04-12T16:47:40.147827"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "innate",
+        "pronunciation_spelling": "ih-**neyt**",
+        "pronunciation_ipa": "",
+        "description": "Existing in one from birth; inborn; native.\r\n\r\n- innato, inherente",
+        "date_created": "2018-04-12T16:47:39.991706"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "volition",
+        "pronunciation_spelling": "voh-**lish**-uhn",
+        "pronunciation_ipa": "",
+        "description": "The act of willing, choosing, or resolving; exercise of willing (usually preceded by of).\r\n\r\n- volici\u00f3n, voluntad, intenci\u00f3n",
+        "date_created": "2018-04-12T16:47:39.836370"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "incarnate",
+        "pronunciation_spelling": "in-**kahr**-nit",
+        "pronunciation_ipa": "",
+        "description": "Embodied in flesh; given a bodily, especially a human, form.\r\n\r\n- encarnado, personificado",
+        "date_created": "2018-04-12T16:47:39.636099"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "brunt",
+        "pronunciation_spelling": "bruhnt",
+        "pronunciation_ipa": "",
+        "description": "The main force or impact, as of an attack or blow.\r\n\r\n- choque, embate",
+        "date_created": "2018-04-12T16:47:39.338465"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "catharsis",
+        "pronunciation_spelling": "kuh-**thar**-sis",
+        "pronunciation_ipa": "",
+        "description": "The purging of the emotions or relieving of emotional tensions, especially through certain kinds of art, as tragedy or music. \r\n\r\nEmotional release.\r\n\r\n- catarsis",
+        "date_created": "2018-04-12T16:47:38.657643"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "plod",
+        "pronunciation_spelling": "plod",
+        "pronunciation_ipa": "",
+        "description": "To walk heavily or move laboriously; trudge.\r\n\r\n- caminar lentamente, arrastrarse (figurativo)",
+        "date_created": "2018-04-12T16:47:38.559226"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "egalitarian",
+        "pronunciation_spelling": "ih-gal-i-**tair**-ee-uhn",
+        "pronunciation_ipa": "",
+        "description": "Asserting, resulting from, or characterized by belief in the equality of all people, especially in political, economic, or social life.\r\n\r\n- igualitario, persona igualitaria",
+        "date_created": "2018-04-12T16:47:38.331853"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "sledge",
+        "pronunciation_spelling": "slej",
+        "pronunciation_ipa": "",
+        "description": "A vehicle of various forms, mounted on runners and often drawn by draft animals, used for traveling or conveying loads.\r\n\r\n- trineo, andar en trineo",
+        "date_created": "2018-04-12T16:47:38.243295"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "mausoleum",
+        "pronunciation_spelling": "maw-suh-**lee**-uh m",
+        "pronunciation_ipa": "\u02ccm\u0254 s\u0259\u02c8li \u0259m",
+        "description": "large family tomb\r\n\r\n- mausoleo",
+        "date_created": "2018-04-12T16:47:38.021184"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "proffer",
+        "pronunciation_spelling": "**prof**-er",
+        "pronunciation_ipa": "",
+        "description": "To put before a person for acceptance; offer.\r\n\r\n- ofrecer, proponer, presentar, ofrecimiento",
+        "date_created": "2018-04-12T16:47:35.387346"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "contingency",
+        "pronunciation_spelling": "kuhn-**tin**-juhn-see",
+        "pronunciation_ipa": "",
+        "description": "Dependence on chance or on the fulfillment of a condition; uncertainty; fortuitousness.\r\n\r\n- contingencia, azar, suerte",
+        "date_created": "2018-04-12T16:47:37.754411"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "recidivism",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-04-12T16:50:51.024278"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "quintessential",
+        "pronunciation_spelling": "kwin-tuh-**sen**-shuhl",
+        "pronunciation_ipa": "",
+        "description": "Of or relating to the most perfect embodiment of something. A prime example.\r\n\r\n- por excelencia, por antonomasia, protot\u00edpico",
+        "date_created": "2018-04-12T16:47:37.220881"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "acquiesce",
+        "pronunciation_spelling": "ak-wee-**es**",
+        "pronunciation_ipa": "",
+        "description": "To submit or comply silently or without protest; agree; consent.\r\n\r\n- consentir, acceder, someterse",
+        "date_created": "2018-04-12T16:47:37.109503"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "vindicate",
+        "pronunciation_spelling": "**vin**-di-keyt",
+        "pronunciation_ipa": "",
+        "description": "To clear, as from an accusation, imputation, suspicion, or the like.\r\n\r\n- vindicar a, justificar a, justificar",
+        "date_created": "2018-04-12T16:47:37.020632"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "diminutive",
+        "pronunciation_spelling": "dih-**min**-yuh-tiv",
+        "pronunciation_ipa": "",
+        "description": "Small; little; tiny.\r\n\r\n- diminuto, min\u00fasculo, peque\u00f1ito",
+        "date_created": "2018-04-12T16:47:36.876167"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "ruse",
+        "pronunciation_spelling": "rooz",
+        "pronunciation_ipa": "",
+        "description": "A trick, stratagem, or artifice.\r\n\r\n- treta, trampa, estratagema",
+        "date_created": "2018-04-12T16:47:36.791071"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "extricate",
+        "pronunciation_spelling": "**ek**-stri-keyt",
+        "pronunciation_ipa": "",
+        "description": "To free or release from entanglement.\r\n\r\n- liberar, librar, rescatar, sacar",
+        "date_created": "2018-04-12T16:47:36.632104"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "ostentatious",
+        "pronunciation_spelling": "os-ten-**tey**-shuhs",
+        "pronunciation_ipa": "",
+        "description": "Intended to attract notice.\r\n\r\n- ostentoso, llamativo",
+        "date_created": "2018-04-12T16:47:36.542834"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "horticulture",
+        "pronunciation_spelling": "**hawr**-ti-kuhl-cher",
+        "pronunciation_ipa": "",
+        "description": "The cultivation of a garden, orchard, or nusery; the cultivation of flowers, fruits, vegetables, or ornamental plants.\r\n\r\n- horticultura",
+        "date_created": "2018-04-12T16:47:36.376250"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "despot",
+        "pronunciation_spelling": "**des**-puht",
+        "pronunciation_ipa": "",
+        "description": "A king or other ruler with absolute, unlimited power; autocrat.\r\n\r\n- d\u00e9spota, tirano",
+        "date_created": "2018-04-12T16:47:36.276458"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "abdication",
+        "pronunciation_spelling": "ab-di-**key**-shuhn",
+        "pronunciation_ipa": "",
+        "description": "The act or state of abdicating; renunciation.\r\n\r\n- abdicaci\u00f3n, renuncia",
+        "date_created": "2018-04-12T16:47:36.087372"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "failure",
+        "pronunciation_spelling": "**feyl**-yer",
+        "pronunciation_ipa": "",
+        "description": "An act or instance of failing or proving unsuccessful; lack of success.\r\n\r\n- fracaso, quiebra",
+        "date_created": "2018-04-12T16:47:35.887339"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "feint",
+        "pronunciation_spelling": "feynt",
+        "pronunciation_ipa": "",
+        "description": "A movement made in order to deceive an adversary; an attack aimed at one place or point merely as a distraction from the real place or point of attack.\r\n\r\n- finta, amago",
+        "date_created": "2018-04-12T16:47:35.487209"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "melee",
+        "pronunciation_spelling": "**mey**-ley",
+        "pronunciation_ipa": "",
+        "description": "A confused hand-to-hand fight or struggle among several people.\r\n\r\n- mel\u00e9, aglomeraci\u00f3n",
+        "date_created": "2018-04-12T16:47:35.199649"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "foolhardy",
+        "pronunciation_spelling": "**fool**-hahr-dee",
+        "pronunciation_ipa": "",
+        "description": "Recklessly or thoughtlessly bold; foolishly rash or venturesome.\r\n\r\n- imprudente, temerario",
+        "date_created": "2018-04-12T16:47:34.997903"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "recidivate",
+        "pronunciation_spelling": "ri-**sid**-uh-veyt",
+        "pronunciation_ipa": "",
+        "description": "To engage in recidivism; relapse.\r\n\r\n- recaer",
+        "date_created": "2018-04-12T16:47:34.908879"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "eschew",
+        "pronunciation_spelling": "es-**choo**",
+        "pronunciation_ipa": "",
+        "description": "To abstain or keep away from; shun; avoid.\r\n\r\n- evitar, rehuir",
+        "date_created": "2018-04-12T16:47:34.708924"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "amorphous",
+        "pronunciation_spelling": "uh-**mawr**-fuhs",
+        "pronunciation_ipa": "",
+        "description": "Lacking definite form; having no specific shape; formless.\r\n\r\n- amorfo",
+        "date_created": "2018-04-12T16:47:34.398992"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "motility",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "Biology. moving or capable of moving spontaneously - independent movement\r\n\r\n- motilidad, movilidad",
+        "date_created": "2018-04-12T16:50:03.983447"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "amiable",
+        "pronunciation_spelling": "**ey**-mee-uh-buh l",
+        "pronunciation_ipa": "",
+        "description": "having or showing pleasant, good-natured personal qualities; affable\r\n\r\n- amigable",
+        "date_created": "2018-04-12T16:50:03.883255"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "vetting",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "process of checking or appraisal\r\n\r\n- escrutino, investigaci\u00f3n",
+        "date_created": "2018-04-12T16:50:03.683277"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "tit for tat",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "with an equivalent given in retaliation, as a blow for a blow, repartee, etc.:\r\n\r\n- pagar con la misma moneda, ojo por ojo",
+        "date_created": "2018-04-12T16:50:03.505123"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "quash",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "to put down or suppress completely; quell; subdue (used with object)\r\n\r\n- invalidar, anular, sofocar, aplastar",
+        "date_created": "2018-04-12T16:50:03.405386"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "wrest",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "to twist or turn; pull, jerk, or force by a violent twist.  - to take away by force\r\n\r\n- arrebatar, arrancar",
+        "date_created": "2018-04-12T16:50:03.194356"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "conflagration",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "a destructive fire, usually an extensive one. \r\n\r\n- conflagraci\u00f3n, gran incendio",
+        "date_created": "2018-04-12T16:50:02.993981"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "denude",
+        "pronunciation_spelling": "dih-**nood**",
+        "pronunciation_ipa": "",
+        "description": "to make naked or bare; strip\r\n\r\n- desnudar, despojar de",
+        "date_created": "2018-04-12T16:50:02.741654"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "denizen",
+        "pronunciation_spelling": "**den**-uh-zuh n",
+        "pronunciation_ipa": "",
+        "description": "An inhabitant; resident. A person who regularly frequents a place.\r\n\r\n- habitante, residente",
+        "date_created": "2018-04-12T16:50:02.584891"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "what's more",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "in addition, besides\r\n\r\n- y encima, adem\u00e1s",
+        "date_created": "2018-04-12T16:50:02.075053"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "drove",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "Usually, droves. a large crowd of human beings, especially in motion\r\n\r\n- manada, multitud",
+        "date_created": "2018-04-12T16:50:01.919245"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "concomitant",
+        "pronunciation_spelling": "kon-**kom**-i-tuh nt",
+        "pronunciation_ipa": "",
+        "description": "existing or occurring with something else, often in a lesser way; accompanying; concurrent\r\n\r\n- concurrente, simult\u00e1neo",
+        "date_created": "2018-04-12T16:50:01.762247"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "bombastic",
+        "pronunciation_spelling": "bom-**bas**-tik",
+        "pronunciation_ipa": "b\u0251m\u02c8b\u00e6s t\u026ak",
+        "description": "(writing) high flown, overblown, pretentious\r\n\r\n- grandilocuente, bomb\u00e1stico",
+        "date_created": "2018-04-12T16:50:52.291149"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "painstaking",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-04-12T16:50:52.199884"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "curmudgeon",
+        "pronunciation_spelling": "ker-**muhj**-uh n",
+        "pronunciation_ipa": "k\u0259r\u02c8m\u028cd\u0292 \u0259n",
+        "description": "a bad-tempered, difficult, cantankerous person\r\n\r\n- gru\u00f1\u00f3n, cascarrabias",
+        "date_created": "2018-04-12T16:50:51.991590"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "tirade",
+        "pronunciation_spelling": "**tahy**-reyd",
+        "pronunciation_ipa": "\u02c8ta\u026a re\u026ad",
+        "description": "a prolonged outburst of bitter, outspoken denunciation.\r\n\r\n- diatriba, invectiva",
+        "date_created": "2018-04-12T16:50:51.780390"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "sate",
+        "pronunciation_spelling": "seyt",
+        "pronunciation_ipa": "se\u026at",
+        "description": "to satisfy fully\r\n\r\n_saciar, satisfacer_",
+        "date_created": "2018-04-12T16:50:51.658219"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "ravenous",
+        "pronunciation_spelling": "**rav**-uh-nuh s",
+        "pronunciation_ipa": "\u02c8r\u00e6v \u0259 n\u0259s",
+        "description": "extremely hungry; famished; voracious\r\n\r\n- fam\u00e9lico, hambriento",
+        "date_created": "2018-04-12T16:50:51.436116"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "cajole",
+        "pronunciation_spelling": "kuh-**johl**",
+        "pronunciation_ipa": "k\u0259\u02c8d\u0292o\u028al",
+        "description": "to persuade by flattery of promises; wheedle; coax\r\n\r\n- lisonjear, engatusar, persuadir",
+        "date_created": "2018-04-12T16:50:51.335827"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "discretion",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-04-12T16:50:50.836679"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "reticence",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "the state of being reticent, or reserved, especially with regard to speaking freely; restraint",
+        "date_created": "2018-04-12T16:51:01.303908"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "spurious",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "Not geniune, authentic, or true; not from the claimed, pretended, or proper source.",
+        "date_created": "2018-04-12T16:51:01.103880"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "excoriate",
+        "pronunciation_spelling": "ik-**skawr**-ee-eyt",
+        "pronunciation_ipa": "",
+        "description": "to denounce or berate severely; flay verbally - execrar",
+        "date_created": "2018-04-12T16:51:01.017984"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "prejudice",
+        "pronunciation_spelling": "**prej**-uh-dis",
+        "pronunciation_ipa": "&#712;pred&#658; &#601; d&#618;s",
+        "description": "unreasonable feelings, opinions, or attitudes, especially of a hostile nature, regarding an ethnic, racial, social, or religious group - prejuicio",
+        "date_created": "2018-04-12T16:51:00.707011"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "hate speech",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-04-12T16:51:00.351190"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "guise",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-04-12T16:50:59.973609"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "bigotry",
+        "pronunciation_spelling": "**big**-uh-tree",
+        "pronunciation_ipa": "",
+        "description": "stubborn and complete intolerance of any creed, belief, or opinion that differs from one's own\r\n\r\n_intolerancia, fanatismo_",
+        "date_created": "2018-04-12T16:50:59.596691"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "racism",
+        "pronunciation_spelling": "**rey**-siz-uh m",
+        "pronunciation_ipa": "",
+        "description": "hatred or intolerance of another race or other races - racismo",
+        "date_created": "2018-04-12T16:50:59.318062"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "inextricable",
+        "pronunciation_spelling": "in-ik-**strik**-uh-buhl",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-04-12T16:50:58.973303"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "blasphemy",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-04-12T16:50:58.693147"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "pernicious",
+        "pronunciation_spelling": "per-**nish**-uhs",
+        "pronunciation_ipa": "",
+        "description": "Causing insidious harm or ruin; ruinous; injurious; hurtful.\r\n\r\n - pernicioso, da\u00f1ino",
+        "date_created": "2018-04-12T16:50:49.149744"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "milieu",
+        "pronunciation_spelling": "mill-**yoo**",
+        "pronunciation_ipa": "m&#618l &#712;y&#650;",
+        "description": "surroundings, especially of a social or cultural nature",
+        "date_created": "2018-04-12T16:50:58.426264"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "repudiate",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-12-29T19:44:57.798108"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "precocious",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-12-29T19:44:57.896045"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "practitioner",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-12-29T19:44:57.949064"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "extol",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-12-29T19:44:58.061057"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "entropy",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-12-29T19:44:58.150816"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "evolution",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-12-29T19:44:58.296160"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "integrity",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-12-29T19:44:58.399183"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "equilibrium",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-12-29T19:44:58.560595"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "homogeneous",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-12-29T19:44:58.651283"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "absolute zero",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-12-29T19:44:58.731217"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "infinitesimal",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-12-29T19:44:58.894217"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "molecule",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-12-29T19:44:58.973943"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "allude",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-12-29T19:44:59.061419"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "unfathomably",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-12-29T19:44:59.204714"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "gruel",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-12-29T19:44:59.261047"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "efflorescence",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-12-29T19:44:59.403837"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "endeavour",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-12-29T19:44:59.515216"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "ironclad",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-12-29T19:44:59.740805"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "brine",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-12-29T19:44:59.804791"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "repertoire",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-12-29T19:45:00.048639"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "autonomous",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-12-29T19:45:00.239352"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "eponymous",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-12-29T19:46:50.154419"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "parsimonious",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-12-29T19:46:50.321658"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "postmodernism",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-12-29T19:46:50.517596"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "narrative",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-12-29T19:46:50.602542"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "oppression",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-12-29T19:46:50.954391"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "perfunctory",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-12-29T19:46:51.250666"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "summarily",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-12-29T19:46:51.437137"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "denialism",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-12-29T19:46:51.645534"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "rhythm",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-12-29T19:46:52.844057"
+      }
+    },
+    {
+      "vocab_entry_data": {
+        "language": "en",
+        "entry": "proper time",
+        "pronunciation_spelling": "",
+        "pronunciation_ipa": "",
+        "description": "",
+        "date_created": "2018-12-29T19:46:53.133738"
+      }
+    }
+  ]
+}

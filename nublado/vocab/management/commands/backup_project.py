@@ -33,9 +33,9 @@ class Command(BaseCommand):
         if options['output_path']:
             base_dir = Path(options['output_path'][0])
         else:
-            base_dir = Path('{0}/docs/vocab_json'.format(settings.BASE_DIR))
-
+            base_dir = Path('{0}/docs/vocab_json/projects'.format(settings.BASE_DIR))
         base_dir.mkdir(parents=True, exist_ok=True)
+
         vocab_projects = VocabProject.objects.filter(owner=user)
 
         for vocab_project in vocab_projects:

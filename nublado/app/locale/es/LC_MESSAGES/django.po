@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-29 09:37-0800\n"
+"POT-Creation-Date: 2018-12-29 17:54-0800\n"
 "PO-Revision-Date: 2018-11-28 21:16-0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -846,8 +846,9 @@ msgid "label_edit_entry"
 msgstr "Editar entrada"
 
 #: nublado/app/templates/vocab/auth/vocab_base.html:268
-msgid "label_dashboard"
-msgstr "Escritorio"
+#: nublado/app/templates/vocab/auth/vocab_user_dashboard.html:15
+msgid "label_vocab_projects"
+msgstr "Proyectos"
 
 #: nublado/app/templates/vocab/auth/vocab_base.html:282
 msgid "label_new_vocab_project"
@@ -975,7 +976,6 @@ msgid "page_vocab_project_dashboard_title"
 msgstr "Escritorio de proyecto"
 
 #: nublado/app/templates/vocab/auth/vocab_project_dashboard.html:13
-#: nublado/app/templates/vocab/auth/vocab_user_dashboard.html:15
 msgid "header_dashboard"
 msgstr "Escritorio"
 
@@ -1003,10 +1003,8 @@ msgid "label_search_sources"
 msgstr "Buscar fuentes"
 
 #: nublado/app/templates/vocab/auth/vocab_project_sources.html:89
-#, fuzzy
-#| msgid "label_new_password"
-msgid "label_no_sources"
-msgstr "Nueva contraseña"
+msgid "text_no_sources"
+msgstr "No hay fuentes."
 
 #: nublado/app/templates/vocab/auth/vocab_project_update.html:5
 msgid "page_vocab_project_edit_title"
@@ -1071,10 +1069,6 @@ msgstr "Editar fuente"
 msgid "page_vocab_user_dashboard_title"
 msgstr "Escritorio de vocabulario"
 
-#: nublado/app/templates/vocab/auth/vocab_user_dashboard.html:29
-msgid "label_vocab_projects"
-msgstr "Proyectos"
-
 #: nublado/app/templates/vocab/includes/_vocab_context_create_modal.html:6
 #, fuzzy
 #| msgid "label_login"
@@ -1126,6 +1120,9 @@ msgstr "¿Eliminar proyecto?"
 #: nublado/app/templates/vocab/vocab_search.html:7
 msgid "page_vocab_search_title"
 msgstr "Buscar vocabulario"
+
+#~ msgid "label_dashboard"
+#~ msgstr "Escritorio"
 
 #~ msgid "label_projects"
 #~ msgstr "Proyectos"

@@ -1,0 +1,377 @@
+{
+  "vocab_project_data": {
+    "name": "English Reading",
+    "description": "A vocab project for English reading materials.",
+    "date_created": "2018-11-28T22:51:24.270608"
+  },
+  "vocab_source_data": {
+    "source_type": 1,
+    "name": "Beyond Infinity: An Expedition to the Outer Limits of Mathematics",
+    "description": "Eugenia Cheng",
+    "date_created": "2018-12-29T19:24:55.303018"
+  },
+  "vocab_contexts": [
+    {
+      "vocab_context_data": {
+        "content": "This is the difference between _cardinal_ numbers and _ordinal_ numbers. Cardinal numbers only measure the size of things, without really worrying about where those things all are in relation to one another. Whereas ordinal numbers take the ordering into account.",
+        "date_created": "2018-12-29T19:24:55.322035"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "ordinal number",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "any of the numbers that express degree, quality, or position in a series, as first, second, and third\r\n\r\n- n\u00famero ordinal",
+            "date_created": "2018-04-12T16:51:54.728292"
+          },
+          "vocab_entry_tags": [
+            "ordinal numbers"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "cardinal number",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "any of the numbers that express amount, as one, two, three, etc\r\n\r\nsets: a number or symbol analogous to the number of elements in a finite set\r\n\r\n- n\u00famero cardinal",
+            "date_created": "2018-04-12T16:51:54.591914"
+          },
+          "vocab_entry_tags": [
+            "cardinal numbers"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "Of course, since we were all mathematicians there was soon a refutation &mdash; how do I know that carrots grow continuously? How do I know they aren't made of gren jelly until they're a certain size and then spontaneously turn into a carrot at that point, a bit like a butterfly emerging fully grown from its chrysalis? Mathematical proof can often seem like a back and forth between the mathematician and the doubter, or the mathematician and the smarty-pants.",
+        "date_created": "2018-12-29T19:24:55.577608"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "mathematician",
+            "pronunciation_spelling": "math-uh-muh-**tish**-uh n",
+            "pronunciation_ipa": "",
+            "description": "an expert or specialist in mathematics. \r\n\r\n- matem\u00e1tico",
+            "date_created": "2018-04-12T16:51:57.336466"
+          },
+          "vocab_entry_tags": [
+            "mathematician",
+            "mathematicians"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "chrysalis",
+            "pronunciation_spelling": "**kris**-uh-lis",
+            "pronunciation_ipa": "",
+            "description": "the hard-shelled pupa of a moth or butterfly; an obtect pupa\r\n\r\n- cris\u00e1lida",
+            "date_created": "2018-04-12T16:51:57.136928"
+          },
+          "vocab_entry_tags": [
+            "chrysalis"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "We now have various clues about what infinity really is.\r\n\r\n- Numbers can be measured as the size of an official number bag, or set. Infinity is no different.\r\n\r\n- The smallest infinity is the size of the natural numbers.\r\n\r\n- The infinity of the real numbers is bigger than the infinity of the natural numbers.\r\n\r\n- Whatever infinity you are thinking about, if you take 2 to the power of that infinity, you get a bigger one.",
+        "date_created": "2018-12-29T19:24:55.955906"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "infinity",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-04-12T16:51:54.370351"
+          },
+          "vocab_entry_tags": [
+            "infinity"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "My calculation was extremely crude, but gives the general idea: just by doing some innocuous doubling of quantities as you move around a chessboard, you quickly get to an impossible quantity of rice, more rice than curerntly exists in the world.",
+        "date_created": "2018-12-29T19:24:56.010744"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "innocuous",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-04-12T16:49:58.226514"
+          },
+          "vocab_entry_tags": [
+            "innocuous"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "The idea of calculus can be traced back a very long way. The conundrum of something being made up of infinitely many infinitely small parts was studied as many as 2500 years ago, by the Greek philosopher Zeno. Like Hilbert thousands of years later, Zeno considered some paradoxes showing that care is needed when we think about infinite things.",
+        "date_created": "2018-12-29T19:24:56.166630"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "paradox",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "a statement or proposition that seems self-contradictory or absurd but in reality expresses a possible truth.\r\n\r\n- paradoja",
+            "date_created": "2018-04-12T16:47:30.423839"
+          },
+          "vocab_entry_tags": [
+            "paradoxes"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "conundrum",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "puzzling situation\r\n\r\n- enigma, misterio, problema",
+            "date_created": "2018-04-12T16:51:56.129133"
+          },
+          "vocab_entry_tags": [
+            "conundrum"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "If they are arguing with ordinal numbers, then they have a lot more scope for subtly different levels of infinity than if they are arguing with cardinal numbers. With cardinal numbers you have to leap up to \"2 to the power of infinity\" to get a bigger infinity with which to be right. But with ordinal numbers ou only have to add 1: you just have to be careful to add it on after your infinity, not before it.",
+        "date_created": "2018-12-29T19:24:56.388930"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "cardinal number",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "any of the numbers that express amount, as one, two, three, etc\r\n\r\nsets: a number or symbol analogous to the number of elements in a finite set\r\n\r\n- n\u00famero cardinal",
+            "date_created": "2018-04-12T16:51:54.591914"
+          },
+          "vocab_entry_tags": [
+            "cardinal numbers"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "ordinal number",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "any of the numbers that express degree, quality, or position in a series, as first, second, and third\r\n\r\n- n\u00famero ordinal",
+            "date_created": "2018-04-12T16:51:54.728292"
+          },
+          "vocab_entry_tags": [
+            "ordinal numbers"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "infinity",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-04-12T16:51:54.370351"
+          },
+          "vocab_entry_tags": [
+            "infinity"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "There's an old conundrum about rice on a chessboard. The story is that a man asks for one grain of rice on the first square of a chessboard, double that on the second square, double that on the third square, and so on for every square until the chessboard is full. The question is: How much rice will he end up getting? The short answer is: rather a lot. But exactly how much?",
+        "date_created": "2018-12-29T19:24:56.744458"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "conundrum",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "puzzling situation\r\n\r\n- enigma, misterio, problema",
+            "date_created": "2018-04-12T16:51:56.129133"
+          },
+          "vocab_entry_tags": [
+            "conundrum"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "In life and in mathematics there is often a trade-off between beauty and practicality, along with a contrast between dreams and reality, between the explicable and the inexplicable. Infinity as a beautiful dream, inside the beautiful dream that is mathematics.",
+        "date_created": "2018-12-29T19:24:57.046525"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "trade-off",
+            "pronunciation_spelling": "**treyd**-awf",
+            "pronunciation_ipa": "",
+            "description": "the exchange of one thing for another of more or less equal value, especially to effect a compromise\r\n\r\n- compensaci\u00f3n, t\u00e9rmino medio",
+            "date_created": "2018-04-12T16:51:55.861695"
+          },
+          "vocab_entry_tags": [
+            "trade-off"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "infinity",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-04-12T16:51:54.370351"
+          },
+          "vocab_entry_tags": [
+            "infinity"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "Any queue with an \"identifiable last person\" isn't the same as a queue with no identifiable last person.",
+        "date_created": "2018-12-29T19:24:57.257695"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "queue",
+            "pronunciation_spelling": "kyoo",
+            "pronunciation_ipa": "",
+            "description": "a line, an organized sequence\r\n\r\n- fila, cola",
+            "date_created": "2018-04-12T16:51:55.517243"
+          },
+          "vocab_entry_tags": [
+            "queue"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "The Hilbert type of paradox is called a _veridical_ paradox, which means there is an entirely valid argument producing a result that seems contradictory, but isn't really. The Zeno type of paradox is called a _falsidical_ paradox, in which a contradictory result is produced by an argument that seems valid, but isn't really.",
+        "date_created": "2018-12-29T19:24:57.521971"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "paradox",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "a statement or proposition that seems self-contradictory or absurd but in reality expresses a possible truth.\r\n\r\n- paradoja",
+            "date_created": "2018-04-12T16:47:30.423839"
+          },
+          "vocab_entry_tags": [
+            "paradox"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "veridical",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "truthful; veracious\r\n\r\n- ver\u00eddico, acertado",
+            "date_created": "2018-04-12T16:51:55.104133"
+          },
+          "vocab_entry_tags": [
+            "veridical"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "Infinity isn't a natural number, an integer, a rational number, or a real number.\r\n\r\nInfinity is a cardinal number and an ordinal number.",
+        "date_created": "2018-12-29T19:24:57.770280"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "integer",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "the natural counting numbers and their additive inverses\r\n\r\n- n\u00famero entero",
+            "date_created": "2018-04-12T16:51:54.962980"
+          },
+          "vocab_entry_tags": [
+            "integer"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "ordinal number",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "any of the numbers that express degree, quality, or position in a series, as first, second, and third\r\n\r\n- n\u00famero ordinal",
+            "date_created": "2018-04-12T16:51:54.728292"
+          },
+          "vocab_entry_tags": [
+            "ordinal number"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "cardinal number",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "any of the numbers that express amount, as one, two, three, etc\r\n\r\nsets: a number or symbol analogous to the number of elements in a finite set\r\n\r\n- n\u00famero cardinal",
+            "date_created": "2018-04-12T16:51:54.591914"
+          },
+          "vocab_entry_tags": [
+            "cardinal number"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "infinity",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-04-12T16:51:54.370351"
+          },
+          "vocab_entry_tags": [
+            "infinity"
+          ]
+        }
+      ]
+    }
+  ]
+}

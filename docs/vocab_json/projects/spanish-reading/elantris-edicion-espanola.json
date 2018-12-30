@@ -1,0 +1,1638 @@
+{
+  "vocab_project_data": {
+    "name": "Spanish Reading",
+    "description": "A vocab project for Spanish reading materials.",
+    "date_created": "2018-11-28T18:27:06.506109"
+  },
+  "vocab_source_data": {
+    "source_type": 1,
+    "name": "Elantris (edici\u00f3n  espa\u00f1ola)",
+    "description": "Edici\u00f3n espa\u00f1ola d\u00e9cimo aniversario",
+    "date_created": "2018-12-29T19:23:36.689487"
+  },
+  "vocab_contexts": [
+    {
+      "vocab_context_data": {
+        "content": "Pod\u00eda, sin embargo, tergiversar lo que Dilaf hab\u00eda dicho. Esa particular haza\u00f1a verbal era una de las especialidades de Hrathen.",
+        "date_created": "2018-12-29T19:23:36.712000"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "tergiversar",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-04-12T16:50:17.163372"
+          },
+          "vocab_entry_tags": [
+            "tergiversar"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "haza\u00f1a",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "feat",
+            "date_created": "2018-04-12T16:49:26.677746"
+          },
+          "vocab_entry_tags": [
+            "haza\u00f1a"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "No estar de parte del rey est\u00e1 bien si eres Eondel, pero yo no soy m\u00e1s que un simple mercader. No puedo permitirme la enemistad real.",
+        "date_created": "2018-12-29T19:23:36.945280"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "mercader",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "comerciante\r\n\r\n- merchant, dealer, trader",
+            "date_created": "2018-04-12T16:50:13.540541"
+          },
+          "vocab_entry_tags": [
+            "mercader"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "enemistad",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-04-12T16:50:16.874496"
+          },
+          "vocab_entry_tags": [
+            "enemistad"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "&mdash; A su debido tiempo. De momento, lo utilizaremos. Descubrir\u00e1s que el odio puede unir a la gente m\u00e1s r\u00e1pida y m\u00e1s fervientemente que la devoci\u00f3n.",
+        "date_created": "2018-12-29T19:23:37.167452"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "odio",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-12-14T17:10:16.290296"
+          },
+          "vocab_entry_tags": [
+            "odio"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "&mdash;Aunque no \u00fanicamente por la adoraci\u00f3n elantrina, digan lo que digan. Los derethi sienten una particular aversi\u00f3n por tu pa\u00eds porque sus ej\u00e9rcitos nunca han logrado atravesar esas monta\u00f1as para atacarlos.",
+        "date_created": "2018-12-29T19:23:37.245018"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "atravesar",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-12-14T17:10:27.538134"
+          },
+          "vocab_entry_tags": [
+            "atravesar"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "aversi\u00f3n",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "repulsi\u00f3n, rechazo\r\n\r\n- aversion, distaste, loathing",
+            "date_created": "2018-04-12T16:50:16.363355"
+          },
+          "vocab_entry_tags": [
+            "aversi\u00f3n"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "&mdash;El primer paso para tomar el control de una naci\u00f3n, arteth, es el m\u00e1s sencillo. Busca a alguien a quien odiar.&mdash;",
+        "date_created": "2018-12-29T19:23:37.678413"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "odiar",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "detestar a alguien\r\n\r\n- hate, abhor",
+            "date_created": "2018-04-12T16:50:16.163133"
+          },
+          "vocab_entry_tags": [
+            "odiar"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "No hay nada que temer de un seon. Desear\u00eda... Pero bueno, eso es irrelevante. A pesar de su reticencia , consegu\u00ed cierta informaci\u00f3n. Parece ser que los elantrinos pierden algo m\u00e1s que su aspecto humano cuando los alcanza la Shaod.",
+        "date_created": "2018-12-29T19:23:37.745415"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "reticencia",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-12-26T15:00:47.724526"
+          },
+          "vocab_entry_tags": [
+            "reticencia"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "temer",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-12-14T04:48:42.510173"
+          },
+          "vocab_entry_tags": [
+            "temer"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "conseguir",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "to obtain",
+            "date_created": "2018-04-12T16:48:25.265535"
+          },
+          "vocab_entry_tags": [
+            "consegu\u00ed"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "Las ense\u00f1anzas korathi se hab\u00edan marchitado en todas la naciones importantes del este, igual que lo har\u00edan an Arelon y Teod.",
+        "date_created": "2018-12-29T19:23:38.056221"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "marchitarse",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-04-12T16:50:15.630140"
+          },
+          "vocab_entry_tags": [
+            "se hab\u00edan marchitado"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "Naturalmente, una sombra inquietante planeaba sobre la ciudad.",
+        "date_created": "2018-12-29T19:23:38.235050"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "planear",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-12-14T17:10:27.270715"
+          },
+          "vocab_entry_tags": [
+            "planeaba"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "Son tiempos dif\u00edciles y quienes no cuenten con el apoyo de la Iglesia tendr\u00e1n dificultades en los meses venideros. Recuerden a qui\u00e9n y a qu\u00e9 represento.",
+        "date_created": "2018-12-29T19:23:38.300833"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "venidero",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-04-12T16:50:15.363118"
+          },
+          "vocab_entry_tags": [
+            "venideros"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "Recalc\u00f3 sus frases con unos cuantos mandobles y fintas, movimientos que nunca hubiese utilizado en un combate real, pero que de todas formas parec\u00edan buenos.",
+        "date_created": "2018-12-29T19:23:38.456031"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "recalcar",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "remarcar, rese\u00f1ar\r\n\r\n- stress, underscore, emphasize",
+            "date_created": "2018-04-12T16:50:13.996131"
+          },
+          "vocab_entry_tags": [
+            "recalc\u00f3"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "Cuanto m\u00e1s cuidadoso era uno, m\u00e1s viv\u00eda sin perder la cordura. As\u00ed pues, Raoden segu\u00eda a Galladon, tratando de remedar su paso atento.",
+        "date_created": "2018-12-29T19:23:38.511548"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "remedar",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "intentar imitar, parecer\r\n\r\n- imitate, mock",
+            "date_created": "2018-04-12T16:49:51.762445"
+          },
+          "vocab_entry_tags": [
+            "remedar"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "cordura",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "lucidez mental\r\n\r\n- sanity",
+            "date_created": "2018-04-12T16:49:31.533865"
+          },
+          "vocab_entry_tags": [
+            "cordura"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "&mdash;Aseg\u00farate de no adelantarte, jovencita &mdash;dijo Roial, mir\u00e1ndola&mdash;. No corras si solo tienes fuerzas para andar, y no pierdas el tiempo empujando puertas que no ceder\u00e1n. Y lo que es m\u00e1s importante, no atropelles cuando una palmadita sa suficiente.",
+        "date_created": "2018-12-29T19:23:38.745069"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "andar",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-04-12T16:50:15.107499"
+          },
+          "vocab_entry_tags": [
+            "andar"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "ceder",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-12-14T17:10:28.393153"
+          },
+          "vocab_entry_tags": [
+            "ceder\u00e1n"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "atropellar",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-04-12T16:50:14.896129"
+          },
+          "vocab_entry_tags": [
+            "atropelles"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "palmada",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-04-12T16:50:14.800370"
+          },
+          "vocab_entry_tags": [
+            "palmadita"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "Hab\u00eda que tratar con Dilaf: a pesar de su metedura de pata con el elantrino, el arteth cada vez ten\u00eda m\u00e1s influencia sobre los otros sacerdotes.",
+        "date_created": "2018-12-29T19:23:39.168550"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "metedura de pata",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-04-12T16:50:14.696294"
+          },
+          "vocab_entry_tags": [
+            "metedura de pata"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "Al menos diez de los hombres de la entrada (dos tercios de los seguidores de Karata) parec\u00edan estar prepar\u00e1ndose para la inminente batalla.",
+        "date_created": "2018-12-29T19:23:39.324545"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "tercio",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-04-12T16:50:14.618815"
+          },
+          "vocab_entry_tags": [
+            "dos tercios"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "&mdash;La mayor\u00eda son de mente demasiado d\u00e9bil para intentar escapar. De vez en cuando alguno intenta escabullirse, pero siempre los pillamos.",
+        "date_created": "2018-12-29T19:23:39.389350"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "escabullirse",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-04-12T16:50:14.488019"
+          },
+          "vocab_entry_tags": [
+            "escabullirse"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "pillar",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-04-12T16:50:14.376976"
+          },
+          "vocab_entry_tags": [
+            "pillamos"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "Venganza, saciar su sed de sangre. Muy buenos motivos cuando ya est\u00e1s condenada. \u00bfKolo?",
+        "date_created": "2018-12-29T19:23:39.600693"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "saciar",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-04-12T16:50:14.243496"
+          },
+          "vocab_entry_tags": [
+            "saciar"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "El Shu-Dereth ser\u00e1 como una roca en medio de arenas movedizas.",
+        "date_created": "2018-12-29T19:23:39.936016"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "arena movediza",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-04-12T16:50:14.151853"
+          },
+          "vocab_entry_tags": [
+            "arenas movedizas"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "&mdash;\u00bfVisitaste los calabozos?\r\n\r\n&mdash;Lo hice. Lo siento, mi se\u00f1ora: no encontr\u00e9 ning\u00fan recoveco secreto donde se escondan pr\u00edncipes medio muertos de hambre.",
+        "date_created": "2018-12-29T19:23:40.115270"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "recoveco",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "rinc\u00f3n escondido\r\n\r\n- nook, nook and cranny",
+            "date_created": "2018-04-12T16:47:58.247484"
+          },
+          "vocab_entry_tags": [
+            "recoveco"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "&mdash;Pues &mdash;recalc\u00f3 Iadon&mdash; los hijos han sido alimentados todo este tiempo por su actual amo.",
+        "date_created": "2018-12-29T19:23:40.180270"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "recalcar",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "remarcar, rese\u00f1ar\r\n\r\n- stress, underscore, emphasize",
+            "date_created": "2018-04-12T16:50:13.996131"
+          },
+          "vocab_entry_tags": [
+            "recalc\u00f3"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "Hab\u00eda un motivo por el que Sarene nunca hab\u00eda visto tanto lujo: por maravilloso que fuera, tambi\u00e9n era un despilfarro incre\u00edble. Su padre era un gobernante prudente: nunca permitir\u00eda tanto derroche.",
+        "date_created": "2018-12-29T19:23:40.324699"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "despilfarro",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "gasto excesivo\r\n\r\n- waste, overspend, squandering",
+            "date_created": "2018-04-12T16:50:13.729514"
+          },
+          "vocab_entry_tags": [
+            "despilfarro"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "Ver\u00e1s, Elantris proporcionaba comida gratis a todo el mundo en la zona, algo que hac\u00eda feliz al populacho pero era terrible para los mercaderes.",
+        "date_created": "2018-12-29T19:23:40.503253"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "mercader",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "comerciante\r\n\r\n- merchant, dealer, trader",
+            "date_created": "2018-04-12T16:50:13.540541"
+          },
+          "vocab_entry_tags": [
+            "mercaderes"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "populacho",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "despectivo (clase baja),  masa desordenada\r\n\r\n- mob, plebs",
+            "date_created": "2018-04-12T16:50:13.351681"
+          },
+          "vocab_entry_tags": [
+            "populacho"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "\"No tendr\u00eda que haberter tra\u00eddo aqu\u00ed,\" murmur\u00f3 Galladon. \"Ahora no me librar\u00e9 nunca de ti.\"",
+        "date_created": "2018-12-29T19:23:41.102546"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "librar",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-04-12T16:50:13.062840"
+          },
+          "vocab_entry_tags": [
+            "me librar\u00e9"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "Sue\u00f1a en lo grandiosa que era, sus recuerdos embellecidos por una d\u00e9cada de historias... es propio de la naturaleza humana creer que otros lugares y otras \u00e9pocas han sido mejores que el aqu\u00ed y el ahora.",
+        "date_created": "2018-12-29T19:23:41.258037"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "el aqu\u00ed y el ahora",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "- el momento presente\r\n\r\nhere and now, in the present moment",
+            "date_created": "2018-04-12T16:50:12.844107"
+          },
+          "vocab_entry_tags": [
+            "el aqu\u00ed y el ahora"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "embellecer",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-04-12T16:50:12.521140"
+          },
+          "vocab_entry_tags": [
+            "embellecidos"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "Se acercaron con cautela y asomaron la cabeza por una puerta. El interior del edificio era di\u00e1fano. Se detuvieron en el centro de la estructura rectangular, con la pared desplomada a su izquierda, otra puerta un poco m\u00e1s a la derecha.",
+        "date_created": "2018-12-29T19:23:41.436251"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "detener",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-04-12T16:50:06.339173"
+          },
+          "vocab_entry_tags": [
+            "se detuvieron"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "di\u00e1fano",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "diaphanous, translucent, see-through",
+            "date_created": "2018-04-12T16:49:32.797921"
+          },
+          "vocab_entry_tags": [
+            "di\u00e1fano"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "asomar",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-12-14T17:10:04.822549"
+          },
+          "vocab_entry_tags": [
+            "asomaron"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "desplomado",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-04-12T16:50:11.910104"
+          },
+          "vocab_entry_tags": [
+            "desplomada"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "Por eso los nobles menores se retuercen como ni\u00f1os, cada uno intentando hallar nuevos modos de orde\u00f1ar a sus s\u00fabditos y aumentar su posesiones.",
+        "date_created": "2018-12-29T19:23:41.635990"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "s\u00fabdito",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-12-26T14:55:22.093450"
+          },
+          "vocab_entry_tags": [
+            "s\u00fabditos"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "retorcerse",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "Dar vueltas, contorsionarse.\r\n\r\n- twist, writhe",
+            "date_created": "2018-04-12T16:49:25.474606"
+          },
+          "vocab_entry_tags": [
+            "se retuercen"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "orde\u00f1ar",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "extraer la leche de algo - milk",
+            "date_created": "2018-04-12T16:49:40.935968"
+          },
+          "vocab_entry_tags": [
+            "orde\u00f1ar"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "Antes de que una persona pueda so\u00f1ar, tiene que comer, y antes de que pueda amar, tiene que llenar su est\u00f3mago. Pero nosostros somos distintos. Al precio de un poco de hambre, podemos quedar libres de las ataduras que han sujetado a todo ser vivo desde el comienzo de los tiempos.",
+        "date_created": "2018-12-29T19:23:41.802757"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "so\u00f1ar",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-04-12T16:50:11.232192"
+          },
+          "vocab_entry_tags": [
+            "so\u00f1ar"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "atadura",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "Aquello que une.\r\n\r\n- tie, bond",
+            "date_created": "2018-04-12T16:50:11.018055"
+          },
+          "vocab_entry_tags": [
+            "ataduras"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "Se dio la vuelta y finalmente hizo acopio de valor par mirar de nuevo al muchacho herido. El enorme tajo le devolvi\u00f3 la mirada. La sangre manaba lentamente de la herida, como si el l\u00edquido estuviera retenido en las venas, como agua estancada en un charco.",
+        "date_created": "2018-12-29T19:23:41.936741"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "tajo",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-04-12T16:50:05.610845"
+          },
+          "vocab_entry_tags": [
+            "tajo"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "hacer acopio de algo",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "armarse de valor\r\n\r\n- gather up strength, courage",
+            "date_created": "2018-04-12T16:50:05.389011"
+          },
+          "vocab_entry_tags": [
+            "hizo acopio de valor"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "estancado",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-04-12T16:50:05.064195"
+          },
+          "vocab_entry_tags": [
+            "estancada"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "manar",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-12-12T23:28:01.682345"
+          },
+          "vocab_entry_tags": [
+            "manaba"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "Raoden asinti\u00f3, tendido boca abajo cerca del borde de lo que anta\u00f1o fuera la pared de un jard\u00edn, todav\u00eda contemplando a Ien.",
+        "date_created": "2018-12-29T19:23:42.192326"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "asentir",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T18:27:25.964818"
+          },
+          "vocab_entry_tags": [
+            "asinti\u00f3"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "anta\u00f1o",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-04-12T16:49:31.009380"
+          },
+          "vocab_entry_tags": [
+            "anta\u00f1o"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "Hab\u00eda sido princesa de Teod toda la vida; el t\u00edtulo era su piedra angular. Por desgracia, eso all\u00ed no era v\u00e1lido.",
+        "date_created": "2018-12-29T19:23:42.302768"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "piedra angular",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "la que une dos paredes, base, fundamento\r\n\r\n- cornerstone",
+            "date_created": "2018-04-12T16:50:10.521391"
+          },
+          "vocab_entry_tags": [
+            "piedra angular"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "No hab\u00eda arqueros. Los miembros de la guardia de la ciudad de Elantris llevaban grandes lanzas que parec\u00edan demasiado pesadas como armas arrojadizas.",
+        "date_created": "2018-12-29T19:23:42.460128"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "arrojadizo",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-04-12T16:50:10.433854"
+          },
+          "vocab_entry_tags": [
+            "arrojadizas"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "&mdash;Lo primero que hizo Iadon cuando ocup\u00f3 el trono fue abolir los derechos de propiedad individual de las tierras.",
+        "date_created": "2018-12-29T19:23:42.525225"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "abolir",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "anular una ley\r\n\r\n- abolish, overturn",
+            "date_created": "2018-04-12T16:50:10.198608"
+          },
+          "vocab_entry_tags": [
+            "abolir"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "Su padre se encontraba seguramente de pie junto a un seon similar (probablemente Dio), quien habr\u00e1 cambiado para convertirse en un simulacro brillante de la cabeza de Sarene.",
+        "date_created": "2018-12-29T19:23:42.591620"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "simulacro",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-04-12T16:50:09.995254"
+          },
+          "vocab_entry_tags": [
+            "simulacro"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "A pesar de todo la muralla era impresionante; desde lo alto pod\u00eda contemplarse el terreno circundante.",
+        "date_created": "2018-12-29T19:23:42.769580"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "circundante",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "que rodea\r\n\r\n- surrounding",
+            "date_created": "2018-04-12T16:50:09.917804"
+          },
+          "vocab_entry_tags": [
+            "circundante"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "a pesar de",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "aun as\u00ed\r\n\r\n- in spite of, despite",
+            "date_created": "2018-04-12T16:50:09.740183"
+          },
+          "vocab_entry_tags": [
+            "a pesar de todo"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "Las bandas se hab\u00edan enterado de que Raoden hab\u00eda reclutado a Mareshe y estaban convencidas de que planeaba fundar su propia banda rival.",
+        "date_created": "2018-12-29T19:23:42.880657"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "reclutar",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T18:27:25.523207"
+          },
+          "vocab_entry_tags": [
+            "hab\u00eda reclutado"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "Eondel se lanz\u00f3 a la lucha con decisi\u00f3n. Su hoja hend\u00eda el aire tan r\u00e1pidamente que era imposible seguirla, y solo a\u00f1os de entretenamiento y estrategia ayudaron a Sarene a detenerla.",
+        "date_created": "2018-12-29T19:23:43.070834"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "detener",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-04-12T16:50:06.339173"
+          },
+          "vocab_entry_tags": [
+            "detenerla"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "entretenamiento",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-04-12T16:50:09.395396"
+          },
+          "vocab_entry_tags": [
+            "entretenamiento"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "hendir",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "abrir de cuajo\r\n\r\n- slit open, cut open",
+            "date_created": "2018-04-12T16:50:09.328842"
+          },
+          "vocab_entry_tags": [
+            "hend\u00eda"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "Pero tal vez estuviera equivocado. Wyrn no parec\u00eda mucho m\u00e1s paciente que Dilaf: el plazo de tres meses as\u00ed  lo demostraba.",
+        "date_created": "2018-12-29T19:23:43.381449"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "plazo",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "per\u00edodo de tiempo, l\u00edmite, vencimiento\r\n\r\n- period, window, due date, deadline",
+            "date_created": "2018-04-12T16:50:09.173106"
+          },
+          "vocab_entry_tags": [
+            "plazo"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "Hrathen sinti\u00f3 una punzada de culpa por haber traicionado a Diren, aunque esa emoci\u00f3n era una tonter\u00eda; el elantrino tal vez no fuera un aut\u00e9ntico diablo, pero era, sin duda, una criatura a la que Jaddeth hab\u00eda maldecido.",
+        "date_created": "2018-12-29T19:23:43.447377"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "punzada",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "dolor repentino y agudo\r\n\r\n- sharp pain, stabbing pain, jab",
+            "date_created": "2018-04-12T16:49:06.105082"
+          },
+          "vocab_entry_tags": [
+            "punzada"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "Tal vez se daban cuenta de lo precaria que era su situaci\u00f3n: el pueblo hambriento, la aristocracia sin experiencia y toda la atenci\u00f3n del Imperio de Fjorden centrada en ellos.",
+        "date_created": "2018-12-29T19:23:43.625732"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "precario",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-04-12T16:48:59.815328"
+          },
+          "vocab_entry_tags": [
+            "precaria"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "En cierto sentido, era ir\u00f3nico: ella no lo sab\u00eda pero Hrathen era su mayor aliado, no su enemigo ac\u00e9rrimo.",
+        "date_created": "2018-12-29T19:23:43.691834"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "ac\u00e9rrimo",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-04-12T16:50:08.862124"
+          },
+          "vocab_entry_tags": [
+            "ac\u00e9rrimo"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "Noblemente, el gyorn trat\u00f3 de enmendar su error, intentando llevar la conversaci\u00f3n a terrenos m\u00e1s familiares, pero Sarene ya ten\u00eda a la multitud de su parte y se agarr\u00f3 a ella con la fuerza que solo una mujer al borde de la hiseria logra ejercer.",
+        "date_created": "2018-12-29T19:23:43.947257"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "enmendar",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "subsanar da\u00f1os\r\n\r\n- amend, rectify, remedy",
+            "date_created": "2018-04-12T16:50:08.672987"
+          },
+          "vocab_entry_tags": [
+            "enmendar"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "&mdash;Lo he intentado, pero Eshen es... Bueno, no es dif\u00edcil sonsacarle informaci\u00f3n, pero conseguir que se ci\u00f1a al tema... Sinceramente, no comprendo c\u00f3mo una mujer as\u00ed acab\u00f3 cas\u00e1ndose con Iadon.",
+        "date_created": "2018-12-29T19:23:44.125058"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "ce\u00f1irse",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-04-12T16:50:08.462186"
+          },
+          "vocab_entry_tags": [
+            "se ci\u00f1a"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "sonsacar",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T18:27:23.320145"
+          },
+          "vocab_entry_tags": [
+            "sonsacarle"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "conseguir",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "to obtain",
+            "date_created": "2018-04-12T16:48:25.265535"
+          },
+          "vocab_entry_tags": [
+            "conseguir"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "&mdash;\u00bfEst\u00e1n aqu\u00ed? &mdash;pregunt\u00f3 Sarene, escrutando la multitud.",
+        "date_created": "2018-12-29T19:23:44.413980"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "escrutar",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-04-12T16:50:08.183924"
+          },
+          "vocab_entry_tags": [
+            "escrutando"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "&mdash;Tiene que haber una relaci\u00f3n &mdash;musit\u00f3 Raoden&mdash;.",
+        "date_created": "2018-12-29T19:23:44.603145"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "musitar",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "hablar muy bajo\r\n\r\n- mutter, whisper",
+            "date_created": "2018-04-12T16:50:08.094910"
+          },
+          "vocab_entry_tags": [
+            "musit\u00f3"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "**LA UNIVERSIDAD** y el palacio hac\u00edan frontera una con el otro. Seg\u00fan Galladon, Karata y Aanden manten\u00edan una tregua inestable, y normalmente hab\u00eda guardias en ambos lados, vigilando.",
+        "date_created": "2018-12-29T19:23:44.780729"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "tregua",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "paro de hostilidades\r\n\r\n- truce, ceasefire",
+            "date_created": "2018-04-12T16:48:25.467290"
+          },
+          "vocab_entry_tags": [
+            "tregua"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "El guardia asinti\u00f3 y continu\u00f3 su ronda. Se estaban acostumbando a Hrathen, que hab\u00eda visitado Elantris casi todas las noches esa semana, recorriendo sus murallas sumido en sus cavilaciones.",
+        "date_created": "2018-12-29T19:23:44.982600"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "ronda",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-04-12T16:50:07.839522"
+          },
+          "vocab_entry_tags": [
+            "ronda"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "cavilaci\u00f3n",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "meditaci\u00f3n, preocupaci\u00f3n\r\n\r\n- deep thought, contemplation, worrying",
+            "date_created": "2018-04-12T16:50:07.772909"
+          },
+          "vocab_entry_tags": [
+            "cavilaciones"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "La propia mano de Wyrn lo hab\u00eda escrito delante de Htrathen. Era una revelaci\u00f3n que proced\u00eda directamente de Jaddeth: una escritura con un \u00fanico destinatario.",
+        "date_created": "2018-12-29T19:23:45.237336"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "destinatario",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-12-14T17:10:13.604108"
+          },
+          "vocab_entry_tags": [
+            "destinatario"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "&mdash;No es lo bastante fuerte &mdash;replic\u00f3 Sarene&mdash;. Bebe, lord Eondel. No queremos que te deshidrates.",
+        "date_created": "2018-12-29T19:23:45.425557"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "deshidratarse",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-04-12T16:50:07.483793"
+          },
+          "vocab_entry_tags": [
+            "te deshidrates"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "Iniciaron la huida en orden inverso a la incursi\u00f3n. Raoden se desliz\u00f3 primero por la puertas a\u00fan abiertas.",
+        "date_created": "2018-12-29T19:23:45.481219"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "incursi\u00f3n",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-04-12T16:50:07.384026"
+          },
+          "vocab_entry_tags": [
+            "incursi\u00f3n"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "orden inverso",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-04-12T16:50:07.317139"
+          },
+          "vocab_entry_tags": [
+            "orden inverso"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "Antiguamente se pod\u00edan subir las escaleras que se enroscan a su alrededor y contemplar desde all\u00ed la ciudad entera.",
+        "date_created": "2018-12-29T19:23:45.836960"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "enroscarse",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-04-12T16:49:24.744049"
+          },
+          "vocab_entry_tags": [
+            "se enroscan"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "Roaden guard\u00f3 silencio mientras se devanaba los sesos. Kahar hab\u00eda atacado la mugre de la capilla con la misma santa indignaci\u00f3n que un sacerdote usaba para destruir el pecado.",
+        "date_created": "2018-12-29T19:23:46.025291"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "mugre",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-04-12T16:50:07.172811"
+          },
+          "vocab_entry_tags": [
+            "la mugre"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "capilla",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-04-12T16:47:55.647115"
+          },
+          "vocab_entry_tags": [
+            "la capilla"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "devanarse los sesos",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "(figurado) darle vueltas a algo, pensar mucho en algo\r\n\r\n- wrack one's brains",
+            "date_created": "2018-04-12T16:49:18.951486"
+          },
+          "vocab_entry_tags": [
+            "se devanaba los sesos"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "Cuando Hrathen lleg\u00f3 a la Ciudad Exterior de Kae, advirti\u00f3 lo expugnable que era. Ahora, desde la cima de la muralla de Elantris, pod\u00eda ver que hab\u00eda subestimado lo pat\u00e9ticas que eran las fortificaciones de Kae.",
+        "date_created": "2018-12-29T19:23:46.404793"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "expugnable",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-04-12T16:50:06.994941"
+          },
+          "vocab_entry_tags": [
+            "expugnable"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "cima",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-04-12T16:50:06.905846"
+          },
+          "vocab_entry_tags": [
+            "cima"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "No ve que su liderazgo es soportado, m\u00e1s que aceptado. Mientras el pueblo tenga un recordatorio f\u00edsico del poder de Elantris, temer\u00e1... y mientras tema a algo m\u00e1s de lo que teme a su rey, ninguno de _ustedes_ tendr\u00e1 poder.",
+        "date_created": "2018-12-29T19:23:46.858527"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "recordatorio",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "reminder",
+            "date_created": "2018-04-12T16:50:05.828076"
+          },
+          "vocab_entry_tags": [
+            "recordatorio"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "liderazgo",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "condici\u00f3n de l\u00edder\r\n\r\n- leadership",
+            "date_created": "2018-04-12T16:50:06.772641"
+          },
+          "vocab_entry_tags": [
+            "liderazgo"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "Sin embargo, encontrar a una mujer en esta corte cuyos tontos parloteos no me revuelvan el est\u00f3mago es otra cuesti\u00f3n.",
+        "date_created": "2018-12-29T19:23:47.336461"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "parloteo",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-12-14T17:10:19.246310"
+          },
+          "vocab_entry_tags": [
+            "parloteos"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "cuesti\u00f3n",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-04-12T16:50:06.617019"
+          },
+          "vocab_entry_tags": [
+            "cuesti\u00f3n"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "No obstante, su adiestramiento como luchador se impuso pronto y empez\u00f3 a detener los ataques de Sarene con sorprendente habilidad.",
+        "date_created": "2018-12-29T19:23:47.682451"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "detener",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-04-12T16:50:06.339173"
+          },
+          "vocab_entry_tags": [
+            "detener"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "adiestramiento",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-04-12T16:50:06.172424"
+          },
+          "vocab_entry_tags": [
+            "adiestramiento"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "no obstante",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-12-14T17:09:58.711079"
+          },
+          "vocab_entry_tags": [
+            "no obstante"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "Era el tipo de vestido que hac\u00eda que una se sintiera regia. Incluso una princesa necesitaba esos recordatorios de vez en cuando.",
+        "date_created": "2018-12-29T19:23:47.892215"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "recordatorio",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "reminder",
+            "date_created": "2018-04-12T16:50:05.828076"
+          },
+          "vocab_entry_tags": [
+            "recordatorios"
+          ]
+        }
+      ]
+    }
+  ]
+}

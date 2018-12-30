@@ -1,0 +1,89 @@
+{
+  "vocab_project_data": {
+    "name": "English Reading",
+    "description": "A vocab project for English reading materials.",
+    "date_created": "2018-11-28T22:51:24.270608"
+  },
+  "vocab_source_data": {
+    "source_type": 1,
+    "name": "The Order of Time",
+    "description": "Carlo Rovelli",
+    "date_created": "2018-12-29T19:46:52.676214"
+  },
+  "vocab_contexts": [
+    {
+      "vocab_context_data": {
+        "content": "The time indicated by a particular clock measuring a particular phenomenon is called \u201cproper time\u201d in physics. Every clock has its proper time. Every phenomenon that occurs has its proper time, its own rhythm.\n\n Einstein has given us the equations that describe how proper times develop relative to each other. He has shown us how to calculate the difference between two times.",
+        "date_created": "2018-12-29T19:46:52.817230"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "rhythm",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-12-29T19:46:52.844057"
+          },
+          "vocab_entry_tags": [
+            "rhythm"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "phenomenon",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:24.795444"
+          },
+          "vocab_entry_tags": [
+            "phenomenon"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "proper time",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-12-29T19:46:53.133738"
+          },
+          "vocab_entry_tags": [
+            "proper time"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "Past and future are different from each other. Cause precedes effect. Pain comes after a wound, not before it. The glass shatters into a thousand pieces, and the pieces do not re-form into a glass. We cannot change the past; we can have regrets, remorse, memories. The future instead is uncertainty, desire, anxiety, open space, destiny, perhaps. We can live toward it, shape it, because it does not yet exist. Everything is still possible. . . . Time is not a line with two equal directions: it is an arrow with different extremities.",
+        "date_created": "2018-12-29T19:46:53.393887"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "precede",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:31.981945"
+          },
+          "vocab_entry_tags": [
+            "precedes"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "It all began with a regicide. On January 16, 1793, the National Convention in Paris sentenced Louis XVI to death. Rebellion is perhaps among the deepest roots of science: the refusal to accept the present order of things.10 Among those who took the fatal decision was a friend of Robespierre called Lazare Carnot. Carnot had a passion for the great Persian poet Saadi Shirazi. Captured and enslaved at Acre by the Crusaders, Shirazi is the author of those luminous verses that now stand at the entrance of the headquarters of the United Nations:  \n  \n\n\n \n>  All of the sons of Adam are part of one single body,   \n>  They are of the same essence.   \n>  When time afflicts us with pain   \n> \n> \n>    en: regicide: regicide\n\n en: afflict: afflicts",
+        "date_created": "2018-12-29T19:46:53.660897"
+      }
+    }
+  ]
+}

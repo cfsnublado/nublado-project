@@ -1,0 +1,270 @@
+{
+  "vocab_project_data": {
+    "name": "English Reading",
+    "description": "A vocab project for English reading materials.",
+    "date_created": "2018-11-28T22:51:24.270608"
+  },
+  "vocab_source_data": {
+    "source_type": 1,
+    "name": "The Universe Within",
+    "description": "Discovering the common history of rocks, planets, and people.",
+    "date_created": "2018-12-29T19:23:34.016193"
+  },
+  "vocab_contexts": [
+    {
+      "vocab_context_data": {
+        "content": "Most of the body's water is not in the fluid of our blood, but remains locked inside the cells of our muscles, brains, and hearts. Metabolism of food and oxygen depends on water, as do the growth and communication of our cells. Even reproduction, with the motility of sperm and egg, is based in a fluid medium.",
+        "date_created": "2018-12-29T19:23:34.121186"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "motility",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "Biology. moving or capable of moving spontaneously - independent movement\r\n\r\n- motilidad, movilidad",
+            "date_created": "2018-04-12T16:50:03.983447"
+          },
+          "vocab_entry_tags": [
+            "motility"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "Their relationship often took the form of a long, friendly argument: one would propose a new idea while the other would relentlessly try to quash it. If the idea held up under their largely amiable tit for tat, then they would both line up behind the proposal and take it to Farish with his keen logistic and scientific sense, for vetting.",
+        "date_created": "2018-12-29T19:23:34.556946"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "amiable",
+            "pronunciation_spelling": "**ey**-mee-uh-buh l",
+            "pronunciation_ipa": "",
+            "description": "having or showing pleasant, good-natured personal qualities; affable\r\n\r\n- amigable",
+            "date_created": "2018-04-12T16:50:03.883255"
+          },
+          "vocab_entry_tags": [
+            "amiable"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "vetting",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "process of checking or appraisal\r\n\r\n- escrutino, investigaci\u00f3n",
+            "date_created": "2018-04-12T16:50:03.683277"
+          },
+          "vocab_entry_tags": [
+            "vetting"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "tit for tat",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "with an equivalent given in retaliation, as a blow for a blow, repartee, etc.:\r\n\r\n- pagar con la misma moneda, ojo por ojo",
+            "date_created": "2018-04-12T16:50:03.505123"
+          },
+          "vocab_entry_tags": [
+            "tit for tat"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "quash",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "to put down or suppress completely; quell; subdue (used with object)\r\n\r\n- invalidar, anular, sofocar, aplastar",
+            "date_created": "2018-04-12T16:50:03.405386"
+          },
+          "vocab_entry_tags": [
+            "quash"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "Every rock in the ground is an artifact that, when you know how to interpret it, becomes a time capsule, a thermostat, even a barometer of the health of our planet. To wrest these details from stones, we have to zoom from a birds'-eye view of rock layers all the way down to a microscopic one.",
+        "date_created": "2018-12-29T19:23:35.166595"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "wrest",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "to twist or turn; pull, jerk, or force by a violent twist.  - to take away by force\r\n\r\n- arrebatar, arrancar",
+            "date_created": "2018-04-12T16:50:03.194356"
+          },
+          "vocab_entry_tags": [
+            "wrest"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "Enewetak was totally denuded, with a hole a mile wide in its center. Fragments from the island's lush coral reefs were ejected fifteen miles away. In analyzing the detritus left from the conflagration, the scientific teams discovered the energy caused a number of large nuclei in the neighborhood to fuse, thereby producing entirely new elements never before seen on the planet.",
+        "date_created": "2018-12-29T19:23:35.344329"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "conflagration",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "a destructive fire, usually an extensive one. \r\n\r\n- conflagraci\u00f3n, gran incendio",
+            "date_created": "2018-04-12T16:50:02.993981"
+          },
+          "vocab_entry_tags": [
+            "conflagration"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "detritus",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:25.101487"
+          },
+          "vocab_entry_tags": [
+            "detritus"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "denude",
+            "pronunciation_spelling": "dih-**nood**",
+            "pronunciation_ipa": "",
+            "description": "to make naked or bare; strip\r\n\r\n- desnudar, despojar de",
+            "date_created": "2018-04-12T16:50:02.741654"
+          },
+          "vocab_entry_tags": [
+            "denuded"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "The sky, like a thriving forest, continually recycles matter. With the heavens so full of stars manufacturing elements, then occasionally exploding and releasing them, only to recombine them again as a new star forms, the atoms that reach our planet have been denizens of innumerable other suns.",
+        "date_created": "2018-12-29T19:23:35.844173"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "denizen",
+            "pronunciation_spelling": "**den**-uh-zuh n",
+            "pronunciation_ipa": "",
+            "description": "An inhabitant; resident. A person who regularly frequents a place.\r\n\r\n- habitante, residente",
+            "date_created": "2018-04-12T16:50:02.584891"
+          },
+          "vocab_entry_tags": [
+            "denizens"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "This blast is one kind of supernova (another kind can be triggered by collisions of stars). Supernovae work something like Teller and Ulam's crude device. The energy of one explosion brings new kinds of fusion reactions. Recall those fusion reactions for elements heavier than iron? Supernovae release so much energy that these expensive reactions happen. All the elements heavier than iron, such as the cobalt and cesium in our bodies, derive from supernovae.",
+        "date_created": "2018-12-29T19:23:36.044950"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "supernova",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-04-12T16:50:02.330419"
+          },
+          "vocab_entry_tags": [
+            "supernova",
+            "supernovae"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "You could drill a deep core for them, but this is way too expensive for the typical geology budget. What's more, the drilling would be be a bit of a shot in the dark: it would be hard to know where to look miles under the surface of Earth.",
+        "date_created": "2018-12-29T19:23:36.234453"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "what's more",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "in addition, besides\r\n\r\n- y encima, adem\u00e1s",
+            "date_created": "2018-04-12T16:50:02.075053"
+          },
+          "vocab_entry_tags": [
+            "what's more"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "A visitor from space had arrived: a large meteorite that broke apart in the atmosphere. After learning of the event, scientists and collectors poured into the area in droves.",
+        "date_created": "2018-12-29T19:23:36.311119"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "drove",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "Usually, droves. a large crowd of human beings, especially in motion\r\n\r\n- manada, multitud",
+            "date_created": "2018-04-12T16:50:01.919245"
+          },
+          "vocab_entry_tags": [
+            "droves"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "Stars can consume ever-heavier atomic fuels until they hit a stopping point defined by the laws of physics and chemistry. That point, the element iron, holds a very special place in the periodic table. Elements smaller than iron can fuse and concomitantly release enormous amounts of energy.",
+        "date_created": "2018-12-29T19:23:36.466988"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "concomitant",
+            "pronunciation_spelling": "kon-**kom**-i-tuh nt",
+            "pronunciation_ipa": "",
+            "description": "existing or occurring with something else, often in a lesser way; accompanying; concurrent\r\n\r\n- concurrente, simult\u00e1neo",
+            "date_created": "2018-04-12T16:50:01.762247"
+          },
+          "vocab_entry_tags": [
+            "concomitantly"
+          ]
+        }
+      ]
+    }
+  ]
+}

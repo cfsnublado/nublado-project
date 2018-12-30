@@ -1,0 +1,648 @@
+{
+  "vocab_project_data": {
+    "name": "Spanish Reading",
+    "description": "A vocab project for Spanish reading materials.",
+    "date_created": "2018-11-28T18:27:06.506109"
+  },
+  "vocab_source_data": {
+    "source_type": 1,
+    "name": "El oc\u00e9ano al final del camino",
+    "description": "",
+    "date_created": "2018-12-29T19:44:49.514418"
+  },
+  "vocab_contexts": [
+    {
+      "vocab_context_data": {
+        "content": "Era sudafricano, aunque hab\u00eda hecho fortuna extrayendo \u00f3palo en Australia. Nos regal\u00f3 a mi hermana y a m\u00ed sendos \u00f3palos, una piedra negra y rugosa con vetas verdes, azules, y rojas.",
+        "date_created": "2018-12-29T19:44:49.535986"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "sendos",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "respectivos\r\n\r\n- each",
+            "date_created": "2018-04-12T16:52:16.053189"
+          },
+          "vocab_entry_tags": [
+            "sendos"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "regalar",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-12-29T19:44:49.608425"
+          },
+          "vocab_entry_tags": [
+            "regal\u00f3"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "\u00f3palo",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-12-29T19:44:49.675271"
+          },
+          "vocab_entry_tags": [
+            "\u00f3palo"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "El pan de verdad era blanco, y ven\u00eda ya cortado en rebanadas, y ten\u00eda un sabor inconfundible: as\u00ed era como ten\u00eda que ser el pan.",
+        "date_created": "2018-12-29T19:44:49.725450"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "rebanada",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-12-29T19:44:49.742480"
+          },
+          "vocab_entry_tags": [
+            "rebanadas"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "Imagin\u00e9 que ser\u00eda la madre de Lettie. Ten\u00eda pinta de ser la madre de alguien.",
+        "date_created": "2018-12-29T19:44:49.792202"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "tener pinta de",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-12-29T19:44:49.809367"
+          },
+          "vocab_entry_tags": [
+            "ten\u00eda pinta de ser"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "\u2014Has tenido pesadillas, \u00bfverdad?\n\n Saqu\u00e9 el chel\u00edn de mi bolsillo y se lo ense\u00f1\u00e9. \u2014Me he atragantado con esto \u2014le expliqu\u00e9\u2014. Al despertarme. Pero no s\u00e9 c\u00f3mo ha podido llegar hasta mi boca. Si alguien me lo hubiera metido, me habr\u00eda despertado. Simplemente estaba all\u00ed cuando despert\u00e9.",
+        "date_created": "2018-12-29T19:44:49.859060"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "atragantarse",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "ahogarse - choke",
+            "date_created": "2018-04-12T16:49:39.655135"
+          },
+          "vocab_entry_tags": [
+            "me he atragantado"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "\u2014\u00bfTe refieres al minero? \u00bfEl que muri\u00f3 en el coche?\n\n \u2014S\u00ed. M\u00e1s o menos. No exactamente. \u00c9l ha sido quien ha empezado todo esto, como alguien que prende una mecha en una hoguera. Su muerte prendi\u00f3 la mecha. Pero lo que ha explotado ahora no tiene que ver con \u00e9l. Ha sido otra persona, otra cosa.",
+        "date_created": "2018-12-29T19:44:50.003778"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "mecha",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "Cuerda combustible (explosivos)\r\n\r\nPabilo (vela, mechero)\r\n\r\n- wick (candle), fuse (explosives)",
+            "date_created": "2018-04-12T16:50:00.904952"
+          },
+          "vocab_entry_tags": [
+            "mecha"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "tener que ver con",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-12-29T19:44:50.077048"
+          },
+          "vocab_entry_tags": [
+            "no tiene que ver con \u00e9l"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "\u2014Algo est\u00e1 causando problemas \u2014le explic\u00f3 Lettie\u2014. Le est\u00e1 dando dinero a la gente. En sue\u00f1os y en la vida real. \u2014Le mostr\u00f3 mi chel\u00edn a la anciana\u2014. Mi amigo se ha despertado atragant\u00e1ndose con esta moneda.",
+        "date_created": "2018-12-29T19:44:50.126032"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "atragantarse",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "ahogarse - choke",
+            "date_created": "2018-04-12T16:49:39.655135"
+          },
+          "vocab_entry_tags": [
+            "atragant\u00e1ndose"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "A m\u00ed me encantaba aquella casa, y el jard\u00edn. Me encantaba ese aspecto un poco destartalado que ten\u00eda y todos aquellos rincones y recovecos. Amaba ese lugar como si formara parte de m\u00ed, y quiz\u00e1s, en cierto modo, fuera as\u00ed.",
+        "date_created": "2018-12-29T19:44:50.192673"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "destartalado",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-12-29T19:44:50.225252"
+          },
+          "vocab_entry_tags": [
+            "destartalado"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "recoveco",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "rinc\u00f3n escondido\r\n\r\n- nook, nook and cranny",
+            "date_created": "2018-04-12T16:47:58.247484"
+          },
+          "vocab_entry_tags": [
+            "recovecos"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "Me levant\u00e9 de la cama y me asom\u00e9 por la puerta. No hab\u00eda nadie en el rellano del segundo piso. Con mucho sigilo y rapidez, entr\u00e9 en la habitaci\u00f3n contigua",
+        "date_created": "2018-12-29T19:44:50.337390"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "asomarse",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "dejar ver, aparecer\r\n\r\n- stick out, poke out, appear, be seen",
+            "date_created": "2018-04-12T16:48:06.329531"
+          },
+          "vocab_entry_tags": [
+            "me asom\u00e9"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "sigilo",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "discreci\u00f3n, silencio - discretion, stealth, silence",
+            "date_created": "2018-04-12T16:51:54.180204"
+          },
+          "vocab_entry_tags": [
+            "sigilo"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "\u2014No quiero ser acusica \u2014dijo Ursula Monkton\u2014, pero alguien ha salido de su habitaci\u00f3n con la cara y las manos manchados de chocolate.",
+        "date_created": "2018-12-29T19:44:50.459744"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "acusica",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-12-29T19:44:50.477342"
+          },
+          "vocab_entry_tags": [
+            "acusica"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "Escuch\u00e9 el repiqueteo de la lluvia en el cristal de la ventana, pero ni siquiera eso me consol\u00f3.",
+        "date_created": "2018-12-29T19:44:50.559771"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "repiqueteo",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-12-29T19:44:50.592084"
+          },
+          "vocab_entry_tags": [
+            "repiqueteo"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "consolar",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "aliviar la pena\r\n\r\n- console, comfort",
+            "date_created": "2018-04-12T16:51:23.155225"
+          },
+          "vocab_entry_tags": [
+            "consol\u00f3"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "No obstante, pens\u00e9 que igual no era muy seguro ir por la carretera, y decid\u00ed atajar por los campos.",
+        "date_created": "2018-12-29T19:44:50.705602"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "no obstante",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-12-14T17:09:58.711079"
+          },
+          "vocab_entry_tags": [
+            "no obstante"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "carreterra",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-12-29T19:44:50.778509"
+          },
+          "vocab_entry_tags": [
+            "carreterra"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "atajar",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-12-29T19:44:50.833600"
+          },
+          "vocab_entry_tags": [
+            "atajar"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "\u2014No dejar\u00e1s que me coja, \u00bfverdad? \u2014le pregunt\u00e9 a Lettie.\n\n Lettie mene\u00f3 la cabeza y, juntos, echamos a andar por la pedregosa carretera que llevaba hasta mi casa y hasta aquella cosa que se hac\u00eda llamar Ursula Monkton.",
+        "date_created": "2018-12-29T19:44:50.916329"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "menear",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "mover una extremidad\r\n\r\n- shake, wag",
+            "date_created": "2018-04-12T16:51:21.607492"
+          },
+          "vocab_entry_tags": [
+            "mene\u00f3"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "pedregoso",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "cubierto de piedras\r\n\r\n- stony, rocky",
+            "date_created": "2018-04-12T16:50:57.672957"
+          },
+          "vocab_entry_tags": [
+            "pedregosa"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "carreterra",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-12-29T19:44:50.778509"
+          },
+          "vocab_entry_tags": [
+            "carreterra"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "Como ya he dicho antes, los ni\u00f1os usan caminos secundarios y senderos ocultos, mientras que los adultos siguen carreteras y caminos principales. Salimos de la carretera y cogimos un atajo que conoc\u00eda Lettie.",
+        "date_created": "2018-12-29T19:44:51.182852"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "carreterra",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-12-29T19:44:50.778509"
+          },
+          "vocab_entry_tags": [
+            "carreterra"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "atajo",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "cortacamino, camino m\u00e1s corto\r\n\r\n- shortcut",
+            "date_created": "2018-04-12T16:48:28.055445"
+          },
+          "vocab_entry_tags": [
+            "atajo"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "\u2014Debes de estar muerto de hambre \u2014dijo Lettie, y se rompi\u00f3 el hechizo, y s\u00ed, estaba muerto de hambre, y el hambre se apoder\u00f3 de mi mente y engull\u00f3 lo que quedaba de mis sue\u00f1os.",
+        "date_created": "2018-12-29T19:44:51.349572"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "hechizo",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-12-14T17:10:18.528636"
+          },
+          "vocab_entry_tags": [
+            "hechizo"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "apoderarse",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-04-12T16:51:59.859035"
+          },
+          "vocab_entry_tags": [
+            "se apoder\u00f3"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "engullir",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-12-14T17:09:53.653357"
+          },
+          "vocab_entry_tags": [
+            "engull\u00f3"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "\u2014*Nos han llamado. No tenemos que marcharnos hasta que hayamos hecho lo que vinimos a hacer. Volvemos a dejarlo todo como se supone que debe estar. \u00bfNos vas a impedir cumplir nuestra funci\u00f3n?*",
+        "date_created": "2018-12-29T19:44:51.517055"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "cumplir",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-12-29T19:44:51.548559"
+          },
+          "vocab_entry_tags": [
+            "cumplir"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "Entonces lo comprend\u00ed, y me sent\u00ed como un idiota por no haberlo comprendido antes. La ni\u00f1a que estaba a mi lado, en el regazo de su madre, hab\u00eda dado su vida por la m\u00eda.",
+        "date_created": "2018-12-29T19:44:51.639052"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "regazo",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-12-26T14:55:19.410835"
+          },
+          "vocab_entry_tags": [
+            "regazo"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "\u2014Nada es nunca igual \u2014dijo\u2014. As\u00ed haya transcurrido un segundo o cien a\u00f1os. Todo est\u00e1 en continuo movimiento. Y la gente cambia igual que cambian los oc\u00e9anos.",
+        "date_created": "2018-12-29T19:44:51.740169"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "transcurrir",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-12-14T17:10:13.085837"
+          },
+          "vocab_entry_tags": [
+            "haya transcurrido"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "Sigui\u00f3 creciendo hasta alcanzar el cuerpo de Lettie, entonces la gigantesca ola rompi\u00f3 por fin. Esperaba que nos empapara o, pero a\u00fan, que fu\u00e9ramos enguillidos por las furiosas aguas del oc\u00e9ano, y alc\u00e9 el brazo para taparme la cara.",
+        "date_created": "2018-12-29T19:44:51.805574"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "gigantesco",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-12-14T04:48:40.662575"
+          },
+          "vocab_entry_tags": [
+            "gigantesca"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "empapar",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "mojar abundantemente\r\n\r\n- soak, drench, saturate",
+            "date_created": "2018-05-13T13:43:45.963563"
+          },
+          "vocab_entry_tags": [
+            "empapara"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "engullir",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-12-14T17:09:53.653357"
+          },
+          "vocab_entry_tags": [
+            "engullidos"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "alzar",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-04-12T16:49:49.148420"
+          },
+          "vocab_entry_tags": [
+            "alc\u00e9"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "Una peque\u00f1a parte de mi cerebro recordaba otra serie de acontecimientos, pero el recuerdo se borr\u00f3 enseguida, como si acabara de despertar de un sue\u00f1o reparador, echara un vistazo a mi alrededor y volviera a taparme con las s\u00e1banas para seguir so\u00f1ando.",
+        "date_created": "2018-12-29T19:44:52.272574"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "acontecimiento",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "event",
+            "date_created": "2018-04-12T16:48:57.340585"
+          },
+          "vocab_entry_tags": [
+            "acontecimientos"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "enseguida",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "ahora mismo, al instante, de repente\r\n\r\n- immediately, promptly, righ away",
+            "date_created": "2018-04-12T16:48:42.582691"
+          },
+          "vocab_entry_tags": [
+            "enseguida"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "echar un vistazo",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-12-14T17:10:08.100530"
+          },
+          "vocab_entry_tags": [
+            "echara un vistazo"
+          ]
+        }
+      ]
+    }
+  ]
+}

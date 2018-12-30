@@ -1,0 +1,2346 @@
+{
+  "vocab_project_data": {
+    "name": "English Reading",
+    "description": "A vocab project for English reading materials.",
+    "date_created": "2018-11-28T22:51:24.270608"
+  },
+  "vocab_source_data": {
+    "source_type": 1,
+    "name": "The Skeptics' Guide to the Universe",
+    "description": "A book",
+    "date_created": "2018-12-29T19:46:39.081259"
+  },
+  "vocab_contexts": [
+    {
+      "vocab_context_data": {
+        "content": "**Memory Fallibility and False Memory Syndrome**\n\n There are numerous ways in which our memories are unreliable. In fact, entirely false memories can be easily fabricated, sometimes by misguided therapists.",
+        "date_created": "2018-12-29T19:46:39.103359"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "fallibility",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:24.335207"
+          },
+          "vocab_entry_tags": [
+            "fallibility"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "fabricate",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:24.405055"
+          },
+          "vocab_entry_tags": [
+            "fabricated"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "**Fallibility of Perception** \n\n The act of perception is a complex, highly filtered, and active constructive process by your brain. We do not passively perceive external stimuli like a camera. This constructive process introduces many possibilities for illusion and misperception.",
+        "date_created": "2018-12-29T19:46:39.325193"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "stimulus",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:24.526343"
+          },
+          "vocab_entry_tags": [
+            "stimuli"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "fallibility",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:24.335207"
+          },
+          "vocab_entry_tags": [
+            "fallibility"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "**Pareidolia**\n\n Pareidolia refers to the process of perceiving an image in random noise, such as seeing a face in the craters and maria of the moon.",
+        "date_created": "2018-12-29T19:46:39.447007"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "pareidolia",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:24.649969"
+          },
+          "vocab_entry_tags": [
+            "pareidolia"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "But this phenomenon goes much deeper than just children imagining a sky menagerie, and it reflects how our brains process and interpret information.",
+        "date_created": "2018-12-29T19:46:39.526009"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "menagerie",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:24.737832"
+          },
+          "vocab_entry_tags": [
+            "menagerie"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "phenomenon",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:24.795444"
+          },
+          "vocab_entry_tags": [
+            "phenomenon"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "The term for this phenomenon is pareidolia, which refers to the perception of familiar yet meaningless patterns in random stimuli or noise. It usually applies to seeing visual patterns, but sometimes the term is used to refer to other sensations, such as sound (in which case it might be called, fittingly, audio pareidolia).",
+        "date_created": "2018-12-29T19:46:39.636210"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "pareidolia",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:24.649969"
+          },
+          "vocab_entry_tags": [
+            "pareidolia"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "stimulus",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:24.526343"
+          },
+          "vocab_entry_tags": [
+            "stimuli"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "The technical term for the more general phenomenon of seeing patterns where they do not exist is apophenia, the tendency to see illusory patterns in noisy data.",
+        "date_created": "2018-12-29T19:46:39.746937"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "phenomenon",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:24.795444"
+          },
+          "vocab_entry_tags": [
+            "phenomenon"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "apophenia",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:25.023577"
+          },
+          "vocab_entry_tags": [
+            "apophenia"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "When NASA took a higher resolution image in 1998, it became obvious that the face was just an eroded pile of rocky detritus, no more an intentional face than the bumps on your ceiling.",
+        "date_created": "2018-12-29T19:46:39.880776"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "detritus",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:25.101487"
+          },
+          "vocab_entry_tags": [
+            "detritus"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "Pareidolia can be fun, but if you aren't aware of our penchant for and love of patterns, an interesting and diverting illusion can feed into a delusion. As we will see, some illusory patterns are more nefarious than just seeing a bunny rabbit in a cloud.",
+        "date_created": "2018-12-29T19:46:39.980850"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "pareidolia",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:24.649969"
+          },
+          "vocab_entry_tags": [
+            "pareidolia"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "nefarious",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:25.248627"
+          },
+          "vocab_entry_tags": [
+            "nefarious"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "**Hyperactive Agency Detection**\n\n Hyperactive agency detection (HADD) is the tendency to interpret events as if they were the deliberate intent of a conscious agent rather than the product of natural forces or unguided chaotic events.",
+        "date_created": "2018-12-29T19:46:40.125043"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "hyperactive agency detection",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:25.326752"
+          },
+          "vocab_entry_tags": [
+            "hyperactive agency detection"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "deliberate",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:25.379099"
+          },
+          "vocab_entry_tags": [
+            "deliberate"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "conscious",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:25.468192"
+          },
+          "vocab_entry_tags": [
+            "conscious"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "chaotic",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:25.523780"
+          },
+          "vocab_entry_tags": [
+            "chaotic"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "Understanding that HADD is an intrinsic part of human nature is part of the core knowledge base of the skeptic.",
+        "date_created": "2018-12-29T19:46:40.414038"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "intrinsic",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:25.627422"
+          },
+          "vocab_entry_tags": [
+            "intrinsic"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "We imbue agents with an essence\u2014a unique living force\u2014even as infants. Objects are just generic things and are totally interchangeable, while agents have their own unique essence. This reinforces the notion that the distinction we make is not between living and nonliving so much as agent versus object.",
+        "date_created": "2018-12-29T19:46:40.480673"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "imbue",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:25.704457"
+          },
+          "vocab_entry_tags": [
+            "imbue"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "interchangeable",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:25.770831"
+          },
+          "vocab_entry_tags": [
+            "interchangeable"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "**Hypnagogia**\n\n Hypnagogia is a neurological phenomenon in which the dreaming and waking states are fused, producing unusual experiences often mistaken for paranormal ones.",
+        "date_created": "2018-12-29T19:46:40.591637"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "hypnagogia",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:25.856835"
+          },
+          "vocab_entry_tags": [
+            "hypnagogia"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "neurological",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:25.935149"
+          },
+          "vocab_entry_tags": [
+            "neurological"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "phenomenon",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:24.795444"
+          },
+          "vocab_entry_tags": [
+            "phenomenon"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "paranormal",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:26.035156"
+          },
+          "vocab_entry_tags": [
+            "paranormal"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "**Ideomotor Effect**\n\n The ideomotor effect is an involuntary subconscious subtle muscle movement driven by expectation, which creates the illusion that the movement is due to an external force.",
+        "date_created": "2018-12-29T19:46:40.893226"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "ideomotor effect",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:26.103713"
+          },
+          "vocab_entry_tags": [
+            "ideomotor effect"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "subconscious",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:26.157256"
+          },
+          "vocab_entry_tags": [
+            "subconscious"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "Before hypothesizing about spirits, new forces, or supernatural abilities, consider that\u2014just maybe\u2014your brain (like the brain of every other human on the planet) has some quirks and foibles. That is the meaning of neuropsychological humility.",
+        "date_created": "2018-12-29T19:46:41.002930"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "hypothesize",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:26.223794"
+          },
+          "vocab_entry_tags": [
+            "hypothesizing"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "quirk",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:26.280353"
+          },
+          "vocab_entry_tags": [
+            "quirks"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "foible",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:26.335789"
+          },
+          "vocab_entry_tags": [
+            "foibles"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "neuropsychological",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:26.397087"
+          },
+          "vocab_entry_tags": [
+            "neuropsychological"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "humility",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:26.457229"
+          },
+          "vocab_entry_tags": [
+            "humility"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "**Metacognition**\n\n Even when our memory and perception are working reliably, we still have to reason with the information we have. That is a trip down a twisting road with blind alleys and many pitfalls. Fortunately, psychologists have spent decades working out many of the ways our thinking goes astray.",
+        "date_created": "2018-12-29T19:46:41.481425"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "metacognition",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:26.571418"
+          },
+          "vocab_entry_tags": [
+            "metacognition"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "The hope to \"beat the odds\" is based on logical fallacies and cognitive biases. Superstition and belief in \"luck\" (which is highly encouraged by casinos) are rampant. The casinos themselves don't trust in luck\u2014they know that cold, hard math will grant them a steady flow of income.",
+        "date_created": "2018-12-29T19:46:41.547445"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "fallacy",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:26.659993"
+          },
+          "vocab_entry_tags": [
+            "fallacies"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "bias",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:26.713224"
+          },
+          "vocab_entry_tags": [
+            "biases"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "rampant",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:26.784690"
+          },
+          "vocab_entry_tags": [
+            "rampant"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "math",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:26.884204"
+          },
+          "vocab_entry_tags": [
+            "math"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "**Dunning-Kruger Effect**\n\n The Dunning-Kruger effect describes the inability to evaluate one's own competency, leading to a general tendency to overestimate one's abilities.",
+        "date_created": "2018-12-29T19:46:42.014442"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "Dunning-Kruger effect",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:26.979491"
+          },
+          "vocab_entry_tags": [
+            "Dunning-Kruger effect"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "ability",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:27.035045"
+          },
+          "vocab_entry_tags": [
+            "abilities"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "competency",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:27.090839"
+          },
+          "vocab_entry_tags": [
+            "competency"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "Remember the character David Brent, played by Ricky Gervais in the British version of *The Office* (an analogous character was played by Steve Carell in the American version)? David is a classic character because he is only a slight exaggeration of people we all know in real life\u2014too incompetent and full of himself to have any idea how thoroughly incompetent he actually is.",
+        "date_created": "2018-12-29T19:46:42.291776"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "analogous",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:27.157368"
+          },
+          "vocab_entry_tags": [
+            "analogous"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "incompetent",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:27.213009"
+          },
+          "vocab_entry_tags": [
+            "incompetent"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "As we try to make sense of the world, we work with our existing knowledge and paradigms. We formulate ideas then systematically seek out information that confirms those ideas. We dismiss contrary information as exceptions. We interpret ambiguous experiences as in line with our theories. We make subjective judgements that further reinforce our beliefs.",
+        "date_created": "2018-12-29T19:46:42.514530"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "paradigm",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:27.279524"
+          },
+          "vocab_entry_tags": [
+            "paradigms"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "knowledge",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:27.335183"
+          },
+          "vocab_entry_tags": [
+            "knowledge"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "In the end we are left with a powerful sense of knowledge\u2014but it's false knowledge. Confirmation bias leads to a high level of confidence. We feel deep in our gut that we are right. And when confronted by someone saying we're wrong or promoting an alternate view, there is a tendency to become defensive, even hostile.",
+        "date_created": "2018-12-29T19:46:42.827916"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "knowledge",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:27.335183"
+          },
+          "vocab_entry_tags": [
+            "knowledge"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "alternate",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:27.446941"
+          },
+          "vocab_entry_tags": [
+            "alternate"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "We need to substitute a logical and scientific process for the one Dunning describes above.",
+        "date_created": "2018-12-29T19:46:43.058495"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "substitute X for Y",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:27.629342"
+          },
+          "vocab_entry_tags": [
+            "substitute a logical and scientific process for the one Dunning describes above"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "Now realize that you are as ignorant as the average person is in every other area of knowledge in which you are not expert. The Dunning-Kruger effect is not just about dumb people not realizing how dumb they are. It is about basic human psychology and cognitive biases. Dunning-Kruger applies to everyone.",
+        "date_created": "2018-12-29T19:46:43.125823"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "bias",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:26.713224"
+          },
+          "vocab_entry_tags": [
+            "biases"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "Dunning-Kruger effect",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:26.979491"
+          },
+          "vocab_entry_tags": [
+            "Dunning-Kruger"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "In addition to the various aspects of critical thinking, self assessment is a skill we can strive to develop specifically. But a good rule of thumb is to err on the side of humility. If you assume that you know relatively less than what you think you do and that there is more knowledge than you are aware of, you will usually be correct.",
+        "date_created": "2018-12-29T19:46:43.358742"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "err",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:27.871613"
+          },
+          "vocab_entry_tags": [
+            "err"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "humility",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:26.457229"
+          },
+          "vocab_entry_tags": [
+            "humility"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "knowledge",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:27.335183"
+          },
+          "vocab_entry_tags": [
+            "knowledge"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "rule of thumb",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:28.059187"
+          },
+          "vocab_entry_tags": [
+            "rule of thumb"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "**Motivated Reasoning**\n\n Motivated reasoning is the biased process we use to defend a position, ideology, or belief that we hold with emotional investment.",
+        "date_created": "2018-12-29T19:46:43.925363"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "motivated reasoning",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:28.124416"
+          },
+          "vocab_entry_tags": [
+            "motivated reasoning"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "ideology",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:28.191260"
+          },
+          "vocab_entry_tags": [
+            "ideology"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "biased",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:28.246292"
+          },
+          "vocab_entry_tags": [
+            "biased"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": ">  Some information, some ideas, feel like our allies. We want them to win. We want to defend them. And other information or ideas are the enemy, and we want to shoot them down. \u2014Julia Galef\n> \n>",
+        "date_created": "2018-12-29T19:46:44.503403"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "information",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:28.328440"
+          },
+          "vocab_entry_tags": [
+            "information"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "ally",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:28.405350"
+          },
+          "vocab_entry_tags": [
+            "allies"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "Have you ever ben in a heated political discussion? Heck, have you ever interacted with other human beings? Then you are likely familiar with the frustration of someone else twisting logic, cherry-picking or distorting facts, and being generally biased in their defense of a position. Of course, here's the thing: You do it too.",
+        "date_created": "2018-12-29T19:46:44.714229"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "biased",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:28.246292"
+          },
+          "vocab_entry_tags": [
+            "biased"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "cherry-picking",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:28.524646"
+          },
+          "vocab_entry_tags": [
+            "cherry-picking"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "interact",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:28.580466"
+          },
+          "vocab_entry_tags": [
+            "interacted"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "human being",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:28.739392"
+          },
+          "vocab_entry_tags": [
+            "human beings"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "We tend to follow a Bayesian approach, meaning that we update our beliefs as new information comes to our attention. If we are told that some historical fact is different than what we remember, we'll quickly change our beliefs about that historical fact. Further, the more information we have about something, and therefore the more solid our belief, the more slowly we will change that belief. We don't just change from one thing to the next, we incorporate the new information with our old information.",
+        "date_created": "2018-12-29T19:46:44.914198"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "information",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:28.328440"
+          },
+          "vocab_entry_tags": [
+            "information"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "belief",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:28.880021"
+          },
+          "vocab_entry_tags": [
+            "belief",
+            "beliefs"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "Bayesian",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:28.971667"
+          },
+          "vocab_entry_tags": [
+            "Bayesian"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "Motivated reasoning is triggered by what psychologists call cognitive dissonance.",
+        "date_created": "2018-12-29T19:46:45.103443"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "cognitive dissonance",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:29.083754"
+          },
+          "vocab_entry_tags": [
+            "cognitive dissonance"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "trigger",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:29.137306"
+          },
+          "vocab_entry_tags": [
+            "triggered"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "In general, political opinions tend to fall into the \"sacred cow\" category. People tend to identify with their political tribe and want to believe that their tribe is virtuous and smart, where the other tribe is mostly made of lying idiots. Of course, these dichotomies occur on a spectrum. You can have a little bit of an emotional attachment to a belief, or it can be fundamental to your worldview and identity. You can be a little tribal in your political views, or hyperpartisan.",
+        "date_created": "2018-12-29T19:46:45.214476"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "political",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:29.216677"
+          },
+          "vocab_entry_tags": [
+            "political"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "sacred cow",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:29.269801"
+          },
+          "vocab_entry_tags": [
+            "sacred cow"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "virtuous",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:29.430559"
+          },
+          "vocab_entry_tags": [
+            "virtuous"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "dichotomy",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:29.528092"
+          },
+          "vocab_entry_tags": [
+            "dichotomies"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "spectrum",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:29.581153"
+          },
+          "vocab_entry_tags": [
+            "spectrum"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "Here is another important thing to keep in mind: If the premises of an argument are true and sufficiently complete, and the logic is valid (in which case the argument is said to be \"sound\"), the the conclusion must be true.",
+        "date_created": "2018-12-29T19:46:45.503321"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "premise",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:29.757818"
+          },
+          "vocab_entry_tags": [
+            "premises"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "sound argument",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:29.838285"
+          },
+          "vocab_entry_tags": [
+            "the argument is said to be \"sound\""
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "So, if an argument is sound, the conclusion is true. However, the converse is not true. An unsound argument can still have a conclusion that happens to be true, even though the argument doesn't support it. Someone might argue that the sun is a sphere because spheres are pretty\u2014that isn't a sound argument, but the conclusion is still true.",
+        "date_created": "2018-12-29T19:46:45.604080"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "sound argument",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:29.838285"
+          },
+          "vocab_entry_tags": [
+            "sound argument"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "There are four types of potential problems with premises. The first, and most obvious, is that a premise can be wrong.",
+        "date_created": "2018-12-29T19:46:45.760727"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "premise",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:29.757818"
+          },
+          "vocab_entry_tags": [
+            "premise",
+            "premises"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "Another type of premise error occurs when one or more premises are unwarranted assumptions. The premise may or may not be true, but it hasn't been established sufficiently to serve as a premise for an argument.",
+        "date_created": "2018-12-29T19:46:45.836700"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "premise",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:29.757818"
+          },
+          "vocab_entry_tags": [
+            "premise",
+            "premises"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "assumption",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:30.379886"
+          },
+          "vocab_entry_tags": [
+            "assumptions"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "The third type of premise difficulty is the most insidious: the hidden premise. Obviously, if a disagreement is based upon a hidden premise, then the disagreement will be irresolvable.",
+        "date_created": "2018-12-29T19:46:45.992395"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "insidious",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:30.549010"
+          },
+          "vocab_entry_tags": [
+            "insidious"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "irresolvable",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:30.602303"
+          },
+          "vocab_entry_tags": [
+            "irresolvable"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "The fourth potential problem with premises, one that can be very subtle, is when a premise contains a subjective judgement.",
+        "date_created": "2018-12-29T19:46:46.103500"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "premise",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:29.757818"
+          },
+          "vocab_entry_tags": [
+            "premise",
+            "premises"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "subjective",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:30.803280"
+          },
+          "vocab_entry_tags": [
+            "subjective"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "In fact, every time someone tries to form an argument to support a conclusion that isn't true, they must either employ a false premise or a logical fallacy. Remember, a sound argument (one with true premises and valid logic) cannot lead to a false conclusion. So they have no choice but to use false premises or bad logic if they want to defend a false conclusion.",
+        "date_created": "2018-12-29T19:46:46.215125"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "premise",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:29.757818"
+          },
+          "vocab_entry_tags": [
+            "premise"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "fallacy",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:26.659993"
+          },
+          "vocab_entry_tags": [
+            "fallacy"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "sound argument",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:29.838285"
+          },
+          "vocab_entry_tags": [
+            "sound argument"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "**Non Sequitur**\n\n From Latin, this term translates to \"it doesn't follow,\" and it refers to an argument in which the conclusion does not necessarily follow from the premises",
+        "date_created": "2018-12-29T19:46:46.370137"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "non sequitur",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:31.247160"
+          },
+          "vocab_entry_tags": [
+            "non sequitur"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "premise",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:29.757818"
+          },
+          "vocab_entry_tags": [
+            "premises"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "**Argument from Authority**\n\n The basic structure of such arguments is as follows: Professor X believes A, Professor X speaks from authority, therefore A is true.",
+        "date_created": "2018-12-29T19:46:46.492568"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "argument from authority",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:31.357999"
+          },
+          "vocab_entry_tags": [
+            "argument from authority"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "**Argument from Final Outcome**\n\n Such arguments (also called teleological) are based on a reversal of cause and effect, because they argue that something is caused by the ultimate effect that it has or the purpose that it serves.",
+        "date_created": "2018-12-29T19:46:46.548018"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "argument from final outcome",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:31.551544"
+          },
+          "vocab_entry_tags": [
+            "argument from final outcome"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "teleological",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:31.604171"
+          },
+          "vocab_entry_tags": [
+            "teleological"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "**Post Hoc Ergo Propter Hoc**\n\n This is perhaps the most common of logical fallacies. It follows the basic format of **A** preceded **B**, therefore **A** caused **B**, assuming cause and effect for two events just because they are temporally related (the Latin translates to \"after this, therefore because of this\").",
+        "date_created": "2018-12-29T19:46:46.682197"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "post hoc ergo propter hoc",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:31.784193"
+          },
+          "vocab_entry_tags": [
+            "post hoc ergo propter hoc"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "fallacy",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:26.659993"
+          },
+          "vocab_entry_tags": [
+            "fallacies"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "precede",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:31.981945"
+          },
+          "vocab_entry_tags": [
+            "precede"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "temporally",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:32.159872"
+          },
+          "vocab_entry_tags": [
+            "temporally"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "**Confusing Correlation with Causation**\n\n This is similar to the post hoc fallacy in that is assumes cause and effect for two variables simply because they occur together. This fallacy is often used to give a statistical correlation a causal interpretation.",
+        "date_created": "2018-12-29T19:46:46.959300"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "post hoc ergo propter hoc",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:31.784193"
+          },
+          "vocab_entry_tags": [
+            "post hoc"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "fallacy",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:26.659993"
+          },
+          "vocab_entry_tags": [
+            "fallacy"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "In essence there are always four possible interpretations of any apparent correlation. The first is that the correlation is not causal at all. The second is that A causes B. The third is that B causes A. The fourth is that A and B are both caused by another variable, C. It's helpful to go through all such possibilities before concluding that any one causal pattern is true.",
+        "date_created": "2018-12-29T19:46:47.115355"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "correlation",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:32.571348"
+          },
+          "vocab_entry_tags": [
+            "correlation"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "**Special Pleading, or Ad Hoc Reasoning**\n\n This is a subtle fallacy, often difficult to recognize. In essence, it's the arbitrary introduction of new elements into an argument in order to jerry-rig that argument so it appears valid.",
+        "date_created": "2018-12-29T19:46:47.181629"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "ad hoc reasoning",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:32.782731"
+          },
+          "vocab_entry_tags": [
+            "ad hoc reasoning"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "fallacy",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:26.659993"
+          },
+          "vocab_entry_tags": [
+            "fallacy"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "jerry-rig",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:33.006895"
+          },
+          "vocab_entry_tags": [
+            "jerry-rig"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "**Tu Quoque**\n\n The Latin phrase *tu quoque* translates to \"you too.\" This is an attempt to justify wrong action because someone else does the same thing: \"My evidence may be bad, but so is yours.\"",
+        "date_created": "2018-12-29T19:46:47.382206"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "tu quoque",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:33.220050"
+          },
+          "vocab_entry_tags": [
+            "tu quoque"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "**Ad Hominem**\n\n An ad hominem argument is one that attempts to counter another's claims or conclusions by attacking the person rather than by addressing the argument itself.",
+        "date_created": "2018-12-29T19:46:47.482320"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "ad hominem",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:33.394053"
+          },
+          "vocab_entry_tags": [
+            "ad hominem"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "The term \"poisoning the well\" refers to a form of ad hominem fallacy. This is an attempt to discredit the argument of another by implying that they possess un unsavory trait, or that they're affiliated with beliefs or people that are wrong or unpopular. A well-known form of this, which has its own name\u2014Godwin's Law or the reductio ad Hitlerum\u2014refers to an attempt at poisoning the well by drawing an analogy between another's position and Hitler or the Nazis.",
+        "date_created": "2018-12-29T19:46:47.570479"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "poisoning the well",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-12-14T17:10:44.418577"
+          },
+          "vocab_entry_tags": [
+            "poisoning the well"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "ad hominem",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:33.394053"
+          },
+          "vocab_entry_tags": [
+            "ad hominem"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "fallacy",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:26.659993"
+          },
+          "vocab_entry_tags": [
+            "fallacy"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "It should be noted, however, that not all name-calling is a logical fallacy. If I impolitely state that someone with whom I disagree is a jackass, that's not an ad hominem logical fallacy. If I say their argument is wrong because they are a jackass, then that is a fallacy.",
+        "date_created": "2018-12-29T19:46:47.903832"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "ad hominem",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:33.394053"
+          },
+          "vocab_entry_tags": [
+            "ad hominem"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "fallacy",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:26.659993"
+          },
+          "vocab_entry_tags": [
+            "fallacy"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "**Ad Ignorantiam**\n\n The argument from ignorance basically states that a specific belief is true because we don't know that it isn't true.",
+        "date_created": "2018-12-29T19:46:48.048166"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "ad ignorantiam",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:33.805617"
+          },
+          "vocab_entry_tags": [
+            "ad ignorantiam"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "Often the argument from ignorance is defended with the adage \"Absence of evidence is not evidence of absence.\" While this sounds pithy, it's not strictly true. Absence of evidence is, in fact, evidence of absence. It's just not absolute proof of absence.",
+        "date_created": "2018-12-29T19:46:48.204328"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "pithy",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:33.969563"
+          },
+          "vocab_entry_tags": [
+            "pithy"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "adage",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:34.025138"
+          },
+          "vocab_entry_tags": [
+            "adage"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "**False Continuum**\n\n A false continuum is the idea that because there is no definitive demarcation line between two extremes, the distinction between the extremes is therefore not real or meaningful.",
+        "date_created": "2018-12-29T19:46:48.315642"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "false continuum",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:34.330232"
+          },
+          "vocab_entry_tags": [
+            "false continuum"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "demarcation",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:34.381090"
+          },
+          "vocab_entry_tags": [
+            "demarcation"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "**False Dichotomy**\n\n This fallacy involves arbitrarily reducing a set of many possibilities to only two. For example, evolution isn't possible, so we must have been created.",
+        "date_created": "2018-12-29T19:46:48.548958"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "false dichotomy",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:34.569724"
+          },
+          "vocab_entry_tags": [
+            "false dichotomy"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "**Cognitive Biases and Heuristics**\n\n Cognitive biases are flaws in the way our brains process information. Heuristics are similar\u2014they're rules of thumb or mental shortcuts that are not reliably true and therefore also lead to biased thinking.",
+        "date_created": "2018-12-29T19:46:48.726183"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "hueristic",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-12-14T17:10:46.099196"
+          },
+          "vocab_entry_tags": [
+            "hueristics"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "Cognitive flaws and biases can be mitigated by metacognition, which is, simply put, thinking about thinking. Skepticism is largely a systematic effort in metacognition, which means understanding how we think and avoiding common mental pitfalls.",
+        "date_created": "2018-12-29T19:46:48.792973"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "mitigate",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-12-14T17:10:46.177193"
+          },
+          "vocab_entry_tags": [
+            "mitigated"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "metacognition",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:26.571418"
+          },
+          "vocab_entry_tags": [
+            "metacognition"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "skepticism",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-12-14T17:10:46.274127"
+          },
+          "vocab_entry_tags": [
+            "skepticism"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "**Confirmation Bias**\n\n Confirmation bias is the tendency of individuals to seek out or interpret new information as support for previously held notions or beliefs, even when such interpretations don't hold up to statistical scrutiny.",
+        "date_created": "2018-12-29T19:46:49.204159"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "confirmation bias",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-12-14T17:10:46.341439"
+          },
+          "vocab_entry_tags": [
+            "confirmation bias"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "scrutiny",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-12-14T17:10:46.396346"
+          },
+          "vocab_entry_tags": [
+            "scrutiny"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "Here's the task: There are four cards on a table before you. They each have a letter on one side and a number on the other. I have a hypothesis\u2014every card that has a vowel on one side has an even number on the other. The four cards are show A, 7, D, and 4.\n\n The question for you is this: Which cards do I need to flip over in order to test my hypothesis? The correct answer is that you need to turn over A and 7. If A doesn't have an even number on the other side, or 7 has a vowel, the hypothesis is wrong.",
+        "date_created": "2018-12-29T19:46:49.315226"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "hypothesis",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-12-14T17:10:46.464712"
+          },
+          "vocab_entry_tags": [
+            "hypothesis"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "But the core lesson remains\u2014if you want to test your hypothesis, try to prove it wrong. Do not only look for evidence to prove it right.",
+        "date_created": "2018-12-29T19:46:49.460500"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "hypothesis",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-12-14T17:10:46.464712"
+          },
+          "vocab_entry_tags": [
+            "hypothesis"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "**Fundamental Attribution Error**\n\n The fundamental attribution error is a cognitive bias in which we ascribe other people's actions to internal factors such as personality while rationalizing our own actions as being the result of external factors beyond our control.",
+        "date_created": "2018-12-29T19:46:49.650042"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "ascribe",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-12-14T17:10:46.596836"
+          },
+          "vocab_entry_tags": [
+            "ascribe"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "fundamental attribution error",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-12-14T17:10:46.652242"
+          },
+          "vocab_entry_tags": [
+            "fundamental attribution error"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "rationalize",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-12-14T17:10:46.707680"
+          },
+          "vocab_entry_tags": [
+            "rationalizing"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "Viewed from the outside, you can make anything strange look sinister and ascribe internal motivations to people. Knowing the circumstances is often enough to shed light on their behavior.",
+        "date_created": "2018-12-29T19:46:49.882077"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "ascribe",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-12-14T17:10:46.596836"
+          },
+          "vocab_entry_tags": [
+            "ascribe"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "shed light on something",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-12-14T17:10:46.822112"
+          },
+          "vocab_entry_tags": [
+            "shed light on their behavior"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "Probability puzzles are not exactly in high demand in our culture. I don't suspect that Selvin's letter to the editor went viral in the seventies; nor did the game show itself popularize the eponymous puzzle. The immense popularity of the Monty Hall problem can be directly traced to a genius writing for *Parade* magazine.",
+        "date_created": "2018-12-29T19:46:50.126240"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "eponymous",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-12-29T19:46:50.154419"
+          },
+          "vocab_entry_tags": [
+            "eponymous"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "I think the most parsimonious explanation for all scientific knowledge is that there is a an actual real physical universe out there.",
+        "date_created": "2018-12-29T19:46:50.304260"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "parsimonious",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-12-29T19:46:50.321658"
+          },
+          "vocab_entry_tags": [
+            "parsimonious"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "**Postmodernism**\n\n Postmodernism, as it applies to science, is the philosophical position that science is nothing more than a cultural narrative and therefore has no special or privileged relationship with the truth.",
+        "date_created": "2018-12-29T19:46:50.392917"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "postmodernism",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-12-29T19:46:50.517596"
+          },
+          "vocab_entry_tags": [
+            "postmodernism"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "narrative",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-12-29T19:46:50.602542"
+          },
+          "vocab_entry_tags": [
+            "narrative"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "Postmodernism, in practice, is the ultimate sour grapes of science deniers\u2014\"Well, all science is socially constructed anyway.\" Add in a little talk about fascism and oppression and you can make it all seem socially conscious.",
+        "date_created": "2018-12-29T19:46:50.748577"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "postmodernism",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-12-29T19:46:50.517596"
+          },
+          "vocab_entry_tags": [
+            "postmodernism"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "conscious",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:25.468192"
+          },
+          "vocab_entry_tags": [
+            "conscious"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "oppression",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-12-29T19:46:50.954391"
+          },
+          "vocab_entry_tags": [
+            "oppression"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "Pseudoscientists, because they are invested in a desired conclusion, will give only perfunctory consideration of competing hypotheses. Often one or two token alternatives will be put forward and summarily shot down, leaving the desired belief as the only possibility.",
+        "date_created": "2018-12-29T19:46:51.137442"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "perfunctory",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-12-29T19:46:51.250666"
+          },
+          "vocab_entry_tags": [
+            "perfunctory"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "summarily",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-12-29T19:46:51.437137"
+          },
+          "vocab_entry_tags": [
+            "summarily"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "**Denialism**\n\n Denialism or science denial refers to the motivated denial of accepted science using a series of invalid strategies.",
+        "date_created": "2018-12-29T19:46:51.615245"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "denialism",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-12-29T19:46:51.645534"
+          },
+          "vocab_entry_tags": [
+            "denialism"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "In fact denialism is a subset of pseudoscience, on that tries to cloak itself in the language of skepticism while eschewing the actual process of scientific skepticism. Denialism exists on a spectrum with skepticism, without a clear demarcation between the two.",
+        "date_created": "2018-12-29T19:46:51.804153"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "eschew",
+            "pronunciation_spelling": "es-**choo**",
+            "pronunciation_ipa": "",
+            "description": "To abstain or keep away from; shun; avoid.\r\n\r\n- evitar, rehuir",
+            "date_created": "2018-04-12T16:47:34.708924"
+          },
+          "vocab_entry_tags": [
+            "eschewing"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "spectrum",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:29.581153"
+          },
+          "vocab_entry_tags": [
+            "spectrum"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "en",
+            "entry": "demarcation",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T22:51:34.381090"
+          },
+          "vocab_entry_tags": [
+            "demarcation"
+          ]
+        }
+      ]
+    }
+  ]
+}

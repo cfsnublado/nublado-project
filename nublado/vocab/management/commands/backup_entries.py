@@ -6,6 +6,7 @@ from django.conf import settings
 from django.contrib.auth import authenticate
 from django.core.management.base import BaseCommand, CommandError
 
+from vocab.models import VocabEntry
 from vocab.utils import export_vocab_entries
 
 
@@ -31,15 +32,21 @@ class Command(BaseCommand):
         if not user.is_superuser:
             raise CommandError('Superuser required')
 
+        languages = VocabEntry.LANGUAGE_CHOICES
+
         if options['output_path']:
             base_dir = Path(options['output_path'][0])
         else:
             base_dir = Path('{0}/docs/vocab_json/entries'.format(settings.BASE_DIR))
         base_dir.mkdir(parents=True, exist_ok=True)
 
-        vocab_entries_dict = export_vocab_entries()
-        filename = base_dir / 'vocab_entries.json'
+        for language in languages:
+            language_key = language[0]
+            vocab_entries_dict = export_vocab_entries(language=language_key)
+            entries_dir = base_dir / language_key
+            entries_dir.mkdir(parents=True, exist_ok=True)
+            filename = entries_dir / 'vocab_entries.json'
 
-        with filename.open('w+') as f:
-            f.write(json.dumps(vocab_entries_dict, indent=2))
-            self.stdout.write(self.style.SUCCESS(filename))
+            with filename.open('w+') as f:
+                f.write(json.dumps(vocab_entries_dict, indent=2))
+                self.stdout.write(self.style.SUCCESS(filename))

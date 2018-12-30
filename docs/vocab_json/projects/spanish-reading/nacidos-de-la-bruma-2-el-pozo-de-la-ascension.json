@@ -1,0 +1,886 @@
+{
+  "vocab_project_data": {
+    "name": "Spanish Reading",
+    "description": "A vocab project for Spanish reading materials.",
+    "date_created": "2018-11-28T18:27:06.506109"
+  },
+  "vocab_source_data": {
+    "source_type": 1,
+    "name": "Nacidos de la bruma 2: El pozo de la ascensi\u00f3n",
+    "description": "El segundo libro de la trilog\u00eda Nacidos de la bruma, escrito por Brandon Sanderson.",
+    "date_created": "2018-12-29T19:24:41.770011"
+  },
+  "vocab_contexts": [
+    {
+      "vocab_context_data": {
+        "content": "El koloss lo mir\u00f3 con aquellos ojos como cuentas ilegibles. Ten\u00eda una arruga de un ojo a otro, por encima de la nariz, y una arruga secundaria que le llegaba hasta las fosas nasales; la nariz tan apretada que se le torc\u00eda y se le aplastaba.",
+        "date_created": "2018-12-29T19:24:41.787435"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "torcer",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "enroscar - twist",
+            "date_created": "2018-04-12T16:51:33.862094"
+          },
+          "vocab_entry_tags": [
+            "torc\u00eda"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "fosa nasal",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "nostril",
+            "date_created": "2018-04-12T16:48:54.239112"
+          },
+          "vocab_entry_tags": [
+            "fosas nasales"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "\"No s\u00e9 por qu\u00e9, dudo que en un 'trato mejor' quepan los koloss, Mejestad.\"",
+        "date_created": "2018-12-29T19:24:41.964980"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "caber",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-04-12T16:51:17.650191"
+          },
+          "vocab_entry_tags": [
+            "quepan"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "\u00bfQu\u00e9 sab\u00eda realmente de Demoux? Era uno los los rebeldes skaa reclutados por Kelsier hac\u00eda casi dos a\u00f1os. Hab\u00eda sido un buen soldado, y su ascenso fue r\u00e1pido.",
+        "date_created": "2018-12-29T19:24:42.032326"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "reclutar",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T18:27:25.523207"
+          },
+          "vocab_entry_tags": [
+            "reclutados"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "ascenso",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-04-12T16:51:33.346704"
+          },
+          "vocab_entry_tags": [
+            "ascenso"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "Mantener incluso ese peque\u00f1o n\u00famero estaba menguando sus recursos.",
+        "date_created": "2018-12-29T19:24:42.198567"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "menguar",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-04-12T16:49:35.409376"
+          },
+          "vocab_entry_tags": [
+            "menguando"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "Los koloss normalmente s\u00f3lo se atacaban entre s\u00ed. A menos que entraran en un frenes\u00ed sangriento",
+        "date_created": "2018-12-29T19:24:42.265407"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "frenes\u00ed",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "delirio furioso - frenzy, delirium, madness",
+            "date_created": "2018-04-12T16:48:31.209720"
+          },
+          "vocab_entry_tags": [
+            "frenes\u00ed"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "Elend se volvi\u00f3 para ver c\u00f3mo Han sub\u00eda los \u00faltimos escalones. El aire era fr\u00edo, la escarcha todav\u00eda cubr\u00eda la piedra que estaba a la sombra.",
+        "date_created": "2018-12-29T19:24:42.365045"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "escarcha",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "dew",
+            "date_created": "2018-04-12T16:48:46.413374"
+          },
+          "vocab_entry_tags": [
+            "escarcha"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "Tal vez la gente estaba tan asustada que se hab\u00eda escondido. O tal vez simplemente estaban todos en el campo, ocup\u00e1ndose de los reba\u00f1os.",
+        "date_created": "2018-12-29T19:24:42.454055"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "reba\u00f1o",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "flock",
+            "date_created": "2018-04-12T16:51:26.273985"
+          },
+          "vocab_entry_tags": [
+            "reba\u00f1os"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "De haber podido encontrar el atium del Lord Legislador, tal vez las cosas hubieran sido distintas. En aquellos momentos, el reino de Elend corr\u00eda un serio peligro de caer en la bancarrota.",
+        "date_created": "2018-12-29T19:24:42.510204"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "bancarrota",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "bankruptcy",
+            "date_created": "2018-04-12T16:51:39.556097"
+          },
+          "vocab_entry_tags": [
+            "bancarrota"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "\"Tienes buenas ideas, Elend Venture,\" dijo Tindwyl. \"Sin embargo, no eres un rey. Un hombre s\u00f3lo puede liderar cuando los dem\u00e1s lo aceptan como l\u00edder, y tiene s\u00f3lo la autoridad que le dan sus s\u00fabditos. Las ideas m\u00e1s brillantes del mundo no podr\u00e1n salvar tu reino si nadie las escucha.\"",
+        "date_created": "2018-12-29T19:24:42.609589"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "l\u00edder",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-04-12T16:51:39.357229"
+          },
+          "vocab_entry_tags": [
+            "l\u00edder"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "s\u00fabdito",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-12-26T14:55:22.093450"
+          },
+          "vocab_entry_tags": [
+            "s\u00fabditos"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "liderar",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-04-12T16:51:39.044457"
+          },
+          "vocab_entry_tags": [
+            "liderar"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "\"T\u00fa tambi\u00e9n,\" le dijo a Vin. Vin se envar\u00f3 un poco. Mir\u00f3 a Elend.",
+        "date_created": "2018-12-29T19:24:42.810242"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "envararse",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "endurecerse - to become stiff",
+            "date_created": "2018-04-12T16:51:38.780857"
+          },
+          "vocab_entry_tags": [
+            "se envar\u00f3"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "\"Cuando mis antepasados consideraron sus opciones, prefirieron la servidumbre voluntaria a la esclavitud forzada.\" - OreSeur revel\u00e1ndole a Vin sus or\u00edgenes y c\u00f3mo el Lord Legislador era el Padre, el creador de su especie.",
+        "date_created": "2018-12-29T19:24:42.932480"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "esclavitud",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-04-12T16:49:05.282934"
+          },
+          "vocab_entry_tags": [
+            "esclavitud"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "antepasado",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "anscestor",
+            "date_created": "2018-04-12T16:51:38.499939"
+          },
+          "vocab_entry_tags": [
+            "antepasados"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "servidumbre",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-04-12T16:48:55.962201"
+          },
+          "vocab_entry_tags": [
+            "servidumbre"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "La mayor\u00eda de los lores mataban a los inv\u00e1lidos para impedir que menguaran sus recursos.",
+        "date_created": "2018-12-29T19:24:43.355601"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "impedir",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-04-12T16:51:19.747157"
+          },
+          "vocab_entry_tags": [
+            "impedir"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "menguar",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-04-12T16:49:35.409376"
+          },
+          "vocab_entry_tags": [
+            "menguaran"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "Los golpes recibidos la noche anterior, ya oscuros cardenales, eran un recordatorio que cu\u00e1l era su sitio.",
+        "date_created": "2018-12-29T19:24:43.488132"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "recordatorio",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "reminder",
+            "date_created": "2018-04-12T16:50:05.828076"
+          },
+          "vocab_entry_tags": [
+            "recordatorio"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "cardenal",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-04-12T16:51:38.112235"
+          },
+          "vocab_entry_tags": [
+            "cardenales"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "Al cabo de un rato llegaron a la calle Kenton, ya la multitud dej\u00f3 paso al carruaje. Vin baj\u00f3 la primera, seguida de OreSeur. La calle del mercado estaba abarrotada, aunque no tanto como la \u00faltima vez que la hab\u00eda visitado.",
+        "date_created": "2018-12-29T19:24:43.743070"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "abarrotado",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "muy lleno\r\n\r\n- crowded, packed, jam-packed",
+            "date_created": "2018-04-12T16:49:00.882328"
+          },
+          "vocab_entry_tags": [
+            "abarrotada"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "La calle estaba tan abarrotada que Vin normalmente la evitaba, y aquel d\u00eda era peor que nunca.",
+        "date_created": "2018-12-29T19:24:43.809943"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "abarrotado",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "muy lleno\r\n\r\n- crowded, packed, jam-packed",
+            "date_created": "2018-04-12T16:49:00.882328"
+          },
+          "vocab_entry_tags": [
+            "abarrotada"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "peor que nunca",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "worse than ever",
+            "date_created": "2018-04-12T16:51:37.866415"
+          },
+          "vocab_entry_tags": [
+            "peor que nunca"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "Dibuj\u00f3 varias letras en la tierra con un palo largo, ofreciendo un modelo a su media docena de estudiantes. Ellos procedieron a garabatear sus copias, reescribiendo las palabras varias veces.",
+        "date_created": "2018-12-29T19:24:43.931968"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "prodecer",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-04-12T16:50:30.876764"
+          },
+          "vocab_entry_tags": [
+            "procedieron"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "garabatear",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T18:27:23.788499"
+          },
+          "vocab_entry_tags": [
+            "garabatear"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "El soldado se protegi\u00f3 de la luz con una mano y aguz\u00f3 la vista.",
+        "date_created": "2018-12-29T19:24:44.042999"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "aguzar",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-04-12T16:51:37.570391"
+          },
+          "vocab_entry_tags": [
+            "aguz\u00f3"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "Pero, de nuevo, Vin se encontr\u00f3 ante un dilema. \u00bfC\u00f3mo reaccionar ante una fuerza tan abrumadora? \u00bfAcobardarse, o seguir luchando por la vida?",
+        "date_created": "2018-12-29T19:24:44.132374"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "acobardarse",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-04-12T16:51:37.434139"
+          },
+          "vocab_entry_tags": [
+            "acobardarse"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "abrumador",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-04-12T16:47:57.102983"
+          },
+          "vocab_entry_tags": [
+            "abrumadora"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "Mientras aguardaba a que los soldados se prepararan (afortunadamente le devolvieron su mochila), Sazed pens\u00f3 en lo que Jastes acababa de decir. Cett o Straff. \u00bfCu\u00e1ntas fuerzas pretend\u00edan arrebatarle a Elend su ciudad?",
+        "date_created": "2018-12-29T19:24:44.265279"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "aguardar",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-04-12T16:51:37.299983"
+          },
+          "vocab_entry_tags": [
+            "aguardaba"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "arrebatar",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-12-14T04:48:42.754477"
+          },
+          "vocab_entry_tags": [
+            "arrebatarle"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "A medida que el ej\u00e9rcito se aproximaba, las flechas empezaron a rebasar la muralla, mezcladas con monedas voladoras. Straff ten\u00eda alom\u00e1nticos en el grupo. Elend maldijo y se puso a cubierto tras uno de los parapetos mientras las monedas rebotaban contra la piedra. Unos cuantos soldados cayeron.",
+        "date_created": "2018-12-29T19:24:44.387623"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "aproximarse",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "acercar - approach",
+            "date_created": "2018-04-12T16:51:36.780160"
+          },
+          "vocab_entry_tags": [
+            "se aproximaba"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "rebotar",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "botar repetidamente - bounce, ricochet",
+            "date_created": "2018-04-12T16:48:04.627128"
+          },
+          "vocab_entry_tags": [
+            "rebotaban"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "rebasar",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "pasar un l\u00efmite - overflow",
+            "date_created": "2018-04-12T16:51:36.524822"
+          },
+          "vocab_entry_tags": [
+            "rebasar"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "parapeto",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "baranda de protecci\u00f3n - bulwark, parapet, barricade",
+            "date_created": "2018-04-12T16:51:36.313792"
+          },
+          "vocab_entry_tags": [
+            "parapetos"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "Sazed segu\u00eda sin comprender c\u00f3mo las criaturas continuan viviendo. Los clavos eran lo bastante anchos como para llenar las cuencas de los ojos por entero; hab\u00edan destruido los globos oculares y las puntas les sobresal\u00edan de la nuca. No manaba sangre de las heridas: por alg\u00fan motivo, eso los hac\u00eda parecer a\u00fan m\u00e1s extra\u00f1os.",
+        "date_created": "2018-12-29T19:24:44.621766"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "sobresalir",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-04-12T16:51:36.086439"
+          },
+          "vocab_entry_tags": [
+            "sobresal\u00edan"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "globo ocular",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "eyeball",
+            "date_created": "2018-04-12T16:51:35.903453"
+          },
+          "vocab_entry_tags": [
+            "globos oculares"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "cuenca del ojo",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "eye socket",
+            "date_created": "2018-04-12T16:51:35.681069"
+          },
+          "vocab_entry_tags": [
+            "cuencas de los ojos"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "manar",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-12-12T23:28:01.682345"
+          },
+          "vocab_entry_tags": [
+            "manaba"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "\"Vamos a hacer lo que Kelsier nos ense\u00f1\u00f3, Vin. Vamos a sobrevivir.\"\r\nFIN DEL LIBRO SEGUNDO",
+        "date_created": "2018-12-29T19:24:45.009962"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "ense\u00f1ar",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-04-12T16:51:13.949888"
+          },
+          "vocab_entry_tags": [
+            "ense\u00f1\u00f3"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "sobrevivir",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "Va con \"a\" en frases. Sobrevivir a ...",
+            "date_created": "2018-04-12T16:48:25.743196"
+          },
+          "vocab_entry_tags": [
+            "sobrevivir"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "_La comida se est\u00e1 convirtiendo ya en un problema._ Por fortuna, Elend ten\u00eda dep\u00f3sitos de almac\u00e9n. Pero \u00bfcu\u00e1nto durar\u00edan las reservas durante el asedio?",
+        "date_created": "2018-12-29T19:24:45.132286"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "almac\u00e9n",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "storage, warehouse",
+            "date_created": "2018-04-12T16:50:25.864667"
+          },
+          "vocab_entry_tags": [
+            "almac\u00e9n"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "asedio",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "Cerco que se pone a un lugar para impedir que salgan los que est\u00e1n en \u00e9l o que reciban socorro de fuera\r\n\r\n- siege",
+            "date_created": "2018-04-12T16:49:43.613443"
+          },
+          "vocab_entry_tags": [
+            "asedio"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "\u00bfQu\u00e9 mejor forma podr\u00eda haber de que una criatura semejante obtuviera la libertad? Los hombres mor\u00edan en nombre de las profec\u00edas. Quer\u00edan creer, tener esperanza. Si algo, alguien, pod\u00eda dominar esa energ\u00eda, tergiversarla, qu\u00e9 cosas tan sorprendentes lograr\u00eda...",
+        "date_created": "2018-12-29T19:24:45.254952"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "esperanza",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "hope",
+            "date_created": "2018-04-12T16:50:42.334484"
+          },
+          "vocab_entry_tags": [
+            "esperanza"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "tergiversar",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-04-12T16:50:17.163372"
+          },
+          "vocab_entry_tags": [
+            "tergiversarla"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "semejante",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "",
+            "date_created": "2018-11-28T18:27:23.398340"
+          },
+          "vocab_entry_tags": [
+            "semejante"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "_Tal vez pueda aprender de ella,_ pens\u00f3. _\u00bfQu\u00e9 har\u00eda Vin en mi situaci\u00f3n? Desde luego no ir\u00eda paseando por ah\u00ed, rumiando y compadeci\u00e9ndose de s\u00ed misma._",
+        "date_created": "2018-12-29T19:24:45.566094"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "compadecer",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "sentir pena a alguien - feel sorry for, take pity on",
+            "date_created": "2018-04-12T16:51:34.481841"
+          },
+          "vocab_entry_tags": [
+            "compadeci\u00e9ndose"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "rumiar",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "pensar demasiado, ensimismarse - ruminate",
+            "date_created": "2018-04-12T16:48:11.049263"
+          },
+          "vocab_entry_tags": [
+            "rumiando"
+          ]
+        }
+      ]
+    },
+    {
+      "vocab_context_data": {
+        "content": "\"Espero que no. Pero veremos qu\u00e9 les parecen sus precios cuando vean este lugar. Comprendo los precios de la comida, considerando su escasez. Sin embargo, no hay m\u00e1s motivo que la avaricia para negarle la ropa a la gente.\"",
+        "date_created": "2018-12-29T19:24:45.800709"
+      },
+      "vocab_entries": [
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "avaricia",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "codicia desmedida - avarice, greed",
+            "date_created": "2018-04-12T16:51:34.170122"
+          },
+          "vocab_entry_tags": [
+            "avaricia"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "sin embargo",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "contraste, no obstante - nevertheless, however",
+            "date_created": "2018-04-12T16:51:16.197534"
+          },
+          "vocab_entry_tags": [
+            "sin embargo"
+          ]
+        },
+        {
+          "vocab_entry_data": {
+            "language": "es",
+            "entry": "escasez",
+            "pronunciation_spelling": "",
+            "pronunciation_ipa": "",
+            "description": "insuficiencia - shortage, scarcity",
+            "date_created": "2018-04-12T16:48:36.688828"
+          },
+          "vocab_entry_tags": [
+            "escasez"
+          ]
+        }
+      ]
+    }
+  ]
+}

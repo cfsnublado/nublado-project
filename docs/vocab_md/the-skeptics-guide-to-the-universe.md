@@ -725,3 +725,55 @@ project_name: English Reading
     en: demarcation: demarcation
 
     </div>
+
+- P-hacking leads to a tremendous waste of scientific resources. It's incredibly inefficient, flooding the literature with spurious results that probably won't be replicated. It's also almost entirely ignored when reporting science to the public. All the public hears is, "Scientists report a significant result," but most of what gets relayed as excited scientific breakthroughs is simply crap cluttering up the scientific journals.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: spurious: spurious
+
+    </div>
+
+- **Conspiracy Theories**
+
+    A conspiracy theory, or more precisely a grand conspiracy, is a belief system that involves at its core the claim that a vastly powerful group is carrying out a deception against the public for their own nefarious ends.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: conspiracy: conspiracy
+
+    en: nefarious: nefarious
+
+    </div>
+
+- Conspiracy thinking is arguably the confluence of many of the logical fallacies and cognitive biases that we have already discussed. In many ways it is the "one ring to rule them all" of faulty thinking.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: conspiracy: conspiracy
+
+    en: confluence: confluence
+
+    en: logical fallacy: logical fallacies
+
+    en: cognitive bias: cognitive biases
+
+    </div>
+
+- The grand conspiracy forms a triangle of sorts. First there are the conspirators. This is typically a large, powerful, and shadowy organization with vast resources and control. They need to be powerful in order to fake moon landings, poison the public through jet exhaust, or frame terrorists for 9/11. Then there are the conspiracy theorists, an "Army of Light" that is able to see through the conspiracy (because they are just so clever). Finally, there is everyone else, the dupes or "sheeple" who believe the standard explanation of history and current events.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: grand conspiracy: grand conspiracy
+
+    en: conspirator: conspirators
+
+    en: conspiracy theorist: conspiracty theorists
+
+    en: conspiracy: conspiracy
+
+    en: dupe: dupes
+
+    </div>
+
+- 

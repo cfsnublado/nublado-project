@@ -205,7 +205,33 @@ ref="sidebarNav"
 
 {% block sidebar_nav_items_top %}{% endblock sidebar_nav_items_top %}
 
-{% block sidebar_nav_items %}{% endblock sidebar_nav_items %}
+{% block sidebar_nav_items %}
+
+{% if user.is_authenticated %}
+  <li class="nav-item">
+  <a
+  id="sidebar-nav-dashboard" 
+  class="nav-link" 
+  href="{% url 'vocab:vocab_user_dashboard' %}">
+  <i class="nav-link-icon fas fa-tachometer-alt fa-fw"></i>
+  {% trans "label_vocab_dashboard" %}
+  </a>
+  </li>
+
+  <li class="divider"></li>
+
+  <li class="nav-item">
+  <a
+  id="sidebar-nav-profile" 
+  class="nav-link" 
+  href="{% url 'users:profile_update' user.username %}">
+  <i class="nav-link-icon fas fa-user-circle fa-fw"></i>
+  {% trans "label_profile" %}
+  </a>
+  </li>
+{% endif %}
+
+{% endblock sidebar_nav_items %}
 
 {% block sidebar_nav_items_bottom %}{% endblock sidebar_nav_items_bottom %}
 

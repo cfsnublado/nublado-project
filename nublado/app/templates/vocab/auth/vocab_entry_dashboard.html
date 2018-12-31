@@ -47,7 +47,11 @@
 </div>
 
 <div style="margin-top: 30px;">
-{{ vocab_entry.description|to_html|safe }}
+<ul>
+{% for vocab_definition in vocab_entry.vocab_definitions.all %}
+  <li> {{ vocab_definition.get_definition_type_display }} - {{ vocab_definition.definition | capfirst }} </li>
+{% endfor %}
+</ul>
 </div>
 
 </div>

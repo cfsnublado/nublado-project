@@ -381,34 +381,24 @@ msgid "label_vocab_entry_plural"
 msgstr "Tu vocabulario"
 
 #: nublado/vocab/models.py:157
-#, fuzzy
-#| msgid "label_login"
 msgid "label_noun"
-msgstr "Iniciar sesión"
+msgstr "sustantivo"
 
 #: nublado/vocab/models.py:158
-#, fuzzy
-#| msgid "label_update"
 msgid "label_adjective"
-msgstr "Actualizar"
+msgstr "adjetivo"
 
 #: nublado/vocab/models.py:159
-#, fuzzy
-#| msgid "label_user"
 msgid "label_verb"
-msgstr "Usuario"
+msgstr "verbo"
 
 #: nublado/vocab/models.py:160
-#, fuzzy
-#| msgid "label_user"
 msgid "label_adverb"
-msgstr "Usuario"
+msgstr "adverbio"
 
 #: nublado/vocab/models.py:161
-#, fuzzy
-#| msgid "label_new_password"
 msgid "label_expression"
-msgstr "Nueva contraseña"
+msgstr "expresión"
 
 #: nublado/vocab/models.py:170
 #, fuzzy

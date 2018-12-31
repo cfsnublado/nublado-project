@@ -32,6 +32,26 @@ def get_oxford_entry_data(json_data):
                                 print(lexical_category + ": " + definition)
 
 
+def add_definitions_from_oxford(json_data, vocab_entry):
+    '''
+    json_data: The json returned from the Oxford api for a vocab entry.
+    '''
+    for result in json_data['results']:
+        for lexical_entry in result['lexicalEntries']:
+            lexical_category = lexical_entry['lexicalCategory']
+
+            if 'derivativeOf' in lexical_entry:
+                print('Derived from:')
+                for derived_from in lexical_entry['derivativeOf']:
+                    print(derived_from['id'])
+            else:
+                for entry in lexical_entry['entries']:
+                    if 'senses' in entry:
+                        for sense in entry['senses']:
+                            for definition in sense['definitions']:
+                                print(lexical_category + ": " + definition)
+
+
 class OxfordAPIEntryView(APIDefaultsMixin, APIView):
     permission_classes = (
         IsAuthenticated,

@@ -3,12 +3,12 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse
 from django.views.generic import (
     CreateView, DeleteView, ListView, TemplateView,
-    View, UpdateView
+    UpdateView
 )
 
 from core.views import (
     AjaxDeleteMixin, AjaxFormMixin,
-    JsonAttachmentMixin, MessageMixin, ObjectSessionMixin,
+    MessageMixin, ObjectSessionMixin,
     UserstampMixin
 )
 from ..conf import settings

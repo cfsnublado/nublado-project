@@ -14,7 +14,8 @@ inline-template
 
   <ul 
   id="vocab-definitions"
-  v-if="definitionsVisible"
+  v-show="definitionsVisible && definitions.length > 0"
+  v-cloak
   >
     <li 
     v-for="definition in definitions"
@@ -23,7 +24,10 @@ inline-template
     </li>
   </ul>
 
-  <span v-if="definitionsVisible && definitions.length == 0 && definitionsLoaded">
+  <span 
+  v-show="definitionsVisible && definitions.length == 0 && definitionsLoaded"
+  v-cloak
+  >
   There are no definitions.
   </span>
 

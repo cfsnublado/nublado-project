@@ -23,8 +23,14 @@ Vue.component('symbol-key', SymbolKey)
 Vue.component('ipa-symbol-key', IpaSymbolKey)
 Vue.component('symbol-keypad', SymbolKeypad)
 Vue.component('ipa-symbol-keypad', IpaSymbolKeypad)
-Vue.component('oxford-api', OxfordApi)
+Vue.component('entry-definitions', EntryDefinitions)
 Vue.use(ModalPlugin)
+
+Vue.filter('capitalize', function (value) {
+  if (!value) return ''
+  value = value.toString()
+  return value.charAt(0).toUpperCase() + value.slice(1)
+})
 
 // Instantiate main app instance.
 const vm = new Vue({

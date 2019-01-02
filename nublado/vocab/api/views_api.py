@@ -129,6 +129,41 @@ class VocabDefinitionViewSet(
     )
 
 
+class NestedVocabDefinitionViewSet(
+    APIDefaultsMixin, CreateModelMixin,
+    ListModelMixin, GenericViewSet
+):
+    lookup_field = 'pk'
+    lookup_url_kwarg = 'pk'
+    queryset = VocabDefinition.objects.select_related('vocab_entry')
+    serializer_class = VocabDefinitionSerializer
+    permission_classes = (
+        IsAuthenticated,
+    )
+    vocab_entry = None
+
+    def get_vocab_entry(self, vocab_entry_pk=None):
+        if not self.vocab_entry:
+            self.vocab_entry = get_object_or_404(VocabEntry, id=vocab_entry_pk)
+        return self.vocab_entry
+
+    def perform_create(self, serializer):
+        vocab_entry = self.get_vocab_project(
+            vocab_entry_pk=self.kwargs['vocab_entry_pk']
+        )
+        serializer.save(
+            creator=self.request.user,
+            vocab_entry=vocab_entry
+        )
+
+    def get_queryset(self):
+        return self.queryset.filter(vocab_entry_id=self.kwargs['vocab_entry_pk'])
+
+    def list(self, request, *args, **kwargs):
+        self.get_vocab_entry(vocab_entry_pk=kwargs['vocab_entry_pk'])
+        return super(NestedVocabDefinitionViewSet, self).list(request, *args, **kwargs)
+
+
 class VocabSourceViewSet(
     APIDefaultsMixin, RetrieveModelMixin, UpdateModelMixin,
     DestroyModelMixin, ListModelMixin, GenericViewSet

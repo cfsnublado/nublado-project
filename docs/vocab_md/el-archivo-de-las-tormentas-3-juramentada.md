@@ -760,6 +760,38 @@ project_name: Spanish Reading
 
     </div>
 
+- Velo sintió que la recorría una conmoción. Dio media vuelta e irrumpió de nuevo en el reservado. Ur dio un gemido, se encogió más y se aferró la mano herida. 
+
+    —¿Hubo otro asesinato? —exigió saber Velo.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: irrumpir: irrumpió
+
+    es: encogerse: se encogió
+
+    es: aferrarse: se aferró
+
+    es: asesinato: asesinato
+
+    </div>
+
+- Velo se notó mareada, aunque no sabía si era por la bebida o por la perturbadora imagen de las mujeres estranguladas. Fue a dar al tabernero unas esferas, casi a ciencia cierta demasiadas, enganchó la jarra de blanco comecuernos con el pulgar y se la llevó consigo a la noche.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: mareado: mareada
+
+    es: perturbador: perturbadora
+
+    es: a ciencia cierta: a ciencia cierta
+
+    es: llevarse: se la llevó
+
+    es: enganchar: enganchó
+
+    </div>
+
 - 
 
 

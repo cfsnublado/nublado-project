@@ -47,11 +47,11 @@
 </div>
 
 <div style="margin-top: 30px;">
-<ul>
-{% for vocab_definition in vocab_entry.vocab_definitions.all %}
-  <li> {{ vocab_definition.get_definition_type_display }} - {{ vocab_definition.definition | capfirst }} </li>
-{% endfor %}
-</ul>
+
+{% url 'api:nested-vocab-definition-list' vocab_entry.id as vocab_definitions_url %}
+
+{% include "vocab/includes/_vocab_definitions.html" with definitions_url=vocab_definitions_url %}
+
 </div>
 
 </div>

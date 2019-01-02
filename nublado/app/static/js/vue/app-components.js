@@ -695,6 +695,73 @@ const IpaSymbolKeypad = {
   },
 }
 
+const EntryDefinitions = {
+  props: {
+    initEndpointUrl: {
+      type: String,
+      required: true
+    },
+    initFetchFromAPI: {
+      type: Boolean,
+      default: false
+    }
+  },
+  data() {
+    return {
+      endpointUrl: this.initEndpointUrl,
+      fetchFromAPI: this.initFetchFromAPI,
+      definitions: [],
+      definitionsVisible: false,
+      definitionsLoaded: false,
+      processing: false,
+    }
+  },
+  methods: {
+    toggleDefinitionsVisible() {
+      this.definitionsVisible = !this.definitionsVisible
+      if (this.definitionsVisible && !this.definitionsLoaded) {
+        this.getDefinitions()
+      }
+      console.log(this.definitionsVisible)
+    },
+    getDefinitions() {
+      console.log('Get definitions')
+      this.process()
+      axios.get(
+        this.endpointUrl
+      )
+      .then(response => {
+        this.success(response)
+      })
+      .catch(error => {
+        if (error.response) {
+          console.log(error.response)
+        } else if (error.request) {
+          console.log(error.request)
+        } else {
+          console.log(error.message)
+        }
+        console.log(error.config)
+      })
+      .finally(() => this.complete())
+    },
+    process() {
+      this.processing = true
+      this.$emit('ajax-process')
+    },
+    complete() {
+      this.processing = false
+      this.definitionsLoaded = true
+      this.$emit('ajax-complete')
+    },
+    success(response) {
+      this.definitions = response.data
+      console.log(this.definitions)
+      this.$emit('ajax-success')
+    }, 
+  }
+}
+
 /** THIRD PARTY **/
 
 const OxfordApi = {

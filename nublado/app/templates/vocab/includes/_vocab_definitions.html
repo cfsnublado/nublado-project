@@ -1,0 +1,32 @@
+<entry-definitions
+init-endpoint-url="{{ definitions_url }}"
+inline-template
+>
+
+<div>
+  <a 
+  href="#" 
+  class="ui button"
+  @click.prevent="toggleDefinitionsVisible"
+  >
+  View definitions
+  </a>
+
+  <ul 
+  id="vocab-definitions"
+  v-if="definitionsVisible"
+  >
+    <li 
+    v-for="definition in definitions"
+    >
+    [[ definition.definition_type_name | capitalize ]] - [[ definition.definition | capitalize ]]
+    </li>
+  </ul>
+
+  <span v-if="definitionsVisible && definitions.length == 0 && definitionsLoaded">
+  There are no definitions.
+  </span>
+
+</div>
+
+</entry-definitions>

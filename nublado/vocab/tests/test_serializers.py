@@ -167,6 +167,11 @@ class VocabEntrySerializerTest(TestCommon):
             'pronunciation_ipa': self.vocab_entry.pronunciation_ipa,
             'pronunciation_spelling': self.vocab_entry.pronunciation_spelling,
             'slug': self.vocab_entry.slug,
+            'vocab_definitions_url': drf_reverse(
+                'api:nested-vocab-definition-list',
+                kwargs={'vocab_entry_pk': self.vocab_entry.id},
+                request=self.request
+            ),
             'date_created': self.vocab_entry.date_created.isoformat(),
             'date_updated': self.vocab_entry.date_updated.isoformat(),
         }
@@ -187,6 +192,11 @@ class VocabEntrySerializerTest(TestCommon):
             'pronunciation_ipa': self.vocab_entry.pronunciation_ipa,
             'pronunciation_spelling': self.vocab_entry.pronunciation_spelling,
             'slug': self.vocab_entry.slug,
+            'vocab_definitions_url': drf_reverse(
+                'api:nested-vocab-definition-list',
+                kwargs={'vocab_entry_pk': self.vocab_entry.id},
+                request=self.request
+            ),
             'date_created': self.vocab_entry.date_created.isoformat(),
             'date_updated': self.vocab_entry.date_updated.isoformat(),
         })
@@ -254,6 +264,7 @@ class VocabDefinitionSerializerTest(TestCommon):
                 request=self.request
             ),
             'definition_type': self.vocab_definition.definition_type,
+            'definition_type_name': self.vocab_definition.get_definition_type_display(),
             'definition': self.vocab_definition.definition,
             'date_created': self.vocab_definition.date_created.isoformat(),
             'date_updated': self.vocab_definition.date_updated.isoformat(),
@@ -276,6 +287,7 @@ class VocabDefinitionSerializerTest(TestCommon):
                 request=self.request
             ),
             'definition_type': self.vocab_definition.definition_type,
+            'definition_type_name': self.vocab_definition.get_definition_type_display(),
             'definition': self.vocab_definition.definition,
             'date_created': self.vocab_definition.date_created.isoformat(),
             'date_updated': self.vocab_definition.date_updated.isoformat(),
@@ -341,6 +353,7 @@ class VocabSourceSerializerTest(TestCommon):
             'description': self.vocab_source.description,
             'slug': self.vocab_source.slug,
             'source_type': self.vocab_source.source_type,
+            'source_type_name': self.vocab_source.get_source_type_display(),
             'vocab_contexts_url': drf_reverse(
                 'api:nested-vocab-context-list',
                 kwargs={'vocab_source_pk': self.vocab_source.id},
@@ -376,6 +389,7 @@ class VocabSourceSerializerTest(TestCommon):
             'description': self.vocab_source.description,
             'slug': self.vocab_source.slug,
             'source_type': self.vocab_source.source_type,
+            'source_type_name': self.vocab_source.get_source_type_display(),
             'vocab_contexts_url': drf_reverse(
                 'api:nested-vocab-context-list',
                 kwargs={'vocab_source_pk': self.vocab_source.id},

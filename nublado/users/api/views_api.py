@@ -12,9 +12,9 @@ class UserViewSet(APIDefaultsMixin, ModelViewSet):
     lookup_url_kwarg = User.USERNAME_FIELD
     queryset = User.objects.select_related("profile").order_by(User.USERNAME_FIELD)
     serializer_class = UserSerializer
-    permission_classes = (
-        IsAdminUser,
-    )
+    permission_classes = [
+        IsAdminUser
+    ]
 
 
 class ProfileViewSet(APIDefaultsMixin, ModelViewSet):
@@ -23,6 +23,6 @@ class ProfileViewSet(APIDefaultsMixin, ModelViewSet):
     lookup_url_kwarg = "username"
     queryset = Profile.objects.select_related("user")
     serializer_class = ProfileSerializer
-    permission_classes = (
-        IsAdminUser,
-    )
+    permission_classes = [
+        IsAdminUser
+    ]

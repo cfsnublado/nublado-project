@@ -79,30 +79,10 @@ class VocabProjectViewSetTest(TestCommon):
 
     def test_view_setup(self):
         view = VocabProjectViewSet()
-        permission_classes = (IsAuthenticated,)
-        self.assertEqual(permission_classes, view.permission_classes)
         self.assertEqual('pk', view.lookup_field)
         self.assertEqual('pk', view.lookup_url_kwarg)
         self.assertEqual(VocabProjectSerializer, view.serializer_class)
         self.assertCountEqual(VocabProject.objects.all(), view.queryset)
-
-    def test_view_permissions(self):
-        response = self.client.get(
-            reverse(
-                'api:vocab-project-detail',
-                kwargs={'pk': self.vocab_project.id}
-            ),
-        )
-        self.assertEqual(response.status_code, drf_status.HTTP_403_FORBIDDEN)
-
-        self.login_test_user(self.user.username)
-        response = self.client.get(
-            reverse(
-                'api:vocab-project-detail',
-                kwargs={'pk': self.vocab_project.id}
-            ),
-        )
-        self.assertEqual(response.status_code, drf_status.HTTP_200_OK)
 
     def test_inheritance(self):
         classes = (
@@ -210,30 +190,10 @@ class VocabEntryViewSetTest(TestCommon):
 
     def test_view_setup(self):
         view = VocabEntryViewSet()
-        permission_classes = (IsAuthenticated,)
-        self.assertEqual(permission_classes, view.permission_classes)
         self.assertEqual('pk', view.lookup_field)
         self.assertEqual('pk', view.lookup_url_kwarg)
         self.assertEqual(VocabEntrySerializer, view.serializer_class)
         self.assertCountEqual(VocabEntry.objects.all(), view.queryset)
-
-    def test_view_permissions(self):
-        response = self.client.get(
-            reverse(
-                'api:vocab-entry-detail',
-                kwargs={'pk': self.vocab_entry.id}
-            ),
-        )
-        self.assertEqual(response.status_code, drf_status.HTTP_403_FORBIDDEN)
-
-        self.login_test_user(self.user.username)
-        response = self.client.get(
-            reverse(
-                'api:vocab-entry-detail',
-                kwargs={'pk': self.vocab_entry.id}
-            ),
-        )
-        self.assertEqual(response.status_code, drf_status.HTTP_200_OK)
 
     def test_inheritance(self):
         classes = (
@@ -447,37 +407,8 @@ class VocabEntryExportViewTest(TestCommon):
         view = setup_test_view(VocabEntryExportView(), request)
         response = view.dispatch(view.request, *view.args, **view.kwargs)
         self.assertEqual(response.status_code, drf_status.HTTP_200_OK)
-        permission_classes = (IsAuthenticated, IsSuperuser)
+        permission_classes = [IsAuthenticated, IsSuperuser]
         self.assertEqual(permission_classes, view.permission_classes)
-
-    def test_view_permissions(self):
-        user_2 = User.objects.create(
-            username='kfl7',
-            email='kfl7@foo.com',
-            first_name='Karen',
-            last_name='Fuentes',
-            password=self.pwd
-        )
-
-        # Not authenticated
-        response = self.client.get(
-            reverse('api:vocab_entries_export')
-        )
-        self.assertEqual(response.status_code, drf_status.HTTP_403_FORBIDDEN)
-
-        # Authenticated
-        self.login_test_user(user_2.username)
-        response = self.client.get(
-            reverse('api:vocab_entries_export')
-        )
-        self.assertEqual(response.status_code, drf_status.HTTP_403_FORBIDDEN)
-
-        # Authenticated superuser
-        self.login_test_user(self.user.username)
-        response = self.client.get(
-            reverse('api:vocab_entries_export')
-        )
-        self.assertEqual(response.status_code, drf_status.HTTP_200_OK)
 
     def test_view_exports_vocab_entries_json(self):
         self.login_test_user(username=self.user.username)
@@ -522,44 +453,6 @@ class VocabEntryLanguageExportViewTest(TestCommon):
             found.func.__name__,
             VocabEntryLanguageExportView.as_view().__name__
         )
-
-    def test_view_permissions(self):
-        user_2 = User.objects.create(
-            username='kfl7',
-            email='kfl7@foo.com',
-            first_name='Karen',
-            last_name='Fuentes',
-            password=self.pwd
-        )
-
-        # Non authenticated
-        response = self.client.get(
-            reverse(
-                'api:vocab_entries_language_export',
-                kwargs={'language': 'en'}
-            )
-        )
-        self.assertEqual(response.status_code, drf_status.HTTP_403_FORBIDDEN)
-
-        # Authenticated
-        self.login_test_user(user_2.username)
-        response = self.client.get(
-            reverse(
-                'api:vocab_entries_language_export',
-                kwargs={'language': 'en'}
-            )
-        )
-        self.assertEqual(response.status_code, drf_status.HTTP_403_FORBIDDEN)
-
-        # Authenticated superuser
-        self.login_test_user(self.user.username)
-        response = self.client.get(
-            reverse(
-                'api:vocab_entries_language_export',
-                kwargs={'language': 'en'}
-            )
-        )
-        self.assertEqual(response.status_code, drf_status.HTTP_200_OK)
 
     def test_view_exports_vocab_entries_json(self):
         self.login_test_user(username=self.user.username)
@@ -611,30 +504,10 @@ class VocabSourceViewSetTest(TestCommon):
 
     def test_view_setup(self):
         view = VocabSourceViewSet()
-        permission_classes = (IsAuthenticated,)
-        self.assertEqual(permission_classes, view.permission_classes)
         self.assertEqual('pk', view.lookup_field)
         self.assertEqual('pk', view.lookup_url_kwarg)
         self.assertEqual(VocabSourceSerializer, view.serializer_class)
         self.assertCountEqual(VocabSource.objects.prefetch_related('vocab_contexts'), view.queryset)
-
-    def test_view_permissions(self):
-        response = self.client.get(
-            reverse(
-                'api:vocab-source-detail',
-                kwargs={'pk': self.vocab_source.id}
-            ),
-        )
-        self.assertEqual(response.status_code, drf_status.HTTP_403_FORBIDDEN)
-
-        self.login_test_user(self.user.username)
-        response = self.client.get(
-            reverse(
-                'api:vocab-source-detail',
-                kwargs={'pk': self.vocab_source.id}
-            ),
-        )
-        self.assertEqual(response.status_code, drf_status.HTTP_200_OK)
 
     def test_inheritance(self):
         classes = (
@@ -755,8 +628,6 @@ class NestedVocabSourceViewSetTest(TestCommon):
 
     def test_view_setup(self):
         view = NestedVocabSourceViewSet()
-        permission_classes = (IsAuthenticated,)
-        self.assertEqual(permission_classes, view.permission_classes)
         self.assertEqual('pk', view.lookup_field)
         self.assertEqual('pk', view.lookup_url_kwarg)
         self.assertEqual(VocabSourceSerializer, view.serializer_class)
@@ -869,70 +740,8 @@ class VocabSourceExportViewTest(TestCommon):
         )
         response = view.dispatch(view.request, *view.args, **view.kwargs)
         self.assertEqual(response.status_code, drf_status.HTTP_200_OK)
-        permission_classes = (IsAuthenticated, CreatorPermission)
+        permission_classes = [IsAuthenticated, CreatorPermission]
         self.assertEqual(permission_classes, view.permission_classes)
-
-    def test_view_permissions(self):
-        creator = User.objects.create(
-            username='kfl7',
-            email='kfl7@foo.com',
-            first_name='Karen',
-            last_name='Fuentes',
-            password=self.pwd
-        )
-        non_creator = User.objects.create(
-            username='foo7',
-            email='foo7@foo.com',
-            first_name='Foo',
-            last_name='Foo',
-            password=self.pwd
-        )
-        vocab_source = VocabSource.objects.create(
-            vocab_project=self.vocab_project,
-            creator=creator,
-            name='Another test source',
-            source_type=VocabSource.BOOK
-        )
-
-        # Not authenticated
-        response = self.client.get(
-            reverse(
-                'api:vocab_source_export',
-                kwargs={'vocab_source_pk': vocab_source.id}
-            )
-        )
-        self.assertEqual(response.status_code, drf_status.HTTP_403_FORBIDDEN)
-
-        # Authenticated non creator
-        self.login_test_user(non_creator.username)
-        response = self.client.get(
-            reverse(
-                'api:vocab_source_export',
-                kwargs={'vocab_source_pk': vocab_source.id}
-            )
-        )
-        self.assertEqual(response.status_code, drf_status.HTTP_403_FORBIDDEN)
-
-        # Authenticated creator
-        self.login_test_user(creator.username)
-        response = self.client.get(
-            reverse(
-                'api:vocab_source_export',
-                kwargs={'vocab_source_pk': vocab_source.id}
-            )
-        )
-        self.assertEqual(response.status_code, drf_status.HTTP_200_OK)
-
-        # Authenticated non creator superuser
-        self.login_test_user(self.user.username)
-        self.assertTrue(self.user.is_superuser)
-        response = self.client.get(
-            reverse(
-                'api:vocab_source_export',
-                kwargs={'vocab_source_pk': vocab_source.id}
-            )
-        )
-        self.assertEqual(response.status_code, drf_status.HTTP_200_OK)
 
 
 class VocabSourceImportViewTest(TestCommon):
@@ -1016,8 +825,6 @@ class VocabContextViewSetTest(TestCommon):
 
     def test_view_setup(self):
         view = VocabContextViewSet()
-        permission_classes = (IsAuthenticated,)
-        self.assertEqual(permission_classes, view.permission_classes)
         self.assertEqual('pk', view.lookup_field)
         self.assertEqual('pk', view.lookup_url_kwarg)
         self.assertEqual(VocabContextSerializer, view.serializer_class)
@@ -1261,8 +1068,6 @@ class NestedVocabContextViewSetTest(TestCommon):
 
     def test_view_setup(self):
         view = NestedVocabContextViewSet()
-        permission_classes = (IsAuthenticated,)
-        self.assertEqual(permission_classes, view.permission_classes)
         self.assertEqual('pk', view.lookup_field)
         self.assertEqual('pk', view.lookup_url_kwarg)
         self.assertEqual(VocabContextSerializer, view.serializer_class)
@@ -1370,8 +1175,6 @@ class VocabContextEntryViewSetTest(TestCommon):
 
     def test_view_setup(self):
         view = VocabContextEntryViewSet()
-        permission_classes = (IsAuthenticated,)
-        self.assertEqual(permission_classes, view.permission_classes)
         self.assertEqual('pk', view.lookup_field)
         self.assertEqual('pk', view.lookup_url_kwarg)
         self.assertEqual(VocabContextEntrySerializer, view.serializer_class)

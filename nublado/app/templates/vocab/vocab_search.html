@@ -43,13 +43,8 @@
   {% endif %}
   </div>
 
-  <div style="margin-top: 30px;">
-
   {% url 'api:nested-vocab-definition-list' vocab_entry.id as vocab_definitions_url %}
-
   {% include "vocab/includes/_vocab_definitions.html" with definitions_url=vocab_definitions_url %}
-
-  </div>
 
   </div>
   </div>

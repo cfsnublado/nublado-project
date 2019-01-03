@@ -10,12 +10,10 @@ class APIDefaultsMixin(object):
     filtering and pagination.
     """
 
-    authentication_classes = (
+    authentication_classes = [
         SessionAuthentication,
         BasicAuthentication,
-        TokenAuthentication,
-    )
-    permission_classes = (
-        IsAuthenticated,
-    )
+        TokenAuthentication
+    ]
+    permission_classes = [IsAuthenticated]
     paginate_by = 25

@@ -42,9 +42,6 @@ class VocabProjectViewSet(APIDefaultsMixin, ModelViewSet):
     lookup_url_kwarg = 'pk'
     serializer_class = VocabProjectSerializer
     queryset = VocabProject.objects.all()
-    permission_classes = (
-        IsAuthenticated,
-    )
 
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
@@ -55,9 +52,6 @@ class VocabEntryViewSet(APIDefaultsMixin, BatchMixin, ModelViewSet):
     lookup_url_kwarg = 'pk'
     serializer_class = VocabEntrySerializer
     queryset = VocabEntry.objects.all()
-    permission_classes = (
-        IsAuthenticated,
-    )
 
     @action(methods=['get'], detail=False)
     def detail_data(self, request):
@@ -81,10 +75,9 @@ class VocabEntryViewSet(APIDefaultsMixin, BatchMixin, ModelViewSet):
 
 
 class VocabEntryImportView(APIDefaultsMixin, APIView):
-    permission_classes = (
-        IsAuthenticated,
-        IsSuperuser
-    )
+    permission_classes = [
+        IsAuthenticated, IsSuperuser
+    ]
 
     def post(self, request, *args, **kwargs):
         data = request.data
@@ -96,10 +89,9 @@ class VocabEntryImportView(APIDefaultsMixin, APIView):
 
 
 class VocabEntryExportView(APIDefaultsMixin, APIView):
-    permission_classes = (
-        IsAuthenticated,
-        IsSuperuser
-    )
+    permission_classes = [
+        IsAuthenticated, IsSuperuser
+    ]
 
     def get(self, request, *args, **kwargs):
         data = export_vocab_entries(request)
@@ -124,9 +116,13 @@ class VocabDefinitionViewSet(
     lookup_url_kwarg = 'pk'
     serializer_class = VocabDefinitionSerializer
     queryset = VocabDefinition.objects.select_related('vocab_entry')
-    permission_classes = (
-        IsAuthenticated,
-    )
+
+    def get_permissions(self):
+        # list, create, retrieve, update, partial_update, destroy
+        if self.action == 'list' or self.action == 'retrieve':
+            self.permission_classes = []
+
+        return super(APIDefaultsMixin, self).get_permissions()
 
 
 class NestedVocabDefinitionViewSet(
@@ -137,9 +133,6 @@ class NestedVocabDefinitionViewSet(
     lookup_url_kwarg = 'pk'
     queryset = VocabDefinition.objects.select_related('vocab_entry')
     serializer_class = VocabDefinitionSerializer
-    permission_classes = (
-        IsAuthenticated,
-    )
     vocab_entry = None
 
     def get_vocab_entry(self, vocab_entry_pk=None):
@@ -159,9 +152,12 @@ class NestedVocabDefinitionViewSet(
     def get_queryset(self):
         return self.queryset.filter(vocab_entry_id=self.kwargs['vocab_entry_pk'])
 
-    def list(self, request, *args, **kwargs):
-        self.get_vocab_entry(vocab_entry_pk=kwargs['vocab_entry_pk'])
-        return super(NestedVocabDefinitionViewSet, self).list(request, *args, **kwargs)
+    def get_permissions(self):
+        # list, create, retrieve, update, partial_update, destroy
+        if self.action == 'list' or self.action == 'retrieve':
+            self.permission_classes = []
+
+        return super(APIDefaultsMixin, self).get_permissions()
 
 
 class VocabSourceViewSet(
@@ -172,9 +168,6 @@ class VocabSourceViewSet(
     lookup_url_kwarg = 'pk'
     serializer_class = VocabSourceSerializer
     queryset = VocabSource.objects.prefetch_related('vocab_contexts')
-    permission_classes = (
-        IsAuthenticated,
-    )
 
 
 class NestedVocabSourceViewSet(
@@ -185,9 +178,6 @@ class NestedVocabSourceViewSet(
     lookup_url_kwarg = 'pk'
     queryset = VocabSource.objects.select_related('vocab_project')
     serializer_class = VocabSourceSerializer
-    permission_classes = (
-        IsAuthenticated,
-    )
     vocab_project = None
 
     def get_vocab_project(self, vocab_project_pk=None):
@@ -216,9 +206,6 @@ class NestedVocabSourceViewSet(
 
 
 class VocabSourceImportView(APIDefaultsMixin, APIView):
-    permission_classes = (
-        IsAuthenticated,
-    )
 
     def post(self, request, *args, **kwargs):
         data = request.data
@@ -227,10 +214,9 @@ class VocabSourceImportView(APIDefaultsMixin, APIView):
 
 
 class VocabSourceExportView(APIDefaultsMixin, APIView):
-    permission_classes = (
-        IsAuthenticated,
-        CreatorPermission
-    )
+    permission_classes = [
+        IsAuthenticated, CreatorPermission
+    ]
 
     def get(self, request, *args, **kwargs):
         vocab_source = self.get_object()
@@ -257,9 +243,6 @@ class VocabContextViewSet(
     lookup_url_kwarg = 'pk'
     serializer_class = VocabContextSerializer
     queryset = VocabContext.objects.select_related('vocab_source')
-    permission_classes = (
-        IsAuthenticated,
-    )
 
     @action(methods=['post'], detail=True)
     def add_vocab_entry(self, request, pk=None):
@@ -327,9 +310,6 @@ class NestedVocabContextViewSet(
     lookup_url_kwarg = 'pk'
     queryset = VocabContext.objects.select_related('vocab_source')
     serializer_class = VocabContextSerializer
-    permission_classes = (
-        IsAuthenticated,
-    )
     vocab_source = None
 
     def get_vocab_source(self, vocab_source_pk=None):
@@ -362,9 +342,6 @@ class VocabContextEntryViewSet(
     lookup_url_kwarg = 'pk'
     queryset = VocabContextEntry.objects.select_related('vocab_entry', 'vocab_context').prefetch_related('vocab_entry_tags')
     serializer_class = VocabContextEntrySerializer
-    permission_classes = (
-        IsAuthenticated,
-    )
 
     @action(methods=['get'], detail=False)
     def detail_data(self, request):
@@ -394,9 +371,6 @@ class NestedVocabContextEntryViewSet(APIDefaultsMixin, CreateModelMixin, ListMod
     lookup_url_kwarg = 'pk'
     queryset = VocabContextEntry.objects.select_related('vocab_entry', 'vocab_context')
     serializer_class = VocabContextEntrySerializer
-    permission_classes = (
-        IsAuthenticated,
-    )
     vocab_entry = None
     vocab_context = None
 

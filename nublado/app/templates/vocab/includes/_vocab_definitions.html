@@ -1,16 +1,27 @@
+{% load i18n %}
+
 <entry-definitions
 init-endpoint-url="{{ definitions_url }}"
+init-msg-show-definitions="{% trans 'label_show_definitions' %}"
+init-msg-hide-definitions="{% trans 'label_hide_definitions' %}"
 inline-template
 >
 
-<div>
+<div style="margin-top: 10px;">
   <a 
   href="#" 
-  class="ui button"
+  class="ui small button"
   @click.prevent="toggleDefinitionsVisible"
   >
-  View definitions
+  <span v-if="!definitionsVisible"> 
+  [[ msgShowDefinitions ]]
+  </span>
+  <span v-else> 
+  [[ msgHideDefinitions ]]
+  </span>
   </a>
+
+  <div class="vocab-definitions">
 
   <ul 
   id="vocab-definitions"
@@ -20,16 +31,18 @@ inline-template
     <li 
     v-for="definition in definitions"
     >
-    [[ definition.definition_type_name | capitalize ]] - [[ definition.definition | capitalize ]]
+    [[ definition.definition_type_name | capitalize ]]: [[ definition.definition | capitalize ]]
     </li>
   </ul>
 
-  <span 
+  <div
   v-show="definitionsVisible && definitions.length == 0 && definitionsLoaded"
   v-cloak
   >
   There are no definitions.
-  </span>
+  </div>
+
+  </div>
 
 </div>
 

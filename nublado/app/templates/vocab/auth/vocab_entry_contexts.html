@@ -38,7 +38,7 @@
 {{ vocab_entry.entry }}
 </div>
 
-<div class="vocab-pronunciation" style="margin-bottom: 20px;">
+<div class="vocab-pronunciation">
 
 {% if vocab_entry.pronunciation_spelling %}
 
@@ -54,13 +54,8 @@
 
 </div>
 
-<div style="margin-top: 30px;">
-
 {% url 'api:nested-vocab-definition-list' vocab_entry.id as vocab_definitions_url %}
-
 {% include "vocab/includes/_vocab_definitions.html" with definitions_url=vocab_definitions_url %}
-
-</div>
 
 {% include "vocab/includes/_vocab_entry_contexts.html" %}
 {% include "includes/_pagination.html" %}

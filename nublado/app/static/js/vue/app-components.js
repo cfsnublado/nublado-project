@@ -704,6 +704,14 @@ const EntryDefinitions = {
     initFetchFromAPI: {
       type: Boolean,
       default: false
+    },
+    initMsgShowDefinitions: {
+      type: String,
+      default: 'Show definitions'
+    },
+    initMsgHideDefinitions: {
+      type: String,
+      default: 'Hide definitions'
     }
   },
   data() {
@@ -714,6 +722,8 @@ const EntryDefinitions = {
       definitionsVisible: false,
       definitionsLoaded: false,
       processing: false,
+      msgShowDefinitions: this.initMsgShowDefinitions,
+      msgHideDefinitions: this.initMsgHideDefinitions
     }
   },
   methods: {

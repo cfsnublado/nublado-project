@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-29 17:54-0800\n"
+"POT-Creation-Date: 2019-01-02 01:02-0800\n"
 "PO-Revision-Date: 2018-11-28 21:15-0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -47,7 +47,7 @@ msgstr ""
 msgid "validation_invite_sender_receiver_equal"
 msgstr ""
 
-#: nublado/core/models.py:61 nublado/app/templates/base.html:230
+#: nublado/core/models.py:61 nublado/app/templates/base.html:266
 #: nublado/app/templates/vocab/includes/_vocab_entry_create_modal.html:37
 msgid "label_language"
 msgstr "Language"
@@ -245,7 +245,7 @@ msgstr "User"
 msgid "label_profile_about"
 msgstr ""
 
-#: nublado/users/models.py:112
+#: nublado/users/models.py:112 nublado/app/templates/base.html:239
 #: nublado/app/templates/includes/_user_menu_items.html:17
 msgid "label_profile"
 msgstr "Profile"
@@ -370,7 +370,7 @@ msgstr "Pronunciation spelling"
 msgid "label_vocab_pronunciation_ipa"
 msgstr "Pronunciation IPA"
 
-#: nublado/vocab/models.py:126 nublado/app/templates/base.html:188
+#: nublado/vocab/models.py:126 nublado/app/templates/base.html:198
 msgid "label_vocab_entry"
 msgstr "Entry"
 
@@ -504,23 +504,28 @@ msgstr "500"
 msgid "error_500_message"
 msgstr "Server error"
 
-#: nublado/app/templates/base.html:66
+#: nublado/app/templates/base.html:76
 #: nublado/app/templates/security/login.html:56
 msgid "label_login"
 msgstr "Log in"
 
-#: nublado/app/templates/base.html:180
+#: nublado/app/templates/base.html:190
 #: nublado/app/templates/vocab/auth/vocab_base.html:151
 msgid "label_source"
 msgstr "Source"
 
-#: nublado/app/templates/base.html:184
+#: nublado/app/templates/base.html:194
 #: nublado/app/templates/vocab/auth/vocab_base.html:100
 #: nublado/app/templates/vocab/auth/vocab_base.html:137
 #: nublado/app/templates/vocab/includes/_vocab_breadcrumbs.html:9
 #: nublado/app/templates/vocab/includes/_vocab_breadcrumbs.html:27
 msgid "label_project"
 msgstr "Project"
+
+#: nublado/app/templates/base.html:227
+#: nublado/app/templates/includes/_user_menu_items.html:8
+msgid "label_vocab_dashboard"
+msgstr "Vocabulary dashboard"
 
 #: nublado/app/templates/home.html:5
 msgid "page_home_title"
@@ -580,10 +585,6 @@ msgstr "Previous"
 #: nublado/app/templates/includes/_pagination.html:49
 msgid "label_next"
 msgstr "Next"
-
-#: nublado/app/templates/includes/_user_menu_items.html:8
-msgid "label_vocab_dashboard"
-msgstr "Vocabulary dashboard"
 
 #: nublado/app/templates/includes/_user_menu_items.html:24
 msgid "label_logout"
@@ -1080,6 +1081,14 @@ msgstr "Delete context?"
 #| msgid "label_details"
 msgid "label_add_definition"
 msgstr "Details"
+
+#: nublado/app/templates/vocab/includes/_vocab_definitions.html:5
+msgid "label_show_definitions"
+msgstr "Show definitions"
+
+#: nublado/app/templates/vocab/includes/_vocab_definitions.html:6
+msgid "label_hide_definitions"
+msgstr "Hide definitions"
 
 #: nublado/app/templates/vocab/includes/_vocab_entry_create_modal.html:6
 msgid "header_create_entry"

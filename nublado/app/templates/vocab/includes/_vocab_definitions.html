@@ -31,7 +31,9 @@ inline-template
     <li 
     v-for="definition in definitions"
     >
-    [[ definition.definition_type_name | capitalize ]]: [[ definition.definition | capitalize ]]
+    <div class="vocab-definition-text">
+    <span class="vocab-definition-type">[[ definition.definition_type_name | capitalize ]]</span>: [[ definition.definition | capitalize ]]
+    </div>
     </li>
   </ul>
 

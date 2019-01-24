@@ -23,7 +23,7 @@ from ..utils import (
     export_vocab_entries, export_vocab_source,
     import_vocab_entries, import_vocab_source
 )
-from .permissions import CreatorPermission, IsSuperuser
+from .permissions import CreatorPermission, ReadWritePermission, IsSuperuser
 
 
 class BatchMixin(object):
@@ -53,6 +53,7 @@ class VocabEntryViewSet(APIDefaultsMixin, BatchMixin, ModelViewSet):
     lookup_url_kwarg = 'pk'
     serializer_class = VocabEntrySerializer
     pagination_class = StandardPagination
+    permission_classes = [ReadWritePermission]
     queryset = VocabEntry.objects.order_by('entry').all()
 
     def list(self, request, *args, **kwargs):

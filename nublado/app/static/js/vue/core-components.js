@@ -504,13 +504,18 @@ const BaseTag = {
     selectRedirectUrl: {
       type: String,
       default: ''
+    },
+    initHasDelete: {
+      type: Boolean,
+      default: false
     }
   },
   data() {
     return {
       id: this.initId,
       value: this.initValue,
-      isVisible: true
+      isVisible: true,
+      hasDelete: this.initHasDelete
     }
   },
   methods: {
@@ -538,6 +543,7 @@ const BaseTag = {
       </a>
       &nbsp;
       <a 
+      v-show="hasDelete"
       class="delete-tag"
       @click.prevent="remove"
       >

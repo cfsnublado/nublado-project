@@ -128,6 +128,7 @@ inline-template
   :key="tag.id"
   :init-id="index"
   :init-value="tag.value"
+  :init-has-delete="true"
   @tag-select="selectTag"
   @tag-remove="removeTag"
 >
@@ -172,6 +173,7 @@ v-model="input"
   :key="tag"
   :init-id="index"
   :init-value="tag"
+  :init-has-delete="true"
   @tag-select="selectTag"
   @tag-remove="removeTag"
 >

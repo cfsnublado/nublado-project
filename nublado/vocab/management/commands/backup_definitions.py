@@ -11,7 +11,7 @@ from vocab.models import VocabDefinition, VocabEntry
 
 
 class Command(BaseCommand):
-    help = 'Backs up a definitions.'
+    help = 'Backs up definitions.'
     OXFORD_API_ID = getattr(settings, 'OXFORD_API_ID', None)
     OXFORD_API_KEY = getattr(settings, 'OXFORD_API_KEY', None)
     lexical_categories = {

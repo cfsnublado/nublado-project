@@ -53,10 +53,10 @@ def add_definitions_from_oxford(json_data, vocab_entry):
 
 
 class OxfordAPIEntryView(APIDefaultsMixin, APIView):
-    permission_classes = (
+    permission_classes = [
         IsAuthenticated,
         IsSuperuser
-    )
+    ]
     oxford_entry_url = 'https://od-api.oxforddictionaries.com:443/api/v1/entries/{0}/{1}/regions={2}'
 
     def get(self, request, *args, **kwargs):
@@ -72,7 +72,6 @@ class OxfordAPIEntryView(APIDefaultsMixin, APIView):
         response = requests.get(url, headers=headers)
         if response.status_code == status.HTTP_200_OK:
             response_json = response.json()
-            get_oxford_entry_data(response_json)
             return Response(data=response_json, content_type='application/json')
         else:
             return Response(data={}, status=response.status_code)

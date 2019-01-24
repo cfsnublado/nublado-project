@@ -792,6 +792,379 @@ project_name: Spanish Reading
 
     </div>
 
-- 
+- Ardía incienso en un brasero grande como un peñasco. Dalinar se sorbió la nariz mientras Evi arrojaba un puñado de papelitos, doblados e inscritos cada uno con un glifo minúsculo, al brasero. Un humo fragante lo envolvió antes de salir despedido en dirección contraria cuando una ventolera recorrió el campamento de guerra, cabalgada por vientospren que eran como líneas de luz.
 
+    <div markdown="1" class="tagged-entries">
+
+    es: incienso: incienso
+
+    es: peñasco: peñasco
+
+    es: sorberse: sorberse la nariz
+
+    </div>
+
+- Ardieron los ojos, cayeron flácidos los brazos. Dalinar inspiró el gozo de la conquista, la narcótica belleza de la destrucción. No había quien pudiera resistirse a él: todos eran yesca y él la llama. La unidad de infantería enemiga debería haber podido concentrarse y atacarlo, pero le tenían demasiado miedo. 
+
+    ¿Y por qué no deberían tenérselo? Se contaban historias de hombres comunes haciendo caer a un portador de esquirlada, pero tenían que ser invenciones, rumores extendidos con la intención de que los hombres lucharan, para evitar a los portadores de esquirlada el trabajo de tener que darles caza. 
+
+    Sonrió mientras su caballo trastabillaba por los cadáveres que se amontonaban a su alrededor. Dalinar espoleó al animal, que saltó, pero al caer cedió algo. La criatura relinchó y se derrumbó, descabalgándolo. 
+
+    Dalinar suspiró, apartó al caballo de un manotazo y se puso en pie. Le había partido el espinazo. Esos animales no estaban hechos para la armadura esquirlada.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: yesca: yesca
+
+    es: trastabillar: trastabillaba
+
+    es: portador: los portadores
+
+    es: ceder: cedió
+
+    es: relinchar: relinchó
+
+    es: espolear: espoleó
+
+    </div>
+
+- ¿Crees que en otros tiempos de verdad llenábamos esta cámara? 
+
+    —Diez órdenes —dijo Shallan—, con centenares de miembros en la mayoría. Sí, supongo que pudimos llenarla. De hecho, dudo que todos los miembros de las órdenes cupieran aquí.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: caber: cupieran
+
+    es: llenar: llenábamos, llenarla
+
+    </div>
+
+- Atraído por la calidez, Dalinar fue hacia el fabrial. Se sorprendió al encontrar a Taravangian sentado en una butaca, contemplando las profundidades del refulgente rubí que irradiaba calor a la estancia. Bueno, era cierto que Dalinar había invitado al rey a usar su sala común siempre que quisiera. 
+
+    Dalinar solo quería estar a solas, y hasta se planteó marcharse. No estaba seguro de que Taravangian hubiera reparado en su presencia. Pero el calor era tan agradable... Había pocos fuegos en la torre, e incluso con las paredes bloqueando el viento, siempre estaba helada.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: reparar: hubiera reparado
+
+    es: calidez: calidez
+
+    es: refulgente: refulgente
+
+    es: a solas: estar a solas
+
+    </div>
+
+- —¿Puedes mostrar la visión a otros? _Se me concedió esta prerrogativa: escoger a aquellos a quienes mejor sirvieran las visiones_. Hizo una pausa y al cabo siguió, casi a regañadientes. _Escoger a un Forjador de Vínculos_. No, tampoco le gustaba la idea de estar vinculado, pero estaba entre lo que le habían ordenado hacer. Dalinar apenas prestó atención a esa idea. Había otra mucho más acuciante: el Padre Tormenta podía mostrar las visiones a otros. 
+
+    —¿A cualquiera? —preguntó Dalinar—. ¿Se las puedes enseñar a cualquiera? _Durante una tormenta, puedo dirigirme a todo el que escoja_, dijo el Padre Tormenta. _Pero no es necesario estar en una tormenta para unirse a una visión en la que he situado a otra persona, aunque se esté lejos_. ¡Tormentas! Dalinar soltó una carcajada. 
+
+    _¿Qué he hecho?_, preguntó el Padre Tormenta. 
+
+    —¡Acabas de resolver mi problema!
+
+    <div markdown="1" class="tagged-entries">
+
+    es: regañadientes: regañadientes
+
+    es: cualquiera: cualquiera
+
+    es: acuciante: acuciante
+
+    es: carcajada: carcajada
+
+    </div>
+
+- Pero la cosa también estaba abierta a ella. Sintió su confusa fascinación por la humanidad. La cosa recordaba a los hombres, con una comprensión innata parecida a la del visón recién nacido, que sabe por instinto que debe temer a la anguila aérea. Aquella spren no era consciente del todo, no era inteligente del todo. Era una creación del instinto y la curiosidad ajena, atraída por la violencia y el dolor como los carroñeros por el olor de la sangre.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: carroñero: carroñeros
+
+    es: ajeno: ajena
+
+    es: visón: visón
+
+    </div>
+
+- Esa cosa era antiquísima. Creada mucho tiempo atrás como una astilla del alma de algo incluso más terrible, a Re-Shephir se le había ordenado sembrar el caos engendrando horrores que confundieran y destruyeran a los hombres. Con el tiempo, poco a poco, habían ido intrigándola cada vez más las cosas que asesinaba.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: astilla: astilla
+
+    es: engendrar: engendrando
+
+    es: intrigar: intrigándola
+
+    es: asesinar: asesinaba
+
+    </div>
+
+- Shallan frunció el ceño al captar el tono de su voz y, siguiendo su mirada, encontró lo que Re-Shephir había estado ocultando. La columna que ocupaba el centro exacto de la sala. 
+
+    Tenía engarzadas miles y miles de gemas talladas, la mayoría de ellas más grandes que el puño de Shallan. Juntas, eran un tesoro con más valor que casi cualquier reino.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: fruncir el ceño: frunció el ceño
+
+    es: ocultar: había estado ocultando
+
+    es: engarzar: engarzadas
+
+    es: tallar: talladas
+
+    es: puño: puño
+
+    es: reino: reino
+
+    </div>
+
+- Kaladin oyó un trueno en la lejanía. A su alrededor, muchos parshmenios se volvieron hacia el sonido y empezaron a murmurar. Alta tormenta.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: lejanía: lejanía
+
+    es: murmurar: murmurar
+
+    es: trueno: trueno
+
+    </div>
+
+- La alta y peligrosa criatura de los ojos rojos, a la que habían llamado la Fusionada, echó a andar hacia el grupo de Khen. Kaladin no podía saber si lo había identificado como Radiante, pero no tenía intención de esperar a que llegara. Tenía planes formados: sus viejos instintos de esclavo ya habían optado por la escapatoria más fácil.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: escapatoria: escapatoria
+
+    es: optar: habían optado
+
+    </div>
+
+- La piel de Kaladin tiritó de puro gozo. Tormentas, cómo lo había echado de menos. El viento, el cielo abierto por encima, incluso el vuelco de su estómago cuando la gravedad lo liberó. Syl revoloteó a su alrededor como una cinta de luz, componiendo una espiral de líneas relucientes. Aparecieron glorispren en torno a la cabeza de Kaladin.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: tiritar: tiritó
+
+    es: echar de menos: lo había echado de menos
+
+    es: revolotear: revoloteó
+
+    es: liberar: liberó
+
+    es: componer: componiendo
+
+    es: reluciente: relucientes
+
+    es: en torno a: en torno a
+
+    </div>
+
+- —No, son personas. Y están muy enfadadas, y con buen motivo. —Una ráfaga de viento lo alcanzó de lado y lo zarandeó un poco—. Conozco el sentimiento. Arde en ti, se te incrusta en el cerebro hasta que lo olvidas todo menos la injusticia que se te ha hecho. Era lo que sentía yo por Elhokar. A veces, todo un mundo de explicaciones racionales puede hacerse insignificante frente a ese deseo arrebatador de conseguir lo que mereces.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: enfadado: enfadadas
+
+    es: ráfaga: ráfaga
+
+    es: zarandear: zarandeó
+
+    es: arder: arde
+
+    es: incrustarse: se te incrusta
+
+    es: arrebatador: arrebatador
+
+    </div>
+
+- Mira, del documento se deduce a las clara que hubo un tiempo en que se empleaba el mismo sistema de escritura a lo largo y ancho de Roshar. Tengo referencias en Makabakam, Sela Tales, Alezela... No es una diáspora de textos, sino auténticas pruebas que terminaron escritas de forma natural en el _Canto del alba_.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: diáspora: diáspora
+
+    es: emplear: se empleaba
+
+    es: a lo largo y ancho: a lo largo y ancho
+
+    </div>
+
+- —¿Crees que todos hablaban el mismo idioma? 
+
+    —Lo dudo muchísimo. 
+
+    —Pero el Reliquia y monumento de Jasnah Kholin... 
+
+    —No afirma que todos hablaran el mismo idioma, solo que lo escribían. Es una necedad suponer que todo el mundo usara la misma lengua a lo largo de siglos y decenas de naciones. Tiene más sentido que hubiera un lenguaje escrito codificado, el idioma de los eruditos, igual que ahora se encuentran muchas anotaciones escritas en alezi.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: escritura: escritura
+
+    es: erudito: eruditos
+
+    es: a lo largo: a lo largo
+
+    es: idioma: idioma
+
+    es: codificado: codificado
+
+    es: necedad: necedad
+
+    </div>
+
+- —¿Hay una secuela? 
+
+    —Sobre la hermana de Wema. 
+
+    —¿La tímida? 
+
+    —Se gana las atenciones de la corte y tiene que escoger entre un apuesto oficial naval, un banquero thayleño y el sagaz del rey. 
+
+    —Un momento, ¿esta vez son tres hombres distintos? 
+
+    —Las secuelas tienen que ser siempre más a lo grande —dijo él, y le devolvió el fajo de papeles—. Ya te lo prestaré. 
+
+    —Ah, conque sí, ¿eh? ¿Y qué pago exigirás por tan magnánimo gesto, brillante señor Urv? 
+
+    —Que me ayudes a traducir un pasaje difícil del _Canto del alba_. Para este encargo me han impuesto una fecha de entrega muy estricta.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: secuela: secuelas, secuela
+
+    es: fajo: fajo
+
+    es: devolver: le devolvió
+
+    es: prestar: te lo prestaré
+
+    </div>
+
+- Venli lo miró iracunda.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: iracundo: iracunda
+
+    </div>
+
+- —Todos los Radiantes tenemos un apego con Shadesmar —dijo Jasnah—. Nuestros spren son originarios de allí, y nuestro vínculo nos enlaza con ellos. Pero mi orden ostenta un control especial sobre el tránsito entre reinos. Pude pasar a Shadesmar para escapar de mis aspirantes a asesino.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: asesino: asesino
+
+    es: apego: apego
+
+    es: originario: originarios
+
+    es: enlazar: nos enlaza
+
+    es: ostentar: ostenta
+
+    es: tránsito: tránsito
+
+    es: aspirante: aspirantes
+
+    </div>
+
+- —Tendremos que conversar más largo y tendido —dijo Jasnah—. Querría escuchar, desde tu perspectiva, la narración fiel del descubrimiento de Urithiru. Y supongo que tendrás bocetos de los parshmenios transformados, ¿verdad? Nos revelarán mucho. Creo... que en otros tiempos denigré la utilidad de tu talento artístico. Ahora veo motivos para llamarme necia por albergar tales prejuicios.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: tendido: tendido
+
+    es: boceto: bocetos
+
+    es: denigrar: denigré
+
+    es: necio: necia
+
+    es: albergar: albergar
+
+    </div>
+
+- Se escudó la cara del viento con un brazo y miró hacia delante. Un Radiante volaba en cabeza, resplandeciente en una armadura azul que brillaba toda ella, pero con más intensidad en los bordes y las ranuras. El hombre tenía la mirada vuelta hacia Dalinar, sin duda por sus gritos. 
+
+    Dalinar le hizo el saludo marcial para indicar que estaba bien. El hombre de la armadura asintió y volvió a mirar hacia delante. 
+
+    «Es un Corredor del Viento —pensó Dalinar, atando cabos—. He ocupado el lugar de su compañera, otra Radiante.» Había visto a los dos en la visión y sabía que volaban para salvar el pueblo. Dalinar no estaba desplazándose gracias a su propio poder: el Corredor del Viento había lanzado a la mujer Radiante al cielo, como Szeth había hecho con Dalinar durante la batalla de Narak.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: escudarse: se escudó
+
+    es: resplandeciente: resplandeciente
+
+    es: desplazarse: desplazándose
+
+    </div>
+
+- —¿Y ahora aparece el mismísimo Espina Negra? —se extrañó la reina—. Condenación, qué sueño más raro. 
+
+    —No es del todo un sueño, Fen —dijo Dalinar, volviendo la mirada hacia el Radiante, que había entablado combate contra un grupo reducido de monstruos que llegaban por la calle—. No sé si tengo tiempo de explicártelo. 
+
+    —Puedo ralentizarla —dijo un habitante de la aldea con la voz del Padre Tormenta. 
+
+    —Sí, por favor —pidió Dalinar. 
+
+    Todo se detuvo. O más bien... sufrió una enorme desaceleración. Las llamas de la pira danzaron letárgicas, y la gente se quedó casi parada.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: ralentizar: ralentizarla
+
+    es: aldea: aldea
+
+    es: extrañarse: se extrañó
+
+    es: entablar: había entablado
+
+    es: desaceleración: desaceleración
+
+    es: letárgico: letárgicas
+
+    es: pira: pira
+
+    </div>
+
+- Sigzil encontró a Kaladin haciendo sus flexiones matutinas en el suelo de piedra. Su casaca azul estaba doblada sobre una silla.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: flexión: flexiones
+
+    es: matutino: matutinas
+
+    es: suelo: suelo
+
+    </div>
+
+- —Seguimos siendo guardaespaldas —dijo Kaladin—. Es solo que ahora protegemos a todo el que lo necesita. Tenemos problemas más graves, con esa tormenta. 
+
+    Había llegado de nuevo, por tercera vez, demostrando con su última aparición que era incluso más periódica que las altas tormentas. Tenía un período de unos nueve días. Altos como estaban, su paso era solo anecdótico, pero a lo largo y ancho del mundo cada aparición acosaba más a unas ciudades ya atribuladas.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: aparición: aparición
+
+    es: período: período
+
+    es: periódica: periódica
+
+    es: anecdótico: anecdótico
+
+    es: a lo largo y ancho: a lo largo y ancho
+
+    es: acosar: acosaba
+
+    </div>
+
+- 
 

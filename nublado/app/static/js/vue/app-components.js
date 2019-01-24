@@ -1,3 +1,58 @@
+
+const VocabEntries = {
+  mixins: [PaginationMixin],
+  props: {
+    initVocabEntriesUrl: {
+      type: String,
+      default: ''
+    }
+  },
+  data() {
+    return {
+      language: 'en',
+      vocabEntriesUrl: this.initVocabEntriesUrl,
+      vocabEntries: null
+    }
+  },
+  methods: {
+    getVocabEntries(page=1) {
+      params = {
+        language: this.language,
+        page: page
+      }
+
+      axios.get(this.vocabEntriesUrl, {
+        params: params
+      })
+      .then(response => {
+        console.log('Entries')
+        this.vocabEntries = response.data.results
+        this.setPagination(
+          response.data.previous,
+          response.data.next,
+          response.data.page_num,
+          response.data.count,
+          response.data.num_pages
+        )
+      })
+      .catch(error => {
+        if (error.response) {
+          console.log(error.response)
+        } else if (error.request) {
+          console.log(error.request)
+        } else {
+          console.log(error.message)
+        }
+        console.log(error.config)
+      })
+      .finally(() => {})
+    },
+  },
+  created() {
+    this.getVocabEntries()
+  }
+}
+
 const AjaxDelete = {
   props: {
     confirmationId: {

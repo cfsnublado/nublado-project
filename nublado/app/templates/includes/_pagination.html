@@ -1,12 +1,11 @@
 {% load core_extras %}
+{% load i18n %}
 
 {% if is_paginated %}
 <section>
 <nav role="pagination">
 
 <ul class="cd-pagination">
-
-{% load i18n %}
 
 {% if page_obj.has_previous %}
 <li>
@@ -43,7 +42,7 @@
 {% else %}
 <li>
 <a 
-class="{% if not page_obj.has_next %} disabled {% endif %}" 
+class="disabled" 
 href="#"
 >
 {% trans "label_next" %}</a>

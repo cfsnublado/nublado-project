@@ -24,6 +24,7 @@ Vue.component('ipa-symbol-key', IpaSymbolKey)
 Vue.component('symbol-keypad', SymbolKeypad)
 Vue.component('ipa-symbol-keypad', IpaSymbolKeypad)
 Vue.component('entry-definitions', EntryDefinitions)
+Vue.component('vocab-entries', VocabEntries)
 Vue.use(ModalPlugin)
 
 Vue.filter('capitalize', function (value) {

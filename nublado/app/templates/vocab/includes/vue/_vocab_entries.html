@@ -1,0 +1,89 @@
+{% load i18n %}
+
+{% url 'api:vocab-entry-list' as vocab_entries_url %}
+
+<vocab-entries
+init-vocab-entries-url="{{ vocab_entries_url }}"
+inline-template
+>
+
+<div>
+
+<div class="panel" style="min-height: 300px;">
+<div class="panel-body">
+<div id="vocab-entry-tag-group" class="vocab-entry-tag-group ui labels">
+
+<tag
+  v-for="(tag, index) in vocabEntries"
+  :key="tag.id"
+  :init-id="index"
+  :init-value="tag.entry"
+  @tag-select=""
+  @tag-remove=""
+>
+</tag>
+
+</div>
+</div>
+</div>
+
+<section>
+<nav role="pagination">
+
+<ul class="cd-pagination">
+
+<li v-if="previousUrl">
+<a
+@click.prevent="getVocabEntries(pageNum - 1)"
+>
+{% trans 'label_previous' %}
+</a>
+</li>
+
+<li v-else>
+<a class="disabled" href="#">{% trans 'label_previous' %}</a>
+</li>
+
+<li v-for="page in pageCount">
+
+<a 
+v-if="pageNum == page" 
+class="current" 
+href="#"
+>
+[[ page ]]
+</a>
+<a 
+v-else 
+@click.prevent="getVocabEntries(page)"
+>
+[[ page ]]
+</a>
+
+</li>
+
+<li v-if="nextUrl">
+<a
+@click.prevent="getVocabEntries(pageNum + 1)"
+>
+{% trans 'label_next' %}
+</a>
+</li>
+
+<li v-else>
+<a 
+class="disabled" 
+href="#"
+>
+{% trans 'label_next' %}
+</a>
+</li>
+
+</ul>
+</nav>
+
+</section>
+
+</div>
+
+</vocab-entries>

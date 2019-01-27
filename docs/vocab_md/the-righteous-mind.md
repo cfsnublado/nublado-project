@@ -630,5 +630,19 @@ project_name: English Reading
 
     </div>
 
+- Kant, like Plato, wanted to discover the timeless, changeless form of the Good. He believed that morality had to be the same for all rational creatures, regardless of their cultural or individual proclivities. To discover this timeless form, it simply would not do to use observational methods—to look around the world and see what virtues people happened to pursue. Rather, he said that moral law could only be established by the process of a priori (prior to experience) philosophizing.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: proclivity: proclivities
+
+    en: virtue: virtues
+
+    en: pursue: pursue
+
+    en: a priori: a priori
+
+    </div>
+
 - 
 

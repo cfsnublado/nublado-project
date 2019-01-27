@@ -34,7 +34,7 @@
 {% url 'vocab:vocab_project_sources' vocab_project.id vocab_project.slug as search_url %}
 {% url 'vocab:vocab_project_source_autocomplete' vocab_project.id as autocomplete_url %}
 
-{% include "includes/_search.html" with comp_name="source-search" search_btn=True %}
+{% include "includes/vue/_search.html" with comp_name="source-search" search_btn=True %}
 
 </div>
 </div>

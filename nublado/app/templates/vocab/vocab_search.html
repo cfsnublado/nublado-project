@@ -15,7 +15,7 @@
 {% url 'vocab:vocab_entry_language_autocomplete' 'zz' as autocomplete_url %}
 {% url 'vocab:vocab_entry_search' as search_url %}
 
-{% include "includes/_language_search.html" with comp_name='entry-search' search_btn=True %}
+{% include "includes/vue/_language_search.html" with comp_name='entry-search' search_btn=True %}
 
 </div>
 </div>
@@ -56,99 +56,6 @@
 
 {% include "vocab/includes/_vocab_entry_contexts.html" %}
 {% include "includes/_pagination.html" %}
-
-</div>
-</div>
-
-<div class="row justify-content-md-center">
-<div class="col-md-10">
-
-{% url 'api:vocab-entry-list' as vocab_entries_url %}
-
-<vocab-entries
-init-vocab-entries-url="{{ vocab_entries_url }}"
-inline-template
->
-
-<div>
-
-<section>
-<nav role="pagination">
-
-<ul class="cd-pagination">
-
-<li v-if="previousUrl">
-<a
-@click.prevent="getVocabEntries(pageNum - 1)"
->
-Previous
-</a>
-</li>
-
-<li v-else>
-<a class="disabled" href="#">Previous</a>
-</li>
-
-<li v-for="page in pageCount">
-
-<a 
-v-if="pageNum == page" 
-class="current" 
-href="#"
->
-[[ page ]]
-</a>
-<a 
-v-else 
-@click.prevent="getVocabEntries(page)"
->
-[[ page ]]
-</a>
-
-</li>
-
-<li v-if="nextUrl">
-<a
-@click.prevent="getVocabEntries(pageNum + 1)"
->
-Next
-</a>
-</li>
-
-<li v-else>
-<a 
-class="disabled" 
-href="#"
->
-Next</a>
-</li>
-
-</ul>
-</nav>
-
-</section>
-
-<div class="panel" style="min-height: 300px;">
-<div class="panel-body">
-<div id="vocab-entry-tag-group" class="vocab-entry-tag-group ui labels">
-
-<tag
-  v-for="(tag, index) in vocabEntries"
-  :key="tag.id"
-  :init-id="index"
-  :init-value="tag.entry"
-  @tag-select=""
-  @tag-remove=""
->
-</tag>
-
-</div>
-</div>
-</div>
-
-</div>
-
-</vocab-entries>
 
 </div>
 </div>

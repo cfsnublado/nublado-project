@@ -1,4 +1,4 @@
-from django.urls import path, re_path
+from django.urls import include, path, re_path
 
 from .views.views_vocab_auth import VocabUserDashboardView
 from .views.views_vocab_context_auth import (
@@ -32,43 +32,8 @@ from .views.views_vocab_autocomplete import (
 
 app_name = 'vocab'
 
-urlpatterns = [
+auth_urls = [
     path('', VocabUserDashboardView.as_view(), name='vocab_user_dashboard'),
-    re_path(
-        '^autocomplete/entry/$',
-        VocabEntryAutocompleteView.as_view(),
-        name='vocab_entry_autocomplete'
-    ),
-    re_path(
-        '^autocomplete/entry/(?P<language>[a-z]{2})/$',
-        VocabEntryAutocompleteView.as_view(),
-        name='vocab_entry_language_autocomplete'
-    ),
-    path(
-        'autocomplete/project/<int:vocab_project_pk>/source/',
-        VocabProjectSourceAutocompleteView.as_view(),
-        name='vocab_project_source_autocomplete'
-    ),
-    path(
-        'autocomplete/source/',
-        VocabSourceAutocompleteView.as_view(),
-        name='vocab_source_autocomplete'
-    ),
-    path(
-        'autocomplete/source/<int:vocab_source_pk>/entry/',
-        VocabSourceEntryAutocompleteView.as_view(),
-        name='vocab_source_entry_autocomplete'
-    ),
-    re_path(
-        '^autocomplete/source/(?P<vocab_source_pk>[-?\d]+)/entry/(?P<language>[a-z]{2})/$',
-        VocabSourceEntryAutocompleteView.as_view(),
-        name='vocab_source_entry_language_autocomplete'
-    ),
-    path(
-        'search',
-        VocabEntrySearchView.as_view(),
-        name='vocab_entry_search'
-    ),
     path(
         'project/create/',
         VocabProjectCreateView.as_view(),
@@ -157,4 +122,43 @@ urlpatterns = [
         VocabContextEntryTagView.as_view(),
         name='vocab_context_entry_tag'
     ),
+]
+
+urlpatterns = [
+    re_path(
+        '^autocomplete/entry/$',
+        VocabEntryAutocompleteView.as_view(),
+        name='vocab_entry_autocomplete'
+    ),
+    re_path(
+        '^autocomplete/entry/(?P<language>[a-z]{2})/$',
+        VocabEntryAutocompleteView.as_view(),
+        name='vocab_entry_language_autocomplete'
+    ),
+    path(
+        'autocomplete/project/<int:vocab_project_pk>/source/',
+        VocabProjectSourceAutocompleteView.as_view(),
+        name='vocab_project_source_autocomplete'
+    ),
+    path(
+        'autocomplete/source/',
+        VocabSourceAutocompleteView.as_view(),
+        name='vocab_source_autocomplete'
+    ),
+    path(
+        'autocomplete/source/<int:vocab_source_pk>/entry/',
+        VocabSourceEntryAutocompleteView.as_view(),
+        name='vocab_source_entry_autocomplete'
+    ),
+    re_path(
+        '^autocomplete/source/(?P<vocab_source_pk>[-?\d]+)/entry/(?P<language>[a-z]{2})/$',
+        VocabSourceEntryAutocompleteView.as_view(),
+        name='vocab_source_entry_language_autocomplete'
+    ),
+    path(
+        'search',
+        VocabEntrySearchView.as_view(),
+        name='vocab_entry_search'
+    ),
+    path('auth/', include(auth_urls)),
 ]

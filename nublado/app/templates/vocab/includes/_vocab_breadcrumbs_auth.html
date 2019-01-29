@@ -44,7 +44,7 @@
 
     <a href="{% url 'vocab:vocab_user_dashboard' %}">{% trans "label_main" %}</a>
     &nbsp;>&nbsp;
-    <a href="{% url 'vocab:vocab_entries' %}">{% trans "label_entries" %}</a>
+    <a href="{% url 'vocab:vocab_entries_auth' %}">{% trans "label_entries" %}</a>
 
     {% if url_name == "vocab_entry_dashboard" %}
 
@@ -54,7 +54,7 @@
     {% else %}
 
       &nbsp;>&nbsp;
-      <a href="{% url 'vocab:vocab_entry_dashboard' vocab_entry.language vocab_entry.slug %}">{{ vocab_entry.entry }}</a>
+      <a href="{% url 'vocab:vocab_entry_dashboard_auth' vocab_entry.language vocab_entry.slug %}">{{ vocab_entry.entry }}</a>
 
     {% endif %}
 

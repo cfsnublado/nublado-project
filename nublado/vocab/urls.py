@@ -6,12 +6,13 @@ from .views.views_vocab_context_auth import (
     VocabContextEntryTagView
 )
 from .views.views_vocab_entry import (
+    VocabEntriesView, VocabEntryDashboardView,
     VocabEntrySearchView
 )
 from .views.views_vocab_entry_auth import (
-    VocabEntriesView, VocabEntryContextsView,
+    VocabEntriesView as VocabEntriesAuthView, VocabEntryContextsView,
     VocabEntryCreateView, VocabEntryDeleteView,
-    VocabEntryDashboardView,
+    VocabEntryDashboardView as VocabEntryDashboardAuthView,
     VocabEntryUpdateView
 )
 from .views.views_vocab_project_auth import (
@@ -60,11 +61,11 @@ auth_urls = [
         VocabSourceCreateView.as_view(),
         name='vocab_source_create'
     ),
-    path('entries/', VocabEntriesView.as_view(), name='vocab_entries'),
+    path('entries/', VocabEntriesAuthView.as_view(), name='vocab_entries_auth'),
     re_path(
         '^entry/(?P<vocab_entry_language>[a-z]{2})/(?P<vocab_entry_slug>[-\w]+)/$',
-        VocabEntryDashboardView.as_view(),
-        name='vocab_entry_dashboard'
+        VocabEntryDashboardAuthView.as_view(),
+        name='vocab_entry_dashboard_auth'
     ),
     re_path(
         '^entry/(?P<vocab_entry_language>[a-z]{2})/(?P<vocab_entry_slug>[-\w]+)/contexts/$',
@@ -154,6 +155,16 @@ urlpatterns = [
         '^autocomplete/source/(?P<vocab_source_pk>[-?\d]+)/entry/(?P<language>[a-z]{2})/$',
         VocabSourceEntryAutocompleteView.as_view(),
         name='vocab_source_entry_language_autocomplete'
+    ),
+    re_path(
+        '^entry/(?P<vocab_entry_language>[a-z]{2})/(?P<vocab_entry_slug>[-\w]+)/$',
+        VocabEntryDashboardView.as_view(),
+        name='vocab_entry_dashboard'
+    ),
+    path(
+        'entries',
+        VocabEntriesView.as_view(),
+        name='vocab_entries'
     ),
     path(
         'search',

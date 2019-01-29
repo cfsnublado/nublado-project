@@ -22,14 +22,11 @@ from ..models import (
     VocabEntry, VocabContext, VocabContextEntry,
     VocabProject, VocabSource
 )
-from ..serializers import (
-    VocabContextSerializer, VocabEntrySerializer,
-    VocabProjectSerializer, VocabSourceSerializer
-)
 from ..utils import export_vocab_source
 from ..views.views_mixins import (
     VocabEntrySearchMixin, VocabProjectMixin,
-    VocabSourceMixin
+    VocabSourceMixin, VocabSourcePermissionMixin,
+    VocabSourceSessionMixin
 )
 from ..views.views_vocab_source_auth import (
     VocabSourceEntryContextsView, VocabSourceContextsView,
@@ -81,6 +78,8 @@ class VocabSourceDashboardViewTest(TestCommon):
         classes = (
             LoginRequiredMixin,
             VocabSourceMixin,
+            VocabSourceSessionMixin,
+            VocabSourcePermissionMixin,
             TemplateView
         )
         for class_name in classes:
@@ -156,6 +155,8 @@ class VocabSourceEntriesViewTest(TestCommon):
         classes = (
             LoginRequiredMixin,
             VocabSourceMixin,
+            VocabSourceSessionMixin,
+            VocabSourcePermissionMixin,
             VocabEntrySearchMixin,
             TemplateView,
 
@@ -279,6 +280,8 @@ class VocabSourceContextsViewTest(TestCommon):
         classes = (
             LoginRequiredMixin,
             VocabSourceMixin,
+            VocabSourceSessionMixin,
+            VocabSourcePermissionMixin,
             VocabEntrySearchMixin,
             ListView
         )
@@ -361,6 +364,8 @@ class VocabSourceEntryContextsViewTest(TestCommon):
         classes = (
             LoginRequiredMixin,
             VocabSourceMixin,
+            VocabSourceSessionMixin,
+            VocabSourcePermissionMixin,
             ListView
         )
         for class_name in classes:
@@ -644,6 +649,8 @@ class VocabSourceUpdateViewTest(TestCommon):
         classes = (
             LoginRequiredMixin,
             VocabSourceMixin,
+            VocabSourceSessionMixin,
+            VocabSourcePermissionMixin,
             MessageMixin,
             UpdateView
         )
@@ -740,6 +747,8 @@ class VocabSourceDeleteViewTest(TestCommon):
         classes = (
             LoginRequiredMixin,
             VocabSourceMixin,
+            VocabSourceSessionMixin,
+            VocabSourcePermissionMixin,
             AjaxDeleteMixin,
             DeleteView
         )
@@ -867,6 +876,8 @@ class VocabSourceExportJsonViewTest(TestCommon):
         classes = (
             LoginRequiredMixin,
             VocabSourceMixin,
+            VocabSourceSessionMixin,
+            VocabSourcePermissionMixin,
             JsonAttachmentMixin,
             View
         )

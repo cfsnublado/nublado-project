@@ -19,18 +19,19 @@ from ..models import (
     VocabEntry, VocabContext, VocabContextEntry,
     VocabSource
 )
-from ..views.views_mixins import (
-    VocabEntrySearchMixin
-)
 from ..utils import export_vocab_source
-from .views_mixins import VocabProjectMixin, VocabSourceMixin
+from .views_mixins import (
+    VocabEntrySearchMixin, VocabProjectMixin, VocabSourceMixin,
+    VocabSourcePermissionMixin, VocabSourceSessionMixin
+)
 
 APP_NAME = apps.get_app_config('vocab').name
 
 
 class VocabSourceExportJsonView(
-    LoginRequiredMixin, VocabSourceMixin, JsonAttachmentMixin,
-    View
+    LoginRequiredMixin, VocabSourceMixin,
+    VocabSourceSessionMixin, VocabSourcePermissionMixin,
+    JsonAttachmentMixin, View
 ):
     content_type = 'application/json'
     json_indent = 4
@@ -49,7 +50,9 @@ class VocabSourceExportJsonView(
 
 
 class VocabSourceDashboardView(
-    LoginRequiredMixin, VocabSourceMixin, TemplateView
+    LoginRequiredMixin, VocabSourceMixin,
+    VocabSourceSessionMixin, VocabSourcePermissionMixin,
+    TemplateView
 ):
     template_name = '{0}/auth/vocab_source_dashboard.html'.format(APP_NAME)
 
@@ -60,12 +63,14 @@ class VocabSourceDashboardView(
 
 class VocabSourceEntriesView(
     LoginRequiredMixin, VocabSourceMixin,
+    VocabSourceSessionMixin, VocabSourcePermissionMixin,
     VocabEntrySearchMixin, TemplateView
 ):
     '''
     Return vocab entries used in a specific source.
     '''
     template_name = '{0}/auth/vocab_source_entries.html'.format(APP_NAME)
+    search_redirect_url = 'vocab:vocab_entry_dashboard_auth'
 
     def search_success(self, **kwargs):
         return redirect(
@@ -100,6 +105,7 @@ class VocabSourceEntriesView(
 
 class VocabSourceContextsView(
     LoginRequiredMixin, VocabSourceMixin,
+    VocabSourceSessionMixin, VocabSourcePermissionMixin,
     VocabEntrySearchMixin, ListView
 ):
     '''
@@ -133,7 +139,9 @@ class VocabSourceContextsView(
 
 
 class VocabSourceEntryContextsView(
-    LoginRequiredMixin, VocabSourceMixin, ListView
+    LoginRequiredMixin, VocabSourceMixin,
+    VocabSourceSessionMixin, VocabSourcePermissionMixin,
+    ListView
 ):
     '''
     Returns a list of contexts tagged with a specific entry within a source.
@@ -194,6 +202,7 @@ class VocabSourceCreateView(
 
 class VocabSourceUpdateView(
     LoginRequiredMixin, VocabSourceMixin,
+    VocabSourceSessionMixin, VocabSourcePermissionMixin,
     MessageMixin, UpdateView
 ):
     model = VocabSource
@@ -215,6 +224,7 @@ class VocabSourceUpdateView(
 
 class VocabSourceDeleteView(
     LoginRequiredMixin, VocabSourceMixin,
+    VocabSourceSessionMixin, VocabSourcePermissionMixin,
     AjaxDeleteMixin, DeleteView
 ):
     model = VocabSource

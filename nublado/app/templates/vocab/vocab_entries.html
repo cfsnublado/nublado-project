@@ -1,0 +1,34 @@
+{% extends "vocab/vocab_base.html" %}
+{% load staticfiles %}
+{% load core_extras %}
+{% load i18n %}
+
+{% block title %}
+{% trans "page_vocab_entries_title" %}
+{% endblock title %}
+
+{% block content %}
+
+<div class="row justify-content-md-center">
+<div class="col-md-10">
+
+{% url 'vocab:vocab_entry_language_autocomplete' 'zz' as autocomplete_url %}
+{% url 'vocab:vocab_entry_search' as search_url %}
+
+{% include "includes/vue/_language_search.html" with comp_name='entry-search' search_btn=True %}
+
+</div>
+</div>
+
+<div class="row justify-content-md-center">
+<div class="col-md-10">
+
+{% url 'api:vocab-entry-list' as vocab_entries_url %}
+
+{% include 'vocab/includes/vue/_vocab_entries.html' %}
+
+</div>
+</div>
+
+{% endblock content %}
+

@@ -1,7 +1,5 @@
 {% load i18n %}
 
-{% url 'api:vocab-entry-list' as vocab_entries_url %}
-
 <vocab-entries
 init-vocab-entries-url="{{ vocab_entries_url }}"
 inline-template
@@ -11,15 +9,50 @@ inline-template
 
 <div class="panel" style="min-height: 300px;">
 <div class="panel-body">
-<div id="vocab-entry-tag-group" class="vocab-entry-tag-group ui labels">
 
+<dropdown 
+id="vocabulary-language-menu"
+trigger-classes="ui mini icon button"  
+>
+
+  <template slot="trigger-content">
+  
+    [[ language ]] &nbsp; <i class="fas fa-angle-down"></i>
+
+  </template>
+
+  <template slot="dropdown-content">
+
+    <ul>
+
+    {% get_language_info_list for LANGUAGES as languages %}
+
+    {% for language in languages %}
+
+      <li>
+      <a 
+      id="vocabulary-{{ language.code }}"
+      @click.prevent="setLanguage('{{ language.code }}')"
+      >
+      {{ language.name_translated }}
+      </a>
+      </li>
+
+    {% endfor %}
+
+    </ul>
+
+  </template>
+
+</dropdown>
+
+<div id="vocab-entry-tag-group" class="vocab-entry-tag-group ui labels">
 <tag
   v-for="(tag, index) in vocabEntries"
   :key="tag.id"
   :init-id="index"
   :init-value="tag.entry"
   @tag-select=""
-  @tag-remove=""
 >
 </tag>
 

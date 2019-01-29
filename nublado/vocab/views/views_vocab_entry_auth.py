@@ -15,7 +15,8 @@ from ..conf import settings
 from ..forms import VocabEntryCreateForm, VocabEntryUpdateForm
 from ..models import VocabContextEntry, VocabEntry
 from .views_mixins import (
-    VocabEntryMixin, VocabEntrySearchMixin
+    VocabEntryMixin, VocabEntrySearchMixin,
+    VocabEntryPermissionMixin, VocabEntrySessionMixin
 )
 
 APP_NAME = apps.get_app_config('vocab').name
@@ -23,6 +24,7 @@ APP_NAME = apps.get_app_config('vocab').name
 
 class VocabEntryDashboardView(
     LoginRequiredMixin, VocabEntryMixin,
+    VocabEntryPermissionMixin, VocabEntrySessionMixin,
     TemplateView
 ):
     search_term = None
@@ -45,6 +47,7 @@ class VocabEntriesView(
     template_name = '{0}/auth/vocab_entries.html'.format(APP_NAME)
     paginate_by = 50
     language = None
+    search_redirect_url = 'vocab:vocab_entry_dashboard_auth'
 
     def get(self, request, *args, **kwargs):
         self.language = self.request.GET.get('language', settings.LANGUAGE_CODE)
@@ -69,6 +72,7 @@ class VocabEntriesView(
 
 class VocabEntryContextsView(
     LoginRequiredMixin, VocabEntryMixin,
+    VocabEntryPermissionMixin, VocabEntrySessionMixin,
     ListView
 ):
     '''
@@ -108,7 +112,8 @@ class VocabEntryCreateView(
 
 class VocabEntryUpdateView (
     LoginRequiredMixin, UserstampMixin, MessageMixin,
-    VocabEntryMixin, UpdateView
+    VocabEntryMixin, VocabEntryPermissionMixin,
+    VocabEntrySessionMixin, UpdateView
 ):
     model = VocabEntry
     form_class = VocabEntryUpdateForm
@@ -129,6 +134,7 @@ class VocabEntryUpdateView (
 
 class VocabEntryDeleteView(
     LoginRequiredMixin, VocabEntryMixin,
+    VocabEntryPermissionMixin, VocabEntrySessionMixin,
     AjaxDeleteMixin, DeleteView
 ):
     model = VocabEntry

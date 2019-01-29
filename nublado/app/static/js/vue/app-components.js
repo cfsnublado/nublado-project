@@ -2,6 +2,10 @@
 const VocabEntries = {
   mixins: [PaginationMixin],
   props: {
+    initLanguage: {
+      type: String,
+      default: 'en'
+    },
     initVocabEntriesUrl: {
       type: String,
       default: ''
@@ -9,7 +13,7 @@ const VocabEntries = {
   },
   data() {
     return {
-      language: 'en',
+      language: this.initLanguage,
       vocabEntriesUrl: this.initVocabEntriesUrl,
       vocabEntries: null
     }
@@ -47,6 +51,10 @@ const VocabEntries = {
       })
       .finally(() => {})
     },
+    setLanguage(language) {
+      this.language = language
+      this.getVocabEntries()
+    }
   },
   created() {
     this.getVocabEntries()

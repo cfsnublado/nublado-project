@@ -15,14 +15,16 @@ from core.views import (
 from ..forms import VocabProjectCreateForm, VocabProjectUpdateForm
 from ..models import VocabProject, VocabSource
 from ..views.views_mixins import (
-    VocabProjectMixin, VocabSourceSearchMixin
+    VocabProjectMixin, VocabProjectSessionMixin,
+    VocabSourceSearchMixin
 )
 
 APP_NAME = apps.get_app_config('vocab').name
 
 
 class VocabProjectDashboardView(
-    LoginRequiredMixin, VocabProjectMixin, TemplateView
+    LoginRequiredMixin, VocabProjectMixin,
+    VocabProjectSessionMixin, TemplateView
 ):
     template_name = '{0}/auth/vocab_project_dashboard.html'.format(APP_NAME)
 
@@ -52,6 +54,7 @@ class VocabProjectCreateView(
 
 class VocabProjectUpdateView(
     LoginRequiredMixin, VocabProjectMixin,
+    VocabProjectSessionMixin,
     MessageMixin, UpdateView
 ):
     model = VocabSource
@@ -73,6 +76,7 @@ class VocabProjectUpdateView(
 
 class VocabProjectDeleteView(
     LoginRequiredMixin, VocabProjectMixin,
+    VocabProjectSessionMixin,
     AjaxDeleteMixin, DeleteView
 ):
     model = VocabSource
@@ -86,8 +90,9 @@ class VocabProjectDeleteView(
 
 
 class VocabProjectSourcesView(
-    LoginRequiredMixin, VocabProjectMixin, VocabSourceSearchMixin,
-    TemplateView
+    LoginRequiredMixin, VocabProjectMixin,
+    VocabProjectSessionMixin,
+    VocabSourceSearchMixin, TemplateView
 ):
     template_name = '{0}/auth/vocab_project_sources.html'.format(APP_NAME)
 

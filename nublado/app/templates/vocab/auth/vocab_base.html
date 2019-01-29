@@ -58,7 +58,7 @@ sidebar-adaptable theme-white {{ sidebar_expanded|yesno:"sidebar-nav-expanded," 
 <div class="breadcrumbs">
 {% block breadcrumb_content %}
 
-{% include "vocab/includes/_vocab_breadcrumbs.html" %}
+{% include "vocab/includes/_vocab_breadcrumbs_auth.html" %}
 
 {% endblock breadcrumb_content %}
 </div>
@@ -300,7 +300,7 @@ href="{% url 'vocab:vocab_user_dashboard' %}">
 <a
 id="sidebar-nav-vocab-entries" 
 class="nav-link {% block vocab_entries_link_active %}{% endblock vocab_entries_link_active %}" 
-href="{% url 'vocab:vocab_entries' %}">
+href="{% url 'vocab:vocab_entries_auth' %}">
 <i class="nav-link-icon fas fa-search fa-fw"></i>
 {% trans "label_vocabulary" %}
 </a>

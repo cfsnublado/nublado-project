@@ -22,9 +22,7 @@ class VocabProjectSessionMixin(ObjectSessionMixin):
     session_obj_attrs = ['id', 'name', 'slug']
 
 
-class VocabProjectMixin(
-    CachedObjectMixin, VocabProjectSessionMixin,
-):
+class VocabProjectMixin(CachedObjectMixin):
     vocab_project_id = 'vocab_project_pk'
     vocab_project_slug = 'vocab_project_slug'
     vocab_project = None
@@ -79,10 +77,7 @@ class VocabSourceSessionMixin(ObjectSessionMixin):
     session_obj_attrs = ['id', 'name', 'slug']
 
 
-class VocabSourceMixin(
-    CachedObjectMixin, VocabSourceSessionMixin,
-    VocabSourcePermissionMixin
-):
+class VocabSourceMixin(CachedObjectMixin):
     vocab_source_id = 'vocab_source_pk'
     vocab_source_slug = 'vocab_source_slug'
     vocab_project = None
@@ -176,10 +171,7 @@ class VocabEntrySessionMixin(ObjectSessionMixin):
     session_obj_attrs = ['id', 'language', 'entry', 'slug']
 
 
-class VocabEntryMixin(
-    CachedObjectMixin, VocabEntrySessionMixin,
-    VocabEntryPermissionMixin
-):
+class VocabEntryMixin(CachedObjectMixin):
     vocab_entry_id = 'vocab_entry_pk'
     vocab_entry_language = 'vocab_entry_language'
     vocab_entry_slug = 'vocab_entry_slug'
@@ -214,6 +206,7 @@ class VocabEntrySearchMixin(object):
     search_term = None
     search_language = 'en'
     vocab_entry = None
+    search_redirect_url = 'vocab:vocab_entry_dashboard'
 
     def dispatch(self, request, *args, **kwargs):
         self.search_term = self.request.GET.get('search_entry', None)
@@ -237,11 +230,12 @@ class VocabEntrySearchMixin(object):
         }
 
     def search_success(self, **kwargs):
-        return redirect(
-            'vocab:vocab_entry_dashboard',
-            vocab_entry_language=self.vocab_entry.language,
-            vocab_entry_slug=self.vocab_entry.slug
-        )
+        if self.search_redirect_url:
+            return redirect(
+                self.search_redirect_url,
+                vocab_entry_language=self.vocab_entry.language,
+                vocab_entry_slug=self.vocab_entry.slug
+            )
 
     def get_context_data(self, **kwargs):
         context = super(VocabEntrySearchMixin, self).get_context_data(**kwargs)

@@ -21,7 +21,8 @@ from ..models import (
     VocabProject, VocabSource
 )
 from ..views.views_mixins import (
-    VocabEntryMixin, VocabEntrySearchMixin
+    VocabEntryMixin, VocabEntryPermissionMixin, VocabEntrySearchMixin,
+    VocabEntrySessionMixin
 )
 from ..views.views_vocab_entry_auth import (
     VocabEntryContextsView, VocabEntryCreateView, VocabEntriesView,
@@ -64,6 +65,8 @@ class VocabEntryDashboardViewTest(TestCommon):
         classes = (
             LoginRequiredMixin,
             VocabEntryMixin,
+            VocabEntryPermissionMixin,
+            VocabEntrySessionMixin,
             TemplateView
         )
         for class_name in classes:
@@ -189,6 +192,8 @@ class VocabEntryContextsViewTest(TestCommon):
         classes = (
             LoginRequiredMixin,
             VocabEntryMixin,
+            VocabEntryPermissionMixin,
+            VocabEntrySessionMixin,
             ListView
         )
         for class_name in classes:
@@ -437,6 +442,8 @@ class VocabEntryUpdateViewTest(TestCommon):
         classes = (
             LoginRequiredMixin,
             VocabEntryMixin,
+            VocabEntryPermissionMixin,
+            VocabEntrySessionMixin,
             UserstampMixin,
             MessageMixin,
             UpdateView
@@ -511,6 +518,8 @@ class VocabEntryDeleteViewTest(TestCommon):
         class_names = (
             LoginRequiredMixin,
             VocabEntryMixin,
+            VocabEntryPermissionMixin,
+            VocabEntrySessionMixin,
             AjaxDeleteMixin,
             DeleteView
         )

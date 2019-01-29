@@ -25,6 +25,10 @@ from ..utils import (
 from .permissions import CreatorPermission, ReadWritePermission, IsSuperuser
 
 
+class SmallPagination(StandardPagination):
+    page_size = 10
+
+
 class BatchMixin(object):
 
     @action(methods=['post'], detail=False)
@@ -388,7 +392,8 @@ class VocabContextEntryViewSet(
         'vocab_entry_tags'
     )
     serializer_class = VocabContextEntrySerializer
-    pagination_class = StandardPagination
+    pagination_class = SmallPagination
+    permission_classes = [ReadWritePermission]
 
     def get_queryset(self):
         vocab_entry_id = self.request.query_params.get('vocab_entry', None)

@@ -7,7 +7,6 @@ inline-template
 
 <div 
 class="vocab-context-entries"
-v-show="vocabContexts"
 >
 
 <div
@@ -17,7 +16,7 @@ v-for="(contextEntry, index) in vocabContexts"
 >
 <div class="panel-body">
 
-<div id="vocab-context-[[ contextEntry.vocab_context_id ]]" class="vocab-context">
+<div :id="[[ contextEntry.id ]]" class="vocab-context">
 
 <div class="vocab-source-title">
 <a href="#">
@@ -33,6 +32,68 @@ v-for="(contextEntry, index) in vocabContexts"
 
 </div>
 </div>
+
+<section
+v-if="pageCount > 1"
+>
+<nav role="pagination">
+
+<ul class="cd-pagination">
+
+<li v-if="previousUrl">
+<a
+v-scroll-to="'#contexts-scroll-top'"
+@click.prevent="getVocabContexts(pageNum - 1)"
+>
+{% trans 'label_previous' %}
+</a>
+</li>
+
+<li v-else>
+<a class="disabled" href="#">{% trans 'label_previous' %}</a>
+</li>
+
+<li v-for="page in pageCount">
+
+<a 
+v-if="pageNum == page" 
+class="current" 
+href="#"
+>
+[[ page ]]
+</a>
+<a 
+v-else 
+v-scroll-to="'#contexts-scroll-top'"
+@click.prevent="getVocabContexts(page)"
+>
+[[ page ]]
+</a>
+
+</li>
+
+<li v-if="nextUrl">
+<a
+v-scroll-to="'#contexts-scroll-top'"
+@click.prevent="getVocabContexts(pageNum + 1)"
+>
+{% trans 'label_next' %}
+</a>
+</li>
+
+<li v-else>
+<a 
+class="disabled" 
+href="#"
+>
+{% trans 'label_next' %}
+</a>
+</li>
+
+</ul>
+</nav>
+
+</section>
 
 </div>
 

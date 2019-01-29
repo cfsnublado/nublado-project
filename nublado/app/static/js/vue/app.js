@@ -28,6 +28,20 @@ Vue.component('vocab-entries', VocabEntries)
 Vue.component('vocab-contexts', VocabContexts)
 Vue.use(ModalPlugin)
 
+VueScrollTo.setDefaults({
+    container: "body",
+    duration: 500,
+    easing: "ease",
+    offset: 0,
+    force: true,
+    cancelable: true,
+    onStart: false,
+    onDone: false,
+    onCancel: false,
+    x: false,
+    y: true
+})
+
 Vue.filter('capitalize', function (value) {
   if (!value) return ''
   value = value.toString()

@@ -12,6 +12,17 @@
 <div class="row justify-content-md-center">
 <div class="col-md-10">
 
+{% url 'vocab:vocab_entry_language_autocomplete' 'zz' as autocomplete_url %}
+{% url 'vocab:vocab_entry_search' as search_url %}
+
+{% include "includes/vue/_language_search.html" with comp_name='entry-search' search_btn=True %}
+
+</div>
+</div>
+
+<div class="row justify-content-md-center">
+<div class="col-md-10">
+
 <div class="entry-header">
 {{ vocab_entry.entry }}
 </div>
@@ -32,6 +43,15 @@
 
 {% url 'api:nested-vocab-definition-list' vocab_entry.id as vocab_definitions_url %}
 {% include "vocab/includes/vue/_vocab_definitions.html" with definitions_url=vocab_definitions_url %}
+
+</div>
+</div>
+
+<div class="row justify-content-md-center">
+<div class="col-md-10">
+
+{% url_set_param 'api:vocab-context-entry-list' vocab_entry=vocab_entry.id as vocab_contexts_url %}
+{% include "vocab/includes/vue/_vocab_contexts.html" %}
 
 </div>
 </div>

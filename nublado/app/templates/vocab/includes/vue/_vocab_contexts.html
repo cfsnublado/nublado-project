@@ -1,0 +1,39 @@
+{% load i18n %}
+
+<vocab-contexts
+init-vocab-contexts-url="{{ vocab_contexts_url }}"
+inline-template
+>
+
+<div 
+class="vocab-context-entries"
+v-show="vocabContexts"
+>
+
+<div
+class="panel"
+v-for="(contextEntry, index) in vocabContexts"
+:key="contextEntry.vocab_context_id"
+>
+<div class="panel-body">
+
+<div id="vocab-context-[[ contextEntry.vocab_context_id ]]" class="vocab-context">
+
+<div class="vocab-source-title">
+<a href="#">
+[[ contextEntry.vocab_source ]]
+</a>
+</div>
+
+<div class="vocab-context-text">
+[[ contextEntry.vocab_context ]]
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+
+</vocab-contexts>

@@ -1,4 +1,3 @@
-
 from rest_framework import status
 from rest_framework.decorators import action
 from rest_framework.exceptions import ParseError
@@ -383,8 +382,20 @@ class VocabContextEntryViewSet(
 ):
     lookup_field = 'pk'
     lookup_url_kwarg = 'pk'
-    queryset = VocabContextEntry.objects.select_related('vocab_entry', 'vocab_context').prefetch_related('vocab_entry_tags')
+    queryset = VocabContextEntry.objects.select_related(
+        'vocab_entry', 'vocab_context', 'vocab_context__vocab_source'
+    ).prefetch_related(
+        'vocab_entry_tags'
+    )
     serializer_class = VocabContextEntrySerializer
+    pagination_class = StandardPagination
+
+    def get_queryset(self):
+        vocab_entry_id = self.request.query_params.get('vocab_entry', None)
+        if vocab_entry_id:
+            return self.queryset.filter(vocab_entry_id=vocab_entry_id)
+        else:
+            return self.queryset
 
     @action(methods=['get'], detail=False)
     def detail_data(self, request):
@@ -417,7 +428,11 @@ class VocabContextEntryViewSet(
 class NestedVocabContextEntryViewSet(APIDefaultsMixin, CreateModelMixin, ListModelMixin, GenericViewSet):
     lookup_field = 'pk'
     lookup_url_kwarg = 'pk'
-    queryset = VocabContextEntry.objects.select_related('vocab_entry', 'vocab_context')
+    queryset = VocabContextEntry.objects.select_related(
+        'vocab_entry', 'vocab_context', 'vocab_context__vocab_source'
+    ).prefetch_related(
+        'vocab_entry_tags'
+    )
     serializer_class = VocabContextEntrySerializer
     vocab_entry = None
     vocab_context = None

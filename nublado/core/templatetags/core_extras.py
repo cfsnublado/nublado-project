@@ -47,11 +47,11 @@ def url_set_param(context, url=None, **kwargs):
     '''
     Sets url query pararmeter.
 
-    url: url string , or current url if None
+    url: url name , or current url if None
     '''
 
     if url is not None:
-        url = URLObject(url)
+        url = URLObject(reverse(url))
     else:
         url = URLObject(context.request.get_full_path())
     path = url.path

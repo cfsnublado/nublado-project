@@ -244,15 +244,29 @@ class VocabContextEntrySerializer(BaseSerializer, HyperlinkedModelSerializer):
         source='vocab_context'
     )
     vocab_context = StringRelatedField(many=False)
+    vocab_source_url = HyperlinkedRelatedField(
+        many=False,
+        read_only=True,
+        view_name='api:vocab-source-detail',
+        lookup_field='pk',
+        source='vocab_context.vocab_source'
+    )
+    vocab_source = StringRelatedField(
+        many=False,
+        source='vocab_context.vocab_source'
+    )
     vocab_entry_tags = StringRelatedField(many=True)
 
     class Meta:
         model = VocabContextEntry
         fields = (
-            'url', 'id', 'vocab_entry_url', 'vocab_entry_id', 'vocab_entry', 'vocab_context_url',
-            'vocab_context', 'date_created', 'date_updated', 'vocab_entry_tags'
+            'url', 'id', 'vocab_entry_url', 'vocab_entry_id', 'vocab_entry',
+            'vocab_context_id', 'vocab_context_url',
+            'vocab_context', 'vocab_source_url', 'vocab_source', 'date_created',
+            'date_updated', 'vocab_entry_tags'
         )
         read_only_fields = (
-            'url', 'id', 'vocab_entry_url', 'vocab_entry_id', 'vocab_context_url',
-            'date_created', 'date_updated'
+            'url', 'id', 'vocab_entry_url', 'vocab_entry_id', 'vocab_context_id',
+            'vocab_context_url', 'vocab_source_url',
+            'vocab_source', 'date_created', 'date_updated'
         )

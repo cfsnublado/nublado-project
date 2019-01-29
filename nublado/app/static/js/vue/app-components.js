@@ -1,3 +1,53 @@
+const VocabContexts = {
+  mixins: [PaginationMixin],
+  props: {
+    initVocabContextsUrl: {
+      type: String,
+      default: ''
+    }
+  },
+  data() {
+    return {
+      vocabContextsUrl: this.initVocabContextsUrl,
+      vocabContexts: null
+    }
+  },
+  methods: {
+    getVocabContexts(page=1) {
+      params = {
+        page: page
+      }
+
+      axios.get(this.vocabContextsUrl, {
+        params: params
+      })
+      .then(response => {
+        this.vocabContexts = response.data.results
+        this.setPagination(
+          response.data.previous,
+          response.data.next,
+          response.data.page_num,
+          response.data.count,
+          response.data.num_pages
+        )
+      })
+      .catch(error => {
+        if (error.response) {
+          console.log(error.response)
+        } else if (error.request) {
+          console.log(error.request)
+        } else {
+          console.log(error.message)
+        }
+        console.log(error.config)
+      })
+      .finally(() => {})
+    }
+  },
+  created() {
+    this.getVocabContexts()
+  }
+}
 
 const VocabEntries = {
   mixins: [PaginationMixin],

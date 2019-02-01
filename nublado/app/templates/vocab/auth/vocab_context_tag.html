@@ -119,7 +119,7 @@ inline-template
 <div id="vocab-entry-tagbox" class="tagbox">
 
 {% url 'vocab:vocab_entry_language_autocomplete' 'zz' as autocomplete_url %}
-{% include "includes/_language_search.html" with comp_name='entry-tag-search' comp_extra='@add-tag="addTag" @search-focus="onFocus"' %}
+{% include "includes/vue/_language_search.html" with comp_name='entry-tag-search' comp_extra='@add-tag="addTag" @search-focus="onFocus"' %}
 
 <div id="vocab-entry-tags" class="tagbox-container ui labels">
 

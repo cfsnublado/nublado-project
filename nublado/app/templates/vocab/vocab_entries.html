@@ -4,7 +4,7 @@
 {% load i18n %}
 
 {% block title %}
-{% trans "page_vocab_entries_title" %}
+{% trans "page_vocabulary_title" %}
 {% endblock title %}
 
 {% block content %}
@@ -12,10 +12,13 @@
 <div class="row justify-content-md-center">
 <div class="col-md-10">
 
-{% url 'vocab:vocab_entry_language_autocomplete' 'zz' as autocomplete_url %}
-{% url 'vocab:vocab_entry_search' as search_url %}
+<div class="page-subheader"> {% trans 'label_search_vocabulary' %} </div>
 
+{% url 'vocab:vocab_entry_language_autocomplete' 'zz' as autocomplete_url %}
+{% url 'vocab:vocab_entries' as search_url %}
 {% include "includes/vue/_language_search.html" with comp_name='entry-search' search_btn=True %}
+
+<span id="entries-scroll-top"></span>
 
 </div>
 </div>
@@ -23,8 +26,10 @@
 <div class="row justify-content-md-center">
 <div class="col-md-10">
 
-{% url 'api:vocab-entry-list' as vocab_entries_url %}
+<div class="page-subheader" style="margin-top: 50px;"> {% trans 'label_entries' %} </div>
 
+{% url 'api:vocab-entry-list' as vocab_entries_url %}
+{% url 'vocab:vocab_entry_dashboard' 'xx' 'zzz' as vocab_entry_url %}
 {% include 'vocab/includes/vue/_vocab_entries.html' %}
 
 </div>

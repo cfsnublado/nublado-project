@@ -1,0 +1,31 @@
+{% load i18n %}
+
+{% with url_name=request.resolver_match.url_name %}
+
+  {% if request.session.session_obj.vocab_entry %}
+
+    <a href="{% url 'vocab:vocab_entries' %}">{% trans "label_vocabulary" %}</a>
+
+    {% if url_name == "vocab_entry_dashboard" %}
+
+      &nbsp;>&nbsp;
+      <span>{{ vocab_entry.entry }}</span>
+
+    {% else %}
+
+      &nbsp;>&nbsp;
+      <a href="{% url 'vocab:vocab_entry_dashboard' vocab_entry.language vocab_entry.slug %}">{{ vocab_entry.entry }}</a>
+
+    {% endif %}
+
+  {% else %}
+
+    {% if url_name != "vocab_entries" %}
+
+      <a href="{% url 'vocab:vocab_entries' %}">{% trans "label_vocabulary" %}</a>
+
+    {% endif %}
+
+  {% endif %}
+
+{% endwith %}

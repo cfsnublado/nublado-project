@@ -25,6 +25,7 @@ Vue.component('symbol-keypad', SymbolKeypad)
 Vue.component('ipa-symbol-keypad', IpaSymbolKeypad)
 Vue.component('entry-definitions', EntryDefinitions)
 Vue.component('vocab-entries', VocabEntries)
+Vue.component('vocab-entry-context', VocabEntryContext)
 Vue.component('vocab-contexts', VocabContexts)
 Vue.use(ModalPlugin)
 

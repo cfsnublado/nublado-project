@@ -1166,5 +1166,84 @@ project_name: Spanish Reading
 
     </div>
 
-- 
+- Al parecer, la voz ya iba corriendo por el tugurio. El gentío manifestó su desagrado con abucheos y maldiciones, gritos y bebidas derramadas. Al lado del círculo había un hombre alto y calvo, con el pecho descubierto, que señalaba al interior y discutía con los organizadores ojos claros, mientras los furiaspren bullían en el suelo a su alrededor.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: abucheo: abucheos
+
+    es: discutir: discutía
+
+    es: bullir: bullían
+
+    es: suelo: suelo
+
+    es: tugurio: tugurio
+
+    es: manifestar: manifestó
+
+    </div>
+
+- —Apuesta por mí —dijo Dalinar—, por los viejos tiempos. —Saltó de la mesa por el otro lado y se internó en la muchedumbre—. ¡Que alguien diga a ese hombre que tiene un contrincante! 
+
+    El silencio se extendió desde él como un mal olor. Dalinar llegó al borde del círculo en un tugurio silencioso por completo, repleto de hombres que hasta el momento se habían mostrado belicosos, tanto ojos claros como oscuros. El luchador, Makh, dio un paso atrás con los ojos verdes oscuros muy abiertos, mientras desaparecían los furiaspren. Tenía una complexión poderosa y brazos abultados como si estuvieran a punto de estallar. Se decía que jamás había sido derrotado.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: apostar: apuesta
+
+    es: internarse: se internó
+
+    es: muchedumbre: muchedumbre
+
+    es: contrincante: contrincante
+
+    es: tugurio: tugurio
+
+    es: estallar: estallar
+
+    es: derrotar: había sido derrotado
+
+    es: belicoso: belicosos
+
+    es: estar a punto de: estuviera a punto de estallar
+
+    </div>
+
+- Para Dalinar, volar daba una sensación muy parecida a navegar por el océano. Había algo muy desconcertante en ir en barco, sujeto a los vientos y a las corrientes. Los hombres no controlaban las olas: se limitaban a zarpar y rezar para que el mar no decidiera consumirlos. 
+
+    Volar junto al capitán provocaba algunas de esas mismas emociones en Dalinar. Por una parte, la vista de las Llanuras Quebradas era esplendorosa. Casi podía verles la pauta que había mencionado Shallan.
+
+
+    <div markdown="1" class="tagged-entries">
+
+    es: zarpar: zarpar
+
+    es: esplendoroso: esplendorosa
+
+    es: ola: olas
+
+    es: pauta: pauta
+
+    es: navegar: navegar
+
+    es: desconcertante: desconcertante
+
+    </div>
+
+- El capitán Kaladin se acercó planeando. Era el único que de verdad parecía controlar su vuelo. Incluso sus hombres maniobraban más como rocas dejadas caer que como anguilas aéreas. Carecían de su fineza, de su control. Aunque los escuderos podrían ayudar si algo salía mal, Kaladin había sido el único en aplicar los lanzamientos a Dalinar y los demás. Decía que necesitaba practicar para cuando volara hacia Kholinar. 
+
+    Kaladin tocó a Elhokar y el rey empezó a perder velocidad. Luego Kaladin fue pasando por todos, ralentizándolos uno a uno. Al terminar, los elevó de forma que estuvieran lo bastante cerca para poder hablar. Sus soldados se quedaron flotando en las inmediaciones.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: planear: planeando
+
+    es: acercarse: se acercó
+
+    es: carecer: carecían
+
+    es: ralentizar: ralentizándolos
+
+    </div>
 

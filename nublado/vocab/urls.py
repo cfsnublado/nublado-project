@@ -6,8 +6,7 @@ from .views.views_vocab_context_auth import (
     VocabContextEntryTagView
 )
 from .views.views_vocab_entry import (
-    VocabEntriesView, VocabEntryDashboardView,
-    VocabEntrySearchView
+    VocabEntriesView, VocabEntryDashboardView
 )
 from .views.views_vocab_entry_auth import (
     VocabEntriesView as VocabEntriesAuthView, VocabEntryContextsView,
@@ -126,6 +125,11 @@ auth_urls = [
 ]
 
 urlpatterns = [
+    path(
+        '',
+        VocabEntriesView.as_view(),
+        name='vocab_entries'
+    ),
     re_path(
         '^autocomplete/entry/$',
         VocabEntryAutocompleteView.as_view(),
@@ -160,16 +164,6 @@ urlpatterns = [
         '^entry/(?P<vocab_entry_language>[a-z]{2})/(?P<vocab_entry_slug>[-\w]+)/$',
         VocabEntryDashboardView.as_view(),
         name='vocab_entry_dashboard'
-    ),
-    path(
-        'entries',
-        VocabEntriesView.as_view(),
-        name='vocab_entries'
-    ),
-    path(
-        'search',
-        VocabEntrySearchView.as_view(),
-        name='vocab_entry_search'
     ),
     path('auth/', include(auth_urls)),
 ]

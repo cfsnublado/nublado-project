@@ -2,6 +2,7 @@
 
 <vocab-entries
 init-vocab-entries-url="{{ vocab_entries_url }}"
+init-vocab-entry-url="{{ vocab_entry_url }}"
 inline-template
 >
 
@@ -52,7 +53,7 @@ trigger-classes="ui mini icon button"
   :key="tag.id"
   :init-id="index"
   :init-value="tag.entry"
-  @tag-select=""
+  @tag-select="entrySelected(tag)"
 >
 </tag>
 
@@ -69,7 +70,10 @@ v-if="pageCount > 1"
 
 <li v-if="previousUrl">
 <a
-@click.prevent="getVocabEntries(pageNum - 1)"
+v-scroll-to="{
+  el: '#entries-scroll-top',
+  onDone: getVocabEntries.bind(this, pageNum - 1)
+ }"
 >
 {% trans 'label_previous' %}
 </a>
@@ -89,8 +93,11 @@ href="#"
 [[ page ]]
 </a>
 <a 
-v-else 
-@click.prevent="getVocabEntries(page)"
+v-else
+v-scroll-to="{
+  el: '#entries-scroll-top',
+  onDone: getVocabEntries.bind(this, page)
+ }"
 >
 [[ page ]]
 </a>
@@ -99,7 +106,10 @@ v-else
 
 <li v-if="nextUrl">
 <a
-@click.prevent="getVocabEntries(pageNum + 1)"
+v-scroll-to="{
+  el: '#entries-scroll-top',
+  onDone: getVocabEntries.bind(this, pageNum + 1)
+ }"
 >
 {% trans 'label_next' %}
 </a>

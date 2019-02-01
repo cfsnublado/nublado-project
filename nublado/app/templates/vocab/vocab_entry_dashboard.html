@@ -13,8 +13,7 @@
 <div class="col-md-10">
 
 {% url 'vocab:vocab_entry_language_autocomplete' 'zz' as autocomplete_url %}
-{% url 'vocab:vocab_entry_search' as search_url %}
-
+{% url 'vocab:vocab_entries' as search_url %}
 {% include "includes/vue/_language_search.html" with comp_name='entry-search' search_btn=True %}
 
 </div>
@@ -25,7 +24,7 @@
 <div class="row justify-content-md-center">
 <div class="col-md-10">
 
-<div class="entry-header">
+<div class="entry-header" style="margin-top: 30px;">
 {{ vocab_entry.entry }}
 </div>
 

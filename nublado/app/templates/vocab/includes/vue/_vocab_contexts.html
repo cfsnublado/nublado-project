@@ -10,27 +10,41 @@ class="vocab-context-entries"
 >
 
 <div
-class="panel"
-v-for="(contextEntry, index) in vocabContexts"
-:key="contextEntry.vocab_context_id"
+v-for="(entryContext, index) in vocabContexts"
+:key="entryContext.vocab_context_id"
 >
+
+<vocab-entry-context
+:init-entry-context=entryContext
+:context-element="'#context-' + entryContext.id"
+inline-template
+>
+
+<div class="panel">
 <div class="panel-body">
 
-<div :id="[[ contextEntry.id ]]" class="vocab-context">
+<div :id="[[ entryContext.id ]]" class="vocab-context">
 
 <div class="vocab-source-title">
 <a href="#">
-[[ contextEntry.vocab_source ]]
+[[ entryContext.vocab_source ]]
 </a>
 </div>
 
-<div class="vocab-context-text">
-[[ contextEntry.vocab_context ]]
+<div 
+:id="'context-' + entryContext.id"
+class="vocab-context-text"
+v-html="markdownToHtml(entryContext.vocab_context)"
+>
 </div>
 
 </div>
 
 </div>
+</div>
+
+</vocab-entry-context>
+
 </div>
 
 <section
@@ -42,8 +56,10 @@ v-if="pageCount > 1"
 
 <li v-if="previousUrl">
 <a
-v-scroll-to="'#contexts-scroll-top'"
-@click.prevent="getVocabContexts(pageNum - 1)"
+v-scroll-to="{
+  el: '#contexts-scroll-top',
+  onDone: getVocabContexts.bind(this, pageNum - 1)
+ }"
 >
 {% trans 'label_previous' %}
 </a>
@@ -64,8 +80,10 @@ href="#"
 </a>
 <a 
 v-else 
-v-scroll-to="'#contexts-scroll-top'"
-@click.prevent="getVocabContexts(page)"
+v-scroll-to="{
+  el: '#contexts-scroll-top',
+  onDone: getVocabContexts.bind(this, page)
+ }"
 >
 [[ page ]]
 </a>
@@ -74,8 +92,10 @@ v-scroll-to="'#contexts-scroll-top'"
 
 <li v-if="nextUrl">
 <a
-v-scroll-to="'#contexts-scroll-top'"
-@click.prevent="getVocabContexts(pageNum + 1)"
+v-scroll-to="{
+  el: '#contexts-scroll-top',
+  onDone: getVocabContexts.bind(this, pageNum + 1)
+ }"
 >
 {% trans 'label_next' %}
 </a>

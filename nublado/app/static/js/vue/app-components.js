@@ -1,3 +1,25 @@
+const VocabEntryContext = {
+  mixins: [MarkdownMixin, HighlightMixin],
+  props: {
+    initEntryContext: {
+      type: Object,
+      required: true
+    }
+  },
+  data() {
+    return {
+      entryContext: this.initEntryContext
+    }
+  },
+  methods: {},
+  created() {
+    console.log(this.contextElement)
+    this.$nextTick(() => {
+      this.highlight(this.entryContext.vocab_entry_tags)
+    })
+  }
+}
+
 const VocabContexts = {
   mixins: [PaginationMixin],
   props: {
@@ -59,12 +81,17 @@ const VocabEntries = {
     initVocabEntriesUrl: {
       type: String,
       default: ''
+    },
+    initVocabEntryUrl: {
+      type: String,
+      default: ''
     }
   },
   data() {
     return {
       language: this.initLanguage,
       vocabEntriesUrl: this.initVocabEntriesUrl,
+      vocabEntryUrl: '',
       vocabEntries: null
     }
   },
@@ -79,7 +106,7 @@ const VocabEntries = {
         params: params
       })
       .then(response => {
-        console.log('Entries')
+        console.log('entries')
         this.vocabEntries = response.data.results
         this.setPagination(
           response.data.previous,
@@ -104,6 +131,12 @@ const VocabEntries = {
     setLanguage(language) {
       this.language = language
       this.getVocabEntries()
+    },
+    entrySelected(entry) {
+       this.vocabEntryUrl = this.initVocabEntryUrl
+        .replace('xx', entry.language)
+        .replace('zzz', entry.slug)
+      window.location.replace(this.vocabEntryUrl)     
     }
   },
   created() {

@@ -10,7 +10,27 @@ sidebar-adaptable theme-white {{ sidebar_expanded|yesno:"sidebar-nav-expanded," 
 {% endblock body_classes %}
 
 {% block body %}
-<div id="main-content" class="main-content container" style="margin-top: 50px;">
+<div id="main-content" class="main-content container" style="margin-top: 20px;">
+
+{% block page_header %}{% endblock page_header %}
+
+{% block breadcrumbs %}
+
+<div class="row justify-content-md-center">
+<div class="col-md-10">
+
+<div class="breadcrumbs" style="margin-top: 20px; margin-bottom: 20px;">
+{% block breadcrumb_content %}
+
+{% include "vocab/includes/_vocab_breadcrumbs.html" %}
+
+{% endblock breadcrumb_content %}
+</div>
+
+</div>
+</div>
+
+{% endblock breadcrumbs %}
 {% block content %}{% endblock content %}
 </div>
 {% endblock body %}

@@ -29,6 +29,10 @@ class SmallPagination(StandardPagination):
     page_size = 10
 
 
+class LargePagination(StandardPagination):
+    page_size = 150
+
+
 class BatchMixin(object):
 
     @action(methods=['post'], detail=False)
@@ -55,7 +59,7 @@ class VocabEntryViewSet(APIDefaultsMixin, BatchMixin, ModelViewSet):
     lookup_field = 'pk'
     lookup_url_kwarg = 'pk'
     serializer_class = VocabEntrySerializer
-    pagination_class = StandardPagination
+    pagination_class = LargePagination
     permission_classes = [ReadWritePermission]
     queryset = VocabEntry.objects.order_by('entry').all()
 

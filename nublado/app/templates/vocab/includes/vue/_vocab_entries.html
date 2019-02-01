@@ -70,10 +70,7 @@ v-if="pageCount > 1"
 
 <li v-if="previousUrl">
 <a
-v-scroll-to="{
-  el: '#entries-scroll-top',
-  onDone: getVocabEntries.bind(this, pageNum - 1)
- }"
+@click.prevent="getVocabEntries(pageNum - 1)"
 >
 {% trans 'label_previous' %}
 </a>
@@ -83,7 +80,10 @@ v-scroll-to="{
 <a class="disabled" href="#">{% trans 'label_previous' %}</a>
 </li>
 
-<li v-for="page in pageCount">
+<li 
+v-for="page in pageCount"
+:class="[ (pageNum != page) ? 'page-num' : 'current-page' ]"
+>
 
 <a 
 v-if="pageNum == page" 
@@ -94,10 +94,7 @@ href="#"
 </a>
 <a 
 v-else
-v-scroll-to="{
-  el: '#entries-scroll-top',
-  onDone: getVocabEntries.bind(this, page)
- }"
+@click.prevent="getVocabEntries(page)"
 >
 [[ page ]]
 </a>
@@ -106,10 +103,7 @@ v-scroll-to="{
 
 <li v-if="nextUrl">
 <a
-v-scroll-to="{
-  el: '#entries-scroll-top',
-  onDone: getVocabEntries.bind(this, pageNum + 1)
- }"
+@click.prevent="getVocabEntries(pageNum + 1)"
 >
 {% trans 'label_next' %}
 </a>

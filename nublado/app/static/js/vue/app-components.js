@@ -51,6 +51,9 @@ const VocabContexts = {
           response.data.count,
           response.data.num_pages
         )
+        VueScrollTo.scrollTo({
+          el: '#contexts-scroll-top',
+        })
       })
       .catch(error => {
         if (error.response) {
@@ -114,6 +117,9 @@ const VocabEntries = {
           response.data.count,
           response.data.num_pages
         )
+        VueScrollTo.scrollTo({
+          el: '#entries-scroll-top',
+        })
       })
       .catch(error => {
         if (error.response) {

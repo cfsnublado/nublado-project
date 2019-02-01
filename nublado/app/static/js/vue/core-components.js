@@ -530,6 +530,7 @@ const BaseTag = {
     }
   },
   template: `
+    <transition name="fade-transition" v-on:after-enter="isVisible = true" v-on:after-leave="isVisible = false">
     <div 
     class="ui label tagblock"
     v-show="isVisible"
@@ -549,6 +550,7 @@ const BaseTag = {
         <i class="fas fa-times"></i>
       </a>
     </div>
+    </transition>
   `
 }
 

@@ -16115,7 +16115,7 @@ nav[role='navigation'] {
 /* line 18, ../scss/cfs/_pagination.scss */
 .cd-pagination li {
   /* hide numbers on small devices */
-  display: none;
+  display: inline-block;
   margin: 0 0.2em;
   background-color: #fff;
 }
@@ -16421,10 +16421,10 @@ animated buttons - animate the text inside prev and next buttons
   transform: translateX(-50%) rotate(180deg) translateY(50px);
 }
 
-@media (min-width: 576px) {
+@media (max-width: 767.98px) {
   /* line 317, ../scss/cfs/_pagination.scss */
-  .cd-pagination li {
-    display: inline-block;
+  .cd-pagination li.page-num {
+    display: none;
   }
 }
 /* line 1, ../scss/cfs/_vue.scss */

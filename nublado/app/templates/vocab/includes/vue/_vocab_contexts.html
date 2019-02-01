@@ -69,7 +69,10 @@ v-scroll-to="{
 <a class="disabled" href="#">{% trans 'label_previous' %}</a>
 </li>
 
-<li v-for="page in pageCount">
+<li
+v-for="page in pageCount"
+:class="[ (pageNum != page) ? 'page-num' : 'current-page' ]"
+>
 
 <a 
 v-if="pageNum == page" 

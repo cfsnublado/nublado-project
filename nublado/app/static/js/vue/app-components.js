@@ -13,7 +13,6 @@ const VocabEntryContext = {
   },
   methods: {},
   created() {
-    console.log(this.contextElement)
     this.$nextTick(() => {
       this.highlight(this.entryContext.vocab_entry_tags)
     })

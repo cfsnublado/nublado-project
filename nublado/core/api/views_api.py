@@ -18,7 +18,6 @@ class APIDefaultsMixin(object):
         TokenAuthentication
     ]
     permission_classes = [IsAuthenticated]
-    paginate_by = 25
 
 
 class StandardPagination(PageNumberPagination):

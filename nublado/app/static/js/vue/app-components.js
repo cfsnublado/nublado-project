@@ -4,6 +4,10 @@ const VocabEntryContext = {
     initEntryContext: {
       type: Object,
       required: true
+    },
+    initSourceUrl: {
+      type: String,
+      default: ''
     }
   },
   data() {
@@ -11,8 +15,18 @@ const VocabEntryContext = {
       entryContext: this.initEntryContext
     }
   },
-  methods: {},
+  methods: {
+    selectSource() {
+      if (this.initSourceUrl) {
+        this.sourceUrl = this.initSourceUrl
+          .replace(0, this.entryContext.vocab_source_id)
+          .replace('zzz', this.entryContext.vocab_source_slug)
+        window.location.replace(this.sourceUrl)
+      }
+    }
+  },
   created() {
+    console.log(this.initSourceUrl)
     this.$nextTick(() => {
       this.highlight(this.entryContext.vocab_entry_tags)
     })
@@ -20,7 +34,10 @@ const VocabEntryContext = {
 }
 
 const VocabContexts = {
-  mixins: [PaginationMixin],
+  mixins: [
+    AjaxProcessMixin,
+    PaginationMixin
+  ],
   props: {
     initVocabContextsUrl: {
       type: String,
@@ -35,6 +52,8 @@ const VocabContexts = {
   },
   methods: {
     getVocabContexts(page=1) {
+      this.process()
+
       params = {
         page: page
       }
@@ -54,6 +73,7 @@ const VocabContexts = {
         VueScrollTo.scrollTo({
           el: '#contexts-scroll-top',
         })
+        this.success()
       })
       .catch(error => {
         if (error.response) {
@@ -65,7 +85,9 @@ const VocabContexts = {
         }
         console.log(error.config)
       })
-      .finally(() => {})
+      .finally(() => {
+        this.complete()
+      })
     }
   },
   created() {
@@ -74,7 +96,10 @@ const VocabContexts = {
 }
 
 const VocabEntries = {
-  mixins: [PaginationMixin],
+  mixins: [
+    AjaxProcessMixin,
+    PaginationMixin
+  ],
   props: {
     initLanguage: {
       type: String,
@@ -99,6 +124,8 @@ const VocabEntries = {
   },
   methods: {
     getVocabEntries(page=1) {
+      this.process()
+
       params = {
         language: this.language,
         page: page
@@ -108,7 +135,6 @@ const VocabEntries = {
         params: params
       })
       .then(response => {
-        console.log('entries')
         this.vocabEntries = response.data.results
         this.setPagination(
           response.data.previous,
@@ -120,6 +146,7 @@ const VocabEntries = {
         VueScrollTo.scrollTo({
           el: '#entries-scroll-top',
         })
+        this.success()
       })
       .catch(error => {
         if (error.response) {
@@ -131,7 +158,9 @@ const VocabEntries = {
         }
         console.log(error.config)
       })
-      .finally(() => {})
+      .finally(() => {
+        this.complete()
+      })
     },
     setLanguage(language) {
       this.language = language
@@ -150,6 +179,7 @@ const VocabEntries = {
 }
 
 const AjaxDelete = {
+  mixins: [AjaxProcessMixin],
   props: {
     confirmationId: {
       type: String,
@@ -172,7 +202,6 @@ const AjaxDelete = {
     return {
       timerId: null,
       timerDelay: this.initTimerDelay,
-      processing: false
     }
   },
   methods: {
@@ -192,7 +221,10 @@ const AjaxDelete = {
       this.timerId = setTimeout(()=>{
         axios.post(this.deleteUrl)
         .then(response => {
-          this.success(response)
+          if (this.redirectUrl) {
+            window.location.replace(this.redirectUrl)
+          }
+          this.success()
         })
         .catch(error => {
           if (error.response) {
@@ -206,21 +238,6 @@ const AjaxDelete = {
         })
         .finally(() => this.complete())
       }, this.timerDelay)
-    },
-    success(response) {
-      if (this.redirectUrl) {
-        window.location.replace(this.redirectUrl)
-      } else {
-        this.$emit('ajax-success')
-      }
-    },
-    process() {
-      this.processing = true
-      this.$emit('ajax-process')
-    },
-    complete() {
-      this.processing = false
-      this.$emit('ajax-complete')
     }
   }
 }
@@ -645,7 +662,6 @@ const ContextTagger = {
     doneEditing() {      
       axios.put(this.contextEditUrl, {"content": this.context})
       .then(response => {
-        console.log('success')
         this.isEditing = false
         this.contextHtml = this.markdownToHtml(this.context)
       })
@@ -847,6 +863,7 @@ const IpaSymbolKeypad = {
 }
 
 const EntryDefinitions = {
+  mixins: [AjaxProcessMixin],
   props: {
     initEndpointUrl: {
       type: String,
@@ -872,7 +889,6 @@ const EntryDefinitions = {
       definitions: [],
       definitionsVisible: false,
       definitionsLoaded: false,
-      processing: false,
       msgShowDefinitions: this.initMsgShowDefinitions,
       msgHideDefinitions: this.initMsgHideDefinitions
     }
@@ -892,7 +908,9 @@ const EntryDefinitions = {
         this.endpointUrl
       )
       .then(response => {
-        this.success(response)
+        this.definitions = response.data
+        this.definitionsLoaded = true
+        this.success()
       })
       .catch(error => {
         if (error.response) {
@@ -905,27 +923,14 @@ const EntryDefinitions = {
         console.log(error.config)
       })
       .finally(() => this.complete())
-    },
-    process() {
-      this.processing = true
-      this.$emit('ajax-process')
-    },
-    complete() {
-      this.processing = false
-      this.definitionsLoaded = true
-      this.$emit('ajax-complete')
-    },
-    success(response) {
-      this.definitions = response.data
-      console.log(this.definitions)
-      this.$emit('ajax-success')
-    }, 
+    }
   }
 }
 
 /** THIRD PARTY **/
 
 const OxfordApi = {
+  mixins: [AjaxProcessMixin],
   props: {
     initEndpointUrl: {
       type: String,
@@ -949,12 +954,10 @@ const OxfordApi = {
       endpointUrl: this.initEndpointUrl,
       entry: this.initEntry,
       language: this.initLanguage,
-      region: this.initEnglishRegion,
-      processing: false,
+      region: this.initEnglishRegion
     }
   },
   methods: {
-
     searchApi() {
       axios.get(
         this.endpointUrl, {
@@ -966,7 +969,7 @@ const OxfordApi = {
         }
       )
       .then(response => {
-        this.success(response)
+        this.success()
       })
       .catch(error => {
         if (error.response) {
@@ -979,18 +982,6 @@ const OxfordApi = {
         console.log(error.config)
       })
       .finally(() => this.complete())
-    },
-    process() {
-      this.processing = true
-      this.$emit('ajax-process')
-    },
-    complete() {
-      this.processing = false
-      this.$emit('ajax-complete')
-    },
-    success(response) {
-      console.log(response)
-      this.$emit('ajax-success')
-    }, 
+    }
   }
 }

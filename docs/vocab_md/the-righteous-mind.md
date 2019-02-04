@@ -644,5 +644,109 @@ project_name: English Reading
 
     </div>
 
-- 
+- Human life is a series of opportunities for mutually beneficial cooperation. If we play our cards right, we can work with others to enlarge the pie that we ultimately share. Hunters work together to bring down large prey that nobody could catch alone. Neighbors watch each other’s houses and loan each other tools. Coworkers cover each other’s shifts. For millions of years, our ancestors faced the adaptive challenge of reaping these benefits without getting suckered. Those whose moral emotions compelled them to play “tit for tat” reaped more of these benefits than those who played any other strategy, such as “help anyone who needs it” (which invites exploitation), or “take but don’t give” (which can work just once with each person; pretty soon nobody’s willing to share pie with you).15 The original triggers of the Fairness modules are acts of cooperation or selfishness that people show toward us. We feel pleasure, liking, and friendship when people show signs that they can be trusted to reciprocate. We feel anger, contempt, and even sometimes disgust when people try to cheat us or take advantage of us.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: tit for tat: tit for tat
+
+    en: reciprocate: reciprocate
+
+    en: contempt: contempt
+
+    </div>
+
+- The current triggers of the Fairness modules include a great many things that have gotten linked, culturally and politically, to the dynamics of reciprocity and cheating. On the left, concerns about equality and social justice are based in part on the Fairness foundation—wealthy and powerful groups are accused of gaining by exploiting those at the bottom while not paying their “fair share” of the tax burden. This is a major theme of the Occupy Wall Street movement, which I visited in October 2011. On the right, the Tea Party movement is also very concerned about fairness. They see Democrats as “socialists” who take money from hardworking Americans and give it to lazy people (including those who receive welfare or unemployment benefits) and to illegal immigrants (in the form of free health care and education).
+
+    <div markdown="1" class="tagged-entries">
+
+    en: reciprocity: reciprocity
+
+    en: socialist: socialists
+
+    </div>
+
+- For millions of years, therefore, our ancestors faced the adaptive challenge of forming and maintaining coalitions that could fend off challenges and attacks from rival groups. We are the descendants of successful tribalists, not their more individualistic cousins.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: descendant: descendants
+
+    en: ancestor: ancestors
+
+    en: tribalist: tribalists
+
+    </div>
+
+- The love of loyal teammates is matched by a corresponding hatred of traitors, who are usually considered to be far worse than enemies. The Koran, for example, is full of warnings about the duplicity of out-group members, particularly Jews, yet the Koran does not command Muslims to kill Jews. Far worse than a Jew is an apostate—a Muslim who has betrayed or simply abandoned the faith. The Koran commands Muslims to kill apostates, and Allah himself promises that he “shall certainly roast them at a Fire; as often as their skins are wholly burned, We shall give them in exchange other skins, that they may taste the chastisement. Surely God is All-mighty, All-wise.”
+
+    Similarly, in _The Inferno_, Dante reserves the innermost circle of hell—and the most excruciating suffering—for the crime of treachery. Far worse than lust, gluttony, violence, or even heresy is the betrayal of one’s family, team, or nation.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: apostate: apostates
+
+    en: heresy: heresy
+
+    en: duplicity: duplicity
+
+    en: chastisement: chastisement
+
+    en: treachery: treachery
+
+    </div>
+
+- Given such strong links to love and hate, is it any wonder that the Loyalty foundation plays an important role in politics? The left tends toward universalism and away from nationalism, so it often has trouble connecting to voters who rely on the Loyalty foundation. Indeed, because of its strong reliance upon the Care foundation, American liberals are often hostile to American foreign policy.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: universalism: universalism
+
+    en: nationalism: nationalism
+
+    en: hostile: hostile
+
+    </div>
+
+- Human authority, then, is not just raw power backed by the threat of force. Human authorities take on responsibility for maintaining order and justice. Of course, authorities often exploit their subordinates for their own benefit while believing they are perfectly just. But if we want to understand how human civilizations burst forth and covered the Earth in just a few thousand years, we’ll have to look closely at the role of authority in creating moral order.
+
+    When I began graduate school I subscribed to the common liberal belief that hierarchy = power = exploitation = evil. But when I began to work with Alan Fiske, I discovered that I was wrong. Fiske’s theory of the four basic kinds of social relationships includes one called “Authority Ranking.” Drawing on his own fieldwork in Africa, Fiske showed that people who relate to each other in this way have mutual expectations that are more like those of a parent and child than those of a dictator and fearful underlings:
+
+    In Authority Ranking, people have asymmetric positions in a linear hierarchy in which subordinates defer, respect, and (perhaps) obey, while superiors take precedence and take pastoral responsibility for subordinates.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: subordinate: subordinates
+
+    en: asymmetric: asymmetric
+
+    en: hierarchy: hierarchy
+
+    en: underling: underlings
+
+    en: precedence: precedence
+
+    </div>
+
+- The original triggers of some of these modules include patterns of appearance and behavior that indicate higher versus lower rank. Like chimpanzees, people track and remember who is above whom. When people within a hierarchical order act in ways that negate or subvert that order, we feel it instantly, even if we ourselves have not been directly harmed. If authority is in part about protecting order and fending off chaos, then everyone has a stake in supporting the existing order and in holding people accountable for fulfilling the obligations of their station.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: hierarchical: hierarchical
+
+    en: subvert: subvert
+    
+    </div>
+
+- The current triggers of the Authority/subversion foundation, therefore, include anything that is construed as an act of obedience, disobedience, respect, disrespect, submission, or rebellion, with regard to authorities perceived to be legitimate. Current triggers also include acts that are seen to subvert the traditions, institutions, or values that are perceived to provide stability. As with the Loyalty foundation, it is much easier for the political right to build on this foundation than it is for the left, which often defines itself in part by its opposition to hierarchy, inequality, and power. It should not be difficult for you to guess the politics of the magazine advertised in figure 7.7. Conversely, while Methodists are not necessarily conservative, the sign in front of their church tells you they ain’t no Unitarians.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: subversion: subversion
+
+    en: subvert: subvert
+
+    en: hierarchy: hierarchy
+
+    </div>
 

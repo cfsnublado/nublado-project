@@ -1,17 +1,29 @@
 from rest_framework.serializers import (
-    HyperlinkedIdentityField, HyperlinkedRelatedField, HyperlinkedModelSerializer,
-    ListSerializer, ReadOnlyField, SerializerMethodField, StringRelatedField
+    CharField, HyperlinkedIdentityField, HyperlinkedRelatedField,
+    HyperlinkedModelSerializer,
+    IntegerField, ListSerializer, ReadOnlyField, Serializer,
+    SerializerMethodField, StringRelatedField
 )
 
 from django.contrib.auth import get_user_model
 
-from core.serializers import BaseSerializer, UUIDEncoder
+from core.serializers import (
+    BaseSerializer, UUIDEncoder
+)
 from .models import (
     VocabDefinition, VocabEntry, VocabContextEntry,
     VocabContext, VocabProject, VocabSource
 )
 
 User = get_user_model()
+
+
+class VocabSourceEntrySerializer(Serializer):
+    id = IntegerField()
+    vocab_source_id = IntegerField()
+    language = CharField()
+    entry = CharField()
+    slug = CharField()
 
 
 class VocabEntryListSerializer(ListSerializer):
@@ -141,7 +153,7 @@ class VocabSourceSerializer(BaseSerializer, HyperlinkedModelSerializer):
         view_name='api:vocab-source-detail',
         lookup_field='pk'
     )
-    project_id = ReadOnlyField(source='vocab_project.id')
+    project_id = ReadOnlyField(source='vocab_project_id')
     project_url = HyperlinkedRelatedField(
         many=False,
         read_only=True,
@@ -244,6 +256,7 @@ class VocabContextEntrySerializer(BaseSerializer, HyperlinkedModelSerializer):
         source='vocab_context'
     )
     vocab_context = StringRelatedField(many=False)
+    vocab_source_id = ReadOnlyField(source='vocab_context.vocab_source_id')
     vocab_source_url = HyperlinkedRelatedField(
         many=False,
         read_only=True,
@@ -255,6 +268,10 @@ class VocabContextEntrySerializer(BaseSerializer, HyperlinkedModelSerializer):
         many=False,
         source='vocab_context.vocab_source'
     )
+    vocab_source_slug = StringRelatedField(
+        many=False,
+        source='vocab_context.vocab_source.slug'
+    )
     vocab_entry_tags = StringRelatedField(many=True)
 
     class Meta:
@@ -262,11 +279,12 @@ class VocabContextEntrySerializer(BaseSerializer, HyperlinkedModelSerializer):
         fields = (
             'url', 'id', 'vocab_entry_url', 'vocab_entry_id', 'vocab_entry',
             'vocab_context_id', 'vocab_context_url',
-            'vocab_context', 'vocab_source_url', 'vocab_source', 'date_created',
+            'vocab_context', 'vocab_source_id', 'vocab_source_url', 'vocab_source',
+            'vocab_source_slug', 'date_created',
             'date_updated', 'vocab_entry_tags'
         )
         read_only_fields = (
             'url', 'id', 'vocab_entry_url', 'vocab_entry_id', 'vocab_context_id',
-            'vocab_context_url', 'vocab_source_url',
-            'vocab_source', 'date_created', 'date_updated'
+            'vocab_context_url', 'vocab_source_id', 'vocab_source_url',
+            'vocab_source', 'vocab_source_slug', 'date_created', 'date_updated'
         )

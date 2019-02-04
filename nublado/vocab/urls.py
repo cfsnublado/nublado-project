@@ -18,9 +18,12 @@ from .views.views_vocab_project_auth import (
     VocabProjectCreateView, VocabProjectDashboardView, VocabProjectDeleteView,
     VocabProjectSourcesView, VocabProjectUpdateView
 )
+from .views.views_vocab_source import (
+    VocabSourceDashboardView
+)
 from .views.views_vocab_source_auth import (
     VocabSourceCreateView, VocabSourceDeleteView, VocabSourceExportJsonView,
-    VocabSourceContextsView, VocabSourceDashboardView,
+    VocabSourceContextsView, VocabSourceDashboardView as VocabSourceDashboardAuthView,
     VocabSourceEntriesView, VocabSourceEntryContextsView,
     VocabSourceUpdateView
 )
@@ -80,8 +83,8 @@ auth_urls = [
     path('entry/<int:vocab_entry_pk>/delete/', VocabEntryDeleteView.as_view(), name='vocab_entry_delete'),
     path(
         'source/<int:vocab_source_pk>-<slug:vocab_source_slug>/dashboard/',
-        VocabSourceDashboardView.as_view(),
-        name='vocab_source_dashboard'
+        VocabSourceDashboardAuthView.as_view(),
+        name='vocab_source_dashboard_auth'
     ),
     path(
         'source/<int:vocab_source_pk>-<slug:vocab_source_slug>/update/',
@@ -164,6 +167,11 @@ urlpatterns = [
         '^entry/(?P<vocab_entry_language>[a-z]{2})/(?P<vocab_entry_slug>[-\w]+)/$',
         VocabEntryDashboardView.as_view(),
         name='vocab_entry_dashboard'
+    ),
+    path(
+        'source/<int:vocab_source_pk>-<slug:vocab_source_slug>/',
+        VocabSourceDashboardView.as_view(),
+        name='vocab_source_dashboard'
     ),
     path('auth/', include(auth_urls)),
 ]

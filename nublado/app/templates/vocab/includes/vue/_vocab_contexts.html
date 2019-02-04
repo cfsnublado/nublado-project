@@ -17,6 +17,7 @@ v-for="(entryContext, index) in vocabContexts"
 <vocab-entry-context
 :init-entry-context=entryContext
 :context-element="'#context-' + entryContext.id"
+init-source-url="{{ vocab_source_url }}"
 inline-template
 >
 
@@ -26,7 +27,10 @@ inline-template
 <div :id="[[ entryContext.id ]]" class="vocab-context">
 
 <div class="vocab-source-title">
-<a href="#">
+<a
+href="#"
+@click.prevent="selectSource"
+>
 [[ entryContext.vocab_source ]]
 </a>
 </div>

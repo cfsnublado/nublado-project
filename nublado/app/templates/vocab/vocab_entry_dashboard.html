@@ -1,5 +1,4 @@
 {% extends "vocab/vocab_base.html" %}
-{% load staticfiles %}
 {% load core_extras %}
 {% load i18n %}
 
@@ -52,6 +51,7 @@
 <div class="col-md-10">
 
 {% url_set_param 'api:vocab-context-entry-list' vocab_entry=vocab_entry.id as vocab_contexts_url %}
+{% url 'vocab:vocab_source_dashboard' 0 'zzz' as vocab_source_url %}
 {% include "vocab/includes/vue/_vocab_contexts.html" %}
 
 </div>

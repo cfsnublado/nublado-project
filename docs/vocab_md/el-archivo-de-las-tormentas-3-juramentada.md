@@ -1247,3 +1247,125 @@ project_name: Spanish Reading
 
     </div>
 
+- «Esto de aquí —pensó, ordenando páginas que contenían números mezclados con el texto, páginas a las que nunca había logrado hallar sentido—. ¿De qué es un listado? No está en código, como los otros números. A menos que... ¿podrían ser palabras estenografiadas?» 
+
+    Sí. Sí, le había faltado paciencia para escribir las palabras completas. Las había numerado en su mente, quizá por orden alfabético, para poder apuntarlas deprisa. ¿Dónde estaba la clave? 
+
+    «¡Esto refuerza el paradigma de Dalinar!», pensó mientras trabajaba. Sus manos temblaron de emoción mientras escribía posibles interpretaciones. Sí... Mata a Dalinar, o se resistirá a tus intentos de dominar Alezkar. En consecuencia, Taravangian había enviado al Asesino de Blanco, que, por increíble que resultara, había fracasado. 
+
+    Por suerte, había planes de contingencia. «Aquí está —pensó Taravangian, recogiendo otro fragmento del Diagrama y pegándolo a la pared junto con los demás—. La explicación inicial del paradigma de Dalinar, del catecismo del cabecero, parte trasera, tercer cuadrante.» Estaba escrito en métrica, como un poema, y presagiaba que Dalinar intentaría unificar el mundo. 
+
+    De modo que, si miraba la segunda contingencia...
+
+    <div markdown="1" class="tagged-entries">
+
+    es: contingencia: contingencia
+
+    es: estenografiado: estenografiadas
+
+    es: orden alfabético: orden alfabético
+
+    es: fracasar: había fracasado
+
+    </div>
+
+- La mujer le dejó bebida y luego tuvo la insolencia de darle una palmadita en el hombro. Mientras se marchaba, Taravangian vio que Adrotagia y Mrall estaban de pie junto a la puerta. 
+
+    —Supongo —dijo a Mrall— que no ejecutarías a esa mujer si te lo exigiera, ¿verdad? 
+
+    —Hemos decidido —respondió el guardaespaldas— que hoy no puedes tomar tales decisiones. 
+
+    —Pues Condenación para los dos. De todas formas, ya casi tengo las respuestas. No debemos asesinar a Dalinar Kholin. El tiempo de hacerlo ya pasó. Lo que debemos hacer es apoyar su coalición. Luego lo forzaremos a que renuncie al liderazgo, para que yo pueda ocupar su lugar al frente de los monarcas. 
+
+    Adrotagia entró en la habitación e inspeccionó su trabajo. 
+
+    —Dudo que Dalinar vaya a cederte el liderazgo de la coalición porque sí. 
+
+    Taravangian hizo tabalear los dedos contra un grupo de páginas pegadas a la pared. 
+
+    —Mira aquí. Debería resultar evidente hasta para ti. Predije esto. 
+
+    —Has hecho _cambios_ —dijo Mrall, escandalizado—. Al Diagrama. 
+
+    —Pero pequeños —matizó Taravangian—. Mira, ¿ves ahí la escritura original? Eso no lo he modificado, y está muy claro. Ahora nuestra tarea consiste en hacer que Dalinar renuncie al liderazgo y ocupar su puesto. 
+
+    —¿No lo matamos? —preguntó Mrall. Taravangian le lanzó una mirada, se volvió y señaló la pared exterior, que tenía incluso más papeles sujetos. 
+
+    —Matarlo ahora solo serviría para despertar sospechas.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: renunciar: reuncie al liderazgo
+
+    es: ceder: cederte
+
+    es: predecir: predije
+
+    es: sospecha: sospechas
+
+    </div>
+
+- —Fácil —replicó Taravangian, empujándola hacia otro conjunto de anotaciones en la pared—. Enviaremos a la spren de esa Portadora del Polvo a espiar. Dalinar Kholin hiede a secretos. Podemos derrumbarlo, y yo ocuparé su lugar, porque la coalición no me considerará una amenaza, momento en el cual estaremos en una posición de fuerza para negociar con Odium. Que, según dictan las leyes de los spren y los dioses, quedará atado por el acuerdo que alcancemos. 
+
+    —¿Y no podemos... derrotar a Odium, en vez de eso? —preguntó Mrall. 
+
+    Idiota envuelto en músculo. Taravangian puso los ojos en blanco, pero Adrotagia, más sentimental que él, se volvió hacia él para explicárselo. 
+
+    —El Diagrama es muy claro, Mrall —le dijo—. Este es el propósito mismo de su creación. No podemos derrotar al enemigo, así que, en vez de eso, salvaremos todo lo que podamos. 
+
+    —Es la única manera —convino Taravangian. Dalinar jamás aceptaría ese hecho. Solo había un hombre lo bastante fuerte para hacer el sacrificio. 
+
+    Taravangian sintió un destello de... algo. De un recuerdo. 
+
+    «Concédeme la capacidad para salvarnos.»
+
+    <div markdown="1" class="tagged-entries">
+
+    es: anotación: anotaciones
+
+    es: espiar: espiar
+
+    es: heder: hiede a secretos
+
+    es: derrumbar: derrumbarlo
+
+    es: amenaza: amenaza
+
+    es: negociar: negociar
+
+    es: según: según
+
+    es: dictar: dictan
+
+    es: derrotar: derrotar
+
+    es: destello: destello
+
+    </div>
+
+- —Coge esto —dijo a Adrotagia, separando de la pared una página en la que había hecho anotaciones—. Esto funcionará. 
+
+    Ella asintió y se llevó a Mrall de la habitación mientras Taravangian se arrodillaba ante los rotos, rasgados, recortados restos del Diagrama. 
+
+    Luz y verdad. Salvar lo que pudiera. 
+
+    Abandonar el resto. 
+
+    Por suerte, se le había concedido esa capacidad.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: anotación: anotaciones
+
+    es: asentir: asintió
+
+    es: arrodillarse: se arrodilló
+
+    es: conceder: se le había concedido
+
+    </div>
+
+- hello
+
+
+

@@ -18,6 +18,20 @@
 
     {% endif %}
 
+  {% elif request.session.session_obj.vocab_source %}
+    <a href="{% url 'vocab:vocab_entries' %}">{% trans "label_vocabulary" %}</a>
+
+    {% if url_name == "vocab_source_dashboard" %}
+   
+      &nbsp;>&nbsp;
+      <span> {{ vocab_source.name }} </span>
+  
+    {% else %}
+
+      &nbsp;>&nbsp;
+      <a href="{% url 'vocab:vocab_source_dashboard' vocab_source.id vocab_source.slug %}">{{ vocab_source.name }}</a>
+
+    {% endif %}
   {% else %}
 
     {% if url_name != "vocab_entries" %}

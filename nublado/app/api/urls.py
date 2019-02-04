@@ -10,7 +10,7 @@ from vocab.api.views_api import (
     NestedVocabSourceViewSet, VocabContextEntryViewSet, VocabContextViewSet,
     VocabDefinitionViewSet, VocabEntryExportView, VocabEntryLanguageExportView,
     VocabEntryImportView, VocabProjectViewSet, VocabSourceImportView,
-    VocabSourceExportView, VocabSourceViewSet
+    VocabSourceExportView, VocabSourceViewSet, VocabSourceEntryViewSet
 )
 from vocab.api.views_third_party_api import OxfordAPIEntryView
 
@@ -49,10 +49,16 @@ vocab_entry_context_router.register(
     base_name='nested-vocab-context-entry'
 )
 
+vocab_source_entry_list = VocabSourceEntryViewSet.as_view({'get': 'list'})
+
 urlpatterns = [
     path('api-token-auth/', views.obtain_auth_token, name='auth_token'),
     path('oxford/entry/', OxfordAPIEntryView.as_view(), name='oxford_entry'),
-    path('vocab/source/import/', VocabSourceImportView.as_view(), name='vocab_source_import'),
+    path(
+        'source/<int:vocab_source_pk>/entry/',
+        vocab_source_entry_list,
+        name='vocab-source-entry-list'
+    ),
     path('vocab/source/import/', VocabSourceImportView.as_view(), name='vocab_source_import'),
     path(
         'vocab/source/<int:vocab_source_pk>/export/',

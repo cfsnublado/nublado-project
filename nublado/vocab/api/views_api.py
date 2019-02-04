@@ -7,7 +7,12 @@ from rest_framework.mixins import (CreateModelMixin, DestroyModelMixin, ListMode
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from rest_framework.viewsets import ModelViewSet, GenericViewSet
+from rest_framework.viewsets import (
+    ModelViewSet, GenericViewSet
+)
+
+from django.db.models import F, IntegerField, Value
+from django.db.models.functions import Concat, Lower
 
 from core.api.views_api import APIDefaultsMixin, StandardPagination
 from ..models import (
@@ -16,7 +21,8 @@ from ..models import (
 )
 from ..serializers import (
     VocabDefinitionSerializer, VocabEntrySerializer, VocabContextEntrySerializer,
-    VocabContextSerializer, VocabProjectSerializer, VocabSourceSerializer
+    VocabContextSerializer, VocabProjectSerializer, VocabSourceSerializer,
+    VocabSourceEntrySerializer
 )
 from ..utils import (
     export_vocab_entries, export_vocab_source,
@@ -30,7 +36,7 @@ class SmallPagination(StandardPagination):
 
 
 class LargePagination(StandardPagination):
-    page_size = 150
+    page_size = 100
 
 
 class BatchMixin(object):
@@ -61,17 +67,15 @@ class VocabEntryViewSet(APIDefaultsMixin, BatchMixin, ModelViewSet):
     serializer_class = VocabEntrySerializer
     pagination_class = LargePagination
     permission_classes = [ReadWritePermission]
-    queryset = VocabEntry.objects.order_by('entry').all()
 
-    def list(self, request, *args, **kwargs):
-        language = request.query_params.get('language', None)
+    def get_queryset(self):
+        language = self.request.query_params.get('language', None)
+        qs = VocabEntry.objects.order_by('entry')
 
         if language:
-            self.queryset = VocabEntry.objects.filter(
-                language=language
-            ).order_by('entry')
+            qs = qs.filter(language=language)
 
-        return super(VocabEntryViewSet, self).list(request, *args, **kwargs)
+        return qs
 
     @action(methods=['get'], detail=False)
     def detail_data(self, request):
@@ -233,6 +237,55 @@ class NestedVocabSourceViewSet(
         self.get_vocab_project(vocab_project_pk=kwargs['vocab_project_pk'])
 
         return super(NestedVocabSourceViewSet, self).list(request, *args, **kwargs)
+
+
+class VocabSourceEntryViewSet(APIDefaultsMixin, ListModelMixin, GenericViewSet):
+    vocab_source_pk = None
+    pagination_class = LargePagination
+
+    def get_queryset(self):
+        language = self.request.query_params.get('language', None)
+        qs = VocabContextEntry.objects.select_related('vocab_context', 'vocab_entry')
+
+        if language:
+            qs = qs.filter(vocab_entry__language=language)
+
+        qs = qs.filter(vocab_context__vocab_source_id=self.vocab_source_pk)
+        qs = qs.order_by('vocab_entry__entry').distinct()
+        qs = qs.values(
+            language=Lower('vocab_entry__language'),
+            slug=Lower('vocab_entry__slug'),
+            entry=Lower('vocab_entry__entry')
+        )
+        qs = qs.annotate(vocab_source_id=Value(self.vocab_source_pk, output_field=IntegerField()))
+        qs = qs.annotate(id=F('vocab_entry_id'))
+
+        return qs
+
+    def list(self, request, vocab_source_pk=None):
+
+        if not vocab_source_pk:
+            raise ParseError('Vocab source required.')
+        else:
+            self.vocab_source_pk = vocab_source_pk
+
+        qs = self.filter_queryset(self.get_queryset())
+        page = self.paginate_queryset(qs)
+
+        if page is not None:
+            serializer = VocabSourceEntrySerializer(
+                page,
+                many=True,
+                context={'request': request}
+            )
+            return self.get_paginated_response(serializer.data)
+        else:
+            serializer = VocabSourceEntrySerializer(
+                qs,
+                many=True,
+                context={'request': request}
+            )
+            return Response(serializer.data)
 
 
 class VocabSourceImportView(APIDefaultsMixin, APIView):

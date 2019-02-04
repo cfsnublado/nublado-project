@@ -10,6 +10,28 @@ Implemented components are declared in app-components.js.
 
 /** General mixins **/
 
+const AjaxProcessMixin = {
+  data() {
+    return {
+      processing: false
+    }
+  },
+  methods: {
+    process() {
+      this.processing = true
+      this.$emit('ajax-process')
+    },
+    complete() {
+      this.processing = false
+      this.$emit('ajax-complete')
+    },
+    success() {
+      this.processing = false
+      this.$emit('ajax-success')
+    }
+  }
+}
+
 const ClickOutsideMixin = {
   methods: {
     onCloseOutside() {
@@ -290,6 +312,7 @@ const FormError = {
 }
 
 const BaseForm = {
+  mixins: [AjaxProcessMixin],
   components: {
     'form-error': FormError
   },
@@ -308,7 +331,6 @@ const BaseForm = {
       formData: {},
       timerId: null,
       timerDelay: this.initTimerDelay,
-      processing: false,
       errors: {}
     }
   },
@@ -321,7 +343,7 @@ const BaseForm = {
   
         axios.post(event.target.action, formData)
         .then(response => {
-          this.success(response)
+          this.success()
         })
         .catch(error => {
           if (error.response) {
@@ -351,18 +373,6 @@ const BaseForm = {
       }
       return formData
     },
-    process() {
-      this.processing = true
-      this.$emit('ajax-process')
-    },
-    complete() {
-      this.processing = false
-      this.$emit('ajax-complete')
-    },
-    success() {
-      this.processing = false
-      this.$emit('ajax-success')
-    }
   },
   watch: {
     reset: function(val) {
@@ -530,7 +540,6 @@ const BaseTag = {
     }
   },
   template: `
-    <transition name="fade-transition" v-on:after-enter="isVisible = true" v-on:after-leave="isVisible = false">
     <div 
     class="ui label tagblock"
     v-show="isVisible"
@@ -550,7 +559,6 @@ const BaseTag = {
         <i class="fas fa-times"></i>
       </a>
     </div>
-    </transition>
   `
 }
 

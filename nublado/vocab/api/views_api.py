@@ -65,8 +65,8 @@ class VocabEntryViewSet(APIDefaultsMixin, BatchMixin, ModelViewSet):
     lookup_field = 'pk'
     lookup_url_kwarg = 'pk'
     serializer_class = VocabEntrySerializer
-    pagination_class = LargePagination
     permission_classes = [ReadWritePermission]
+    pagination_class = LargePagination
 
     def get_queryset(self):
         language = self.request.query_params.get('language', None)
@@ -241,6 +241,7 @@ class NestedVocabSourceViewSet(
 
 class VocabSourceEntryViewSet(APIDefaultsMixin, ListModelMixin, GenericViewSet):
     vocab_source_pk = None
+    permission_classes = [ReadWritePermission]
     pagination_class = LargePagination
 
     def get_queryset(self):
@@ -449,8 +450,8 @@ class VocabContextEntryViewSet(
         'vocab_entry_tags'
     )
     serializer_class = VocabContextEntrySerializer
-    pagination_class = SmallPagination
     permission_classes = [ReadWritePermission]
+    pagination_class = SmallPagination
 
     def get_queryset(self):
         vocab_entry_id = self.request.query_params.get('vocab_entry', None)

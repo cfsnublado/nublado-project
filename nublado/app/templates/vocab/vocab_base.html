@@ -12,7 +12,19 @@ sidebar-adaptable theme-white {{ sidebar_expanded|yesno:"sidebar-nav-expanded," 
 {% block body %}
 <div id="main-content" class="main-content container" style="margin-top: 20px;">
 
-{% block page_header %}{% endblock page_header %}
+{% block page_header %}
+
+{% if request.session.session_obj.vocab_source %}
+
+  <div class="row justify-content-md-center">
+  <div class="col-md-10">
+  <div class="page-subheader"> {{ vocab_source.name }} </div>
+  </div>
+  </div>
+
+{% endif %}
+
+{% endblock page_header %}
 
 {% block breadcrumbs %}
 

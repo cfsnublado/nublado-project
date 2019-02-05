@@ -62,7 +62,7 @@
     {% for vocab_source in sources %}
 
       <li>
-      <a href="{% url 'vocab:vocab_source_dashboard' vocab_source.id vocab_source.slug %}">
+      <a href="{% url 'vocab:vocab_source_dashboard_auth' vocab_source.id vocab_source.slug %}">
       {{ vocab_source.name }}
       </a>
       </li>

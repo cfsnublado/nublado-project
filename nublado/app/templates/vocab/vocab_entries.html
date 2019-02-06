@@ -12,11 +12,21 @@
 <div class="row justify-content-md-center">
 <div class="col-md-10">
 
-<div class="page-subheader"> {% trans 'label_search_vocabulary' %} </div>
+<div class="panel">
+<div class="panel-body">
+
+<div class="panel-header">
+
+{% trans "label_search_vocabulary" %}
+
+</div>
 
 {% url 'vocab:vocab_entry_language_autocomplete' 'zz' as autocomplete_url %}
 {% url 'vocab:vocab_entries' as search_url %}
 {% include "includes/vue/_language_search.html" with comp_name='entry-search' search_btn=True %}
+
+</div>
+</div>
 
 <span id="entries-scroll-top"></span>
 
@@ -25,8 +35,6 @@
 
 <div class="row justify-content-md-center">
 <div class="col-md-10">
-
-<div class="page-subheader" style="margin-top: 50px;"> {% trans 'label_entries' %} </div>
 
 {% url 'api:vocab-entry-list' as vocab_entries_url %}
 {% url 'vocab:vocab_entry_dashboard' 'xx' 'zzz' as vocab_entry_url %}

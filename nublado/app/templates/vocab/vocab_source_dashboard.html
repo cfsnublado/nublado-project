@@ -34,8 +34,6 @@
 <div class="row justify-content-md-center">
 <div class="col-md-10">
 
-<div class="page-subheader" style="margin-top: 50px;"> {% trans 'label_entries' %} </div>
-
 {% url 'api:vocab-source-entry-list' vocab_source.id as vocab_entries_url %}
 {% url 'vocab:vocab_entry_dashboard' 'xx' 'zzz' as vocab_entry_url %}
 {% include 'vocab/includes/vue/_vocab_entries.html' %}

@@ -12,7 +12,7 @@ from rest_framework.viewsets import (
 )
 
 from django.db.models import F, IntegerField, Value
-from django.db.models.functions import Concat, Lower
+from django.db.models.functions import Lower
 
 from core.api.views_api import APIDefaultsMixin, StandardPagination
 from ..models import (

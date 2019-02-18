@@ -750,3 +750,126 @@ project_name: English Reading
 
     </div>
 
+- The Care/harm foundation evolved in response to the adaptive challenge of caring for vulnerable children. It makes us sensitive to signs of suffering and need; it makes us despise cruelty and want to care for those who are suffering.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: despise: despise
+
+    en: cruelty: cruelty
+
+    </div>
+
+- The Fairness/cheating foundation evolved in response to the adaptive challenge of reaping the rewards of cooperation without getting exploited. It makes us sensitive to indications that another person is likely to be a good (or bad) partner for collaboration and reciprocal altruism. It makes us want to shun or punish cheaters.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: altruism: altruism
+
+    en: reciprocal: reciprocal
+
+    en: shun: shun
+
+    en: reap: reaping
+
+    </div>
+
+- The Loyalty/betrayal foundation evolved in response to the adaptive challenge of forming and maintaining coalitions. It makes us sensitive to signs that another person is (or is not) a team player. It makes us trust and reward such people, and it makes us want to hurt, ostracize, or even kill those who betray us or our group.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: ostracize: ostracize
+
+    en: coalition: coalitions
+
+    </div>
+
+- The Authority/subversion foundation evolved in response to the adaptive challenge of forging relationships that will benefit us within social hierarchies. It makes us sensitive to signs of rank or status, and to signs that other people are (or are not) behaving properly, given their position.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: subversion: subversion
+
+    en: hierarchy: hierarchies
+
+    </div>
+
+- The Sanctity/degradation foundation evolved initially in response to the adaptive challenge of the omnivore’s dilemma, and then to the broader challenge of living in a world of pathogens and parasites. It includes the behavioral immune system, which can make us wary of a diverse array of symbolic objects and threats. It makes it possible for people to invest objects with irrational and extreme values—both positive and negative—which are important for binding groups together.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: omnivore: omnivore's
+
+    en: dilemma: dilemma
+
+    en: pathogen: pathogen
+
+    </div>
+
+- Neither George W. Bush nor his father, George H. W. Bush, had the ability to move audiences to tears, but both had the great fortune to run against cerebral and emotionally cool Democrats (Michael Dukakis, Al Gore, and John Kerry). It is no coincidence that the only Democrat since Franklin Roosevelt to win election and then reelection combined gregariousness and oratorical skill with an almost musical emotionality. Bill Clinton knew how to charm elephants.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: gregarious: gregariousness
+
+    en: oratorical: oratorical
+
+    </div>
+
+- The moral vision offered by the Democrats since the 1960s, in contrast, seemed narrow, too focused on helping victims and fighting for the rights of the oppressed. The Democrats offered just sugar (Care) and salt (Fairness as equality), whereas Republican morality appealed to all five taste receptors.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: taste receptor: taste receptors
+
+    en: oppress: oppressed
+
+    </div>
+
+- So far in this book I’ve painted a portrait of human nature that is somewhat cynical. I’ve argued that Glaucon was right and that we care more about _looking_ good than about truly _being_ good. Intuitions come first, strategic reasoning second. We lie, cheat, and cut ethical corners quite often when we think we can get away with it, and then we use our moral thinking to manage our reputations and justify ourselves to others. We believe our own post hoc reasoning so thoroughly that we end up self-righteously convinced of our own virtue.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: post hoc: post hoc
+
+    en: self-righteous: self-righteously
+
+    en: virtue: virtue
+
+    </div>
+
+- I do believe that you can understand most of moral psychology by viewing it as a form of enlightened self-interest, and if it’s self-interest, then it’s easily explained by Darwinian natural selection working at the level of the individual. Genes are selfish, selfish genes create people with various mental modules, and some of these mental modules make us strategically altruistic, not reliably or universally altruistic. Our righteous minds were shaped by kin selection plus reciprocal altruism augmented by gossip and reputation management. That’s the message of nearly every book on the evolutionary origins of morality, and nothing I’ve said so far contradicts that message.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: altruistic: altruistic
+
+    en: righteous: righteous
+
+    en: reciprocal: reciprocal
+
+    </div>
+
+- This book explained why people are divided by politics and religion. The answer is not, as Manichaeans would have it, because some people are good and others are evil. Instead, the explanation is that our minds were designed for groupish righteousness. We are deeply intuitive creatures whose gut feelings drive our strategic reasoning. This makes it difficult—but not impossible—to connect with those who live in other matrices, which are often built on different configurations of the available moral foundations.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: righteousness: righteousness
+
+    en: matrix: matrices
+
+    en: intuitive: intuitive
+
+    </div>
+
+- So the next time you find yourself seated beside someone from another matrix, give it a try. Don’t just jump right in. Don’t bring up morality until you’ve found a few points of commonality or in some other way established a bit of trust. And when you do bring up issues of morality, try to start with some praise, or with a sincere expression of interest.
+
+    We’re all stuck here for a while, so let’s try to work it out.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: matrix: matrix
+
+    en: morality: morality
+
+    </div>

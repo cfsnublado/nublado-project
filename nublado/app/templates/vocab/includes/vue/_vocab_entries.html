@@ -52,6 +52,7 @@ trigger-classes="ui mini icon button"
 </dropdown>
 
 <div id="vocab-entry-tag-group" class="vocab-entry-tag-group ui labels">
+
 <tag
   v-for="(tag, index) in vocabEntries"
   :key="tag.id"
@@ -67,6 +68,7 @@ trigger-classes="ui mini icon button"
 
 <section
 v-if="pageCount > 1"
+v-cloak
 >
 <nav role="pagination">
 

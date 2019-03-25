@@ -52,11 +52,8 @@ def add_definitions_from_oxford(json_data, vocab_entry):
         for lexical_entry in result['lexicalEntries']:
             lexical_category = lexical_entry['lexicalCategory'].lower()
 
-            if 'derivativeOf' in lexical_entry:
-                print('Derived from:')
-                for derived_from in lexical_entry['derivativeOf']:
-                    print(derived_from['id'])
-            else:
+            if 'derivativeOf' not in lexical_entry:
+
                 for entry in lexical_entry['entries']:
                     if 'senses' in entry:
                         for sense in entry['senses']:
@@ -69,7 +66,6 @@ def add_definitions_from_oxford(json_data, vocab_entry):
                                         definition_type=lexical_categories[lexical_category],
                                         definition=definition
                                     )
-                                    print(lexical_category + ": " + definition)
 
 
 class SmallPagination(StandardPagination):
@@ -208,7 +204,7 @@ class NestedVocabDefinitionViewSet(
     queryset = VocabDefinition.objects.select_related('vocab_entry')
     serializer_class = VocabDefinitionSerializer
     vocab_entry = None
-    oxford_entry_url = 'https://od-api.oxforddictionaries.com:443/api/v1/entries/{0}/{1}'
+    oxford_entry_url = 'https://od-api.oxforddictionaries.com/api/v1/entries/{0}/{1}'
     oxford_headers = {
         'Accept': 'application/json',
         'app_id': OXFORD_API_ID,

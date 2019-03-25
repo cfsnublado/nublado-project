@@ -57,18 +57,17 @@ class OxfordAPIEntryView(APIDefaultsMixin, APIView):
         IsAuthenticated,
         IsSuperuser
     ]
-    oxford_entry_url = 'https://od-api.oxforddictionaries.com:443/api/v1/entries/{0}/{1}/regions={2}'
+    oxford_entry_url = 'https://od-api.oxforddictionaries.com:443/api/v1/entries/{0}/{1}'
 
     def get(self, request, *args, **kwargs):
         language = request.query_params.get('language', 'en')
         entry = request.query_params.get('entry', None)
-        region = request.query_params.get('region', 'us')
         headers = {
             'Accept': 'application/json',
             'app_id': OXFORD_API_ID,
             'app_key': OXFORD_API_KEY
         }
-        url = self.oxford_entry_url.format(language, entry, region)
+        url = self.oxford_entry_url.format(language, entry)
         response = requests.get(url, headers=headers)
         if response.status_code == status.HTTP_200_OK:
             response_json = response.json()

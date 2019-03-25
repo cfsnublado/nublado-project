@@ -1,3 +1,5 @@
+import requests
+
 from rest_framework import status
 from rest_framework.decorators import action
 from rest_framework.exceptions import ParseError
@@ -29,6 +31,45 @@ from ..utils import (
     import_vocab_entries, import_vocab_source
 )
 from .permissions import CreatorPermission, ReadWritePermission, IsSuperuser
+from ..conf import settings
+
+
+def add_definitions_from_oxford(json_data, vocab_entry):
+    '''
+    json_data: The json returned from the Oxford api for a vocab entry.
+    '''
+
+    lexical_categories = {
+        'noun': VocabDefinition.NOUN,
+        'adjective': VocabDefinition.ADJECTIVE,
+        'adverb': VocabDefinition.ADVERB,
+        'verb': VocabDefinition.VERB,
+        'expression': VocabDefinition.EXPRESSION,
+        'other': VocabDefinition.OTHER
+    }
+
+    for result in json_data['results']:
+        for lexical_entry in result['lexicalEntries']:
+            lexical_category = lexical_entry['lexicalCategory'].lower()
+
+            if 'derivativeOf' in lexical_entry:
+                print('Derived from:')
+                for derived_from in lexical_entry['derivativeOf']:
+                    print(derived_from['id'])
+            else:
+                for entry in lexical_entry['entries']:
+                    if 'senses' in entry:
+                        for sense in entry['senses']:
+                            if 'definitions' in sense:
+                                for definition in sense['definitions']:
+                                    if lexical_category not in lexical_categories:
+                                        lexical_category = 'other'
+                                    VocabDefinition.objects.create(
+                                        vocab_entry=vocab_entry,
+                                        definition_type=lexical_categories[lexical_category],
+                                        definition=definition
+                                    )
+                                    print(lexical_category + ": " + definition)
 
 
 class SmallPagination(StandardPagination):
@@ -159,11 +200,20 @@ class NestedVocabDefinitionViewSet(
     APIDefaultsMixin, CreateModelMixin,
     ListModelMixin, GenericViewSet
 ):
+    OXFORD_API_ID = getattr(settings, 'OXFORD_API_ID', None)
+    OXFORD_API_KEY = getattr(settings, 'OXFORD_API_KEY', None)
+
     lookup_field = 'pk'
     lookup_url_kwarg = 'pk'
     queryset = VocabDefinition.objects.select_related('vocab_entry')
     serializer_class = VocabDefinitionSerializer
     vocab_entry = None
+    oxford_entry_url = 'https://od-api.oxforddictionaries.com:443/api/v1/entries/{0}/{1}'
+    oxford_headers = {
+        'Accept': 'application/json',
+        'app_id': OXFORD_API_ID,
+        'app_key': OXFORD_API_KEY
+    }
 
     def get_vocab_entry(self, vocab_entry_pk=None):
         if not self.vocab_entry:
@@ -172,7 +222,7 @@ class NestedVocabDefinitionViewSet(
         return self.vocab_entry
 
     def perform_create(self, serializer):
-        vocab_entry = self.get_vocab_project(
+        vocab_entry = self.get_vocab_entry(
             vocab_entry_pk=self.kwargs['vocab_entry_pk']
         )
         serializer.save(
@@ -189,6 +239,23 @@ class NestedVocabDefinitionViewSet(
             self.permission_classes = []
 
         return super(APIDefaultsMixin, self).get_permissions()
+
+    def list(self, request, *args, **kwargs):
+        self.get_vocab_entry(vocab_entry_pk=kwargs['vocab_entry_pk'])
+
+        # If no definitions in db, check the oxford api.
+        if not VocabDefinition.objects.filter(vocab_entry=self.vocab_entry).exists():
+            url = self.oxford_entry_url.format(
+                self.vocab_entry.language,
+                self.vocab_entry.entry
+            )
+            response = requests.get(url, headers=self.oxford_headers)
+
+            if response.status_code == status.HTTP_200_OK:
+                response_json = response.json()
+                add_definitions_from_oxford(response_json, self.vocab_entry)
+
+        return super(NestedVocabDefinitionViewSet, self).list(request, *args, **kwargs)
 
 
 class VocabSourceViewSet(

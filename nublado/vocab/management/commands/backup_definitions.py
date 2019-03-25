@@ -68,7 +68,7 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         self.login_user()
 
-        oxford_entry_url = 'https://od-api.oxforddictionaries.com:443/api/v1/entries/{0}/{1}/regions={2}'
+        oxford_entry_url = 'https://od-api.oxforddictionaries.com:443/api/v1/entries/{0}/{1}'
         headers = {
             'Accept': 'application/json',
             'app_id': self.OXFORD_API_ID,
@@ -82,8 +82,7 @@ class Command(BaseCommand):
             if not VocabDefinition.objects.filter(vocab_entry=vocab_entry).exists():
                 url = oxford_entry_url.format(
                     vocab_entry.language,
-                    vocab_entry.entry,
-                    'us'
+                    vocab_entry.entry
                 )
                 response = requests.get(url, headers=headers)
                 if response.status_code == status.HTTP_200_OK:

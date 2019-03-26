@@ -90,7 +90,7 @@ project_name: Spanish Reading
 
     <div markdown="1" class="tagged-entries">
 
-    es: puño y letra: puño y letra
+    es: de puño y letra: de su puño y letra
 
     es: árbitro: árbitros
 
@@ -664,7 +664,7 @@ project_name: Spanish Reading
 
     es: grabar: grabadas
 
-    es: blasfema: blasfema
+    es: blasfemo: blasfema
 
     es: alzar: alzó
 

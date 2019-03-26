@@ -1387,7 +1387,7 @@ project_name: Spanish Reading
 
     <div markdown="1" class="tagged-entries">
 
-    es: puño y letra: puño y letra
+    es: de puño y letra: de su puño y letra
 
     es: redondeado: redondeada
 

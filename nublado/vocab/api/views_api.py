@@ -33,6 +33,28 @@ from ..utils import (
 from .permissions import CreatorPermission, ReadWritePermission, IsSuperuser
 from ..conf import settings
 
+OXFORD_API_ID = getattr(settings, 'OXFORD_API_ID', None)
+OXFORD_API_KEY = getattr(settings, 'OXFORD_API_KEY', None)
+OXFORD_HEADERS = {
+    'Accept': 'application/json',
+    'app_id': OXFORD_API_ID,
+    'app_key': OXFORD_API_KEY
+}
+
+oxford_entry_url = 'https://od-api.oxforddictionaries.com/api/v1/entries/{0}/{1}'
+
+
+def get_oxford_entry_json(vocab_entry):
+    url = oxford_entry_url.format(
+        vocab_entry.language,
+        vocab_entry.entry
+    )
+    response = requests.get(url, headers=OXFORD_HEADERS)
+
+    if response.status_code == status.HTTP_200_OK:
+        response_json = response.json()
+        add_definitions_from_oxford(response_json, vocab_entry)
+
 
 def add_definitions_from_oxford(json_data, vocab_entry):
     '''
@@ -196,20 +218,12 @@ class NestedVocabDefinitionViewSet(
     APIDefaultsMixin, CreateModelMixin,
     ListModelMixin, GenericViewSet
 ):
-    OXFORD_API_ID = getattr(settings, 'OXFORD_API_ID', None)
-    OXFORD_API_KEY = getattr(settings, 'OXFORD_API_KEY', None)
 
     lookup_field = 'pk'
     lookup_url_kwarg = 'pk'
     queryset = VocabDefinition.objects.select_related('vocab_entry')
     serializer_class = VocabDefinitionSerializer
     vocab_entry = None
-    oxford_entry_url = 'https://od-api.oxforddictionaries.com/api/v1/entries/{0}/{1}'
-    oxford_headers = {
-        'Accept': 'application/json',
-        'app_id': OXFORD_API_ID,
-        'app_key': OXFORD_API_KEY
-    }
 
     def get_vocab_entry(self, vocab_entry_pk=None):
         if not self.vocab_entry:
@@ -241,15 +255,7 @@ class NestedVocabDefinitionViewSet(
 
         # If no definitions in db, check the oxford api.
         if not VocabDefinition.objects.filter(vocab_entry=self.vocab_entry).exists():
-            url = self.oxford_entry_url.format(
-                self.vocab_entry.language,
-                self.vocab_entry.entry
-            )
-            response = requests.get(url, headers=self.oxford_headers)
-
-            if response.status_code == status.HTTP_200_OK:
-                response_json = response.json()
-                add_definitions_from_oxford(response_json, self.vocab_entry)
+            get_oxford_entry_json(self.vocab_entry)
 
         return super(NestedVocabDefinitionViewSet, self).list(request, *args, **kwargs)
 

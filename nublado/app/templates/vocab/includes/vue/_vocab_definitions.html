@@ -23,6 +23,8 @@ inline-template
 
   <div class="vocab-definitions">
 
+  <span v-show="processing"><i class="fas fa-spin fa-spinner"></i></span>
+
   <ul 
   id="vocab-definitions"
   v-show="definitionsVisible && definitions.length > 0"

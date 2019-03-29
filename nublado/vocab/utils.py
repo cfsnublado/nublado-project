@@ -350,6 +350,12 @@ def validate_vocab_source_json_schema(data):
 
 # Oxford API stuff
 def get_oxford_entry_json(api_id, api_key, vocab_entry):
+    '''
+    api_id: Oxford api id
+    api_key: Oxford api key
+    vocab_entry: A VocabEntry object
+    '''
+
     oxford_entry_url = 'https://od-api.oxforddictionaries.com/api/v1/entries/{language}/{entry}'.format(
         language=vocab_entry.language,
         entry=vocab_entry.entry
@@ -371,6 +377,7 @@ def get_oxford_entry_json(api_id, api_key, vocab_entry):
 def add_definitions_from_oxford(json_data, vocab_entry):
     '''
     json_data: The json returned from the Oxford api for a vocab entry.
+    vocab_entry: A VocabEntry object
     '''
 
     lexical_categories = {

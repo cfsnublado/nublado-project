@@ -1,4 +1,7 @@
+import requests
 from jsonschema import validate as validate_schema
+
+from rest_framework import status
 
 from django.contrib.auth import get_user_model
 
@@ -343,3 +346,57 @@ def validate_vocab_source_json_schema(data):
         'required': ['vocab_source_data']
     }
     validate_schema(data, schema)
+
+
+# Oxford API stuff
+def get_oxford_entry_json(api_id, api_key, vocab_entry):
+    oxford_entry_url = 'https://od-api.oxforddictionaries.com/api/v1/entries/{language}/{entry}'.format(
+        language=vocab_entry.language,
+        entry=vocab_entry.entry
+    )
+    response = requests.get(
+        oxford_entry_url,
+        headers={
+            'Accept': 'application/json',
+            'app_id': api_id,
+            'app_key': api_key
+        }
+    )
+
+    if response.status_code == status.HTTP_200_OK:
+        response_json = response.json()
+        add_definitions_from_oxford(response_json, vocab_entry)
+
+
+def add_definitions_from_oxford(json_data, vocab_entry):
+    '''
+    json_data: The json returned from the Oxford api for a vocab entry.
+    '''
+
+    lexical_categories = {
+        'noun': VocabDefinition.NOUN,
+        'adjective': VocabDefinition.ADJECTIVE,
+        'adverb': VocabDefinition.ADVERB,
+        'verb': VocabDefinition.VERB,
+        'expression': VocabDefinition.EXPRESSION,
+        'other': VocabDefinition.OTHER
+    }
+
+    for result in json_data['results']:
+        for lexical_entry in result['lexicalEntries']:
+            lexical_category = lexical_entry['lexicalCategory'].lower()
+
+            if 'derivativeOf' not in lexical_entry:
+
+                for entry in lexical_entry['entries']:
+                    if 'senses' in entry:
+                        for sense in entry['senses']:
+                            if 'definitions' in sense:
+                                for definition in sense['definitions']:
+                                    if lexical_category not in lexical_categories:
+                                        lexical_category = 'other'
+                                    VocabDefinition.objects.create(
+                                        vocab_entry=vocab_entry,
+                                        definition_type=lexical_categories[lexical_category],
+                                        definition=definition
+                                    )

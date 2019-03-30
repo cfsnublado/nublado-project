@@ -356,6 +356,7 @@ def get_oxford_entry_json(api_id, api_key, vocab_entry):
     vocab_entry: A VocabEntry object
     '''
 
+    # The Oxford API uses underscores instead of dashes in the search slugs.
     oxford_entry_url = 'https://od-api.oxforddictionaries.com/api/v1/entries/{language}/{entry}'.format(
         language=vocab_entry.language,
         entry=vocab_entry.entry
@@ -385,7 +386,7 @@ def add_definitions_from_oxford(json_data, vocab_entry):
         'adjective': VocabDefinition.ADJECTIVE,
         'adverb': VocabDefinition.ADVERB,
         'verb': VocabDefinition.VERB,
-        'expression': VocabDefinition.EXPRESSION,
+        'idiomatic': VocabDefinition.EXPRESSION,
         'other': VocabDefinition.OTHER
     }
 

@@ -167,6 +167,7 @@ class VocabDefinition(TimestampModel, SerializeModel):
         (VERB, _('label_verb')),
         (ADVERB, _('label_adverb')),
         (EXPRESSION, _('label_expression')),
+        (OTHER, _('label_other')),
     )
 
     vocab_entry = models.ForeignKey(

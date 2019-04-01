@@ -8,7 +8,7 @@ from django.contrib.auth import get_user_model
 from .conf import settings
 from .models import (
     VocabContextEntry, VocabDefinition, VocabEntry,
-    VocabProject, VocabSource
+    VocabEntryJsonData, VocabProject, VocabSource
 )
 from .serializers import (
     VocabDefinitionSerializer, VocabEntrySerializer,
@@ -356,11 +356,14 @@ def get_oxford_entry_json(api_id, api_key, vocab_entry):
     vocab_entry: A VocabEntry object
     '''
 
-    # The Oxford API uses underscores instead of dashes in the search slugs.
     oxford_entry_url = 'https://od-api.oxforddictionaries.com/api/v1/entries/{language}/{entry}'.format(
         language=vocab_entry.language,
         entry=vocab_entry.entry
     )
+
+    if vocab_entry.language == 'en':
+        oxford_entry_url = oxford_entry_url + '/regions=us'
+
     response = requests.get(
         oxford_entry_url,
         headers={
@@ -372,6 +375,11 @@ def get_oxford_entry_json(api_id, api_key, vocab_entry):
 
     if response.status_code == status.HTTP_200_OK:
         response_json = response.json()
+        VocabEntryJsonData.objects.create(
+            vocab_entry=vocab_entry,
+            json_data=response_json,
+            json_data_source=VocabEntryJsonData.OXFORD
+        )
         add_definitions_from_oxford(response_json, vocab_entry)
 
 
@@ -391,20 +399,31 @@ def add_definitions_from_oxford(json_data, vocab_entry):
     }
 
     for result in json_data['results']:
-        for lexical_entry in result['lexicalEntries']:
-            lexical_category = lexical_entry['lexicalCategory'].lower()
+        if 'lexicalEntries' in result:
+            for lexical_entry in result['lexicalEntries']:
+                lexical_category = lexical_entry['lexicalCategory'].lower()
 
-            if 'derivativeOf' not in lexical_entry:
+                # Add pronunciations
+                if 'pronunciations' in lexical_entry:
+                    for pronunciation in lexical_entry['pronunciations']:
+                        if 'phoneticNotation' in pronunciation:
+                            if pronunciation['phoneticNotation'].lower() == 'ipa':
+                                if 'phoneticSpelling' in pronunciation:
+                                    vocab_entry.pronunciation_ipa = pronunciation['phoneticSpelling']
+                                    vocab_entry.save()
 
-                for entry in lexical_entry['entries']:
-                    if 'senses' in entry:
-                        for sense in entry['senses']:
-                            if 'definitions' in sense:
-                                for definition in sense['definitions']:
-                                    if lexical_category not in lexical_categories:
-                                        lexical_category = 'other'
-                                    VocabDefinition.objects.create(
-                                        vocab_entry=vocab_entry,
-                                        definition_type=lexical_categories[lexical_category],
-                                        definition=definition
-                                    )
+                # Add definitions
+                if 'entries' in lexical_entry:
+                    for entry in lexical_entry['entries']:
+                        if 'senses' in entry:
+                            for sense in entry['senses']:
+                                if 'definitions' in sense:
+                                    for definition in sense['definitions']:
+                                        if lexical_category not in lexical_categories:
+                                            lexical_category = 'other'
+
+                                        VocabDefinition.objects.create(
+                                            vocab_entry=vocab_entry,
+                                            definition_type=lexical_categories[lexical_category],
+                                            definition=definition
+                                        )

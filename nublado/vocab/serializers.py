@@ -107,7 +107,7 @@ class VocabEntrySerializer(BaseSerializer, HyperlinkedModelSerializer):
 class VocabDefinitionSerializer(BaseSerializer, HyperlinkedModelSerializer):
     json_encoder = UUIDEncoder
     minimal_data_fields = [
-        'definition', 'definition_type',
+        'definition', 'lexical_category',
         'date_created'
     ]
     url = HyperlinkedIdentityField(
@@ -121,17 +121,17 @@ class VocabDefinitionSerializer(BaseSerializer, HyperlinkedModelSerializer):
         lookup_field='pk',
         source='vocab_entry'
     )
-    definition_type_name = SerializerMethodField()
+    lexical_category_name = SerializerMethodField()
 
-    def get_definition_type_name(self, obj):
-        return obj.get_definition_type_display()
+    def get_lexical_category_name(self, obj):
+        return obj.get_lexical_category_display()
 
     class Meta:
         model = VocabDefinition
         fields = (
             'url', 'id', 'vocab_entry_url',
-            'vocab_entry_id', 'definition', 'definition_type',
-            'definition_type_name', 'date_created', 'date_updated',
+            'vocab_entry_id', 'definition', 'lexical_category',
+            'lexical_category_name', 'date_created', 'date_updated',
         )
         read_only_fields = (
             'url', 'id', 'vocab_entry_url',

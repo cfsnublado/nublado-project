@@ -862,7 +862,7 @@ const IpaSymbolKeypad = {
   },
 }
 
-const EntryDefinitions = {
+const EntryInfo = {
   mixins: [AjaxProcessMixin],
   props: {
     initEndpointUrl: {
@@ -886,7 +886,7 @@ const EntryDefinitions = {
     return {
       endpointUrl: this.initEndpointUrl,
       fetchFromAPI: this.initFetchFromAPI,
-      definitions: [],
+      definitions: {},
       definitionsVisible: false,
       definitionsLoaded: false,
       msgShowDefinitions: this.initMsgShowDefinitions,
@@ -908,7 +908,8 @@ const EntryDefinitions = {
         this.endpointUrl
       )
       .then(response => {
-        this.definitions = response.data
+        this.definitions = _.groupBy(response.data, "lexical_category_name");
+        console.log(this.definitions)
         this.definitionsLoaded = true
         this.success()
       })

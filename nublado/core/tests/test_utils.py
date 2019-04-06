@@ -2,9 +2,10 @@ from django.conf import settings
 from django.core.files.base import File
 from django.test import TestCase
 
+from coretest.models import TestColorModel
 from ..utils import (
-    FuzzyInt, generate_random_username, markdown_to_html,
-    save_text_to_file
+    get_group_by_dict, FuzzyInt, generate_random_username,
+    markdown_to_html, save_text_to_file
 )
 
 
@@ -149,3 +150,29 @@ class TestUtilities(TestCase):
         file = File(f)
         self.assertEqual(file.read(), content)
         file.close()
+
+    def test_get_group_by_dict(self):
+        blue = TestColorModel.objects.create(name='blue', color=TestColorModel.BLUE)
+        green = TestColorModel.objects.create(name='green', color=TestColorModel.GREEN)
+        red = TestColorModel.objects.create(name='red', color=TestColorModel.RED)
+        red_2 = TestColorModel.objects.create(name='red', color=TestColorModel.RED)
+
+        # GRoup by color choice
+        results = get_group_by_dict(TestColorModel.objects.all(), 'color')
+        expected_results = {
+            TestColorModel.GREEN: [green],
+            TestColorModel.RED: [red, red_2],
+            TestColorModel.BLUE: [blue]
+        }
+
+        self.assertEqual(results, expected_results)
+
+        # Group by name
+        results = get_group_by_dict(TestColorModel.objects.all(), 'name')
+        expected_results = {
+            'green': [green],
+            'red': [red, red_2],
+            'blue': [blue]
+        }
+
+        self.assertEqual(results, expected_results)

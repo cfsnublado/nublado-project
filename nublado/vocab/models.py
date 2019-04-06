@@ -161,7 +161,7 @@ class VocabDefinition(TimestampModel, SerializeModel):
     EXPRESSION = 5
     OTHER = 6
 
-    DEFINITION_TYPE_CHOICES = (
+    LEXICAL_CATEGORIES = (
         (NOUN, _('label_noun')),
         (ADJECTIVE, _('label_adjective')),
         (VERB, _('label_verb')),
@@ -178,9 +178,9 @@ class VocabDefinition(TimestampModel, SerializeModel):
     definition = models.TextField(
         verbose_name=_('label_definition')
     )
-    definition_type = models.IntegerField(
-        verbose_name=_('label_vocab_definition_type'),
-        choices=DEFINITION_TYPE_CHOICES,
+    lexical_category = models.IntegerField(
+        verbose_name=_('label_vocab_lexical_category'),
+        choices=LEXICAL_CATEGORIES,
         default=NOUN
     )
 
@@ -191,7 +191,7 @@ class VocabDefinition(TimestampModel, SerializeModel):
         verbose_name_plural = _('label_vocab_definition_plural')
 
     def __str__(self):
-        return '{0} - {1}'.format(self.definition_type, self.definition)
+        return '{0} - {1}'.format(self.lexical_category, self.definition)
 
     def get_serializer(self):
         from .serializers import VocabDefinitionSerializer

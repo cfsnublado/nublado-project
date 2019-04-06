@@ -1,0 +1,220 @@
+{
+  "results": [
+    {
+      "id": "ally",
+      "type": "headword",
+      "word": "ally",
+      "language": "en",
+      "lexicalEntries": [
+        {
+          "text": "ally",
+          "entries": [
+            {
+              "senses": [
+                {
+                  "id": "m_en_gbus0024860.005",
+                  "subsenses": [
+                    {
+                      "id": "m_en_gbus0024860.008",
+                      "examples": [
+                        {
+                          "text": "he was forced to dismiss his closest political ally"
+                        }
+                      ],
+                      "definitions": [
+                        "a person or organization that cooperates with or helps another in a particular activity"
+                      ],
+                      "thesaurusLinks": [
+                        {
+                          "entry_id": "ally",
+                          "sense_id": "t_en_gb0000477.001"
+                        }
+                      ],
+                      "short_definitions": [
+                        "friend or helper"
+                      ]
+                    },
+                    {
+                      "id": "m_en_gbus0024860.009",
+                      "notes": [
+                        {
+                          "text": "\"the Allies\"",
+                          "type": "wordFormNote"
+                        }
+                      ],
+                      "domains": [
+                        "Second World War",
+                        "First World War"
+                      ],
+                      "definitions": [
+                        "a group of nations taking military action together, in particular the countries that fought with the US in World War I and World War II."
+                      ],
+                      "short_definitions": [
+                        "allies of Britain"
+                      ]
+                    }
+                  ],
+                  "definitions": [
+                    "a state formally cooperating with another for a military or other purpose."
+                  ],
+                  "short_definitions": [
+                    "friendly country"
+                  ]
+                }
+              ],
+              "etymologies": [
+                "Middle English (as a verb): from Old French alier, from Latin alligare \u2018bind together\u2019, from ad- \u2018to\u2019 + ligare \u2018to bind\u2019; the noun is partly via Old French alie \u2018allied\u2019. Compare with alloy"
+              ],
+              "pronunciations": [
+                {
+                  "dialects": [
+                    "American English"
+                  ],
+                  "audioFile": "http://audio.oxforddictionaries.com/en/mp3/ally_us_1.mp3",
+                  "phoneticNotation": "IPA",
+                  "phoneticSpelling": "\u02c8\u00e6la\u026a"
+                },
+                {
+                  "dialects": [
+                    "American English"
+                  ],
+                  "phoneticNotation": "respell",
+                  "phoneticSpelling": "\u02c8al\u012b"
+                }
+              ],
+              "homographNumber": "100",
+              "grammaticalFeatures": [
+                {
+                  "text": "Singular",
+                  "type": "Number"
+                }
+              ]
+            },
+            {
+              "senses": [
+                {
+                  "id": "m_en_gbus0024880.002",
+                  "crossReferences": [
+                    {
+                      "id": "alley",
+                      "text": "alley",
+                      "type": "variant spelling"
+                    }
+                  ],
+                  "crossReferenceMarkers": [
+                    "variant spelling of alley"
+                  ]
+                }
+              ],
+              "homographNumber": "200",
+              "grammaticalFeatures": [
+                {
+                  "text": "Singular",
+                  "type": "Number"
+                }
+              ]
+            }
+          ],
+          "language": "en",
+          "lexicalCategory": "Noun"
+        },
+        {
+          "text": "ally",
+          "entries": [
+            {
+              "senses": [
+                {
+                  "id": "m_en_gbus0024860.017",
+                  "notes": [
+                    {
+                      "text": "\"ally something to/with\"",
+                      "type": "wordFormNote"
+                    }
+                  ],
+                  "examples": [
+                    {
+                      "text": "he allied his racing experience with his father's business acumen"
+                    }
+                  ],
+                  "subsenses": [
+                    {
+                      "id": "m_en_gbus0024860.025",
+                      "notes": [
+                        {
+                          "text": "\"ally oneself with\"",
+                          "type": "wordFormNote"
+                        }
+                      ],
+                      "examples": [
+                        {
+                          "text": "he allied himself with the forces of change"
+                        }
+                      ],
+                      "definitions": [
+                        "side with or support"
+                      ],
+                      "thesaurusLinks": [
+                        {
+                          "entry_id": "ally",
+                          "sense_id": "t_en_gb0000477.003"
+                        }
+                      ],
+                      "short_definitions": [
+                        "support"
+                      ]
+                    }
+                  ],
+                  "definitions": [
+                    "combine or unite a resource or commodity with (another) for mutual benefit"
+                  ],
+                  "thesaurusLinks": [
+                    {
+                      "entry_id": "ally",
+                      "sense_id": "t_en_gb0000477.002"
+                    }
+                  ],
+                  "short_definitions": [
+                    "join resource with"
+                  ]
+                }
+              ],
+              "homographNumber": "101",
+              "grammaticalFeatures": [
+                {
+                  "text": "Transitive",
+                  "type": "Subcategorization"
+                },
+                {
+                  "text": "Present",
+                  "type": "Tense"
+                }
+              ]
+            }
+          ],
+          "language": "en",
+          "pronunciations": [
+            {
+              "dialects": [
+                "American English"
+              ],
+              "audioFile": "http://audio.oxforddictionaries.com/en/mp3/ally_us_2_rr.mp3",
+              "phoneticNotation": "IPA",
+              "phoneticSpelling": "\u0259\u02c8la\u026a"
+            },
+            {
+              "dialects": [
+                "American English"
+              ],
+              "phoneticNotation": "respell",
+              "phoneticSpelling": "\u0259\u02c8l\u012b"
+            }
+          ],
+          "lexicalCategory": "Verb"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "provider": "Oxford University Press"
+  }
+}

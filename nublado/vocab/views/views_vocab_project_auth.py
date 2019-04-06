@@ -1,5 +1,3 @@
-from collections import defaultdict
-
 from django.apps import apps
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse
@@ -8,6 +6,7 @@ from django.views.generic import (
     UpdateView
 )
 
+from core.utils import get_group_by_dict
 from core.views import (
     AjaxDeleteMixin, AjaxFormMixin, MessageMixin,
     UserstampMixin
@@ -103,9 +102,6 @@ class VocabProjectSourcesView(
 
     def get_context_data(self, **kwargs):
         context = super(VocabProjectSourcesView, self).get_context_data(**kwargs)
-        vocab_sources = self.get_queryset().all()
-        vocab_source_dict = defaultdict(list)
-        for vocab_source in vocab_sources:
-            vocab_source_dict[vocab_source.source_type].append(vocab_source)
+        vocab_source_dict = get_group_by_dict(self.get_queryset(), 'source_type')
         context['vocab_sources'] = dict(vocab_source_dict)
         return context

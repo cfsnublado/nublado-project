@@ -1,0 +1,217 @@
+{
+  "results": [
+    {
+      "id": "deliberate",
+      "type": "headword",
+      "word": "deliberate",
+      "language": "en",
+      "lexicalEntries": [
+        {
+          "text": "deliberate",
+          "entries": [
+            {
+              "senses": [
+                {
+                  "id": "m_en_gbus0261670.012",
+                  "examples": [
+                    {
+                      "text": "a deliberate attempt to provoke conflict"
+                    }
+                  ],
+                  "subsenses": [
+                    {
+                      "id": "m_en_gbus0261670.014",
+                      "examples": [
+                        {
+                          "text": "a deliberate decision"
+                        }
+                      ],
+                      "definitions": [
+                        "fully considered; not impulsive"
+                      ],
+                      "short_definitions": [
+                        "fully considered"
+                      ]
+                    },
+                    {
+                      "id": "m_en_gbus0261670.015",
+                      "examples": [
+                        {
+                          "text": "a careful and deliberate worker"
+                        }
+                      ],
+                      "definitions": [
+                        "done or acting in a careful and unhurried way"
+                      ],
+                      "thesaurusLinks": [
+                        {
+                          "entry_id": "deliberate",
+                          "sense_id": "t_en_gb0003624.002"
+                        },
+                        {
+                          "entry_id": "deliberate",
+                          "sense_id": "t_en_gb0003624.003"
+                        }
+                      ],
+                      "short_definitions": [
+                        "careful and unhurried"
+                      ]
+                    }
+                  ],
+                  "definitions": [
+                    "done consciously and intentionally"
+                  ],
+                  "thesaurusLinks": [
+                    {
+                      "entry_id": "deliberate",
+                      "sense_id": "t_en_gb0003624.001"
+                    }
+                  ],
+                  "short_definitions": [
+                    "intentional"
+                  ]
+                }
+              ],
+              "etymologies": [
+                "late Middle English (as an adjective): from Latin deliberatus, \u2018considered carefully\u2019, past participle of deliberare, from de- \u2018down\u2019 + librare \u2018weigh\u2019 (from libra \u2018scales\u2019)"
+              ],
+              "homographNumber": "000",
+              "grammaticalFeatures": [
+                {
+                  "text": "Positive",
+                  "type": "Degree"
+                }
+              ]
+            }
+          ],
+          "language": "en",
+          "derivatives": [
+            {
+              "id": "deliberateness",
+              "text": "deliberateness"
+            },
+            {
+              "id": "deliberator",
+              "text": "deliberator"
+            }
+          ],
+          "pronunciations": [
+            {
+              "dialects": [
+                "American English"
+              ],
+              "phoneticNotation": "respell",
+              "phoneticSpelling": "d\u0259\u02c8lib(\u0259)r\u0259t"
+            },
+            {
+              "dialects": [
+                "American English"
+              ],
+              "audioFile": "http://audio.oxforddictionaries.com/en/mp3/deliberate_us_1.mp3",
+              "phoneticNotation": "IPA",
+              "phoneticSpelling": "d\u0259\u02c8l\u026ab(\u0259)r\u0259t"
+            }
+          ],
+          "lexicalCategory": "Adjective"
+        },
+        {
+          "text": "deliberate",
+          "entries": [
+            {
+              "senses": [
+                {
+                  "id": "m_en_gbus0261670.020",
+                  "examples": [
+                    {
+                      "text": "she deliberated over the menu"
+                    }
+                  ],
+                  "subsenses": [
+                    {
+                      "id": "m_en_gbus0261670.026",
+                      "notes": [
+                        {
+                          "text": "with object",
+                          "type": "grammaticalNote"
+                        }
+                      ],
+                      "examples": [
+                        {
+                          "text": "jurors deliberated the fate of those charged"
+                        },
+                        {
+                          "text": "deliberating what she should do"
+                        }
+                      ],
+                      "definitions": [
+                        "consider (a question) carefully"
+                      ],
+                      "thesaurusLinks": [
+                        {
+                          "entry_id": "deliberate",
+                          "sense_id": "t_en_gb0003624.004"
+                        }
+                      ],
+                      "short_definitions": [
+                        "consider carefully"
+                      ]
+                    }
+                  ],
+                  "definitions": [
+                    "engage in long and careful consideration"
+                  ],
+                  "short_definitions": [
+                    "engage in consideration"
+                  ]
+                }
+              ],
+              "homographNumber": "001",
+              "grammaticalFeatures": [
+                {
+                  "text": "Intransitive",
+                  "type": "Subcategorization"
+                },
+                {
+                  "text": "Present",
+                  "type": "Tense"
+                }
+              ]
+            }
+          ],
+          "language": "en",
+          "derivatives": [
+            {
+              "id": "deliberator",
+              "text": "deliberator"
+            },
+            {
+              "id": "deliberateness",
+              "text": "deliberateness"
+            }
+          ],
+          "pronunciations": [
+            {
+              "dialects": [
+                "American English"
+              ],
+              "phoneticNotation": "respell",
+              "phoneticSpelling": "di\u02c8lib\u0259\u02ccr\u0101t"
+            },
+            {
+              "dialects": [
+                "American English"
+              ],
+              "audioFile": "http://audio.oxforddictionaries.com/en/mp3/deliberate_us_2.mp3",
+              "phoneticNotation": "IPA",
+              "phoneticSpelling": "d\u026a\u02c8l\u026ab\u0259\u02ccre\u026at"
+            }
+          ],
+          "lexicalCategory": "Verb"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "provider": "Oxford University Press"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "results": [
+    {
+      "id": "cherry-picking",
+      "type": "headword",
+      "word": "cherry-picking",
+      "language": "en",
+      "lexicalEntries": [
+        {
+          "text": "cherry-picking",
+          "entries": [
+            {
+              "homographNumber": "000",
+              "grammaticalFeatures": [
+                {
+                  "text": "Singular",
+                  "type": "Number"
+                }
+              ]
+            }
+          ],
+          "language": "en",
+          "derivativeOf": [
+            {
+              "id": "cherry-pick",
+              "text": "cherry-pick"
+            }
+          ],
+          "lexicalCategory": "Noun"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "provider": "Oxford University Press"
+  }
+}

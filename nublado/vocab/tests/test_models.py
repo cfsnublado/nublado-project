@@ -160,7 +160,7 @@ class VocabDefinitionTest(TestCommon):
         )
         self.vocab_definition = VocabDefinition.objects.create(
             vocab_entry=self.vocab_entry,
-            definition_type=VocabDefinition.ADJECTIVE,
+            lexical_category=VocabDefinition.ADJECTIVE,
             definition='algo'
         )
 
@@ -184,7 +184,7 @@ class VocabDefinitionTest(TestCommon):
         self.assertEqual(
             str(self.vocab_definition),
             '{0} - {1}'.format(
-                self.vocab_definition.definition_type,
+                self.vocab_definition.lexical_category,
                 self.vocab_definition.definition
             )
         )

@@ -23,6 +23,23 @@ class TestModel(BaseTestModel):
     pass
 
 
+class TestColorModel(BaseTestModel):
+    RED = 1
+    BLUE = 2
+    GREEN = 3
+
+    COLOR_CHOICES = (
+        (RED, "Red"),
+        (BLUE, "Blue"),
+        (GREEN, "Green")
+    )
+
+    color = models.IntegerField(
+        choices=COLOR_CHOICES,
+        default=GREEN
+    )
+
+
 class TestLanguageModel(BaseTestModel, LanguageModel):
 
     class Meta:

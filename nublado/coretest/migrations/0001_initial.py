@@ -105,4 +105,15 @@ class Migration(migrations.Migration):
                 'abstract': False,
             },
         ),
+        migrations.CreateModel(
+            name='TestColorModel',
+            fields=[
+                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('name', models.CharField(default='hello', max_length=100)),
+                ('color', models.IntegerField(choices=[(1, 'Red'), (2, 'Blue'), (3, 'Green')], default=1,)),
+            ],
+            options={
+                'abstract': False,
+            },
+        ),
     ]

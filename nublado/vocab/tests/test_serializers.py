@@ -225,7 +225,7 @@ class VocabDefinitionSerializerTest(TestCommon):
         )
         self.vocab_definition = VocabDefinition.objects.create(
             vocab_entry=self.vocab_entry,
-            definition_type=VocabDefinition.NOUN,
+            lexical_category=VocabDefinition.NOUN,
             definition='hello'
         )
         self.request = self.client.get(reverse('api:vocab-definition-list')).wsgi_request
@@ -236,14 +236,14 @@ class VocabDefinitionSerializerTest(TestCommon):
 
     def test_minimal_data_fields(self):
         expected_minimal_data = [
-            'definition_type', 'definition',
+            'lexical_category', 'definition',
             'date_created'
         ]
         self.assertCountEqual(expected_minimal_data, self.serializer.minimal_data_fields)
 
     def test_get_minimal_data(self):
         expected_data = {
-            'definition_type': self.vocab_definition.definition_type,
+            'lexical_category': self.vocab_definition.lexical_category,
             'definition': self.vocab_definition.definition,
             'date_created': self.vocab_definition.date_created.isoformat()
         }
@@ -263,8 +263,8 @@ class VocabDefinitionSerializerTest(TestCommon):
                 kwargs={'pk': self.vocab_entry.id},
                 request=self.request
             ),
-            'definition_type': self.vocab_definition.definition_type,
-            'definition_type_name': self.vocab_definition.get_definition_type_display(),
+            'lexical_category': self.vocab_definition.lexical_category,
+            'lexical_category_name': self.vocab_definition.get_lexical_category_display(),
             'definition': self.vocab_definition.definition,
             'date_created': self.vocab_definition.date_created.isoformat(),
             'date_updated': self.vocab_definition.date_updated.isoformat(),
@@ -286,8 +286,8 @@ class VocabDefinitionSerializerTest(TestCommon):
                 kwargs={'pk': self.vocab_entry.id},
                 request=self.request
             ),
-            'definition_type': self.vocab_definition.definition_type,
-            'definition_type_name': self.vocab_definition.get_definition_type_display(),
+            'lexical_category': self.vocab_definition.lexical_category,
+            'lexical_category_name': self.vocab_definition.get_lexical_category_display(),
             'definition': self.vocab_definition.definition,
             'date_created': self.vocab_definition.date_created.isoformat(),
             'date_updated': self.vocab_definition.date_updated.isoformat(),

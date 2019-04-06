@@ -356,31 +356,41 @@ def get_oxford_entry_json(api_id, api_key, vocab_entry):
     vocab_entry: A VocabEntry object
     '''
 
-    oxford_entry_url = 'https://od-api.oxforddictionaries.com/api/v1/entries/{language}/{entry}'.format(
-        language=vocab_entry.language,
-        entry=vocab_entry.entry
-    )
-
-    if vocab_entry.language == 'en':
-        oxford_entry_url = oxford_entry_url + '/regions=us'
-
-    response = requests.get(
-        oxford_entry_url,
-        headers={
-            'Accept': 'application/json',
-            'app_id': api_id,
-            'app_key': api_key
-        }
-    )
-
-    if response.status_code == status.HTTP_200_OK:
-        response_json = response.json()
-        VocabEntryJsonData.objects.create(
+    if VocabEntryJsonData.objects.filter(
+        vocab_entry=vocab_entry,
+        json_data_source=VocabEntryJsonData.OXFORD
+    ).exists():
+        vocab_entry_json = VocabEntryJsonData.objects.get(
             vocab_entry=vocab_entry,
-            json_data=response_json,
             json_data_source=VocabEntryJsonData.OXFORD
         )
-        add_definitions_from_oxford(response_json, vocab_entry)
+        add_definitions_from_oxford(vocab_entry_json.json_data, vocab_entry)
+    else:
+        oxford_entry_url = 'https://od-api.oxforddictionaries.com/api/v1/entries/{language}/{entry}'.format(
+            language=vocab_entry.language,
+            entry=vocab_entry.entry
+        )
+
+        if vocab_entry.language == 'en':
+            oxford_entry_url = oxford_entry_url + '/regions=us'
+
+        response = requests.get(
+            oxford_entry_url,
+            headers={
+                'Accept': 'application/json',
+                'app_id': api_id,
+                'app_key': api_key
+            }
+        )
+
+        if response.status_code == status.HTTP_200_OK:
+            response_json = response.json()
+            VocabEntryJsonData.objects.create(
+                vocab_entry=vocab_entry,
+                json_data=response_json,
+                json_data_source=VocabEntryJsonData.OXFORD
+            )
+            add_definitions_from_oxford(response_json, vocab_entry)
 
 
 def add_definitions_from_oxford(json_data, vocab_entry):
@@ -424,6 +434,6 @@ def add_definitions_from_oxford(json_data, vocab_entry):
 
                                         VocabDefinition.objects.create(
                                             vocab_entry=vocab_entry,
-                                            definition_type=lexical_categories[lexical_category],
+                                            lexical_category=lexical_categories[lexical_category],
                                             definition=definition
                                         )

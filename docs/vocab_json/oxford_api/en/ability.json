@@ -1,0 +1,105 @@
+{
+  "results": [
+    {
+      "id": "ability",
+      "type": "headword",
+      "word": "ability",
+      "language": "en",
+      "lexicalEntries": [
+        {
+          "text": "ability",
+          "entries": [
+            {
+              "senses": [
+                {
+                  "id": "m_en_gbus0001780.006",
+                  "notes": [
+                    {
+                      "text": "in singular, with infinitive",
+                      "type": "grammaticalNote"
+                    }
+                  ],
+                  "examples": [
+                    {
+                      "text": "they'll examine your ability to pay"
+                    },
+                    {
+                      "text": "the manager had lost his ability to motivate the players"
+                    }
+                  ],
+                  "definitions": [
+                    "possession of the means or skill to do something"
+                  ],
+                  "thesaurusLinks": [
+                    {
+                      "entry_id": "ability",
+                      "sense_id": "t_en_gb0000031.001"
+                    }
+                  ],
+                  "short_definitions": [
+                    "possession of means or skill to do something"
+                  ]
+                },
+                {
+                  "id": "m_en_gbus0001780.009",
+                  "examples": [
+                    {
+                      "text": "a man of exceptional ability"
+                    },
+                    {
+                      "text": "students of all abilities"
+                    }
+                  ],
+                  "definitions": [
+                    "talent, skill, or proficiency in a particular area"
+                  ],
+                  "thesaurusLinks": [
+                    {
+                      "entry_id": "ability",
+                      "sense_id": "t_en_gb0000031.002"
+                    }
+                  ],
+                  "short_definitions": [
+                    "talent, skill, or proficiency in particular area"
+                  ]
+                }
+              ],
+              "etymologies": [
+                "late Middle English: from Old French ablete, from Latin habilitas, from habilis \u2018able\u2019"
+              ],
+              "homographNumber": "000",
+              "grammaticalFeatures": [
+                {
+                  "text": "Singular",
+                  "type": "Number"
+                }
+              ]
+            }
+          ],
+          "language": "en",
+          "pronunciations": [
+            {
+              "dialects": [
+                "American English"
+              ],
+              "audioFile": "http://audio.oxforddictionaries.com/en/mp3/ability_us_1.mp3",
+              "phoneticNotation": "IPA",
+              "phoneticSpelling": "\u0259\u02c8b\u026al\u0259di"
+            },
+            {
+              "dialects": [
+                "American English"
+              ],
+              "phoneticNotation": "respell",
+              "phoneticSpelling": "\u0259\u02c8bil\u0259d\u0113"
+            }
+          ],
+          "lexicalCategory": "Noun"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "provider": "Oxford University Press"
+  }
+}

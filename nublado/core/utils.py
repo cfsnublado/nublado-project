@@ -1,3 +1,4 @@
+from collections import defaultdict
 from random import choice
 from string import ascii_lowercase, digits
 import logging
@@ -20,6 +21,33 @@ from django.utils.functional import Promise, keep_lazy
 from django.utils.http import urlsafe_base64_encode
 
 logger = logging.getLogger('django')
+
+
+def get_group_by_dict(list_queryset, group_by_attr):
+    '''
+    Returns a dictionary of lists of objects,  indexed by a grouped attribute value.
+    Note: I don't like looping through the whole queryset to produce the dict.
+
+    list_queryset: queryset of objects
+    group_by_attr: attritbute of object to be grouped by
+
+    Example: Model Foo with attribute 'color'
+
+    get_group_by_dict(Foo.objects.all(), 'color')
+
+    {
+        blue: [object1, object2, object3],
+        red: [object4, object5]
+    }
+    '''
+
+    objects = list_queryset
+    group_by_dict = defaultdict(list)
+
+    for obj in objects:
+        group_by_dict[getattr(obj, group_by_attr)].append(obj)
+
+    return group_by_dict
 
 
 def get_mimetype(filename):

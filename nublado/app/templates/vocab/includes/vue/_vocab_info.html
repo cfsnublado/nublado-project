@@ -1,6 +1,6 @@
 {% load i18n %}
 
-<entry-definitions
+<entry-info 
 init-endpoint-url="{{ definitions_url }}"
 init-msg-show-definitions="{% trans 'label_show_definitions' %}"
 init-msg-hide-definitions="{% trans 'label_hide_definitions' %}"
@@ -27,20 +27,27 @@ inline-template
 
   <ul 
   id="vocab-definitions"
-  v-show="definitionsVisible && definitions.length > 0"
+  v-show="definitionsVisible"
   v-cloak
   >
     <li 
-    v-for="definition in definitions"
+      v-for="(value, key) in definitions"
     >
-    <div class="vocab-definition-text">
-    <span class="vocab-definition-type">[[ definition.definition_type_name | capitalize ]]</span>: [[ definition.definition | capitalize ]]
-    </div>
+      <h3> [[ key ]] </h3>
+      <ul>
+        <li v-for="def in value">
+          <p>
+          &mdash; [[ def.definition ]]
+          </p>
+        </li>
+      </ul>
+
     </li>
+
   </ul>
 
   <div
-  v-show="definitionsVisible && definitions.length == 0 && definitionsLoaded"
+  v-show="definitionsVisible && Object.keys(definitions).length == 0 && definitionsLoaded"
   v-cloak
   >
   {% trans 'message_no_vocab_definitions' %}
@@ -50,4 +57,4 @@ inline-template
 
 </div>
 
-</entry-definitions>
+</entry-info>

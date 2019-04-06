@@ -1,0 +1,42 @@
+{
+  "results": [
+    {
+      "id": "hypnagogia",
+      "type": "headword",
+      "word": "hypnagogia",
+      "language": "en",
+      "lexicalEntries": [
+        {
+          "text": "hypnagogia",
+          "entries": [
+            {
+              "variantForms": [
+                {
+                  "text": "hypnogogia"
+                }
+              ],
+              "homographNumber": "000",
+              "grammaticalFeatures": [
+                {
+                  "text": "Singular",
+                  "type": "Number"
+                }
+              ]
+            }
+          ],
+          "language": "en",
+          "derivativeOf": [
+            {
+              "id": "hypnagogic",
+              "text": "hypnagogic"
+            }
+          ],
+          "lexicalCategory": "Noun"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "provider": "Oxford University Press"
+  }
+}

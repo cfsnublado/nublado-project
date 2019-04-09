@@ -9,7 +9,7 @@ from core.models import (
 )
 from core.utils import tag_text
 from .managers import (
-    VocabDefinitionManager, VocabEntryManager,
+    VocabContextEntryManager, VocabDefinitionManager, VocabEntryManager,
     VocabProjectManager, VocabSourceManager
 )
 
@@ -324,6 +324,8 @@ class VocabContextEntry(
         VocabContext,
         on_delete=models.CASCADE
     )
+
+    objects = VocabContextEntryManager()
 
     class Meta:
         unique_together = ('vocab_entry', 'vocab_context')

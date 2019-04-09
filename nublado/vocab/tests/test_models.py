@@ -7,7 +7,7 @@ from core.models import (
     SlugifyModel, TimestampModel, TrackedFieldModel
 )
 from ..managers import (
-    VocabDefinitionManager, VocabEntryManager,
+    VocabContextEntryManager, VocabDefinitionManager, VocabEntryManager,
     VocabProjectManager, VocabSourceManager
 )
 from ..models import (
@@ -278,6 +278,9 @@ class VocabContextEntryTest(TestCommon):
             self.assertTrue(
                 issubclass(VocabContextEntry, class_name)
             )
+
+    def test_manager_type(self):
+        self.assertIsInstance(VocabContextEntry.objects, VocabContextEntryManager)
 
     def test_get_vocab_entry_tags(self):
         tags = self.vocab_context_entry.get_vocab_entry_tags()

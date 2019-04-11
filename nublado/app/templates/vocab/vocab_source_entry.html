@@ -1,0 +1,64 @@
+{% extends "vocab/vocab_base.html" %}
+{% load core_extras %}
+{% load i18n %}
+
+{% block title %}
+{% trans "page_vocab_entry_dashboard_title" %}
+{% endblock title %}
+
+{% block content %}
+
+<div class="row justify-content-md-center">
+<div class="col-md-10">
+
+{% url 'vocab:vocab_source_entry_language_autocomplete' vocab_source.id 'zz' as autocomplete_url %}
+{% url 'vocab:vocab_source_dashboard' vocab_source.id vocab_source.slug  as search_url %}
+
+{% include "includes/vue/_language_search.html" with comp_name='entry-search' search_btn=True %}
+
+</div>
+</div>
+
+<span id="contexts-scroll-top"></span>
+
+<div class="row justify-content-md-center">
+<div class="col-md-10">
+
+<div class="entry-header" style="margin-top: 30px;">
+{{ vocab_entry.entry }}
+</div>
+
+<div class="vocab-pronunciation">
+{% if vocab_entry.pronunciation_spelling %}
+
+  [{{ vocab_entry.pronunciation_spelling|to_html:True|safe }}] &nbsp;
+
+{% endif %}
+
+{% if vocab_entry.pronunciation_ipa %}
+
+  [{{ vocab_entry.pronunciation_ipa|safe }}]
+
+{% endif %}
+</div>
+
+{% url 'api:nested-vocab-definition-list' vocab_entry.id as vocab_definitions_url %}
+{% include "vocab/includes/vue/_vocab_info.html" with definitions_url=vocab_definitions_url %}
+
+</div>
+</div>
+
+<div class="row justify-content-md-center">
+<div class="col-md-10">
+
+{% url_set_param 'api:vocab-context-entry-list' vocab_entry=vocab_entry.id as vocab_contexts_url %}
+{% url 'vocab:vocab_source_dashboard' 0 'zzz' as vocab_source_url %}
+{% include "vocab/includes/vue/_vocab_contexts.html" %}
+
+</div>
+</div>
+
+{% endblock content %}
+
+
+

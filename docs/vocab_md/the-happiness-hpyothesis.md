@@ -1,5 +1,5 @@
 ---
-source_name: The Happiness Hypothesis: Finding Modern Truth in Ancient Wisdon
+source_name: The Happiness Hypothesis: Finding Modern Truth in Ancient Wisdom
 source_description: A book
 source_type: 1
 project_name: English Reading
@@ -71,6 +71,260 @@ project_name: English Reading
     en: amygdala: amygdala
 
     en: limbic system: limbic system
+
+    </div>
+
+- And whenever one pursues a goal, a part of the mind automatically monitors progress, so that it can order corrections or know when success has been achieved. When that goal is an action in the world (such as arriving at the airport on time), this feedback system works well. But when the goal is mental, it backfires. Automatic processes continually check: "Am I not thinking about a white bear?" As the act of monitoring for the absence of the thought introduces the thought, the person must try even harder to divert consciousness. Automatic and controlled processes end up working at cross purposes, firing each other up to ever greater exertions. But because controlled processes tire quickly, eventually the inexhaustible automatic processes run unopposed, conjuring up herds of white bears. Thus, the attempt to remove an unpleasant thought can guarantee it a place on your frequent-play list of mental ruminations.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: rumination: ruminations
+
+    en: pursue: pursues
+
+    en: exertion: exertions
+
+    en: consciousness: consciousness
+
+    </div>
+
+- The point of these studies is that moral judgement is like aesthetic judgment. When you see a painting, you usually know instantly and automatically whether you like it. If someone asks you to explain your judgement , you confabulate. You don't really know why you think something is beautiful, but your interpreter module (the rider) is skilled at making up reasons, us Gazzaniga found in his split-brain studies. You search for a plausible reason for liking the painting, and you latch on to the first reason that makes sense (maybe something vague about color, or light, or the reflection of the pointer in the clown's shiny nose).
+
+    <div markdown="1" class="tagged-entries">
+
+    en: confabulate: confabulate
+
+    en: plausible: plausible
+
+    en: aesthetic: aesthetic
+
+    </div>
+
+- This, then, is our situation, lamented by St. Paul, Buddha, Ovid, and so many others. Our minds are loose confederations of parts, but we identify with and pay too much attention to one part: conscious verbal thinking. We are like the proverbial drunken man looking for his car keys under the street light. ("Did you drop them here?" asks the cop. "No" says the man, "I dropped them back there in the alley, but the light is better over here.") Because we can see only one little corner of the mind's vast operation, we are surprised when urges, wishes, and temptations emerge, seemingly from nowhere.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: lament: lamented
+
+    en: confederation: confederations
+
+    en: conscious: conscious
+
+    en: proverbial: proverbial
+
+    </div>
+
+- Then one night, while Boethius is wallowing in his wretchedness, the majestic apparition of Lady Philosophy visits him and proceeds to chide him for his unphilosophical behavior. Lady Philosophy then guides Boethius through reinterpretations that foreshadow modern cognitive therapy (described below). She begins by asking Boethius to think about his relationship with the Goddess of Fortune. Philosophy reminds Boethius that Fortune is fickle, coming and going as she pleases. Boethius took Fortune us his mistress, fully aware of her ways, and she stayed with him for a long lime. What right has he now to demand that she be chained to his side?
+
+    <div markdown="1" class="tagged-entries">
+
+    en: apparition: apparition
+
+    en: foreshadow: foreshadow
+
+    en: fickle: fickle
+
+    en: philosophy: philosophy
+
+    en: wallow: wallowing
+
+    </div>
+
+- I don't mean to imply that _The Consolation of Philosophy_ is just Roman pop psychology, hut it does tell a story of freedom through insight that I would like to question.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: consolation: consolation
+
+    en: insight: insight
+
+    </div>
+
+- Epiphanies can be life-altering, but most fade in days or weeks. The rider can't just decide to change and then order the elephant to go along.with the program. Lasting change can come only by retraining the elephant, and that's hard to do. When pop psychology programs are successful in helping people, which they sometimes are, they succeed not because of the initial moment of insight but because they find ways to alter people's behavior over the following months.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: epiphany: epiphanies
+
+    en: insight: insight
+
+    </div>
+
+- The unsettling implication of Pelham's work is that the three biggest decisions most of us make — what to do with our lives, where to live, and whom to marry—can all be influenced (even if only slightly) by something as trivial as the sound of a name. Life is indeed what we deem it, but the deeming happens quickly and unconsciously. The elephant reacts instinctively and steers the rider toward a new destination.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: deem: deem, deeming
+
+    en: trivial: trivial
+
+    </div>
+
+- Your body reacted with fear (via the quick amygdala path) in the first tenth of a second before you could make sense of the event (via the slower cortical path) in the next nine-tenths of a second. Though the amygdala does process some positive information, the brain has no equivalent "green alert" system to notify you instantly of a delicious meal or a likely mate. Such appraisals can take a second or two. Once again, bad is stronger and faster than good. The elephant reacts before the rider even sees the snake on the path. Although you can tell yourself that you are not afraid of snakes, if your elephant fears them and rears up, yoti'll still be thrown.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: amygdala: amygdala
+
+    en: appraisal: appraisals
+
+    en: cortical: cortical
+
+    </div>
+
+- As I suggested in the last chapter, we often use reasoning not to find the truth but to invent arguments to support our deep and intuitive beliefs (residing in the elephant). Depressed people are convinced in their hearts of three related beliefs, known as Beck's "cognitive triad" of depression. These are: "I'm no good," "My world is bleak," and "My future is hopeless."
+
+    <div markdown="1" class="tagged-entries">
+
+    en: intuitive: intuitive
+
+    en: triad: triad
+
+    en: bleak: bleak
+
+    </div>
+
+- Cognitive therapy works because it teaches the rider how to train the elephant rather than how to defeat it directly in an argument. On the first day of therapy, the rider doesn't realize that the elephant is controlling him, that the elephant's fears are driving his conscious thoughts. Over time, the client learns to use a set of tools; these include challenging automatic thoughts and engaging in simple tasks, such as going out to buy a newspaper rather than-staying in bed all day ruminating.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: ruminate: ruminating
+
+    en: conscious: conscious
+
+    en: cognitive therapy: cognitive therapy
+
+    </div>
+
+- The human mind finds kinship deeply appealing, and kin altruism surely underlies the cultural ubiquity of nepotism. But even in the mafia, kin altruism can take you only so far. At some point you have to work with people who are at best distant relations, and to do so you'd better have another trick up your sleeve.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: ubiquity: ubiquity
+
+    en: nepotism: nepotism
+
+    en: altruism: altruism
+
+    </div>
+
+- The animal and human examples are not exactly parallel, however. The gulls and cats are responding to visual stimuli with specific bodily movemente, executed immediately. The person is responding to the  meaning of a situation with a motivation that can be satisfied by a variety of bodily movements executed days later. So what is really built into the person is a strategy: Play tit for tat. Do to others what they do unto you. Specifically, the tit-for-tat strategy is to be nice on the first round of interaction; but after that, do to your partner whatever your partner did to you on the previous round. Tit for tat takes us way beyond kin altruism. It opens the possibility of forming cooperative relationships with strangers.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: tit for tat: tit for tat, tit-for-tat
+
+    en: altruism: altruism
+
+    en: stimulus: stimuli
+
+    </div>
+
+- Most interactions among animals (other than close kin) are zero-sum games: One animal's gain is the other's loss. But life is full of situations in which cooperation would expand the pie to be shared if only a way could be found to cooperate without being exploited.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: zero-sum: zero-sum
+
+    </div>
+
+- Gossip elicits gossip, and it enables us to keep track of everyone's reputation without having to witness their good and bad deeds personally. Gossip creates a non-zero-sum game because it costs us nothing to give each other information, yet we both benefit by receiving information.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: gossip: gossip
+
+    en: zero-sum: zer-sum
+
+    en: elicit: elicits
+
+    </div>
+
+- Many species reciprocate, but only humans gossip, and much of what we gossip about is the value of other people as partners for reciprocal relationships. Using these tools, we create an ultrasocial world, a world in which we refrain from nearly all the ways we could take advantage of those weaker than us, a world in which we often help those who are unlikely ever to be able to return the favor.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: reciprocate: reciprocate
+
+    en: reciprocal: reciprocal
+
+    en: gossip: gossip
+
+    </div>
+
+- Gossip paired with reciprocity allow karma to work here on earth, not in the next life. As long as everyone plays tit-for-tat augmented by gratitude, vengeance, and gossip, the whole system should work beautifully. (It rarely does, however, because of our self-serving biases and massive hypocrisy. See chapter 4.)
+
+    <div markdown="1" class="tagged-entries">
+
+    en: gossip: gossip
+
+    en: reciprocity: reciprocity
+
+    en: tit for tat: tit-for-tat
+
+    en: grattitude: grattitude
+
+    en: vengeance: vengeance
+
+    en: bias: biases
+
+    en: hypocrisy: hypocrisy
+
+    en: karma: karma
+
+    </div>
+
+- In offering reciprocity as the best word to guide one's life, Confucius was wise. Reciprocity is like a magic wand that can clear your way through the jungle of social life. But as anyone who has read a Harry Potter hook knows, magic wands can be used against you.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: reciprocity: reciprocity
+
+    en: Confucius: Confucius
+
+    </div>
+
+- Concession leads to concession. In financial bargaining, too, people who stake out an extreme first position and then move toward the middle end up doing better than those who state a more reasonable first position and then hold fast. And the extreme offer followed by concession doesn't just get you a better price, it gets you a happier partner (or victim): She is more likely to honor the agreement because she feels that she had more influence on the outcome.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: concession: concession
+
+    </div>
+
+- So the next time a salesman gives you a free gift or consultation, or makes a concession of any sort, duck. Don't let him press your reciprocity button. The best way out, Cialdini advises, is to fight reciprocity with reciprocity. If you can reappraise the salesman's move for what it is—an effort to exploit you—you'll feel entitled to exploit him right back. Accept the gift or concession with a feeling of victory—you are exploiting an exploiter—not mindless obligation.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: reciprocity: reciprocity
+
+    en: reappraise: reappraise
+
+    en: exploit: exploit
+
+    en: concession: concession
+
+    en: obligation: obligation
+
+    </div>
+
+- Well, stop smirking. One of the most universal pieces of advice from across cultures and eras is that we are all hypocrites, and in our condemnation of others' hypocrisy we only compound our own. Social psychologists have recently isolated the mechanisms that make us blind to the logs in our own eyes. The moral implications of these findings are disturbing; indeed, they challenge our greatest moral certainties. But the implications can be liberating, too, freeing you from destructive moralism and divisive self-righteousness.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: divisive: divisive
+
+    en: sel-righteousness: self-righteousness
+
+    en: hypocrite: hypocrites
+
+    en: hypocrisy: hypocrisy
+
+    en: moral: moral
+
+    en: moralism: moralism
+
+    en: smirk: smirking
 
     </div>
 

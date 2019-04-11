@@ -41,7 +41,7 @@ class TestUserManager(TestCase):
             content='Testing testing probando'
         )
 
-    def test_max_entry_language_in_source(self):
+    def test_source_entry_language_max(self):
         # Missing vocab source id.
         with self.assertRaises(TypeError):
             self.vocab_context_entry_manager.source_entry_language_max()
@@ -63,7 +63,6 @@ class TestUserManager(TestCase):
             vocab_context=self.vocab_context_2,
             vocab_entry=vocab_entry_en_1
         )
-
         VocabContextEntry.objects.create(
             vocab_context=self.vocab_context,
             vocab_entry=vocab_entry_en_2

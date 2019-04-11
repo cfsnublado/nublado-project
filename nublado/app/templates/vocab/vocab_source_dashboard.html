@@ -35,7 +35,7 @@
 <div class="col-md-10">
 
 {% url 'api:vocab-source-entry-list' vocab_source.id as vocab_entries_url %}
-{% url 'vocab:vocab_entry_dashboard' 'xx' 'zzz' as vocab_entry_url %}
+{% url 'vocab:vocab_source_entry' vocab_source.id vocab_source.slug 'xx' 'zzz' as vocab_entry_url %}
 {% include 'vocab/includes/vue/_vocab_entries.html' %}
 
 </div>

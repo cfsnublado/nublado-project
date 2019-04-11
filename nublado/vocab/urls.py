@@ -19,7 +19,7 @@ from .views.views_vocab_project_auth import (
     VocabProjectSourcesView, VocabProjectUpdateView
 )
 from .views.views_vocab_source import (
-    VocabSourceDashboardView
+    VocabSourceDashboardView, VocabSourceEntryView
 )
 from .views.views_vocab_source_auth import (
     VocabSourceCreateView, VocabSourceDeleteView, VocabSourceExportJsonView,
@@ -133,13 +133,13 @@ urlpatterns = [
         VocabEntriesView.as_view(),
         name='vocab_entries'
     ),
-    re_path(
-        '^autocomplete/entry/$',
+    path(
+        'autocomplete/entry',
         VocabEntryAutocompleteView.as_view(),
-        name='vocab_entry_autocomplete'
+        name='vocab_entry_autocomplete/'
     ),
-    re_path(
-        '^autocomplete/entry/(?P<language>[a-z]{2})/$',
+    path(
+        'autocomplete/entry/<slug:language>/',
         VocabEntryAutocompleteView.as_view(),
         name='vocab_entry_language_autocomplete'
     ),
@@ -158,13 +158,13 @@ urlpatterns = [
         VocabSourceEntryAutocompleteView.as_view(),
         name='vocab_source_entry_autocomplete'
     ),
-    re_path(
-        '^autocomplete/source/(?P<vocab_source_pk>[-?\d]+)/entry/(?P<language>[a-z]{2})/$',
+    path(
+        'autocomplete/source/(<int:vocab_source_pk>/entry/<slug:language>/',
         VocabSourceEntryAutocompleteView.as_view(),
         name='vocab_source_entry_language_autocomplete'
     ),
-    re_path(
-        '^entry/(?P<vocab_entry_language>[a-z]{2})/(?P<vocab_entry_slug>[-\w]+)/$',
+    path(
+        'entry/<slug:vocab_entry_language>/<slug:vocab_entry_slug>/',
         VocabEntryDashboardView.as_view(),
         name='vocab_entry_dashboard'
     ),
@@ -172,6 +172,11 @@ urlpatterns = [
         'source/<int:vocab_source_pk>-<slug:vocab_source_slug>/',
         VocabSourceDashboardView.as_view(),
         name='vocab_source_dashboard'
+    ),
+    path(
+        'source/<int:vocab_source_pk>-<slug:vocab_source_slug>/entry/<slug:vocab_entry_language>/<slug:vocab_entry_slug>/',
+        VocabSourceEntryView.as_view(),
+        name='vocab_source_entry'
     ),
     path('auth/', include(auth_urls)),
 ]

@@ -271,7 +271,7 @@ class VocabSourceEntryViewSet(APIDefaultsMixin, ListModelMixin, GenericViewSet):
             qs = qs.filter(vocab_entry__language=language)
 
         qs = qs.filter(vocab_context__vocab_source_id=self.vocab_source_pk)
-        qs = qs.order_by('vocab_entry__entry').distinct()
+        qs = qs.order_by('vocab_entry_id').distinct()
         qs = qs.values(
             language=Lower('vocab_entry__language'),
             slug=Lower('vocab_entry__slug'),

@@ -1,13 +1,9 @@
 from django.db import models
 from django.db.models.functions import Lower
-from django.db.models import Count, Max
+from django.db.models import Count
 
 
 class VocabEntryManager(models.Manager):
-    pass
-
-
-class VocabDefinitionManager(models.Manager):
     pass
 
 

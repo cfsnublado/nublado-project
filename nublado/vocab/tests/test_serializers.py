@@ -7,11 +7,11 @@ from django.urls import reverse
 from django.test import TestCase
 
 from ..models import (
-    VocabDefinition, VocabEntry, VocabEntryTag, VocabContext, VocabContextEntry,
+    VocabEntry, VocabEntryTag, VocabContext, VocabContextEntry,
     VocabProject, VocabSource
 )
 from ..serializers import (
-    VocabDefinitionSerializer, VocabEntrySerializer, VocabContextSerializer,
+    VocabEntrySerializer, VocabContextSerializer,
     VocabContextEntrySerializer, VocabProjectSerializer, VocabSourceSerializer
 )
 
@@ -138,7 +138,7 @@ class VocabEntrySerializerTest(TestCommon):
     def test_minimal_data_fields(self):
         expected_minimal_data = [
             'entry', 'language', 'description',
-            'pronunciation_ipa', 'pronunciation_spelling', 'date_created'
+            'date_created'
         ]
         self.assertCountEqual(expected_minimal_data, self.serializer.minimal_data_fields)
 
@@ -147,8 +147,6 @@ class VocabEntrySerializerTest(TestCommon):
             'entry': self.vocab_entry.entry,
             'language': self.vocab_entry.language,
             'description': self.vocab_entry.description,
-            'pronunciation_ipa': self.vocab_entry.pronunciation_ipa,
-            'pronunciation_spelling': self.vocab_entry.pronunciation_spelling,
             'date_created': self.vocab_entry.date_created.isoformat()
         }
         self.assertEqual(expected_data, self.serializer.get_minimal_data())
@@ -164,14 +162,7 @@ class VocabEntrySerializerTest(TestCommon):
             'language': self.vocab_entry.language,
             'entry': self.vocab_entry.entry,
             'description': self.vocab_entry.description,
-            'pronunciation_ipa': self.vocab_entry.pronunciation_ipa,
-            'pronunciation_spelling': self.vocab_entry.pronunciation_spelling,
             'slug': self.vocab_entry.slug,
-            'vocab_definitions_url': drf_reverse(
-                'api:nested-vocab-definition-list',
-                kwargs={'vocab_entry_pk': self.vocab_entry.id},
-                request=self.request
-            ),
             'date_created': self.vocab_entry.date_created.isoformat(),
             'date_updated': self.vocab_entry.date_updated.isoformat(),
         }
@@ -189,14 +180,7 @@ class VocabEntrySerializerTest(TestCommon):
             'language': self.vocab_entry.language,
             'entry': self.vocab_entry.entry,
             'description': self.vocab_entry.description,
-            'pronunciation_ipa': self.vocab_entry.pronunciation_ipa,
-            'pronunciation_spelling': self.vocab_entry.pronunciation_spelling,
             'slug': self.vocab_entry.slug,
-            'vocab_definitions_url': drf_reverse(
-                'api:nested-vocab-definition-list',
-                kwargs={'vocab_entry_pk': self.vocab_entry.id},
-                request=self.request
-            ),
             'date_created': self.vocab_entry.date_created.isoformat(),
             'date_updated': self.vocab_entry.date_updated.isoformat(),
         })
@@ -213,87 +197,6 @@ class VocabEntrySerializerTest(TestCommon):
         self.assertFalse(self.serializer.is_valid())
         self.assertEqual(len(self.serializer.errors), 1)
         self.assertTrue(self.serializer.errors['entry'])
-
-
-class VocabDefinitionSerializerTest(TestCommon):
-
-    def setUp(self):
-        super(VocabDefinitionSerializerTest, self).setUp()
-        self.vocab_entry = VocabEntry.objects.create(
-            language='en',
-            entry='hello'
-        )
-        self.vocab_definition = VocabDefinition.objects.create(
-            vocab_entry=self.vocab_entry,
-            lexical_category=VocabDefinition.NOUN,
-            definition='hello'
-        )
-        self.request = self.client.get(reverse('api:vocab-definition-list')).wsgi_request
-        self.serializer = VocabDefinitionSerializer(
-            self.vocab_definition,
-            context={'request': self.request}
-        )
-
-    def test_minimal_data_fields(self):
-        expected_minimal_data = [
-            'lexical_category', 'definition',
-            'date_created'
-        ]
-        self.assertCountEqual(expected_minimal_data, self.serializer.minimal_data_fields)
-
-    def test_get_minimal_data(self):
-        expected_data = {
-            'lexical_category': self.vocab_definition.lexical_category,
-            'definition': self.vocab_definition.definition,
-            'date_created': self.vocab_definition.date_created.isoformat()
-        }
-        self.assertEqual(expected_data, self.serializer.get_minimal_data())
-
-    def test_serialized_data(self):
-        expected_data = {
-            'url': drf_reverse(
-                'api:vocab-definition-detail',
-                kwargs={'pk': self.vocab_definition.id},
-                request=self.request
-            ),
-            'id': self.vocab_definition.id,
-            'vocab_entry_id': self.vocab_entry.id,
-            'vocab_entry_url': drf_reverse(
-                'api:vocab-entry-detail',
-                kwargs={'pk': self.vocab_entry.id},
-                request=self.request
-            ),
-            'lexical_category': self.vocab_definition.lexical_category,
-            'lexical_category_name': self.vocab_definition.get_lexical_category_display(),
-            'definition': self.vocab_definition.definition,
-            'date_created': self.vocab_definition.date_created.isoformat(),
-            'date_updated': self.vocab_definition.date_updated.isoformat(),
-        }
-        data = self.serializer.data
-        self.assertEqual(expected_data, data)
-
-    def test_json_data(self):
-        expected_json_data = json.dumps({
-            'url': drf_reverse(
-                'api:vocab-definition-detail',
-                kwargs={'pk': self.vocab_definition.id},
-                request=self.request
-            ),
-            'id': self.vocab_definition.id,
-            'vocab_entry_id': self.vocab_entry.id,
-            'vocab_entry_url': drf_reverse(
-                'api:vocab-entry-detail',
-                kwargs={'pk': self.vocab_entry.id},
-                request=self.request
-            ),
-            'lexical_category': self.vocab_definition.lexical_category,
-            'lexical_category_name': self.vocab_definition.get_lexical_category_display(),
-            'definition': self.vocab_definition.definition,
-            'date_created': self.vocab_definition.date_created.isoformat(),
-            'date_updated': self.vocab_definition.date_updated.isoformat(),
-        })
-        json_data = self.serializer.json_data()
-        self.assertEqual(json.loads(expected_json_data), json.loads(json_data))
 
 
 class VocabSourceSerializerTest(TestCommon):

@@ -9,7 +9,7 @@ from core.models import (
 )
 from core.utils import tag_text
 from .managers import (
-    VocabContextEntryManager, VocabDefinitionManager, VocabEntryManager,
+    VocabContextEntryManager, VocabEntryManager,
     VocabProjectManager, VocabSourceManager
 )
 
@@ -108,16 +108,6 @@ class VocabEntry(
         verbose_name=_('label_entry'),
         max_length=255,
     )
-    pronunciation_spelling = models.CharField(
-        verbose_name=_('label_vocab_pronunciation_spelling'),
-        max_length=255,
-        blank=True
-    )
-    pronunciation_ipa = models.CharField(
-        verbose_name=_('label_vocab_pronunciation_ipa'),
-        max_length=255,
-        blank=True
-    )
     description = models.TextField(
         verbose_name=_('label_description'),
         blank=True
@@ -137,65 +127,9 @@ class VocabEntry(
     def __str__(self):
         return self.entry
 
-    # def clean(self, *args, **kwargs):
-    #     self.entry = self.entry.lower()
-
     def get_serializer(self):
         from .serializers import VocabEntrySerializer
         return VocabEntrySerializer
-
-    def add_definition(self, vocab_definition):
-        self.vocab_definitions.add(vocab_definition)
-
-
-class VocabDefinition(TimestampModel, SerializeModel):
-    '''
-    Definitions for VocabEntry.
-
-    Definitions by lexical type (noune, verb, adjective, adverb)
-    '''
-    NOUN = 1
-    ADJECTIVE = 2
-    VERB = 3
-    ADVERB = 4
-    EXPRESSION = 5
-    OTHER = 6
-
-    LEXICAL_CATEGORIES = (
-        (NOUN, _('label_noun')),
-        (ADJECTIVE, _('label_adjective')),
-        (VERB, _('label_verb')),
-        (ADVERB, _('label_adverb')),
-        (EXPRESSION, _('label_expression')),
-        (OTHER, _('label_other')),
-    )
-
-    vocab_entry = models.ForeignKey(
-        VocabEntry,
-        related_name='vocab_definitions',
-        on_delete=models.CASCADE
-    )
-    definition = models.TextField(
-        verbose_name=_('label_definition')
-    )
-    lexical_category = models.IntegerField(
-        verbose_name=_('label_vocab_lexical_category'),
-        choices=LEXICAL_CATEGORIES,
-        default=NOUN
-    )
-
-    objects = VocabDefinitionManager()
-
-    class Meta:
-        verbose_name = _('label_vocab_definition')
-        verbose_name_plural = _('label_vocab_definition_plural')
-
-    def __str__(self):
-        return '{0} - {1}'.format(self.lexical_category, self.definition)
-
-    def get_serializer(self):
-        from .serializers import VocabDefinitionSerializer
-        return VocabDefinitionSerializer
 
 
 class VocabSource(

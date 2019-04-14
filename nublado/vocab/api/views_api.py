@@ -16,18 +16,17 @@ from django.db.models.functions import Lower
 
 from core.api.views_api import APIDefaultsMixin, StandardPagination
 from ..models import (
-    VocabDefinition, VocabEntry, VocabContextEntry,
+    VocabEntry, VocabContextEntry,
     VocabContext, VocabProject, VocabSource
 )
 from ..serializers import (
-    VocabDefinitionSerializer, VocabEntrySerializer, VocabContextEntrySerializer,
+    VocabEntrySerializer, VocabContextEntrySerializer,
     VocabContextSerializer, VocabProjectSerializer, VocabSourceSerializer,
     VocabSourceEntrySerializer
 )
 from ..utils import (
     export_vocab_entries, export_vocab_source,
-    get_oxford_entry_json, import_vocab_entries,
-    import_vocab_source
+    import_vocab_entries, import_vocab_source
 )
 from .permissions import CreatorPermission, ReadWritePermission, IsSuperuser
 from ..conf import settings
@@ -141,73 +140,6 @@ class VocabEntryLanguageExportView(VocabEntryExportView):
         )
 
         return Response(data=data)
-
-
-class VocabDefinitionViewSet(
-    APIDefaultsMixin, RetrieveModelMixin, UpdateModelMixin, DestroyModelMixin,
-    ListModelMixin, GenericViewSet
-):
-    lookup_field = 'pk'
-    lookup_url_kwarg = 'pk'
-    serializer_class = VocabDefinitionSerializer
-    queryset = VocabDefinition.objects.select_related('vocab_entry')
-
-    def get_permissions(self):
-        # list, create, retrieve, update, partial_update, destroy
-        if self.action == 'list' or self.action == 'retrieve':
-            self.permission_classes = []
-
-        return super(APIDefaultsMixin, self).get_permissions()
-
-
-class NestedVocabDefinitionViewSet(
-    APIDefaultsMixin, CreateModelMixin,
-    ListModelMixin, GenericViewSet
-):
-
-    lookup_field = 'pk'
-    lookup_url_kwarg = 'pk'
-    queryset = VocabDefinition.objects.select_related('vocab_entry')
-    serializer_class = VocabDefinitionSerializer
-    vocab_entry = None
-
-    def get_vocab_entry(self, vocab_entry_pk=None):
-        if not self.vocab_entry:
-            self.vocab_entry = get_object_or_404(VocabEntry, id=vocab_entry_pk)
-
-        return self.vocab_entry
-
-    def perform_create(self, serializer):
-        vocab_entry = self.get_vocab_entry(
-            vocab_entry_pk=self.kwargs['vocab_entry_pk']
-        )
-        serializer.save(
-            creator=self.request.user,
-            vocab_entry=vocab_entry
-        )
-
-    def get_queryset(self):
-        return self.queryset.filter(vocab_entry_id=self.kwargs['vocab_entry_pk'])
-
-    def get_permissions(self):
-        # list, create, retrieve, update, partial_update, destroy
-        if self.action == 'list' or self.action == 'retrieve':
-            self.permission_classes = []
-
-        return super(APIDefaultsMixin, self).get_permissions()
-
-    def list(self, request, *args, **kwargs):
-        self.get_vocab_entry(vocab_entry_pk=kwargs['vocab_entry_pk'])
-
-        # If no definitions in db, check the oxford api.
-        if not VocabDefinition.objects.filter(vocab_entry=self.vocab_entry).exists():
-            get_oxford_entry_json(
-                OXFORD_API_ID,
-                OXFORD_API_KEY,
-                self.vocab_entry
-            )
-
-        return super(NestedVocabDefinitionViewSet, self).list(request, *args, **kwargs)
 
 
 class VocabSourceViewSet(

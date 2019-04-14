@@ -344,16 +344,12 @@ class VocabEntryImportViewTest(TestCommon):
             'entry': 'spacecraft',
             'description': 'A space vehicle',
             'language': 'en',
-            'pronunciation_spelling': '**speys**-kraft',
-            'pronunciation_ipa': '',
             'date_created': '2018-04-12T16:49:54.154036'
         }
         VocabEntry.objects.create(
             entry=vocab_entry_data['entry'],
             language=vocab_entry_data['language'],
             description=vocab_entry_data['description'],
-            pronunciation_ipa=vocab_entry_data['pronunciation_ipa'],
-            pronunciation_spelling=vocab_entry_data['pronunciation_spelling'],
             date_created=vocab_entry_data['date_created']
         )
         data = export_vocab_entries(request=request)
@@ -362,8 +358,6 @@ class VocabEntryImportViewTest(TestCommon):
             VocabEntry.objects.filter(
                 language=vocab_entry_data['language'],
                 entry=vocab_entry_data['entry'],
-                pronunciation_ipa=vocab_entry_data['pronunciation_ipa'],
-                pronunciation_spelling=vocab_entry_data['pronunciation_spelling'],
                 description=vocab_entry_data['description'],
                 date_created=vocab_entry_data['date_created']
             ).exists()
@@ -377,8 +371,6 @@ class VocabEntryImportViewTest(TestCommon):
             VocabEntry.objects.filter(
                 language=vocab_entry_data['language'],
                 entry=vocab_entry_data['entry'],
-                pronunciation_ipa=vocab_entry_data['pronunciation_ipa'],
-                pronunciation_spelling=vocab_entry_data['pronunciation_spelling'],
                 description=vocab_entry_data['description'],
                 date_created=vocab_entry_data['date_created']
             ).exists()

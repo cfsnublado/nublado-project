@@ -11,7 +11,7 @@ from core.serializers import (
     BaseSerializer, UUIDEncoder
 )
 from .models import (
-    VocabDefinition, VocabEntry, VocabContextEntry,
+    VocabEntry, VocabContextEntry,
     VocabContext, VocabProject, VocabSource
 )
 
@@ -72,16 +72,10 @@ class VocabProjectSerializer(BaseSerializer, HyperlinkedModelSerializer):
 class VocabEntrySerializer(BaseSerializer, HyperlinkedModelSerializer):
     json_encoder = UUIDEncoder
     minimal_data_fields = [
-        'language', 'entry', 'pronunciation_spelling',
-        'pronunciation_ipa', 'description', 'date_created'
+        'language', 'entry', 'description', 'date_created'
     ]
     url = HyperlinkedIdentityField(
         view_name='api:vocab-entry-detail',
-        lookup_field='pk'
-    )
-    vocab_definitions_url = HyperlinkedIdentityField(
-        view_name='api:nested-vocab-definition-list',
-        lookup_url_kwarg='vocab_entry_pk',
         lookup_field='pk'
     )
 
@@ -90,53 +84,16 @@ class VocabEntrySerializer(BaseSerializer, HyperlinkedModelSerializer):
         model = VocabEntry
         fields = (
             'url', 'id', 'language',
-            'entry', 'pronunciation_spelling',
-            'pronunciation_ipa', 'description',
-            'slug', 'vocab_definitions_url',
-            'date_created', 'date_updated',
+            'entry', 'description',
+            'slug', 'date_created', 'date_updated',
         )
         read_only_fields = (
-            'url', 'id', 'slug', 'vocab_definitions_url',
+            'url', 'id', 'slug',
             'date_created', 'date_updated'
         )
 
     def create(self, validated_data):
         return VocabEntry.objects.create(**validated_data)
-
-
-class VocabDefinitionSerializer(BaseSerializer, HyperlinkedModelSerializer):
-    json_encoder = UUIDEncoder
-    minimal_data_fields = [
-        'definition', 'lexical_category',
-        'date_created'
-    ]
-    url = HyperlinkedIdentityField(
-        view_name='api:vocab-definition-detail',
-        lookup_field='pk'
-    )
-    vocab_entry_url = HyperlinkedRelatedField(
-        many=False,
-        read_only=True,
-        view_name='api:vocab-entry-detail',
-        lookup_field='pk',
-        source='vocab_entry'
-    )
-    lexical_category_name = SerializerMethodField()
-
-    def get_lexical_category_name(self, obj):
-        return obj.get_lexical_category_display()
-
-    class Meta:
-        model = VocabDefinition
-        fields = (
-            'url', 'id', 'vocab_entry_url',
-            'vocab_entry_id', 'definition', 'lexical_category',
-            'lexical_category_name', 'date_created', 'date_updated',
-        )
-        read_only_fields = (
-            'url', 'id', 'vocab_entry_url',
-            'vocab_entry_id', 'date_created', 'date_updated'
-        )
 
 
 class VocabSourceListSerializer(ListSerializer):

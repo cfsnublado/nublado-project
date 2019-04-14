@@ -7,16 +7,16 @@ from core.models import (
     SlugifyModel, TimestampModel, TrackedFieldModel
 )
 from ..managers import (
-    VocabContextEntryManager, VocabDefinitionManager, VocabEntryManager,
+    VocabContextEntryManager, VocabEntryManager,
     VocabProjectManager, VocabSourceManager
 )
 from ..models import (
     CreatorModel, VocabContext, VocabContextEntry,
-    VocabDefinition, VocabEntry, VocabEntryTag,
+    VocabEntry, VocabEntryTag,
     VocabProject, VocabSource, VocabSourceContentModel
 )
 from ..serializers import (
-    VocabDefinitionSerializer, VocabEntrySerializer, VocabContextEntrySerializer,
+    VocabEntrySerializer, VocabContextEntrySerializer,
     VocabContextSerializer, VocabProjectSerializer, VocabSourceSerializer
 )
 
@@ -131,12 +131,6 @@ class VocabEntryTest(TestCommon):
             vocab_entry_5 = VocabEntry.objects.create(entry=entry, language='en')
             vocab_entry_5.full_clean()
 
-    # def test_entry_lowercase_on_save(self):
-    #     self.vocab_entry.entry = 'Darse Cuenta de'
-    #     self.vocab_entry.full_clean()
-    #     self.vocab_entry.save()
-    #     self.assertEqual('darse cuenta de', self.vocab_entry.entry)
-
     def test_update_slug_on_save(self):
         self.vocab_entry.entry = 'darse cuenta de'
         self.vocab_entry.full_clean()
@@ -146,52 +140,6 @@ class VocabEntryTest(TestCommon):
     def test_get_serializer(self):
         serializer = self.vocab_entry.get_serializer()
         self.assertEqual(serializer, VocabEntrySerializer)
-
-
-class VocabDefinitionTest(TestCommon):
-
-    def setUp(self):
-        super(VocabDefinitionTest, self).setUp()
-
-        self.vocab_entry = VocabEntry.objects.create(
-            entry='vertiginoso',
-            description='me gusta esta palabra',
-            language='es',
-        )
-        self.vocab_definition = VocabDefinition.objects.create(
-            vocab_entry=self.vocab_entry,
-            lexical_category=VocabDefinition.ADJECTIVE,
-            definition='algo'
-        )
-
-    def test_inheritance(self):
-        classes = (
-            SerializeModel,
-            TimestampModel
-        )
-        for class_name in classes:
-            self.assertTrue(
-                issubclass(VocabDefinition, class_name)
-            )
-
-    def test_manager_type(self):
-        self.assertIsInstance(
-            VocabDefinition.objects,
-            VocabDefinitionManager
-        )
-
-    def test_string_representation(self):
-        self.assertEqual(
-            str(self.vocab_definition),
-            '{0} - {1}'.format(
-                self.vocab_definition.lexical_category,
-                self.vocab_definition.definition
-            )
-        )
-
-    def test_get_serializer(self):
-        serializer = self.vocab_definition.get_serializer()
-        self.assertEqual(serializer, VocabDefinitionSerializer)
 
 
 class VocabContextTest(TestCommon):

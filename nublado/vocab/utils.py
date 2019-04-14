@@ -7,11 +7,11 @@ from django.contrib.auth import get_user_model
 
 from .conf import settings
 from .models import (
-    VocabContextEntry, VocabDefinition, VocabEntry,
+    VocabContextEntry, VocabEntry,
     VocabEntryJsonData, VocabProject, VocabSource
 )
 from .serializers import (
-    VocabDefinitionSerializer, VocabEntrySerializer,
+    VocabEntrySerializer,
     VocabContextSerializer, VocabProjectSerializer,
     VocabSourceSerializer
 )
@@ -38,18 +38,6 @@ def export_vocab_entries(request=None, language=None):
             context={'request': request},
         )
         vocab_entry_dict['vocab_entry_data'] = vocab_entry_serializer.get_minimal_data()
-
-        if vocab_entry.vocab_definitions.count():
-            vocab_entry_dict['vocab_definitions'] = []
-            for vocab_definition in vocab_entry.vocab_definitions.all():
-                vocab_definition_dict = {}
-                vocab_definition_serializer = VocabDefinitionSerializer(
-                    vocab_definition,
-                    context={'request': request}
-                )
-                vocab_definition_dict['vocab_definition_data'] = vocab_definition_serializer.get_minimal_data()
-                vocab_entry_dict['vocab_definitions'].append(vocab_definition_dict)
-
         vocab_entries_dict['vocab_entries'].append(vocab_entry_dict)
 
     return vocab_entries_dict
@@ -118,16 +106,9 @@ def import_vocab_entries(data):
             entry=vocab_entry_data['entry'],
             language=vocab_entry_data['language']
         ).exists():
-            vocab_entry = VocabEntry.objects.create(
+            VocabEntry.objects.create(
                 **vocab_entry_data
             )
-            if 'vocab_definitions' in vocab_entry_dict:
-                for vocab_definition in vocab_entry_dict['vocab_definitions']:
-                    vocab_definition_data = vocab_definition['vocab_definition_data']
-                    VocabDefinition.objects.create(
-                        vocab_entry_id=vocab_entry.id,
-                        **vocab_definition_data
-                    )
 
 
 def import_vocab_source(data, creator):
@@ -390,50 +371,3 @@ def get_oxford_entry_json(api_id, api_key, vocab_entry):
                 json_data=response_json,
                 json_data_source=VocabEntryJsonData.OXFORD
             )
-            add_definitions_from_oxford(response_json, vocab_entry)
-
-
-def add_definitions_from_oxford(json_data, vocab_entry):
-    '''
-    json_data: The json returned from the Oxford api for a vocab entry.
-    vocab_entry: A VocabEntry object
-    '''
-
-    lexical_categories = {
-        'noun': VocabDefinition.NOUN,
-        'adjective': VocabDefinition.ADJECTIVE,
-        'adverb': VocabDefinition.ADVERB,
-        'verb': VocabDefinition.VERB,
-        'idiomatic': VocabDefinition.EXPRESSION,
-        'other': VocabDefinition.OTHER
-    }
-
-    for result in json_data['results']:
-        if 'lexicalEntries' in result:
-            for lexical_entry in result['lexicalEntries']:
-                lexical_category = lexical_entry['lexicalCategory'].lower()
-
-                # Add pronunciations
-                if 'pronunciations' in lexical_entry:
-                    for pronunciation in lexical_entry['pronunciations']:
-                        if 'phoneticNotation' in pronunciation:
-                            if pronunciation['phoneticNotation'].lower() == 'ipa':
-                                if 'phoneticSpelling' in pronunciation:
-                                    vocab_entry.pronunciation_ipa = pronunciation['phoneticSpelling']
-                                    vocab_entry.save()
-
-                # Add definitions
-                if 'entries' in lexical_entry:
-                    for entry in lexical_entry['entries']:
-                        if 'senses' in entry:
-                            for sense in entry['senses']:
-                                if 'definitions' in sense:
-                                    for definition in sense['definitions']:
-                                        if lexical_category not in lexical_categories:
-                                            lexical_category = 'other'
-
-                                        VocabDefinition.objects.create(
-                                            vocab_entry=vocab_entry,
-                                            lexical_category=lexical_categories[lexical_category],
-                                            definition=definition
-                                        )

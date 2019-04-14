@@ -31,8 +31,7 @@ class VocabEntryForm(BaseModelForm):
     class Meta:
         abstract = True
         fields = [
-            'language', 'entry', 'pronunciation_spelling',
-            'pronunciation_ipa', 'description'
+            'language', 'entry', 'description'
         ]
         error_messages = {
             'entry': {

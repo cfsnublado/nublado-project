@@ -5,10 +5,9 @@ from rest_framework_nested.routers import NestedSimpleRouter
 from rest_framework.routers import DefaultRouter
 from users.api.views_api import UserViewSet, ProfileViewSet
 from vocab.api.views_api import (
-    NestedVocabContextEntryViewSet, NestedVocabContextViewSet,
-    NestedVocabDefinitionViewSet, VocabEntryViewSet,
+    NestedVocabContextEntryViewSet, NestedVocabContextViewSet, VocabEntryViewSet,
     NestedVocabSourceViewSet, VocabContextEntryViewSet, VocabContextViewSet,
-    VocabDefinitionViewSet, VocabEntryExportView, VocabEntryLanguageExportView,
+    VocabEntryExportView, VocabEntryLanguageExportView,
     VocabEntryImportView, VocabProjectViewSet, VocabSourceImportView,
     VocabSourceExportView, VocabSourceViewSet, VocabSourceEntryViewSet
 )
@@ -23,18 +22,10 @@ router.register('user', UserViewSet, base_name='user')
 router.register('profile', ProfileViewSet, base_name='profile')
 # vocab
 router.register('entry', VocabEntryViewSet, base_name='vocab-entry')
-router.register('definition', VocabDefinitionViewSet, base_name='vocab-definition')
 router.register('project', VocabProjectViewSet, base_name='vocab-project')
 router.register('source', VocabSourceViewSet, base_name='vocab-source')
 router.register('vocab-context', VocabContextViewSet, base_name='vocab-context')
 router.register('vocab-context-entry', VocabContextEntryViewSet, base_name='vocab-context-entry')
-
-vocab_definition_router = NestedSimpleRouter(router, 'entry', lookup='vocab_entry')
-vocab_definition_router.register(
-    'vocab-definition',
-    NestedVocabDefinitionViewSet,
-    base_name='nested-vocab-definition'
-)
 
 vocab_source_router = NestedSimpleRouter(router, 'project', lookup='vocab_project')
 vocab_source_router.register('vocab-source', NestedVocabSourceViewSet, base_name='nested-vocab-source')
@@ -73,7 +64,6 @@ urlpatterns = [
         name='vocab_entries_language_export'
     ),
     path('', include(router.urls)),
-    path('', include(vocab_definition_router.urls)),
     path('', include(vocab_source_router.urls)),
     path('', include(vocab_context_router.urls)),
     path('', include(vocab_entry_context_router.urls)),

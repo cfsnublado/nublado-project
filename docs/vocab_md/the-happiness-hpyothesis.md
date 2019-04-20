@@ -328,4 +328,216 @@ project_name: English Reading
 
     </div>
 
+- If I could nominate one candidate for "biggest obstacle to world peace and social harmony," it would be naive realism because it is so easily ratcheted up from the individual to the group level: My group is right because we see things as they are. Those who disagree are obviously biased by their religion, their ideology, or their self-interest. Naive realism gives us a world full of good and evil, and this brings us to the most disturbing implication of the sages' advice about hypocrisy: Good and evil do not exist outside of our beliefs about them.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: naive: naive
+
+    en: hypocrisy: hypocrisy
+
+    </div>
+
+- But Baumeister's point is that we have a deep need to understand violence and cruelty through what he calls "the myth of pure evil." Of this myth's many parts, the most important are that evildoers are pure in their evil motives (they have no motives for their actions beyond sadism and greed); victims are pure in their victimhood (they did nothing to bring about their victimization); and evil comes from outside and is associated with a group or force that attacks our group. Furthermore, anyone who questions the application of the myth, who dares muddy the waters of moral certainty, is in league with evil. 
+
+    The myth of pure evil is the ultimate self-serving bias, the ultimate form of naive realism. And it is the ultimate cause of most long-running cycles of violence because both sides use it to lock themselves into a Manichaean struggle.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: sadism: sadism
+
+    en: naive: naive
+
+    en: cruelty: cruelty
+
+    </div>
+
+- Threatened self-esteem accounts for a large portion of violence at the individual level, but to really get a mass atrocity going you need idealism—the belief that your violence is a means to a moral end. The major atrocities of the twentieth century were carried out largely either by men who thought they were creating a Utopia or else by men who believed they were defending their homeland or tribe from attack.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: atrocity: atrocity, atrocities
+
+    en: utopia: utopia
+
+    en: idealism: idealism
+
+    </div>
+
+-  The inner lawyer, the rose-colored mirror, naive realism, and the myth of pure evil—these mechanisms all conspire to weave for us a web of significance upon which angels and demons fight it out. Our ever-judging minds then give us constant flashes of approval and disapproval, along with the certainty that we are on the side of the angels. From this vantage point it all seems so silly, all this moralism, righteousness, and hypocrisy. It's beyond silly; it is tragic, for it suggests that human beings will never achieve a state of lasting peace and harmony. So what can you do about it?
+
+    The first step is to see it as a game and stop taking it so seriously. The great lesson that comess out of ancient India is that life as we experience it is a game called "samsara." It is a game in which each person plays out his "dharma," his role or part in a giant play. In the game of samsara, good things happen to you, and you are happy. Then bad things happen, and you are sad or angry. And so it goes, until you die.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: naive: naive
+
+    en: mechanism: mechanisms
+
+    en: vantage point: vantage point
+
+    en: harmony: harmony
+
+    en: moralism: moralism
+
+    en: righteousness: righteousness
+
+    en: hypocrisy: hypocrisy
+
+    </div>
+
+- This is the adaptation principle at work: People's judgments about their present state are based on whether it is better or worse than the state to which they have become accustomed. Adaptation is, in part, just a property of neurons: Nerve cells respond vigorously to new stimuli, but gradually they "habituate," firing less to stimuli that they have become used to. It is change that contains vital information, not steady states.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: neuron: neurons
+
+    en: stimulus: stimuli
+
+    en: habituate: habituate
+
+    </div>
+
+- Three psychologists, Sonja Lyubomirsky, Ken Sheldon, and David Schkade, reviewed the available evidence and realized that there are two fundamentally different kinds of externals: the  conditions of your life and the voluntary activities that you undertake. Conditions include facts about your life that you can't change (race, sex, age, disability) as well as things that you can (wealth, marital status, where you live). Conditions are constant over time, at least during a period in your life, and so they are the sorts of things that you are likely to adapt to.
+
+    Voluntary activities, on the other hand, are the things that you choose to do, such as meditation, exercise, learning a new skill, or taking a vacation. Because such activities must be chosen, and because most of them take effort and attention, they can't just disappear from your awareness the way conditions can. 
+
+    Voluntary activities, therefore, offer much greater promise for increasing happiness while avoiding adaptation effects.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: Voluntary: voluntary
+
+    en: adaptation: adaptation
+
+    </div>
+
+- One of the most important ideas in positive psychology is what Lyubomirsky, Sheldon, Schkade, and Seligman call the "happiness formula:" 
+
+    H = S + C + V 
+
+    T h e level of happiness that you actually experience (H) is determined by your biological set point (S) plus the conditions of your life (C) plus the voluntary activities (V) you do. The challenge for positive psychology is to use the scientific method to find out exactly what kinds of C and V can push H up to the top of your potential range. The extreme biological version of the happiness hypothesis says that H = S, and that C and V don't matter. But we have to give Buddha and Epictetus credit for V because Buddha prescribed the "eightfold noble path" (including meditation and mindfulness), and Epictetus urged methods of thought to cultivate indifference (apatheia) to externals. So to test the wisdom of the sages properly we must examine this hypothesis: H = S + V, where V = voluntary or intentional activities that cultivate acceptance and weaken emotional attachments. If there are many conditions (C) that matter, and if there are a variety of voluntary activities beyond those aimed at nonattachment, then the happiness hypothesis of Buddha and Epictetus is wrong and people would be poorly advised simply to look within.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: biological: biological
+
+    en: cultivate: cultivate
+
+    en: hypothesis: hypothesis
+
+    </div>
+
+- An axiom of economics is that people pursue their interests more or less rationally, and that's what makes markets wowrk — Adam Smith's "invisible hand" of self-interest.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: pursue: pursue
+
+    en: axiom: axiom
+
+    </div>
+
+- Frank's explanation is simple: Conspicuous and inconspicuous consumption follow different psychological rules. Conspicuous consumption refers to things that are visible to others and that are taken as markers of a person's relative success. These goods are subject to a kind of arms race, where their value comes not so much from their objective properties as from the statement they make about their owner. When everyone wore Timex watches, the first person in the office buy a Rolex stood out. When everyone moved up to Rolex, it took a $ 20,000 Patek Philip to achieve high status, and a Rolex no longer gave as much satisfaction. Conspicuous consumption is a zero-sum game: Each person's move up devalues the possessions of others. Furthermore, it's difficult to persuade an entire group or subculture to ratchet down, even though everyone would be better off, on average, if they all went back to simple watches. Inconspicuous consumption, on the other hand, refers to goods and activities that are valued for themselves, that are usually consumed more privately, and that are not bought for the purpose of achieving status. Because Americans, at least, gain no prestige from taking the longest vacations or having the shortest commutes, these inconspicuous consumables are not subject to an arms race.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: conspicuous: conspicuous
+
+    en: inconspicuous: inconspicuous
+
+    en: consumbable: consumables
+
+    en: prestige: prestige
+
+    en: zero-sum: zero-sum
+
+    </div>
+
+- So now you know where to shop. Stop trying to keep up with the Joneses. Stop wasting your money on conspicuous consumption. As a first step, work less, earn less, accumulate less, and "consume" more family time, vacations, and other enjoyable activities.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: conspicuous: conspicuous
+
+    en: keep up with the Joneses: keep up with the Joneses
+
+    </div>
+
+- _The elephant cares about prestige, not happiness_, and it looks eternally to others to figure out what is prestigious. The elephant will pursue its evolutionary goals even when greater happiness can be found elsewhere. If everyone is chasing the same limited amount of prestige, then all are stuck in a zero-sum game, an eternal arms race, a world in which rising wealth does not bring rising happiness. The pursuit of luxury goods is a happiness trap; it is a dead end that people race toward in the mistaken belief that it will make them happy.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: zero-sum: zero-sum
+
+    en: prestige: prestige
+
+    en: prestigious: prestigious
+
+    en: pursue: pursue
+
+    en: pursuit: pursuit
+
+    </div>
+
+- Modernn life has many other traps. Here's some bait. Of the following words, pick the one that is most appealing to you:  _constraint, limit, barrier, choice_. Odds are you chose _choice_,  because the first three gave you a flash of negative affect (remember the like-o-meter). Choice and its frequent associate freedom are unquestioned goods of modern life. Most people would rather shop at a supermarket that stocks ten items in each food category than at a small store that stocks just two. Most people would prefer to invest their retirement savings through a company that offers forty funds than one that offers four. Yet, when people are actually given a larger array of choices— for example, an assortment of thirty (rather than six) gourmet chocolates from which to choose—they are less likely to make a choice; and if they do, they are less satisfied with it. The more choices there are, the more you expect to find a perfect fit; yet, at the same time, the larger the array, the less likely it becomes that you picked the best item. You leave the store less confident in your choice, more likely to feel regret, and more likely to think about the options you didn't choose. If you can avoid making a choice, you are more likely to do so. The psychologist Barry Schwartz calls this the "paradox of choice": We value choice and put ourselves in situations of choice, even though choice often undercuts our happiness.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: paradox: paradox
+
+    en: affect: affect
+
+    en: array: array
+
+    en: undercut: undercuts
+
+    </div>
+
+- Upon discovering that old age, disease, and death are the destiny of all people, the prince (Siddhartha Gautama) cried, "Turn back the chariot! This is no time or place for pleasure excursions. How could an intelligent person pay no heed at a time of disaster, when he knows of his impending destruction?" The prince then left his wife, his harem, and, as prophesied, his royal future. He went into the forest and began his journey to enlightenment. After his enlightenment, Buddha (the "awakened one") preached that life is suffering, and that the only way to escape this suffering is by breaking the attachments that bind us to pleasure, achievement, reputation, and life.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: impending: impending
+
+    en: harem: harem
+
+    en: prophesy: prophesied
+
+    en: Buddha: Buddha
+
+    </div>
+
+- Another reason for Buddha's emphasis on detachment may have been the turbulent times he lived in: Kings and city-states were making war, and people's lives and fortunes could be burned up overnight. When life is unpredictable and dangerous (as it was for the Stoic philosophers, living under capricious Roman emperors), it might be foolish to seek happiness by controlling one's external world. But now it is not. People living in wealthy democracies can set long-term goals and expect to meet them. We are immunized against disease, sheltered from storms, and insured against fire, theft, and collision.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: emphasis: emphasis
+
+    en: capricious: capricious
+
+    en: democracy: democracies
+
+    en: Buddha: Buddha's
+
+    </div>
+
+- So I do not mean to question the value or relevance of Buddhism in the modern world, or the importance of working on yourself in an effort to find happiness. Rather, I would like to suggest that the happiness hypothesis be extended—for now—into a yin-yang formulation: _Happiness comes from within, and happiness comes from xvithout_. (In chapter 10, I'll suggest a further refinement of the hypothesis.) To live both the yin and the yang, we need guidance. Buddha is history's most perceptive guide to the first half; he is a constant but gentle reminder of the yin of internal work. But I believe that the Western ideal of action, striving, and passionate attachment is not as misguided as Buddhism suggests. We just need some balance (from the East) and some specific guidance (from modern psychology) about what to strive for.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: Buddhism: Buddhism
+
+    en: yin: yin
+
+    en: yang: yang
+
+    en: hypothesis: hypothesis
+
+    en: Buddha: Buddha
+
+    en: strive: strive
+
+    </div>
+
 - 

@@ -27,22 +27,8 @@
 {{ vocab_entry.entry }}
 </div>
 
-<div class="vocab-pronunciation">
-{% if vocab_entry.pronunciation_spelling %}
-
-  [{{ vocab_entry.pronunciation_spelling|to_html:True|safe }}] &nbsp;
-
-{% endif %}
-
-{% if vocab_entry.pronunciation_ipa %}
-
-  [{{ vocab_entry.pronunciation_ipa|safe }}]
-
-{% endif %}
-</div>
-
-{% url 'api:nested-vocab-definition-list' vocab_entry.id as vocab_definitions_url %}
-{% include "vocab/includes/vue/_vocab_info.html" with definitions_url=vocab_definitions_url %}
+{% url 'api:vocab_entry_info' vocab_entry.id as vocab_entry_info_url %}
+{% include "vocab/includes/vue/_vocab_info.html" %}
 
 </div>
 </div>

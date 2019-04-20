@@ -337,15 +337,16 @@ def get_oxford_entry_json(api_id, api_key, vocab_entry):
     vocab_entry: A VocabEntry object
     '''
 
+    json_data = {}
+
     if VocabEntryJsonData.objects.filter(
         vocab_entry=vocab_entry,
         json_data_source=VocabEntryJsonData.OXFORD
     ).exists():
-        vocab_entry_json = VocabEntryJsonData.objects.get(
+        json_data = VocabEntryJsonData.objects.get(
             vocab_entry=vocab_entry,
             json_data_source=VocabEntryJsonData.OXFORD
-        )
-        add_definitions_from_oxford(vocab_entry_json.json_data, vocab_entry)
+        ).json_data
     else:
         oxford_entry_url = 'https://od-api.oxforddictionaries.com/api/v1/entries/{language}/{entry}'.format(
             language=vocab_entry.language,
@@ -365,9 +366,47 @@ def get_oxford_entry_json(api_id, api_key, vocab_entry):
         )
 
         if response.status_code == status.HTTP_200_OK:
-            response_json = response.json()
+            json_data = response.json()
             VocabEntryJsonData.objects.create(
                 vocab_entry=vocab_entry,
-                json_data=response_json,
+                json_data=json_data,
                 json_data_source=VocabEntryJsonData.OXFORD
             )
+
+    return json_data
+
+
+def parse_oxford_entry_json(json_data):
+    results = {}
+
+    for result in json_data['results']:
+        if 'lexicalEntries' in result:
+            for lexical_entry in result['lexicalEntries']:
+                lexical_category = lexical_entry['lexicalCategory'].lower()
+                results[lexical_category] = {}
+
+                if 'pronunciations' in lexical_entry:
+                    pronunciations_dict = {
+                        'ipa': [],
+                        'respell': []
+                    }
+
+                    for pronunciation in lexical_entry['pronunciations']:
+                        if 'phoneticNotation' in pronunciation:
+                            if pronunciation['phoneticNotation'].lower() == 'ipa':
+                                if 'phoneticSpelling' in pronunciation:
+                                    pronunciations_dict['ipa'].append(pronunciation['phoneticSpelling'])
+
+                    results[lexical_category]['pronunciations'] = pronunciations_dict
+
+                if 'entries' in lexical_entry:
+                    results[lexical_category]['definitions'] = []
+
+                    for entry in lexical_entry['entries']:
+                        if 'senses' in entry:
+                            for sense in entry['senses']:
+                                if 'definitions' in sense:
+                                    for definition in sense['definitions']:
+                                        results[lexical_category]['definitions'].append(definition)
+
+    return results

@@ -7,7 +7,7 @@ from users.api.views_api import UserViewSet, ProfileViewSet
 from vocab.api.views_api import (
     NestedVocabContextEntryViewSet, NestedVocabContextViewSet, VocabEntryViewSet,
     NestedVocabSourceViewSet, VocabContextEntryViewSet, VocabContextViewSet,
-    VocabEntryExportView, VocabEntryLanguageExportView,
+    VocabEntryExportView, VocabEntryInfoView, VocabEntryLanguageExportView,
     VocabEntryImportView, VocabProjectViewSet, VocabSourceImportView,
     VocabSourceExportView, VocabSourceViewSet, VocabSourceEntryViewSet
 )
@@ -45,6 +45,7 @@ vocab_source_entry_list = VocabSourceEntryViewSet.as_view({'get': 'list'})
 urlpatterns = [
     path('api-token-auth/', views.obtain_auth_token, name='auth_token'),
     path('oxford/entry/', OxfordAPIEntryView.as_view(), name='oxford_entry'),
+    path('vocab/entry/<int:vocab_entry_pk>/info/', VocabEntryInfoView.as_view(), name='vocab_entry_info'),
     path(
         'source/<int:vocab_source_pk>/entry/',
         vocab_source_entry_list,

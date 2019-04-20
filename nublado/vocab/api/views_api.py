@@ -2,8 +2,10 @@ from rest_framework import status
 from rest_framework.decorators import action
 from rest_framework.exceptions import ParseError
 from rest_framework.generics import get_object_or_404
-from rest_framework.mixins import (CreateModelMixin, DestroyModelMixin, ListModelMixin,
-                                   RetrieveModelMixin, UpdateModelMixin)
+from rest_framework.mixins import (
+    CreateModelMixin, DestroyModelMixin, ListModelMixin,
+    RetrieveModelMixin, UpdateModelMixin
+)
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
@@ -26,7 +28,8 @@ from ..serializers import (
 )
 from ..utils import (
     export_vocab_entries, export_vocab_source,
-    import_vocab_entries, import_vocab_source
+    get_oxford_entry_json, import_vocab_entries,
+    import_vocab_source, parse_oxford_entry_json
 )
 from .permissions import CreatorPermission, ReadWritePermission, IsSuperuser
 from ..conf import settings
@@ -142,6 +145,25 @@ class VocabEntryLanguageExportView(VocabEntryExportView):
         return Response(data=data)
 
 
+class VocabEntryInfoView(APIView):
+    vocab_entry = None
+
+    def get_vocab_entry(self, vocab_entry_pk=None):
+        if not self.vocab_entry:
+            self.vocab_entry = get_object_or_404(VocabEntry, id=vocab_entry_pk)
+
+    def get(self, request, *args, **kwargs):
+        self.get_vocab_entry(kwargs['vocab_entry_pk'])
+        json_data = get_oxford_entry_json(
+            OXFORD_API_ID,
+            OXFORD_API_KEY,
+            self.vocab_entry
+        )
+        parsed_json_data = parse_oxford_entry_json(json_data)
+
+        return Response(data=parsed_json_data)
+
+
 class VocabSourceViewSet(
     APIDefaultsMixin, RetrieveModelMixin, UpdateModelMixin,
     DestroyModelMixin, ListModelMixin, GenericViewSet
@@ -203,7 +225,7 @@ class VocabSourceEntryViewSet(APIDefaultsMixin, ListModelMixin, GenericViewSet):
             qs = qs.filter(vocab_entry__language=language)
 
         qs = qs.filter(vocab_context__vocab_source_id=self.vocab_source_pk)
-        qs = qs.order_by('vocab_entry_id').distinct()
+        qs = qs.order_by('vocab_entry__entry').distinct()
         qs = qs.values(
             language=Lower('vocab_entry__language'),
             slug=Lower('vocab_entry__slug'),

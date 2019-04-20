@@ -4,7 +4,7 @@ from django.views.generic import (
 )
 
 from .views_mixins import (
-    VocabEntryMixin, VocabEntrySearchMixin, VocabSourceMixin, VocabSourceSessionMixin
+    VocabEntrySearchMixin, VocabSourceMixin, VocabSourceSessionMixin
 )
 
 APP_NAME = apps.get_app_config('vocab').name

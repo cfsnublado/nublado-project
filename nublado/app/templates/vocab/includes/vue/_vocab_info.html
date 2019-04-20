@@ -1,9 +1,9 @@
 {% load i18n %}
 
 <entry-info 
-init-endpoint-url="{{ definitions_url }}"
-init-msg-show-definitions="{% trans 'label_show_definitions' %}"
-init-msg-hide-definitions="{% trans 'label_hide_definitions' %}"
+init-endpoint-url="{{ vocab_entry_info_url }}"
+init-msg-show-entry-info="{% trans 'label_show_entry_info' %}"
+init-msg-hide-entry-info="{% trans 'label_hide_entry_info' %}"
 inline-template
 >
 
@@ -11,47 +11,50 @@ inline-template
   <a 
   href="#" 
   class="ui small button"
-  @click.prevent="toggleDefinitionsVisible"
+  @click.prevent="toggleEntryInfoVisible"
   >
-  <span v-if="!definitionsVisible"> 
-  [[ msgShowDefinitions ]]
+  <span v-if="!entryInfoVisible"> 
+  [[ msgShowEntryInfo ]]
   </span>
   <span v-else> 
-  [[ msgHideDefinitions ]]
+  [[ msgHideEntryInfo ]]
   </span>
   </a>
 
-  <div class="vocab-definitions">
+  <div class="vocab-entry-info">
 
   <span v-show="processing"><i class="fas fa-spin fa-spinner"></i></span>
 
   <ul 
-  id="vocab-definitions"
-  v-show="definitionsVisible"
+  id="vocab-entry-info"
+  v-show="entryInfoVisible"
   v-cloak
   >
     <li 
-      v-for="(value, key) in definitions"
+      v-for="(value, key) in entryInfo"
     >
-      <h3> [[ key ]] </h3>
+      <span class="vocab-lexical-category"> [[ key ]] </span>
+      &nbsp;
+      <span 
+        class="vocab-entry-pronunciation"
+        v-for="ipaPronunciation in value.pronunciations.ipa"
+      >
+      [ [[ ipaPronunciation ]] ]
+      </span>
+
+      <div class="vocab-definitions">
       <ul>
-        <li v-for="def in value">
-          <p>
-          &mdash; [[ def.definition ]]
+        <li v-for="def in value.definitions">
+          <p class="vocab-definition-text">
+           &#8226; [[ def ]]
           </p>
         </li>
       </ul>
+      </div>
 
     </li>
 
   </ul>
-
-  <div
-  v-show="definitionsVisible && Object.keys(definitions).length == 0 && definitionsLoaded"
-  v-cloak
-  >
-  {% trans 'message_no_vocab_definitions' %}
-  </div>
 
   </div>
 

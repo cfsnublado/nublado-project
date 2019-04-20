@@ -869,48 +869,43 @@ const EntryInfo = {
       type: String,
       required: true
     },
-    initFetchFromAPI: {
-      type: Boolean,
-      default: false
-    },
-    initMsgShowDefinitions: {
+    initMsgShowEntryInfo: {
       type: String,
-      default: 'Show definitions'
+      default: 'Show entry info'
     },
-    initMsgHideDefinitions: {
+    initMsgHideEntryInfo: {
       type: String,
-      default: 'Hide definitions'
+      default: 'Hide entry info'
     }
   },
   data() {
     return {
       endpointUrl: this.initEndpointUrl,
-      fetchFromAPI: this.initFetchFromAPI,
-      definitions: {},
-      definitionsVisible: false,
-      definitionsLoaded: false,
-      msgShowDefinitions: this.initMsgShowDefinitions,
-      msgHideDefinitions: this.initMsgHideDefinitions
+      entryInfo: {},
+      entryInfoVisible: false,
+      entryInfoLoaded: false,
+      msgShowEntryInfo: this.initMsgShowEntryInfo,
+      msgHideEntryInfo: this.initMsgHideEntryInfo
     }
   },
   methods: {
-    toggleDefinitionsVisible() {
-      this.definitionsVisible = !this.definitionsVisible
-      if (this.definitionsVisible && !this.definitionsLoaded) {
-        this.getDefinitions()
+    toggleEntryInfoVisible() {
+      this.entryInfoVisible = !this.entryInfoVisible
+      if (this.entryInfoVisible && !this.entryInfoLoaded) {
+        this.getEntryInfo()
       }
-      console.log(this.definitionsVisible)
+      console.log(this.entryInfoVisible)
     },
-    getDefinitions() {
-      console.log('Get definitions')
+    getEntryInfo() {
+      console.log('Get entry info')
       this.process()
       axios.get(
         this.endpointUrl
       )
       .then(response => {
-        this.definitions = _.groupBy(response.data, "lexical_category_name");
-        console.log(this.definitions)
-        this.definitionsLoaded = true
+        this.entryInfo = response.data;
+        console.log(this.entryInfo)
+        this.entryInfoLoaded = true
         this.success()
       })
       .catch(error => {

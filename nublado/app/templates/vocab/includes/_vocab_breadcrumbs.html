@@ -31,7 +31,15 @@
       &nbsp;>&nbsp;
       <a href="{% url 'vocab:vocab_source_dashboard' vocab_source.id vocab_source.slug %}">{{ vocab_source.name }}</a>
 
+      {% if vocab_entry %}
+
+        &nbsp;>&nbsp;
+        <span> {{ vocab_entry }} </span>
+
+      {% endif %}
+
     {% endif %}
+
   {% else %}
 
     {% if url_name != "vocab_entries" %}

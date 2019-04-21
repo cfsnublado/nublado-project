@@ -428,10 +428,19 @@ class VocabContextEntryViewSet(
 
     def get_queryset(self):
         vocab_entry_id = self.request.query_params.get('vocab_entry', None)
+        vocab_source_id = self.request.query_params.get('vocab_source', None)
+
         if vocab_entry_id:
-            return self.queryset.filter(vocab_entry_id=vocab_entry_id)
-        else:
-            return self.queryset
+            self.queryset = self.queryset.filter(
+                vocab_entry_id=vocab_entry_id
+            )
+
+        if vocab_source_id:
+            self.queryset = self.queryset.filter(
+                vocab_context__vocab_source_id=vocab_source_id
+            )
+
+        return self.queryset
 
     @action(methods=['get'], detail=False)
     def detail_data(self, request):

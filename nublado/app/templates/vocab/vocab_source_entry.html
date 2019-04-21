@@ -13,7 +13,6 @@
 
 {% url 'vocab:vocab_source_entry_language_autocomplete' vocab_source.id 'zz' as autocomplete_url %}
 {% url 'vocab:vocab_source_dashboard' vocab_source.id vocab_source.slug  as search_url %}
-
 {% include "includes/vue/_language_search.html" with comp_name='entry-search' search_btn=True %}
 
 </div>
@@ -37,7 +36,7 @@
 <div class="row justify-content-md-center">
 <div class="col-md-10">
 
-{% url_set_param 'api:vocab-context-entry-list' vocab_entry=vocab_entry.id as vocab_contexts_url %}
+{% url_set_param 'api:vocab-context-entry-list' vocab_entry=vocab_entry.id vocab_source=vocab_source.id as vocab_contexts_url %}
 {% url 'vocab:vocab_source_dashboard' 0 'zzz' as vocab_source_url %}
 {% include "vocab/includes/vue/_vocab_contexts.html" %}
 

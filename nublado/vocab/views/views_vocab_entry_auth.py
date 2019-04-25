@@ -22,17 +22,17 @@ from .views_mixins import (
 APP_NAME = apps.get_app_config('vocab').name
 
 
-class VocabEntryDashboardView(
+class VocabEntryView(
     LoginRequiredMixin, VocabEntryMixin,
     VocabEntryPermissionMixin, VocabEntrySessionMixin,
     TemplateView
 ):
     search_term = None
     search_language = None
-    template_name = '{0}/auth/vocab_entry_dashboard.html'.format(APP_NAME)
+    template_name = '{0}/auth/vocab_entry.html'.format(APP_NAME)
 
     def get_context_data(self, **kwargs):
-        context = super(VocabEntryDashboardView, self).get_context_data(**kwargs)
+        context = super(VocabEntryView, self).get_context_data(**kwargs)
         context['search_term'] = self.search_term
         context['search_language'] = self.search_language
         return context
@@ -47,7 +47,7 @@ class VocabEntriesView(
     template_name = '{0}/auth/vocab_entries.html'.format(APP_NAME)
     paginate_by = 50
     language = None
-    search_redirect_url = 'vocab:vocab_entry_dashboard_auth'
+    search_redirect_url = 'vocab:vocab_entry_auth'
 
     def get(self, request, *args, **kwargs):
         self.language = self.request.GET.get('language', settings.LANGUAGE_CODE)
@@ -102,7 +102,7 @@ class VocabEntryCreateView(
 
     def get_success_url(self):
         return reverse(
-            'vocab:vocab_entry_dashboard',
+            'vocab:vocab_entry',
             kwargs={
                 'vocab_entry_language': self.object.language,
                 'vocab_entry_slug': self.object.slug
@@ -124,7 +124,7 @@ class VocabEntryUpdateView (
 
     def get_success_url(self):
         return reverse(
-            'vocab:vocab_entry_dashboard',
+            'vocab:vocab_entry',
             kwargs={
                 'vocab_entry_language': self.vocab_entry.language,
                 'vocab_entry_slug': self.vocab_entry.slug

@@ -10,11 +10,11 @@ from .views_mixins import (
 APP_NAME = apps.get_app_config('vocab').name
 
 
-class VocabEntryDashboardView(
+class VocabEntryView(
     VocabEntryMixin, VocabEntrySessionMixin,
     TemplateView
 ):
-    template_name = '{0}/vocab_entry_dashboard.html'.format(APP_NAME)
+    template_name = '{0}/vocab_entry.html'.format(APP_NAME)
 
 
 class VocabEntriesView(

@@ -6,12 +6,12 @@ from .views.views_vocab_context_auth import (
     VocabContextEntryTagView
 )
 from .views.views_vocab_entry import (
-    VocabEntriesView, VocabEntryDashboardView
+    VocabEntriesView, VocabEntryView
 )
 from .views.views_vocab_entry_auth import (
     VocabEntriesView as VocabEntriesAuthView, VocabEntryContextsView,
     VocabEntryCreateView, VocabEntryDeleteView,
-    VocabEntryDashboardView as VocabEntryDashboardAuthView,
+    VocabEntryView as VocabEntryAuthView,
     VocabEntryUpdateView
 )
 from .views.views_vocab_project_auth import (
@@ -66,8 +66,8 @@ auth_urls = [
     path('entries/', VocabEntriesAuthView.as_view(), name='vocab_entries_auth'),
     re_path(
         '^entry/(?P<vocab_entry_language>[a-z]{2})/(?P<vocab_entry_slug>[-\w]+)/$',
-        VocabEntryDashboardAuthView.as_view(),
-        name='vocab_entry_dashboard_auth'
+        VocabEntryAuthView.as_view(),
+        name='vocab_entry_auth'
     ),
     re_path(
         '^entry/(?P<vocab_entry_language>[a-z]{2})/(?P<vocab_entry_slug>[-\w]+)/contexts/$',
@@ -165,8 +165,8 @@ urlpatterns = [
     ),
     path(
         'entry/<slug:vocab_entry_language>/<slug:vocab_entry_slug>/',
-        VocabEntryDashboardView.as_view(),
-        name='vocab_entry_dashboard'
+        VocabEntryView.as_view(),
+        name='vocab_entry'
     ),
     path(
         'source/<int:vocab_source_pk>-<slug:vocab_source_slug>/',

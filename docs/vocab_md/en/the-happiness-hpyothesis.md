@@ -540,4 +540,32 @@ project_name: English Reading
 
     </div>
 
+- If you are in passionate love and want to celebrate your passion, read poetry. If your ardor has calmed and you want to understand your evolving relationship, read psychology. But if you have just ended a relationship and would like to believe you are better off without love, read philosophy. Oh, there is plenty of work extolling the virtues of love, but when you look closely, you find a deep ambivalence. Love of God, love of neighbor, love of truth, love of beauty—all of these are urged upon us. But the passionate, erotic love of a real person? Heavens no!
+
+    <div markdown="1" class="tagged-entries">
+
+    en: extol: extolling
+
+    en: ambivalence: ambivalence
+
+    en: erotic: erotic
+
+    en: ardor: ardor
+
+    </div>
+
+- Seneca was right: "No one can live happily who has regard to himself alone and transforms everything into a question of his own utility." John Donne was right: No man, woman, or child is an island. Aristophanes was right: We need others to complete us. We are an ultrasocial species, full of emotions finely tuned for loving, befriending, helping, sharing, and otherwise intertwining our lives with others. Attachments and relationships can bring us pain: As a character in Jean-Paul Sartre's play _No Exit_ said, "Hell is other people." But so is heaven.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: befriend: befriending
+
+    en: ultrasocial: ultrasocial
+
+    en: Aristophanes: Aristophanes
+
+    en: John Donne: John Donne
+
+    en: Seneca: Seneca
+
 - 

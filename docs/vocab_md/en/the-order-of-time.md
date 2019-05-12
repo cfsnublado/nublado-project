@@ -234,5 +234,3 @@ Every human being has their own past cone of ancestors and future cone of descen
     en: millennium: millennia
 
     </div>
-
-- 

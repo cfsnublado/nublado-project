@@ -377,36 +377,36 @@ def get_oxford_entry_json(api_id, api_key, vocab_entry):
 
 
 def parse_oxford_entry_json(json_data):
-    results = {}
+    results_dict = {
+        'lexicalEntries': []
+    }
 
     for result in json_data['results']:
         if 'lexicalEntries' in result:
             for lexical_entry in result['lexicalEntries']:
-                lexical_category = lexical_entry['lexicalCategory'].lower()
-                results[lexical_category] = {}
+                lexical_entry_dict = {
+                    'lexicalCategory': lexical_entry['lexicalCategory'].lower(),
+                    'pronunciations': {
+                        'ipa': []
+                    },
+                    'definitions': []
+                }
 
                 if 'pronunciations' in lexical_entry:
-                    pronunciations_dict = {
-                        'ipa': [],
-                        'respell': []
-                    }
-
                     for pronunciation in lexical_entry['pronunciations']:
                         if 'phoneticNotation' in pronunciation:
                             if pronunciation['phoneticNotation'].lower() == 'ipa':
                                 if 'phoneticSpelling' in pronunciation:
-                                    pronunciations_dict['ipa'].append(pronunciation['phoneticSpelling'])
-
-                    results[lexical_category]['pronunciations'] = pronunciations_dict
+                                    lexical_entry_dict['pronunciations']['ipa'].append(pronunciation['phoneticSpelling'])
 
                 if 'entries' in lexical_entry:
-                    results[lexical_category]['definitions'] = []
-
                     for entry in lexical_entry['entries']:
                         if 'senses' in entry:
                             for sense in entry['senses']:
                                 if 'definitions' in sense:
                                     for definition in sense['definitions']:
-                                        results[lexical_category]['definitions'].append(definition)
+                                        lexical_entry_dict['definitions'].append(definition)
 
-    return results
+                results_dict['lexicalEntries'].append(lexical_entry_dict)
+
+    return results_dict

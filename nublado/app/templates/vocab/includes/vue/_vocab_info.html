@@ -25,26 +25,32 @@ inline-template
 
   <span v-show="processing"><i class="fas fa-spin fa-spinner"></i></span>
 
-  <ul 
-  id="vocab-entry-info"
-  v-show="entryInfoVisible"
+  <div 
+  class="panel"
+  v-show="entryInfoLoaded && entryInfo.lexicalEntries.length > 0"
   v-cloak
   >
+  <div class="panel-body">
+
+  <ul 
+  id="vocab-entry-info"
+  >
     <li 
-      v-for="(value, key) in entryInfo"
+      v-for="lexicalEntry in entryInfo.lexicalEntries"
     >
-      <span class="vocab-lexical-category"> [[ key ]] </span>
+      <span class="vocab-lexical-category"> [[ lexicalEntry.lexicalCategory ]] </span>
       &nbsp;
+
       <span 
         class="vocab-entry-pronunciation"
-        v-for="ipaPronunciation in value.pronunciations.ipa"
+        v-for="ipaPronunciation in lexicalEntry.pronunciations.ipa"
       >
       [ [[ ipaPronunciation ]] ]
       </span>
 
       <div class="vocab-definitions">
       <ul>
-        <li v-for="def in value.definitions">
+        <li v-for="def in lexicalEntry.definitions">
           <p class="vocab-definition-text">
            &#8226; [[ def ]]
           </p>
@@ -55,6 +61,9 @@ inline-template
     </li>
 
   </ul>
+
+  </div>
+  </div>
 
   </div>
 

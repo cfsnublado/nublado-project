@@ -206,7 +206,7 @@ class VocabEntrySearchMixin(object):
     search_term = None
     search_language = 'en'
     vocab_entry = None
-    search_redirect_url = 'vocab:vocab_entry_dashboard'
+    vocab_entry_redirect_url = 'vocab:vocab_entry'
 
     def dispatch(self, request, *args, **kwargs):
         self.search_term = self.request.GET.get('search_entry', None)
@@ -230,9 +230,9 @@ class VocabEntrySearchMixin(object):
         }
 
     def search_success(self, **kwargs):
-        if self.search_redirect_url:
+        if self.vocab_entry_redirect_url:
             return redirect(
-                self.search_redirect_url,
+                self.vocab_entry_redirect_url,
                 vocab_entry_language=self.vocab_entry.language,
                 vocab_entry_slug=self.vocab_entry.slug
             )

@@ -4,7 +4,7 @@ from django.views.generic import (
 )
 
 from .views_mixins import (
-    VocabEntryMixin, VocabEntrySearchMixin, VocabSourceMixin,
+    VocabEntryMixin, VocabSourceEntrySearchMixin, VocabSourceMixin,
     VocabSourceSessionMixin
 )
 
@@ -13,7 +13,7 @@ APP_NAME = apps.get_app_config('vocab').name
 
 class VocabSourceDashboardView(
     VocabSourceMixin, VocabSourceSessionMixin,
-    VocabEntrySearchMixin, TemplateView
+    VocabSourceEntrySearchMixin, TemplateView
 ):
     template_name = '{0}/vocab_source_dashboard.html'.format(APP_NAME)
 

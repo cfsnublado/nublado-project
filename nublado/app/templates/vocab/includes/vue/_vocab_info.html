@@ -21,7 +21,10 @@ inline-template
   </span>
   </a>
 
-  <div class="vocab-entry-info">
+  <div 
+  class="vocab-entry-info"
+  v-show="entryInfoVisible"
+  >
 
   <span v-show="processing"><i class="fas fa-spin fa-spinner"></i></span>
 

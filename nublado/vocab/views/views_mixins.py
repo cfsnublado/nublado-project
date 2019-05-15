@@ -4,7 +4,7 @@ from django.shortcuts import get_object_or_404, redirect
 
 from core.views import CachedObjectMixin, ObjectSessionMixin
 from ..conf import settings
-from ..models import VocabEntry, VocabProject, VocabSource
+from ..models import VocabContextEntry, VocabEntry, VocabProject, VocabSource
 
 
 class PermissionMixin(object):
@@ -209,19 +209,30 @@ class VocabEntrySearchMixin(object):
     vocab_entry_redirect_url = 'vocab:vocab_entry'
 
     def dispatch(self, request, *args, **kwargs):
+        self.vocab_entry = self.get_search_entry()
+
+        if self.vocab_entry:
+            return self.search_success(**kwargs)
+
+        return super(VocabEntrySearchMixin, self).dispatch(request, *args, **kwargs)
+
+    def get_search_entry(self, **kwargs):
         self.search_term = self.request.GET.get('search_entry', None)
         self.search_language = self.request.GET.get('search_language', 'en')
+
         if self.search_language not in settings.LANGUAGES_DICT:
-            self.search_language = 'en'
+            return None
+
         if self.search_term and self.search_language:
             try:
-                self.vocab_entry = VocabEntry.objects.get(
+                vocab_entry = VocabEntry.objects.get(
                     **self.get_search_query_kwargs()
                 )
-                return self.search_success(**kwargs)
+                return vocab_entry
             except VocabEntry.DoesNotExist:
-                pass
-        return super(VocabEntrySearchMixin, self).dispatch(request, *args, **kwargs)
+                return None
+        else:
+            return None
 
     def get_search_query_kwargs(self):
         return {
@@ -230,7 +241,7 @@ class VocabEntrySearchMixin(object):
         }
 
     def search_success(self, **kwargs):
-        if self.vocab_entry_redirect_url:
+        if self.vocab_entry and self.vocab_entry_redirect_url:
             return redirect(
                 self.vocab_entry_redirect_url,
                 vocab_entry_language=self.vocab_entry.language,
@@ -243,3 +254,56 @@ class VocabEntrySearchMixin(object):
         context['search_term'] = self.search_term
         context['search_language'] = self.search_language
         return context
+
+
+class VocabSourceEntrySearchMixin(VocabEntrySearchMixin):
+    search_source_id = None
+    vocab_source = None
+    vocab_entry_redirect_url = 'vocab:vocab_source_entry'
+
+    def get_search_entry(self, **kwargs):
+        self.search_term = self.request.GET.get('search_entry', None)
+        self.search_language = self.request.GET.get('search_language', 'en')
+        self.search_source_id = self.request.GET.get('search_source', None)
+
+        print(self.search_term)
+        print(self.search_language)
+        print(self.search_source_id)
+
+        if self.search_language not in settings.LANGUAGES_DICT:
+            return None
+
+        if self.search_term and self.search_language and self.search_source_id:
+            try:
+                vocab_context_entry = VocabContextEntry.objects.select_related(
+                    'vocab_context',
+                    'vocab_entry',
+                    'vocab_context__vocab_source'
+                ).distinct('vocab_entry_id').get(
+                    **self.get_search_query_kwargs()
+                )
+                self.vocab_source = vocab_context_entry.vocab_context.vocab_source
+                self.vocab_entry = vocab_context_entry.vocab_entry
+
+                return self.vocab_entry
+            except VocabContextEntry.DoesNotExist:
+                return None
+        else:
+            return None
+
+    def get_search_query_kwargs(self):
+        return {
+            'vocab_context__vocab_source_id': self.search_source_id,
+            'vocab_entry__entry__iexact': self.search_term,
+            'vocab_entry__language': self.search_language
+        }
+
+    def search_success(self, **kwargs):
+        if self.vocab_entry and self.vocab_source and self.vocab_entry_redirect_url:
+            return redirect(
+                self.vocab_entry_redirect_url,
+                vocab_source_pk=self.vocab_source.id,
+                vocab_source_slug=self.vocab_source.slug,
+                vocab_entry_language=self.vocab_entry.language,
+                vocab_entry_slug=self.vocab_entry.slug
+            )

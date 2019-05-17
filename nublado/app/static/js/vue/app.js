@@ -28,6 +28,7 @@ Vue.component('entry-info', EntryInfo)
 Vue.component('vocab-entries', VocabEntries)
 Vue.component('vocab-entry-context', VocabEntryContext)
 Vue.component('vocab-contexts', VocabContexts)
+Vue.component('audio-player', AudioPlayer)
 Vue.use(ModalPlugin)
 
 VueScrollTo.setDefaults({

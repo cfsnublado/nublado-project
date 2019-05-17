@@ -2,8 +2,8 @@
 
 <entry-info 
 init-endpoint-url="{{ vocab_entry_info_url }}"
-init-msg-show-entry-info="{% trans 'label_show_entry_info' %}"
-init-msg-hide-entry-info="{% trans 'label_hide_entry_info' %}"
+init-msg-show-entry-info="{% trans 'label_show_details' %}"
+init-msg-hide-entry-info="{% trans 'label_hide_details' %}"
 inline-template
 >
 
@@ -44,11 +44,22 @@ inline-template
       <span class="vocab-lexical-category"> [[ lexicalEntry.lexicalCategory ]] </span>
       &nbsp;
 
-      <span 
-        class="vocab-entry-pronunciation"
-        v-for="ipaPronunciation in lexicalEntry.pronunciations.ipa"
+      <span
+        v-for="(ipaPronunciation, index) in lexicalEntry.pronunciations.ipa"
       >
-      [ [[ ipaPronunciation ]] ]
+      <span 
+      v-if="ipaPronunciation.phoneticSpelling"
+      class="vocab-pronunciation"
+      >
+      [ [[ ipaPronunciation.phoneticSpelling ]] ]
+      </span>
+      <audio-player 
+      v-if="ipaPronunciation.audioFile"
+      :init-audio-id="'marginSizes' + index"
+      :init-sound-file="ipaPronunciation.audioFile"
+      >
+      </audio-player>
+      &nbsp;
       </span>
 
       <div class="vocab-definitions">

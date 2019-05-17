@@ -1008,3 +1008,44 @@ const OxfordApi = {
     }
   }
 }
+
+const AudioPlayer = {
+  props: {
+    initAudioId: {
+      type: String,
+      required: true
+    },
+    initSoundFile: {
+      type: String,
+      default: null
+    }
+  },
+  data() {
+    return {
+      audioId: this.initAudioId,
+      soundFile: this.initSoundFile,
+      audio: null,
+      playing: false,
+      loaded: false
+    }
+  },
+  watch: {
+    playing(value) {
+      if(value) {
+        return this.audio.play()
+      }
+    }
+  },
+  mounted() {
+    this.audio = this.$el.querySelector('#' + this.audioId)
+    this.audio.addEventListener('loadeddata', this.load)
+    this.audio.addEventListener('play', () => { this.playing = true })
+    this.audio.addEventListener('ended', () => { this.playing = false })
+  },
+  template: `
+    <span>
+      <a @click.prevent="playing = !playing" href="#"> <i class="vocab-pronunciation-icon fas fa-volume-up"></i> </a>
+      <audio :id="audioId" ref="audiofile" :src="soundFile" preload="auto" style="display: none;"></audio>
+    </span>
+  `
+}

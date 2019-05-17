@@ -387,7 +387,8 @@ def parse_oxford_entry_json(json_data):
                 lexical_entry_dict = {
                     'lexicalCategory': lexical_entry['lexicalCategory'].lower(),
                     'pronunciations': {
-                        'ipa': []
+                        'ipa': [],
+                        'audioFile': ''
                     },
                     'definitions': []
                 }
@@ -396,8 +397,18 @@ def parse_oxford_entry_json(json_data):
                     for pronunciation in lexical_entry['pronunciations']:
                         if 'phoneticNotation' in pronunciation:
                             if pronunciation['phoneticNotation'].lower() == 'ipa':
+                                pronunciation_dict = {
+                                    'phoneticSpelling': '',
+                                    'audioFile': ''
+                                }
+
                                 if 'phoneticSpelling' in pronunciation:
-                                    lexical_entry_dict['pronunciations']['ipa'].append(pronunciation['phoneticSpelling'])
+                                    pronunciation_dict['phoneticSpelling'] = pronunciation['phoneticSpelling']
+
+                                if 'audioFile' in pronunciation:
+                                    pronunciation_dict['audioFile'] = pronunciation['audioFile']
+
+                                lexical_entry_dict['pronunciations']['ipa'].append(pronunciation_dict)
 
                 if 'entries' in lexical_entry:
                     for entry in lexical_entry['entries']:

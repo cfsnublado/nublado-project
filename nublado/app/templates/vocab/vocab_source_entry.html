@@ -2,6 +2,12 @@
 {% load core_extras %}
 {% load i18n %}
 
+{% block title %}
+
+{{ vocab_source.name }} - {{ vocab_entry.entry }}
+
+{% endblock title %}
+
 {% block vocab_entry_search %}
 
 {% url 'vocab:vocab_source_entry_language_autocomplete' vocab_source.id 'zz' as autocomplete_url %}

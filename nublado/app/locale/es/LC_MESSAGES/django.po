@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-05-15 03:26-0700\n"
+"POT-Creation-Date: 2019-05-18 01:05-0700\n"
 "PO-Revision-Date: 2018-11-28 21:16-0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -47,7 +47,7 @@ msgstr ""
 msgid "validation_invite_sender_receiver_equal"
 msgstr ""
 
-#: nublado/core/models.py:61 nublado/app/templates/base.html:213
+#: nublado/core/models.py:61 nublado/app/templates/base.html:217
 #: nublado/app/templates/vocab/includes/_vocab_entry_create_modal.html:37
 msgid "label_language"
 msgstr "Idioma"
@@ -479,12 +479,12 @@ msgstr "500"
 msgid "error_500_message"
 msgstr "Error de servidor"
 
-#: nublado/app/templates/base.html:96
+#: nublado/app/templates/base.html:100
 #: nublado/app/templates/security/login.html:56
 msgid "label_login"
 msgstr "Iniciar sesión"
 
-#: nublado/app/templates/base.html:187
+#: nublado/app/templates/base.html:191
 #: nublado/app/templates/vocab/auth/vocab_base.html:305
 #: nublado/app/templates/vocab/includes/_vocab_breadcrumbs.html:7
 #: nublado/app/templates/vocab/includes/_vocab_breadcrumbs.html:22
@@ -1006,7 +1006,6 @@ msgid "header_create_source"
 msgstr "Crear fuente"
 
 #: nublado/app/templates/vocab/auth/vocab_source_dashboard.html:8
-#: nublado/app/templates/vocab/vocab_source_dashboard.html:6
 msgid "page_vocab_source_dashboard_title"
 msgstr "Escritorio"
 
@@ -1022,7 +1021,7 @@ msgid "page_vocab_source_entries_title"
 msgstr "Cambiar contraseña de usuario"
 
 #: nublado/app/templates/vocab/auth/vocab_source_entries.html:28
-#: nublado/app/templates/vocab/vocab_source_dashboard.html:19
+#: nublado/app/templates/vocab/vocab_source_dashboard.html:21
 msgid "label_search_vocab_in_source"
 msgstr "Buscar vocabulario en la fuente"
 
@@ -1110,11 +1109,13 @@ msgstr "Ocultar detalles"
 msgid "page_vocabulary_title"
 msgstr "Vocabulario"
 
-#: nublado/app/templates/vocab/vocab_entry.html:6
-#, fuzzy
-#| msgid "page_user_password_reset_title"
-msgid "page_vocab_entry_title"
-msgstr "Cambiar contraseña de usuario"
+#: nublado/app/templates/vocab/vocab_entry.html:7
+#, python-format
+msgid "page_vocab_entry_title %(v)s"
+msgstr "Vocabulario - %(v)s"
+
+#~ msgid "page_vocab_source_title %(s)s"
+#~ msgstr "%(s)s"
 
 #~ msgid "label_vocab_pronunciation_ipa"
 #~ msgstr "Pronunciación AFI"

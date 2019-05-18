@@ -3,7 +3,9 @@
 {% load i18n %}
 
 {% block title %}
-{% trans "page_vocab_entry_title" %}
+
+{% blocktrans with v=vocab_entry.entry %}page_vocab_entry_title {{v}}{% endblocktrans %}
+
 {% endblock title %}
 
 {% block content %}
@@ -15,7 +17,7 @@
 
 {% url 'vocab:vocab_entry_language_autocomplete' 'zz' as autocomplete_url %}
 {% url 'vocab:vocab_entries' as search_url %}
-{% include "includes/vue/_language_search.html" with comp_name='entry-search' search_btn=True %}
+{% include 'includes/vue/_language_search.html' with comp_name='entry-search' search_btn=True %}
 
 {% endblock vocab_entry_search %}
 
@@ -47,7 +49,6 @@
 {% include "vocab/includes/vue/_vocab_contexts.html" %}
 
 {% endblock vocab_contexts %}
-
 
 </div>
 </div>

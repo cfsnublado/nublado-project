@@ -13135,18 +13135,14 @@ label {
   margin: 0;
   padding: 10px 20px 10px 20px;
 }
-/* line 24, ../scss/cfs/_panel.scss */
-.panel-body ul, .panel-body ol {
-  margin-left: 20px;
-}
 
-/* line 29, ../scss/cfs/_panel.scss */
+/* line 25, ../scss/cfs/_panel.scss */
 .panel-section {
   margin: 0;
   padding: 10px 20px 10px 20px;
 }
 
-/* line 34, ../scss/cfs/_panel.scss */
+/* line 30, ../scss/cfs/_panel.scss */
 .panel-section .panel-header,
 .panel-body .panel-header {
   margin-bottom: 15px;

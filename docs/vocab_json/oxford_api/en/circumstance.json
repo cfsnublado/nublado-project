@@ -1,0 +1,147 @@
+{
+  "id": "circumstance",
+  "word": "circumstance",
+  "results": [
+    {
+      "id": "circumstance",
+      "type": "headword",
+      "word": "circumstance",
+      "language": "en-us",
+      "lexicalEntries": [
+        {
+          "text": "circumstance",
+          "entries": [
+            {
+              "senses": [
+                {
+                  "id": "m_en_gbus0185180.008",
+                  "notes": [
+                    {
+                      "text": "usually \"circumstances\"",
+                      "type": "wordFormNote"
+                    }
+                  ],
+                  "examples": [
+                    {
+                      "text": "we wanted to marry but circumstances didn't permit"
+                    }
+                  ],
+                  "subsenses": [
+                    {
+                      "id": "m_en_gbus0185180.013",
+                      "examples": [
+                        {
+                          "text": "he was found dead but there were no suspicious circumstances"
+                        },
+                        {
+                          "text": "they were thrown together by circumstance"
+                        }
+                      ],
+                      "definitions": [
+                        "an event or fact that causes or helps to cause something to happen, typically something undesirable"
+                      ],
+                      "thesaurusLinks": [
+                        {
+                          "entry_id": "circumstances",
+                          "sense_id": "t_en_gb0002344.002"
+                        }
+                      ],
+                      "shortDefinitions": [
+                        "cause or contributory factor"
+                      ]
+                    }
+                  ],
+                  "definitions": [
+                    "a fact or condition connected with or relevant to an event or action"
+                  ],
+                  "thesaurusLinks": [
+                    {
+                      "entry_id": "circumstances",
+                      "sense_id": "t_en_gb0002344.001"
+                    }
+                  ],
+                  "shortDefinitions": [
+                    "relevant fact or condition"
+                  ]
+                },
+                {
+                  "id": "m_en_gbus0185180.015",
+                  "examples": [
+                    {
+                      "text": "the artists are living in reduced circumstances"
+                    }
+                  ],
+                  "definitions": [
+                    "one's state of financial or material welfare"
+                  ],
+                  "thesaurusLinks": [
+                    {
+                      "entry_id": "circumstances",
+                      "sense_id": "t_en_gb0002344.003"
+                    }
+                  ],
+                  "shortDefinitions": [
+                    "financial situation"
+                  ]
+                }
+              ],
+              "etymologies": [
+                "Middle English: from Old Frenchcirconstance or Latincircumstantia, from circumstare\u2018encircle, encompass\u2019, from circum\u2018around\u2019 + stare\u2018stand\u2019"
+              ]
+            }
+          ],
+          "language": "en-us",
+          "derivatives": [
+            {
+              "id": "circumstanced",
+              "text": "circumstanced"
+            }
+          ],
+          "pronunciations": [
+            {
+              "dialects": [
+                "American English"
+              ],
+              "audioFile": "http://audio.oxforddictionaries.com/en/mp3/circumstance_us_1.mp3",
+              "phoneticNotation": "respell",
+              "phoneticSpelling": "\u02c8s\u0259rk\u0259m\u02ccstans"
+            },
+            {
+              "dialects": [
+                "American English"
+              ],
+              "audioFile": "http://audio.oxforddictionaries.com/en/mp3/circumstance_us_1.mp3",
+              "phoneticNotation": "IPA",
+              "phoneticSpelling": "\u02c8s\u0259rk\u0259m\u02ccst\u00e6ns"
+            },
+            {
+              "dialects": [
+                "American English"
+              ],
+              "audioFile": "http://audio.oxforddictionaries.com/en/mp3/circumstance_us_1.mp3",
+              "phoneticNotation": "respell",
+              "phoneticSpelling": "\u02c8s\u0259rk\u0259mst\u0259ns"
+            },
+            {
+              "dialects": [
+                "American English"
+              ],
+              "audioFile": "http://audio.oxforddictionaries.com/en/mp3/circumstance_us_1.mp3",
+              "phoneticNotation": "IPA",
+              "phoneticSpelling": "\u02c8s\u0259rk\u0259mst\u0259ns"
+            }
+          ],
+          "lexicalCategory": {
+            "id": "noun",
+            "text": "Noun"
+          }
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "schema": "RetrieveEntry",
+    "provider": "Oxford University Press",
+    "operation": "retrieve"
+  }
+}

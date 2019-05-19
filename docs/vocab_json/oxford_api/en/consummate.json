@@ -1,0 +1,179 @@
+{
+  "id": "consummate",
+  "word": "consummate",
+  "results": [
+    {
+      "id": "consummate",
+      "type": "headword",
+      "word": "consummate",
+      "language": "en-us",
+      "lexicalEntries": [
+        {
+          "text": "consummate",
+          "entries": [
+            {
+              "senses": [
+                {
+                  "id": "m_en_gbus0213830.005",
+                  "domains": [
+                    {
+                      "id": "sex",
+                      "text": "Sex"
+                    },
+                    {
+                      "id": "marriage",
+                      "text": "Marriage"
+                    }
+                  ],
+                  "examples": [
+                    {
+                      "text": "they did not consummate their marriage until months after it took place"
+                    }
+                  ],
+                  "subsenses": [
+                    {
+                      "id": "m_en_gbus0213830.011",
+                      "examples": [
+                        {
+                          "text": "his scheme of colonization was consummated through bloodshed"
+                        }
+                      ],
+                      "definitions": [
+                        "complete (a transaction or attempt); make perfect"
+                      ],
+                      "thesaurusLinks": [
+                        {
+                          "entry_id": "consummate",
+                          "sense_id": "t_en_gb0002911.001"
+                        }
+                      ],
+                      "shortDefinitions": [
+                        "complete"
+                      ]
+                    }
+                  ],
+                  "definitions": [
+                    "make (a marriage or relationship) complete by having sexual intercourse"
+                  ],
+                  "shortDefinitions": [
+                    "make marriage complete by having sex"
+                  ]
+                }
+              ],
+              "etymologies": [
+                "late Middle English (as an adjective in the sense \u2018completed, accomplished\u2019): from Latinconsummat-\u2018brought to completion\u2019, from the verb consummare, from con-\u2018altogether\u2019 + summa\u2018sum total\u2019, feminine of summus\u2018highest, supreme\u2019"
+              ],
+              "grammaticalFeatures": [
+                {
+                  "id": "transitive",
+                  "text": "Transitive",
+                  "type": "Subcategorization"
+                }
+              ]
+            }
+          ],
+          "language": "en-us",
+          "derivatives": [
+            {
+              "id": "consummately",
+              "text": "consummately"
+            },
+            {
+              "id": "consummator",
+              "text": "consummator"
+            }
+          ],
+          "pronunciations": [
+            {
+              "dialects": [
+                "American English"
+              ],
+              "audioFile": "http://audio.oxforddictionaries.com/en/mp3/xconsummate_us_2.mp3",
+              "phoneticNotation": "respell",
+              "phoneticSpelling": "\u02c8k\u00e4ns\u0259\u02ccm\u0101t"
+            },
+            {
+              "dialects": [
+                "American English"
+              ],
+              "audioFile": "http://audio.oxforddictionaries.com/en/mp3/xconsummate_us_2.mp3",
+              "phoneticNotation": "IPA",
+              "phoneticSpelling": "\u02c8k\u0251ns\u0259\u02ccme\u026at"
+            }
+          ],
+          "lexicalCategory": {
+            "id": "verb",
+            "text": "Verb"
+          }
+        },
+        {
+          "text": "consummate",
+          "entries": [
+            {
+              "senses": [
+                {
+                  "id": "m_en_gbus0213830.017",
+                  "examples": [
+                    {
+                      "text": "she dressed with consummate elegance"
+                    }
+                  ],
+                  "definitions": [
+                    "showing a high degree of skill and flair; complete or perfect"
+                  ],
+                  "thesaurusLinks": [
+                    {
+                      "entry_id": "consummate",
+                      "sense_id": "t_en_gb0002911.002"
+                    }
+                  ],
+                  "shortDefinitions": [
+                    "showing great skill and flair"
+                  ]
+                }
+              ]
+            }
+          ],
+          "language": "en-us",
+          "derivatives": [
+            {
+              "id": "consummately",
+              "text": "consummately"
+            },
+            {
+              "id": "consummator",
+              "text": "consummator"
+            }
+          ],
+          "pronunciations": [
+            {
+              "dialects": [
+                "American English"
+              ],
+              "audioFile": "http://audio.oxforddictionaries.com/en/mp3/xconsummate_us_2.mp3",
+              "phoneticNotation": "respell",
+              "phoneticSpelling": "\u02c8k\u00e4ns\u0259\u02ccm\u0101t"
+            },
+            {
+              "dialects": [
+                "American English"
+              ],
+              "audioFile": "http://audio.oxforddictionaries.com/en/mp3/xconsummate_us_2.mp3",
+              "phoneticNotation": "IPA",
+              "phoneticSpelling": "\u02c8k\u0251ns\u0259\u02ccme\u026at"
+            }
+          ],
+          "lexicalCategory": {
+            "id": "adjective",
+            "text": "Adjective"
+          }
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "schema": "RetrieveEntry",
+    "provider": "Oxford University Press",
+    "operation": "retrieve"
+  }
+}

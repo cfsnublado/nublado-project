@@ -27,7 +27,3 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
 django_heroku.settings(locals())
-
-# Oxford API
-OXFORD_API_ID = os.environ['OXFORD_API_ID']
-OXFORD_API_KEY = os.environ['OXFORD_API_KEY']

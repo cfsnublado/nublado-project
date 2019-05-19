@@ -33,7 +33,3 @@ EMAIL_HOST_USER = None
 EMAIL_HOST_PASSWORD = None
 EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
 EMAIL_FILE_PATH = '/home/cfs/tmp/email-messages/'
-
-# Oxford API
-OXFORD_API_ID = os.environ['OXFORD_API_ID']
-OXFORD_API_KEY = os.environ['OXFORD_API_KEY']

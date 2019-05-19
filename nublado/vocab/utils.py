@@ -348,14 +348,12 @@ def get_oxford_entry_json(api_id, api_key, vocab_entry):
             json_data_source=VocabEntryJsonData.OXFORD
         ).json_data
     else:
-        oxford_entry_url = 'https://od-api.oxforddictionaries.com/api/v1/entries/{language}/{entry}'.format(
-            language=vocab_entry.language,
+        language = 'en-us' if vocab_entry.language == 'en' else vocab_entry.language
+        oxford_entry_url = '{url}/entries/{language}/{entry}'.format(
+            url=settings.OXFORD_API_URL,
+            language=language,
             entry=vocab_entry.entry
         )
-
-        if vocab_entry.language == 'en':
-            oxford_entry_url = oxford_entry_url + '/regions=us'
-
         response = requests.get(
             oxford_entry_url,
             headers={
@@ -385,7 +383,7 @@ def parse_oxford_entry_json(json_data):
         if 'lexicalEntries' in result:
             for lexical_entry in result['lexicalEntries']:
                 lexical_entry_dict = {
-                    'lexicalCategory': lexical_entry['lexicalCategory'].lower(),
+                    'lexicalCategory': lexical_entry['lexicalCategory']['text'].lower(),
                     'pronunciations': {
                         'ipa': [],
                         'audioFile': ''

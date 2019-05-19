@@ -126,3 +126,8 @@ TEMPLATES = [
         },
     },
 ]
+
+# Oxford API
+OXFORD_API_ID = os.environ['OXFORD_API_ID']
+OXFORD_API_KEY = os.environ['OXFORD_API_KEY']
+OXFORD_API_URL = 'https://od-api.oxforddictionaries.com/api/v2'

@@ -294,4 +294,110 @@ project_name: English Reading
 
     </div>
 
--
+- Those who did come to bear witness saw more than a wedding. At the feast afterward, King Aenys compounded his misjudgment by granting the title Prince of Dragonstone to his presumptive heir, Prince Aegon. A hush fell over the hall at those words, for all present knew that title had hitherto belonged to Prince Maegor. At the high table, Queen Visenya rose and stalked from the hall without the king’s leave. That night she mounted Vhagar and returned to Dragonstone, and it is written that when her dragon passed before the moon, that orb turned as red as blood.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: hitherto: hitherto
+
+    </div>
+
+- Aenys Targaryen did not seem to comprehend the extent to which he had roused the realm against him. Eager to win back the favor of the smallfolk, he decreed that the prince and princess would make a royal progress through the realm, no doubt thinking of the cheers that had greeted him everywhere he went on his own progress. Wiser perhaps than her father, Princess Rhaena asked his leave to bring her dragon, Dreamfyre, with them, but Aenys forbade it. As Prince Aegon had not yet ridden a dragon, the king feared that the lords and commons might think his son unmanly if they saw his wife on dragonback and him upon a palfrey.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: forbid: forbade
+
+    en: palfrey: palfrey
+
+    </div>
+
+- The Faithful were listening. Less than a fortnight later, as Septon Murmison was crossing the city in his litter, a group of Poor Fellows came swarming from an alley and hacked him to pieces with their axes. The Warrior’s Sons began to fortify the Hill of Rhaenys, turning the Sept of Remembrance into their citadel. With the Red Keep still years away from completion, the king decided that his manse atop Visenya’s Hill was too vulnerable and made plans to remove himself to Dragonstone with Queen Alyssa and their younger children. That proved a wise precaution. Three days before they were to sail, two Poor Fellows scaled the manse’s walls and broke into the king’s bedchamber. Only the timely intervention of the Kingsguard saved Aenys from an ignoble death.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: ignoble: ignoble
+
+    en: citadel: citadel
+
+    </div>
+
+- By the end of 41 AC, much of the realm was deep in the throes of a full-fledged rebellion against House Targaryen. The four false kings who had arisen on the death of Aegon the Conqueror now seemed like so many posturing fools against the threat posed by this new rising, for these rebels believed themselves soldiers of the Seven, fighting a holy war against godless tyranny.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: tyranny: tyranny
+
+    </div>
+
+- Thousands of Poor Fellows took to the roads, forcing travelers to declare whether they stood with “the gods or the abomination,” and remonstrating outside castle gates until their lords came forth to denounce the Targaryen king.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: remonstrate: remonstrating
+
+    en: abomination: abomination
+
+    </div>
+
+- The Kingsguard arrived from Dragonstone in the nonce. At the behest of the Dowager Queen, they took command of the thousands of Targaryen loyalists in the city and surrounded the Hill of Rhaenys. On Driftmark, the widowed Queen Alyssa proclaimed her own son Aegon the true king, but few heeded her call. The young prince, just shy of manhood, remained at Crakehall half a realm away, trapped in a castle surrounded by Poor Fellows and pious peasants, most of whom considered him an abomination.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: abomination: abomination
+
+    en: behest: behest
+
+    en: nonce: nonce
+
+    en: proclaim: proclaimed
+
+    </div>
+
+- The next morning, the king awoke, rising with the sun. When Maegor appeared on the walls of the Red Keep, standing between Alys Harroway and Tyanna of Pentos, the crowds cheered wildly, and the city erupted in celebration. But the revels died away when Maegor mounted Balerion and descended upon the Hill of Rhaenys, where seven hundred of the Warrior’s Sons were at their morning prayers in the fortified sept. As dragonfire set the building aflame, archers and spearmen waited outside for those who came bursting through the doors. It was said the screams of the burning men could be heard throughout the city, and a pall of smoke lingered over King’s Landing for days. Thus did the cream of the Warrior’s Sons meet their fiery end. Though other chapters remained in Oldtown, Lannisport, Gulltown, and Stoney Sept, the order would never again approach its former strength.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: pall: pall
+
+    </div>
+
+- King Aenys’s widow, Queen Alyssa, was present as well, with her younger sons, Viserys and Jaehaerys, and her daughter Alysanne. A visit from the Dowager Queen and Vhagar had persuaded her to leave her sanctuary on Driftmark and return to court, where Alyssa and her brothers and cousins of House Velaryon did homage to Maegor as the true king. The widowed queen was even compelled to join the other ladies of the court in disrobing His Grace and escorting him to the nuptial chamber to consummate his marriage, a bedding ceremony presided over by the king’s second wife, Alys Harroway. That task done, Alyssa and the other ladies took their leave of the royal bedchamber, but Alys remained, joining the king and his newest wife in a night of carnal lust.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: carnal: carnal
+
+    en: lust: lust
+
+    en: consummate: consummate
+
+    </div>
+
+- In Oldtown, the ancient High Septon died, and another was raised up in his place. Though he spoke no word against the king or his queens, the enmity between King Maegor and the Faith endured. Hundreds of Poor Fellows had been hunted down and slain, their scalps delivered to the king’s men for the bounty, but thousands more still roamed the woods and hedges and the wild places of the Seven Kingdoms, cursing the Targaryens with their every breath.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: enmity: enmity
+
+    en: slay: slain
+
+    en: bounty: bounty
+
+    </div>
+
+- After the death of her husband and her flight to Fair Isle, Rhaena Targaryen had acted quickly to protect her daughters. If Prince Aegon had truly been the king, by law his eldest daughter, Aerea, stood his heir, and might therefore claim to be the rightful Queen of the Seven Kingdoms…but Aerea and her sister, Rhaella, were barely a year old, and Rhaena knew that to trumpet such claims would be tantamount to condemning them to death. Instead, she dyed their hair, changed their names, and sent them from her, entrusting them to certain powerful allies, who would see them fostered in good homes by worthy men who would have no inkling of their true identities. Even their mother must not know where the girls were going, the princess insisted; what she did not know she could not reveal, even under torture.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: tantamount: tantamount
+
+    </div>
+
+- Maegor brought them together in the Red Keep one night to discuss his plan of battle. When they saw how few they were, and realized that no great lords were coming to join them, many lost heart, and Lord Hayford went so far as to urge His Grace to abdicate and take the black. His Grace ordered Hayford beheaded on the spot and continued the war council with his lordship’s head mounted on a lance behind the Iron Throne. All day the lords made plans, and late into the night. It was the hour of the wolf when at last Maegor allowed them to take their leave. The king remained behind, brooding on the Iron Throne as they departed. Lord Towers and Lord Rosby were the last to see His Grace.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: abdicate: abdicate
+
+    </div>

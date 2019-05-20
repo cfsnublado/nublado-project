@@ -401,3 +401,307 @@ project_name: English Reading
     en: abdicate: abdicate
 
     </div>
+
+- Jaehaerys the Conciliator is rightly honored in the annals of the Seven Kingdoms for his calm demeanor and even temper, but let no man think that the fire of the Targaryens did not burn in his veins. He showed it then. When Septon Mattheus finally paused for a breath, the king said, “I will accept chastisement from Her Grace my mother, but not from you. Hold your tongue, fat man. If another word passes your lips, I will have them sewn shut.”
+
+    <div markdown="1" class="tagged-entries">
+
+    en: chastisement: chastisement
+
+    </div>
+
+- Two sisters and a mother, the three queens were bound by blood and grief and suffering…and yet between them lay shadows old and new, growing darker by the day. The amity and unity of purpose that had enabled Jaehaerys, his sisters, and their mother to topple Maegor the Cruel had begun to fray, as long-simmering resentments and divisions made themselves felt. For the remainder of the regency the boy king and his little queen would find themselves deeply at odds with the King’s Hand and the Queen Regent, in a rivalry that would continue into Jaehaerys’s own reign and threaten to plunge the Seven Kingdoms back into war.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: lie: lay
+
+    en: amity: amity
+
+    en: reign: reign
+
+    </div>
+
+- All this changed when King Aenys died on Dragonstone and his brother, Maegor, returned from across the narrow sea to seize the Iron Throne. The new king had little love and less trust for any of his brother’s children, and he had his mother, the Dowager Queen Visenya, to enforce his will. Queen Alyssa’s household knights and servants were dismissed, together with the servants and companions of her children, and Jaehaerys and Alysanne were made wards of their great-aunt, the fearsome Visenya. Hostages in all but name, they spent their uncle’s reign being shuttled between Driftmark, Dragonstone, and King’s Landing at the will of others, until Visenya’s death in 44 AC offered Queen Alyssa an opportunity to escape, a chance she seized with alacrity, fleeing Dragonstone with Jaehaerys, Alysanne, and the blade Dark Sister.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: alacrity: alacrity
+
+    en: seize: seize
+
+    </div>
+
+- The lascivious details of the author’s erotic adventures need not concern us here. Our only interest is in the early part of her sordid tale, the story of her youth…for the alleged author of _A Caution for Young Girls_ is none other than Coryanne Wylde, one of the girls sent to Dragonstone as a companion to the little queen.
+
+    We have no way to ascertain the veracity of her story, nor even whether she was in truth the author of this infamous book (some argue plausibly that the text is the product of several hands, for the style of the prose varies greatly from episode to episode).
+
+    <div markdown="1" class="tagged-entries">
+
+    en: erotic: erotic
+
+    en: sordid: sordid
+
+    en: lascivious: lascivious
+
+    en: prose: prose
+
+    en: veracity: veracity
+
+    </div>
+
+- And here the tale grows even more tangled, for the identity of the man at the inn is a matter of some dispute, even amongst those who accept _A Caution for Young Girls_ to contain a modicum of truth
+
+    <div markdown="1" class="tagged-entries">
+
+    en: modicum: modicum
+
+    </div>
+
+- She was a fine singer and a skilled archer, but her great love was sailing. _The Wind Our Steed_ were the words of the Farmans of Fair Isle, who had sailed the western seas since the Dawn Age, and Lady Elissa embodied them. As a child, it was said that she spent more time at sea than upon the land. Her father’s crews used to laugh to see her climbing the rigging like a monkey. She sailed her own boat around Fair Isle at the age of four-and-ten, and by the time she was twenty she had voyaged as far north as Bear Island and as far south as the Arbor. Oftimes, to the horror of her lord father and lady mother, she spoke of her desire to take a ship beyond the western horizon to learn what strange and wondrous lands might lie on the far side of the Sunset Sea.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: embody: embodied
+
+    en: wondrous: wondrous
+
+    en: lie: lie
+
+    </div>
+
+- None of this was of great concern to the queen and her familiars so long as Marq Farman ruled in Faircastle, for his lordship was an amiable and good-natured man who loved all his children, his wayward daughter and weakling son included, and loved Rhaena Targaryen for loving them as well. Less than a fortnight after the queen and Androw Farman had celebrated the first anniversary of their union, however, Lord Marq died suddenly at his own table, choking to death upon a fish bone at the age of six-and-forty. And with his passing, Ser Franklyn became the Lord of Fair Isle.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: amiable: amiable
+
+    en: wayward: wayward
+
+    en: fortnight: fortnight
+
+    </div>
+
+- Ser Tyler Hill, Lord Lyman’s comely bastard son, was openly scornful of Androw, even whilst doing all he could to ingratiate himself to Rhaena herself, regaling her with tales of his exploits at the Battle Beneath the Gods Eye and showing her the scars he had taken there “in your Aegon’s service.” Lord Lyman himself began to express an unseemly interest in the three dragon eggs that the queen had brought from Fair Isle, wondering how and when they might be expected to hatch. His wife, Lady Jocasta, suggested privately that one or more of the eggs would make a fine gift, if Her Grace should wish to show her gratitude to House Lannister for taking her in. When that ploy proved unsuccessful, Lord Lyman offered to buy the eggs outright for a staggering sum of gold.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: comely: comely
+
+    en: scornful: scornful
+
+    en: ingratiate: ingratiate
+
+    en: ploy: ploy
+
+    </div>
+
+- Vexing as the issue of the king’s marriage was to Queen Alyssa and Lord Rogar, it must not be thought that it was the only matter that concerned them during their regency. Coin, or rather the lack of coin, was the Crown’s most pressing problem. King Maegor’s wars had been ruinously expensive, exhausting the royal treasury. To refill his coffers Maegor’s master of coin had raised existing taxes and imposed new ones, but these measures brought in less gold than anticipated and only served to deepen the anathema with which the lords of the realm regarded the king. Nor had the situation improved with the ascension of Jaehaerys. The young prince’s coronation and his mother’s Golden Wedding had both been splendid affairs that had done much to win him the love of lords and smallfolk alike, but all that had come at a cost. An even larger expense loomed ahead; Lord Rogar was determined to complete work on the Dragonpit before handing the city and the kingdom over to Jaehaerys, but the funds were lacking.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: vexing: vexing
+
+    en: regency: regency
+
+    en: anathema: anathema
+
+    </div>
+
+- Meanwhile, Queen Alysanne’s new ladies-in-waiting and companions had settled in on Dragonstone, and it soon became apparent that her mother’s hope that these Wise Women might persuade the little queen that her marriage was unwise and impious had gone seriously awry. Neither prayer, sermons, nor readings from _The Seven-Pointed Star_ could shake Alysanne Targaryen’s conviction that the gods had meant her to marry her brother Jaehaerys, to be his confidant and helpmate and the mother of his children. “He will be a great king,” she told Septa Ysabel, Lady Lucinda, and the others, “and I will be a great queen.” So firm was she in her belief, and so gentle and kindly and loving in all else, that the septa and the other Wise Women found they could not condemn her, and with every passing day they clove more to her side.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: awry: awry
+
+    en: impious: impious
+
+    </div>
+
+- This Lord Rogar denied vehemently. “Never. Do you take me for a usurper? I want only what is best for the Seven Kingdoms. No harm need come to Jaehaerys. We can send him to Oldtown, to the Citadel. He is a bookish boy, a maester’s chain will suit him.”
+
+    “Then who shall sit the Iron Throne?” demanded Lord Celtigar.
+
+    “Princess Aerea,” Lord Rogar answered at once. “There is a fire in her Jaehaerys does not have. She is young, but I can continue as her Hand, shape her, guide her, teach her all she must know. She has the stronger claim, her mother and father were King Aenys’s first and secondborn, Jaehaerys was fourth.”
+
+    <div markdown="1" class="tagged-entries">
+
+    en: vehemently: vehemently
+
+    </div>
+
+- In place of a frightened girl, the Baratheon men found themselves confronted by thirty armed septons under the command of the steward, Casper Straw. When Ser Orryn brandished a sword, Straw calmly informed him that twoscore of Lord Hightower’s knights were on their way (a lie, as it happened), whereupon the Baratheons surrendered. Under questioning, Ser Orryn confessed the entire plot: he was to deliver the girl to Storm’s End, where Lord Rogar planned to force her to confess that she was the actual Princess Aerea, not Rhaella. Then he meant to name her queen.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: brandish: brandished
+
+    </div>
+
+- Here is a quandary every student of history must face. When looking back upon the things that happened in years past, we can say, this and this and this were the causes of what occurred. When looking back on things that did not happen, however, we have only surmise.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: quandary: quandary
+
+    en: surmise: surmise
+
+    </div>
+
+- Though the king was happy in his queen, and the realm happy with their marriage, Jaehaerys had not been wrong when he foresaw that he would face a time of testing. Having remade the council, reconciled Lord Rogar and Queen Alyssa, and imposed new taxes to restore the Crown’s coffers, he was faced with what would prove to be his thorniest problem yet: his sister Rhaena.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: foresee: foresaw
+
+    en: reconcile: reconciled
+
+    en: thorny: thorniest
+
+    </div>
+
+- Elissa Farman departed for Driftmark the next morning. From there she took ship across the narrow sea to Pentos. Thereafter she made her way overland to Braavos, whose shipwrights were far famed, but Rhaena Targaryen and Princess Aerea had no notion of her final destination. The queen believed she had gone no farther than Driftmark. Lady Elissa had good reason for wanting more distance between her and the queen, however. A fortnight after her departure, Ser Merrell Bullock, still commander of the castle garrison, brought three terrified grooms and the keeper of the dragon yard into Rhaena’s presence. Three dragon eggs were missing, and days of searching had not turned them up. After questioning every man who had access to the dragons closely, Ser Merrell was convinced that Lady Elissa had made off with them.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: fortnight: fortnight
+
+    en: garrison: garrison
+
+    </div>
+
+-  Only then did Rhaena Targaryen mount Dreamfyre to fly to the Red Keep and inform her brother of what had transpired. “Elissa had no love for dragons,” she told the king. “It was gold she wanted, gold to build a ship. She will sell the eggs. They are worth—”
+
+    “—a fleet of ships.” Jaehaerys had received his sister in his solar, with only Grand Maester Benifer present to bear witness to what was said. “If those eggs should hatch, there will be another dragonlord in the world, one not of our own house.”
+
+    “They may not hatch,” Benifer said. “Not away from Dragonstone. The heat…it is known, some dragon eggs simply turn to stone.”
+
+    “Then some spicemonger in Pentos will find himself possessed of three very costly stones,” Jaehaerys said. “Elsewise…the birth of three young dragons is not a thing that can easily be kept secret. Whoever has them will want to crow. We must have eyes and ears in Pentos, Tyrosh, Myr, all the Free Cities. Offer rewards for any word of dragons.”
+
+    <div markdown="1" class="tagged-entries">
+
+    en: transpire: transpired
+
+    en: crow: crow
+
+    en: egg: eggs
+
+    </div>
+
+- We know now that Lady Elissa made her way to Braavos after Pentos, though not before taking on a new name. Having been driven from Fair Isle and disowned by her brother Lord Franklyn, she took on a bastard name of her own devising, calling herself Alys Westhill. Under that name, she secured an audience with the Sealord of Braavos. The Sealord’s menagerie was far famed, and he was glad to buy the dragon eggs. The gold she received in return she entrusted to the Iron Bank, and used it to finance the building of the _Sun Chaser_, the ship she had dreamed of for many a year.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: menagerie: menagerie
+
+    en: entrust: entrusted
+
+    en: bastard: bastard
+
+    </div>
+
+- Androw Farman was located at last in the Chamber of the Painted Table, a longsword clutched in his grasp. He made no attempt to deny the poisonings. Instead he boasted. “I brought them cups of wine, and they drank. They thanked me, and they drank. Why not? A cupbearer, a serving man, that’s how they saw me. Androw the sweet. Androw the jape. What could I do, but fall off the dragon? Well, I could have done a lot of things. I could have been a lord. I could have made laws and been wise and given you counsel. I could have killed your enemies, as easily as I killed your friends. _I could have given you children._”
+
+    Rhaena Targaryen did not deign to reply to him. Instead she spoke to her guards, saying, “Take him and geld him, but staunch the wound. I want his cock and balls fried up and fed to him. Do not let him die until he has eaten every bite.”
+
+    “No,” Androw Farman said, as they moved around the Painted Table to grasp him. “My wife can fly, and so can I.” And so saying, he slashed ineffectually at the nearest man, backed to the window behind him, and leapt out. His flight was a short one: downward, to his death. Afterward Rhaena Targaryen had his body hacked to pieces and fed to her dragons.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: cock: cock
+
+    en: boast: boasted
+
+    en: jape: jape
+
+    en: geld: geld
+
+    en: staunch: staunch
+
+    en: leap: leapt
+
+    </div>
+
+- The dragons did not, in the end, fight, though there was much hissing and snapping as Rhaena flung herself off Dreamfyre and stormed into Maegor’s Holdfast, shouting for her brother and her sister. The source of her fury was soon known. Princess Aerea was gone. She had fled Dragonstone as dawn broke, stealing into the yards and claiming a dragon for her own. And not just any dragon. “Balerion!” Rhaena exclaimed. “She took Balerion, the mad child. No hatchling for her, no, not her, she had to have the Black Dread. Maegor’s dragon, the beast that slew her father. Why him, if not to pain me? What did I give birth to? What kind of beast? I ask you, what did I give birth to?”
+
+    <div markdown="1" class="tagged-entries">
+
+    en: slay: slew
+
+    en: hatchling: hatchling
+
+    </div>
+
+- With fewer men marching off to war, more remained to work the land. Grain prices fell steadily throughout his reign, as more acres came under the plough. Fish became notably cheaper, even for common men, as the fishing villages along the coasts grew more prosperous and more boats put to sea. New orchards were planted everywhere from the Reach to the Neck. Lamb and mutton became more plentiful and wool finer as shepherds increased the size of their flocks. Trade increased tenfold, despite the vicissitudes of wind, weather, and wars and the disruptions they caused from time to time. The crafts flourished as well; farriers and blacksmiths, stonemasons, carpenters, millers, tanners, weavers, felters, dyers, brewers, vintners, goldsmiths and silversmiths, bakers, butchers, and cheesemakers all enjoyed a prosperity hitherto unknown west of the narrow sea.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: hitherto: hitherto
+
+    en: vicissitude: vicissitudes
+
+    en: prosperity: prosperity
+
+    </div>
+
+- The new Hand of the King departed within days of his elevation, taking ship for Braavos to consult with the Sealord and the Iron Bank. He was accompanied by Ser Gyles Morrigen and six guardsmen, but only Septon Barth took part in the discussions. The purpose of his mission was a grave one: war or peace. King Jaehaerys had great admiration for the city of Braavos, Barth told the Sealord; for that reason, he had not come himself, understanding as he did the Free City’s bitter history with Valyria and its dragonlords. If his Hand was not able to settle the matter at hand amicably, however, His Grace would have no choice but to come himself on Vermithor for what Barth termed “vigorous discussions.” When the Sealord inquired as to what the matter at hand might be, the septon gave him a sad smile and said, “Is that how this must be played? We are speaking of three eggs. Need I say more?”
+
+    <div markdown="1" class="tagged-entries">
+
+    en: amicable: amicably
+
+    en: vigorous: vigorous
+
+    </div>
+
+- The longer the queen stayed, the more Lord Alaric warmed to her, and in time Alysanne came to realize that not everything that was said of him was true. He was careful with his coin, but not niggardly; he was not humorless at all, though his humor had an edge to it, sharp as a knife; his sons and daughter and the people of Winterfell seemed to love him well enough. Once the initial frost had thawed, his lordship took the queen hunting after elk and wild boar in the wolfswood, showed her the bones of a giant, and allowed her to rummage as she pleased through his modest castle library. He even deigned to approach Silverwing, though warily. The women of Winterfell were taken by the queen’s charms as well, once they grew to know her; Her Grace became particularly close with Lord Alaric’s daughter, Alarra. When the rest of the queen’s party finally turned up at the castle gates, after struggling through trackless bogs and summer snows, the meat and mead flowed freely, despite the king’s absence.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: niggardly: niggardly
+
+    en: deign: deigned
+
+    en: rummage: rummage
+
+    </div>
+
+- The men of the Night’s Watch were as thunderstruck by the queen’s dragon as the people of White Harbor had been, though the queen herself noted that Silverwing “does not like this Wall.” Though it was summer and the Wall was weeping, the chill of the ice could still be felt whenever the wind blew, and every gust would make the dragon hiss and snap. “Thrice I flew Silverwing high above Castle Black, and thrice I tried to take her north beyond the Wall,” Alysanne wrote to Jaehaerys, “but every time she veered back south again and refused to go. Never before has she refused to take me where I wished to go. I laughed about it when I came down again, so the black brothers would not realize anything was amiss, but it troubled me then and it troubles me still.”
+
+    <div markdown="1" class="tagged-entries">
+
+    en: thrice: thrice
+
+    en: veer: veered
+
+    en: trouble: troubled, troubles
+
+    en: thunderstruck: thunderstruck
+
+    </div>
+
+- It would take eight years to raise the new castle, which would bear the name of Deep Lake. Outside its main hall, a statue of Alysanne Targaryen stands to this very day. The Nightfort was abandoned even before Deep Lake was completed, as the queen had wished. Lord Commander Burley also renamed Snowgate castle in her honor, as Queensgate.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: bear: bear
+
+    en: abandon: abandoned
+
+    en: raise: raise
+
+    </div>
+
+- It was a time for warm embraces, for smiles, for toasts and reconciliations, for renewing old friendships and making new ones, for laughter and kisses. It was a good time, a golden autumn, a time of peace and plenty.
+
+    But winter was coming.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: embrace: embraces
+
+    en: reconciliation: reconciliations
+
+    </div>
+
+- 

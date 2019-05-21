@@ -13,12 +13,15 @@ inline-template
   class="ui small button"
   @click.prevent="toggleEntryInfoVisible"
   >
-  <span v-if="!entryInfoVisible"> 
+
+  <span v-if="!entryInfoVisible" v-cloak> 
   [[ msgShowEntryInfo ]]
   </span>
-  <span v-else> 
+
+  <span v-else v-cloak> 
   [[ msgHideEntryInfo ]]
   </span>
+
   </a>
 
   <div 

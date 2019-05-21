@@ -7,18 +7,18 @@ init-msg-hide-entry-info="{% trans 'label_hide_details' %}"
 inline-template
 >
 
-<div style="margin-top: 10px;">
+<div style="margin-top: 10px;" v-cloak>
   <a 
   href="#" 
   class="ui small button"
   @click.prevent="toggleEntryInfoVisible"
   >
 
-  <span v-if="!entryInfoVisible" v-cloak> 
+  <span v-if="!entryInfoVisible"> 
   [[ msgShowEntryInfo ]]
   </span>
 
-  <span v-else v-cloak> 
+  <span v-else> 
   [[ msgHideEntryInfo ]]
   </span>
 

@@ -51,11 +51,9 @@ trigger-classes="ui mini icon button"
 
 </dropdown>
 
-<div 
-v-if="vocabEntries"
-id="vocab-entry-tag-group" 
-class="vocab-entry-tag-group ui labels"
->
+<div v-show="processing"><i class="fas fa-spin fa-spinner"></i></div>
+
+<div id="vocab-entry-tag-group" class="vocab-entry-tag-group ui labels">
 
 <tag
   v-for="(tag, index) in vocabEntries"
@@ -67,10 +65,6 @@ class="vocab-entry-tag-group ui labels"
 </tag>
 
 </div>
-<div v-else>
-{% trans 'label_no_vocab_entries' %}
-</div>
-
 </div>
 </div>
 

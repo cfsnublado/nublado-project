@@ -49,7 +49,11 @@ trigger-classes="ui mini icon twitter button"
 
 <div v-show="processing"><i class="fas fa-spin fa-spinner"></i></div>
 
-<div id="vocab-entry-tag-group" class="vocab-entry-tag-group ui labels">
+<div 
+id="vocab-entry-tag-group" 
+class="vocab-entry-tag-group ui labels"
+v-show="!processing"
+>
 
 <tag
   v-for="(tag, index) in vocabEntries"
@@ -66,7 +70,6 @@ trigger-classes="ui mini icon twitter button"
 
 <section
 v-if="pageCount > 1"
-v-cloak
 >
 <nav role="pagination">
 

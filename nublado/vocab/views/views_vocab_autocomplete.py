@@ -4,6 +4,24 @@ from core.views import AutocompleteMixin
 from ..models import VocabContextEntry, VocabEntry, VocabSource
 
 
+class VocabEntryAutocompleteView(AutocompleteMixin, View):
+    search_model = VocabEntry
+    search_field = 'entry'
+    id_attr = 'id'
+    value_attr = 'entry'
+    extra_attr = {'language': 'language'}
+
+    def get_queryset(self, **kwargs):
+        qs = super(VocabEntryAutocompleteView, self).get_queryset(**kwargs)
+        language = self.kwargs.get('language', None)
+        if language:
+            qs = qs.filter(language=language)
+        return qs
+
+    def set_label_attr(self, obj):
+        return '{0} - {1}'.format(obj.language, obj.entry)
+
+
 class VocabSourceAutocompleteView(AutocompleteMixin, View):
     search_model = VocabSource
     search_field = 'name'
@@ -67,21 +85,3 @@ class VocabSourceEntryAutocompleteView(AutocompleteMixin, View):
         for key, value in self.extra_attr.items():
             extra_dict[key] = obj[value]
         return extra_dict
-
-
-class VocabEntryAutocompleteView(AutocompleteMixin, View):
-    search_model = VocabEntry
-    search_field = 'entry'
-    id_attr = 'id'
-    value_attr = 'entry'
-    extra_attr = {'language': 'language'}
-
-    def get_queryset(self, **kwargs):
-        qs = super(VocabEntryAutocompleteView, self).get_queryset(**kwargs)
-        language = self.kwargs.get('language', None)
-        if language:
-            qs = qs.filter(language=language)
-        return qs
-
-    def set_label_attr(self, obj):
-        return '{0} - {1}'.format(obj.language, obj.entry)

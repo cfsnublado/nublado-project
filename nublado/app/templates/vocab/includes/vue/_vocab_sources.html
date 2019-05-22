@@ -1,0 +1,96 @@
+{% load i18n %}
+
+<vocab-sources
+init-vocab-sources-url="{{ vocab_sources_url }}"
+init-vocab-source-url="{{ vocab_source_url }}"
+inline-template
+>
+
+<div>
+
+<div class="panel" style="min-height: 300px;">
+<div class="panel-body">
+
+<div v-show="processing"><i class="fas fa-spin fa-spinner"></i></div>
+
+<div 
+class="vocab-sources"
+v-cloak
+>
+
+<div
+v-for="(entryContext, index) in vocabContexts"
+:key="entryContext.vocab_context_id"
+>
+
+</div>
+
+</div>
+</div>
+</div>
+
+<section
+v-if="pageCount > 1"
+>
+<nav role="pagination">
+
+<ul class="cd-pagination">
+
+<li v-if="previousUrl">
+<a
+@click.prevent="getVocabSources(pageNum - 1)"
+>
+{% trans 'label_previous' %}
+</a>
+</li>
+
+<li v-else>
+<a class="disabled" href="#">{% trans 'label_previous' %}</a>
+</li>
+
+<li 
+v-for="page in pageCount"
+:class="[ (pageNum != page) ? 'page-num' : 'current-page' ]"
+>
+
+<a 
+v-if="pageNum == page" 
+class="current" 
+href="#"
+>
+[[ page ]]
+</a>
+<a 
+v-else
+@click.prevent="getVocabSources(page)"
+>
+[[ page ]]
+</a>
+
+</li>
+
+<li v-if="nextUrl">
+<a
+@click.prevent="getVocabSources(pageNum + 1)"
+>
+{% trans 'label_next' %}
+</a>
+</li>
+
+<li v-else>
+<a 
+class="disabled" 
+href="#"
+>
+{% trans 'label_next' %}
+</a>
+</li>
+
+</ul>
+</nav>
+
+</section>
+
+</div>
+
+</vocab-sources>

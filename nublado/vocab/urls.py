@@ -19,7 +19,7 @@ from .views.views_vocab_project_auth import (
     VocabProjectSourcesView, VocabProjectUpdateView
 )
 from .views.views_vocab_source import (
-    VocabSourceDashboardView, VocabSourceEntryView
+    VocabSourceDashboardView, VocabSourceEntryView, VocabSourcesView
 )
 from .views.views_vocab_source_auth import (
     VocabSourceCreateView, VocabSourceDeleteView, VocabSourceExportJsonView,
@@ -167,6 +167,11 @@ urlpatterns = [
         'entry/<slug:vocab_entry_language>/<slug:vocab_entry_slug>/',
         VocabEntryView.as_view(),
         name='vocab_entry'
+    ),
+    path(
+        'sources/',
+        VocabSourcesView.as_view(),
+        name='vocab_sources'
     ),
     path(
         'source/<int:vocab_source_pk>-<slug:vocab_source_slug>/',

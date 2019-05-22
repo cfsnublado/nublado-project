@@ -25,5 +25,7 @@ class VocabSourceEntryView(
     template_name = '{0}/vocab_source_entry.html'.format(APP_NAME)
 
 
-class VocabSourcesView(VocabSourceSearchMixin, TemplateView):
-    pass
+class VocabSourcesView(
+    VocabSourceSearchMixin, TemplateView
+):
+    template_name = '{0}/vocab_sources.html'.format(APP_NAME)

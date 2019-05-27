@@ -295,7 +295,7 @@ const EntrySearch = {
     search(val) {
       clearTimeout(this.searchTimerId)
       this.isOpen = false
-      url = this.searchUrl + "?search_entry=" + this.searchTerm + "&search_language=" + this.language
+      url = this.searchUrl + "?search_entry=" + encodeURIComponent(this.searchTerm) + "&search_language=" + this.language
       window.location.replace(url);
     }
   },
@@ -322,7 +322,7 @@ const SourceEntrySearch = {
     search(val) {
       clearTimeout(this.searchTimerId)
       this.isOpen = false
-      url = this.searchUrl + '?search_entry=' + this.searchTerm + '&search_language=' + this.language + '&search_source=' + this.sourceId
+      url = this.searchUrl + '?search_entry=' + encodeURIComponent(this.searchTerm) + '&search_language=' + this.language + '&search_source=' + this.sourceId
       window.location.replace(url);
     }
   },
@@ -391,13 +391,13 @@ const SourceSearch = {
   mixins: [BaseSearch],
   methods: {
     setResult(result) {
-      this.searchTerm = result
+      this.searchTerm =result
       this.search()
     },
     search() {
       clearTimeout(this.searchTimerId)
       this.isOpen = false
-      url = this.searchUrl + "?source=" + this.searchTerm
+      url = this.searchUrl + "?source=" + encodeURIComponent(this.searchTerm)
       window.location.replace(url);
     },
   },

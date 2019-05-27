@@ -128,7 +128,8 @@ class VocabSourceSearchMixin(object):
                 )
                 return self.search_success(**kwargs)
             except VocabSource.DoesNotExist:
-                pass
+                print('SHITTTTTT')
+                print(self.search_term)
         return super(VocabSourceSearchMixin, self).dispatch(request, *args, **kwargs)
 
     def get_search_query_kwargs(self):

@@ -674,3 +674,60 @@ const BaseTagbox = {
     }
   }
 }
+
+const BaseSymbolKey = {
+  props: {
+    initSymbol: {
+      type: String,
+      default: ''
+    }
+  },
+  data() {
+    return {
+      symbol: this.initSymbol
+    }
+  },
+  methods: {
+    displaySymbol() {
+      this.$emit('display-symbol', (this.symbol))
+    }
+  },
+  template: `
+    <a 
+    href="#" 
+    class="ui tiny basic icon button"
+    :title="symbol"
+    @click.prevent="displaySymbol"
+    >
+    {{ symbol }}
+    </a>
+  `
+}
+
+const BaseSymbolKeypad = {
+  props: {
+    initDisplayEl: {
+      type: String,
+      default: "#keypad-display"
+    }
+  },
+  data() {
+    return {
+      display: '',
+      displayEl: this.initDisplayEl
+    }
+  },
+  methods: {
+    onDisplaySymbol(symbol) {
+      var symbolInput = document.querySelector(this.displayEl)
+      var caretPos = symbolInput.selectionStart
+      var val = this.display.substring(0, caretPos) + symbol + this.display.substring(caretPos)
+      this.display = val
+      caretPos = caretPos + symbol.length;
+      this.$nextTick(() => {
+        symbolInput.focus()
+        symbolInput.setSelectionRange(caretPos, caretPos)
+      })
+    },
+  }
+}

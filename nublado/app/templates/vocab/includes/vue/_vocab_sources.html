@@ -8,9 +8,6 @@ inline-template
 
 <div>
 
-<div class="panel" style="min-height: 300px;">
-<div class="panel-body">
-
 <div v-show="processing"><i class="fas fa-spin fa-spinner"></i></div>
 
 <div 
@@ -19,14 +16,26 @@ v-cloak
 >
 
 <div
-v-for="(entryContext, index) in vocabContexts"
-:key="entryContext.vocab_context_id"
+v-for="(source, index) in vocabSources"
+:key="source.id"
 >
 
+<div class="panel vocab-source-panel">
+<div class="panel-body">
+
+<div>
+<a href="#">[[ source.vocab_project ]]</a>
+</div>
+
+<div class="vocab-source-name">
+[[ source.name ]]
 </div>
 
 </div>
 </div>
+
+</div>
+
 </div>
 
 <section

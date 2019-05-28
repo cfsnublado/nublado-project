@@ -1,32 +1,40 @@
 
-// Instantiate components
+// app components
 Vue.component('ajax-delete', AjaxDelete)
 Vue.component('alert-message', AlertMessage)
 Vue.component('dropdown', Dropdown)
 Vue.component('modal', Modal)
 Vue.component('confirmation-modal', ConfirmationModal)
-Vue.component('source-search', SourceSearch)
-Vue.component('source-entry-search', SourceEntrySearch)
-Vue.component('entry-search', EntrySearch)
-Vue.component('entry-form', EntryForm)
-Vue.component('context-form', ContextForm)
-Vue.component('project-form', ProjectForm)
-Vue.component('context-tagger', ContextTagger)
-Vue.component('entry-tag-search', EntryTagSearch)
-Vue.component('entry-tagbox', EntryTagbox)
-Vue.component('entry-instance-tagbox', EntryInstanceTagbox)
-Vue.component('entry-toggle-tag', EntryToggleTag)
-Vue.component('context-tag-panel', ContextTagPanel)
 Vue.component('tag', Tag)
 Vue.component('toggle-tag', ToggleTag)
 Vue.component('delete-tag', DeleteTag)
+Vue.component('audio-player', AudioPlayer)
+
+// vocab components
+Vue.component('vocab-sources', VocabSources)
+Vue.component('source-search', SourceSearch)
+Vue.component('source-entry-search', SourceEntrySearch)
+
+Vue.component('vocab-entries', VocabEntries)
+Vue.component('entry-search', EntrySearch)
+Vue.component('entry-info', EntryInfo)
+Vue.component('entry-toggle-tag', EntryToggleTag)
+Vue.component('entry-tag-search', EntryTagSearch)
+Vue.component('entry-tagbox', EntryTagbox)
+Vue.component('entry-instance-tagbox', EntryInstanceTagbox)
+
+Vue.component('vocab-contexts', VocabContexts)
+Vue.component('vocab-entry-context', VocabEntryContext)
+Vue.component('context-tag-panel', ContextTagPanel)
+Vue.component('context-tagger', ContextTagger)
+
+Vue.component('entry-form', EntryForm)
+Vue.component('context-form', ContextForm)
+Vue.component('project-form', ProjectForm)
+
 Vue.component('ipa-symbol-key', IpaSymbolKey)
 Vue.component('ipa-symbol-keypad', IpaSymbolKeypad)
-Vue.component('entry-info', EntryInfo)
-Vue.component('vocab-entries', VocabEntries)
-Vue.component('vocab-entry-context', VocabEntryContext)
-Vue.component('vocab-contexts', VocabContexts)
-Vue.component('audio-player', AudioPlayer)
+
 Vue.use(ModalPlugin)
 
 VueScrollTo.setDefaults({

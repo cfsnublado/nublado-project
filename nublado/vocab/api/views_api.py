@@ -171,7 +171,9 @@ class VocabSourceViewSet(
     lookup_field = 'pk'
     lookup_url_kwarg = 'pk'
     serializer_class = VocabSourceSerializer
-    queryset = VocabSource.objects.prefetch_related('vocab_contexts')
+    permission_classes = [ReadWritePermission]
+    pagination_class = SmallPagination
+    queryset = VocabSource.objects.prefetch_related('vocab_project')
 
 
 class NestedVocabSourceViewSet(

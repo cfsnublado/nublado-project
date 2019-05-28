@@ -3,6 +3,8 @@ from django.views.generic import (
     TemplateView
 )
 
+from core.views import ObjectSessionMixin
+
 from .views_mixins import (
     VocabEntryMixin, VocabSourceEntrySearchMixin, VocabSourceMixin,
     VocabSourceSearchMixin, VocabSourceSessionMixin
@@ -26,6 +28,7 @@ class VocabSourceEntryView(
 
 
 class VocabSourcesView(
-    VocabSourceSearchMixin, TemplateView
+    ObjectSessionMixin, VocabSourceSearchMixin,
+    TemplateView
 ):
     template_name = '{0}/vocab_sources.html'.format(APP_NAME)

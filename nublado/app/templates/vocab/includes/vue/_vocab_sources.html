@@ -2,13 +2,8 @@
 
 <vocab-sources
 init-vocab-sources-url="{{ vocab_sources_url }}"
-init-vocab-source-url="{{ vocab_source_url }}"
 inline-template
 >
-
-<div>
-
-<div v-show="processing"><i class="fas fa-spin fa-spinner"></i></div>
 
 <div 
 class="vocab-sources"
@@ -16,25 +11,37 @@ v-cloak
 >
 
 <div
-v-for="(source, index) in vocabSources"
-:key="source.id"
+v-for="(vocabSource, index) in vocabSources"
+:key="vocabSource.id"
+>
+
+<vocab-source
+:init-source=vocabSource
+init-source-url="{{ vocab_source_url }}"
+inline-template
 >
 
 <div class="panel vocab-source-panel">
 <div class="panel-body">
 
 <div>
-<a href="#">[[ source.vocab_project ]]</a>
+<a href="#">[[ source.project ]]</a>
 </div>
 
-<div class="vocab-source-name">
+<div>
+<a
+class="vocab-source-name"
+href="#"
+@click.prevent="selectSource"
+>
 [[ source.name ]]
+</a>
 </div>
 
 </div>
 </div>
 
-</div>
+</vocab-source>
 
 </div>
 

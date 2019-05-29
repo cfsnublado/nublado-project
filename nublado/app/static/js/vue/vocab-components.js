@@ -698,6 +698,34 @@ const VocabSources = {
   }
 }
 
+const VocabSource = {
+  props: {
+    initSource: {
+      type: Object,
+      required: true
+    },
+    initSourceUrl: {
+      type: String,
+      default: ''
+    }
+  },
+  data() {
+    return {
+      source: this.initSource
+    }
+  },
+  methods: {
+    selectSource() {
+      if (this.initSourceUrl) {
+        this.sourceUrl = this.initSourceUrl
+          .replace(0, this.source.id)
+          .replace('zzz', this.source.slug)
+        window.location.replace(this.sourceUrl)
+      }
+    }
+  }
+}
+
 const SourceEntrySearch = {
   mixins: [BaseLanguageSearch],
   props: {

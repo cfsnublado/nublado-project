@@ -12,6 +12,7 @@ Vue.component('audio-player', AudioPlayer)
 
 // vocab components
 Vue.component('vocab-sources', VocabSources)
+Vue.component('vocab-source', VocabSource)
 Vue.component('source-search', SourceSearch)
 Vue.component('source-entry-search', SourceEntrySearch)
 

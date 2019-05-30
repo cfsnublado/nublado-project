@@ -639,7 +639,8 @@ const ContextTagPanel = {
 const VocabSources = {
   mixins: [
     AjaxProcessMixin,
-    PaginationMixin
+    PaginationMixin,
+    EditComponent
   ],
   props: {
     initVocabSourcesUrl: {
@@ -699,6 +700,7 @@ const VocabSources = {
 }
 
 const VocabSource = {
+  mixins: [EditComponent],
   props: {
     initSource: {
       type: Object,

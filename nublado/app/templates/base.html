@@ -24,6 +24,10 @@
 
 <style>
 
+.panel-close-icon {
+  font-size: 18px;
+}
+
 .vocab-entry-info ul {
   list-style: none;
 }
@@ -192,10 +196,20 @@ ref="sidebarNav"
   <li class="nav-item">
   <a
   id="sidebar-nav-vocab-entries" 
-  class="nav-link" 
+  class="nav-link {% block vocab_entries_link_active %}{% endblock vocab_entries_link_active %}" 
   href="{% url 'vocab:vocab_entries' %}">
   <i class="nav-link-icon fas fa-language fa-fw"></i>
   {% trans "label_vocabulary" %}
+  </a>
+  </li>
+
+  <li class="nav-item">
+  <a
+  id="sidebar-nav-vocab-sources" 
+  class="nav-link {% block vocab_sources_link_active %}{% endblock vocab_sources_link_active %}" 
+  href="{% url 'vocab:vocab_sources' %}">
+  <i class="nav-link-icon fas fa-book fa-fw"></i>
+  {% trans "label_sources" %}
   </a>
   </li>
 

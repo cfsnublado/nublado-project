@@ -10,6 +10,20 @@ Implemented components are declared in app-components.js.
 
 /** General mixins **/
 
+const AdminMixin = {
+  props: {
+    initIsAdmin: {
+      type: Boolean,
+      default: false
+    },
+  },
+  data() {
+    return {
+      isAdmin: this.initIsAdmin
+    }
+  },
+}
+
 const AjaxProcessMixin = {
   data() {
     return {
@@ -163,6 +177,35 @@ const UrlMixin = {
 }
 
 /** Mixins that app components are based on. **/
+
+const BaseModel = {
+  props: {
+    initViewUrl: {
+      type: String,
+      default: ''
+    },
+    initEditUrl: {
+      type: String,
+      default: ''
+    },
+    initDeleteUrl: {
+      type: String,
+      default: ''
+    }
+  },
+  data() {
+    return {
+      viewUrl: this.initViewUrl,
+      editUrl: this.initEditUrl,
+      deleteUrl: this.initDeleteUrl
+    }
+  },
+  methods: {
+    view() {},
+    edit() {},
+    delete() {}
+  }
+}
 
 /** Message **/
 

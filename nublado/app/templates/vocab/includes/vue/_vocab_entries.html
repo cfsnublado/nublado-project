@@ -1,8 +1,8 @@
 {% load i18n %}
 
 <vocab-entries
+:init-is-admin="{{ user.is_admin|yesno:'true,false' }}"
 init-vocab-entries-url="{{ vocab_entries_url }}"
-init-vocab-entry-url="{{ vocab_entry_url }}"
 inline-template
 >
 
@@ -49,22 +49,59 @@ trigger-classes="ui mini icon twitter button"
 
 <div v-show="processing"><i class="fas fa-spin fa-spinner"></i></div>
 
+<div v-if="isAdmin">
+
 <div 
 id="vocab-entry-tag-group" 
 class="vocab-entry-tag-group ui labels"
 v-show="!processing"
 >
 
-<tag
+<delete-tag
   v-for="(tag, index) in vocabEntries"
   :key="tag.id"
-  :init-id="index"
+  :init-id="tag.id"
   :init-value="tag.entry"
+  init-confirmation-id="delete-entry"
   @tag-select="entrySelected(tag)"
+>
+</delete-tag>
+
+</div>
+
+</div>
+
+<div v-else>
+
+<div 
+id="vocab-entry-tag-group" 
+class="vocab-entry-tag-group ui labels"
+v-show="!processing"
+>
+
+<vocab-entry
+v-for="(vocabEntry, index) in vocabEntries"
+:key="vocabEntry.id"
+:init-is-admin="isAdmin"
+:init-entry="vocabEntry"
+init-view-url="{{ vocab_entry_url }}"
+inline-template
+>
+
+<tag
+  :key="entry.id"
+  :init-id="entry.id"
+  :init-value="entry.entry"
+  @tag-select="view"
 >
 </tag>
 
+</vocab-entry>
+
 </div>
+
+</div>
+
 </div>
 </div>
 

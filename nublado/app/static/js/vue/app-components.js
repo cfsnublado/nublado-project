@@ -1,16 +1,3 @@
-const EditComponent = {
-  props: {
-    initCanEdit: {
-      type: Boolean,
-      default: false
-    },
-  },
-  data() {
-    return {
-      canEdit: this.initCanEdit
-    }
-  },
-}
 
 const AjaxDelete = {
   mixins: [AjaxProcessMixin],

@@ -2012,7 +2012,7 @@ Kaladin casi alcanzó a oír a Elhokar balbuciendo las palabras.
 
     es: resplandeciente: resplandeciente
 
-    en: aluvión: aluvión
+    es: aluvión: aluvión
 
     es: tenebroso: tenebroso
 

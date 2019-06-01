@@ -1,7 +1,7 @@
 {% load i18n %}
 
 <vocab-sources
-:init-can-edit="true"
+:init-is-admin="{{ user.is_admin|yesno:'true,false' }}"
 init-vocab-sources-url="{{ vocab_sources_url }}"
 inline-template
 >
@@ -17,16 +17,16 @@ v-for="(vocabSource, index) in vocabSources"
 >
 
 <vocab-source
-:init-can-edit="canEdit"
-:init-source=vocabSource
-init-source-url="{{ vocab_source_url }}"
+:init-is-admin="isAdmin"
+:init-source="vocabSource"
+init-view-url="{{ vocab_source_url }}"
 inline-template
 >
 
 <div class="panel vocab-source-panel">
 <div class="panel-body">
 
-<div v-if="canEdit">
+<div v-if="isAdmin">
 <i class="panel-close-icon fas fa-times"></i>
 </div>
 
@@ -38,7 +38,7 @@ inline-template
 <a
 class="vocab-source-name"
 href="#"
-@click.prevent="selectSource"
+@click.prevent="view"
 >
 [[ source.name ]]
 </a>

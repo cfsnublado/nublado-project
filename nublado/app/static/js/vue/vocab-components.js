@@ -3,7 +3,8 @@
 const VocabEntries = {
   mixins: [
     AjaxProcessMixin,
-    PaginationMixin
+    PaginationMixin,
+    AdminMixin
   ],
   props: {
     initLanguage: {
@@ -13,17 +14,12 @@ const VocabEntries = {
     initVocabEntriesUrl: {
       type: String,
       default: ''
-    },
-    initVocabEntryUrl: {
-      type: String,
-      default: ''
     }
   },
   data() {
     return {
       language: this.initLanguage,
       vocabEntriesUrl: this.initVocabEntriesUrl,
-      vocabEntryUrl: '',
       vocabEntries: null
     }
   },
@@ -70,16 +66,39 @@ const VocabEntries = {
     setLanguage(language) {
       this.language = language
       this.getVocabEntries()
-    },
-    entrySelected(entry) {
-       this.vocabEntryUrl = this.initVocabEntryUrl
-        .replace('xx', entry.language)
-        .replace('zzz', entry.slug)
-      window.location.replace(this.vocabEntryUrl)     
     }
   },
   created() {
     this.getVocabEntries()
+  }
+}
+
+const VocabEntry = {
+  mixins: [
+    AdminMixin,
+    BaseModel
+  ],
+  props: {
+    initEntry: {
+      type: Object,
+      required: true
+    },
+  },
+  data() {
+    return {
+      entry: this.initEntry
+    }
+  },
+  methods: {
+    view() {
+      if (this.initViewUrl) {
+        this.viewUrl = this.initViewUrl
+          .replace('xx', this.entry.language)
+          .replace('zzz', this.entry.slug)
+
+        window.location.replace(this.viewUrl)
+      }
+    }
   }
 }
 
@@ -640,7 +659,7 @@ const VocabSources = {
   mixins: [
     AjaxProcessMixin,
     PaginationMixin,
-    EditComponent
+    AdminMixin
   ],
   props: {
     initVocabSourcesUrl: {
@@ -700,16 +719,15 @@ const VocabSources = {
 }
 
 const VocabSource = {
-  mixins: [EditComponent],
+  mixins: [
+    AdminMixin,
+    BaseModel
+  ],
   props: {
     initSource: {
       type: Object,
       required: true
     },
-    initSourceUrl: {
-      type: String,
-      default: ''
-    }
   },
   data() {
     return {
@@ -717,12 +735,13 @@ const VocabSource = {
     }
   },
   methods: {
-    selectSource() {
-      if (this.initSourceUrl) {
-        this.sourceUrl = this.initSourceUrl
+    view() {
+      if (this.initViewUrl) {
+        this.viewUrl = this.initViewUrl
           .replace(0, this.source.id)
           .replace('zzz', this.source.slug)
-        window.location.replace(this.sourceUrl)
+
+        window.location.replace(this.viewUrl)
       }
     }
   }

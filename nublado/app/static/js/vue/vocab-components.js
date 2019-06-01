@@ -89,15 +89,11 @@ const VocabEntry = {
       entry: this.initEntry
     }
   },
-  methods: {
-    view() {
-      if (this.initViewUrl) {
-        this.viewUrl = this.initViewUrl
-          .replace('xx', this.entry.language)
-          .replace('zzz', this.entry.slug)
-
-        window.location.replace(this.viewUrl)
-      }
+  created() {
+    if (this.initViewUrl) {
+      this.viewUrl = this.initViewUrl
+        .replace('xx', this.entry.language)
+        .replace('zzz', this.entry.slug)
     }
   }
 }
@@ -734,15 +730,11 @@ const VocabSource = {
       source: this.initSource
     }
   },
-  methods: {
-    view() {
-      if (this.initViewUrl) {
-        this.viewUrl = this.initViewUrl
-          .replace(0, this.source.id)
-          .replace('zzz', this.source.slug)
-
-        window.location.replace(this.viewUrl)
-      }
+  created() {
+    if (this.initViewUrl) {
+      this.viewUrl = this.initViewUrl
+        .replace(0, this.source.id)
+        .replace('zzz', this.source.slug)   
     }
   }
 }

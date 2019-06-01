@@ -49,9 +49,8 @@ trigger-classes="ui mini icon twitter button"
 
 <div v-show="processing"><i class="fas fa-spin fa-spinner"></i></div>
 
-<div v-if="isAdmin">
-
 <div 
+v-if="isAdmin"
 id="vocab-entry-tag-group" 
 class="vocab-entry-tag-group ui labels"
 v-show="!processing"
@@ -63,17 +62,13 @@ v-show="!processing"
   :init-id="tag.id"
   :init-value="tag.entry"
   init-confirmation-id="delete-entry"
-  @tag-select="entrySelected(tag)"
 >
 </delete-tag>
 
 </div>
 
-</div>
-
-<div v-else>
-
-<div 
+<div
+v-else
 id="vocab-entry-tag-group" 
 class="vocab-entry-tag-group ui labels"
 v-show="!processing"
@@ -97,8 +92,6 @@ inline-template
 </tag>
 
 </vocab-entry>
-
-</div>
 
 </div>
 

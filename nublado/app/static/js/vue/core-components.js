@@ -201,7 +201,11 @@ const BaseModel = {
     }
   },
   methods: {
-    view() {},
+    view() {
+      if (this.viewUrl) {
+        window.location.replace(this.viewUrl)
+      }
+    },
     edit() {},
     delete() {}
   }

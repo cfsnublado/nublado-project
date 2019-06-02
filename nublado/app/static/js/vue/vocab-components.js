@@ -95,6 +95,11 @@ const VocabEntry = {
         .replace('xx', this.entry.language)
         .replace('zzz', this.entry.slug)
     }
+
+    if (this.initDeleteUrl) {
+      this.deleteUrl = this.initDeleteUrl
+        .replace('-1', this.entry.id)
+    }
   }
 }
 

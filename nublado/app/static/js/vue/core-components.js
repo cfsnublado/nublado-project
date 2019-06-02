@@ -207,7 +207,15 @@ const BaseModel = {
       }
     },
     edit() {},
-    delete() {}
+    remove() {
+      console.log('DELETE')
+      console.log(this.deleteUrl)
+      /*
+      if (this.deleteUrl) {
+        window.location.replace(this.deleteUrl)
+      }
+      */
+    }
   }
 }
 
@@ -565,6 +573,14 @@ const BaseTag = {
     initHasDelete: {
       type: Boolean,
       default: false
+    },
+    initDeleteUrl: {
+      type: String,
+      default: ''
+    },
+    initDeleteConfirm: {
+      type: String,
+      default: 'delete-confirm'
     }
   },
   data() {
@@ -572,7 +588,9 @@ const BaseTag = {
       id: this.initId,
       value: this.initValue,
       isVisible: true,
-      hasDelete: this.initHasDelete
+      hasDelete: this.initHasDelete,
+      deleteUrl: this.initDeleteUrl,
+      deleteConfirm: this.initDeleteConfirm
     }
   },
   methods: {
@@ -584,6 +602,7 @@ const BaseTag = {
     },
     remove() {
       this.$emit('tag-remove', this.id)
+      this.isVisible = false
     }
   },
   template: `
@@ -597,14 +616,23 @@ const BaseTag = {
       > 
       {{ value }} 
       </a>
+
       &nbsp;
-      <a 
-      v-show="hasDelete"
-      class="delete-tag"
-      @click.prevent="remove"
+
+      <ajax-delete
+      v-if="hasDelete"
+      :confirmation-id="deleteConfirm"
+      :delete-url="deleteUrl"
+      @ajax-success="remove"
+      inline-template
       >
-        <i class="fas fa-times"></i>
-      </a>
+        <a
+        @click.prevent="confirmDelete"
+        >
+          <i class="fa-times fas"></i>
+        </a>
+      </ajax-delete>
+
     </div>
   `
 }
@@ -648,30 +676,15 @@ const BaseToggleTag = {
 
 const BaseDeleteTag = {
   mixins: [BaseTag],
-  props: {
-    initConfirmationId: {
-      type: String,
-      default: 'delete-modal'
-    },
-    initDeleteUrl: {
-      type: String,
-      default: ''
-    }
-  },
-  data() {
-    return {
-      confirmationId: this.initConfirmationId,
-      deleteUrl: this.initDeleteUrl
-    }
-  },
   methods: {
     remove() {
       this.$emit('tag-remove', this.id)
-      this.isVisible = false
+      //this.isVisible = false
     }
   },
   template: `
     <transition name="fade-transition" v-on:after-enter="isVisible = true" v-on:after-leave="isVisible = false">
+
     <div 
     class="ui label tagblock"
     v-bind:key="id"
@@ -683,21 +696,17 @@ const BaseDeleteTag = {
       > 
       {{ value }} 
       </a>
+
       &nbsp;
-      <ajax-delete 
-      :confirmation-id="confirmationId"
-      :delete-url="deleteUrl"
-      @ajax-success="remove"
-      inline-template
+
+      <a
+      @click.prevent="remove"
       >
-        <a
-        @click.prevent="confirmDelete"
-        >
-          <i class="fa-times fas"></i>
-        </a>
-      </ajax-delete>
+      <i class="fa-times fas"></i>
+      </a>
 
     </div>
+
     </transition>
   `
 }

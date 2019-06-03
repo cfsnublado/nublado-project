@@ -65,17 +65,17 @@ init-delete-url="{{ vocab_entry_delete_url }}"
 inline-template
 >
 
-<tag
+<ajax-tag
   :key="entry.id"
   :init-id="entry.id"
   :init-value="entry.entry"
-  :init-has-delete="isAdmin"
   :init-delete-url="deleteUrl"
-  init-delete-confirm="delete-entry"
+  :init-can-remove="isAdmin"
+  init-confirm-id="delete-entry"
   @tag-select="view"
   @tag-remove="remove"
 >
-</tag>
+</ajax-tag>
 
 </vocab-entry>
 

@@ -7,7 +7,7 @@ Vue.component('modal', Modal)
 Vue.component('confirmation-modal', ConfirmationModal)
 Vue.component('tag', Tag)
 Vue.component('toggle-tag', ToggleTag)
-Vue.component('delete-tag', DeleteTag)
+Vue.component('ajax-tag', AjaxTag)
 Vue.component('audio-player', AudioPlayer)
 
 // vocab components

@@ -207,15 +207,7 @@ const BaseModel = {
       }
     },
     edit() {},
-    remove() {
-      console.log('DELETE')
-      console.log(this.deleteUrl)
-      /*
-      if (this.deleteUrl) {
-        window.location.replace(this.deleteUrl)
-      }
-      */
-    }
+    remove() {}
   }
 }
 
@@ -566,31 +558,21 @@ const BaseTag = {
       type: String,
       required: true
     },
-    selectRedirectUrl: {
-      type: String,
-      default: ''
-    },
-    initHasDelete: {
+    initCanRemove: {
       type: Boolean,
       default: false
     },
-    initDeleteUrl: {
+    selectRedirectUrl: {
       type: String,
       default: ''
-    },
-    initDeleteConfirm: {
-      type: String,
-      default: 'delete-confirm'
     }
   },
   data() {
     return {
       id: this.initId,
       value: this.initValue,
-      isVisible: true,
-      hasDelete: this.initHasDelete,
-      deleteUrl: this.initDeleteUrl,
-      deleteConfirm: this.initDeleteConfirm
+      canRemove: this.initCanRemove,
+      isVisible: true
     }
   },
   methods: {
@@ -619,19 +601,12 @@ const BaseTag = {
 
       &nbsp;
 
-      <ajax-delete
-      v-if="hasDelete"
-      :confirmation-id="deleteConfirm"
-      :delete-url="deleteUrl"
-      @ajax-success="remove"
-      inline-template
+      <a
+      v-if="canRemove"
+      @click.prevent="remove"
       >
-        <a
-        @click.prevent="confirmDelete"
-        >
-          <i class="fa-times fas"></i>
-        </a>
-      </ajax-delete>
+        <i class="fa-times fas"></i>
+      </a>
 
     </div>
   `
@@ -670,43 +645,6 @@ const BaseToggleTag = {
         <i v-bind:class="[toggleSelect ? 'fa-check-square' : 'fa-square', 'fas']"></i>
       </a>
     </div>
-    </transition>
-  `
-}
-
-const BaseDeleteTag = {
-  mixins: [BaseTag],
-  methods: {
-    remove() {
-      this.$emit('tag-remove', this.id)
-      //this.isVisible = false
-    }
-  },
-  template: `
-    <transition name="fade-transition" v-on:after-enter="isVisible = true" v-on:after-leave="isVisible = false">
-
-    <div 
-    class="ui label tagblock"
-    v-bind:key="id"
-    v-show="isVisible"
-    >
-      <a 
-      class="tag-text"
-      @click.prevent="select"
-      > 
-      {{ value }} 
-      </a>
-
-      &nbsp;
-
-      <a
-      @click.prevent="remove"
-      >
-      <i class="fa-times fas"></i>
-      </a>
-
-    </div>
-
     </transition>
   `
 }

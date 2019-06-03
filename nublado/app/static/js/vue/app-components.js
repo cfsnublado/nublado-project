@@ -2,7 +2,7 @@
 const AjaxDelete = {
   mixins: [AjaxProcessMixin],
   props: {
-    confirmationId: {
+    deleteConfirmId: {
       type: String,
       default: 'confirmation-modal'
     },
@@ -10,7 +10,7 @@ const AjaxDelete = {
       type: String,
       default: '',
     },
-    redirectUrl: {
+    deleteRedirectUrl: {
       type: String,
       default: ''
     },
@@ -27,23 +27,23 @@ const AjaxDelete = {
   },
   methods: {
     confirmDelete() {
-      this.$modal.showConfirmation(this.confirmationId)
+      this.$modal.showConfirmation(this.deleteConfirmId)
       .then(yes => {
         console.log(yes)
-        this.onSubmit()
+        this.onDelete()
       })
       .catch(no => {
         console.log(no)
       })
     },
-    onSubmit(event) {
+    onDelete(event) {
       this.process()
       clearTimeout(this.timerId)
       this.timerId = setTimeout(()=>{
-        axios.post(this.deleteUrl)
+        axios.delete(this.deleteUrl)
         .then(response => {
-          if (this.redirectUrl) {
-            window.location.replace(this.redirectUrl)
+          if (this.deleteRedirectUrl) {
+            window.location.replace(this.deleteRedirectUrl)
           }
           this.success()
         })
@@ -156,6 +156,55 @@ const ToggleTag = {
   mixins: [BaseToggleTag]
 }
 
-const DeleteTag = {
-  mixins: [BaseDeleteTag]
+const AjaxTag = {
+  mixins: [BaseTag],
+  props: {
+    initConfirmId: {
+      type: String,
+      default: 'delete-modal'
+    },
+    initDeleteUrl: {
+      type: String,
+      default: ''
+    }
+  },
+  data() {
+    return {
+      confirmId: this.initConfirmId,
+      deleteUrl: this.initDeleteUrl
+    }
+  },
+  template: `
+    <transition name="fade-transition" v-on:after-enter="isVisible = true" v-on:after-leave="isVisible = false">
+    <div 
+    class="ui label tagblock"
+    v-bind:key="id"
+    v-show="isVisible"
+    >
+      <a 
+      class="tag-text"
+      @click.prevent="select"
+      > 
+      {{ value }} 
+      </a>
+
+      &nbsp;
+
+      <ajax-delete
+      v-if="canRemove"
+      :delete-confirm-id="confirmId"
+      :delete-url="deleteUrl"
+      @ajax-success="remove"
+      inline-template
+      >
+        <a
+        @click.prevent="confirmDelete"
+        >
+          <i class="fa-times fas"></i>
+        </a>
+      </ajax-delete>
+
+    </div>
+    </transition>
+  `
 }

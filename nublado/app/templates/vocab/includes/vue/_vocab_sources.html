@@ -20,17 +20,21 @@ v-for="(vocabSource, index) in vocabSources"
 :init-is-admin="isAdmin"
 :init-source="vocabSource"
 init-view-url="{{ vocab_source_url }}"
+init-delete-url="{{ vocab_source_delete_url }}"
 inline-template
 >
 
 <transition name="fade-transition" v-on:after-enter="isVisible = true" v-on:after-leave="isVisible = false">
 
-<div class="panel vocab-source-panel">
+<div 
+class="panel vocab-source-panel"
+v-show="isVisible"
+>
 <div class="panel-body">
 
 <ajax-delete
 v-if="isAdmin"
-:delete-confirm-id="delete-source"
+delete-confirm-id="delete-source"
 :delete-url="deleteUrl"
 @ajax-success="remove"
 inline-template

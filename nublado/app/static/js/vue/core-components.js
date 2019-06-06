@@ -10,6 +10,20 @@ Implemented components are declared in app-components.js.
 
 /** General mixins **/
 
+const VisibleMixin = {
+  props: {
+    initIsVisible: {
+      type: Boolean,
+      default: true
+    }
+  },
+  data() {
+    return {
+      isVisible: this.initIsVisible
+    }
+  }
+}
+
 const AdminMixin = {
   props: {
     initIsAdmin: {
@@ -179,6 +193,7 @@ const UrlMixin = {
 /** Mixins that app components are based on. **/
 
 const BaseModel = {
+  mixins: [ VisibleMixin ],
   props: {
     initViewUrl: {
       type: String,
@@ -207,7 +222,9 @@ const BaseModel = {
       }
     },
     edit() {},
-    remove() {}
+    remove() {
+      this.isVisible = false
+    }
   }
 }
 
@@ -549,6 +566,7 @@ const BaseLanguageSearch = {
 /** Tags **/
 
 const BaseTag = {
+  mixins: [ VisibleMixin ],
   props: {
     initId: {
       type: Number,
@@ -572,7 +590,6 @@ const BaseTag = {
       id: this.initId,
       value: this.initValue,
       canRemove: this.initCanRemove,
-      isVisible: true
     }
   },
   methods: {

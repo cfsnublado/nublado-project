@@ -582,7 +582,10 @@ const ContextTagger = {
 }
 
 const ContextTagPanel = {
-  mixins: [HighlightMixin],
+  mixins: [
+    HighlightMixin,
+    VisibleMixin
+  ],
   props: {
     initEntries: {
       type: Object,
@@ -598,7 +601,6 @@ const ContextTagPanel = {
       entries: [],
       currentEntry: null,
       selectUrl: '',
-      isVisible: true
     }
   },
   methods: {
@@ -732,8 +734,7 @@ const VocabSource = {
   },
   data() {
     return {
-      source: this.initSource,
-      isVisible: true
+      source: this.initSource
     }
   },
   created() {
@@ -741,6 +742,11 @@ const VocabSource = {
       this.viewUrl = this.initViewUrl
         .replace(0, this.source.id)
         .replace('zzz', this.source.slug)   
+    }
+
+    if (this.initDeleteUrl) {
+      this.deleteUrl = this.initDeleteUrl
+        .replace('-1', this.source.id)
     }
   }
 }

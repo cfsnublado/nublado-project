@@ -51,6 +51,7 @@
 {% block vocab_sources %}
 
 {% url 'api:vocab-source-list' as vocab_sources_url %}
+{% url 'api:vocab-source-detail' '-1' as vocab_source_delete_url %}
 {% url 'vocab:vocab_source_dashboard' 0 'zzz' as vocab_source_url %}
 {% include "vocab/includes/vue/_vocab_sources.html" %}
 
@@ -60,4 +61,12 @@
 </div>
 
 {% endblock content %}
+
+{% block modal_content %}
+
+{{ block.super }}
+
+{% include "vocab/includes/_vocab_source_delete_modal.html" with modal_id='delete-source' modal_name='confirmation-modal' %} 
+
+{% endblock modal_content %}
 

@@ -627,6 +627,7 @@ const BaseToggleTag = {
   },
   template: `
     <transition name="fade-transition" v-on:after-enter="isVisible = true" v-on:after-leave="isVisible = false">
+
     <div 
     class="ui label tagblock"
     v-show="isVisible"
@@ -645,6 +646,7 @@ const BaseToggleTag = {
         <i v-bind:class="[toggleSelect ? 'fa-check-square' : 'fa-square', 'fas']"></i>
       </a>
     </div>
+    
     </transition>
   `
 }

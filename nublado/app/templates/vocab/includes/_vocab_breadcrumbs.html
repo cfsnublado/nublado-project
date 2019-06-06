@@ -4,9 +4,9 @@
 
   {% if request.session.session_obj.vocab_entry %}
 
-    <a href="{% url 'vocab:vocab_entries' %}">{% trans "label_vocabulary" %}</a>
+    <a href="{% url 'vocab:vocab_entries' %}">{% trans 'label_vocabulary' %}</a>
 
-    {% if url_name == "vocab_entry" %}
+    {% if url_name == 'vocab_entry' %}
 
       &nbsp;>&nbsp;
       <span>{{ vocab_entry.entry }}</span>
@@ -19,9 +19,9 @@
     {% endif %}
 
   {% elif request.session.session_obj.vocab_source %}
-    <a href="{% url 'vocab:vocab_entries' %}">{% trans "label_vocabulary" %}</a>
+    <a href="{% url 'vocab:vocab_sources' %}">{% trans 'label_sources' %}</a>
 
-    {% if url_name == "vocab_source_dashboard" %}
+    {% if url_name == 'vocab_source_dashboard' %}
    
       &nbsp;>&nbsp;
       <span> {{ vocab_source.name }} </span>
@@ -42,9 +42,9 @@
 
   {% else %}
 
-    {% if url_name != "vocab_entries" %}
+    {% if url_name != 'vocab_entries' and url_name != 'vocab_sources' %}
 
-      <a href="{% url 'vocab:vocab_entries' %}">{% trans "label_vocabulary" %}</a>
+      <a href="{% url 'vocab:vocab_entries' %}">{% trans 'label_vocabulary' %}</a>
 
     {% endif %}
 

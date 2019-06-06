@@ -1,7 +1,10 @@
 {% load i18n %}
+{% load core_extras %}
+
+{% if not edit_entries %}{% alias False as edit_entries %}{% endif %}
 
 <vocab-entries
-:init-is-admin="{{ user.is_admin|yesno:'true,false' }}"
+:init-is-admin="{{ edit_entries|yesno:'true,false' }}"
 init-vocab-entries-url="{{ vocab_entries_url }}"
 inline-template
 >
@@ -53,7 +56,14 @@ trigger-classes="ui mini icon twitter button"
 id="vocab-entry-tag-group" 
 class="vocab-entry-tag-group ui labels"
 v-show="!processing"
+v-cloak
 >
+
+<div 
+v-if="vocabEntries.length == 0"
+>
+{% trans 'no_entries_in_selected_language' %}
+</div>
 
 <vocab-entry
 v-for="(vocabEntry, index) in vocabEntries"

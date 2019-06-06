@@ -3,6 +3,45 @@
 {% load core_extras %}
 {% load i18n %}
 
+{% block sidebar_nav_items %}
+
+{% if request.session.session_obj.vocab_source %}
+
+  <li class="nav-list-header">
+  <span> {% trans "label_source" %} </span>
+  </li>
+
+  <li class="nav-list-header-title">
+  <a 
+  id="sidebar-nav-vocab-source-name"
+  href="{% url 'vocab:vocab_source_dashboard' vocab_source.id vocab_source.slug %}">
+  <span id="menu-vocab-source-name"> {{ vocab_source.name }} </span>
+  </a>
+  </li>
+
+  <li class="divider"></li>
+
+  {% if vocab_source.creator_id == user.id %}
+
+    <li class="nav-item">
+    <a
+    id="sidebar-nav-vocab-sources" 
+    class="nav-link {% block vocab_sources_link_active %}{% endblock vocab_sources_link_active %}" 
+    href="{% url 'vocab:vocab_sources' %}">
+    <i class="nav-link-icon fas fa-edit fa-fw"></i> {% trans "label_edit_source" %}
+    </a>
+    </li>
+
+    <li class="divider"></li>
+
+  {% endif %}
+
+{% endif %}
+
+{{ block.super }}
+
+{% endblock sidebar_nav_items %}
+
 {% block body_classes %}
 
 sidebar-adaptable theme-white {{ sidebar_expanded|yesno:"sidebar-nav-expanded," }}
@@ -43,7 +82,9 @@ sidebar-adaptable theme-white {{ sidebar_expanded|yesno:"sidebar-nav-expanded," 
 </div>
 
 {% endblock breadcrumbs %}
+
 {% block content %}{% endblock content %}
+
 </div>
 {% endblock body %}
 
@@ -54,7 +95,6 @@ sidebar-adaptable theme-white {{ sidebar_expanded|yesno:"sidebar-nav-expanded," 
 var initSidebarSessionEnabled = true;
 var sidebarExpanded = {{ sidebar_expanded|yesno:"true,false" }};
 var appSessionUrl = "{% url 'app:app_session' %}";
-var sidebarTopPanelExpanded = {{ sidebar_top_panel_expanded|yesno:"true,false" }};
 
 {% endblock python_to_javascript %}
 

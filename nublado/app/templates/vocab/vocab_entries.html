@@ -9,6 +9,16 @@
 
 {% block vocab_entries_link_active %}active{% endblock vocab_entries_link_active %}
 
+{% block page_header %}
+
+<div class="row justify-content-md-center">
+<div class="col-md-10">
+<div class="page-header"> {% trans "header_vocabulary" %} </div>
+</div>
+</div>
+
+{% endblock page_header %}
+
 {% block content %}
 
 <div class="row justify-content-md-center">
@@ -41,6 +51,9 @@
 {% url 'api:vocab-entry-list' as vocab_entries_url %}
 {% url 'api:vocab-entry-detail' '-1' as vocab_entry_delete_url %}
 {% url 'vocab:vocab_entry' 'xx' 'zzz' as vocab_entry_url %}
+
+{% alias user.is_admin as edit_entries %}
+
 {% include 'vocab/includes/vue/_vocab_entries.html' %}
 
 </div>

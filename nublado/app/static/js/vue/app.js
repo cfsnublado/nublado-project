@@ -67,7 +67,6 @@ const vm = new Vue({
     showSidebar: sidebarExpanded,
     sidebarSessionEnabled: initSidebarSessionEnabled,
     sidebarOpenClass: 'sidebar-nav-expanded',
-    sidebarPanelOpenClass: 'sidebar-nav-top-panel-expanded',
     appSessionUrl: appSessionUrl,
     windowWidth: 0,
     windowWidthSmall: 640,
@@ -103,15 +102,6 @@ const vm = new Vue({
 
       if (this.sidebarSessionEnabled) {
         this.setSidebarSession()
-      }
-    },
-    toggleSidebarPanel() {
-      // Hacky.
-      const el = this.$refs.sidebarNav
-      if (el.classList.contains(this.sidebarPanelOpenClass)) {
-        el.classList.remove(this.sidebarPanelOpenClass)
-      } else {
-        el.classList.add(this.sidebarPanelOpenClass)
       }
     },
     setSidebarSession(disableLock = false) {

@@ -23,12 +23,26 @@ init-view-url="{{ vocab_source_url }}"
 inline-template
 >
 
+<transition name="fade-transition" v-on:after-enter="isVisible = true" v-on:after-leave="isVisible = false">
+
 <div class="panel vocab-source-panel">
 <div class="panel-body">
 
-<div v-if="isAdmin">
-<i class="panel-close-icon fas fa-times"></i>
-</div>
+<ajax-delete
+v-if="isAdmin"
+:delete-confirm-id="delete-source"
+:delete-url="deleteUrl"
+@ajax-success="remove"
+inline-template
+>
+
+<a
+@click.prevent="confirmDelete"
+>
+  <i class="panel-close-icon fas fa-times fas"></i>
+</a>
+
+</ajax-delete>
 
 <div>
 <a href="#">[[ source.project ]]</a>
@@ -50,6 +64,8 @@ href="#"
 
 </div>
 </div>
+
+</transition>
 
 </vocab-source>
 

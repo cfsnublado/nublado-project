@@ -24,46 +24,6 @@
 
 <style>
 
-.panel-close-icon {
-  font-size: 18px;
-}
-
-.vocab-entry-info ul {
-  list-style: none;
-}
-.vocab-entry-info {
-  margin-top: 10px;
-}
-
-.vocab-definitions {
-  margin-top: 10px;
-}
-
-.vocab-definition-text {
-  font-size: 16px;
-}
-
-.vocab-lexical-category {
-  font-size: 20px;
-  color: #4183c4;
-}
-
-.vocab-pronunciation {
-  font-size: 20px;
-  color: #4a4a4a;
-}
-
-.vocab-pronunciation-icon {
-  font-size: 16px;
-  color: #979797;
-}
-
-.vocab-source-panel {}
-
-.vocab-source-panel .vocab-source-name {
-  font-size: 20px;
-  color: #979797;
-}
 
 </style>
 
@@ -193,25 +153,29 @@ ref="sidebarNav"
 
 {% block sidebar_nav_items %}
 
-  <li class="nav-item">
-  <a
-  id="sidebar-nav-vocab-entries" 
-  class="nav-link {% block vocab_entries_link_active %}{% endblock vocab_entries_link_active %}" 
-  href="{% url 'vocab:vocab_entries' %}">
-  <i class="nav-link-icon fas fa-language fa-fw"></i>
-  {% trans "label_vocabulary" %}
-  </a>
-  </li>
+<li class="nav-list-header">
+<span> {% trans "label_main" %} </span>
+</li>
 
-  <li class="nav-item">
-  <a
-  id="sidebar-nav-vocab-sources" 
-  class="nav-link {% block vocab_sources_link_active %}{% endblock vocab_sources_link_active %}" 
-  href="{% url 'vocab:vocab_sources' %}">
-  <i class="nav-link-icon fas fa-book fa-fw"></i>
-  {% trans "label_sources" %}
-  </a>
-  </li>
+<li class="nav-item">
+<a
+id="sidebar-nav-vocab-entries" 
+class="nav-link {% block vocab_entries_link_active %}{% endblock vocab_entries_link_active %}" 
+href="{% url 'vocab:vocab_entries' %}">
+<i class="nav-link-icon fas fa-language fa-fw"></i>
+{% trans "label_vocabulary" %}
+</a>
+</li>
+
+<li class="nav-item">
+<a
+id="sidebar-nav-vocab-sources" 
+class="nav-link {% block vocab_sources_link_active %}{% endblock vocab_sources_link_active %}" 
+href="{% url 'vocab:vocab_sources' %}">
+<i class="nav-link-icon fas fa-book fa-fw"></i>
+{% trans "label_sources" %}
+</a>
+</li>
 
 {% endblock sidebar_nav_items %}
 
@@ -243,6 +207,7 @@ v-bind:dropup="true">
 <ul>
 
 {% get_language_info_list for LANGUAGES as languages %}
+
 {% for language in languages %}
 
   <li>
@@ -312,7 +277,6 @@ class="{% block container_classes %}topnav-container{% endblock container_classe
 
 <script>
 {# Block reserved for JavaScript variables whose values come from backend Python content #}
-
 {% block python_to_javascript %}
 
 // If enabled, maintain sidebar's state between requests.

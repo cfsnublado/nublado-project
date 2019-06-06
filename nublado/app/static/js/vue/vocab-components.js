@@ -732,7 +732,8 @@ const VocabSource = {
   },
   data() {
     return {
-      source: this.initSource
+      source: this.initSource,
+      isVisible: true
     }
   },
   created() {

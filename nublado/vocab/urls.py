@@ -15,11 +15,11 @@ from .views.views_vocab_entry_auth import (
     VocabEntryUpdateView
 )
 from .views.views_vocab_project import (
-    VocabProjectsView
+    VocabProjectDashboardView, VocabProjectsView
 )
 from .views.views_vocab_project_auth import (
-    VocabProjectCreateView, VocabProjectDashboardView, VocabProjectDeleteView,
-    VocabProjectSourcesView, VocabProjectUpdateView
+    VocabProjectCreateView, VocabProjectDashboardView as VocabProjectDashboardAuthView,
+    VocabProjectDeleteView, VocabProjectSourcesView, VocabProjectUpdateView
 )
 from .views.views_vocab_source import (
     VocabSourceDashboardView, VocabSourceEntryView, VocabSourcesView
@@ -53,8 +53,8 @@ auth_urls = [
     path('project/<int:vocab_project_pk>/delete/', VocabProjectDeleteView.as_view(), name='vocab_project_delete'),
     path(
         'project/<int:vocab_project_pk>-<slug:vocab_project_slug>/dashboard/',
-        VocabProjectDashboardView.as_view(),
-        name='vocab_project_dashboard'
+        VocabProjectDashboardAuthView.as_view(),
+        name='vocab_project_auth_dashboard'
     ),
     path(
         'project/<int:vocab_project_pk>-<slug:vocab_project_slug>/sources/',
@@ -175,6 +175,11 @@ urlpatterns = [
         'projects/',
         VocabProjectsView.as_view(),
         name='vocab_projects'
+    ),
+    path(
+        'project/<int:vocab_project_pk>-<slug:vocab_project_slug>/',
+        VocabProjectDashboardView.as_view(),
+        name='vocab_project_dashboard'
     ),
     path(
         'sources/',

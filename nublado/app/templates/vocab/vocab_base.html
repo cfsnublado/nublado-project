@@ -53,7 +53,15 @@ sidebar-adaptable theme-white {{ sidebar_expanded|yesno:"sidebar-nav-expanded," 
 
 {% block page_header %}
 
-{% if request.session.session_obj.vocab_source %}
+{% if request.session.session_obj.vocab_project %}
+
+  <div class="row justify-content-md-center">
+  <div class="col-md-10">
+  <div class="page-header"> {{ vocab_project.name }} </div>
+  </div>
+  </div>
+
+{% elif request.session.session_obj.vocab_source %}
 
   <div class="row justify-content-md-center">
   <div class="col-md-10">

@@ -28,6 +28,7 @@
 
 {% url 'api:vocab-project-list' as vocab_projects_url %}
 {% url 'vocab:vocab_project_delete' 0 as vocab_project_delete_url %}
+{% url 'vocab:vocab_project_dashboard' 0 'zzz' as vocab_project_url %}
 
 {% include "vocab/includes/vue/_vocab_projects.html" %}
 

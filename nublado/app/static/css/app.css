@@ -13122,32 +13122,37 @@ label {
 .panel .section {
   border-top: 1px solid #eee;
 }
-
-/* line 13, ../scss/cfs/_panel.scss */
-.panel-close-icon {
+/* line 12, ../scss/cfs/_panel.scss */
+.panel a.panel-close {
+  color: #777;
   font-size: 1.125rem;
 }
+/* line 16, ../scss/cfs/_panel.scss */
+.panel a.panel-close:hover {
+  color: #000;
+  cursor: pointer;
+}
 
-/* line 17, ../scss/cfs/_panel.scss */
+/* line 23, ../scss/cfs/_panel.scss */
 .panel-header {
   font-size: 16px;
   font-weight: bold;
   padding: 10px 20px 0 20px;
 }
 
-/* line 24, ../scss/cfs/_panel.scss */
+/* line 30, ../scss/cfs/_panel.scss */
 .panel-body {
   margin: 0;
   padding: 10px 20px 10px 20px;
 }
 
-/* line 29, ../scss/cfs/_panel.scss */
+/* line 35, ../scss/cfs/_panel.scss */
 .panel-section {
   margin: 0;
   padding: 10px 20px 10px 20px;
 }
 
-/* line 34, ../scss/cfs/_panel.scss */
+/* line 40, ../scss/cfs/_panel.scss */
 .panel-section .panel-header,
 .panel-body .panel-header {
   margin-bottom: 15px;

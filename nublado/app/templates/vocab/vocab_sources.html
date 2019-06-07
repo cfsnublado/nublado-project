@@ -51,7 +51,8 @@
 {% block vocab_sources %}
 
 {% url 'api:vocab-source-list' as vocab_sources_url %}
-{% url 'api:vocab-source-detail' '-1' as vocab_source_delete_url %}
+{% url 'vocab:vocab_source_delete' 0 as vocab_source_delete_url %}
+
 {% url 'vocab:vocab_source_dashboard' 0 'zzz' as vocab_source_url %}
 {% include "vocab/includes/vue/_vocab_sources.html" %}
 

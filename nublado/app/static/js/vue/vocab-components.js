@@ -98,7 +98,7 @@ const VocabEntry = {
 
     if (this.initDeleteUrl) {
       this.deleteUrl = this.initDeleteUrl
-        .replace('-1', this.entry.id)
+        .replace(0, this.entry.id)
     }
   }
 }
@@ -746,7 +746,7 @@ const VocabSource = {
 
     if (this.initDeleteUrl) {
       this.deleteUrl = this.initDeleteUrl
-        .replace('-1', this.source.id)
+        .replace(0, this.source.id)
     }
   }
 }

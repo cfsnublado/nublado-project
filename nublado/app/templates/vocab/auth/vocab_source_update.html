@@ -1,4 +1,4 @@
-{% extends "vocab/auth/vocab_base.html" %}
+{% extends "vocab/vocab_base.html" %}
 {% load staticfiles %}
 {% load i18n %}
 
@@ -42,9 +42,9 @@
 </button>
 
 <ajax-delete
-confirmation-id="delete-source"
+delete-confirm-id="delete-source"
 delete-url="{% url 'vocab:vocab_source_delete' vocab_source.id %}" 
-redirect-url="{% url 'vocab:vocab_project_sources' vocab_project.id vocab_project.slug %}"
+delete-redirect-url="{% url 'vocab:vocab_sources' %}"
 inline-template
 >
 

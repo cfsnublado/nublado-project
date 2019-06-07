@@ -27,7 +27,7 @@
     <a
     id="sidebar-nav-vocab-sources" 
     class="nav-link {% block vocab_sources_link_active %}{% endblock vocab_sources_link_active %}" 
-    href="{% url 'vocab:vocab_sources' %}">
+    href="{% url 'vocab:vocab_source_update' vocab_source.id vocab_source.slug %}">
     <i class="nav-link-icon fas fa-edit fa-fw"></i> {% trans "label_edit_source" %}
     </a>
     </li>

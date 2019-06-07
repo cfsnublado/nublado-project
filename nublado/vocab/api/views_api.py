@@ -62,6 +62,8 @@ class VocabProjectViewSet(APIDefaultsMixin, ModelViewSet):
     lookup_field = 'pk'
     lookup_url_kwarg = 'pk'
     serializer_class = VocabProjectSerializer
+    permission_classes = [ReadWritePermission]
+    pagination_class = SmallPagination
     queryset = VocabProject.objects.all()
 
     def perform_create(self, serializer):

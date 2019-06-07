@@ -11,6 +11,9 @@ Vue.component('ajax-tag', AjaxTag)
 Vue.component('audio-player', AudioPlayer)
 
 // vocab components
+Vue.component('vocab-projects', VocabProjects)
+Vue.component('vocab-project', VocabProject)
+
 Vue.component('vocab-sources', VocabSources)
 Vue.component('vocab-source', VocabSource)
 Vue.component('source-search', SourceSearch)

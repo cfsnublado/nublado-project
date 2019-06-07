@@ -1,3 +1,98 @@
+// Vocab project
+
+const VocabProjects = {
+  mixins: [
+    AjaxProcessMixin,
+    PaginationMixin,
+    AdminMixin
+  ],
+  props: {
+    initVocabProjectsUrl: {
+      type: String,
+      default: ''
+    }
+  },
+  data() {
+    return {
+      vocabProjectsUrl: this.initVocabProjectsUrl,
+      vocabProjects: null
+    }
+  },
+  methods: {
+    getVocabProjects(page=1) {
+      this.process()
+
+      params = {
+        page: page
+      }
+
+      axios.get(this.vocabProjectsUrl, {
+        params: params
+      })
+      .then(response => {
+        this.vocabProjects = response.data.results
+        this.setPagination(
+          response.data.previous,
+          response.data.next,
+          response.data.page_num,
+          response.data.count,
+          response.data.num_pages
+        )
+        VueScrollTo.scrollTo({
+          el: '#projects-scroll-top',
+        })
+        this.success()
+      })
+      .catch(error => {
+        if (error.response) {
+          console.log(error.response)
+        } else if (error.request) {
+          console.log(error.request)
+        } else {
+          console.log(error.message)
+        }
+        console.log(error.config)
+      })
+      .finally(() => {
+        this.complete()
+      })
+    },
+  },
+  created() {
+    this.getVocabProjects()
+  }
+}
+
+const VocabProject = {
+  mixins: [
+    AdminMixin,
+    BaseModel
+  ],
+  props: {
+    initProject: {
+      type: Object,
+      required: true
+    },
+  },
+  data() {
+    return {
+      project: this.initProject
+    }
+  },
+  created() {
+    if (this.initViewUrl) {
+      this.viewUrl = this.initViewUrl
+        .replace(0, this.project.id)
+        .replace('zzz', this.project.slug)   
+    }
+
+    if (this.initDeleteUrl) {
+      this.deleteUrl = this.initDeleteUrl
+        .replace(0, this.project.id)
+    }
+  }
+}
+
 // Vocab entry
 
 const VocabEntries = {

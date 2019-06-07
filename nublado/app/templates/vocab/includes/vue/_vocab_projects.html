@@ -1,0 +1,135 @@
+{% load i18n %}
+
+<vocab-projects
+:init-is-admin="{{ user.is_admin|yesno:'true,false' }}"
+init-vocab-projects-url="{{ vocab_projects_url }}"
+inline-template
+>
+
+<div 
+class="vocab-projects"
+v-cloak
+>
+
+<div
+v-for="(vocabProject, index) in vocabProjects"
+:key="vocabProject.id"
+>
+
+<vocab-project
+:init-is-admin="isAdmin"
+:init-project="vocabProject"
+init-view-url="{{ vocab_project_url }}"
+init-delete-url="{{ vocab_project_delete_url }}"
+inline-template
+>
+
+<transition name="fade-transition" v-on:after-enter="isVisible = true" v-on:after-leave="isVisible = false">
+
+<div 
+class="panel vocab-project-panel"
+v-show="isVisible"
+>
+<div class="panel-body">
+
+<ajax-delete
+v-if="isAdmin"
+delete-confirm-id="delete-project"
+:delete-url="deleteUrl"
+@ajax-success="remove"
+inline-template
+>
+
+<a
+class="panel-close"
+@click.prevent="confirmDelete"
+>
+  <i class="fas fa-times fas"></i>
+
+</a>
+</ajax-delete>
+
+<div>
+<a
+class="vocab-project-name"
+href="#"
+@click.prevent="view"
+>
+[[ project.name ]]
+</a>
+</div>
+
+</div>
+</div>
+
+</transition>
+
+</vocab-project>
+
+</div>
+
+<section
+v-if="pageCount > 1"
+>
+<nav role="pagination">
+
+<ul class="cd-pagination">
+
+<li v-if="previousUrl">
+<a
+@click.prevent="getVocabProjects(pageNum - 1)"
+>
+{% trans 'label_previous' %}
+</a>
+</li>
+
+<li v-else>
+<a class="disabled" href="#">{% trans 'label_previous' %}</a>
+</li>
+
+<li 
+v-for="page in pageCount"
+:class="[ (pageNum != page) ? 'page-num' : 'current-page' ]"
+>
+
+<a 
+v-if="pageNum == page" 
+class="current" 
+href="#"
+>
+[[ page ]]
+</a>
+<a 
+v-else
+@click.prevent="getVocabProjects(page)"
+>
+[[ page ]]
+</a>
+
+</li>
+
+<li v-if="nextUrl">
+<a
+@click.prevent="getVocabProjects(pageNum + 1)"
+>
+{% trans 'label_next' %}
+</a>
+</li>
+
+<li v-else>
+<a 
+class="disabled" 
+href="#"
+>
+{% trans 'label_next' %}
+</a>
+</li>
+
+</ul>
+</nav>
+
+</section>
+
+</div>
+
+</vocab-projects>

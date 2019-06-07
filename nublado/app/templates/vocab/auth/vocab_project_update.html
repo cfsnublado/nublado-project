@@ -1,4 +1,4 @@
-{% extends "vocab/auth/vocab_base.html" %}
+{% extends "vocab/vocab_base.html" %}
 {% load staticfiles %}
 {% load i18n %}
 
@@ -42,14 +42,14 @@
 </button>
 
 <ajax-delete
-confirmation-id="delete-project"
+delete-confirm-id="delete-project"
 delete-url="{% url 'vocab:vocab_project_delete' vocab_project.id %}" 
-redirect-url="{% url 'vocab:vocab_user_dashboard' %}"
+delete-redirect-url="{% url 'vocab:vocab_projects' %}"
 inline-template
 >
 
 <button 
-id="vocab-project-delete-trigger" 
+id="vocab-source-delete-trigger" 
 class="ui small red button"
 @click.prevent="confirmDelete"
 >
@@ -67,7 +67,10 @@ class="ui small red button"
 
 {% block modal_content %}
 
+{{ block.super }}
+
 {% include "vocab/includes/_vocab_project_delete_modal.html" with modal_id='delete-project' modal_name='confirmation-modal' %} 
 
 {% endblock modal_content %}
+
 

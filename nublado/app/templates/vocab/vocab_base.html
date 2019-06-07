@@ -5,7 +5,38 @@
 
 {% block sidebar_nav_items %}
 
-{% if request.session.session_obj.vocab_source %}
+{% if request.session.session_obj.vocab_project %}
+
+  <li class="nav-list-header">
+  <span> {% trans "label_project" %} </span>
+  </li>
+
+  <li class="nav-list-header-title">
+  <a 
+  id="sidebar-nav-vocab-project-name"
+  href="{% url 'vocab:vocab_project_dashboard' vocab_project.id vocab_project.slug %}">
+  <span id="menu-vocab-project-name"> {{ vocab_project.name }} </span>
+  </a>
+  </li>
+
+  <li class="divider"></li>
+
+  {% if vocab_project.owner_id == user.id %}
+
+    <li class="nav-item">
+    <a
+    id="sidebar-nav-vocab-project-edit"
+    class="nav-link {% block vocab_project_edit_link_active %}{% endblock vocab_project_edit_link_active %}"
+    href="{% url 'vocab:vocab_project_update' vocab_project.id vocab_project.slug %}">
+    <i class="nav-link-icon fas fa-edit fa-fw"></i> {% trans "label_edit_project" %}
+    </a>
+    </li>
+
+    <li class="divider"></li>
+
+  {% endif %}
+
+{% elif request.session.session_obj.vocab_source %}
 
   <li class="nav-list-header">
   <span> {% trans "label_source" %} </span>
@@ -25,8 +56,9 @@
 
     <li class="nav-item">
     <a
-    id="sidebar-nav-vocab-sources" 
-    class="nav-link {% block vocab_sources_link_active %}{% endblock vocab_sources_link_active %}" 
+    id="sidebar-nav-vocab-source-edit"
+    class="nav-link {% block vocab_source_edit_link_active %}{% endblock vocab_source_edit_link_active %}
+"
     href="{% url 'vocab:vocab_source_update' vocab_source.id vocab_source.slug %}">
     <i class="nav-link-icon fas fa-edit fa-fw"></i> {% trans "label_edit_source" %}
     </a>

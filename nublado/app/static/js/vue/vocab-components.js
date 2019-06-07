@@ -826,10 +826,22 @@ const VocabSource = {
       type: Object,
       required: true
     },
+    initProjectUrl: {
+      type: String,
+      default: ''
+    }
   },
   data() {
     return {
-      source: this.initSource
+      source: this.initSource,
+      projectUrl: this.initProjectUrl
+    }
+  },
+  methods: {
+    viewProject() {
+      if (this.projectUrl) {
+        window.location.replace(this.projectUrl)
+      }
     }
   },
   created() {
@@ -843,6 +855,12 @@ const VocabSource = {
       this.deleteUrl = this.initDeleteUrl
         .replace(0, this.source.id)
     }
+
+    if (this.initProjectUrl) {
+      this.projectUrl = this.initProjectUrl
+        .replace(0, this.source.project_id)
+        .replace('zzz', this.source.project_slug)
+    }    
   }
 }
 

@@ -11,16 +11,18 @@ class="vocab-sources"
 v-cloak
 >
 
-<div
-v-for="(vocabSource, index) in vocabSources"
-:key="vocabSource.id"
->
+<div v-if="vocabSources.length == 0">
+{% trans 'no_sources' %}
+</div>
 
 <vocab-source
+v-for="(vocabSource, index) in vocabSources"
+:key="vocabSource.id"
 :init-is-admin="isAdmin"
 :init-source="vocabSource"
 init-view-url="{{ vocab_source_url }}"
 init-delete-url="{{ vocab_source_delete_url }}"
+init-project-url="{{ vocab_source_project_url }}"
 inline-template
 >
 
@@ -50,7 +52,12 @@ class="panel-close"
 </ajax-delete>
 
 <div>
-<a href="#">[[ source.project ]]</a>
+<a 
+href="#"
+@click.prevent="viewProject"
+>
+[[ source.project ]]
+</a>
 </div>
 
 <div>
@@ -73,8 +80,6 @@ href="#"
 </transition>
 
 </vocab-source>
-
-</div>
 
 <section
 v-if="pageCount > 1"

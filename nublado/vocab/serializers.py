@@ -122,6 +122,10 @@ class VocabSourceSerializer(BaseSerializer, HyperlinkedModelSerializer):
         many=False,
         source='vocab_project.name'
     )
+    project_slug = StringRelatedField(
+        many=False,
+        source='vocab_project.slug'
+    )
     creator_id = ReadOnlyField(source='creator.id')
     creator_url = HyperlinkedRelatedField(
         many=False,
@@ -144,12 +148,13 @@ class VocabSourceSerializer(BaseSerializer, HyperlinkedModelSerializer):
         list_serializer = VocabSourceListSerializer
         model = VocabSource
         fields = (
-            'url', 'id', 'project_id', 'project', 'project_url', 'creator_id', 'creator_url',
+            'url', 'id', 'project_id', 'project', 'project_slug',
+            'project_url', 'creator_id', 'creator_url',
             'name', 'description', 'source_type', 'source_type_name',
             'slug', 'vocab_contexts_url', 'date_created', 'date_updated'
         )
         read_only_fields = (
-            'url', 'id', 'project_id', 'project_url', 'creator_id', 'creator_url',
+            'url', 'id', 'project_id', 'project_slug', 'project_url', 'creator_id', 'creator_url',
             'slug', 'vocab_contexts_url', 'source_type_name', 'date_created', 'date_updated'
         )
 

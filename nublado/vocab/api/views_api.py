@@ -186,6 +186,8 @@ class NestedVocabSourceViewSet(
     lookup_url_kwarg = 'pk'
     queryset = VocabSource.objects.select_related('vocab_project')
     serializer_class = VocabSourceSerializer
+    permission_classes = [ReadWritePermission]
+    pagination_class = SmallPagination
     vocab_project = None
 
     def get_vocab_project(self, vocab_project_pk=None):

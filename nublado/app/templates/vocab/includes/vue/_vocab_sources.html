@@ -12,7 +12,7 @@ v-cloak
 >
 
 <div v-if="vocabSources.length == 0">
-{% trans 'no_sources' %}
+{% trans 'msg_no_sources' %}
 </div>
 
 <vocab-source
@@ -29,10 +29,24 @@ inline-template
 <transition name="fade-transition" v-on:after-enter="isVisible = true" v-on:after-leave="isVisible = false">
 
 <div 
-class="panel vocab-source-panel"
+class="panel"
 v-show="isVisible"
 >
-<div class="panel-body">
+
+<div class="panel-top">
+
+<div class="panel-top-content">
+
+<a 
+href="#"
+@click.prevent="viewProject"
+>
+[[ source.project ]]
+</a>
+
+</div>
+
+<div class="panel-buttons">
 
 <ajax-delete
 v-if="isAdmin"
@@ -43,26 +57,22 @@ inline-template
 >
 
 <a
-class="panel-close"
+class="panel-button"
 @click.prevent="confirmDelete"
 >
-  <i class="fas fa-times fas"></i>
-
+<i class="fas fa-times fas"></i>
 </a>
 </ajax-delete>
 
-<div>
-<a 
-href="#"
-@click.prevent="viewProject"
->
-[[ source.project ]]
-</a>
 </div>
+
+</div>
+
+
+<div class="panel-body">
 
 <div>
 <a
-class="vocab-source-name"
 href="#"
 @click.prevent="view"
 >
@@ -70,7 +80,7 @@ href="#"
 </a>
 </div>
 
-<div class="vocab-source-desc">
+<div>
 [[ source.description ]]
 </div>
 

@@ -13113,46 +13113,82 @@ label {
 
 /* line 1, ../scss/cfs/_panel.scss */
 .panel {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
   margin-top: 10px;
   margin-bottom: 22px;
   border: 1px solid #eee;
   background: #fff;
 }
-/* line 8, ../scss/cfs/_panel.scss */
+/* line 11, ../scss/cfs/_panel.scss */
 .panel .section {
   border-top: 1px solid #eee;
 }
-/* line 12, ../scss/cfs/_panel.scss */
-.panel a.panel-close {
-  color: #777;
-  font-size: 1.125rem;
-}
+
 /* line 16, ../scss/cfs/_panel.scss */
-.panel a.panel-close:hover {
-  color: #000;
+.panel-top {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  padding: 10px 20px 10px 20px;
+  justify-content: space-between;
+}
+/* line 24, ../scss/cfs/_panel.scss */
+.panel-top .panel-buttons {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  font-size: 1.125rem;
+  margin-left: auto;
+  align-items: center;
+}
+/* line 34, ../scss/cfs/_panel.scss */
+.panel-top .panel-buttons .panel-button {
+  color: #777;
+}
+/* line 37, ../scss/cfs/_panel.scss */
+.panel-top .panel-buttons .panel-button:hover {
   cursor: pointer;
+  color: #000;
 }
 
-/* line 23, ../scss/cfs/_panel.scss */
+/* line 46, ../scss/cfs/_panel.scss */
+.panel-body {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+  padding: 10px 20px 10px 20px;
+}
+
+/* line 54, ../scss/cfs/_panel.scss */
+.panel-bottom {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  padding: 10px 20px 10px 20px;
+}
+
+/* line 61, ../scss/cfs/_panel.scss */
 .panel-header {
   font-size: 16px;
   font-weight: bold;
   padding: 10px 20px 0 20px;
 }
 
-/* line 30, ../scss/cfs/_panel.scss */
-.panel-body {
-  margin: 0;
-  padding: 10px 20px 10px 20px;
-}
-
-/* line 35, ../scss/cfs/_panel.scss */
+/* line 68, ../scss/cfs/_panel.scss */
 .panel-section {
   margin: 0;
   padding: 10px 20px 10px 20px;
 }
 
-/* line 40, ../scss/cfs/_panel.scss */
+/* line 73, ../scss/cfs/_panel.scss */
 .panel-section .panel-header,
 .panel-body .panel-header {
   margin-bottom: 15px;

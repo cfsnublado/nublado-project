@@ -11,12 +11,13 @@ class="vocab-projects"
 v-cloak
 >
 
-<div
-v-for="(vocabProject, index) in vocabProjects"
-:key="vocabProject.id"
->
+<div v-if="vocabProjects.length == 0">
+{% trans 'msg_no_projects' %}
+</div>
 
 <vocab-project
+v-for="(vocabProject, index) in vocabProjects"
+:key="vocabProject.id"
 :init-is-admin="isAdmin"
 :init-project="vocabProject"
 init-view-url="{{ vocab_project_url }}"
@@ -27,10 +28,13 @@ inline-template
 <transition name="fade-transition" v-on:after-enter="isVisible = true" v-on:after-leave="isVisible = false">
 
 <div 
-class="panel vocab-project-panel"
+class="panel"
 v-show="isVisible"
 >
-<div class="panel-body">
+
+<div class="panel-top">
+
+<div class="panel-buttons">
 
 <ajax-delete
 v-if="isAdmin"
@@ -41,7 +45,7 @@ inline-template
 >
 
 <a
-class="panel-close"
+class="panel-button"
 @click.prevent="confirmDelete"
 >
   <i class="fas fa-times fas"></i>
@@ -49,9 +53,14 @@ class="panel-close"
 </a>
 </ajax-delete>
 
+</div>
+
+</div>
+
+<div class="panel-body">
+
 <div>
 <a
-class="vocab-project-name"
 href="#"
 @click.prevent="view"
 >
@@ -59,18 +68,17 @@ href="#"
 </a>
 </div>
 
-<div class="vocab-project-desc">
+<div>
 [[ project.description ]]
 </div>
 
 </div>
+
 </div>
 
 </transition>
 
 </vocab-project>
-
-</div>
 
 <section
 v-if="pageCount > 1"

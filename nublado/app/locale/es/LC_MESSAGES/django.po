@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-06 19:09-0700\n"
+"POT-Creation-Date: 2019-06-07 22:03-0700\n"
 "PO-Revision-Date: 2018-11-28 21:16-0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -493,24 +493,25 @@ msgid "label_main"
 msgstr "Inicio"
 
 #: nublado/app/templates/base.html:166
+#: nublado/app/templates/vocab/includes/_vocab_breadcrumbs.html:23
 msgid "label_projects"
 msgstr "Proyectos"
 
 #: nublado/app/templates/base.html:176
-#: nublado/app/templates/vocab/auth/vocab_base.html:305
-#: nublado/app/templates/vocab/includes/_vocab_breadcrumbs.html:7
-#: nublado/app/templates/vocab/includes/_vocab_breadcrumbs.html:47
-msgid "label_vocabulary"
-msgstr "Vocabulario"
-
-#: nublado/app/templates/base.html:186
 #: nublado/app/templates/vocab/auth/vocab_base.html:121
-#: nublado/app/templates/vocab/includes/_vocab_breadcrumbs.html:22
+#: nublado/app/templates/vocab/includes/_vocab_breadcrumbs.html:40
 #: nublado/app/templates/vocab/includes/_vocab_breadcrumbs_auth.html:14
 #: nublado/app/templates/vocab/includes/_vocab_breadcrumbs_auth.html:19
 #: nublado/app/templates/vocab/includes/_vocab_breadcrumbs_auth.html:29
 msgid "label_sources"
 msgstr "Fuentes"
+
+#: nublado/app/templates/base.html:186
+#: nublado/app/templates/vocab/auth/vocab_base.html:305
+#: nublado/app/templates/vocab/includes/_vocab_breadcrumbs.html:7
+#: nublado/app/templates/vocab/includes/_vocab_breadcrumbs.html:65
+msgid "label_vocabulary"
+msgstr "Vocabulario"
 
 #: nublado/app/templates/home.html:5
 msgid "page_home_title"
@@ -560,23 +561,27 @@ msgstr "Sí"
 
 #: nublado/app/templates/includes/_pagination.html:13
 #: nublado/app/templates/includes/_pagination.html:18
-#: nublado/app/templates/vocab/includes/vue/_vocab_contexts.html:66
-#: nublado/app/templates/vocab/includes/vue/_vocab_contexts.html:71
-#: nublado/app/templates/vocab/includes/vue/_vocab_entries.html:108
-#: nublado/app/templates/vocab/includes/vue/_vocab_entries.html:113
-#: nublado/app/templates/vocab/includes/vue/_vocab_sources.html:90
-#: nublado/app/templates/vocab/includes/vue/_vocab_sources.html:95
+#: nublado/app/templates/vocab/includes/vue/_vocab_contexts.html:69
+#: nublado/app/templates/vocab/includes/vue/_vocab_contexts.html:74
+#: nublado/app/templates/vocab/includes/vue/_vocab_entries.html:106
+#: nublado/app/templates/vocab/includes/vue/_vocab_entries.html:111
+#: nublado/app/templates/vocab/includes/vue/_vocab_projects.html:94
+#: nublado/app/templates/vocab/includes/vue/_vocab_projects.html:99
+#: nublado/app/templates/vocab/includes/vue/_vocab_sources.html:104
+#: nublado/app/templates/vocab/includes/vue/_vocab_sources.html:109
 msgid "label_previous"
 msgstr "Anterior"
 
 #: nublado/app/templates/includes/_pagination.html:39
 #: nublado/app/templates/includes/_pagination.html:48
-#: nublado/app/templates/vocab/includes/vue/_vocab_contexts.html:99
-#: nublado/app/templates/vocab/includes/vue/_vocab_contexts.html:108
-#: nublado/app/templates/vocab/includes/vue/_vocab_entries.html:141
-#: nublado/app/templates/vocab/includes/vue/_vocab_entries.html:150
-#: nublado/app/templates/vocab/includes/vue/_vocab_sources.html:123
-#: nublado/app/templates/vocab/includes/vue/_vocab_sources.html:132
+#: nublado/app/templates/vocab/includes/vue/_vocab_contexts.html:102
+#: nublado/app/templates/vocab/includes/vue/_vocab_contexts.html:111
+#: nublado/app/templates/vocab/includes/vue/_vocab_entries.html:139
+#: nublado/app/templates/vocab/includes/vue/_vocab_entries.html:148
+#: nublado/app/templates/vocab/includes/vue/_vocab_projects.html:127
+#: nublado/app/templates/vocab/includes/vue/_vocab_projects.html:136
+#: nublado/app/templates/vocab/includes/vue/_vocab_sources.html:137
+#: nublado/app/templates/vocab/includes/vue/_vocab_sources.html:146
 msgid "label_next"
 msgstr "Siguiente"
 
@@ -785,10 +790,12 @@ msgstr "Diccionario"
 #: nublado/app/templates/vocab/auth/vocab_base.html:137
 #: nublado/app/templates/vocab/includes/_vocab_breadcrumbs_auth.html:9
 #: nublado/app/templates/vocab/includes/_vocab_breadcrumbs_auth.html:27
+#: nublado/app/templates/vocab/vocab_base.html:11
 msgid "label_project"
 msgstr "Proyecto"
 
 #: nublado/app/templates/vocab/auth/vocab_base.html:112
+#: nublado/app/templates/vocab/vocab_base.html:31
 msgid "label_edit_project"
 msgstr "Editar proyecto"
 
@@ -797,12 +804,12 @@ msgid "label_new_source"
 msgstr "Nueva fuente"
 
 #: nublado/app/templates/vocab/auth/vocab_base.html:151
-#: nublado/app/templates/vocab/vocab_base.html:11
+#: nublado/app/templates/vocab/vocab_base.html:42
 msgid "label_source"
 msgstr "Fuente"
 
 #: nublado/app/templates/vocab/auth/vocab_base.html:168
-#: nublado/app/templates/vocab/vocab_base.html:31
+#: nublado/app/templates/vocab/vocab_base.html:63
 msgid "label_edit_source"
 msgstr "Editar fuente"
 
@@ -983,6 +990,7 @@ msgid "page_vocab_sources_title"
 msgstr "Fuentes"
 
 #: nublado/app/templates/vocab/auth/vocab_project_sources.html:15
+#: nublado/app/templates/vocab/vocab_project_dashboard.html:18
 msgid "header_sources"
 msgstr "Fuentes"
 
@@ -1109,7 +1117,15 @@ msgstr "Crear proyecto"
 msgid "confirm_delete_vocab_project"
 msgstr "¿Eliminar proyecto?"
 
-#: nublado/app/templates/vocab/includes/vue/_vocab_entries.html:65
+#: nublado/app/templates/vocab/includes/vue/_vocab_contexts.html:14
+msgid "msg_no_contexts"
+msgstr "No hay contextos."
+
+#: nublado/app/templates/vocab/includes/vue/_vocab_contexts.html:18
+msgid "header_contexts"
+msgstr "Contextos"
+
+#: nublado/app/templates/vocab/includes/vue/_vocab_entries.html:63
 msgid "no_entries_in_selected_language"
 msgstr "No hay entradas en el idioma elegido."
 
@@ -1120,6 +1136,16 @@ msgstr "Mostrar detalles"
 #: nublado/app/templates/vocab/includes/vue/_vocab_info.html:6
 msgid "label_hide_details"
 msgstr "Ocultar detalles"
+
+#: nublado/app/templates/vocab/includes/vue/_vocab_projects.html:15
+#, fuzzy
+#| msgid "label_vocab_projects"
+msgid "msg_no_projects"
+msgstr "Proyectos"
+
+#: nublado/app/templates/vocab/includes/vue/_vocab_sources.html:15
+msgid "msg_no_sources"
+msgstr "No hay fuentes."
 
 #: nublado/app/templates/vocab/vocab_entries.html:7
 msgid "page_vocabulary_title"

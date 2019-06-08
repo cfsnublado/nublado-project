@@ -15,6 +15,8 @@ v-cloak
 {% trans 'msg_no_sources' %}
 </div>
 
+<div v-else class="page-subheader">{% trans 'header_sources' %}</div>
+
 <vocab-source
 v-for="(vocabSource, index) in vocabSources"
 :key="vocabSource.id"
@@ -67,7 +69,6 @@ class="panel-button"
 </div>
 
 </div>
-
 
 <div class="panel-body">
 

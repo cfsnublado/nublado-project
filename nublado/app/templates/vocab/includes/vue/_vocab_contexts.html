@@ -10,12 +10,15 @@ class="vocab-context-entries"
 v-cloak
 >
 
-<div
-v-for="(entryContext, index) in vocabContexts"
-:key="entryContext.vocab_context_id"
->
+<div v-if="vocabContexts.length == 0">
+{% trans 'msg_no_contexts' %}
+</div>
+
+<div v-else class="page-subheader">{% trans 'header_contexts' %}</div>
 
 <vocab-entry-context
+v-for="(entryContext, index) in vocabContexts"
+:key="entryContext.vocab_context_id"
 :init-entry-context=entryContext
 :context-element="'#context-' + entryContext.id"
 init-source-url="{{ vocab_source_url }}"
@@ -49,8 +52,6 @@ v-html="markdownToHtml(entryContext.vocab_context)"
 </div>
 
 </vocab-entry-context>
-
-</div>
 
 <section
 v-if="pageCount > 1"

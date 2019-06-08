@@ -13133,7 +13133,7 @@ label {
   display: flex;
   -webkit-flex-direction: row;
   flex-direction: row;
-  padding: 10px 20px 10px 20px;
+  padding: 10px 20px 0 20px;
   justify-content: space-between;
 }
 /* line 24, ../scss/cfs/_panel.scss */
@@ -16157,10 +16157,9 @@ body.grey-bg {
   font-size: 1.25rem;
   margin-top: 10px;
   margin-bottom: 5px;
-  color: #aaa;
 }
 
-/* line 29, ../scss/cfs/pages/_app.scss */
+/* line 27, ../scss/cfs/pages/_app.scss */
 .form-subheader {
   font-size: 16px;
   margin-bottom: 10px;

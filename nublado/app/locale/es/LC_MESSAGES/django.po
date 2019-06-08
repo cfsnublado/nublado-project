@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-07 22:03-0700\n"
+"POT-Creation-Date: 2019-06-08 16:04-0700\n"
 "PO-Revision-Date: 2018-11-28 21:16-0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -561,27 +561,27 @@ msgstr "Sí"
 
 #: nublado/app/templates/includes/_pagination.html:13
 #: nublado/app/templates/includes/_pagination.html:18
-#: nublado/app/templates/vocab/includes/vue/_vocab_contexts.html:69
-#: nublado/app/templates/vocab/includes/vue/_vocab_contexts.html:74
+#: nublado/app/templates/vocab/includes/vue/_vocab_contexts.html:67
+#: nublado/app/templates/vocab/includes/vue/_vocab_contexts.html:72
 #: nublado/app/templates/vocab/includes/vue/_vocab_entries.html:106
 #: nublado/app/templates/vocab/includes/vue/_vocab_entries.html:111
-#: nublado/app/templates/vocab/includes/vue/_vocab_projects.html:94
-#: nublado/app/templates/vocab/includes/vue/_vocab_projects.html:99
-#: nublado/app/templates/vocab/includes/vue/_vocab_sources.html:104
-#: nublado/app/templates/vocab/includes/vue/_vocab_sources.html:109
+#: nublado/app/templates/vocab/includes/vue/_vocab_projects.html:103
+#: nublado/app/templates/vocab/includes/vue/_vocab_projects.html:108
+#: nublado/app/templates/vocab/includes/vue/_vocab_sources.html:112
+#: nublado/app/templates/vocab/includes/vue/_vocab_sources.html:117
 msgid "label_previous"
 msgstr "Anterior"
 
 #: nublado/app/templates/includes/_pagination.html:39
 #: nublado/app/templates/includes/_pagination.html:48
-#: nublado/app/templates/vocab/includes/vue/_vocab_contexts.html:102
-#: nublado/app/templates/vocab/includes/vue/_vocab_contexts.html:111
+#: nublado/app/templates/vocab/includes/vue/_vocab_contexts.html:100
+#: nublado/app/templates/vocab/includes/vue/_vocab_contexts.html:109
 #: nublado/app/templates/vocab/includes/vue/_vocab_entries.html:139
 #: nublado/app/templates/vocab/includes/vue/_vocab_entries.html:148
-#: nublado/app/templates/vocab/includes/vue/_vocab_projects.html:127
 #: nublado/app/templates/vocab/includes/vue/_vocab_projects.html:136
-#: nublado/app/templates/vocab/includes/vue/_vocab_sources.html:137
-#: nublado/app/templates/vocab/includes/vue/_vocab_sources.html:146
+#: nublado/app/templates/vocab/includes/vue/_vocab_projects.html:145
+#: nublado/app/templates/vocab/includes/vue/_vocab_sources.html:145
+#: nublado/app/templates/vocab/includes/vue/_vocab_sources.html:154
 msgid "label_next"
 msgstr "Siguiente"
 
@@ -990,7 +990,7 @@ msgid "page_vocab_sources_title"
 msgstr "Fuentes"
 
 #: nublado/app/templates/vocab/auth/vocab_project_sources.html:15
-#: nublado/app/templates/vocab/vocab_project_dashboard.html:18
+#: nublado/app/templates/vocab/includes/vue/_vocab_sources.html:18
 msgid "header_sources"
 msgstr "Fuentes"
 
@@ -1121,7 +1121,7 @@ msgstr "¿Eliminar proyecto?"
 msgid "msg_no_contexts"
 msgstr "No hay contextos."
 
-#: nublado/app/templates/vocab/includes/vue/_vocab_contexts.html:18
+#: nublado/app/templates/vocab/includes/vue/_vocab_contexts.html:17
 msgid "header_contexts"
 msgstr "Contextos"
 
@@ -1138,10 +1138,8 @@ msgid "label_hide_details"
 msgstr "Ocultar detalles"
 
 #: nublado/app/templates/vocab/includes/vue/_vocab_projects.html:15
-#, fuzzy
-#| msgid "label_vocab_projects"
 msgid "msg_no_projects"
-msgstr "Proyectos"
+msgstr "No hay proyectos."
 
 #: nublado/app/templates/vocab/includes/vue/_vocab_sources.html:15
 msgid "msg_no_sources"

@@ -15,7 +15,7 @@ v-cloak
 {% trans 'msg_no_sources' %}
 </div>
 
-<div v-else class="page-subheader">{% trans 'header_sources' %}</div>
+<div class="row"> <!-- row -->
 
 <vocab-source
 v-for="(vocabSource, index) in vocabSources"
@@ -30,10 +30,9 @@ inline-template
 
 <transition name="fade-transition" v-on:after-enter="isVisible = true" v-on:after-leave="isVisible = false">
 
-<div 
-class="panel"
-v-show="isVisible"
->
+<div class="col-md-6" v-show="isVisible"> <!-- col 6 -->
+
+<div class="panel">
 
 <div class="panel-top">
 
@@ -88,13 +87,15 @@ href="#"
 </div>
 </div>
 
+</div><!-- col 6 -->
 </transition>
 
 </vocab-source>
 
-<section
-v-if="pageCount > 1"
->
+<div class="col-sm-12"><!-- col 12 -->
+
+<section v-if="pageCount > 1">
+
 <nav role="pagination">
 
 <ul class="cd-pagination">
@@ -152,7 +153,9 @@ href="#"
 </ul>
 </nav>
 
-</section>
+</section><!-- col 12 -->
+
+</div><!-- row -->
 
 </div>
 

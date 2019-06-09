@@ -107,6 +107,16 @@ sidebar-adaptable theme-white {{ sidebar_expanded|yesno:"sidebar-nav-expanded," 
   </div>
   </div>
 
+{% elif request.session.session_obj.vocab_entry %}
+
+  <div class="row justify-content-md-center">
+  <div class="col-md-10">
+
+  <div class="small-caps-header"> {% trans 'header_vocab_entry' %} </div>
+
+  </div>
+  </div>
+
 {% endif %}
 
 {% endblock page_header %}

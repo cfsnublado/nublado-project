@@ -347,7 +347,8 @@ const EntryInstanceTagbox = {
 const VocabContexts = {
   mixins: [
     AjaxProcessMixin,
-    PaginationMixin
+    PaginationMixin,
+    AdminMixin
   ],
   props: {
     initVocabContextsUrl: {
@@ -407,7 +408,12 @@ const VocabContexts = {
 }
 
 const VocabEntryContext = {
-  mixins: [MarkdownMixin, HighlightMixin],
+  mixins: [
+    BaseModel,
+    MarkdownMixin,
+    HighlightMixin,
+    AdminMixin
+  ],
   props: {
     initEntryContext: {
       type: Object,
@@ -434,10 +440,14 @@ const VocabEntryContext = {
     }
   },
   created() {
-    console.log(this.initSourceUrl)
     this.$nextTick(() => {
       this.highlight(this.entryContext.vocab_entry_tags)
     })
+  
+    if (this.initDeleteUrl) {
+      this.deleteUrl = this.initDeleteUrl
+        .replace(0, this.entryContext.vocab_context_id)
+    }  
   }
 }
 

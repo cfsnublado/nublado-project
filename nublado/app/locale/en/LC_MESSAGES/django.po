@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-08 19:30-0700\n"
+"POT-Creation-Date: 2019-06-08 19:48-0700\n"
 "PO-Revision-Date: 2018-11-28 21:15-0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -47,7 +47,7 @@ msgstr ""
 msgid "validation_invite_sender_receiver_equal"
 msgstr ""
 
-#: nublado/core/models.py:61 nublado/app/templates/base.html:215
+#: nublado/core/models.py:61 nublado/app/templates/base.html:211
 #: nublado/app/templates/vocab/includes/_vocab_entry_create_modal.html:37
 msgid "label_language"
 msgstr "Language"
@@ -477,12 +477,12 @@ msgstr "500"
 msgid "error_500_message"
 msgstr "Server error"
 
-#: nublado/app/templates/base.html:74
+#: nublado/app/templates/base.html:70
 #: nublado/app/templates/security/login.html:56
 msgid "label_login"
 msgstr "Log in"
 
-#: nublado/app/templates/base.html:160
+#: nublado/app/templates/base.html:156
 #: nublado/app/templates/vocab/auth/vocab_base.html:88
 #: nublado/app/templates/vocab/auth/vocab_base.html:259
 #: nublado/app/templates/vocab/includes/_vocab_breadcrumbs_auth.html:45
@@ -490,12 +490,12 @@ msgstr "Log in"
 msgid "label_main"
 msgstr "Main"
 
-#: nublado/app/templates/base.html:169
+#: nublado/app/templates/base.html:165
 #: nublado/app/templates/vocab/includes/_vocab_breadcrumbs.html:23
 msgid "label_projects"
 msgstr "Projects"
 
-#: nublado/app/templates/base.html:179
+#: nublado/app/templates/base.html:175
 #: nublado/app/templates/vocab/auth/vocab_base.html:121
 #: nublado/app/templates/vocab/includes/_vocab_breadcrumbs.html:40
 #: nublado/app/templates/vocab/includes/_vocab_breadcrumbs_auth.html:14
@@ -504,7 +504,7 @@ msgstr "Projects"
 msgid "label_sources"
 msgstr "Sources"
 
-#: nublado/app/templates/base.html:189
+#: nublado/app/templates/base.html:185
 #: nublado/app/templates/vocab/auth/vocab_base.html:305
 #: nublado/app/templates/vocab/includes/_vocab_breadcrumbs.html:7
 #: nublado/app/templates/vocab/includes/_vocab_breadcrumbs.html:65
@@ -1149,6 +1149,10 @@ msgstr "Project"
 #: nublado/app/templates/vocab/vocab_base.html:104
 msgid "header_source"
 msgstr "Source"
+
+#: nublado/app/templates/vocab/vocab_base.html:115
+msgid "header_vocab_entry"
+msgstr "Vocab entry"
 
 #: nublado/app/templates/vocab/vocab_entries.html:7
 msgid "page_vocabulary_title"

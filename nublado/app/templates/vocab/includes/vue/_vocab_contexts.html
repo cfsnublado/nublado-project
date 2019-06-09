@@ -1,12 +1,13 @@
 {% load i18n %}
 
 <vocab-contexts
+:init-is-admin="{{ user.is_admin|yesno:'true,false' }}"
 init-vocab-contexts-url="{{ vocab_contexts_url }}"
 inline-template
 >
 
 <div 
-class="vocab-context-entries"
+class="vocab-contexts"
 v-cloak
 >
 
@@ -19,18 +20,42 @@ v-cloak
 <vocab-entry-context
 v-for="(entryContext, index) in vocabContexts"
 :key="entryContext.vocab_context_id"
+:init-is-admin="isAdmin"
 :init-entry-context=entryContext
 :context-element="'#context-' + entryContext.id"
+init-delete-url="{{ vocab_context_delete_url }}"
 init-source-url="{{ vocab_source_url }}"
 inline-template
 >
 
-<div class="panel">
+<transition name="fade-transition" v-on:after-enter="isVisible = true" v-on:after-leave="isVisible = false">
+
+<div class="panel" v-show="isVisible">
 <div class="panel-body">
 
-<div :id="[[ entryContext.id ]]" class="vocab-context">
+<div class="panel-top">
+<div class="panel-buttons">
 
-<div class="vocab-source-title">
+<ajax-delete
+v-if="isAdmin"
+delete-confirm-id="delete-context"
+:delete-url="deleteUrl"
+@ajax-success="remove"
+inline-template
+>
+
+<a
+class="panel-button"
+@click.prevent="confirmDelete"
+>
+<i class="fas fa-times fas"></i>
+</a>
+</ajax-delete>
+
+</div>
+</div>
+
+<div class="panel-header">
 <a
 href="#"
 @click.prevent="selectSource"
@@ -38,6 +63,8 @@ href="#"
 [[ entryContext.vocab_source ]]
 </a>
 </div>
+
+<div :id="[[ entryContext.id ]]" class="vocab-context">
 
 <div 
 :id="'context-' + entryContext.id"
@@ -50,6 +77,8 @@ v-html="markdownToHtml(entryContext.vocab_context)"
 
 </div>
 </div>
+
+</transition>
 
 </vocab-entry-context>
 

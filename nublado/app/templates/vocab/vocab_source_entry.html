@@ -10,6 +10,15 @@
 
 {% block vocab_entry_search %}
 
+<div class="panel">
+<div class="panel-body">
+
+<div class="panel-header">
+
+{% trans "label_search_vocab_in_source" %}
+
+</div>
+
 {% url 'vocab:vocab_source_entry_language_autocomplete' vocab_source.id 'zz' as autocomplete_url %}
 {% url 'vocab:vocab_source_dashboard' vocab_source.id vocab_source.slug  as search_url %}
 
@@ -19,6 +28,9 @@
 {% alias True as search_btn %}
 
 {% include 'includes/vue/_language_search.html' %}
+
+</div>
+</div>
 
 {% endblock vocab_entry_search %}
 

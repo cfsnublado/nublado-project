@@ -16147,7 +16147,7 @@ body.grey-bg {
 /* line 11, ../scss/cfs/pages/_app.scss */
 .page-header {
   font-size: 1.625rem;
-  margin-top: 18px;
+  margin-top: 10px;
   margin-bottom: 10px;
   color: #777;
 }
@@ -16160,6 +16160,14 @@ body.grey-bg {
 }
 
 /* line 27, ../scss/cfs/pages/_app.scss */
+.small-caps-header {
+  font-size: 0.875rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #aaa;
+}
+
+/* line 36, ../scss/cfs/pages/_app.scss */
 .form-subheader {
   font-size: 16px;
   margin-bottom: 10px;

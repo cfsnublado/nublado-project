@@ -1152,7 +1152,7 @@ msgstr "Fuente"
 
 #: nublado/app/templates/vocab/vocab_base.html:134
 msgid "header_vocab_entry"
-msgstr "Entrada de vocublario"
+msgstr "Entrada de vocabulario"
 
 #: nublado/app/templates/vocab/vocab_entries.html:7
 msgid "page_vocabulary_title"

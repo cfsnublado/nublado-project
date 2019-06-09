@@ -1,4 +1,4 @@
-{% extends "vocab/auth/vocab_base.html" %}
+{% extends "vocab/vocab_base.html" %}
 {% load staticfiles %}
 {% load i18n %}
 
@@ -7,6 +7,25 @@
 {% endblock title %}
 
 {% block vocab_entry_create_link_active %}active{% endblock vocab_entry_create_link_active %}
+
+{% block page_header %}
+
+<div class="row justify-content-md-center">
+<div class="col-md-10">
+<div class="page-header"> {% trans "header_create_vocab_entry" %} </div>
+</div>
+</div>
+
+{% endblock page_header %}
+
+{% block breadcrumb_content %}
+
+{{ block.super }}
+&nbsp;>&nbsp;
+{% trans "label_create" %}
+
+{% endblock breadcrumb_content %}
+
 
 {% block content %}
 

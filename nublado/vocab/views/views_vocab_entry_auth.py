@@ -7,7 +7,7 @@ from django.views.generic import (
 )
 
 from core.views import (
-    AjaxDeleteMixin, AjaxFormMixin,
+    AjaxDeleteMixin,
     MessageMixin, ObjectSessionMixin,
     UserstampMixin
 )
@@ -93,7 +93,7 @@ class VocabEntryContextsView(
 
 
 class VocabEntryCreateView(
-    LoginRequiredMixin, AjaxFormMixin,
+    LoginRequiredMixin, ObjectSessionMixin,
     UserstampMixin, CreateView
 ):
     model = VocabEntry

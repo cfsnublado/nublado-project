@@ -29,6 +29,8 @@ Vue.component('entry-tagbox', EntryTagbox)
 Vue.component('entry-instance-tagbox', EntryInstanceTagbox)
 
 Vue.component('vocab-contexts', VocabContexts)
+Vue.component('vocab-entry-contexts', VocabEntryContexts)
+Vue.component('vocab-context', VocabContext)
 Vue.component('vocab-entry-context', VocabEntryContext)
 Vue.component('context-tag-panel', ContextTagPanel)
 Vue.component('context-tagger', ContextTagger)

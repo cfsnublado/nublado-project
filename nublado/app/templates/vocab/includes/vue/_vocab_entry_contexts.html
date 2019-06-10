@@ -1,6 +1,6 @@
 {% load i18n %}
 
-<vocab-contexts
+<vocab-entry-contexts
 :init-is-admin="{{ user.is_admin|yesno:'true,false' }}"
 init-vocab-contexts-url="{{ vocab_contexts_url }}"
 inline-template
@@ -17,12 +17,12 @@ v-cloak
 
 <div v-else class="page-subheader">{% trans 'header_contexts' %}</div>
 
-<vocab-context
-v-for="(context, index) in vocabContexts"
-:key="context.id"
+<vocab-entry-context
+v-for="(entryContext, index) in vocabContexts"
+:key="entryContext.vocab_context_id"
 :init-is-admin="isAdmin"
-:init-context=context
-:context-element="'#context-' + context.id"
+:init-entry-context=entryContext
+:context-element="'#context-' + entryContext.id"
 init-delete-url="{{ vocab_context_delete_url }}"
 init-source-url="{{ vocab_source_url }}"
 inline-template
@@ -60,16 +60,16 @@ class="panel-button"
 href="#"
 @click.prevent="selectSource"
 >
-[[ context.vocab_source ]]
+[[ entryContext.vocab_source ]]
 </a>
 </div>
 
-<div :id="[[ context.id ]]" class="vocab-context">
+<div :id="[[ entryContext.id ]]" class="vocab-context">
 
 <div 
-:id="'context-' + context.id"
+:id="'context-' + entryContext.id"
 class="vocab-context-text"
-v-html="markdownToHtml(context.content)"
+v-html="markdownToHtml(entryContext.vocab_context)"
 >
 </div>
 
@@ -80,7 +80,7 @@ v-html="markdownToHtml(context.content)"
 
 </transition>
 
-</vocab-context>
+</vocab-entry-context>
 
 <section
 v-if="pageCount > 1"
@@ -146,4 +146,4 @@ href="#"
 
 </div>
 
-</vocab-contexts>
+</vocab-entry-contexts>

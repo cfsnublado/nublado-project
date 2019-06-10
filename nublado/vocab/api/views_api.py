@@ -23,7 +23,8 @@ from ..models import (
 )
 from ..serializers import (
     VocabEntrySerializer, VocabContextEntrySerializer,
-    VocabContextSerializer, VocabProjectSerializer, VocabSourceSerializer,
+    VocabContextSerializer,
+    VocabProjectSerializer, VocabSourceSerializer,
     VocabSourceEntrySerializer
 )
 from ..utils import (
@@ -62,9 +63,9 @@ class VocabProjectViewSet(APIDefaultsMixin, ModelViewSet):
     lookup_field = 'pk'
     lookup_url_kwarg = 'pk'
     serializer_class = VocabProjectSerializer
+    queryset = VocabProject.objects.all()
     permission_classes = [ReadWritePermission]
     pagination_class = SmallPagination
-    queryset = VocabProject.objects.all()
 
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
@@ -173,9 +174,9 @@ class VocabSourceViewSet(
     lookup_field = 'pk'
     lookup_url_kwarg = 'pk'
     serializer_class = VocabSourceSerializer
+    queryset = VocabSource.objects.prefetch_related('vocab_project')
     permission_classes = [ReadWritePermission]
     pagination_class = SmallPagination
-    queryset = VocabSource.objects.prefetch_related('vocab_project')
 
 
 class NestedVocabSourceViewSet(
@@ -186,9 +187,9 @@ class NestedVocabSourceViewSet(
     lookup_url_kwarg = 'pk'
     queryset = VocabSource.objects.select_related('vocab_project')
     serializer_class = VocabSourceSerializer
+    vocab_project = None
     permission_classes = [ReadWritePermission]
     pagination_class = SmallPagination
-    vocab_project = None
 
     def get_vocab_project(self, vocab_project_pk=None):
         if not self.vocab_project:
@@ -309,6 +310,16 @@ class VocabContextViewSet(
     lookup_url_kwarg = 'pk'
     serializer_class = VocabContextSerializer
     queryset = VocabContext.objects.select_related('vocab_source')
+    permission_classes = [ReadWritePermission]
+    pagination_class = LargePagination
+
+    def get_queryset(self):
+        qs = self.queryset.prefetch_related(
+            'vocabcontextentry_set__vocab_entry',
+            'vocabcontextentry_set__vocab_entry_tags'
+        )
+
+        return qs
 
     @action(methods=['post'], detail=True)
     def add_vocab_entry(self, request, pk=None):
@@ -391,6 +402,8 @@ class NestedVocabContextViewSet(
     queryset = VocabContext.objects.select_related('vocab_source')
     serializer_class = VocabContextSerializer
     vocab_source = None
+    permission_classes = [ReadWritePermission]
+    pagination_class = SmallPagination
 
     def get_vocab_source(self, vocab_source_pk=None):
         if not self.vocab_source:
@@ -409,7 +422,12 @@ class NestedVocabContextViewSet(
         serializer.save(vocab_source=vocab_source)
 
     def get_queryset(self):
-        return self.queryset.filter(vocab_source_id=self.kwargs['vocab_source_pk'])
+        qs = self.queryset.prefetch_related(
+            'vocabcontextentry_set__vocab_entry',
+            'vocabcontextentry_set__vocab_entry_tags'
+        )
+        qs = qs.filter(vocab_source_id=self.kwargs['vocab_source_pk'])
+        return qs
 
     def list(self, request, *args, **kwargs):
         self.get_vocab_source(vocab_source_pk=kwargs['vocab_source_pk'])

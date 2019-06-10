@@ -50,6 +50,16 @@
   </a>
   </li>
 
+  <li class="nav-item">
+  <a 
+  id="sidebar-nav-vocab-source-contexts"
+  class="nav-link {% block vocab_source_contexts_link_active %}{% endblock vocab_source_contexts_link_active %}"
+  href="{% url 'vocab:vocab_source_contexts' vocab_source.id vocab_source.slug %}"
+  >
+  <i class="nav-link-icon fas fa-file fa-fw"></i> {% trans "label_contexts" %}
+  </a>
+  </li>
+
   <li class="divider"></li>
 
   {% if vocab_source.creator_id == user.id %}
@@ -61,6 +71,16 @@
 "
     href="{% url 'vocab:vocab_source_update' vocab_source.id vocab_source.slug %}">
     <i class="nav-link-icon fas fa-edit fa-fw"></i> {% trans "label_edit_source" %}
+    </a>
+    </li>
+
+    <li class="nav-item">
+    <a 
+    id="sidebar-nav-vocab-context-create" 
+    class="nav-link {% block vocab_context_create_link_active %}{% endblock vocab_context_create_link_active %}" 
+    href="{% url 'vocab:vocab_context_create' vocab_source.id vocab_source.slug %}"
+    >
+    <i class="nav-link-icon fas fa-plus fa-fw"></i> {% trans "label_new_vocab_context" %}
     </a>
     </li>
 

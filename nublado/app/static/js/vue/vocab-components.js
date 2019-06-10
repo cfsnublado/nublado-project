@@ -407,6 +407,50 @@ const VocabContexts = {
   }
 }
 
+const VocabEntryContexts = {
+  mixins: [ VocabContexts ]
+}
+
+const VocabContext = {
+  mixins: [
+    BaseModel,
+    MarkdownMixin,
+    HighlightMixin,
+    AdminMixin
+  ],
+  props: {
+    initContext: {
+      type: Object,
+      required: true
+    },
+    initSourceUrl: {
+      type: String,
+      default: ''
+    }
+  },
+  data() {
+    return {
+      context: this.initContext
+    }
+  },
+  methods: {
+    selectSource() {
+      if (this.initSourceUrl) {
+        this.sourceUrl = this.initSourceUrl
+          .replace(0, this.context.vocab_source_id)
+          .replace('zzz', this.context.vocab_source_slug)
+        window.location.replace(this.sourceUrl)
+      }
+    }
+  },
+  created() {
+    if (this.initDeleteUrl) {
+      this.deleteUrl = this.initDeleteUrl
+        .replace(0, this.context.id)
+    }  
+  }
+}
+
 const VocabEntryContext = {
   mixins: [
     BaseModel,

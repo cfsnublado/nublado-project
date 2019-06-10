@@ -1,4 +1,4 @@
-{% extends "vocab/auth/vocab_base.html" %}
+{% extends "vocab/vocab_base.html" %}
 {% load staticfiles %}
 {% load core_extras %}
 {% load i18n %}
@@ -20,21 +20,14 @@
 <div class="row justify-content-md-center">
 <div class="col-md-10">
 
-{% if vocab_contexts %}
+{% block vocab_contexts %}
 
-{% for vocab_context in vocab_contexts %}
-{% url 'vocab:vocab_source_entry_contexts' vocab_source.id vocab_source.slug 'xx' 'zzz' as select_url %}
-{% include "vocab/includes/_vocab_context_panel.html" %}
+{% url 'api:nested-vocab-context-list' vocab_source.id as vocab_contexts_url %}
+{% url 'vocab:vocab_context_delete' 0 as vocab_context_delete_url %}
+{% url 'vocab:vocab_source_dashboard' 0 'zzz' as vocab_source_url %}
+{% include "vocab/includes/vue/_vocab_contexts.html" %}
 
-{% endfor %}
-
-{% include "includes/_pagination.html" %}
-
-{% else %}
-
-{% trans "text_no_contexts" %}
-
-{% endif %}
+{% endblock vocab_contexts %}
 
 </div>
 </div>
@@ -48,6 +41,8 @@
 {% include "vocab/includes/_vocab_context_delete_modal.html" with modal_id='delete-context' modal_name='confirmation-modal' %} 
 
 {% endblock modal_content %}
+
+
 
 
 

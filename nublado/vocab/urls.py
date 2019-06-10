@@ -22,11 +22,12 @@ from .views.views_vocab_project_auth import (
     VocabProjectDeleteView, VocabProjectSourcesView, VocabProjectUpdateView
 )
 from .views.views_vocab_source import (
-    VocabSourceDashboardView, VocabSourceEntryView, VocabSourcesView
+    VocabSourceContextsView, VocabSourceDashboardView,
+    VocabSourceEntryView, VocabSourcesView
 )
 from .views.views_vocab_source_auth import (
     VocabSourceCreateView, VocabSourceDeleteView, VocabSourceExportJsonView,
-    VocabSourceContextsView, VocabSourceDashboardView as VocabSourceDashboardAuthView,
+    VocabSourceDashboardView as VocabSourceDashboardAuthView,
     VocabSourceEntriesView, VocabSourceEntryContextsView,
     VocabSourceUpdateView
 )
@@ -104,11 +105,6 @@ auth_urls = [
         'source/<int:vocab_source_pk>-<slug:vocab_source_slug>/entries/',
         VocabSourceEntriesView.as_view(),
         name='vocab_source_entries'
-    ),
-    path(
-        'source/<int:vocab_source_pk>-<slug:vocab_source_slug>/contexts/',
-        VocabSourceContextsView.as_view(),
-        name='vocab_source_contexts'
     ),
     re_path(
         '^source/(?P<vocab_source_pk>[\d]+)-(?P<vocab_source_slug>[-\w]+)'
@@ -190,6 +186,11 @@ urlpatterns = [
         'source/<int:vocab_source_pk>-<slug:vocab_source_slug>/',
         VocabSourceDashboardView.as_view(),
         name='vocab_source_dashboard'
+    ),
+    path(
+        'source/<int:vocab_source_pk>-<slug:vocab_source_slug>/contexts/',
+        VocabSourceContextsView.as_view(),
+        name='vocab_source_contexts'
     ),
     path(
         'source/<int:vocab_source_pk>-<slug:vocab_source_slug>/entry/<slug:vocab_entry_language>/<slug:vocab_entry_slug>/',

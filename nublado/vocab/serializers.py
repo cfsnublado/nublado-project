@@ -151,11 +151,13 @@ class VocabSourceSerializer(BaseSerializer, HyperlinkedModelSerializer):
             'url', 'id', 'project_id', 'project', 'project_slug',
             'project_url', 'creator_id', 'creator_url',
             'name', 'description', 'source_type', 'source_type_name',
-            'slug', 'vocab_contexts_url', 'date_created', 'date_updated'
+            'slug', 'vocab_contexts_url',
+            'date_created', 'date_updated'
         )
         read_only_fields = (
             'url', 'id', 'project_id', 'project_slug', 'project_url', 'creator_id', 'creator_url',
-            'slug', 'vocab_contexts_url', 'source_type_name', 'date_created', 'date_updated'
+            'slug', 'vocab_contexts_url',
+            'source_type_name', 'date_created', 'date_updated'
         )
 
     def create(self, validated_data):
@@ -180,17 +182,22 @@ class VocabContextSerializer(BaseSerializer, HyperlinkedModelSerializer):
         view_name='api:nested-vocab-context-entry-list',
         lookup_url_kwarg='vocab_context_pk'
     )
+    vocab_entry_tags = SerializerMethodField()
+
+    def get_vocab_entry_tags(self, obj):
+        return obj.get_entries_and_tags()
 
     class Meta:
         model = VocabContext
         fields = (
             'url', 'id', 'vocab_source_url',
             'vocab_source_id', 'content', 'vocab_entries_url',
-            'date_created', 'date_updated',
+            'vocab_entry_tags', 'date_created', 'date_updated',
         )
         read_only_fields = (
             'url', 'id', 'vocab_source_url',
-            'vocab_source_id', 'vocab_entries_url', 'date_created', 'date_updated'
+            'vocab_source_id', 'vocab_entries_url', 'vocab_entry_tags',
+            'date_created', 'date_updated'
         )
 
     def create(self, validated_data):

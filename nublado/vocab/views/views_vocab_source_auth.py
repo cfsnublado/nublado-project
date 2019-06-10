@@ -103,41 +103,6 @@ class VocabSourceEntriesView(
         return context
 
 
-class VocabSourceContextsView(
-    LoginRequiredMixin, VocabSourceMixin,
-    VocabSourceSessionMixin, VocabSourcePermissionMixin,
-    VocabEntrySearchMixin, ListView
-):
-    '''
-    Gets source contexts that have associated vocab entries.
-    '''
-    model = VocabContext
-    context_object_name = 'vocab_contexts'
-    template_name = '{0}/auth/vocab_source_contexts.html'.format(APP_NAME)
-    paginate_by = 10
-
-    def search_success(self, **kwargs):
-        return redirect(
-            'vocab:vocab_source_entry_contexts',
-            vocab_source_pk=self.vocab_source.id,
-            vocab_source_slug=self.vocab_source.slug,
-            vocab_entry_language=self.vocab_entry.language,
-            vocab_entry_slug=self.vocab_entry.slug
-        )
-
-    def get_queryset(self, **kwargs):
-        qs = super(VocabSourceContextsView, self).get_queryset(**kwargs)
-        qs = qs.prefetch_related(
-            'vocabcontextentry_set__vocab_entry',
-            'vocabcontextentry_set__vocab_entry_tags'
-        )
-        qs = qs.filter(
-            vocab_source_id=self.vocab_source.id,
-        ).distinct()
-        qs = qs.order_by('-date_created')
-        return qs
-
-
 class VocabSourceEntryContextsView(
     LoginRequiredMixin, VocabSourceMixin,
     VocabSourceSessionMixin, VocabSourcePermissionMixin,

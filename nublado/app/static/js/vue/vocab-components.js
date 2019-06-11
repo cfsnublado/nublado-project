@@ -451,6 +451,10 @@ const VocabContext = {
   }
 }
 
+const VocabContextTags = {
+  mixins: [ VocabContext ]
+}
+
 const VocabEntryContext = {
   mixins: [
     BaseModel,

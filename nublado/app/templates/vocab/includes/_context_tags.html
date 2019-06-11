@@ -1,6 +1,6 @@
 {% load core_extras %}
 
-<context-tag-panel
+<context-tags
 :init-entries='{{ vocab_context.get_entries_and_tags|jsonify }}'
 init-select-url="{{ select_url }}"
 context-element="#context-{{ vocab_context.id }}"
@@ -11,7 +11,7 @@ inline-template
 
 <div 
 id="vocab-context-{{ vocab_context.id }}" 
-class="panel vocab-context-panel"
+class="panel"
 v-show="isVisible"
 >
 
@@ -58,7 +58,7 @@ class="vocab-context-text"
   :key="index"
   :init-id="index"
   :init-value="tag.value"
-  :toggle-select="tag.toggleSelect"
+  :toggle-select="false"
   @tag-select="selectTag"
   @tag-toggle="toggleTag"
 >
@@ -71,4 +71,4 @@ class="vocab-context-text"
 
 </transition>
 
-</context-tag-panel>
+</context-tags>

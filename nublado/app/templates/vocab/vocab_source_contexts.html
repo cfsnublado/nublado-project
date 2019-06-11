@@ -25,7 +25,7 @@
 {% url 'api:nested-vocab-context-list' vocab_source.id as vocab_contexts_url %}
 {% url 'vocab:vocab_context_delete' 0 as vocab_context_delete_url %}
 {% url 'vocab:vocab_source_dashboard' 0 'zzz' as vocab_source_url %}
-{% include "vocab/includes/vue/_vocab_contexts.html" %}
+{% include "vocab/includes/vue/_vocab_context_tags.html" %}
 
 {% endblock vocab_contexts %}
 

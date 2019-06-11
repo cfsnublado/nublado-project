@@ -225,14 +225,14 @@ class VocabContext(
 
     def get_entries_and_tags(self):
         '''
-        Returns a dict of all of the context's vocab entries along with their
+        Returns a list of all of the context's vocab entries along with their
         corresponding tags (i.e., entry instances in the context.)
         '''
-        entries_tags = {}
+        entries_tags = []
         context_entries = self.vocabcontextentry_set.all()
         for context_entry in context_entries:
             vocab_entry = context_entry.vocab_entry
-            entries_tags[vocab_entry.id] = {
+            entries_tags.append({
                 'vocab_entry': {
                     'id': vocab_entry.id,
                     'entry': vocab_entry.entry,
@@ -240,7 +240,7 @@ class VocabContext(
                     'slug': vocab_entry.slug
                 },
                 'tags': context_entry.get_vocab_entry_tags()
-            }
+            })
         return entries_tags
 
     def get_vocab_source(self):

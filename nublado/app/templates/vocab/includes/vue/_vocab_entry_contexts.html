@@ -31,7 +31,6 @@ inline-template
 <transition name="fade-transition" v-on:after-enter="isVisible = true" v-on:after-leave="isVisible = false">
 
 <div class="panel" v-show="isVisible">
-<div class="panel-body">
 
 <div class="panel-top">
 <div class="panel-buttons">
@@ -54,6 +53,8 @@ class="panel-button"
 
 </div>
 </div>
+
+<div class="panel-body">
 
 <div class="panel-header">
 <a

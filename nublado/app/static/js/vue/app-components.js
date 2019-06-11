@@ -153,7 +153,7 @@ const Tag = {
 }
 
 const ToggleTag = {
-  mixins: [BaseToggleTag]
+  mixins: [ BaseToggleTag ]
 }
 
 const AjaxTag = {

@@ -567,5 +567,5 @@ project_name: English Reading
     en: John Donne: John Donne
 
     en: Seneca: Seneca
-
-- 
+    
+    </div>

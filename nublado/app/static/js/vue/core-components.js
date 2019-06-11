@@ -639,7 +639,6 @@ const BaseToggleTag = {
   },
   methods: {
     toggle() {
-      this.toggleSelect = !this.toggleSelect
       this.$emit('tag-toggle', this.id)
     },
   },

@@ -58,7 +58,7 @@ class="vocab-context-text"
   :key="index"
   :init-id="index"
   :init-value="tag.value"
-  :toggle-select="false"
+  :toggle-select="tag.selected"
   @tag-select="selectTag"
   @tag-toggle="toggleTag"
 >

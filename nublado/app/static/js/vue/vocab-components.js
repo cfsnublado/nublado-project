@@ -430,15 +430,13 @@ const VocabContext = {
   },
   data() {
     return {
-      context: this.initContext
+      context: this.initContext,
+      sourceUrl: this.initSourceUrl
     }
   },
   methods: {
     selectSource() {
-      if (this.initSourceUrl) {
-        this.sourceUrl = this.initSourceUrl
-          .replace(0, this.context.vocab_source_id)
-          .replace('zzz', this.context.vocab_source_slug)
+      if (this.sourceUrl) {
         window.location.replace(this.sourceUrl)
       }
     }
@@ -447,12 +445,85 @@ const VocabContext = {
     if (this.initDeleteUrl) {
       this.deleteUrl = this.initDeleteUrl
         .replace(0, this.context.id)
-    }  
+    }
+
+    if (this.initSourceUrl) {
+      this.sourceUrl = this.initSourceUrl
+        .replace(0, this.context.vocab_source_id)
+        .replace('zzz', this.context.vocab_source_slug)
+    }
   }
 }
 
 const VocabContextTags = {
-  mixins: [ VocabContext ]
+  mixins: [ VocabContext ],
+  props: {
+    initEntries: {
+      type: Array,
+      default: []
+    },
+    initTagSelectUrl: {
+      type: String,
+      default: ''
+    }
+  },
+  data() {
+    return {
+      entries: [],
+      currentEntry: null,
+      tagSelectUrl: this.initTagSelectUrl
+    }
+  },
+  methods: {
+    selectTag(index) {
+      this.currentEntry = this.entries[index]
+      if (this.tagSelectUrl) {
+        this.tagSelectUrl = this.tagSelectUrl
+          .replace('xx', this.currentEntry.language)
+          .replace('zzz', this.currentEntry.slug)
+        window.location.replace(this.tagSelectUrl)
+      }
+    },
+    toggleTag(index) {
+      if (this.currentEntry == null) {
+        this.currentEntry = this.entries[index]
+        this.currentEntry.selected = true
+        this.highlight(this.currentEntry.tags)
+      } else if (this.currentEntry.id != this.entries[index].id) {
+        this.currentEntry.selected = false
+        this.clearHighlight()
+        this.currentEntry = this.entries[index]
+        this.currentEntry.selected = true
+        this.highlight(this.currentEntry.tags)
+      } else {
+        this.currentEntry.selected = !this.currentEntry.selected
+
+        if (this.currentEntry.selected) {
+          this.highlight(this.currentEntry.tags)
+        } else {
+          this.clearHighlight()
+        }
+      }
+    },
+    loadEntries() {
+      for (var k in this.initEntries) {
+        const initEntry = this.initEntries[k]['vocab_entry']
+        const initTags = this.initEntries[k]['tags']
+        const entry = {
+          id: initEntry.id,
+          value: initEntry.entry,
+          slug: initEntry.slug,
+          language: initEntry.language,
+          selected: false,
+          tags: initTags
+        }
+        this.entries.push(entry)
+      }
+    },
+  },
+  created() {
+    this.loadEntries()
+  }
 }
 
 const VocabEntryContext = {
@@ -730,81 +801,6 @@ const ContextTagger = {
   },
   created() {
     this.contextHtml = this.markdownToHtml(this.context)
-    this.loadEntries()
-  }
-}
-
-const ContextTagPanel = {
-  mixins: [
-    HighlightMixin,
-    VisibleMixin
-  ],
-  props: {
-    initEntries: {
-      type: Object,
-      default: () => ({})
-    },
-    initSelectUrl: {
-      type: String,
-      required: true
-    }
-  },
-  data() {
-    return {
-      entries: [],
-      currentEntry: null,
-      selectUrl: '',
-    }
-  },
-  methods: {
-    selectTag(index) {
-      this.currentEntry = this.entries[index]
-      this.selectUrl = this.initSelectUrl
-        .replace('xx', this.currentEntry.language)
-        .replace('zzz', this.currentEntry.slug)
-      window.location.replace(this.selectUrl)
-    },
-    toggleTag(index) {
-      console.log('index ' + index)
-      if (this.currentEntry == null) {
-        this.currentEntry = this.entries[index]
-        this.currentEntry.toggleSelect = true
-        this.highlight(this.currentEntry.tags)
-      } else if (this.currentEntry.id != this.entries[index].id) {
-        this.currentEntry.toggleSelect = false
-        this.clearHighlight()
-        this.currentEntry = this.entries[index]
-        this.currentEntry.toggleSelect = true
-        this.highlight(this.currentEntry.tags)
-      } else {
-        this.currentEntry.toggleSelect = !this.currentEntry.toggleSelect
-        if (this.currentEntry.toggleSelect) {
-          this.highlight(this.currentEntry.tags)
-        } else {
-          this.clearHighlight()
-        }
-      }
-    },
-    loadEntries() {
-      for (var k in this.initEntries) {
-        const initEntry = this.initEntries[k]['vocab_entry']
-        const initTags = this.initEntries[k]['tags']
-        const entry = {
-          id: initEntry.id,
-          value: initEntry.entry,
-          slug: initEntry.slug,
-          language: initEntry.language,
-          toggleSelect: false,
-          tags: initTags
-        }
-        this.entries.push(entry)
-      }
-    },
-    hidePanel() {
-      this.isVisible = false
-    }
-  },
-  created() {
     this.loadEntries()
   }
 }

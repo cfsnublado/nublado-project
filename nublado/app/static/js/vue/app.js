@@ -33,7 +33,6 @@ Vue.component('vocab-entry-contexts', VocabEntryContexts)
 Vue.component('vocab-context', VocabContext)
 Vue.component('vocab-context-tags', VocabContextTags)
 Vue.component('vocab-entry-context', VocabEntryContext)
-Vue.component('context-tag-panel', ContextTagPanel)
 Vue.component('context-tagger', ContextTagger)
 
 Vue.component('entry-form', EntryForm)

@@ -21,10 +21,12 @@ v-cloak
 v-for="(context, index) in vocabContexts"
 :key="context.id"
 :init-is-admin="isAdmin"
-:init-context=context
+:init-context="context"
+:init-entries="context.vocab_entry_tags"
 :context-element="'#context-' + context.id"
 init-delete-url="{{ vocab_context_delete_url }}"
 init-source-url="{{ vocab_source_url }}"
+init-tag-select-url="{{ tag_select_url }}"
 inline-template
 >
 
@@ -83,10 +85,13 @@ v-html="markdownToHtml(context.content)"
 <div class="vocab-entries ui labels">
 
 <toggle-tag
-  v-for="(tag, index) in context.vocab_entry_tags"
+  v-for="(tag, index) in entries"
   :key="index"
   :init-id="index"
-  :init-value="tag.vocab_entry.entry"
+  :init-value="tag.value"
+  :toggle-select="tag.selected"
+  @tag-select="selectTag"
+  @tag-toggle="toggleTag"
 >
 </toggle-tag>
 

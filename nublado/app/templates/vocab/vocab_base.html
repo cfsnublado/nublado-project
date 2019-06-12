@@ -56,7 +56,7 @@
   class="nav-link {% block vocab_source_entries_link_active %}{% endblock vocab_source_entries_link_active %}"
   href="{% url 'vocab:vocab_source_entries' vocab_source.id vocab_source.slug %}"
   >
-  <i class="nav-link-icon fas fa-file fa-fw"></i> {% trans "label_entries" %}
+  <i class="nav-link-icon fas fa-language fa-fw"></i> {% trans "label_vocabulary" %}
   </a>
   </li>
 
@@ -66,7 +66,7 @@
   class="nav-link {% block vocab_source_contexts_link_active %}{% endblock vocab_source_contexts_link_active %}"
   href="{% url 'vocab:vocab_source_contexts' vocab_source.id vocab_source.slug %}"
   >
-  <i class="nav-link-icon fas fa-file fa-fw"></i> {% trans "label_contexts" %}
+  <i class="nav-link-icon fas fa-book fa-fw"></i> {% trans "label_contexts" %}
   </a>
   </li>
 

@@ -10,6 +10,56 @@ Implemented components are declared in app-components.js.
 
 /** General mixins **/
 
+const VisibleMixin = {
+  props: {
+    initIsVisible: {
+      type: Boolean,
+      default: true
+    }
+  },
+  data() {
+    return {
+      isVisible: this.initIsVisible
+    }
+  }
+}
+
+const AdminMixin = {
+  props: {
+    initIsAdmin: {
+      type: Boolean,
+      default: false
+    },
+  },
+  data() {
+    return {
+      isAdmin: this.initIsAdmin
+    }
+  },
+}
+
+const AjaxProcessMixin = {
+  data() {
+    return {
+      processing: false
+    }
+  },
+  methods: {
+    process() {
+      this.processing = true
+      this.$emit('ajax-process')
+    },
+    complete() {
+      this.processing = false
+      this.$emit('ajax-complete')
+    },
+    success() {
+      this.processing = false
+      this.$emit('ajax-success')
+    }
+  }
+}
+
 const ClickOutsideMixin = {
   methods: {
     onCloseOutside() {
@@ -83,7 +133,100 @@ const HighlightMixin = {
   }
 }
 
+const PaginationMixin = {
+  data() {
+    return {
+      previousUrl: null,
+      nextUrl: null,
+      pageNum: null,
+      pageCount: null,
+      resultsCount: null
+    }
+  },
+  methods: {
+    setPagination(previousUrl, nextUrl, pageNum, resultsCount, pageCount) {
+      this.previousUrl = previousUrl
+      this.nextUrl = nextUrl
+      this.pageNum = pageNum
+      this.resultsCount = resultsCount
+      this.pageCount = pageCount
+    }
+  }
+}
+
+const UrlMixin = {
+  methods: {
+    getUrlParameter(url, parameter) {
+      parameter = parameter.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]')
+      var regex = new RegExp('[\\?|&]' + parameter.toLowerCase() + '=([^&#]*)')
+      var results = regex.exec('?' + url.toLowerCase().split('?')[1])
+      return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '))
+    },
+    setUrlParameter(url, key, value) {
+      var baseUrl = url.split('?')[0]
+      var urlQueryString = '?' + url.split('?')[1]
+      var newParam = key + '=' + value
+      var params = '?' + newParam
+
+      // If the "search" string exists, then build params from it
+      if (urlQueryString) {
+        var updateRegex = new RegExp('([\?&])' + key + '[^&]*')
+        var removeRegex = new RegExp('([\?&])' + key + '=[^&;]+[&;]?')
+
+        if (typeof value === 'undefined' || value === null || value === '') { // Remove param if value is empty
+          params = urlQueryString.replace(removeRegex, "$1")
+          params = params.replace(/[&;]$/, "")
+        } else if (urlQueryString.match(updateRegex) !== null) { // If param exists already, update it
+          params = urlQueryString.replace(updateRegex, "$1" + newParam)
+        } else { // Otherwise, add it to end of query string
+          params = urlQueryString + '&' + newParam
+        }
+      }
+      // no parameter was set so we don't need the question mark
+      params = params === '?' ? '' : params
+
+      return baseUrl + params 
+    }
+  }
+}
+
 /** Mixins that app components are based on. **/
+
+const BaseModel = {
+  mixins: [ VisibleMixin ],
+  props: {
+    initViewUrl: {
+      type: String,
+      default: ''
+    },
+    initEditUrl: {
+      type: String,
+      default: ''
+    },
+    initDeleteUrl: {
+      type: String,
+      default: ''
+    }
+  },
+  data() {
+    return {
+      viewUrl: this.initViewUrl,
+      editUrl: this.initEditUrl,
+      deleteUrl: this.initDeleteUrl
+    }
+  },
+  methods: {
+    view() {
+      if (this.viewUrl) {
+        window.location.replace(this.viewUrl)
+      }
+    },
+    edit() {},
+    remove() {
+      this.isVisible = false
+    }
+  }
+}
 
 /** Message **/
 
@@ -233,6 +376,7 @@ const FormError = {
 }
 
 const BaseForm = {
+  mixins: [AjaxProcessMixin],
   components: {
     'form-error': FormError
   },
@@ -251,7 +395,6 @@ const BaseForm = {
       formData: {},
       timerId: null,
       timerDelay: this.initTimerDelay,
-      processing: false,
       errors: {}
     }
   },
@@ -264,7 +407,7 @@ const BaseForm = {
   
         axios.post(event.target.action, formData)
         .then(response => {
-          this.success(response)
+          this.success()
         })
         .catch(error => {
           if (error.response) {
@@ -294,18 +437,6 @@ const BaseForm = {
       }
       return formData
     },
-    process() {
-      this.processing = true
-      this.$emit('ajax-process')
-    },
-    complete() {
-      this.processing = false
-      this.$emit('ajax-complete')
-    },
-    success() {
-      this.processing = false
-      this.$emit('ajax-success')
-    }
   },
   watch: {
     reset: function(val) {
@@ -435,6 +566,7 @@ const BaseLanguageSearch = {
 /** Tags **/
 
 const BaseTag = {
+  mixins: [ VisibleMixin ],
   props: {
     initId: {
       type: Number,
@@ -443,6 +575,10 @@ const BaseTag = {
     initValue: {
       type: String,
       required: true
+    },
+    initCanRemove: {
+      type: Boolean,
+      default: false
     },
     selectRedirectUrl: {
       type: String,
@@ -453,7 +589,7 @@ const BaseTag = {
     return {
       id: this.initId,
       value: this.initValue,
-      isVisible: true
+      canRemove: this.initCanRemove,
     }
   },
   methods: {
@@ -465,10 +601,10 @@ const BaseTag = {
     },
     remove() {
       this.$emit('tag-remove', this.id)
+      this.isVisible = false
     }
   },
   template: `
-    <transition name="fade-transition" v-on:after-enter="isVisible = true" v-on:after-leave="isVisible = false">
     <div 
     class="ui label tagblock"
     v-show="isVisible"
@@ -479,15 +615,17 @@ const BaseTag = {
       > 
       {{ value }} 
       </a>
+
       &nbsp;
-      <a 
-      class="delete-tag"
+
+      <a
+      v-if="canRemove"
       @click.prevent="remove"
       >
-        <i class="fas fa-times"></i>
+        <i class="fa-times fas"></i>
       </a>
+
     </div>
-    </transition>
   `
 }
 
@@ -506,6 +644,7 @@ const BaseToggleTag = {
   },
   template: `
     <transition name="fade-transition" v-on:after-enter="isVisible = true" v-on:after-leave="isVisible = false">
+
     <div 
     class="ui label tagblock"
     v-show="isVisible"
@@ -524,62 +663,7 @@ const BaseToggleTag = {
         <i v-bind:class="[toggleSelect ? 'fa-check-square' : 'fa-square', 'fas']"></i>
       </a>
     </div>
-    </transition>
-  `
-}
-
-const BaseDeleteTag = {
-  mixins: [BaseTag],
-  props: {
-    initConfirmationId: {
-      type: String,
-      default: 'delete-modal'
-    },
-    initDeleteUrl: {
-      type: String,
-      default: ''
-    }
-  },
-  data() {
-    return {
-      confirmationId: this.initConfirmationId,
-      deleteUrl: this.initDeleteUrl
-    }
-  },
-  methods: {
-    remove() {
-      this.$emit('tag-remove', this.id)
-      this.isVisible = false
-    }
-  },
-  template: `
-    <transition name="fade-transition" v-on:after-enter="isVisible = true" v-on:after-leave="isVisible = false">
-    <div 
-    class="ui label tagblock"
-    v-bind:key="id"
-    v-show="isVisible"
-    >
-      <a 
-      class="tag-text"
-      @click.prevent="select"
-      > 
-      {{ value }} 
-      </a>
-      &nbsp;
-      <ajax-delete 
-      :confirmation-id="confirmationId"
-      :delete-url="deleteUrl"
-      @ajax-success="remove"
-      inline-template
-      >
-        <a
-        @click.prevent="confirmDelete"
-        >
-          <i class="fa-times fas"></i>
-        </a>
-      </ajax-delete>
-
-    </div>
+    
     </transition>
   `
 }
@@ -601,5 +685,62 @@ const BaseTagbox = {
     selectTag(index) {
       this.$emit('select-tag', index)
     }
+  }
+}
+
+const BaseSymbolKey = {
+  props: {
+    initSymbol: {
+      type: String,
+      default: ''
+    }
+  },
+  data() {
+    return {
+      symbol: this.initSymbol
+    }
+  },
+  methods: {
+    displaySymbol() {
+      this.$emit('display-symbol', (this.symbol))
+    }
+  },
+  template: `
+    <a 
+    href="#" 
+    class="ui tiny basic icon button"
+    :title="symbol"
+    @click.prevent="displaySymbol"
+    >
+    {{ symbol }}
+    </a>
+  `
+}
+
+const BaseSymbolKeypad = {
+  props: {
+    initDisplayEl: {
+      type: String,
+      default: "#keypad-display"
+    }
+  },
+  data() {
+    return {
+      display: '',
+      displayEl: this.initDisplayEl
+    }
+  },
+  methods: {
+    onDisplaySymbol(symbol) {
+      var symbolInput = document.querySelector(this.displayEl)
+      var caretPos = symbolInput.selectionStart
+      var val = this.display.substring(0, caretPos) + symbol + this.display.substring(caretPos)
+      this.display = val
+      caretPos = caretPos + symbol.length;
+      this.$nextTick(() => {
+        symbolInput.focus()
+        symbolInput.setSelectionRange(caretPos, caretPos)
+      })
+    },
   }
 }

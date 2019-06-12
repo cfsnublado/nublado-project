@@ -246,6 +246,8 @@ class VocabSourceSerializerTest(TestCommon):
                 kwargs={'pk': self.vocab_project.id},
                 request=self.request
             ),
+            'project': self.vocab_project.name,
+            'project_slug': self.vocab_project.slug,
             'creator_id': self.user.id,
             'creator_url': drf_reverse(
                 'api:user-detail',
@@ -281,6 +283,8 @@ class VocabSourceSerializerTest(TestCommon):
                 kwargs={'pk': self.vocab_project.id},
                 request=self.request
             ),
+            'project': self.vocab_project.name,
+            'project_slug': self.vocab_project.slug,
             'id': self.vocab_source.id,
             'creator_id': str(self.user.id),
             'creator_url': drf_reverse(
@@ -367,6 +371,7 @@ class VocabContextSerializerTest(TestCommon):
                 kwargs={'vocab_context_pk': self.vocab_context.id},
                 request=self.request
             ),
+            'vocab_entry_tags': [],
             'date_created': self.vocab_context.date_created.isoformat(),
             'date_updated': self.vocab_context.date_updated.isoformat(),
         }
@@ -393,6 +398,7 @@ class VocabContextSerializerTest(TestCommon):
                 kwargs={'vocab_context_pk': self.vocab_context.id},
                 request=self.request
             ),
+            'vocab_entry_tags': [],
             'date_created': self.vocab_context.date_created.isoformat(),
             'date_updated': self.vocab_context.date_updated.isoformat(),
         })
@@ -459,6 +465,14 @@ class VocabContextEntrySerializerTest(TestCommon):
                 request=self.request
             ),
             'id': self.vocab_context_entry.id,
+            'vocab_source_id': self.vocab_source.id,
+            'vocab_source_url': drf_reverse(
+                'api:vocab-source-detail',
+                kwargs={'pk': self.vocab_source.id},
+                request=self.request
+            ),
+            'vocab_source': self.vocab_source.name,
+            'vocab_source_slug': self.vocab_source.slug,
             'vocab_entry_id': self.vocab_entry.id,
             'vocab_entry_url': drf_reverse(
                 'api:vocab-entry-detail',
@@ -466,6 +480,7 @@ class VocabContextEntrySerializerTest(TestCommon):
                 request=self.request
             ),
             'vocab_entry': self.vocab_entry.entry,
+            'vocab_context_id': self.vocab_context.id,
             'vocab_context_url': drf_reverse(
                 'api:vocab-context-detail',
                 kwargs={'pk': self.vocab_context.id},
@@ -487,6 +502,14 @@ class VocabContextEntrySerializerTest(TestCommon):
                 request=self.request
             ),
             'id': self.vocab_context_entry.id,
+            'vocab_source_id': self.vocab_source.id,
+            'vocab_source_url': drf_reverse(
+                'api:vocab-source-detail',
+                kwargs={'pk': self.vocab_source.id},
+                request=self.request
+            ),
+            'vocab_source': self.vocab_source.name,
+            'vocab_source_slug': self.vocab_source.slug,
             'vocab_entry_id': self.vocab_entry.id,
             'vocab_entry_url': drf_reverse(
                 'api:vocab-entry-detail',
@@ -494,6 +517,7 @@ class VocabContextEntrySerializerTest(TestCommon):
                 request=self.request
             ),
             'vocab_entry': self.vocab_entry.entry,
+            'vocab_context_id': self.vocab_context.id,
             'vocab_context_url': drf_reverse(
                 'api:vocab-context-detail',
                 kwargs={'pk': self.vocab_context.id},

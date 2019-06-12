@@ -1,6 +1,8 @@
+
 const AjaxDelete = {
+  mixins: [AjaxProcessMixin],
   props: {
-    confirmationId: {
+    deleteConfirmId: {
       type: String,
       default: 'confirmation-modal'
     },
@@ -8,7 +10,7 @@ const AjaxDelete = {
       type: String,
       default: '',
     },
-    redirectUrl: {
+    deleteRedirectUrl: {
       type: String,
       default: ''
     },
@@ -21,27 +23,29 @@ const AjaxDelete = {
     return {
       timerId: null,
       timerDelay: this.initTimerDelay,
-      processing: false
     }
   },
   methods: {
     confirmDelete() {
-      this.$modal.showConfirmation(this.confirmationId)
+      this.$modal.showConfirmation(this.deleteConfirmId)
       .then(yes => {
         console.log(yes)
-        this.onSubmit()
+        this.onDelete()
       })
       .catch(no => {
         console.log(no)
       })
     },
-    onSubmit(event) {
+    onDelete(event) {
       this.process()
       clearTimeout(this.timerId)
       this.timerId = setTimeout(()=>{
-        axios.post(this.deleteUrl)
+        axios.delete(this.deleteUrl)
         .then(response => {
-          this.success(response)
+          if (this.deleteRedirectUrl) {
+            window.location.replace(this.deleteRedirectUrl)
+          }
+          this.success()
         })
         .catch(error => {
           if (error.response) {
@@ -55,24 +59,10 @@ const AjaxDelete = {
         })
         .finally(() => this.complete())
       }, this.timerDelay)
-    },
-    success(response) {
-      if (this.redirectUrl) {
-        window.location.replace(this.redirectUrl)
-      } else {
-        this.$emit('ajax-success')
-      }
-    },
-    process() {
-      this.processing = true
-      this.$emit('ajax-process')
-    },
-    complete() {
-      this.processing = false
-      this.$emit('ajax-complete')
     }
   }
 }
+
 const AlertMessage = {
   mixins: [BaseMessage]
 }
@@ -117,76 +107,45 @@ const ConfirmationModal = {
   }
 }
 
-const EntrySearch = {
-  mixins: [BaseLanguageSearch],
-  methods: {
-    setResult(result) {
-      this.searchTerm = result
-      this.search()
+const AudioPlayer = {
+  props: {
+    initAudioId: {
+      type: String,
+      required: true
     },
-    search(val) {
-      clearTimeout(this.searchTimerId)
-      this.isOpen = false
-      url = this.searchUrl + "?search_entry=" + this.searchTerm + "&search_language=" + this.language
-      window.location.replace(url);
+    initSoundFile: {
+      type: String,
+      default: null
     }
   },
-}
-
-const EntryForm = {
-  mixins: [BaseForm],
   data() {
     return {
-      formData: {
-        entry: '',
-        language: 'en',
-        pronunciation_spelling: '',
-        description: ''
-      },
+      audioId: this.initAudioId,
+      soundFile: this.initSoundFile,
+      audio: null,
+      playing: false,
+      loaded: false
     }
   },
-  methods: {
-    resetForm() {
-      this.formData.entry = ''
-      this.formData.language = 'en'
-      this.formData.pronunciation_spelling = ''
-      this.formData.description = ''
-      this.errors = {}
+  watch: {
+    playing(value) {
+      if(value) {
+        return this.audio.play()
+      }
     }
   },
-}
-
-const ContextForm = {
-  mixins: [BaseForm],
-  data() {
-    return {
-      formData: {
-        content: '',
-      },
-    }
+  mounted() {
+    this.audio = this.$el.querySelector('#' + this.audioId)
+    this.audio.addEventListener('loadeddata', this.load)
+    this.audio.addEventListener('play', () => { this.playing = true })
+    this.audio.addEventListener('ended', () => { this.playing = false })
   },
-  methods: {
-    resetForm() {
-      this.formData.content = ''
-      this.errors = {}
-    }
-  },
-}
-
-const SourceSearch = {
-  mixins: [BaseSearch],
-  methods: {
-    setResult(result) {
-      this.searchTerm = result
-      this.search()
-    },
-    search() {
-      clearTimeout(this.searchTimerId)
-      this.isOpen = false
-      url = this.searchUrl + "?source=" + this.searchTerm
-      window.location.replace(url);
-    },
-  },
+  template: `
+    <span>
+      <a @click.prevent="playing = !playing" href="#"> <i class="vocab-pronunciation-icon fas fa-volume-up"></i> </a>
+      <audio :id="audioId" ref="audiofile" :src="soundFile" preload="auto" style="display: none;"></audio>
+    </span>
+  `
 }
 
 const Tag = {
@@ -194,483 +153,58 @@ const Tag = {
 }
 
 const ToggleTag = {
-  mixins: [BaseToggleTag]
+  mixins: [ BaseToggleTag ]
 }
 
-const DeleteTag = {
-  mixins: [BaseDeleteTag]
-}
-
-const EntryTagSearch = {
-  mixins: [BaseLanguageSearch],
-  methods: {
-    setResult(result) {
-      this.searchTerm = result
-      this.search()
-    },
-    search() {
-      clearTimeout(this.searchTimerId)
-      this.isOpen = false
-      var tag = {
-        language: this.language,
-        entry: this.searchTerm
-      }
-      this.searchTerm = ''
-      this.$emit('add-tag', tag)
-    }
-  },
-}
-
-const EntryTagbox = {
-  mixins: [BaseTagbox],
-  methods: {
-    onFocus() {
-      this.$emit('tagbox-focus')
-    }
-  }
-}
-
-const EntryInstanceTagbox = {
-  mixins: [BaseTagbox, ClickOutsideMixin],
+const AjaxTag = {
+  mixins: [BaseTag],
   props: {
-    entry: {
-      type: Object,
-      default: () => {}
-    }
-  },
-  data() {
-    return {
-      input: ''
-    }
-  },
-  methods: {
-    addTag(tag) {
-      this.input = ''
-      this.$emit('add-tag', tag)
-    },
-    removeTag(index) {
-      this.input = ''
-      this.$emit('remove-tag', index)
-    },
-    selectTag(index) {
-      this.input = ''
-      this.$emit('select-tag', index)
-    },
-    onCloseOutside() {
-      this.input = ''
-    },   
-  }
-}
-
-const ContextTagger = {
-  mixins: [MarkdownMixin, HighlightMixin],
-  props: {
-    initEntryDetailUrl: {
+    initConfirmId: {
       type: String,
-      required: true
+      default: 'delete-modal'
     },
-    initAddEntryUrl: {
-      type: String,
-      required: true
-    },
-    initAddEntryTagUrl: {
-      type: String,
-      required: true
-    },   
-    initRemoveEntryUrl: {
-      type: String,
-      required: true
-    },
-    initRemoveEntryTagUrl: {
-      type: String,
-      required: true
-    },
-    initContextEditUrl: {
-      type: String,
-      required: true
-    },          
-    initEntries: {
-      type: Object,
-      default: () => ({})
-    },
-    initContext: {
+    initDeleteUrl: {
       type: String,
       default: ''
     }
   },
   data() {
     return {
-      entryDetailUrl: this.initEntryDetailUrl,
-      addEntryUrl: this.initAddEntryUrl,
-      addEntryTagUrl: this.initAddEntryTagUrl,
-      removeEntryUrl: this.initRemoveEntryUrl,
-      removeEntryTagUrl: this.initRemoveEntryTagUrl,
-      contextEditUrl: this.initContextEditUrl,
-      entries: [],
-      currentEntry: null,
-      context: this.initContext,
-      contextHtml: '',
-      isEditing: false
-    }
-  },
-  methods: {
-    addEntry(tag) {
-      params = {language: tag.language, entry: tag.entry}
-
-      axios.get(this.entryDetailUrl, {
-        params: params
-      })
-      .then(response => {
-        console.log('Entry verified.')
-
-        const data = response.data
-        console.log(data)
-        const entryId = data.id
-
-        const entry = {
-          id: entryId,
-          value: data.entry,
-          language: data.language,
-          tags: []
-        }
-
-        axios.post(this.addEntryUrl, {"vocab_entry_id": entryId})
-        .then(response => {
-          console.log('Entry added.')
-          this.entries.push(entry)
-        })
-        .catch(error => {
-          if (error.response) {
-            console.log(error.response)
-          } else if (error.request) {
-            console.log(error.request)
-          } else {
-            console.log(error.message)
-          }
-          console.log(error.config)
-        })
-        .finally(() => {})
-      })
-      .catch(error => {
-        if (error.response) {
-          console.log(error.response)
-        } else if (error.request) {
-          console.log(error.request)
-        } else {
-          console.log(error.message)
-        }
-        console.log(error.config)
-      })
-      .finally(() => {})
-    },
-    removeEntry(index) {
-      var tag = this.entries[index]
-
-      axios.post(this.removeEntryUrl, {"vocab_entry_id": tag.id})
-      .then(response => {
-        console.log('Tag deleted from db.')
-        this.entries.splice(index, 1)
-        this.reset()
-      })
-      .catch(error => {
-        if (error.response) {
-          console.log(error.response)
-        } else if (error.request) {
-          console.log(error.request)
-        } else {
-          console.log(error.message)
-        }
-        console.log(error.config)
-      })
-      .finally(() => {})      
-    },
-    selectEntry(index) {
-      this.currentEntry = this.entries[index]
-      this.clearHighlight()
-      this.highlight(this.currentEntry.tags)
-      console.log(this.currentEntry.value)
-      this.$nextTick(() => {
-        window.location.hash = "#vocab-entry-instance-tags"
-        window.location = window.location.href
-      })
-    },
-    addEntryTag(tag) {
-      const data = {
-        "vocab_entry_id": this.currentEntry.id,
-        "vocab_entry_tag": tag
-      }
-      axios.post(this.addEntryTagUrl, data)
-      .then(response => {
-        console.log('Entry tag added.')
-        this.currentEntry.tags.push(tag)
-        this.highlight(this.currentEntry.tags)
-      })
-      .catch(error => {
-        if (error.response) {
-          console.log(error.response)
-        } else if (error.request) {
-          console.log(error.request)
-        } else {
-          console.log(error.message)
-        }
-        console.log(error.config)
-      })
-      .finally(() => {})
-    },
-    removeEntryTag(index) {
-      var tag = this.currentEntry.tags[index]
-
-      const data = {
-        "vocab_entry_id": this.currentEntry.id,
-        "vocab_entry_tag": tag
-      }
-
-      axios.post(this.removeEntryTagUrl, data)
-      .then(response => {
-        console.log('Tag instance deleted from db.')
-        this.currentEntry.tags.splice(index, 1)
-        this.clearHighlight()
-        this.highlight(this.currentEntry.tags)
-        console.log('entry instance removed ' + tag)
-      })
-      .catch(error => {
-        if (error.response) {
-          console.log(error.response)
-        } else if (error.request) {
-          console.log(error.request)
-        } else {
-          console.log(error.message)
-        }
-        console.log(error.config)
-      })
-      .finally(() => {})      
-    },
-    selectEntryTag(index) {
-      console.log('entry instance selected ' + this.currentEntry.tags[index])
-    },
-    reset() {
-      this.currentEntry = null
-      this.clearHighlight()
-    },
-    loadEntries() {
-      for (var k in this.initEntries) {
-        const initEntry = this.initEntries[k]['vocab_entry']
-        const initTags = this.initEntries[k]['tags']
-
-        const entry = {
-          id: initEntry.id,
-          value: initEntry.entry,
-          language: initEntry.language,
-          tags: initTags
-        }
-        this.entries.push(entry)
-      }
-    },
-    editContext() {
-      this.isEditing = true
-      this.reset()
-    },
-    doneEditing() {      
-      axios.put(this.contextEditUrl, {"content": this.context})
-      .then(response => {
-        console.log('success')
-        this.isEditing = false
-        this.contextHtml = this.markdownToHtml(this.context)
-      })
-      .catch(error => {
-        if (error.response) {
-          console.log(error.response)
-        } else if (error.request) {
-          console.log(error.request)
-        } else {
-          console.log(error.message)
-        }
-        console.log(error.config)
-      })
-      .finally(() => {})
-    }
-  },
-  created() {
-    this.contextHtml = this.markdownToHtml(this.context)
-    this.loadEntries()
-  }
-}
-
-const ContextTagPanel = {
-  mixins: [HighlightMixin],
-  props: {
-    initEntries: {
-      type: Object,
-      default: () => ({})
-    },
-    initSelectUrl: {
-      type: String,
-      required: true
-    }
-  },
-  data() {
-    return {
-      entries: [],
-      currentEntry: null,
-      selectUrl: '',
-      isVisible: true
-    }
-  },
-  methods: {
-    selectTag(index) {
-      this.currentEntry = this.entries[index]
-      this.selectUrl = this.initSelectUrl
-        .replace('xx', this.currentEntry.language)
-        .replace('zzz', this.currentEntry.slug)
-      window.location.replace(this.selectUrl)
-    },
-    toggleTag(index) {
-      console.log('index ' + index)
-      if (this.currentEntry == null) {
-        this.currentEntry = this.entries[index]
-        this.currentEntry.toggleSelect = true
-        this.highlight(this.currentEntry.tags)
-      } else if (this.currentEntry.id != this.entries[index].id) {
-        this.currentEntry.toggleSelect = false
-        this.clearHighlight()
-        this.currentEntry = this.entries[index]
-        this.currentEntry.toggleSelect = true
-        this.highlight(this.currentEntry.tags)
-      } else {
-        this.currentEntry.toggleSelect = !this.currentEntry.toggleSelect
-        if (this.currentEntry.toggleSelect) {
-          this.highlight(this.currentEntry.tags)
-        } else {
-          this.clearHighlight()
-        }
-      }
-    },
-    loadEntries() {
-      for (var k in this.initEntries) {
-        const initEntry = this.initEntries[k]['vocab_entry']
-        const initTags = this.initEntries[k]['tags']
-        const entry = {
-          id: initEntry.id,
-          value: initEntry.entry,
-          slug: initEntry.slug,
-          language: initEntry.language,
-          toggleSelect: false,
-          tags: initTags
-        }
-        this.entries.push(entry)
-      }
-    },
-    hidePanel() {
-      this.isVisible = false
-    }
-  },
-  created() {
-    this.loadEntries()
-  }
-}
-
-const EntryToggleTag = {
-  mixins: [BaseToggleTag],
-  methods: {},
-}
-
-const BaseSymbolKeypad = {
-  props: {
-    initDisplayEl: {
-      type: String,
-      default: "#keypad-display"
-    }
-  },
-  data() {
-    return {
-      display: '',
-      displayEl: this.initDisplayEl
-    }
-  },
-  methods: {
-    onDisplaySymbol(symbol) {
-      var symbolInput = document.querySelector(this.displayEl)
-      var caretPos = symbolInput.selectionStart
-      var val = this.display.substring(0, caretPos) + symbol + this.display.substring(caretPos)
-      this.display = val
-      caretPos = caretPos + symbol.length;
-      this.$nextTick(() => {
-        symbolInput.focus()
-        symbolInput.setSelectionRange(caretPos, caretPos)
-      })
-    },
-  }
-}
-
-const BaseSymbolKey = {
-  props: {
-    initSymbol: {
-      type: String,
-      default: ''
-    }
-  },
-  data() {
-    return {
-      symbol: this.initSymbol
-    }
-  },
-  methods: {
-    displaySymbol() {
-      this.$emit('display-symbol', (this.symbol))
+      confirmId: this.initConfirmId,
+      deleteUrl: this.initDeleteUrl
     }
   },
   template: `
-    <a 
-    href="#" 
-    class="ui tiny basic icon button"
-    :title="symbol"
-    @click.prevent="displaySymbol"
+    <transition name="fade-transition" v-on:after-enter="isVisible = true" v-on:after-leave="isVisible = false">
+    <div 
+    class="ui label tagblock"
+    v-bind:key="id"
+    v-show="isVisible"
     >
-    {{ symbol }}
-    </a>
+      <a 
+      class="tag-text"
+      @click.prevent="select"
+      > 
+      {{ value }} 
+      </a>
+
+      &nbsp;
+
+      <ajax-delete
+      v-if="canRemove"
+      :delete-confirm-id="confirmId"
+      :delete-url="deleteUrl"
+      @ajax-success="remove"
+      inline-template
+      >
+        <a
+        @click.prevent="confirmDelete"
+        >
+          <i class="fa-times fas"></i>
+        </a>
+      </ajax-delete>
+
+    </div>
+    </transition>
   `
 }
-
-const SymbolKey = {
-  mixins: [BaseSymbolKey]
-}
-
-const SymbolKeypad = {
-  mixins: [BaseSymbolKeypad]
-}
-
-const IpaSymbolKey = {
-  mixins: [BaseSymbolKey],
-  data() {
-    return {
-      symbol: he.decode(this.initSymbol)
-    }
-  },
-  template: `
-    <a 
-    href="#" 
-    class="ui tiny basic icon button"
-    :title="symbol"
-    v-html="symbol"
-    @click.prevent="displaySymbol"
-    >
-    </a>
-  `
-}
-
-const IpaSymbolKeypad = {
-  mixins: [BaseSymbolKeypad],
-  data() {
-    return {
-      ipaSymbolCodes: [
-        "&#712;", "&#716;", "&#618;", "&aelig;", "&#593;",
-        "&#596;", "&#650;", "&#652;", "&#603;", "&#604;",
-        "&#601;", "e&#618;", "a&#618;", "&#596;&#618;", "&#650;",
-        "&#618;&#601;", "e&#601;", "&#650;&#601;", "&#952;",
-        "&#240;", "&#643;", "&#658;", "t&#643;", "d&#658;",
-        "&#331;"
-      ]
-    }
-  },
-}
-

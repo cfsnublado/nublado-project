@@ -20,7 +20,7 @@
 {% block stylesheets %}
 
 <link rel="stylesheet" href="{% static 'css/app.css' %}" />
-<link rel="stylesheet" href="{% static 'css/fontawesome-all.css' %}" />
+<link rel="stylesheet" href="{% static 'css/all.css' %}" />
 
 <style>
 
@@ -161,7 +161,7 @@ ref="sidebarNav"
 id="sidebar-nav-vocab-projects" 
 class="nav-link {% block vocab_projects_link_active %}{% endblock vocab_projects_link_active %}" 
 href="{% url 'vocab:vocab_projects' %}">
-<i class="nav-link-icon fas fa-book fa-fw"></i>
+<i class="nav-link-icon fas fa-project-diagram fa-fw"></i>
 {% trans "label_projects" %}
 </a>
 </li>

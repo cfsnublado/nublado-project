@@ -46,6 +46,8 @@
 
 <div class="col-sm-4 icon-block">
 
+<a href="{% url 'vocab:vocab_source_entries' vocab_source.id vocab_source.slug %}">
+
 <header class="icon-block-header">
 <i class="fas fa-language icon-block-icon"></i>
 <h3>{% trans 'label_vocabulary' %}</h3>
@@ -55,9 +57,13 @@
 {% trans 'text_source_entries_desc' %}
 </p>
 
+</a>
+
 </div>
 
 <div class="col-sm-4 icon-block">
+
+<a href="{% url 'vocab:vocab_source_contexts' vocab_source.id vocab_source.slug %}">
 
 <header class="icon-block-header">
 <i class="fas fa-book icon-block-icon"></i>
@@ -67,6 +73,8 @@
 <p>
 {% trans 'text_source_contexts_desc' %}
 </p>
+
+</a>
 
 </div>
 

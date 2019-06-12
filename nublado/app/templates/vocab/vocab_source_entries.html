@@ -3,10 +3,10 @@
 {% load i18n %}
 
 {% block title %}
-
-{{ vocab_source.name }}
-
+{{ vocab_source.name }} - {% trans "page_vocab_source_entries_title" %}
 {% endblock title %}
+
+{% block vocab_source_entries_link_active %}active{% endblock vocab_source_entries_link_active %}
 
 {% block content %}
 
@@ -42,34 +42,14 @@
 </div>
 </div>
 
-<div class="row justify-content-md-center" style="margin-top: 30px;">
+<div class="row justify-content-md-center">
+<div class="col-md-10">
 
-<div class="col-sm-4 icon-block">
-
-<header class="icon-block-header">
-<i class="fas fa-language icon-block-icon"></i>
-<h3>{% trans 'label_vocabulary' %}</h3>
-</header>
-
-<p>
-{% trans 'text_source_entries_desc' %}
-</p>
+{% url 'api:vocab-source-entry-list' vocab_source.id as vocab_entries_url %}
+{% url 'vocab:vocab_source_entry' vocab_source.id vocab_source.slug 'xx' 'zzz' as vocab_entry_url %}
+{% include 'vocab/includes/vue/_vocab_entries.html' %}
 
 </div>
-
-<div class="col-sm-4 icon-block">
-
-<header class="icon-block-header">
-<i class="fas fa-book icon-block-icon"></i>
-<h3>{% trans 'label_contexts' %}</h3>
-</header>
-
-<p>
-{% trans 'text_source_contexts_desc' %}
-</p>
-
-</div>
-
 </div>
 
 {% endblock content %}

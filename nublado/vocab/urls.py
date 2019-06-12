@@ -23,12 +23,10 @@ from .views.views_vocab_project_auth import (
 )
 from .views.views_vocab_source import (
     VocabSourceContextsView, VocabSourceDashboardView,
-    VocabSourceEntryView, VocabSourcesView
+    VocabSourceEntriesView, VocabSourceEntryView, VocabSourcesView
 )
 from .views.views_vocab_source_auth import (
     VocabSourceCreateView, VocabSourceDeleteView, VocabSourceExportJsonView,
-    VocabSourceDashboardView as VocabSourceDashboardAuthView,
-    VocabSourceEntriesView, VocabSourceEntryContextsView,
     VocabSourceUpdateView
 )
 from .views.views_vocab_autocomplete import (
@@ -86,11 +84,6 @@ auth_urls = [
     ),
     path('entry/<int:vocab_entry_pk>/delete/', VocabEntryDeleteView.as_view(), name='vocab_entry_delete'),
     path(
-        'source/<int:vocab_source_pk>-<slug:vocab_source_slug>/dashboard/',
-        VocabSourceDashboardAuthView.as_view(),
-        name='vocab_source_dashboard_auth'
-    ),
-    path(
         'source/<int:vocab_source_pk>-<slug:vocab_source_slug>/update/',
         VocabSourceUpdateView.as_view(),
         name='vocab_source_update'
@@ -100,17 +93,6 @@ auth_urls = [
         'source/<int:vocab_source_pk>)/export/',
         VocabSourceExportJsonView.as_view(),
         name='vocab_source_export_json'
-    ),
-    path(
-        'source/<int:vocab_source_pk>-<slug:vocab_source_slug>/entries/',
-        VocabSourceEntriesView.as_view(),
-        name='vocab_source_entries'
-    ),
-    re_path(
-        '^source/(?P<vocab_source_pk>[\d]+)-(?P<vocab_source_slug>[-\w]+)'
-        '/entry/(?P<vocab_entry_language>[a-z]{2})/(?P<vocab_entry_slug>[-\w]+)/contexts/$',
-        VocabSourceEntryContextsView.as_view(),
-        name='vocab_source_entry_contexts'
     ),
     path(
         'source/<int:vocab_source_pk>-<slug:vocab_source_slug>/context/create',
@@ -191,6 +173,11 @@ urlpatterns = [
         'source/<int:vocab_source_pk>-<slug:vocab_source_slug>/contexts/',
         VocabSourceContextsView.as_view(),
         name='vocab_source_contexts'
+    ),
+    path(
+        'source/<int:vocab_source_pk>-<slug:vocab_source_slug>/entries/',
+        VocabSourceEntriesView.as_view(),
+        name='vocab_source_entries'
     ),
     path(
         'source/<int:vocab_source_pk>-<slug:vocab_source_slug>/entry/<slug:vocab_entry_language>/<slug:vocab_entry_slug>/',

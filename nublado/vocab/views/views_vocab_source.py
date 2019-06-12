@@ -1,6 +1,6 @@
 from django.apps import apps
 from django.views.generic import (
-    ListView, TemplateView
+    TemplateView
 )
 
 from core.views import ObjectSessionMixin
@@ -9,7 +9,6 @@ from .views_mixins import (
     VocabEntryMixin, VocabSourceEntrySearchMixin, VocabSourceMixin,
     VocabSourceSearchMixin, VocabSourceSessionMixin
 )
-from ..models import VocabContext
 
 APP_NAME = apps.get_app_config('vocab').name
 
@@ -19,6 +18,13 @@ class VocabSourceDashboardView(
     VocabSourceEntrySearchMixin, TemplateView
 ):
     template_name = '{0}/vocab_source_dashboard.html'.format(APP_NAME)
+
+
+class VocabSourceEntriesView(
+    VocabSourceMixin, VocabSourceSessionMixin,
+    VocabSourceEntrySearchMixin, TemplateView
+):
+    template_name = '{0}/vocab_source_entries.html'.format(APP_NAME)
 
 
 class VocabSourceContextsView(

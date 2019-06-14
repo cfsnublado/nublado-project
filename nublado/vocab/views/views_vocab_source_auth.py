@@ -103,7 +103,7 @@ class VocabSourceDeleteView(
 
     def get_success_url(self):
         return reverse(
-            'vocab:vocab_project_sources',
+            'vocab:vocab_project_dashboard',
             kwargs={
                 'vocab_project_pk': self.vocab_project.id,
                 'vocab_project_slug': self.vocab_project.slug

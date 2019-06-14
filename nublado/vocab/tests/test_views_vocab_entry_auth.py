@@ -6,8 +6,7 @@ from django.urls import resolve, reverse
 from django.test import RequestFactory, TestCase
 from django.utils.translation import ugettext_lazy as _
 from django.views.generic import (
-    CreateView, DeleteView, ListView,
-    TemplateView, UpdateView
+    CreateView, DeleteView, UpdateView
 )
 
 from core.views import (
@@ -17,16 +16,15 @@ from core.views import (
 from ..conf import settings
 from ..forms import VocabEntryCreateForm, VocabEntryUpdateForm
 from ..models import (
-    VocabContext, VocabContextEntry, VocabEntry,
-    VocabProject, VocabSource
+    VocabEntry
 )
 from ..views.views_mixins import (
-    VocabEntryMixin, VocabEntryPermissionMixin, VocabEntrySearchMixin,
+    VocabEntryMixin, VocabEntryPermissionMixin,
     VocabEntrySessionMixin
 )
 from ..views.views_vocab_entry_auth import (
-    VocabEntryContextsView, VocabEntryCreateView, VocabEntriesView,
-    VocabEntryDashboardView, VocabEntryDeleteView, VocabEntryUpdateView
+    VocabEntryCreateView,
+    VocabEntryDeleteView, VocabEntryUpdateView
 )
 
 User = get_user_model()
@@ -56,257 +54,6 @@ class TestCommon(TestCase):
         self.client.login(username=username, password=self.pwd)
 
 
-class VocabEntryDashboardViewTest(TestCommon):
-
-    def setUp(self):
-        super(VocabEntryDashboardViewTest, self).setUp()
-
-    def test_inheritance(self):
-        classes = (
-            LoginRequiredMixin,
-            VocabEntryMixin,
-            VocabEntryPermissionMixin,
-            VocabEntrySessionMixin,
-            TemplateView
-        )
-        for class_name in classes:
-            self.assertTrue(issubclass(VocabEntryDashboardView, class_name))
-
-    def test_correct_view_used(self):
-        found = resolve(
-            reverse(
-                'vocab:vocab_entry_dashboard',
-                kwargs={
-                    'vocab_entry_language': self.vocab_entry.language,
-                    'vocab_entry_slug': self.vocab_entry.slug
-                }
-            )
-        )
-        self.assertEqual(found.func.__name__, VocabEntryDashboardView.as_view().__name__)
-
-    def test_view_non_authenticated_user_redirected_to_login(self):
-        response = self.client.get(
-            reverse(
-                'vocab:vocab_entry_dashboard',
-                kwargs={
-                    'vocab_entry_language': self.vocab_entry.language,
-                    'vocab_entry_slug': self.vocab_entry.slug
-                }
-            )
-        )
-        self.assertRedirects(
-            response,
-            expected_url='{0}?next=/{1}/entry/{2}/{3}/'.format(
-                reverse(settings.LOGIN_URL),
-                URL_PREFIX,
-                self.vocab_entry.language,
-                self.vocab_entry.slug
-            ),
-            status_code=302,
-            target_status_code=200,
-            msg_prefix=''
-        )
-
-    def test_view_returns_correct_status_code(self):
-        self.login_test_user(self.user.username)
-        response = self.client.get(
-            reverse(
-                'vocab:vocab_entry_dashboard',
-                kwargs={
-                    'vocab_entry_language': self.vocab_entry.language,
-                    'vocab_entry_slug': self.vocab_entry.slug
-                }
-            )
-        )
-        self.assertEqual(response.status_code, 200)
-
-    def test_view_renders_correct_template(self):
-        self.login_test_user(self.user.username)
-        response = self.client.get(
-            reverse(
-                'vocab:vocab_entry_dashboard',
-                kwargs={
-                    'vocab_entry_language': self.vocab_entry.language,
-                    'vocab_entry_slug': self.vocab_entry.slug
-                }
-            )
-        )
-        self.assertTemplateUsed(response, '{0}/auth/vocab_entry_dashboard.html'.format(APP_NAME))
-
-
-class VocabEntriesViewTest(TestCommon):
-
-    def setUp(self):
-        super(VocabEntriesViewTest, self).setUp()
-
-    def test_inheritance(self):
-        classes = (
-            LoginRequiredMixin,
-            ObjectSessionMixin,
-            VocabEntrySearchMixin,
-            ListView
-        )
-        for class_name in classes:
-            self.assertTrue(issubclass(VocabEntriesView, class_name))
-
-    def test_correct_view_used(self):
-        found = resolve(reverse('vocab:vocab_entries'))
-        self.assertEqual(found.func.__name__, VocabEntriesView.as_view().__name__)
-
-    def test_view_non_authenticated_user_redirected_to_login(self):
-        response = self.client.get(reverse('vocab:vocab_entries'))
-        self.assertRedirects(
-            response,
-            expected_url='{0}?next=/{1}/entries/'.format(
-                reverse(settings.LOGIN_URL),
-                URL_PREFIX
-            ),
-            status_code=302,
-            target_status_code=200,
-            msg_prefix=''
-        )
-
-    def test_view_returns_correct_status_code(self):
-        self.login_test_user(self.user.username)
-        response = self.client.get(reverse('vocab:vocab_entries'))
-        self.assertEqual(response.status_code, 200)
-
-    def test_view_renders_correct_template(self):
-        self.login_test_user(self.user.username)
-        response = self.client.get(reverse('vocab:vocab_entries'))
-        self.assertTemplateUsed(response, '{0}/auth/vocab_entries.html'.format(APP_NAME))
-
-    def test_view_context_data(self):
-        self.login_test_user(self.user.username)
-        response = self.client.get(reverse('vocab:vocab_entries'))
-        vocab_entries = response.context['vocab_entries']
-        self.assertEqual(vocab_entries[0], self.vocab_entry)
-
-
-class VocabEntryContextsViewTest(TestCommon):
-
-    def setUp(self):
-        super(VocabEntryContextsViewTest, self).setUp()
-
-    def test_inheritance(self):
-        classes = (
-            LoginRequiredMixin,
-            VocabEntryMixin,
-            VocabEntryPermissionMixin,
-            VocabEntrySessionMixin,
-            ListView
-        )
-        for class_name in classes:
-            self.assertTrue(issubclass(VocabEntryContextsView, class_name))
-
-    def test_correct_view_used(self):
-        found = resolve(
-            reverse(
-                'vocab:vocab_entry_contexts',
-                kwargs={
-                    'vocab_entry_language': self.vocab_entry.language,
-                    'vocab_entry_slug': self.vocab_entry.slug
-                }
-            )
-        )
-        self.assertEqual(found.func.__name__, VocabEntryContextsView.as_view().__name__)
-
-    def test_view_non_authenticated_user_redirected_to_login(self):
-        response = self.client.get(
-            reverse(
-                'vocab:vocab_entry_contexts',
-                kwargs={
-                    'vocab_entry_language': self.vocab_entry.language,
-                    'vocab_entry_slug': self.vocab_entry.slug
-                }
-            )
-        )
-        self.assertRedirects(
-            response,
-            expected_url='{0}?next=/{1}/entry/{2}/{3}/contexts/'.format(
-                reverse(settings.LOGIN_URL),
-                URL_PREFIX,
-                self.vocab_entry.language,
-                self.vocab_entry.slug
-            ),
-            status_code=302,
-            target_status_code=200,
-            msg_prefix=''
-        )
-
-    def test_view_returns_correct_status_code(self):
-        self.login_test_user(self.user.username)
-        response = self.client.get(
-            reverse(
-                'vocab:vocab_entry_contexts',
-                kwargs={
-                    'vocab_entry_language': self.vocab_entry.language,
-                    'vocab_entry_slug': self.vocab_entry.slug
-                }
-            )
-        )
-        self.assertEqual(response.status_code, 200)
-
-    def test_view_renders_correct_template(self):
-        self.login_test_user(self.user.username)
-        response = self.client.get(
-            reverse(
-                'vocab:vocab_entry_contexts',
-                kwargs={
-                    'vocab_entry_language': self.vocab_entry.language,
-                    'vocab_entry_slug': self.vocab_entry.slug
-                }
-            )
-        )
-        self.assertTemplateUsed(response, '{0}/auth/vocab_entry_contexts.html'.format(APP_NAME))
-
-    def test_view_context_data(self):
-        self.login_test_user(self.user.username)
-        vocab_project = VocabProject.objects.create(
-            owner=self.user,
-            name='test project'
-        )
-        vocab_source = VocabSource.objects.create(
-            vocab_project=vocab_project,
-            creator=self.user,
-            name='test source'
-        )
-        vocab_entry_2 = VocabEntry.objects.create(
-            language='es',
-            entry='tergiversar'
-        )
-        context_1 = VocabContext.objects.create(
-            vocab_source=vocab_source,
-            content='context 1'
-        )
-        context_2 = VocabContext.objects.create(
-            vocab_source=vocab_source,
-            content='context 2'
-        )
-        context_entry = VocabContextEntry.objects.create(
-            vocab_context=context_1,
-            vocab_entry=self.vocab_entry
-        )
-        VocabContextEntry.objects.create(
-            vocab_context=context_2,
-            vocab_entry=vocab_entry_2
-        )
-        response = self.client.get(
-            reverse(
-                'vocab:vocab_entry_contexts',
-                kwargs={
-                    'vocab_entry_language': self.vocab_entry.language,
-                    'vocab_entry_slug': self.vocab_entry.slug
-                }
-            )
-        )
-        self.assertEqual(VocabContext.objects.count(), 2)
-        contexts = response.context['vocab_entry_contexts']
-        self.assertEqual(contexts.count(), 1)
-        self.assertEqual(context_entry.vocab_entry, contexts[0].vocab_entry)
-        self.assertEqual(context_entry.vocab_context, contexts[0].vocab_context)
-
-
 class VocabEntryCreateViewTest(TestCommon):
 
     def setUp(self):
@@ -319,7 +66,7 @@ class VocabEntryCreateViewTest(TestCommon):
     def test_inheritance(self):
         classes = (
             LoginRequiredMixin,
-            AjaxFormMixin,
+            ObjectSessionMixin,
             UserstampMixin,
             CreateView
         )
@@ -334,7 +81,7 @@ class VocabEntryCreateViewTest(TestCommon):
         response = self.client.get(reverse('vocab:vocab_entry_create'))
         self.assertRedirects(
             response,
-            expected_url='{0}?next=/{1}/entry/create/'.format(
+            expected_url='{0}?next=/{1}/auth/entry/create/'.format(
                 reverse(settings.LOGIN_URL),
                 URL_PREFIX
             ),
@@ -396,19 +143,6 @@ class VocabEntryCreateViewTest(TestCommon):
         )
         self.assertIsInstance(response.context['form'], VocabEntryCreateForm)
         self.assertFormError(response, 'form', 'entry', _('validation_field_required'))
-
-    def test_view_ajax(self):
-        self.login_test_user(self.user.username)
-        kwargs = {'HTTP_X_REQUESTED_WITH': 'XMLHttpRequest'}
-        response = self.client.get(
-            reverse('vocab:vocab_entry_create'),
-            **kwargs
-        )
-        self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(
-            response,
-            '{0}/includes/_vocab_entry_create_modal.html'.format(APP_NAME)
-        )
 
     def test_view_redirects_on_success(self):
         self.login_test_user(self.user.username)
@@ -541,7 +275,7 @@ class VocabEntryDeleteViewTest(TestCommon):
         )
         self.assertRedirects(
             response,
-            expected_url='{0}?next=/{1}/entry/{2}/delete/'.format(
+            expected_url='{0}?next=/{1}/auth/entry/{2}/delete/'.format(
                 reverse(settings.LOGIN_URL),
                 URL_PREFIX,
                 self.vocab_entry.id

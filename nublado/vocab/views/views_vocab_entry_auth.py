@@ -2,8 +2,7 @@ from django.apps import apps
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse
 from django.views.generic import (
-    CreateView, DeleteView, ListView, TemplateView,
-    UpdateView
+    CreateView, DeleteView, UpdateView
 )
 
 from core.views import (
@@ -11,85 +10,14 @@ from core.views import (
     MessageMixin, ObjectSessionMixin,
     UserstampMixin
 )
-from ..conf import settings
 from ..forms import VocabEntryCreateForm, VocabEntryUpdateForm
-from ..models import VocabContextEntry, VocabEntry
+from ..models import VocabEntry
 from .views_mixins import (
-    VocabEntryMixin, VocabEntrySearchMixin,
+    VocabEntryMixin,
     VocabEntryPermissionMixin, VocabEntrySessionMixin
 )
 
 APP_NAME = apps.get_app_config('vocab').name
-
-
-class VocabEntryView(
-    LoginRequiredMixin, VocabEntryMixin,
-    VocabEntryPermissionMixin, VocabEntrySessionMixin,
-    TemplateView
-):
-    search_term = None
-    search_language = None
-    template_name = '{0}/auth/vocab_entry.html'.format(APP_NAME)
-
-    def get_context_data(self, **kwargs):
-        context = super(VocabEntryView, self).get_context_data(**kwargs)
-        context['search_term'] = self.search_term
-        context['search_language'] = self.search_language
-        return context
-
-
-class VocabEntriesView(
-    LoginRequiredMixin, VocabEntrySearchMixin,
-    ObjectSessionMixin, ListView
-):
-    model = VocabEntry
-    context_object_name = 'vocab_entries'
-    template_name = '{0}/auth/vocab_entries.html'.format(APP_NAME)
-    paginate_by = 50
-    language = None
-    search_redirect_url = 'vocab:vocab_entry_auth'
-
-    def get(self, request, *args, **kwargs):
-        self.language = self.request.GET.get('language', settings.LANGUAGE_CODE)
-        if self.language and self.language not in settings.LANGUAGES_DICT:
-            self.language = settings.LANGUAGE_CODE
-        return super(VocabEntriesView, self).get(request, *args, **kwargs)
-
-    def get_queryset(self, **kwargs):
-        qs = super(VocabEntriesView, self).get_queryset(**kwargs)
-        qs = qs.filter(
-            language=self.language
-        )
-        qs = qs.order_by('entry')
-        return qs
-
-    def get_context_data(self, **kwargs):
-        context = super(VocabEntriesView, self).get_context_data(**kwargs)
-        context['language'] = self.language
-        context['language_name'] = settings.LANGUAGES_DICT[self.language]
-        return context
-
-
-class VocabEntryContextsView(
-    LoginRequiredMixin, VocabEntryMixin,
-    VocabEntryPermissionMixin, VocabEntrySessionMixin,
-    ListView
-):
-    '''
-    Returns contexts containing a specified tagged vocab entry.
-    '''
-    model = VocabContextEntry
-    context_object_name = 'vocab_entry_contexts'
-    template_name = '{0}/auth/vocab_entry_contexts.html'.format(APP_NAME)
-    paginate_by = 10
-
-    def get_queryset(self, **kwargs):
-        qs = super(VocabEntryContextsView, self).get_queryset(**kwargs)
-        qs = qs.select_related('vocab_context__vocab_source', 'vocab_entry')
-        qs = qs.prefetch_related('vocab_context__vocab_entries', 'vocab_entry_tags')
-        qs = qs.filter(vocab_entry_id=self.vocab_entry.id)
-        qs = qs.order_by('-date_created')
-        return qs
 
 
 class VocabEntryCreateView(

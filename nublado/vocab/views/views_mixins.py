@@ -126,10 +126,11 @@ class VocabSourceSearchMixin(object):
                 self.vocab_source = VocabSource.objects.select_related('creator').get(
                     **self.get_search_query_kwargs()
                 )
+
                 return self.search_success(**kwargs)
             except VocabSource.DoesNotExist:
-                print('SHITTTTTT')
-                print(self.search_term)
+                print("Entry doesn't exist.")
+
         return super(VocabSourceSearchMixin, self).dispatch(request, *args, **kwargs)
 
     def get_search_query_kwargs(self):
@@ -148,6 +149,7 @@ class VocabSourceSearchMixin(object):
         context = super(VocabSourceSearchMixin, self).get_context_data(**kwargs)
         context['vocab_source'] = self.vocab_source
         context['search_term'] = self.search_term
+
         return context
 
 
@@ -183,7 +185,7 @@ class VocabEntryMixin(CachedObjectMixin):
                 VocabEntry,
                 id=kwargs[self.vocab_entry_id]
             )
-        if self.vocab_entry_language in kwargs and self.vocab_entry_slug in kwargs:
+        elif self.vocab_entry_language in kwargs and self.vocab_entry_slug in kwargs:
             self.vocab_entry = get_object_or_404(
                 VocabEntry,
                 language=kwargs[self.vocab_entry_language],
@@ -195,11 +197,13 @@ class VocabEntryMixin(CachedObjectMixin):
                 self.vocab_entry = obj.vocab_entry
             else:
                 self.vocab_entry = obj
+
         return super(VocabEntryMixin, self).dispatch(request, *args, **kwargs)
 
     def get_context_data(self, **kwargs):
         context = super(VocabEntryMixin, self).get_context_data(**kwargs)
         context['vocab_entry'] = self.vocab_entry
+
         return context
 
 
@@ -222,13 +226,14 @@ class VocabEntrySearchMixin(object):
         self.search_language = self.request.GET.get('search_language', 'en')
 
         if self.search_language not in settings.LANGUAGES_DICT:
-            return None
+            self.search_language = 'en'
 
         if self.search_term and self.search_language:
             try:
                 vocab_entry = VocabEntry.objects.get(
                     **self.get_search_query_kwargs()
                 )
+
                 return vocab_entry
             except VocabEntry.DoesNotExist:
                 return None
@@ -254,6 +259,7 @@ class VocabEntrySearchMixin(object):
         context['vocab_entry'] = self.vocab_entry
         context['search_term'] = self.search_term
         context['search_language'] = self.search_language
+
         return context
 
 
@@ -266,10 +272,6 @@ class VocabSourceEntrySearchMixin(VocabEntrySearchMixin):
         self.search_term = self.request.GET.get('search_entry', None)
         self.search_language = self.request.GET.get('search_language', 'en')
         self.search_source_id = self.request.GET.get('search_source', None)
-
-        print(self.search_term)
-        print(self.search_language)
-        print(self.search_source_id)
 
         if self.search_language not in settings.LANGUAGES_DICT:
             return None

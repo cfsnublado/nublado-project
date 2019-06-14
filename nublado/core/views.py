@@ -55,10 +55,10 @@ class ObjectSessionMixin(object):
     session_obj_attrs = []
 
     def dispatch(self, request, *args, **kwargs):
-        self.setupSession(request)
+        self.setup_session(request)
         return super(ObjectSessionMixin, self).dispatch(request, *args, **kwargs)
 
-    def setupSession(self, request, *args, **kwargs):
+    def setup_session(self, request, *args, **kwargs):
         if self.session_obj is not None and self.session_obj_attrs:
             request.session['session_obj'] = {self.session_obj: {}}
             obj = getattr(self, self.session_obj, None)
@@ -70,12 +70,17 @@ class ObjectSessionMixin(object):
 
 
 class CachedObjectMixin(object):
+    object = None
 
     def get_object(self):
         # This is a trivial means of 'caching' the object so that
         # multiple calls don't result in repeat query executions.
-        if not hasattr(self, 'object'):
-            self.object = super(CachedObjectMixin, self).get_object()
+        get_object = getattr(super(CachedObjectMixin, self), 'get_object', None)
+
+        if callable(get_object):
+            if not hasattr(self, 'object'):
+                self.object = super(CachedObjectMixin, self).get_object()
+
         return self.object
 
 

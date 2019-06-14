@@ -9,17 +9,15 @@ from .views.views_vocab_entry import (
     VocabEntriesView, VocabEntryView
 )
 from .views.views_vocab_entry_auth import (
-    VocabEntriesView as VocabEntriesAuthView, VocabEntryContextsView,
     VocabEntryCreateView, VocabEntryDeleteView,
-    VocabEntryView as VocabEntryAuthView,
     VocabEntryUpdateView
 )
 from .views.views_vocab_project import (
     VocabProjectDashboardView, VocabProjectsView
 )
 from .views.views_vocab_project_auth import (
-    VocabProjectCreateView, VocabProjectDashboardView as VocabProjectDashboardAuthView,
-    VocabProjectDeleteView, VocabProjectSourcesView, VocabProjectUpdateView
+    VocabProjectCreateView,
+    VocabProjectDeleteView, VocabProjectUpdateView
 )
 from .views.views_vocab_source import (
     VocabSourceContextsView, VocabSourceDashboardView,
@@ -51,30 +49,9 @@ auth_urls = [
     ),
     path('project/<int:vocab_project_pk>/delete/', VocabProjectDeleteView.as_view(), name='vocab_project_delete'),
     path(
-        'project/<int:vocab_project_pk>-<slug:vocab_project_slug>/dashboard/',
-        VocabProjectDashboardAuthView.as_view(),
-        name='vocab_project_auth_dashboard'
-    ),
-    path(
-        'project/<int:vocab_project_pk>-<slug:vocab_project_slug>/sources/',
-        VocabProjectSourcesView.as_view(),
-        name='vocab_project_sources'
-    ),
-    path(
         'project/<int:vocab_project_pk>-<slug:vocab_project_slug>/source/create/',
         VocabSourceCreateView.as_view(),
         name='vocab_source_create'
-    ),
-    path('entries/', VocabEntriesAuthView.as_view(), name='vocab_entries_auth'),
-    re_path(
-        '^entry/(?P<vocab_entry_language>[a-z]{2})/(?P<vocab_entry_slug>[-\w]+)/$',
-        VocabEntryAuthView.as_view(),
-        name='vocab_entry_auth'
-    ),
-    re_path(
-        '^entry/(?P<vocab_entry_language>[a-z]{2})/(?P<vocab_entry_slug>[-\w]+)/contexts/$',
-        VocabEntryContextsView.as_view(),
-        name='vocab_entry_contexts'
     ),
     path('entry/create/', VocabEntryCreateView.as_view(), name='vocab_entry_create'),
     re_path(
@@ -117,7 +94,7 @@ urlpatterns = [
     path(
         'autocomplete/entry',
         VocabEntryAutocompleteView.as_view(),
-        name='vocab_entry_autocomplete/'
+        name='vocab_entry_autocomplete'
     ),
     path(
         'autocomplete/entry/<slug:language>/',

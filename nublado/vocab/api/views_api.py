@@ -32,7 +32,10 @@ from ..utils import (
     get_oxford_entry_json, import_vocab_entries,
     import_vocab_source, parse_oxford_entry_json
 )
-from .permissions import CreatorPermission, ReadWritePermission, IsSuperuser
+from .permissions import (
+    CreatorPermission, OwnerPermission, ReadPermission,
+    ReadWritePermission, IsSuperuser
+)
 from ..conf import settings
 
 OXFORD_API_ID = getattr(settings, 'OXFORD_API_ID', None)
@@ -57,18 +60,6 @@ class BatchMixin(object):
         headers = self.get_success_headers(serializer.data)
 
         return Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)
-
-
-class VocabProjectViewSet(APIDefaultsMixin, ModelViewSet):
-    lookup_field = 'pk'
-    lookup_url_kwarg = 'pk'
-    serializer_class = VocabProjectSerializer
-    queryset = VocabProject.objects.all()
-    permission_classes = [ReadWritePermission]
-    pagination_class = SmallPagination
-
-    def perform_create(self, serializer):
-        serializer.save(owner=self.request.user)
 
 
 class VocabEntryViewSet(APIDefaultsMixin, BatchMixin, ModelViewSet):
@@ -167,6 +158,24 @@ class VocabEntryInfoView(APIView):
         return Response(data=parsed_json_data)
 
 
+class VocabProjectViewSet(APIDefaultsMixin, ModelViewSet):
+    lookup_field = 'pk'
+    lookup_url_kwarg = 'pk'
+    serializer_class = VocabProjectSerializer
+    queryset = VocabProject.objects.all()
+    permission_classes = [ReadPermission, OwnerPermission]
+    pagination_class = SmallPagination
+
+    def get_object(self):
+        obj = get_object_or_404(self.get_queryset(), pk=self.kwargs["pk"])
+        self.check_object_permissions(self.request, obj)
+
+        return obj
+
+    def perform_create(self, serializer):
+        serializer.save(owner=self.request.user)
+
+
 class VocabSourceViewSet(
     APIDefaultsMixin, RetrieveModelMixin, UpdateModelMixin,
     DestroyModelMixin, ListModelMixin, GenericViewSet
@@ -174,9 +183,15 @@ class VocabSourceViewSet(
     lookup_field = 'pk'
     lookup_url_kwarg = 'pk'
     serializer_class = VocabSourceSerializer
-    queryset = VocabSource.objects.prefetch_related('vocab_project')
-    permission_classes = [ReadWritePermission]
+    queryset = VocabSource.objects.select_related('vocab_project').prefetch_related('vocab_contexts')
+    permission_classes = [ReadPermission, CreatorPermission]
     pagination_class = SmallPagination
+
+    def get_object(self):
+        obj = get_object_or_404(self.get_queryset(), pk=self.kwargs['pk'])
+        self.check_object_permissions(self.request, obj)
+
+        return obj
 
 
 class NestedVocabSourceViewSet(
@@ -185,10 +200,10 @@ class NestedVocabSourceViewSet(
 ):
     lookup_field = 'pk'
     lookup_url_kwarg = 'pk'
-    queryset = VocabSource.objects.select_related('vocab_project')
+    queryset = VocabSource.objects.select_related('vocab_project').prefetch_related('vocab_contexts')
     serializer_class = VocabSourceSerializer
     vocab_project = None
-    permission_classes = [ReadWritePermission]
+    permission_classes = [ReadPermission, OwnerPermission]
     pagination_class = SmallPagination
 
     def get_vocab_project(self, vocab_project_pk=None):

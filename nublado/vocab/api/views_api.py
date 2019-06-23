@@ -212,6 +212,9 @@ class NestedVocabSourceViewSet(
 
         return self.vocab_project
 
+    def get_queryset(self):
+        return self.queryset.filter(vocab_project_id=self.kwargs['vocab_project_pk'])
+
     def create(self, request, *args, **kwargs):
         vocab_project = self.get_vocab_project(vocab_project_pk=kwargs['vocab_project_pk'])
         self.check_object_permissions(request, vocab_project)
@@ -224,9 +227,6 @@ class NestedVocabSourceViewSet(
             creator=self.request.user,
             vocab_project=vocab_project
         )
-
-    def get_queryset(self):
-        return self.queryset.filter(vocab_project_id=self.kwargs['vocab_project_pk'])
 
     def list(self, request, *args, **kwargs):
         self.get_vocab_project(vocab_project_pk=kwargs['vocab_project_pk'])

@@ -4,13 +4,20 @@ from rest_framework.authtoken import views
 from rest_framework_nested.routers import NestedSimpleRouter
 from rest_framework.routers import DefaultRouter
 from users.api.views_api import UserViewSet, ProfileViewSet
-from vocab.api.views_api import (
-    NestedVocabContextEntryViewSet, NestedVocabContextViewSet, VocabEntryViewSet,
-    NestedVocabSourceViewSet, VocabContextEntryViewSet, VocabContextViewSet,
-    VocabEntryExportView, VocabEntryInfoView, VocabEntryLanguageExportView,
-    VocabEntryImportView, VocabProjectViewSet, VocabSourceImportView,
-    VocabSourceExportView, VocabSourceViewSet, VocabSourceEntryViewSet
+from vocab.api.views_vocab_context import (
+    NestedVocabContextEntryViewSet, NestedVocabContextViewSet,
+    VocabContextEntryViewSet, VocabContextViewSet
 )
+from vocab.api.views_vocab_entry import (
+    VocabEntryViewSet, VocabEntryExportView, VocabEntryInfoView,
+    VocabEntryLanguageExportView, VocabEntryImportView
+)
+from vocab.api.views_vocab_project import VocabProjectViewSet
+from vocab.api.views_vocab_source import (
+    NestedVocabSourceViewSet, VocabSourceExportView, VocabSourceImportView,
+    VocabSourceViewSet, VocabSourceEntryViewSet
+)
+
 from vocab.api.views_third_party_api import OxfordAPIEntryView
 
 app_name = 'app'

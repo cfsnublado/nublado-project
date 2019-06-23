@@ -13,17 +13,25 @@ from django.contrib.auth import get_user_model
 from django.urls import resolve, reverse
 from django.test import RequestFactory, TestCase
 
-from core.utils import setup_test_view
+from core.api.views_api import APIDefaultsMixin
+from ..api.pagination import LargePagination, SmallPagination
 from ..api.permissions import (
     CreatorPermission, IsSuperuser, OwnerPermission,
     ReadPermission, ReadWritePermission
 )
-from ..api.views_api import (
-    APIDefaultsMixin, BatchMixin, LargePagination, NestedVocabContextViewSet,
-    NestedVocabSourceViewSet, SmallPagination, VocabContextViewSet, VocabContextEntryViewSet,
-    VocabEntryImportView, VocabEntryExportView, VocabEntryViewSet,
-    VocabEntryLanguageExportView, VocabProjectViewSet, VocabSourceExportView,
-    VocabSourceImportView, VocabSourceViewSet
+from ..api.views_vocab_context import (
+    NestedVocabContextViewSet, NestedVocabSourceViewSet,
+    VocabContextViewSet, VocabContextEntryViewSet,
+)
+from ..api.views_vocab_entry import (
+    VocabEntryViewSet, VocabEntryExportView,
+    VocabEntryLanguageExportView, VocabEntryImportView
+)
+from ..api.views_mixins import BatchMixin
+from ..api.views_project import VocabProjectViewSet
+from ..api.views_vocab_source import (
+    NestedVocabSourceViewSet, VocabSourceExportView, VocabSourceImportView,
+    VocabSourceViewSet, VocabSourceEntryViewSet
 )
 from ..conf import settings
 from ..models import (

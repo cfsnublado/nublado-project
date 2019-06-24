@@ -53,6 +53,15 @@ class SourceCreatorPermission(CreatorPermission):
     pass
 
 
+class SourceContextCreatorPermission(CreatorPermission):
+
+    def check_creator_permission(self, user, obj):
+        if self.superuser_override:
+            return user.id == obj.vocab_source.creator_id or user.is_superuser
+        else:
+            return user.id == obj.vocab_source.creator_id
+
+
 class OwnerPermission(BasePermission):
     '''
     Permission granted to object owner or superuser.

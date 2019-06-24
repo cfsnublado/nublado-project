@@ -19,9 +19,9 @@ from ..models import (
 from ..serializers import (
     VocabContextEntrySerializer, VocabContextSerializer
 )
-from .pagination import LargePagination, SmallPagination
+from .pagination import SmallPagination
 from .permissions import (
-    ReadWritePermission
+    ReadPermission, ReadWritePermission, SourceContextCreatorPermission
 )
 from .views_mixins import BatchMixin
 
@@ -34,8 +34,8 @@ class VocabContextViewSet(
     lookup_url_kwarg = 'pk'
     serializer_class = VocabContextSerializer
     queryset = VocabContext.objects.select_related('vocab_source')
-    permission_classes = [ReadWritePermission]
-    pagination_class = LargePagination
+    permission_classes = [ReadPermission, SourceContextCreatorPermission]
+    pagination_class = SmallPagination
 
     def get_queryset(self):
         qs = self.queryset.prefetch_related(
@@ -44,6 +44,12 @@ class VocabContextViewSet(
         )
 
         return qs
+
+    def get_object(self):
+        obj = get_object_or_404(self.get_queryset(), pk=self.kwargs['pk'])
+        self.check_object_permissions(self.request, obj)
+
+        return obj
 
     @action(methods=['post'], detail=True)
     def add_vocab_entry(self, request, pk=None):

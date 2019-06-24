@@ -30,6 +30,8 @@ class CreatorPermission(BasePermission):
     Permission granted to object creator or superuser.
     '''
 
+    superuser_override = True
+
     def has_object_permission(self, request, view, obj):
         user = request.user
 
@@ -41,13 +43,22 @@ class CreatorPermission(BasePermission):
         return self.check_creator_permission(user, obj)
 
     def check_creator_permission(self, user, obj):
-        return user.id == obj.creator_id or user.is_superuser
+        if self.superuser_override:
+            return user.id == obj.creator_id or user.is_superuser
+        else:
+            return user.id == obj.creator_id
+
+
+class SourceCreatorPermission(CreatorPermission):
+    pass
 
 
 class OwnerPermission(BasePermission):
     '''
     Permission granted to object owner or superuser.
     '''
+
+    superuser_override = True
 
     def has_object_permission(self, request, view, obj):
         user = request.user
@@ -58,4 +69,11 @@ class OwnerPermission(BasePermission):
             return True
 
     def check_owner_permission(self, user, obj):
-        return user.id == obj.owner_id or user.is_superuser
+        if self.superuser_override:
+            return user.id == obj.owner_id or user.is_superuser
+        else:
+            return user.id == obj.owner_id
+
+
+class ProjectOwnerPermission(OwnerPermission):
+    pass

@@ -5,7 +5,7 @@ from core.api.views_api import APIDefaultsMixin
 from ..models import VocabProject
 from ..serializers import VocabProjectSerializer
 from .pagination import SmallPagination
-from .permissions import ReadPermission, OwnerPermission
+from .permissions import ReadPermission, ProjectOwnerPermission
 
 
 class VocabProjectViewSet(APIDefaultsMixin, ModelViewSet):
@@ -13,7 +13,7 @@ class VocabProjectViewSet(APIDefaultsMixin, ModelViewSet):
     lookup_url_kwarg = 'pk'
     serializer_class = VocabProjectSerializer
     queryset = VocabProject.objects.all()
-    permission_classes = [ReadPermission, OwnerPermission]
+    permission_classes = [ReadPermission, ProjectOwnerPermission]
     pagination_class = SmallPagination
 
     def get_object(self):

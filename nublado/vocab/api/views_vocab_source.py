@@ -22,7 +22,7 @@ from ..serializers import (
 )
 from .pagination import LargePagination, SmallPagination
 from .permissions import (
-    CreatorPermission, OwnerPermission,
+    SourceCreatorPermission, ProjectOwnerPermission,
     ReadPermission, ReadWritePermission
 )
 from ..utils import (
@@ -39,7 +39,7 @@ class VocabSourceViewSet(
     lookup_url_kwarg = 'pk'
     serializer_class = VocabSourceSerializer
     queryset = VocabSource.objects.select_related('vocab_project').prefetch_related('vocab_contexts')
-    permission_classes = [ReadPermission, CreatorPermission]
+    permission_classes = [ReadPermission, SourceCreatorPermission]
     pagination_class = SmallPagination
 
     def get_object(self):
@@ -58,7 +58,7 @@ class NestedVocabSourceViewSet(
     queryset = VocabSource.objects.select_related('vocab_project').prefetch_related('vocab_contexts')
     serializer_class = VocabSourceSerializer
     vocab_project = None
-    permission_classes = [ReadPermission, OwnerPermission]
+    permission_classes = [ReadPermission, ProjectOwnerPermission]
     pagination_class = SmallPagination
 
     def get_vocab_project(self, vocab_project_pk=None):
@@ -150,7 +150,7 @@ class VocabSourceImportView(APIDefaultsMixin, APIView):
 
 class VocabSourceExportView(APIDefaultsMixin, APIView):
     permission_classes = [
-        IsAuthenticated, CreatorPermission
+        IsAuthenticated, SourceCreatorPermission
     ]
 
     def get(self, request, *args, **kwargs):

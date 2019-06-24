@@ -10,8 +10,9 @@ from rest_framework.mixins import (
 )
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
+from rest_framework.views import APIView
 from rest_framework.viewsets import (
-    APIView, GenericViewSet
+    GenericViewSet
 )
 
 from core.api.views_api import APIDefaultsMixin

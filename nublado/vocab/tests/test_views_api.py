@@ -20,7 +20,7 @@ from ..api.permissions import (
     ReadPermission, ReadWritePermission
 )
 from ..api.views_vocab_context import (
-    NestedVocabContextViewSet, NestedVocabSourceViewSet,
+    NestedVocabContextViewSet,
     VocabContextViewSet, VocabContextEntryViewSet,
 )
 from ..api.views_vocab_entry import (
@@ -28,7 +28,7 @@ from ..api.views_vocab_entry import (
     VocabEntryLanguageExportView, VocabEntryImportView
 )
 from ..api.views_mixins import BatchMixin
-from ..api.views_project import VocabProjectViewSet
+from ..api.views_vocab_project import VocabProjectViewSet
 from ..api.views_vocab_source import (
     NestedVocabSourceViewSet, VocabSourceExportView, VocabSourceImportView,
     VocabSourceViewSet, VocabSourceEntryViewSet

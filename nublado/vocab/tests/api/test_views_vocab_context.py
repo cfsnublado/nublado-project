@@ -38,6 +38,7 @@ class VocabContextViewSetTest(TestCommon):
 
     def setUp(self):
         super(VocabContextViewSetTest, self).setUp()
+
         self.vocab_project = VocabProject.objects.create(
             owner=self.user,
             name='test project'
@@ -50,6 +51,13 @@ class VocabContextViewSetTest(TestCommon):
         self.vocab_context = VocabContext.objects.create(
             vocab_source=self.vocab_source,
             content='This is some content.'
+        )
+        self.user_2 = User.objects.create_user(
+            username='abc',
+            first_name='Christopher',
+            last_name='Sanders',
+            email='abc@foo.com',
+            password=self.pwd
         )
 
     def get_context_serializer_data(self, vocab_context):
@@ -125,157 +133,474 @@ class VocabContextViewSetTest(TestCommon):
         )
         self.assertCountEqual(json.loads(expected_results), json.loads(response.content))
 
-    # def test_view_update(self):
-    #     self.login_test_user(self.user.username)
+    def test_view_update(self):
+        self.login_test_user(self.user.username)
 
-    #     vocab_context_data = {'content': 'some content'}
-    #     self.assertNotEqual(
-    #         self.vocab_context.content,
-    #         vocab_context_data['content']
-    #     )
-    #     response = self.client.put(
-    #         reverse(
-    #             'api:vocab-context-detail',
-    #             kwargs={'pk': self.vocab_context.id}
-    #         ),
-    #         data=json.dumps(vocab_context_data),
-    #         content_type='application/json'
-    #     )
-    #     self.vocab_context.refresh_from_db()
-    #     self.assertEqual(response.status_code, drf_status.HTTP_200_OK)
-    #     self.assertEqual(
-    #         self.vocab_context.content,
-    #         vocab_context_data['content']
-    #     )
+        vocab_context_data = {'content': 'some content'}
+        self.assertNotEqual(
+            self.vocab_context.content,
+            vocab_context_data['content']
+        )
+        self.client.put(
+            reverse(
+                'api:vocab-context-detail',
+                kwargs={'pk': self.vocab_context.id}
+            ),
+            data=json.dumps(vocab_context_data),
+            content_type='application/json'
+        )
+        self.vocab_context.refresh_from_db()
+        self.assertEqual(
+            self.vocab_context.content,
+            vocab_context_data['content']
+        )
 
-    # def test_view_delete(self):
-    #     self.login_test_user(self.user.username)
-    #     id = self.vocab_context.id
-    #     self.assertTrue(VocabContext.objects.filter(id=id).exists())
-    #     self.client.delete(
-    #         reverse('api:vocab-context-detail', kwargs={'pk': self.vocab_context.id})
-    #     )
-    #     self.assertFalse(VocabContext.objects.filter(id=id).exists())
+    def test_view_delete(self):
+        self.login_test_user(self.user.username)
 
-    # def test_add_vocab_entry(self):
-    #     self.login_test_user(self.user.username)
-    #     vocab_entry = VocabEntry.objects.create(
-    #         language='es',
-    #         entry='tergiversar'
-    #     )
-    #     vocab_entry_data = {'vocab_entry_id': vocab_entry.id}
-    #     self.assertFalse(
-    #         VocabContextEntry.objects.filter(
-    #             vocab_context_id=self.vocab_context.id,
-    #             vocab_entry_id=vocab_entry.id
-    #         ).exists()
-    #     )
-    #     self.client.post(
-    #         reverse(
-    #             'api:vocab-context-add-vocab-entry',
-    #             kwargs={'pk': self.vocab_context.id}
-    #         ),
-    #         data=vocab_entry_data
-    #     )
-    #     self.assertTrue(
-    #         VocabContextEntry.objects.filter(
-    #             vocab_context_id=self.vocab_context.id,
-    #             vocab_entry_id=vocab_entry.id
-    #         ).exists()
-    #     )
+        id = self.vocab_context.id
+        self.assertTrue(VocabContext.objects.filter(id=id).exists())
+        self.client.delete(
+            reverse('api:vocab-context-detail', kwargs={'pk': self.vocab_context.id})
+        )
+        self.assertFalse(VocabContext.objects.filter(id=id).exists())
 
-    # def test_add_vocab_entry_tag(self):
-    #     self.login_test_user(self.user.username)
-    #     vocab_entry = VocabEntry.objects.create(
-    #         language='es',
-    #         entry='tergiversar'
-    #     )
-    #     tag = 'tergiversa'
-    #     data = {
-    #         'vocab_entry_id': vocab_entry.id,
-    #         'vocab_entry_tag': tag
-    #     }
-    #     VocabContextEntry.objects.create(
-    #         vocab_context_id=self.vocab_context.id,
-    #         vocab_entry_id=vocab_entry.id
-    #     )
-    #     self.client.post(
-    #         reverse(
-    #             'api:vocab-context-add-vocab-entry-tag',
-    #             kwargs={'pk': self.vocab_context.id}
-    #         ),
-    #         data=data
-    #     )
-    #     vocab_context_entry = VocabContextEntry.objects.get(
-    #         vocab_context_id=self.vocab_context.id,
-    #         vocab_entry_id=vocab_entry.id
-    #     )
-    #     tags = vocab_context_entry.get_vocab_entry_tags()
-    #     self.assertIn(tag, tags)
+    def test_add_vocab_entry(self):
+        self.login_test_user(self.user.username)
 
-    # def test_remove_vocab_entry(self):
-    #     self.login_test_user(self.user.username)
-    #     vocab_entry = VocabEntry.objects.create(
-    #         language='es',
-    #         entry='tergiversar'
-    #     )
-    #     data = {
-    #         'vocab_entry_id': vocab_entry.id,
-    #     }
-    #     VocabContextEntry.objects.create(
-    #         vocab_context_id=self.vocab_context.id,
-    #         vocab_entry_id=vocab_entry.id
-    #     )
-    #     self.client.post(
-    #         reverse(
-    #             'api:vocab-context-remove-vocab-entry',
-    #             kwargs={'pk': self.vocab_context.id}
-    #         ),
-    #         data=data
-    #     )
-    #     self.assertFalse(
-    #         VocabContextEntry.objects.filter(
-    #             vocab_context_id=self.vocab_context.id,
-    #             vocab_entry_id=vocab_entry.id
-    #         ).exists()
-    #     )
+        vocab_entry = VocabEntry.objects.create(
+            language='es',
+            entry='tergiversar'
+        )
+        vocab_entry_data = {'vocab_entry_id': vocab_entry.id}
+        self.assertFalse(
+            VocabContextEntry.objects.filter(
+                vocab_context_id=self.vocab_context.id,
+                vocab_entry_id=vocab_entry.id
+            ).exists()
+        )
+        self.client.post(
+            reverse(
+                'api:vocab-context-add-vocab-entry',
+                kwargs={'pk': self.vocab_context.id}
+            ),
+            data=vocab_entry_data
+        )
+        self.assertTrue(
+            VocabContextEntry.objects.filter(
+                vocab_context_id=self.vocab_context.id,
+                vocab_entry_id=vocab_entry.id
+            ).exists()
+        )
 
-    # def test_remove_vocab_entry_tag(self):
-    #     self.login_test_user(self.user.username)
-    #     vocab_entry = VocabEntry.objects.create(
-    #         language='es',
-    #         entry='tergiversar'
-    #     )
-    #     tag = 'tergiversa'
-    #     data = {
-    #         'vocab_entry_id': vocab_entry.id,
-    #         'vocab_entry_tag': tag
-    #     }
-    #     vocab_context_entry = VocabContextEntry.objects.create(
-    #         vocab_context_id=self.vocab_context.id,
-    #         vocab_entry_id=vocab_entry.id
-    #     )
-    #     vocab_context_entry.add_vocab_entry_tag(tag)
+    def test_add_vocab_entry_tag(self):
+        self.login_test_user(self.user.username)
 
-    #     tags = vocab_context_entry.get_vocab_entry_tags()
-    #     self.assertIn(tag, tags)
+        vocab_entry = VocabEntry.objects.create(
+            language='es',
+            entry='tergiversar'
+        )
+        tag = 'tergiversa'
+        data = {
+            'vocab_entry_id': vocab_entry.id,
+            'vocab_entry_tag': tag
+        }
+        VocabContextEntry.objects.create(
+            vocab_context_id=self.vocab_context.id,
+            vocab_entry_id=vocab_entry.id
+        )
+        self.client.post(
+            reverse(
+                'api:vocab-context-add-vocab-entry-tag',
+                kwargs={'pk': self.vocab_context.id}
+            ),
+            data=data
+        )
+        vocab_context_entry = VocabContextEntry.objects.get(
+            vocab_context_id=self.vocab_context.id,
+            vocab_entry_id=vocab_entry.id
+        )
+        tags = vocab_context_entry.get_vocab_entry_tags()
+        self.assertIn(tag, tags)
 
-    #     self.client.post(
-    #         reverse(
-    #             'api:vocab-context-remove-vocab-entry-tag',
-    #             kwargs={'pk': self.vocab_context.id}
-    #         ),
-    #         data=data
-    #     )
+    def test_remove_vocab_entry(self):
+        self.login_test_user(self.user.username)
 
-    #     tags = vocab_context_entry.get_vocab_entry_tags()
-    #     self.assertNotIn(tag, tags)
+        vocab_entry = VocabEntry.objects.create(
+            language='es',
+            entry='tergiversar'
+        )
+        data = {
+            'vocab_entry_id': vocab_entry.id,
+        }
+        VocabContextEntry.objects.create(
+            vocab_context_id=self.vocab_context.id,
+            vocab_entry_id=vocab_entry.id
+        )
+        self.client.post(
+            reverse(
+                'api:vocab-context-remove-vocab-entry',
+                kwargs={'pk': self.vocab_context.id}
+            ),
+            data=data
+        )
+        self.assertFalse(
+            VocabContextEntry.objects.filter(
+                vocab_context_id=self.vocab_context.id,
+                vocab_entry_id=vocab_entry.id
+            ).exists()
+        )
 
+    def test_remove_vocab_entry_tag(self):
+        self.login_test_user(self.user.username)
+
+        vocab_entry = VocabEntry.objects.create(
+            language='es',
+            entry='tergiversar'
+        )
+        tag = 'tergiversa'
+        data = {
+            'vocab_entry_id': vocab_entry.id,
+            'vocab_entry_tag': tag
+        }
+        vocab_context_entry = VocabContextEntry.objects.create(
+            vocab_context_id=self.vocab_context.id,
+            vocab_entry_id=vocab_entry.id
+        )
+        vocab_context_entry.add_vocab_entry_tag(tag)
+
+        tags = vocab_context_entry.get_vocab_entry_tags()
+        self.assertIn(tag, tags)
+
+        self.client.post(
+            reverse(
+                'api:vocab-context-remove-vocab-entry-tag',
+                kwargs={'pk': self.vocab_context.id}
+            ),
+            data=data
+        )
+
+        tags = vocab_context_entry.get_vocab_entry_tags()
+        self.assertNotIn(tag, tags)
+
+    # Permissions
+    def test_permissions_detail(self):
+        # Not athenticated
+        response = self.client.get(
+            reverse(
+                'api:vocab-context-detail',
+                kwargs={'pk': self.vocab_context.id}
+            ),
+        )
+
+        self.assertEqual(response.status_code, drf_status.HTTP_200_OK)
+
+    def test_permissions_list(self):
+        # Not authenticated
+        response = self.client.get(
+            reverse('api:vocab-context-list')
+        )
+
+        self.assertEqual(response.status_code, drf_status.HTTP_200_OK)
+
+    def test_permissions_update(self):
+        vocab_context_data = {'content': 'some content'}
+
+        # Not authenticated
+        response = self.client.put(
+            reverse(
+                'api:vocab-context-detail',
+                kwargs={'pk': self.vocab_context.id}
+            ),
+            data=json.dumps(vocab_context_data),
+            content_type='application/json'
+        )
+
+        self.assertEqual(response.status_code, drf_status.HTTP_403_FORBIDDEN)
+
+        # Authenticated, not source owner
+        self.client.logout()
+        self.login_test_user(self.user_2.username)
+
+        response = self.client.put(
+            reverse(
+                'api:vocab-context-detail',
+                kwargs={'pk': self.vocab_context.id}
+            ),
+            data=json.dumps(vocab_context_data),
+            content_type='application/json'
+        )
+
+        self.assertEqual(response.status_code, drf_status.HTTP_403_FORBIDDEN)
+
+        # Context source creator
+        self.client.logout()
+        self.login_test_user(self.user.username)
+
+        response = self.client.put(
+            reverse(
+                'api:vocab-context-detail',
+                kwargs={'pk': self.vocab_context.id}
+            ),
+            data=json.dumps(vocab_context_data),
+            content_type='application/json'
+        )
+
+        self.assertEqual(response.status_code, drf_status.HTTP_200_OK)
+
+        # Superuser not source creator
+        self.client.logout()
+        self.login_test_user(self.superuser.username)
+
+        response = self.client.put(
+            reverse(
+                'api:vocab-context-detail',
+                kwargs={'pk': self.vocab_context.id}
+            ),
+            data=json.dumps(vocab_context_data),
+            content_type='application/json'
+        )
+
+        self.assertEqual(response.status_code, drf_status.HTTP_200_OK)
+
+    def test_permissions_delete(self):
+        # Not authenticated
+        response = self.client.delete(
+            reverse('api:vocab-context-detail', kwargs={'pk': self.vocab_context.id})
+        )
+
+        self.assertEqual(response.status_code, drf_status.HTTP_403_FORBIDDEN)
+
+        # Authenticated not source owner
+        self.client.logout()
+        self.login_test_user(self.user_2.username)
+        response = self.client.delete(
+            reverse('api:vocab-context-detail', kwargs={'pk': self.vocab_context.id})
+        )
+
+        self.assertEqual(response.status_code, drf_status.HTTP_403_FORBIDDEN)
+
+        # Source owner
+        self.client.logout()
+        self.login_test_user(self.user.username)
+        response = self.client.delete(
+            reverse('api:vocab-context-detail', kwargs={'pk': self.vocab_context.id})
+        )
+
+        self.assertEqual(response.status_code, drf_status.HTTP_204_NO_CONTENT)
+
+    def test_permissions_add_vocab_entry(self):
+        vocab_entry = VocabEntry.objects.create(
+            language='es',
+            entry='tergiversar'
+        )
+        vocab_entry_data = {'vocab_entry_id': vocab_entry.id}
+
+        # Not authenticated
+        response = self.client.post(
+            reverse(
+                'api:vocab-context-add-vocab-entry',
+                kwargs={'pk': self.vocab_context.id}
+            ),
+            data=vocab_entry_data
+        )
+
+        self.assertEqual(response.status_code, drf_status.HTTP_403_FORBIDDEN)
+
+        # Authenticated not source creator
+        self.client.logout()
+        self.login_test_user(self.user_2.username)
+
+        response = self.client.post(
+            reverse(
+                'api:vocab-context-add-vocab-entry',
+                kwargs={'pk': self.vocab_context.id}
+            ),
+            data=vocab_entry_data
+        )
+
+        self.assertEqual(response.status_code, drf_status.HTTP_403_FORBIDDEN)
+
+        # Authenticated source creator
+        self.client.logout()
+        self.login_test_user(self.user.username)
+
+        response = self.client.post(
+            reverse(
+                'api:vocab-context-add-vocab-entry',
+                kwargs={'pk': self.vocab_context.id}
+            ),
+            data=vocab_entry_data
+        )
+
+        self.assertEqual(response.status_code, drf_status.HTTP_201_CREATED)
+
+    def test_permissions_add_vocab_entry_tag(self):
+        vocab_entry = VocabEntry.objects.create(
+            language='es',
+            entry='tergiversar'
+        )
+        tag = 'tergiversa'
+        data = {
+            'vocab_entry_id': vocab_entry.id,
+            'vocab_entry_tag': tag
+        }
+        VocabContextEntry.objects.create(
+            vocab_context_id=self.vocab_context.id,
+            vocab_entry_id=vocab_entry.id
+        )
+
+        # Not authenticated
+        response = self.client.post(
+            reverse(
+                'api:vocab-context-add-vocab-entry-tag',
+                kwargs={'pk': self.vocab_context.id}
+            ),
+            data=data
+        )
+
+        self.assertEqual(response.status_code, drf_status.HTTP_403_FORBIDDEN)
+
+        # Authenticated not source creator
+        self.client.logout()
+        self.login_test_user(self.user_2.username)
+
+        response = self.client.post(
+            reverse(
+                'api:vocab-context-add-vocab-entry-tag',
+                kwargs={'pk': self.vocab_context.id}
+            ),
+            data=data
+        )
+
+        self.assertEqual(response.status_code, drf_status.HTTP_403_FORBIDDEN)
+
+        # Source creator
+        self.client.logout()
+        self.login_test_user(self.user.username)
+
+        response = self.client.post(
+            reverse(
+                'api:vocab-context-add-vocab-entry-tag',
+                kwargs={'pk': self.vocab_context.id}
+            ),
+            data=data
+        )
+
+        self.assertEqual(response.status_code, drf_status.HTTP_201_CREATED)
+
+    def test_permisssions_remove_vocab_entry(self):
+        vocab_entry = VocabEntry.objects.create(
+            language='es',
+            entry='tergiversar'
+        )
+        data = {
+            'vocab_entry_id': vocab_entry.id,
+        }
+        VocabContextEntry.objects.create(
+            vocab_context_id=self.vocab_context.id,
+            vocab_entry_id=vocab_entry.id
+        )
+
+        # Not authenticated
+        response = self.client.post(
+            reverse(
+                'api:vocab-context-remove-vocab-entry',
+                kwargs={'pk': self.vocab_context.id}
+            ),
+            data=data
+        )
+
+        self.assertEqual(response.status_code, drf_status.HTTP_403_FORBIDDEN)
+
+        # Authenticated not source creator
+        self.client.logout()
+        self.login_test_user(self.user_2.username)
+
+        response = self.client.post(
+            reverse(
+                'api:vocab-context-remove-vocab-entry',
+                kwargs={'pk': self.vocab_context.id}
+            ),
+            data=data
+        )
+
+        self.assertEqual(response.status_code, drf_status.HTTP_403_FORBIDDEN)
+
+        # Authenticated not source creator
+        self.client.logout()
+        self.login_test_user(self.user.username)
+
+        response = self.client.post(
+            reverse(
+                'api:vocab-context-remove-vocab-entry',
+                kwargs={'pk': self.vocab_context.id}
+            ),
+            data=data
+        )
+
+        self.assertEqual(response.status_code, drf_status.HTTP_204_NO_CONTENT)
+
+    def test_permissions_remove_vocab_entry_tag(self):
+        vocab_entry = VocabEntry.objects.create(
+            language='es',
+            entry='tergiversar'
+        )
+        tag = 'tergiversa'
+        data = {
+            'vocab_entry_id': vocab_entry.id,
+            'vocab_entry_tag': tag
+        }
+        vocab_context_entry = VocabContextEntry.objects.create(
+            vocab_context_id=self.vocab_context.id,
+            vocab_entry_id=vocab_entry.id
+        )
+        vocab_context_entry.add_vocab_entry_tag(tag)
+
+        # Not authenticated
+        response = self.client.post(
+            reverse(
+                'api:vocab-context-remove-vocab-entry-tag',
+                kwargs={'pk': self.vocab_context.id}
+            ),
+            data=data
+        )
+
+        self.assertEqual(response.status_code, drf_status.HTTP_403_FORBIDDEN)
+
+        # Authenticated not source creator
+        self.client.logout()
+        self.login_test_user(self.user_2.username)
+
+        response = self.client.post(
+            reverse(
+                'api:vocab-context-remove-vocab-entry-tag',
+                kwargs={'pk': self.vocab_context.id}
+            ),
+            data=data
+        )
+
+        self.assertEqual(response.status_code, drf_status.HTTP_403_FORBIDDEN)
+
+        # Source creator
+        self.client.logout()
+        self.login_test_user(self.user.username)
+
+        response = self.client.post(
+            reverse(
+                'api:vocab-context-remove-vocab-entry-tag',
+                kwargs={'pk': self.vocab_context.id}
+            ),
+            data=data
+        )
+
+        self.assertEqual(response.status_code, drf_status.HTTP_204_NO_CONTENT)
 
 # class NestedVocabContextViewSetTest(TestCommon):
 
 #     def setUp(self):
 #         super(NestedVocabContextViewSetTest, self).setUp()
+
 #         self.vocab_project = VocabProject.objects.create(
 #             owner=self.user,
 #             name='test project'
@@ -392,6 +717,7 @@ class VocabContextViewSetTest(TestCommon):
 
 #     def setUp(self):
 #         super(VocabContextEntryViewSetTest, self).setUp()
+
 #         self.vocab_project = VocabProject.objects.create(
 #             owner=self.user,
 #             name='test project'
@@ -488,6 +814,7 @@ class VocabContextViewSetTest(TestCommon):
 
 #     def setUp(self):
 #         super(NestedVocabContextEntryViewSetTest, self).setUp()
+
 #         self.vocab_project = VocabProject.objects.create(
 #             owner=self.user,
 #             name='test project'

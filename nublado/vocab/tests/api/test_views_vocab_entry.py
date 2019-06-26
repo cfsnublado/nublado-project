@@ -294,6 +294,7 @@ class VocabEntryImportViewTest(TestCommon):
     def test_view_imports_vocab_entries_json(self):
         request = self.get_dummy_request()
         self.login_test_user(self.superuser.username)
+
         vocab_entry_data = {
             'entry': 'spacecraft',
             'description': 'A space vehicle',
@@ -356,7 +357,7 @@ class VocabEntryImportViewTest(TestCommon):
 
         self.assertEqual(response.status_code, drf_status.HTTP_403_FORBIDDEN)
 
-        # Authenticated non superuser
+        # Authenticated not superuser
         self.login_test_user(self.user.username)
 
         response = self.client.post(
@@ -433,7 +434,7 @@ class VocabEntryExportViewTest(TestCommon):
 
         self.assertEqual(response.status_code, drf_status.HTTP_403_FORBIDDEN)
 
-        # Authenticated non-superuser
+        # Authenticated not superuser
         self.login_test_user(self.user.username)
 
         response = self.client.get(reverse(

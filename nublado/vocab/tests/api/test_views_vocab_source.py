@@ -161,7 +161,7 @@ class VocabSourceViewSetTest(TestCommon):
         self.assertFalse(VocabSource.objects.filter(id=id).exists())
 
     # View permissions
-    def test_permissions_retrieve(self):
+    def test_permissions_detail(self):
         # Not authenticated
         self.client.logout()
 
@@ -203,7 +203,7 @@ class VocabSourceViewSetTest(TestCommon):
 
         self.assertEqual(response.status_code, drf_status.HTTP_403_FORBIDDEN)
 
-        # Authenticated non-creator
+        # Authenticated not creator
         self.login_test_user(self.user_2.username)
 
         response = self.client.put(
@@ -232,7 +232,7 @@ class VocabSourceViewSetTest(TestCommon):
 
         self.assertEqual(response.status_code, drf_status.HTTP_200_OK)
 
-        # Non-creator superuser
+        # Superuser not creator
         self.client.logout()
         self.login_test_user(self.superuser.username)
 
@@ -257,7 +257,7 @@ class VocabSourceViewSetTest(TestCommon):
 
         self.assertEqual(response.status_code, drf_status.HTTP_403_FORBIDDEN)
 
-        # Authenticated non-creator
+        # Authenticated not creator
         self.login_test_user(self.user_2.username)
 
         response = self.client.delete(
@@ -276,7 +276,7 @@ class VocabSourceViewSetTest(TestCommon):
 
         self.assertEqual(response.status_code, drf_status.HTTP_204_NO_CONTENT)
 
-        # Non-creator superuser
+        # Superuser not creator
         self.vocab_source = VocabSource.objects.create(
             vocab_project=self.vocab_project,
             creator=self.user,
@@ -297,6 +297,7 @@ class NestedVocabSourceViewSetTest(TestCommon):
 
     def setUp(self):
         super(NestedVocabSourceViewSetTest, self).setUp()
+
         self.user_2 = User.objects.create_user(
             username='abc',
             first_name='Christopher',
@@ -462,7 +463,7 @@ class NestedVocabSourceViewSetTest(TestCommon):
 
         self.assertEqual(response.status_code, drf_status.HTTP_403_FORBIDDEN)
 
-        # Authenticated non owner
+        # Authenticated not owner
         self.login_test_user(self.user_2.username)
 
         response = self.client.post(
@@ -489,7 +490,7 @@ class NestedVocabSourceViewSetTest(TestCommon):
 
         self.assertEqual(response.status_code, drf_status.HTTP_201_CREATED)
 
-        # Non-owner superuser
+        # Superuser not owner
         self.client.logout()
         self.login_test_user(self.superuser.username)
 
@@ -512,6 +513,7 @@ class VocabSourceExportViewTest(TestCommon):
 
     def setUp(self):
         super(VocabSourceExportViewTest, self).setUp()
+
         self.vocab_project = VocabProject.objects.create(
             owner=self.user,
             name='test project'
@@ -554,6 +556,7 @@ class VocabSourceExportViewTest(TestCommon):
 
 #     def setUp(self):
 #         super(VocabSourceImportViewTest, self).setUp()
+
 #         self.vocab_project = VocabProject.objects.create(
 #             owner=self.user,
 #             name='test project'

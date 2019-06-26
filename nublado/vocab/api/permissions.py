@@ -35,7 +35,7 @@ class CreatorPermission(BasePermission):
     def has_object_permission(self, request, view, obj):
         user = request.user
 
-        if view.action in ['update', 'partial_update', 'destroy']:
+        if view.action not in ['retrieve', 'list']:
             return self.check_creator_permission(user, obj)
         else:
             return True
@@ -54,7 +54,6 @@ class SourceCreatorPermission(CreatorPermission):
 
 
 class SourceContextCreatorPermission(CreatorPermission):
-
     def check_creator_permission(self, user, obj):
         if self.superuser_override:
             return user.id == obj.vocab_source.creator_id or user.is_superuser
@@ -71,8 +70,7 @@ class OwnerPermission(BasePermission):
 
     def has_object_permission(self, request, view, obj):
         user = request.user
-
-        if view.action in ['create', 'update', 'partial_update', 'destroy']:
+        if view.action not in ['retrieve', 'list']:
             return self.check_owner_permission(user, obj)
         else:
             return True

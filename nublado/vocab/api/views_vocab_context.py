@@ -58,6 +58,9 @@ class VocabContextViewSet(
         if not vocab_entry_id:
             raise ParseError('vocab_entry_id required')
 
+        # Force permission check
+        vocab_context = self.get_object()
+
         if not VocabContextEntry.objects.filter(vocab_entry_id=vocab_entry_id, vocab_context_id=pk).exists():
             VocabContextEntry.objects.create(vocab_entry_id=vocab_entry_id, vocab_context_id=pk)
             return Response(status=status.HTTP_201_CREATED)
@@ -76,6 +79,9 @@ class VocabContextViewSet(
         if not vocab_entry_tag:
             raise ParseError('vocab_entry_tag required')
 
+        # Force permission check
+        vocab_context = self.get_object()
+
         vocab_entry_context = get_object_or_404(
             VocabContextEntry,
             vocab_entry_id=vocab_entry_id,
@@ -91,6 +97,9 @@ class VocabContextViewSet(
 
         if not vocab_entry_id:
             raise ParseError('vocab_entry_id required')
+
+        # Force permission check
+        vocab_context = self.get_object()
 
         vocab_entry_context = get_object_or_404(
             VocabContextEntry,
@@ -112,6 +121,9 @@ class VocabContextViewSet(
 
         if not vocab_entry_tag:
             raise ParseError('vocab_entry_tag required')
+
+        # Force permission check
+        vocab_context = self.get_object()
 
         vocab_entry_context = get_object_or_404(
             VocabContextEntry,

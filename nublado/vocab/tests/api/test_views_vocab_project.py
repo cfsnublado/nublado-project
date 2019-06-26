@@ -21,6 +21,7 @@ class VocabProjectViewSetTest(TestCommon):
 
     def setUp(self):
         super(VocabProjectViewSetTest, self).setUp()
+
         self.vocab_project = VocabProject.objects.create(
             owner=self.user,
             name='test project'
@@ -183,7 +184,7 @@ class VocabProjectViewSetTest(TestCommon):
 
         self.assertEqual(response.status_code, drf_status.HTTP_201_CREATED)
 
-    def test_permissions_retrieve(self):
+    def test_permissions_detail(self):
         # Not authenticated
         self.client.logout()
 
@@ -225,7 +226,7 @@ class VocabProjectViewSetTest(TestCommon):
 
         self.assertEqual(response.status_code, drf_status.HTTP_403_FORBIDDEN)
 
-        # Authenticated non-owner
+        # Authenticated not owner
         self.login_test_user(self.user_2.username)
 
         response = self.client.put(
@@ -254,7 +255,7 @@ class VocabProjectViewSetTest(TestCommon):
 
         self.assertEqual(response.status_code, drf_status.HTTP_200_OK)
 
-        # Non-owner superuser
+        # Superuser not owner
         self.client.logout()
         self.login_test_user(self.superuser.username)
 
@@ -298,7 +299,7 @@ class VocabProjectViewSetTest(TestCommon):
 
         self.assertEqual(response.status_code, drf_status.HTTP_204_NO_CONTENT)
 
-        # Non-owner superuser
+        # Superuser not owner
         self.vocab_project = VocabProject.objects.create(
             owner=self.user,
             name='test project'

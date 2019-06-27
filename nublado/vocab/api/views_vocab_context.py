@@ -21,7 +21,8 @@ from ..serializers import (
 )
 from .pagination import SmallPagination
 from .permissions import (
-    ReadPermission, ReadWritePermission, SourceContextCreatorPermission
+    ReadPermission, ReadWritePermission, SourceCreatorPermission,
+    SourceContextCreatorPermission
 )
 from .views_mixins import BatchMixin
 
@@ -144,7 +145,7 @@ class NestedVocabContextViewSet(
     queryset = VocabContext.objects.select_related('vocab_source')
     serializer_class = VocabContextSerializer
     vocab_source = None
-    permission_classes = [ReadWritePermission]
+    permission_classes = [ReadPermission, SourceCreatorPermission]
     pagination_class = SmallPagination
 
     def get_vocab_source(self, vocab_source_pk=None):
@@ -152,6 +153,14 @@ class NestedVocabContextViewSet(
             self.vocab_source = get_object_or_404(VocabSource, id=vocab_source_pk)
 
         return self.vocab_source
+
+    def get_queryset(self):
+        qs = self.queryset.prefetch_related(
+            'vocabcontextentry_set__vocab_entry',
+            'vocabcontextentry_set__vocab_entry_tags'
+        )
+        qs = qs.filter(vocab_source_id=self.kwargs['vocab_source_pk'])
+        return qs
 
     def create(self, request, *args, **kwargs):
         vocab_source = self.get_vocab_source(vocab_source_pk=kwargs['vocab_source_pk'])
@@ -162,14 +171,6 @@ class NestedVocabContextViewSet(
     def perform_create(self, serializer):
         vocab_source = self.get_vocab_source(vocab_source_pk=self.kwargs['vocab_source_pk'])
         serializer.save(vocab_source=vocab_source)
-
-    def get_queryset(self):
-        qs = self.queryset.prefetch_related(
-            'vocabcontextentry_set__vocab_entry',
-            'vocabcontextentry_set__vocab_entry_tags'
-        )
-        qs = qs.filter(vocab_source_id=self.kwargs['vocab_source_pk'])
-        return qs
 
     def list(self, request, *args, **kwargs):
         self.get_vocab_source(vocab_source_pk=kwargs['vocab_source_pk'])

@@ -22,7 +22,7 @@ from ..serializers import (
 from .pagination import SmallPagination
 from .permissions import (
     ReadPermission, ReadWritePermission, SourceCreatorPermission,
-    SourceContextCreatorPermission
+    SourceContextCreatorPermission, SourceContextEntryCreatorPermission
 )
 from .views_mixins import BatchMixin
 
@@ -190,7 +190,10 @@ class VocabContextEntryViewSet(
         'vocab_entry_tags'
     )
     serializer_class = VocabContextEntrySerializer
-    permission_classes = [ReadWritePermission]
+    permission_classes = [
+        ReadPermission,
+        SourceContextEntryCreatorPermission
+    ]
     pagination_class = SmallPagination
 
     def get_queryset(self):
@@ -208,6 +211,12 @@ class VocabContextEntryViewSet(
             )
 
         return self.queryset
+
+    def get_object(self):
+        obj = get_object_or_404(self.get_queryset(), pk=self.kwargs['pk'])
+        self.check_object_permissions(self.request, obj)
+
+        return obj
 
     @action(methods=['get'], detail=False)
     def detail_data(self, request):

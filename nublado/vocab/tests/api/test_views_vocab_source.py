@@ -62,10 +62,13 @@ class VocabSourceViewSetTest(TestCommon):
         self.assertEqual('pk', view.lookup_field)
         self.assertEqual('pk', view.lookup_url_kwarg)
         self.assertEqual(VocabSourceSerializer, view.serializer_class)
-        self.assertCountEqual(
-            VocabSource.objects.select_related('vocab_project').prefetch_related('vocab_contexts'), view.queryset
-        )
         self.assertEqual(SmallPagination, view.pagination_class)
+
+        qs = VocabSource.objects.select_related('vocab_project').prefetch_related('vocab_contexts')
+        self.assertCountEqual(
+            qs, view.queryset
+        )
+        self.assertEqual(str(qs.query), str(view.queryset.query))
 
         permission_classes = [ReadPermission, SourceCreatorPermission]
 
@@ -348,11 +351,14 @@ class NestedVocabSourceViewSetTest(TestCommon):
         self.assertEqual('pk', view.lookup_url_kwarg)
         self.assertEqual(VocabSourceSerializer, view.serializer_class)
         self.assertIsNone(view.vocab_project)
+        self.assertEqual(SmallPagination, view.pagination_class)
+
+        qs = VocabSource.objects.select_related('vocab_project').prefetch_related('vocab_contexts')
         self.assertCountEqual(
-            VocabSource.objects.select_related('vocab_project').prefetch_related('vocab_contexts'),
+            qs,
             view.queryset
         )
-        self.assertEqual(SmallPagination, view.pagination_class)
+        self.assertEqual(str(qs.query), str(view.queryset.query))
 
         permission_classes = [ReadPermission, ProjectOwnerPermission]
 

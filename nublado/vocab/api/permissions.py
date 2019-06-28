@@ -44,7 +44,7 @@ class CreatorPermission(BasePermission):
 
     def check_creator_permission(self, user, obj):
         if self.superuser_override:
-            return user.id == obj.creator_id or user.is_superuser
+            return user.is_superuser or user.id == obj.creator_id
         else:
             return user.id == obj.creator_id
 
@@ -56,9 +56,17 @@ class SourceCreatorPermission(CreatorPermission):
 class SourceContextCreatorPermission(CreatorPermission):
     def check_creator_permission(self, user, obj):
         if self.superuser_override:
-            return user.id == obj.vocab_source.creator_id or user.is_superuser
+            return user.is_superuser or user.id == obj.vocab_source.creator_id
         else:
             return user.id == obj.vocab_source.creator_id
+
+
+class SourceContextEntryCreatorPermission(CreatorPermission):
+    def check_creator_permission(self, user, obj):
+        if self.superuser_override:
+            return user.is_superuser or user.id == obj.vocab_context.vocab_source.creator_id
+        else:
+            return user.id == obj.vocab_context.vocab_source.creator_id
 
 
 class OwnerPermission(BasePermission):
@@ -77,7 +85,7 @@ class OwnerPermission(BasePermission):
 
     def check_owner_permission(self, user, obj):
         if self.superuser_override:
-            return user.id == obj.owner_id or user.is_superuser
+            return user.is_superuser or user.id == obj.owner_id
         else:
             return user.id == obj.owner_id
 

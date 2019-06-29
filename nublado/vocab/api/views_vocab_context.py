@@ -163,14 +163,13 @@ class NestedVocabContextViewSet(
         return qs
 
     def create(self, request, *args, **kwargs):
-        vocab_source = self.get_vocab_source(vocab_source_pk=kwargs['vocab_source_pk'])
-        self.check_object_permissions(request, vocab_source)
+        self.get_vocab_source(vocab_source_pk=kwargs['vocab_source_pk'])
+        self.check_object_permissions(request, self.vocab_source)
 
         return super(NestedVocabContextViewSet, self).create(request, *args, **kwargs)
 
     def perform_create(self, serializer):
-        vocab_source = self.get_vocab_source(vocab_source_pk=self.kwargs['vocab_source_pk'])
-        serializer.save(vocab_source=vocab_source)
+        serializer.save(vocab_source=self.vocab_source)
 
     def list(self, request, *args, **kwargs):
         self.get_vocab_source(vocab_source_pk=kwargs['vocab_source_pk'])
@@ -246,7 +245,10 @@ class VocabContextEntryViewSet(
         )
 
 
-class NestedVocabContextEntryViewSet(APIDefaultsMixin, CreateModelMixin, ListModelMixin, GenericViewSet):
+class NestedVocabContextEntryViewSet(
+    APIDefaultsMixin, CreateModelMixin,
+    ListModelMixin, GenericViewSet
+):
     lookup_field = 'pk'
     lookup_url_kwarg = 'pk'
     queryset = VocabContextEntry.objects.select_related(
@@ -257,6 +259,9 @@ class NestedVocabContextEntryViewSet(APIDefaultsMixin, CreateModelMixin, ListMod
     serializer_class = VocabContextEntrySerializer
     vocab_entry = None
     vocab_context = None
+
+    pagination_class = SmallPagination
+    permission_classes = [ReadPermission, SourceContextCreatorPermission]
 
     def get_vocab_entry(self, vocab_entry_entry=None):
         if not self.vocab_entry:
@@ -273,16 +278,26 @@ class NestedVocabContextEntryViewSet(APIDefaultsMixin, CreateModelMixin, ListMod
     def get_queryset(self):
         return self.queryset.filter(vocab_context_id=self.kwargs['vocab_context_pk'])
 
-    def perform_create(self, serializer):
+    def create(self, request, *args, **kwargs):
         # Vocab entry text from request
         vocab_entry_entry = self.request.data.get('vocab_entry_entry', None)
 
         if not vocab_entry_entry:
             raise ParseError('vocab_entry_entry required')
 
-        vocab_entry = self.get_vocab_entry(vocab_entry_entry=vocab_entry_entry)
-        vocab_context = self.get_vocab_context(vocab_context_pk=self.kwargs['vocab_context_pk'])
-        serializer.save(vocab_entry=vocab_entry, vocab_context=vocab_context)
+        self.get_vocab_entry(vocab_entry_entry=vocab_entry_entry)
+        self.get_vocab_context(
+            vocab_context_pk=self.kwargs['vocab_context_pk']
+        )
+        self.check_object_permissions(request, self.vocab_context)
+
+        return super(NestedVocabContextEntryViewSet, self).create(request, *args, **kwargs)
+
+    def perform_create(self, serializer):
+        serializer.save(
+            vocab_entry=self.vocab_entry,
+            vocab_context=self.vocab_context
+        )
 
     def list(self, request, *args, **kwargs):
         self.get_vocab_context(vocab_context_pk=kwargs['vocab_context_pk'])

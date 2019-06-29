@@ -71,16 +71,15 @@ class NestedVocabSourceViewSet(
         return self.queryset.filter(vocab_project_id=self.kwargs['vocab_project_pk'])
 
     def create(self, request, *args, **kwargs):
-        vocab_project = self.get_vocab_project(vocab_project_pk=kwargs['vocab_project_pk'])
-        self.check_object_permissions(request, vocab_project)
+        self.get_vocab_project(vocab_project_pk=kwargs['vocab_project_pk'])
+        self.check_object_permissions(request, self.vocab_project)
 
         return super(NestedVocabSourceViewSet, self).create(request, *args, **kwargs)
 
     def perform_create(self, serializer):
-        vocab_project = self.get_vocab_project(vocab_project_pk=self.kwargs['vocab_project_pk'])
         serializer.save(
             creator=self.request.user,
-            vocab_project=vocab_project
+            vocab_project=self.vocab_project
         )
 
     def list(self, request, *args, **kwargs):

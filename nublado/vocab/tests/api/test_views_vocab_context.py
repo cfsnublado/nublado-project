@@ -17,7 +17,7 @@ from vocab.api.permissions import (
     SourceContextCreatorPermission, SourceContextEntryCreatorPermission
 )
 from vocab.api.views_vocab_context import (
-    NestedVocabContextViewSet,
+    NestedVocabContextViewSet, NestedVocabContextEntryViewSet,
     VocabContextViewSet, VocabContextEntryViewSet,
 )
 from vocab.api.views_mixins import BatchMixin
@@ -1076,6 +1076,16 @@ class VocabContextEntryViewSetTest(TestCommon):
 
         self.assertEqual(response.status_code, drf_status.HTTP_200_OK)
 
+    def test_permissions_list(self):
+        # Not authenticated
+        response = self.client.get(
+            reverse(
+                'api:vocab-context-entry-list',
+            )
+        )
+
+        self.assertEqual(response.status_code, drf_status.HTTP_200_OK)
+
     def test_permissions_delete(self):
 
         # Not authenticated
@@ -1151,3 +1161,64 @@ class NestedVocabContextEntryViewSetTest(TestCommon):
             vocab_source=self.vocab_source,
             content='This is some content.'
         )
+        self.user_2 = User.objects.create_user(
+            username='abc',
+            first_name='Christopher',
+            last_name='Sanders',
+            email='abc@foo.com',
+            password=self.pwd
+        )
+
+    def get_context_entry_serializer_data(self, vocab_context_entry):
+        serializer = VocabContextEntrySerializer(
+            vocab_context_entry,
+            context={'request': self.get_dummy_request()}
+        )
+        return json.loads(serializer.json_data())
+
+    def test_view_setup(self):
+        view = NestedVocabContextEntryViewSet()
+        self.assertEqual('pk', view.lookup_field)
+        self.assertEqual('pk', view.lookup_url_kwarg)
+        self.assertEqual(VocabContextEntrySerializer, view.serializer_class)
+        self.assertEqual(SmallPagination, view.pagination_class)
+
+        qs = VocabContextEntry.objects.select_related(
+            'vocab_entry',
+            'vocab_context',
+            'vocab_context__vocab_source'
+        )
+        qs = qs.prefetch_related('vocab_entry_tags')
+
+        self.assertCountEqual(qs, view.queryset)
+        self.assertEqual(str(qs.query), str(view.queryset.query))
+
+        permission_classes = [ReadPermission, SourceContextCreatorPermission]
+
+        self.assertEqual(permission_classes, view.permission_classes)
+
+    # def test_view_create(self):
+    #     self.login_test_user(self.user.username)
+
+    #     vocab_context_data = {
+    #         'content': 'test content'
+    #     }
+    #     self.assertFalse(
+    #         VocabContext.objects.filter(
+    #             vocab_source=self.vocab_source,
+    #             content=vocab_context_data['content']
+    #         ).exists()
+    #     )
+    #     self.client.post(
+    #         reverse(
+    #             'api:nested-vocab-context-list',
+    #             kwargs={'vocab_source_pk': self.vocab_source.id}
+    #         ),
+    #         data=vocab_context_data
+    #     )
+    #     self.assertTrue(
+    #         VocabContext.objects.filter(
+    #             vocab_source=self.vocab_source,
+    #             content=vocab_context_data['content']
+    #         ).exists()
+    #     )

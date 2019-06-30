@@ -2,7 +2,7 @@ from django.urls import include, path, re_path
 
 from .views.views_vocab_auth import VocabUserDashboardView
 from .views.views_vocab_context_auth import (
-    VocabContextCreateView, VocabContextDeleteView, VocabContextTagView,
+    VocabContextCreateView, VocabContextTagView,
     VocabContextEntryTagView
 )
 from .views.views_vocab_entry import (
@@ -77,7 +77,6 @@ auth_urls = [
         name='vocab_context_create'
     ),
     path('context/<int:vocab_context_pk>/edit/', VocabContextTagView.as_view(), name='vocab_context_tag'),
-    path('context/<int:vocab_context_pk>/delete/', VocabContextDeleteView.as_view(), name='vocab_context_delete'),
     path(
         'vocabcontextentry/<int:vocab_context_entry_pk>/tag/',
         VocabContextEntryTagView.as_view(),

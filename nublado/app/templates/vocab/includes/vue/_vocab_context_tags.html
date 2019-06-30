@@ -1,7 +1,7 @@
 {% load i18n %}
 
 <vocab-contexts
-:init-is-admin="{{ user.is_admin|yesno:'true,false' }}"
+:init-is-admin="{{ source_admin|yesno:'true,false' }}"
 init-vocab-contexts-url="{{ vocab_contexts_url }}"
 inline-template
 >

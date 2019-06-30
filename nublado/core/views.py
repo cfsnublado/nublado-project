@@ -70,7 +70,6 @@ class ObjectSessionMixin(object):
 
 
 class CachedObjectMixin(object):
-    object = None
 
     def get_object(self):
         # This is a trivial means of 'caching' the object so that

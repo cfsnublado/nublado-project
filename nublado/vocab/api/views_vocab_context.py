@@ -21,7 +21,7 @@ from ..serializers import (
 )
 from .pagination import SmallPagination
 from .permissions import (
-    ReadPermission, ReadWritePermission, SourceCreatorPermission,
+    ReadPermission, SourceCreatorPermission,
     SourceContextCreatorPermission, SourceContextEntryCreatorPermission
 )
 from .views_mixins import BatchMixin

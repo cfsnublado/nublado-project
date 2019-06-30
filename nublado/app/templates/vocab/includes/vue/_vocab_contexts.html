@@ -1,5 +1,7 @@
 {% load i18n %}
 
+<div class="page-subheader">{% trans 'header_contexts' %}</div>
+
 <vocab-contexts
 :init-is-admin="{{ user.is_admin|yesno:'true,false' }}"
 init-vocab-contexts-url="{{ vocab_contexts_url }}"
@@ -14,8 +16,6 @@ v-cloak
 <div v-if="vocabContexts.length == 0">
 {% trans 'msg_no_contexts' %}
 </div>
-
-<div v-else class="page-subheader">{% trans 'header_contexts' %}</div>
 
 <vocab-context
 v-for="(context, index) in vocabContexts"

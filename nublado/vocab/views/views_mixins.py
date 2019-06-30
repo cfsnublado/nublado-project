@@ -8,9 +8,14 @@ from ..models import VocabContextEntry, VocabEntry, VocabProject, VocabSource
 
 
 class PermissionMixin(object):
+    superuser_override = True
 
     def dispatch(self, request, *args, **kwargs):
-        self.check_permission()
+        has_permission = self.check_permission()
+
+        if not has_permission:
+            raise PermissionDenied
+
         return super(PermissionMixin, self).dispatch(request, *args, **kwargs)
 
     def check_permission(self, *args, **kwargs):
@@ -58,18 +63,18 @@ class VocabProjectMixin(CachedObjectMixin):
 
 
 class VocabSourcePermissionMixin(PermissionMixin):
-    is_vocab_source_creator = False
-
-    def get_context_data(self, **kwargs):
-        context = super(VocabSourcePermissionMixin, self).get_context_data(**kwargs)
-        context['is_vocab_source_creator'] = self.is_vocab_source_creator
-        return context
 
     def check_permission(self):
-        if self.vocab_source.creator_id == self.request.user.id:
-            self.is_vocab_source_creator = True
+        has_permission = False
+
+        if self.superuser_override:
+            if self.request.user.is_superuser or self.vocab_source.creator_id == self.request.user.id:
+                has_permission = True
         else:
-            raise PermissionDenied
+            if self.vocab_source.creator_id == self.request.user.id:
+                has_permission = True
+
+        return has_permission
 
 
 class VocabSourceSessionMixin(ObjectSessionMixin):
@@ -82,9 +87,14 @@ class VocabSourceMixin(CachedObjectMixin):
     vocab_source_slug = 'vocab_source_slug'
     vocab_project = None
     vocab_source = None
+    source_admin = False
 
     def dispatch(self, request, *args, **kwargs):
         self.get_vocab_source(request, *args, **kwargs)
+
+        if request.user.is_superuser or request.user.id == self.vocab_source.creator_id:
+            self.source_admin = True
+
         return super(VocabSourceMixin, self).dispatch(request, *args, **kwargs)
 
     def get_vocab_source(self, request, *args, **kwargs):
@@ -100,18 +110,22 @@ class VocabSourceMixin(CachedObjectMixin):
             )
         else:
             obj = self.get_object()
+
             if hasattr(obj, 'vocab_source_id'):
                 self.vocab_source = obj.vocab_source
             elif isinstance(obj, VocabSource):
                     self.vocab_source = obj
             else:
                 raise Http404('Vocab source not found.')
+
         self.vocab_project = self.vocab_source.vocab_project
 
     def get_context_data(self, **kwargs):
         context = super(VocabSourceMixin, self).get_context_data(**kwargs)
         context['vocab_project'] = self.vocab_project
         context['vocab_source'] = self.vocab_source
+        context['source_admin'] = self.source_admin
+
         return context
 
 

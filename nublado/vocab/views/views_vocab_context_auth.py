@@ -10,7 +10,7 @@ from django.views.generic import (
 from core.views import AjaxDeleteMixin
 from ..forms import VocabContextCreateForm
 from ..models import (VocabContextEntry, VocabContext)
-from .views_mixins import VocabSourceMixin
+from .views_mixins import VocabSourcePermissionMixin, VocabSourceMixin
 
 APP_NAME = apps.get_app_config('vocab').name
 
@@ -33,26 +33,7 @@ class VocabContextCreateView(
         return reverse('vocab:vocab_context_tag', kwargs={'vocab_context_pk': self.object.id})
 
 
-class VocabContextDeleteView(
-    LoginRequiredMixin, VocabSourceMixin,
-    AjaxDeleteMixin, DeleteView
-):
-    model = VocabContext
-    pk_url_kwarg = 'vocab_context_pk'
-    template_name = '{0}/auth/vocab_context_delete_confirm.html'.format(APP_NAME)
-
-    def get_success_url(self):
-        return reverse(
-            'vocab:vocab_source_contexts',
-            kwargs={
-                'vocab_source_pk': self.vocab_source.id,
-                'vocab_source_slug': self.vocab_source.slug
-            }
-        )
-
-
 class VocabContextTagView(
-    LoginRequiredMixin,
     VocabSourceMixin, DetailView
 ):
     model = VocabContext
@@ -60,8 +41,8 @@ class VocabContextTagView(
     context_object_name = 'vocab_context'
     template_name = '{0}/auth/vocab_context_tag.html'.format(APP_NAME)
 
-    def get_queryset(self, **kwargs):
-        qs = super(VocabContextTagView, self).get_queryset(**kwargs)
+    def get_queryset(self):
+        qs = super(VocabContextTagView, self).get_queryset()
         qs = qs.select_related('vocab_source')
         qs = qs.prefetch_related(
             'vocabcontextentry_set__vocab_entry',

@@ -13754,25 +13754,34 @@ label {
     padding: 9.375rem 0 25rem 0;
   }
 }
-/* line 3, ../scss/cfs/_blocks.scss */
+/* line 1, ../scss/cfs/_blocks.scss */
+.icon-block {
+  padding-top: 1.5625rem;
+  padding-bottom: 1.5625rem;
+}
+/* line 5, ../scss/cfs/_blocks.scss */
+.icon-block a {
+  color: #818a91;
+}
+/* line 9, ../scss/cfs/_blocks.scss */
 .icon-block p {
   text-align: center;
 }
-/* line 7, ../scss/cfs/_blocks.scss */
+/* line 13, ../scss/cfs/_blocks.scss */
 .icon-block .icon-block-header {
   text-align: center;
 }
-/* line 10, ../scss/cfs/_blocks.scss */
+/* line 16, ../scss/cfs/_blocks.scss */
 .icon-block .icon-block-header .icon-block-icon {
   font-size: 3.75rem;
 }
 
-/* line 18, ../scss/cfs/_blocks.scss */
+/* line 23, ../scss/cfs/_blocks.scss */
 .details-block p {
   margin-bottom: 0;
 }
 
-/* line 23, ../scss/cfs/_blocks.scss */
+/* line 28, ../scss/cfs/_blocks.scss */
 .basic-block {
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
@@ -13783,6 +13792,12 @@ label {
   background-color: #eee;
 }
 
+@media (max-width: 767.98px) {
+  /* line 39, ../scss/cfs/_blocks.scss */
+  .icon-block:not(:last-of-type) {
+    border-bottom: 1px solid #efefef;
+  }
+}
 /* line 2, ../scss/cfs/_collapse.scss */
 .collapse-container .collapse-item {
   display: none;

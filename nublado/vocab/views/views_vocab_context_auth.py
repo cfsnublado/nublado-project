@@ -4,21 +4,24 @@ from django.apps import apps
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse
 from django.views.generic import (
-    CreateView, DeleteView, DetailView
+    CreateView, DetailView
 )
 
-from core.views import AjaxDeleteMixin
 from ..forms import VocabContextCreateForm
 from ..models import (VocabContextEntry, VocabContext)
-from .views_mixins import VocabSourcePermissionMixin, VocabSourceMixin
+from .views_mixins import (
+    VocabSourceMixin, VocabSourcePermissionMixin,
+    VocabSourceSessionMixin
+)
 
 APP_NAME = apps.get_app_config('vocab').name
 
 
 # VocabContext
 class VocabContextCreateView(
-    LoginRequiredMixin,
-    VocabSourceMixin, CreateView
+    LoginRequiredMixin, VocabSourceMixin,
+    VocabSourceSessionMixin, VocabSourcePermissionMixin,
+    CreateView
 ):
     model = VocabContext
     form_class = VocabContextCreateForm
@@ -34,7 +37,9 @@ class VocabContextCreateView(
 
 
 class VocabContextTagView(
-    VocabSourceMixin, DetailView
+    LoginRequiredMixin, VocabSourceMixin,
+    VocabSourceSessionMixin, VocabSourcePermissionMixin,
+    DetailView
 ):
     model = VocabContext
     pk_url_kwarg = 'vocab_context_pk'

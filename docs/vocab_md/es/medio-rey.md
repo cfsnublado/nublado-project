@@ -89,4 +89,70 @@ Las rodillas le impactaron contra el antepecho y, con un gemido de dolor, se des
 
     </div>
 
-- 
+- Hubo traqueteos y gritos, susurros de cuerdas y crujidos de madera mientras los pocos tripulantes libres se dispersaban y preparaban el Viento del Sur para salir del puerto de Vulsgard.
+
+    —Y ahora ¿qué? —preguntó Yarvi en voz baja.
+
+    Rulf soltó un bufido amargo ante tan ignorantes palabras.
+
+    —¿Ahora? —Jaud se escupió en las palmas de las manos y las llevó a los asideros pulidos de la enorme pala que compartían—. Ahora remamos.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: remar: remamos
+
+    es: bufido: bufido
+
+    es: traqueteo: traqueteos
+
+    es: tripulante: tripulantes
+
+    es: puerto: puerto
+
+    </div>
+
+- Y los escálamos retumbaban y las cadenas repiqueteaban, las sogas chirriaban y los maderos crujían, los remeros gimoteaban, maldecían, rezaban o guardaban un silencio adusto y el _Viento del Sur_ avanzaba palmo a palmo.
+
+    —Una brazada cada vez. —La voz tranquila de Jaud era un hilo que seguir en aquella niebla de miseria—. Una cada vez.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: brazada: brazada
+
+    es: repiquetear: repiqueteaban
+
+    es: chirriar: chirriaban
+
+    es: crujir: crujían
+
+    es: remero: remeros
+
+    es: palmo a palmo: palmo a palmo
+
+    </div>
+
+- —Para tener solo una mano —dijo Jaud, con un tintineo de su cadena al pasar un enorme pie descalzo por encima del remo—, hoy has remado bien.
+
+    —Vaya. —Rulf escupió por el hueco del remo, y una esquirla de la luz del Padre Luna reveló una amplia sonrisa en su cara—. Aún haremos medio remero de ti.
+
+    Y pese a que uno de ellos había nacido a muchas leguas de distancia y el otro largos años antes que él, pese a que Yarvi los conocía tan poco que no sabía interpretarles la expresión del rostro, y pese a que remar encadenado a una galera mercante no era gran hazaña para el hijo del rey Uthrik de Gettlandia, Yarvi sintió una punzada de orgullo, tan intensa que casi le hizo llorar, pues era un vínculo extraño y poderoso el que se forma entre compañeros de remo.
+
+    Cuando se estaba encadenado junto a otro hombre compartiendo su comida y sus desgracias, bajo iguales azotes del cómitre e iguales sacudidas de la Madre Mar, igualando el ritmo al suyo mientras se tiraba de un mismo y enorme remo, apretándose contra él de noche para no afrontar a solas el frío cruel… entonces se llegaba a conocer a ese hombre. Después de una semana emparedado entre Rulf y Jaud, Yarvi no pudo más que preguntarse si alguna vez había tenido dos amigos mejores.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: pese a: pese a que
+
+    es: remar: remar
+
+    es: encadenado: encadenado
+
+    es: galera: galera
+
+    es: azote: azotes
+
+    es: remo: remo
+
+    es: emparedar: emparedado
+
+    </div>

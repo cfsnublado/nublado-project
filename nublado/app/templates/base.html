@@ -158,6 +158,7 @@ ref="sidebarNav"
 <span> {% trans "label_main" %} </span>
 </li>
 
+<!--
 <li class="nav-item">
 <a
 id="sidebar-nav-vocab-projects" 
@@ -165,6 +166,17 @@ class="nav-link {% block vocab_projects_link_active %}{% endblock vocab_projects
 href="{% url 'vocab:vocab_projects' %}">
 <i class="nav-link-icon fas fa-project-diagram fa-fw"></i>
 {% trans "label_projects" %}
+</a>
+</li>
+-->
+
+<li class="nav-item">
+<a
+id="sidebar-nav-vocab-entries" 
+class="nav-link {% block vocab_entries_link_active %}{% endblock vocab_entries_link_active %}" 
+href="{% url 'vocab:vocab_entries' %}">
+<i class="nav-link-icon fas fa-language fa-fw"></i>
+{% trans "label_vocabulary" %}
 </a>
 </li>
 
@@ -175,16 +187,6 @@ class="nav-link {% block vocab_sources_link_active %}{% endblock vocab_sources_l
 href="{% url 'vocab:vocab_sources' %}">
 <i class="nav-link-icon fas fa-book fa-fw"></i>
 {% trans "label_sources" %}
-</a>
-</li>
-
-<li class="nav-item">
-<a
-id="sidebar-nav-vocab-entries" 
-class="nav-link {% block vocab_entries_link_active %}{% endblock vocab_entries_link_active %}" 
-href="{% url 'vocab:vocab_entries' %}">
-<i class="nav-link-icon fas fa-language fa-fw"></i>
-{% trans "label_vocabulary" %}
 </a>
 </li>
 

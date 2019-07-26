@@ -431,9 +431,9 @@ const BaseForm = {
       }
     },
     convertToFormData(data) {
-      var formData = new FormData();
+      var formData = new FormData()
       for (var key in data) {
-        formData.append(key, data[key]);
+        formData.append(key, data[key])
       }
       return formData
     },

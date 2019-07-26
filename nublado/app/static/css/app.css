@@ -16036,26 +16036,26 @@ a.ui.basic.label:hover {
   margin-bottom: 1.875rem;
   padding-top: 1.875rem;
 }
-/* line 23, ../scss/cfs/pages/_home-page.scss */
+/* line 22, ../scss/cfs/pages/_home-page.scss */
 #description-blocks .icon-block {
   padding-top: 1.5625rem;
   padding-bottom: 1.5625rem;
 }
-/* line 27, ../scss/cfs/pages/_home-page.scss */
+/* line 26, ../scss/cfs/pages/_home-page.scss */
 #description-blocks .section-header {
   margin-bottom: 3.125rem;
 }
 
 @media (max-width: 767.98px) {
-  /* line 33, ../scss/cfs/pages/_home-page.scss */
+  /* line 32, ../scss/cfs/pages/_home-page.scss */
   #description-blocks {
     padding-top: 1.25rem;
   }
-  /* line 36, ../scss/cfs/pages/_home-page.scss */
+  /* line 35, ../scss/cfs/pages/_home-page.scss */
   #description-blocks .icon-block:not(:last-of-type) {
     border-bottom: 1px solid #efefef;
   }
-  /* line 39, ../scss/cfs/pages/_home-page.scss */
+  /* line 38, ../scss/cfs/pages/_home-page.scss */
   #description-blocks .section-header {
     margin-bottom: 3.125rem;
   }

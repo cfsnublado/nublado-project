@@ -1,6 +1,3 @@
-from django.db.models import F, IntegerField, Value
-from django.db.models.functions import Lower
-
 from rest_framework import status
 from rest_framework.exceptions import ParseError
 from rest_framework.generics import get_object_or_404
@@ -14,6 +11,9 @@ from rest_framework.views import APIView
 from rest_framework.viewsets import (
     GenericViewSet
 )
+
+from django.db.models import F, IntegerField, Value
+from django.db.models.functions import Lower
 
 from core.api.views_api import APIDefaultsMixin
 from ..models import VocabContextEntry, VocabProject, VocabSource

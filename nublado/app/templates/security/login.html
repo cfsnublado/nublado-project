@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load staticfiles %}
+{% load core_extras %}
 {% load i18n %}
 {% load widget_tweaks %}
 
@@ -30,7 +31,13 @@
 <div class="col-md-5">
 
 <div class="basic-block">
-<form id="login-form" class="block-form" action="{% url 'security:login' %}" method="post" novalidate>
+<form 
+id="login-form" 
+class="block-form" 
+action="{% if next %}{% url_set_param 'security:login' next=next %}{% else %}{% url 'security:login' %}{% endif %}" 
+method="post" 
+novalidate
+>
 {% csrf_token %}
 {{ form.non_field_errors }}
 

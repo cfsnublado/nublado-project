@@ -12,5 +12,4 @@ def global_settings(request):
         "project_name": settings.PROJECT_NAME,
         "sidebar_expanded": "sidebar_locked" in request.session and request.session["sidebar_locked"],
         "session_obj_enabled": session_obj_enabled,
-        "sidebar_top_panel_expanded": session_obj_enabled
     }

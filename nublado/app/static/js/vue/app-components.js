@@ -136,7 +136,7 @@ const AudioPlayer = {
   },
   mounted() {
     this.audio = this.$el.querySelector('#' + this.audioId)
-    this.audio.addEventListener('loadeddata', this.load)
+    this.audio.addEventListener('loadeddata', this.loaded)
     this.audio.addEventListener('play', () => { this.playing = true })
     this.audio.addEventListener('ended', () => { this.playing = false })
   },

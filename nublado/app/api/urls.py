@@ -1,8 +1,10 @@
-from django.urls import path, re_path
-from django.conf.urls import include
 from rest_framework.authtoken import views
 from rest_framework_nested.routers import NestedSimpleRouter
 from rest_framework.routers import DefaultRouter
+
+from django.urls import path, re_path
+from django.conf.urls import include
+
 from users.api.views_api import UserViewSet, ProfileViewSet
 from vocab.api.views_vocab_context import (
     NestedVocabContextEntryViewSet, NestedVocabContextViewSet,

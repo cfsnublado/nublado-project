@@ -127,6 +127,21 @@ const AudioPlayer = {
       loaded: false
     }
   },
+  methods: {
+    load() {
+      if(this.audio.readyState >= 2) {
+        this.loaded = true
+
+        return this.playing = false
+      }
+
+      throw new Error('Failed to load sound file.')
+    },
+    stop() {
+      this.playing = false
+      this.audio.currentTime = 0
+    },
+  },
   watch: {
     playing(value) {
       if(value) {
@@ -136,9 +151,9 @@ const AudioPlayer = {
   },
   mounted() {
     this.audio = this.$el.querySelector('#' + this.audioId)
-    this.audio.addEventListener('loadeddata', this.loaded)
+    this.audio.addEventListener('loadeddata', this.load)
     this.audio.addEventListener('play', () => { this.playing = true })
-    this.audio.addEventListener('ended', () => { this.playing = false })
+    this.audio.addEventListener('ended', () => { this.stop() })
   },
   template: `
     <span>

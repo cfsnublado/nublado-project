@@ -2,7 +2,6 @@
 source_name: El archivo de las tormentas 3: Juramentada
 source_description: El tercer libro de la saga El archivo de las tormentas
 source_type: 1
-project_name: Spanish Reading
 
 ---
 

@@ -18,24 +18,6 @@
 
     {% endif %}
 
-  {% elif request.session.session_obj.vocab_project %}
-
-    <a href="{% url 'vocab:vocab_projects' %}">{% trans 'label_projects' %}</a>
-
-    {% if url_name == 'vocab_project_dashboard' %}
-   
-      &nbsp;>&nbsp;
-      <span> {{ vocab_project.name }} </span>
-  
-    {% else %}
-
-      &nbsp;>&nbsp;
-      <a href="{% url 'vocab:vocab_project_dashboard' vocab_project.id vocab_project.slug %}">
-      {{ vocab_project.name }}
-      </a>
-
-    {% endif %}
-
   {% elif request.session.session_obj.vocab_source %}
     <a href="{% url 'vocab:vocab_sources' %}">{% trans 'label_sources' %}</a>
 
@@ -60,7 +42,7 @@
 
   {% else %}
 
-    {% if url_name != 'vocab_entries' and url_name != 'vocab_sources' and url_name != 'vocab_projects' %}
+    {% if url_name != 'vocab_entries' and url_name != 'vocab_sources' %}
 
       <a href="{% url 'vocab:vocab_entries' %}">{% trans 'label_vocabulary' %}</a>
 

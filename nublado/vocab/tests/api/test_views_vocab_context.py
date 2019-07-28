@@ -24,7 +24,7 @@ from vocab.api.views_mixins import BatchMixin
 from vocab.conf import settings
 from vocab.models import (
     VocabContext, VocabContextEntry, VocabEntry,
-    VocabProject, VocabSource
+    VocabSource
 )
 from vocab.serializers import (
     VocabContextSerializer, VocabContextEntrySerializer
@@ -42,12 +42,7 @@ class VocabContextViewSetTest(TestCommon):
     def setUp(self):
         super(VocabContextViewSetTest, self).setUp()
 
-        self.vocab_project = VocabProject.objects.create(
-            owner=self.user,
-            name='test project'
-        )
         self.vocab_source = VocabSource.objects.create(
-            vocab_project=self.vocab_project,
             creator=self.user,
             name='test source'
         )
@@ -117,7 +112,6 @@ class VocabContextViewSetTest(TestCommon):
 
     def test_view_list(self):
         vocab_source_2 = VocabSource.objects.create(
-            vocab_project=self.vocab_project,
             creator=self.user,
             name='test source 2'
         )
@@ -726,17 +720,11 @@ class NestedVocabContextViewSetTest(TestCommon):
     def setUp(self):
         super(NestedVocabContextViewSetTest, self).setUp()
 
-        self.vocab_project = VocabProject.objects.create(
-            owner=self.user,
-            name='test project'
-        )
         self.vocab_source = VocabSource.objects.create(
-            vocab_project=self.vocab_project,
             creator=self.user,
             name='test source 1'
         )
         self.vocab_source_2 = VocabSource.objects.create(
-            vocab_project=self.vocab_project,
             creator=self.user,
             name='test source 2'
         )
@@ -951,12 +939,7 @@ class VocabContextEntryViewSetTest(TestCommon):
     def setUp(self):
         super(VocabContextEntryViewSetTest, self).setUp()
 
-        self.vocab_project = VocabProject.objects.create(
-            owner=self.user,
-            name='test project'
-        )
         self.vocab_source = VocabSource.objects.create(
-            vocab_project=self.vocab_project,
             creator=self.user,
             name='test source'
         )
@@ -1148,12 +1131,7 @@ class NestedVocabContextEntryViewSetTest(TestCommon):
     def setUp(self):
         super(NestedVocabContextEntryViewSetTest, self).setUp()
 
-        self.vocab_project = VocabProject.objects.create(
-            owner=self.user,
-            name='test project'
-        )
         self.vocab_source = VocabSource.objects.create(
-            vocab_project=self.vocab_project,
             creator=self.user,
             name='test source'
         )

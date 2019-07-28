@@ -5,7 +5,7 @@ from django.urls import resolve, reverse
 
 from rest_framework import status as drf_status
 from rest_framework.mixins import (
-    CreateModelMixin, DestroyModelMixin, ListModelMixin,
+    DestroyModelMixin, ListModelMixin,
     RetrieveModelMixin, UpdateModelMixin
 )
 from rest_framework.permissions import IsAuthenticated
@@ -14,13 +14,11 @@ from rest_framework.viewsets import GenericViewSet
 
 from core.api.views_api import APIDefaultsMixin
 from vocab.api.pagination import SmallPagination
-from vocab.api.permissions import SourceCreatorPermission, ProjectOwnerPermission, ReadPermission
-from vocab.api.views_mixins import BatchMixin
+from vocab.api.permissions import SourceCreatorPermission, ReadPermission
 from vocab.api.views_vocab_source import (
-    NestedVocabSourceViewSet, VocabSourceExportView,
-    VocabSourceViewSet
+    VocabSourceExportView, VocabSourceViewSet
 )
-from vocab.models import VocabProject, VocabSource
+from vocab.models import VocabSource
 from vocab.serializers import VocabSourceSerializer
 from .base_test import TestCommon
 
@@ -32,12 +30,7 @@ class VocabSourceViewSetTest(TestCommon):
     def setUp(self):
         super(VocabSourceViewSetTest, self).setUp()
 
-        self.vocab_project = VocabProject.objects.create(
-            owner=self.user,
-            name='test project'
-        )
         self.vocab_source = VocabSource.objects.create(
-            vocab_project=self.vocab_project,
             creator=self.user,
             name='test source'
         )
@@ -64,7 +57,7 @@ class VocabSourceViewSetTest(TestCommon):
         self.assertEqual(VocabSourceSerializer, view.serializer_class)
         self.assertEqual(SmallPagination, view.pagination_class)
 
-        qs = VocabSource.objects.select_related('vocab_project').prefetch_related('vocab_contexts')
+        qs = VocabSource.objects.prefetch_related('vocab_contexts')
         self.assertCountEqual(
             qs, view.queryset
         )
@@ -101,12 +94,7 @@ class VocabSourceViewSetTest(TestCommon):
         )
 
     def test_view_list(self):
-        vocab_project_2 = VocabProject.objects.create(
-            owner=self.user,
-            name='test project 2'
-        )
         vocab_source_2 = VocabSource.objects.create(
-            vocab_project=vocab_project_2,
             creator=self.user,
             name='test source 2'
         )
@@ -281,7 +269,6 @@ class VocabSourceViewSetTest(TestCommon):
 
         # Superuser not creator
         self.vocab_source = VocabSource.objects.create(
-            vocab_project=self.vocab_project,
             creator=self.user,
             name='test source'
         )
@@ -296,236 +283,12 @@ class VocabSourceViewSetTest(TestCommon):
         self.assertEqual(response.status_code, drf_status.HTTP_204_NO_CONTENT)
 
 
-class NestedVocabSourceViewSetTest(TestCommon):
-
-    def setUp(self):
-        super(NestedVocabSourceViewSetTest, self).setUp()
-
-        self.user_2 = User.objects.create_user(
-            username='abc',
-            first_name='Christopher',
-            last_name='Sanders',
-            email='abc@foo.com',
-            password=self.pwd
-        )
-        self.vocab_project = VocabProject.objects.create(
-            owner=self.user,
-            name='test project'
-        )
-        self.vocab_project_2 = VocabProject.objects.create(
-            owner=self.user,
-            name='test project 2'
-        )
-        self.vocab_source_1 = VocabSource.objects.create(
-            vocab_project=self.vocab_project,
-            creator=self.user,
-            name='test source 1'
-        )
-        self.vocab_source_2 = VocabSource.objects.create(
-            vocab_project=self.vocab_project,
-            creator=self.user,
-            name='test source 2'
-        )
-        self.vocab_source_3 = VocabSource.objects.create(
-            vocab_project=self.vocab_project_2,
-            creator=self.user,
-            name='test source 3'
-        )
-        self.vocab_source_4 = VocabSource.objects.create(
-            vocab_project=self.vocab_project_2,
-            creator=self.user,
-            name='test source 4'
-        )
-
-    def get_source_serializer_data(self, source):
-        serializer = VocabSourceSerializer(
-            source,
-            context={'request': self.get_dummy_request()}
-        )
-
-        return json.loads(serializer.json_data())
-
-    def test_view_setup(self):
-        view = NestedVocabSourceViewSet()
-        self.assertEqual('pk', view.lookup_field)
-        self.assertEqual('pk', view.lookup_url_kwarg)
-        self.assertEqual(VocabSourceSerializer, view.serializer_class)
-        self.assertIsNone(view.vocab_project)
-        self.assertEqual(SmallPagination, view.pagination_class)
-
-        qs = VocabSource.objects.select_related('vocab_project').prefetch_related('vocab_contexts')
-        self.assertCountEqual(
-            qs,
-            view.queryset
-        )
-        self.assertEqual(str(qs.query), str(view.queryset.query))
-
-        permission_classes = [ReadPermission, ProjectOwnerPermission]
-
-        self.assertEqual(permission_classes, view.permission_classes)
-
-    def test_inheritance(self):
-        classes = (
-            APIDefaultsMixin,
-            BatchMixin,
-            CreateModelMixin,
-            ListModelMixin,
-            GenericViewSet
-        )
-        for class_name in classes:
-            self.assertTrue(
-                issubclass(NestedVocabSourceViewSet, class_name)
-            )
-
-    def test_view_create(self):
-        self.login_test_user(self.user.username)
-
-        vocab_source_data = {
-            'name': 'another test source'
-        }
-        self.assertFalse(
-            VocabSource.objects.filter(
-                name=vocab_source_data['name']
-            ).exists()
-        )
-        self.client.post(
-            reverse(
-                'api:nested-vocab-source-list',
-                kwargs={'vocab_project_pk': self.vocab_project.id}
-            ),
-            data=vocab_source_data
-        )
-        self.assertTrue(
-            VocabSource.objects.filter(
-                creator=self.user,
-                name=vocab_source_data['name']
-            ).exists()
-        )
-
-    def test_view_list(self):
-        # Project 1
-        data_1 = self.get_source_serializer_data(self.vocab_source_1)
-        data_2 = self.get_source_serializer_data(self.vocab_source_2)
-        expected_results = json.dumps({
-            "next": None,
-            "previous": None,
-            "page_num": 1,
-            "count": 2,
-            "num_pages": 1,
-            "results": [data_1, data_2]
-        })
-        response = self.client.get(
-            reverse(
-                'api:nested-vocab-source-list',
-                kwargs={'vocab_project_pk': self.vocab_project.id}
-            )
-        )
-
-        self.assertCountEqual(json.loads(expected_results), json.loads(response.content))
-
-        # Project 2
-        data_3 = self.get_source_serializer_data(self.vocab_source_3)
-        data_4 = self.get_source_serializer_data(self.vocab_source_4)
-        expected_results = json.dumps({
-            "next": None,
-            "previous": None,
-            "page_num": 1,
-            "count": 2,
-            "num_pages": 1,
-            "results": [data_3, data_4]
-        })
-        response = self.client.get(
-            reverse(
-                'api:nested-vocab-source-list',
-                kwargs={'vocab_project_pk': self.vocab_project_2.id}
-            )
-        )
-
-    def test_permissions_list(self):
-        # Not authenticated
-        self.client.logout()
-        response = self.client.get(
-            reverse(
-                'api:nested-vocab-source-list',
-                kwargs={'vocab_project_pk': self.vocab_project.id}
-            )
-        )
-        self.assertEqual(response.status_code, drf_status.HTTP_200_OK)
-
-    def test_permissions_create(self):
-        vocab_source_data = {
-            'name': 'another test source'
-        }
-
-        # Not authenticated
-        self.client.logout()
-        response = self.client.post(
-            reverse(
-                'api:nested-vocab-source-list',
-                kwargs={'vocab_project_pk': self.vocab_project.id}
-            ),
-            data=vocab_source_data
-        )
-
-        self.assertEqual(response.status_code, drf_status.HTTP_403_FORBIDDEN)
-
-        # Authenticated not owner
-        self.login_test_user(self.user_2.username)
-
-        response = self.client.post(
-            reverse(
-                'api:nested-vocab-source-list',
-                kwargs={'vocab_project_pk': self.vocab_project.id}
-            ),
-            data=vocab_source_data
-        )
-
-        self.assertEqual(response.status_code, drf_status.HTTP_403_FORBIDDEN)
-
-        # Owner
-        self.client.logout()
-        self.login_test_user(self.user.username)
-
-        response = self.client.post(
-            reverse(
-                'api:nested-vocab-source-list',
-                kwargs={'vocab_project_pk': self.vocab_project.id}
-            ),
-            data=vocab_source_data
-        )
-
-        self.assertEqual(response.status_code, drf_status.HTTP_201_CREATED)
-
-        # Superuser not owner
-        self.client.logout()
-        self.login_test_user(self.superuser.username)
-
-        vocab_source_data = {
-            'name': 'yet another test source'
-        }
-
-        response = self.client.post(
-            reverse(
-                'api:nested-vocab-source-list',
-                kwargs={'vocab_project_pk': self.vocab_project.id}
-            ),
-            data=vocab_source_data
-        )
-
-        self.assertEqual(response.status_code, drf_status.HTTP_201_CREATED)
-
-
 class VocabSourceExportViewTest(TestCommon):
 
     def setUp(self):
         super(VocabSourceExportViewTest, self).setUp()
 
-        self.vocab_project = VocabProject.objects.create(
-            owner=self.user,
-            name='test project'
-        )
         self.vocab_source = VocabSource.objects.create(
-            vocab_project=self.vocab_project,
             creator=self.user,
             name='Test source',
             source_type=VocabSource.BOOK
@@ -563,12 +326,7 @@ class VocabSourceExportViewTest(TestCommon):
 #     def setUp(self):
 #         super(VocabSourceImportViewTest, self).setUp()
 
-#         self.vocab_project = VocabProject.objects.create(
-#             owner=self.user,
-#             name='test project'
-#         )
 #         vocab_source = VocabSource.objects.create(
-#             vocab_project=self.vocab_project,
 #             creator=self.user,
 #             name='Test source',
 #             source_type=VocabSource.BOOK

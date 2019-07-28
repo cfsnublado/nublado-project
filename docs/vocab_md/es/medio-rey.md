@@ -2,7 +2,6 @@
 source_name: Medio rey
 source_description: El primer libro de la trilogía El mar quebrado. Joe Abercrombie
 source_type: 1
-project_name: Spanish Reading
 
 ---
 

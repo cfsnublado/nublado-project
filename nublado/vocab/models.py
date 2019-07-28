@@ -10,7 +10,7 @@ from core.models import (
 from core.utils import tag_text
 from .managers import (
     VocabContextEntryManager, VocabEntryManager,
-    VocabProjectManager, VocabSourceManager
+    VocabSourceManager
 )
 
 
@@ -25,15 +25,6 @@ class CreatorModel(models.Model):
 
     class Meta:
         abstract = True
-
-
-class ProjectContentModel(models.Model):
-
-    class Meta:
-        abstract = True
-
-    def get_project(self):
-        raise NotImplementedError('Method get_project needs to be implemented.')
 
 
 class VocabSourceContentModel(models.Model):
@@ -53,47 +44,6 @@ class JsonDataModel(models.Model):
 
 
 # Concrete models
-
-class VocabProject(
-    TimestampModel, SlugifyModel,
-    SerializeModel
-):
-    unique_slug = False
-    value_field_name = 'name'
-    max_iterations = 500
-
-    owner = models.ForeignKey(
-        settings.AUTH_USER_MODEL,
-        related_name='%(app_label)s_%(class)s',
-        on_delete=models.CASCADE
-    )
-    name = models.CharField(
-        verbose_name=_('label_name'),
-        max_length=255,
-    )
-    description = models.TextField(
-        verbose_name=_('label_description'),
-        blank=True
-    )
-    slug = models.SlugField(
-        verbose_name=_('label_slug'),
-        max_length=255,
-    )
-
-    objects = VocabProjectManager()
-
-    class Meta:
-        unique_together = ('owner', 'name')
-        verbose_name = _('label_vocab_project')
-        verbose_name_plural = _('label_vocab_project_plural')
-
-    def __str__(self):
-        return self.name
-
-    def get_serializer(self):
-        from .serializers import VocabProjectSerializer
-        return VocabProjectSerializer
-
 
 class VocabEntry(
     TimestampModel, LanguageModel, SlugifyModel,
@@ -134,7 +84,7 @@ class VocabEntry(
 
 class VocabSource(
     TimestampModel, SlugifyModel, SerializeModel,
-    CreatorModel, ProjectContentModel
+    CreatorModel
 ):
     '''
     A model for vocab sources that contain the contexts.
@@ -153,11 +103,6 @@ class VocabSource(
     value_field_name = 'name'
     max_iterations = 500
 
-    vocab_project = models.ForeignKey(
-        VocabProject,
-        related_name='vocab_sources',
-        on_delete=models.CASCADE
-    )
     name = models.CharField(
         verbose_name=_('label_name'),
         max_length=255,
@@ -179,7 +124,6 @@ class VocabSource(
     objects = VocabSourceManager()
 
     class Meta:
-        unique_together = ('vocab_project', 'name')
         verbose_name = _('label_vocab_source')
         verbose_name_plural = _('label_vocab_source_plural')
 
@@ -189,9 +133,6 @@ class VocabSource(
     def get_serializer(self):
         from .serializers import VocabSourceSerializer
         return VocabSourceSerializer
-
-    def get_project(self):
-        return self.vocab_project
 
 
 class VocabContext(

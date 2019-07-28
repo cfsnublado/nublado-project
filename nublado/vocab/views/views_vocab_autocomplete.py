@@ -31,17 +31,6 @@ class VocabSourceAutocompleteView(AutocompleteMixin, View):
     value_attr = 'name'
 
 
-class VocabProjectSourceAutocompleteView(VocabSourceAutocompleteView):
-    '''
-    Autocomplete for sources in a project.
-    '''
-
-    def get_queryset(self, **kwargs):
-        qs = super(VocabProjectSourceAutocompleteView, self).get_queryset(**kwargs)
-        qs = qs.filter(vocab_project_id=self.kwargs['vocab_project_pk'])
-        return qs
-
-
 class VocabSourceCreatorAutocompleteView(VocabSourceAutocompleteView):
     '''
     Autocomplete for sources belonging to authernticated user.

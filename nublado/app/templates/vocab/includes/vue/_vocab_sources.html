@@ -24,7 +24,6 @@ v-for="(vocabSource, index) in vocabSources"
 :init-source="vocabSource"
 init-view-url="{{ vocab_source_url }}"
 init-delete-url="{{ vocab_source_delete_url }}"
-init-project-url="{{ vocab_source_project_url }}"
 inline-template
 >
 
@@ -37,13 +36,6 @@ inline-template
 <div class="panel-top">
 
 <div class="panel-top-content">
-
-<a 
-href="#"
-@click.prevent="viewProject"
->
-[[ source.project ]]
-</a>
 
 </div>
 

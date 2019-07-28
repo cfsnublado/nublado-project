@@ -4,7 +4,7 @@ from django.shortcuts import get_object_or_404, redirect
 
 from core.views import CachedObjectMixin, ObjectSessionMixin
 from ..conf import settings
-from ..models import VocabContextEntry, VocabEntry, VocabProject, VocabSource
+from ..models import VocabContextEntry, VocabEntry, VocabSource
 
 
 class PermissionMixin(object):
@@ -20,46 +20,6 @@ class PermissionMixin(object):
 
     def check_permission(self, *args, **kwargs):
         raise NotImplementedError('Method check_permission needs to be implemented.')
-
-
-class VocabProjectSessionMixin(ObjectSessionMixin):
-    session_obj = 'vocab_project'
-    session_obj_attrs = ['id', 'name', 'slug']
-
-
-class VocabProjectMixin(CachedObjectMixin):
-    vocab_project_id = 'vocab_project_pk'
-    vocab_project_slug = 'vocab_project_slug'
-    vocab_project = None
-
-    def dispatch(self, request, *args, **kwargs):
-        self.get_vocab_project(request, *args, **kwargs)
-        return super(VocabProjectMixin, self).dispatch(request, *args, **kwargs)
-
-    def get_vocab_project(self, request, *args, **kwargs):
-        if self.vocab_project_id in kwargs:
-            self.vocab_project = get_object_or_404(
-                VocabProject.objects.prefetch_related('owner'),
-                id=kwargs[self.vocab_project_id]
-            )
-        elif self.vocab_project_slug in kwargs:
-            self.vocab_project = get_object_or_404(
-                VocabProject.objects.prefetch_related('owner'),
-                slug=kwargs[self.vocab_project_slug]
-            )
-        else:
-            obj = self.get_object()
-            if hasattr(obj, 'vocab_project_id'):
-                self.vocab_project = obj.vocab_project
-            elif isinstance(obj, VocabProject):
-                self.vocab_project = obj
-            else:
-                raise Http404('Vocab project not found.')
-
-    def get_context_data(self, **kwargs):
-        context = super(VocabProjectMixin, self).get_context_data(**kwargs)
-        context['vocab_project'] = self.vocab_project
-        return context
 
 
 class VocabSourcePermissionMixin(PermissionMixin):
@@ -85,7 +45,6 @@ class VocabSourceSessionMixin(ObjectSessionMixin):
 class VocabSourceMixin(CachedObjectMixin):
     vocab_source_id = 'vocab_source_pk'
     vocab_source_slug = 'vocab_source_slug'
-    vocab_project = None
     vocab_source = None
     source_admin = False
 
@@ -100,12 +59,12 @@ class VocabSourceMixin(CachedObjectMixin):
     def get_vocab_source(self, request, *args, **kwargs):
         if self.vocab_source_id in kwargs:
             self.vocab_source = get_object_or_404(
-                VocabSource.objects.prefetch_related('creator', 'vocab_project'),
+                VocabSource.objects.select_related('creator'),
                 id=kwargs[self.vocab_source_id]
             )
         elif self.vocab_source_slug in kwargs:
             self.vocab_source = get_object_or_404(
-                VocabSource.objects.prefetch_related('creator', 'vocab_project'),
+                VocabSource.objects.select_related('creator'),
                 slug=kwargs[self.vocab_source_slug]
             )
         else:
@@ -118,11 +77,8 @@ class VocabSourceMixin(CachedObjectMixin):
             else:
                 raise Http404('Vocab source not found.')
 
-        self.vocab_project = self.vocab_source.vocab_project
-
     def get_context_data(self, **kwargs):
         context = super(VocabSourceMixin, self).get_context_data(**kwargs)
-        context['vocab_project'] = self.vocab_project
         context['vocab_source'] = self.vocab_source
         context['source_admin'] = self.source_admin
 
@@ -179,8 +135,12 @@ class VocabSourceSearchAuthMixin(VocabSourceSearchMixin):
 class VocabEntryPermissionMixin(PermissionMixin):
 
     def check_permission(self):
-        if not self.request.user.is_superuser:
-            raise PermissionDenied
+        has_permission = False
+
+        if self.request.user.is_superuser:
+            has_permission = True
+
+        return has_permission
 
 
 class VocabEntrySessionMixin(ObjectSessionMixin):

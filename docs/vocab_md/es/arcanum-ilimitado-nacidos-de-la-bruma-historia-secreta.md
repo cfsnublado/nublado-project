@@ -2,7 +2,6 @@
 source_name: Arcanum ilimitado: Nacidos de la bruma: Historia secreta
 source_description: Brandon Sanderson
 source_type: 1
-project_name: Spanish Reading
 
 ---
 

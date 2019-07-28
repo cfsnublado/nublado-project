@@ -2,7 +2,6 @@
 source_name: The Skeptics' Guide to the Universe
 source_description: A book
 source_type: 1
-project_name: English Reading
 
 ---
 

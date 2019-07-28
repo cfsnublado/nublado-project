@@ -2,7 +2,6 @@
 source_name: Arcanum ilimitado: El undécimo metal
 source_description: Brandon Sanderson
 source_type: 1
-project_name: Spanish Reading
 
 ---
 

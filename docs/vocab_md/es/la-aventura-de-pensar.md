@@ -2,7 +2,6 @@
 source_name: La aventura de pensar
 source_description: Fernando Savater
 source_type: 1
-project_name: Spanish Reading
 
 ---
 

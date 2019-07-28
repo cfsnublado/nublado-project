@@ -8,16 +8,16 @@ from core.models import (
 )
 from ..managers import (
     VocabContextEntryManager, VocabEntryManager,
-    VocabProjectManager, VocabSourceManager
+    VocabSourceManager
 )
 from ..models import (
     CreatorModel, VocabContext, VocabContextEntry,
     VocabEntry, VocabEntryTag,
-    VocabProject, VocabSource, VocabSourceContentModel
+    VocabSource, VocabSourceContentModel
 )
 from ..serializers import (
     VocabEntrySerializer, VocabContextEntrySerializer,
-    VocabContextSerializer, VocabProjectSerializer, VocabSourceSerializer
+    VocabContextSerializer, VocabSourceSerializer
 )
 
 User = get_user_model()
@@ -34,64 +34,6 @@ class TestCommon(TestCase):
             email='cfs7@cfs.com',
             password=self.pwd
         )
-
-
-class VocabProjectTest(TestCommon):
-
-    def setUp(self):
-        super(VocabProjectTest, self).setUp()
-
-        self.vocab_project = VocabProject.objects.create(
-            owner=self.user,
-            name='Test project',
-            description='A test project'
-        )
-
-    def test_inheritance(self):
-        classes = (
-            SerializeModel, SlugifyModel,
-            TimestampModel
-        )
-        for class_name in classes:
-            self.assertTrue(
-                issubclass(VocabProject, class_name)
-            )
-
-    def test_manager_type(self):
-        self.assertIsInstance(VocabEntry.objects, VocabEntryManager)
-
-    def test_string_representation(self):
-        self.assertEqual(str(self.vocab_project), self.vocab_project.name)
-
-    def test_unique_together_owner_name(self):
-        user_2 = User.objects.create_user(
-            username='val',
-            first_name='Val',
-            last_name='Val',
-            email='val7@val.com',
-            password=self.pwd
-        )
-        name = 'Project'
-        vocab_project_1 = VocabProject.objects.create(
-            owner=self.user,
-            name=name
-        )
-        vocab_project_1.full_clean()
-        vocab_project_2 = VocabProject.objects.create(
-            owner=user_2,
-            name=name
-        )
-        vocab_project_2.full_clean()
-        with self.assertRaises(IntegrityError):
-            vocab_project_3 = VocabProject.objects.create(
-                owner=user_2,
-                name=name
-            )
-            vocab_project_3.full_clean()
-
-    def test_get_serializer(self):
-        serializer = self.vocab_project.get_serializer()
-        self.assertEqual(serializer, VocabProjectSerializer)
 
 
 class VocabEntryTest(TestCommon):
@@ -116,7 +58,7 @@ class VocabEntryTest(TestCommon):
             )
 
     def test_manager_type(self):
-        self.assertIsInstance(VocabProject.objects, VocabProjectManager)
+        self.assertIsInstance(VocabEntry.objects, VocabEntryManager)
 
     def test_string_representation(self):
         self.assertEqual(str(self.vocab_entry), self.vocab_entry.entry)
@@ -146,12 +88,7 @@ class VocabContextTest(TestCommon):
 
     def setUp(self):
         super(VocabContextTest, self).setUp()
-        self.vocab_project = VocabProject.objects.create(
-            owner=self.user,
-            name='test_project'
-        )
         self.vocab_source = VocabSource.objects.create(
-            vocab_project=self.vocab_project,
             creator=self.user,
             source_type=VocabSource.CREATED,
             name='Test source'
@@ -187,17 +124,12 @@ class VocabContextEntryTest(TestCommon):
 
     def setUp(self):
         super(VocabContextEntryTest, self).setUp()
-        self.vocab_project = VocabProject.objects.create(
-            owner=self.user,
-            name='test_project'
-        )
         self.vocab_entry = VocabEntry.objects.create(
             entry='vertiginoso',
             description='vertiginosamente bien',
             language='es'
         )
         self.vocab_source = VocabSource.objects.create(
-            vocab_project=self.vocab_project,
             creator=self.user,
             source_type=VocabSource.CREATED,
             name='Created source'
@@ -263,12 +195,7 @@ class VocabSourceTest(TestCommon):
 
     def setUp(self):
         super(VocabSourceTest, self).setUp()
-        self.vocab_project = VocabProject.objects.create(
-            owner=self.user,
-            name='test_project'
-        )
         self.vocab_source = VocabSource.objects.create(
-            vocab_project=self.vocab_project,
             creator=self.user,
             name='Some book',
             description='A good book',
@@ -291,29 +218,6 @@ class VocabSourceTest(TestCommon):
     def test_string_representation(self):
         self.assertEqual(str(self.vocab_source), self.vocab_source.name)
 
-    def test_unique_together_project_name(self):
-        source_name_1 = 'A reading test source'
-        source_name_2 = 'Another reading test source'
-        vocab_source_1 = VocabSource.objects.create(
-            vocab_project=self.vocab_project,
-            creator=self.user,
-            name=source_name_1
-        )
-        vocab_source_1.full_clean()
-        vocab_source_2 = VocabSource.objects.create(
-            vocab_project=self.vocab_project,
-            creator=self.user,
-            name=source_name_2
-        )
-        vocab_source_2.full_clean()
-        with self.assertRaises(IntegrityError):
-            vocab_entry_3 = VocabSource.objects.create(
-                vocab_project=self.vocab_project,
-                creator=self.user,
-                name=source_name_1
-            )
-            vocab_entry_3.full_clean()
-
     def test_update_slug_on_save(self):
         self.vocab_source.name = 'El nombre del viento'
         self.vocab_source.full_clean()
@@ -329,12 +233,7 @@ class VocabEntryTagTest(TestCommon):
 
     def setUp(self):
         super(VocabEntryTagTest, self).setUp()
-        self.vocab_project = VocabProject.objects.create(
-            owner=self.user,
-            name='test_project'
-        )
         self.vocab_source = VocabSource.objects.create(
-            vocab_project=self.vocab_project,
             creator=self.user,
             name='Some book',
             description='A good book',

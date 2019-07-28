@@ -67,28 +67,3 @@ class SourceContextEntryCreatorPermission(CreatorPermission):
             return user.is_superuser or user.id == obj.vocab_context.vocab_source.creator_id
         else:
             return user.id == obj.vocab_context.vocab_source.creator_id
-
-
-class OwnerPermission(BasePermission):
-    '''
-    Permission granted to object owner or superuser.
-    '''
-
-    superuser_override = True
-
-    def has_object_permission(self, request, view, obj):
-        user = request.user
-        if view.action not in ['retrieve', 'list']:
-            return self.check_owner_permission(user, obj)
-        else:
-            return True
-
-    def check_owner_permission(self, user, obj):
-        if self.superuser_override:
-            return user.is_superuser or user.id == obj.owner_id
-        else:
-            return user.id == obj.owner_id
-
-
-class ProjectOwnerPermission(OwnerPermission):
-    pass

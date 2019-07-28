@@ -2,7 +2,6 @@
 source_name: The Happiness Hypothesis: Finding Modern Truth in Ancient Wisdom
 source_description: A book
 source_type: 1
-project_name: English Reading
 
 ---
 

@@ -5,38 +5,7 @@
 
 {% block sidebar_nav_items %}
 
-{% if request.session.session_obj.vocab_project %}
-
-  <li class="nav-list-header">
-  <span> {% trans "label_project" %} </span>
-  </li>
-
-  <li class="nav-list-header-title">
-  <a 
-  id="sidebar-nav-vocab-project-name"
-  href="{% url 'vocab:vocab_project_dashboard' vocab_project.id vocab_project.slug %}">
-  <span id="menu-vocab-project-name"> {{ vocab_project.name }} </span>
-  </a>
-  </li>
-
-  <li class="divider"></li>
-
-  {% if vocab_project.owner_id == user.id %}
-
-    <li class="nav-item">
-    <a
-    id="sidebar-nav-vocab-project-edit"
-    class="nav-link {% block vocab_project_edit_link_active %}{% endblock vocab_project_edit_link_active %}"
-    href="{% url 'vocab:vocab_project_update' vocab_project.id vocab_project.slug %}">
-    <i class="nav-link-icon fas fa-edit fa-fw"></i> {% trans "label_edit_project" %}
-    </a>
-    </li>
-
-    <li class="divider"></li>
-
-  {% endif %}
-
-{% elif request.session.session_obj.vocab_source %}
+{% if request.session.session_obj.vocab_source %}
 
   <li class="nav-list-header">
   <span> {% trans "label_source" %} </span>
@@ -102,25 +71,6 @@
 
 {{ block.super }}
 
-{% if user.is_admin %}
-
-  <li class="divider"></li>
-
-  <li class="nav-item">
-
-  <a
-  id="sidebar-nav-vocab-entry-create" 
-  class="nav-link {% block vocab_entry_create_link_active %}{% endblock vocab_entry_create_link_active %}" 
-  href="{% url 'vocab:vocab_entry_create' %}"
-  >
-  <i class="nav-link-icon fas fa-plus fa-fw"></i>
-  {% trans "label_new_vocab_entry" %}
-  </a>
-
-  </li>
-
-{% endif %}
-
 {% endblock sidebar_nav_items %}
 
 {% block body_classes %}
@@ -134,18 +84,7 @@ sidebar-adaptable theme-white {{ sidebar_expanded|yesno:"sidebar-nav-expanded," 
 
 {% block page_header %}
 
-{% if request.session.session_obj.vocab_project %}
-
-  <div class="row justify-content-md-center">
-  <div class="col-md-10">
-
-  <div class="small-caps-header"> {% trans 'header_project' %} </div>
-  <div class="page-header"> {{ vocab_project.name }} </div>
-
-  </div>
-  </div>
-
-{% elif request.session.session_obj.vocab_source %}
+{% if request.session.session_obj.vocab_source %}
 
   <div class="row justify-content-md-center">
   <div class="col-md-10">

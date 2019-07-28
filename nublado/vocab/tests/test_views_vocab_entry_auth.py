@@ -10,7 +10,7 @@ from django.views.generic import (
 )
 
 from core.views import (
-    AjaxDeleteMixin, AjaxFormMixin, MessageMixin,
+    AjaxDeleteMixin, MessageMixin,
     ObjectSessionMixin, UserstampMixin
 )
 from ..conf import settings

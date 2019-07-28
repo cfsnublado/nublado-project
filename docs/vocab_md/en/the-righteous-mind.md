@@ -2,7 +2,6 @@
 source_name: The Righteous Mind: Why Good People Are Divided by Politics and Religion
 source_description: A book
 source_type: 1
-project_name: English Reading
 
 ---
 

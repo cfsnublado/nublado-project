@@ -2,7 +2,7 @@ from rest_framework import status
 from rest_framework.exceptions import ParseError
 from rest_framework.generics import get_object_or_404
 from rest_framework.mixins import (
-    CreateModelMixin, DestroyModelMixin, ListModelMixin,
+    DestroyModelMixin, ListModelMixin,
     RetrieveModelMixin, UpdateModelMixin
 )
 from rest_framework.permissions import IsAuthenticated
@@ -16,19 +16,18 @@ from django.db.models import F, IntegerField, Value
 from django.db.models.functions import Lower
 
 from core.api.views_api import APIDefaultsMixin
-from ..models import VocabContextEntry, VocabProject, VocabSource
+from ..models import VocabContextEntry, VocabSource
 from ..serializers import (
     VocabSourceSerializer, VocabSourceEntrySerializer
 )
 from .pagination import LargePagination, SmallPagination
 from .permissions import (
-    SourceCreatorPermission, ProjectOwnerPermission,
+    SourceCreatorPermission,
     ReadPermission, ReadWritePermission
 )
 from ..utils import (
     export_vocab_source, import_vocab_source
 )
-from .views_mixins import BatchMixin
 
 
 class VocabSourceViewSet(
@@ -38,7 +37,7 @@ class VocabSourceViewSet(
     lookup_field = 'pk'
     lookup_url_kwarg = 'pk'
     serializer_class = VocabSourceSerializer
-    queryset = VocabSource.objects.select_related('vocab_project').prefetch_related('vocab_contexts')
+    queryset = VocabSource.objects.prefetch_related('vocab_contexts')
     permission_classes = [ReadPermission, SourceCreatorPermission]
     pagination_class = SmallPagination
 
@@ -47,45 +46,6 @@ class VocabSourceViewSet(
         self.check_object_permissions(self.request, obj)
 
         return obj
-
-
-class NestedVocabSourceViewSet(
-    APIDefaultsMixin, BatchMixin, CreateModelMixin,
-    ListModelMixin, GenericViewSet
-):
-    lookup_field = 'pk'
-    lookup_url_kwarg = 'pk'
-    queryset = VocabSource.objects.select_related('vocab_project').prefetch_related('vocab_contexts')
-    serializer_class = VocabSourceSerializer
-    vocab_project = None
-    permission_classes = [ReadPermission, ProjectOwnerPermission]
-    pagination_class = SmallPagination
-
-    def get_vocab_project(self, vocab_project_pk=None):
-        if not self.vocab_project:
-            self.vocab_project = get_object_or_404(VocabProject, id=vocab_project_pk)
-
-        return self.vocab_project
-
-    def get_queryset(self):
-        return self.queryset.filter(vocab_project_id=self.kwargs['vocab_project_pk'])
-
-    def create(self, request, *args, **kwargs):
-        self.get_vocab_project(vocab_project_pk=kwargs['vocab_project_pk'])
-        self.check_object_permissions(request, self.vocab_project)
-
-        return super(NestedVocabSourceViewSet, self).create(request, *args, **kwargs)
-
-    def perform_create(self, serializer):
-        serializer.save(
-            creator=self.request.user,
-            vocab_project=self.vocab_project
-        )
-
-    def list(self, request, *args, **kwargs):
-        self.get_vocab_project(vocab_project_pk=kwargs['vocab_project_pk'])
-
-        return super(NestedVocabSourceViewSet, self).list(request, *args, **kwargs)
 
 
 class VocabSourceEntryViewSet(APIDefaultsMixin, ListModelMixin, GenericViewSet):

@@ -12,13 +12,6 @@ from .views.views_vocab_entry_auth import (
     VocabEntryCreateView, VocabEntryDeleteView,
     VocabEntryUpdateView
 )
-from .views.views_vocab_project import (
-    VocabProjectDashboardView, VocabProjectsView
-)
-from .views.views_vocab_project_auth import (
-    VocabProjectCreateView,
-    VocabProjectDeleteView, VocabProjectUpdateView
-)
 from .views.views_vocab_source import (
     VocabSourceContextsView, VocabSourceDashboardView,
     VocabSourceEntriesView, VocabSourceEntryView, VocabSourcesView
@@ -28,7 +21,7 @@ from .views.views_vocab_source_auth import (
     VocabSourceUpdateView
 )
 from .views.views_vocab_autocomplete import (
-    VocabEntryAutocompleteView, VocabProjectSourceAutocompleteView,
+    VocabEntryAutocompleteView,
     VocabSourceAutocompleteView, VocabSourceEntryAutocompleteView
 )
 
@@ -38,18 +31,7 @@ app_name = 'vocab'
 auth_urls = [
     path('', VocabUserDashboardView.as_view(), name='vocab_user_dashboard'),
     path(
-        'project/create/',
-        VocabProjectCreateView.as_view(),
-        name='vocab_project_create'
-    ),
-    path(
-        'project/<int:vocab_project_pk>-<slug:vocab_project_slug>/update/',
-        VocabProjectUpdateView.as_view(),
-        name='vocab_project_update'
-    ),
-    path('project/<int:vocab_project_pk>/delete/', VocabProjectDeleteView.as_view(), name='vocab_project_delete'),
-    path(
-        'project/<int:vocab_project_pk>-<slug:vocab_project_slug>/source/create/',
+        'source/create/',
         VocabSourceCreateView.as_view(),
         name='vocab_source_create'
     ),
@@ -101,11 +83,6 @@ urlpatterns = [
         name='vocab_entry_language_autocomplete'
     ),
     path(
-        'autocomplete/project/<int:vocab_project_pk>/source/',
-        VocabProjectSourceAutocompleteView.as_view(),
-        name='vocab_project_source_autocomplete'
-    ),
-    path(
         'autocomplete/source/',
         VocabSourceAutocompleteView.as_view(),
         name='vocab_source_autocomplete'
@@ -124,16 +101,6 @@ urlpatterns = [
         'entry/<slug:vocab_entry_language>/<slug:vocab_entry_slug>/',
         VocabEntryView.as_view(),
         name='vocab_entry'
-    ),
-    path(
-        'projects/',
-        VocabProjectsView.as_view(),
-        name='vocab_projects'
-    ),
-    path(
-        'project/<int:vocab_project_pk>-<slug:vocab_project_slug>/',
-        VocabProjectDashboardView.as_view(),
-        name='vocab_project_dashboard'
     ),
     path(
         'sources/',

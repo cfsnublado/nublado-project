@@ -9,10 +9,10 @@ from django.views.generic import View
 from core.views import AutocompleteMixin
 from ..models import (
     VocabContext, VocabContextEntry, VocabEntry,
-    VocabProject, VocabSource
+    VocabSource
 )
 from ..views.views_vocab_autocomplete import (
-    VocabEntryAutocompleteView, VocabProjectSourceAutocompleteView,
+    VocabEntryAutocompleteView,
     VocabSourceAutocompleteView, VocabSourceEntryAutocompleteView
 )
 
@@ -46,26 +46,15 @@ class VocabSourceAutocompleteViewTest(TestCommon):
 
     def setUp(self):
         super(VocabSourceAutocompleteViewTest, self).setUp()
-        self.vocab_project_1 = VocabProject.objects.create(
-            owner=self.user,
-            name='test project'
-        )
-        self.vocab_project_2 = VocabProject.objects.create(
-            owner=self.user,
-            name='test project 2'
-        )
         self.vocab_source_1 = VocabSource.objects.create(
-            vocab_project=self.vocab_project_1,
             creator=self.user,
             name='test source 1'
         )
         self.vocab_source_2 = VocabSource.objects.create(
-            vocab_project=self.vocab_project_1,
             creator=self.user,
             name='test source 2'
         )
         self.vocab_source_3 = VocabSource.objects.create(
-            vocab_project=self.vocab_project_2,
             creator=self.user,
             name='test source 3'
         )
@@ -106,87 +95,6 @@ class VocabSourceAutocompleteViewTest(TestCommon):
                 'label': self.vocab_source_2.name,
                 'value': self.vocab_source_2.name
             },
-            {
-                'id': self.vocab_source_3.id,
-                'label': self.vocab_source_3.name,
-                'value': self.vocab_source_3.name
-            }
-        ]
-        self.assertCountEqual(results, expected_results)
-
-
-class VocabProjectSourceAutocompleteViewTest(TestCommon):
-
-    def setUp(self):
-        super(VocabProjectSourceAutocompleteViewTest, self).setUp()
-        self.vocab_project_1 = VocabProject.objects.create(
-            owner=self.user,
-            name='test project'
-        )
-        self.vocab_project_2 = VocabProject.objects.create(
-            owner=self.user,
-            name='test project 2'
-        )
-        self.vocab_source_1 = VocabSource.objects.create(
-            vocab_project=self.vocab_project_1,
-            creator=self.user,
-            name='test source 1'
-        )
-        self.vocab_source_2 = VocabSource.objects.create(
-            vocab_project=self.vocab_project_1,
-            creator=self.user,
-            name='test source 2'
-        )
-        self.vocab_source_3 = VocabSource.objects.create(
-            vocab_project=self.vocab_project_2,
-            creator=self.user,
-            name='test source 3'
-        )
-
-    def get_autocomplete_results(self, project_pk=None, term=None):
-        kwargs = {'HTTP_X_REQUESTED_WITH': 'XMLHttpRequest'}
-
-        response = self.client.get(
-            '{0}?term={1}'.format(
-                reverse(
-                    'vocab:vocab_project_source_autocomplete',
-                    kwargs={'vocab_project_pk': project_pk}
-                ),
-                term
-            ),
-            **kwargs
-        )
-        return json.loads(response.content)
-
-    def test_inheritance(self):
-        classes = (
-            VocabSourceAutocompleteView,
-        )
-        for class_name in classes:
-            self.assertTrue(
-                issubclass(VocabProjectSourceAutocompleteView, class_name)
-            )
-
-    def test_get_results(self):
-        # Project 1
-        results = self.get_autocomplete_results(project_pk=self.vocab_project_1.id, term='test')
-        expected_results = [
-            {
-                'id': self.vocab_source_1.id,
-                'label': self.vocab_source_1.name,
-                'value': self.vocab_source_1.name,
-            },
-            {
-                'id': self.vocab_source_2.id,
-                'label': self.vocab_source_2.name,
-                'value': self.vocab_source_2.name
-            }
-        ]
-        self.assertCountEqual(results, expected_results)
-
-        # Project 2
-        results = self.get_autocomplete_results(project_pk=self.vocab_project_2.id, term='test')
-        expected_results = [
             {
                 'id': self.vocab_source_3.id,
                 'label': self.vocab_source_3.name,
@@ -287,17 +195,11 @@ class VocabSourceEntryAutocompleteViewTest(TestCommon):
 
     def setUp(self):
         super(VocabSourceEntryAutocompleteViewTest, self).setUp()
-        self.vocab_project = VocabProject.objects.create(
-            owner=self.user,
-            name='test project'
-        )
         self.vocab_source_1 = VocabSource.objects.create(
-            vocab_project=self.vocab_project,
             creator=self.user,
             name='test source 1'
         )
         self.vocab_source_2 = VocabSource.objects.create(
-            vocab_project=self.vocab_project,
             creator=self.user,
             name='test source 2'
         )

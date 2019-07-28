@@ -158,18 +158,6 @@ ref="sidebarNav"
 <span> {% trans "label_main" %} </span>
 </li>
 
-<!--
-<li class="nav-item">
-<a
-id="sidebar-nav-vocab-projects" 
-class="nav-link {% block vocab_projects_link_active %}{% endblock vocab_projects_link_active %}" 
-href="{% url 'vocab:vocab_projects' %}">
-<i class="nav-link-icon fas fa-project-diagram fa-fw"></i>
-{% trans "label_projects" %}
-</a>
-</li>
--->
-
 <li class="nav-item">
 <a
 id="sidebar-nav-vocab-entries" 
@@ -189,6 +177,38 @@ href="{% url 'vocab:vocab_sources' %}">
 {% trans "label_sources" %}
 </a>
 </li>
+
+{% if user.is_admin %}
+
+  <li class="divider"></li>
+
+  <li class="nav-item">
+
+  <a
+  id="sidebar-nav-vocab-entry-create" 
+  class="nav-link {% block vocab_entry_create_link_active %}{% endblock vocab_entry_create_link_active %}" 
+  href="{% url 'vocab:vocab_entry_create' %}"
+  >
+  <i class="nav-link-icon fas fa-plus fa-fw"></i>
+  {% trans "label_new_vocab_entry" %}
+  </a>
+
+  </li>
+
+  <li class="nav-item">
+
+  <a
+  id="sidebar-nav-vocab-source-create" 
+  class="nav-link {% block vocab_source_create_link_active %}{% endblock vocab_source_create_link_active %}" 
+  href="{% url 'vocab:vocab_source_create' %}"
+  >
+  <i class="nav-link-icon fas fa-plus fa-fw"></i>
+  {% trans "label_new_vocab_source" %}
+  </a>
+
+  </li>
+
+{% endif %}
 
 {% endblock sidebar_nav_items %}
 

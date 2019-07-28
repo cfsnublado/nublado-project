@@ -1,10 +1,8 @@
 from django.contrib.auth import get_user_model
-from django.db.models import Count, Max
-from django.db.models.functions import Lower
 from django.test import TestCase
 
 from ..models import (
-    VocabContext, VocabContextEntry, VocabEntry, VocabProject,
+    VocabContext, VocabContextEntry, VocabEntry,
     VocabSource
 )
 
@@ -23,12 +21,7 @@ class TestUserManager(TestCase):
             email='cfs7@foo.com',
             password=self.pwd
         )
-        self.vocab_project = VocabProject.objects.create(
-            owner=self.user,
-            name='test project'
-        )
         self.vocab_source = VocabSource.objects.create(
-            vocab_project=self.vocab_project,
             creator=self.user,
             name='Test Source'
         )

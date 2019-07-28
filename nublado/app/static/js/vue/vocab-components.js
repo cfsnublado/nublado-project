@@ -1,98 +1,3 @@
-// Vocab project
-
-const VocabProjects = {
-  mixins: [
-    AjaxProcessMixin,
-    PaginationMixin,
-    AdminMixin
-  ],
-  props: {
-    initVocabProjectsUrl: {
-      type: String,
-      default: ''
-    }
-  },
-  data() {
-    return {
-      vocabProjectsUrl: this.initVocabProjectsUrl,
-      vocabProjects: null
-    }
-  },
-  methods: {
-    getVocabProjects(page=1) {
-      this.process()
-
-      params = {
-        page: page
-      }
-
-      axios.get(this.vocabProjectsUrl, {
-        params: params
-      })
-      .then(response => {
-        this.vocabProjects = response.data.results
-        this.setPagination(
-          response.data.previous,
-          response.data.next,
-          response.data.page_num,
-          response.data.count,
-          response.data.num_pages
-        )
-        VueScrollTo.scrollTo({
-          el: '#projects-scroll-top',
-        })
-        this.success()
-      })
-      .catch(error => {
-        if (error.response) {
-          console.log(error.response)
-        } else if (error.request) {
-          console.log(error.request)
-        } else {
-          console.log(error.message)
-        }
-        console.log(error.config)
-      })
-      .finally(() => {
-        this.complete()
-      })
-    },
-  },
-  created() {
-    this.getVocabProjects()
-  }
-}
-
-const VocabProject = {
-  mixins: [
-    AdminMixin,
-    BaseModel
-  ],
-  props: {
-    initProject: {
-      type: Object,
-      required: true
-    },
-  },
-  data() {
-    return {
-      project: this.initProject
-    }
-  },
-  created() {
-    if (this.initViewUrl) {
-      this.viewUrl = this.initViewUrl
-        .replace(0, this.project.id)
-        .replace('zzz', this.project.slug)   
-    }
-
-    if (this.initDeleteUrl) {
-      this.deleteUrl = this.initDeleteUrl
-        .replace(0, this.project.id)
-    }
-  }
-}
-
 // Vocab entry
 
 const VocabEntries = {
@@ -879,25 +784,14 @@ const VocabSource = {
     initSource: {
       type: Object,
       required: true
-    },
-    initProjectUrl: {
-      type: String,
-      default: ''
     }
   },
   data() {
     return {
       source: this.initSource,
-      projectUrl: this.initProjectUrl
     }
   },
-  methods: {
-    viewProject() {
-      if (this.projectUrl) {
-        window.location.replace(this.projectUrl)
-      }
-    }
-  },
+  methods: {},
   created() {
     if (this.initViewUrl) {
       this.viewUrl = this.initViewUrl
@@ -908,13 +802,7 @@ const VocabSource = {
     if (this.initDeleteUrl) {
       this.deleteUrl = this.initDeleteUrl
         .replace(0, this.source.id)
-    }
-
-    if (this.initProjectUrl) {
-      this.projectUrl = this.initProjectUrl
-        .replace(0, this.source.project_id)
-        .replace('zzz', this.source.project_slug)
-    }    
+    } 
   }
 }
 
@@ -962,25 +850,6 @@ const SourceSearch = {
 }
 
 // Forms
-
-const ProjectForm = {
-  mixins: [BaseForm],
-  data() {
-    return {
-      formData: {
-        name: '',
-        description: ''
-      },
-    }
-  },
-  methods: {
-    resetForm() {
-      this.formData.name = ''
-      this.formData.description = ''
-      this.errors = {}
-    }
-  },
-}
 
 const EntryForm = {
   mixins: [BaseForm],

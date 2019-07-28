@@ -8,7 +8,7 @@ from django.urls import reverse
 from .base import FunctionalTest, page_titles, DEFAULT_PWD, PROJECT_NAME
 from vocab.models import (
     VocabEntry, VocabContext, VocabContextEntry,
-    VocabProject, VocabSource
+    VocabSource
 )
 
 User = get_user_model()
@@ -32,11 +32,6 @@ class TestCommon(FunctionalTest):
             last_name='Sanders',
             email='cfs7@cfs.com',
             password=DEFAULT_PWD
-        )
-        self.project = VocabProject.objects.create(
-            owner=self.user,
-            name='Test project',
-            description='A test project'
         )
 
 
@@ -203,7 +198,6 @@ class VocabContextAuthTest(TestCommon):
     def setUp(self):
         super(VocabContextAuthTest, self).setUp()
         self.vocab_source = VocabSource.objects.create(
-            vocab_project=self.project,
             creator=self.user,
             source_type=VocabSource.CREATED,
             name='Una prueba'

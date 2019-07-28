@@ -1,4 +1,4 @@
-{% extends "vocab/auth/vocab_base.html" %}
+{% extends "vocab/vocab_base.html" %}
 {% load staticfiles %}
 {% load core_extras %}
 {% load i18n %}
@@ -7,44 +7,6 @@
 
 {% block dashboard_link_active %}active{% endblock dashboard_link_active %}
 
-{% block page_header %}
-
-<div class="row justify-content-md-center">
-<div class="col-md-10">
-<div class="page-header">
-{% trans "label_vocab_projects" %}
-</div>
-</div>
-</div>
-
-{% endblock page_header %}
-
 {% block content %}
-
-<div class="row justify-content-md-center">
-<div class="col-md-10">
-
-{% if vocab_projects %}
-
-{% for project in vocab_projects %}
-<a 
-id="{{ project.id }}-{{ project.slug }}"
-href="{% url 'vocab:vocab_project_sources' project.id project.slug %}"
->
-<div class="panel">
-<div class="panel-header">
-{{ project.name }}
-</div>
-<div class="panel-body">
-{{ project.description }}
-</div>
-</div>
-</a>
-{% endfor %}
-
-{% endif %}
-
-</div>
-</div>
 
 {% endblock content %}

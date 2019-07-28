@@ -7,10 +7,6 @@ class VocabEntryManager(models.Manager):
     pass
 
 
-class VocabProjectManager(models.Manager):
-    pass
-
-
 class VocabSourceManager(models.Manager):
     pass
 

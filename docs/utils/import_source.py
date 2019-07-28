@@ -21,6 +21,11 @@ Options:
     --localhost: if provided, the localhost api is called. Otherwise, the production api is called.
 '''
 
+LOCALHOST = 'http://127.0.0.1:8000'
+PRODUCTION_HOST = 'http://cfsnublado.herokuapp.com'
+TOKEN_PATH = 'api/api-token-auth/'
+IMPORT_PATH = 'api/vocab/source/import/'
+
 
 def import_source(token, filename):
     print_color(96, filename)
@@ -39,11 +44,6 @@ def import_source(token, filename):
 def convert_markdown_to_dict(md_text, display_html=False):
     html = markdown2.markdown(md_text, extras=['metadata', 'markdown-in-html'])
     source_data = {}
-    project_data = {}
-
-    if 'project_name' not in html.metadata:
-        raise TypeError('Missing project_name attribute in metadata.')
-    project_data['name'] = html.metadata['project_name']
 
     if 'source_name' not in html.metadata:
         raise TypeError('Missing source_name attribute in metadata.')
@@ -56,7 +56,6 @@ def convert_markdown_to_dict(md_text, display_html=False):
         source_data['description'] = html.metadata['source_description']
 
     data_dict = {
-        'vocab_project_data': project_data,
         'vocab_source_data': source_data,
         'vocab_contexts': []
     }
@@ -104,17 +103,13 @@ if __name__ == '__main__':
     parser.add_argument('--localhost', help='request from Nublado localhost', action='store_true')
     parser.add_argument('source', help='vocab source file or directory')
     args = parser.parse_args()
-    localhost_base = 'http://127.0.0.1:8000'
-    host_base = 'http://cfsnublado.herokuapp.com'
-    token_path = 'api/api-token-auth/'
-    source_path = 'api/vocab/source/import/'
 
     if args.localhost:
-        token_url = '{0}/{1}'.format(localhost_base, token_path)
-        vocab_source_import_url = '{0}/{1}'.format(localhost_base, source_path)
+        token_url = '{0}/{1}'.format(LOCALHOST, TOKEN_PATH)
+        vocab_source_import_url = '{0}/{1}'.format(LOCALHOST, IMPORT_PATH)
     else:
-        token_url = '{0}/{1}'.format(host_base, token_path)
-        vocab_source_import_url = '{0}/{1}'.format(host_base, source_path)
+        token_url = '{0}/{1}'.format(PRODUCTION_HOST, TOKEN_PATH)
+        vocab_source_import_url = '{0}/{1}'.format(PRODUCTION_HOST, IMPORT_PATH)
 
     token = get_user_auth_token(token_url)
 

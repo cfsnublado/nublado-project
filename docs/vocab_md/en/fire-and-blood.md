@@ -2,7 +2,6 @@
 source_name: Fire & Blood
 source_description: History of the Targaryen dynasty. George R. R. Martin
 source_type: 1
-project_name: English Reading
 
 ---
 

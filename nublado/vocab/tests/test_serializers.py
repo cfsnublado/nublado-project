@@ -8,11 +8,11 @@ from django.test import TestCase
 
 from ..models import (
     VocabEntry, VocabEntryTag, VocabContext, VocabContextEntry,
-    VocabProject, VocabSource
+    VocabSource
 )
 from ..serializers import (
     VocabEntrySerializer, VocabContextSerializer,
-    VocabContextEntrySerializer, VocabProjectSerializer, VocabSourceSerializer
+    VocabContextEntrySerializer, VocabSourceSerializer
 )
 
 User = get_user_model()
@@ -29,96 +29,6 @@ class TestCommon(TestCase):
             email='cfs7@cfs.com',
             password=self.pwd
         )
-
-
-class VocabProjectSerializerTest(TestCommon):
-
-    def setUp(self):
-        super(VocabProjectSerializerTest, self).setUp()
-        self.vocab_project = VocabProject.objects.create(
-            owner=self.user,
-            name='test project'
-        )
-        self.request = self.client.get(reverse('api:vocab-project-list')).wsgi_request
-        self.serializer = VocabProjectSerializer(
-            self.vocab_project,
-            context={'request': self.request}
-        )
-
-    def test_minimal_data_fields(self):
-        expected_minimal_data = ['name', 'description', 'date_created']
-        self.assertCountEqual(expected_minimal_data, self.serializer.minimal_data_fields)
-
-    def test_get_minimal_data(self):
-        expected_data = {
-            'name': self.vocab_project.name,
-            'description': self.vocab_project.description,
-            'date_created': self.vocab_project.date_created.isoformat()
-        }
-        self.assertEqual(expected_data, self.serializer.get_minimal_data())
-
-    def test_serialized_data(self):
-        expected_data = {
-            'url': drf_reverse(
-                'api:vocab-project-detail',
-                kwargs={'pk': self.vocab_project.id},
-                request=self.request
-            ),
-            'id': self.vocab_project.id,
-            'owner_id': self.user.id,
-            'owner_url': drf_reverse(
-                'api:user-detail',
-                kwargs={'username': self.user.username},
-                request=self.request
-            ),
-            'vocab_sources_url': drf_reverse(
-                'api:nested-vocab-source-list',
-                kwargs={'vocab_project_pk': self.vocab_project.id},
-                request=self.request
-            ),
-            'name': self.vocab_project.name,
-            'description': self.vocab_project.description,
-            'slug': self.vocab_project.slug,
-            'date_created': self.vocab_project.date_created.isoformat(),
-            'date_updated': self.vocab_project.date_updated.isoformat(),
-        }
-        data = self.serializer.data
-        self.assertEqual(expected_data, data)
-
-    def test_json_data(self):
-        expected_json_data = json.dumps({
-            'url': drf_reverse(
-                'api:vocab-project-detail',
-                kwargs={'pk': self.vocab_project.id},
-                request=self.request
-            ),
-            'id': self.vocab_project.id,
-            'owner_id': str(self.user.id),
-            'owner_url': drf_reverse(
-                'api:user-detail',
-                kwargs={'username': self.user.username},
-                request=self.request
-            ),
-            'vocab_sources_url': drf_reverse(
-                'api:nested-vocab-source-list',
-                kwargs={'vocab_project_pk': self.vocab_project.id},
-                request=self.request
-            ),
-            'name': self.vocab_project.name,
-            'description': self.vocab_project.description,
-            'slug': self.vocab_project.slug,
-            'date_created': self.vocab_project.date_created.isoformat(),
-            'date_updated': self.vocab_project.date_updated.isoformat(),
-        })
-        json_data = self.serializer.json_data()
-        self.assertEqual(json.loads(expected_json_data), json.loads(json_data))
-
-    def test_validation_no_name(self):
-        data = {'name': ''}
-        self.serializer = VocabProjectSerializer(self.vocab_project, data=data, partial=True)
-        self.assertFalse(self.serializer.is_valid())
-        self.assertEqual(len(self.serializer.errors), 1)
-        self.assertTrue(self.serializer.errors['name'])
 
 
 class VocabEntrySerializerTest(TestCommon):
@@ -203,12 +113,7 @@ class VocabSourceSerializerTest(TestCommon):
 
     def setUp(self):
         super(VocabSourceSerializerTest, self).setUp()
-        self.vocab_project = VocabProject.objects.create(
-            owner=self.user,
-            name='test project'
-        )
         self.vocab_source = VocabSource.objects.create(
-            vocab_project=self.vocab_project,
             creator=self.user,
             name='Test Source',
             description='A test source'
@@ -240,14 +145,6 @@ class VocabSourceSerializerTest(TestCommon):
                 request=self.request
             ),
             'id': self.vocab_source.id,
-            'project_id': self.vocab_project.id,
-            'project_url': drf_reverse(
-                'api:vocab-project-detail',
-                kwargs={'pk': self.vocab_project.id},
-                request=self.request
-            ),
-            'project': self.vocab_project.name,
-            'project_slug': self.vocab_project.slug,
             'creator_id': self.user.id,
             'creator_url': drf_reverse(
                 'api:user-detail',
@@ -277,14 +174,6 @@ class VocabSourceSerializerTest(TestCommon):
                 kwargs={'pk': self.vocab_source.pk},
                 request=self.request
             ),
-            'project_id': self.vocab_project.id,
-            'project_url': drf_reverse(
-                'api:vocab-project-detail',
-                kwargs={'pk': self.vocab_project.id},
-                request=self.request
-            ),
-            'project': self.vocab_project.name,
-            'project_slug': self.vocab_project.slug,
             'id': self.vocab_source.id,
             'creator_id': str(self.user.id),
             'creator_url': drf_reverse(
@@ -320,12 +209,7 @@ class VocabContextSerializerTest(TestCommon):
 
     def setUp(self):
         super(VocabContextSerializerTest, self).setUp()
-        self.vocab_project = VocabProject.objects.create(
-            owner=self.user,
-            name='test project'
-        )
         self.vocab_source = VocabSource.objects.create(
-            vocab_project=self.vocab_project,
             creator=self.user,
             name='Test Source',
             description='A test source'
@@ -421,12 +305,7 @@ class VocabContextEntrySerializerTest(TestCommon):
 
     def setUp(self):
         super(VocabContextEntrySerializerTest, self).setUp()
-        self.vocab_project = VocabProject.objects.create(
-            owner=self.user,
-            name='test project'
-        )
         self.vocab_source = VocabSource.objects.create(
-            vocab_project=self.vocab_project,
             creator=self.user,
             name='Test Source',
             description='A test source'

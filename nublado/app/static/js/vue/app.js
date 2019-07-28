@@ -11,9 +11,6 @@ Vue.component('ajax-tag', AjaxTag)
 Vue.component('audio-player', AudioPlayer)
 
 // vocab components
-Vue.component('vocab-projects', VocabProjects)
-Vue.component('vocab-project', VocabProject)
-
 Vue.component('vocab-sources', VocabSources)
 Vue.component('vocab-source', VocabSource)
 Vue.component('source-search', SourceSearch)
@@ -37,7 +34,6 @@ Vue.component('context-tagger', ContextTagger)
 
 Vue.component('entry-form', EntryForm)
 Vue.component('context-form', ContextForm)
-Vue.component('project-form', ProjectForm)
 
 Vue.component('ipa-symbol-key', IpaSymbolKey)
 Vue.component('ipa-symbol-keypad', IpaSymbolKeypad)

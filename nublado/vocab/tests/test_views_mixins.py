@@ -3,14 +3,14 @@ from django.contrib.sessions.middleware import SessionMiddleware
 from django.core.exceptions import PermissionDenied
 from django.test import Client, RequestFactory, TestCase
 from django.urls import reverse
-from django.views.generic import DetailView, TemplateView
+from django.views.generic import TemplateView
 
 from core.utils import setup_test_view
 from core.views import CachedObjectMixin, ObjectSessionMixin
-from ..models import VocabEntry, VocabProject, VocabSource
+from ..models import VocabEntry, VocabSource
 from ..views.views_mixins import (
     PermissionMixin, VocabEntryMixin, VocabEntryPermissionMixin, VocabEntrySearchMixin,
-    VocabEntrySessionMixin, VocabProjectMixin, VocabProjectSessionMixin,
+    VocabEntrySessionMixin,
     VocabSourceMixin, VocabSourcePermissionMixin, VocabSourceSearchMixin,
     VocabSourceSessionMixin
 )
@@ -41,86 +41,6 @@ class TestCommon(TestCase):
         request.session.save()
 
 
-class VocabProjectSessionMixinTest(TestCommon):
-
-    class VocabProjectView(VocabProjectSessionMixin, TemplateView):
-        template_name = 'fake_template.html'
-
-        def dispatch(self, request, *args, **kwargs):
-            self.vocab_project = VocabProject.objects.get(id=self.kwargs['pk'])
-
-            return super(VocabProjectSessionMixin, self).dispatch(request, *args, **kwargs)
-
-    def setUp(self):
-        super(VocabProjectSessionMixinTest, self).setUp()
-        self.vocab_project = VocabProject.objects.create(
-            owner=self.user,
-            name='test project'
-        )
-
-    def test_inheritance(self):
-        classes = (
-            ObjectSessionMixin,
-        )
-        for class_name in classes:
-            self.assertTrue(issubclass(VocabProjectSessionMixin, class_name))
-
-    def test_session_data(self):
-        request = self.request_factory.get('/fake-path')
-        self.add_session_to_request(request)
-        request.user = self.user
-        view = setup_test_view(
-            self.VocabProjectView(),
-            request,
-            pk=self.vocab_project.pk
-        )
-        view.dispatch(view.request, *view.args, **view.kwargs)
-        view.setup_session(request)
-        self.assertEqual(
-            request.session['session_obj'],
-            {
-                'vocab_project': {
-                    'id': self.vocab_project.id,
-                    'name': self.vocab_project.name,
-                    'slug': self.vocab_project.slug
-                }
-            }
-        )
-
-
-class VocabProjectMixinTest(TestCommon):
-
-    class VocabProjectView(VocabProjectMixin, TemplateView):
-        template_name = 'fake_template.html'
-
-    def setUp(self):
-        super(VocabProjectMixinTest, self).setUp()
-        self.vocab_project = VocabProject.objects.create(
-            owner=self.user,
-            name='test project'
-        )
-
-    def test_inheritance(self):
-        classes = (
-            CachedObjectMixin,
-        )
-        for class_name in classes:
-            self.assertTrue(issubclass(VocabProjectMixin, class_name))
-
-    def test_get_context_data(self):
-        request = self.request_factory.get('/fake-path')
-        self.add_session_to_request(request)
-        request.user = self.user
-        view = setup_test_view(
-            self.VocabProjectView(),
-            request,
-            vocab_project_pk=self.vocab_project.pk
-        )
-        view.dispatch(view.request, *view.args, **view.kwargs)
-        context = view.get_context_data()
-        self.assertEqual(context['vocab_project'], self.vocab_project)
-
-
 class VocabSourceSessionMixinTest(TestCommon):
 
     class VocabSourceView(VocabSourceSessionMixin, TemplateView):
@@ -133,13 +53,8 @@ class VocabSourceSessionMixinTest(TestCommon):
 
     def setUp(self):
         super(VocabSourceSessionMixinTest, self).setUp()
-        self.vocab_project = VocabProject.objects.create(
-            owner=self.user,
-            name='test project'
-        )
         self.vocab_source = VocabSource.objects.create(
             creator=self.user,
-            vocab_project=self.vocab_project,
             name='Test Source'
         )
 
@@ -180,13 +95,8 @@ class VocabSourceMixinTest(TestCommon):
 
     def setUp(self):
         super(VocabSourceMixinTest, self).setUp()
-        self.vocab_project = VocabProject.objects.create(
-            owner=self.user,
-            name='test project'
-        )
         self.vocab_source = VocabSource.objects.create(
             creator=self.user,
-            vocab_project=self.vocab_project,
             name='Test Source'
         )
 
@@ -208,7 +118,6 @@ class VocabSourceMixinTest(TestCommon):
         )
         view.dispatch(view.request, *view.args, **view.kwargs)
         context = view.get_context_data()
-        self.assertEqual(context['vocab_project'], self.vocab_project)
         self.assertEqual(context['vocab_source'], self.vocab_source)
 
 
@@ -224,13 +133,8 @@ class VocabSourcePermissionMixinTest(TestCommon):
 
     def setUp(self):
         super(VocabSourcePermissionMixinTest, self).setUp()
-        self.vocab_project = VocabProject.objects.create(
-            owner=self.user,
-            name='test project'
-        )
         self.vocab_source = VocabSource.objects.create(
             creator=self.user,
-            vocab_project=self.vocab_project,
             name='Test Source'
         )
 
@@ -248,8 +152,6 @@ class VocabSourcePermissionMixinTest(TestCommon):
         view = setup_test_view(self.VocabSourceView(), request, pk=self.vocab_source.pk)
         response = view.dispatch(view.request, *view.args, **view.kwargs)
         self.assertEqual(response.status_code, 200)
-        context = view.get_context_data()
-        self.assertTrue(context['is_vocab_source_creator'])
 
     def test_permissions_not_creator(self):
         user = User.objects.create_user(
@@ -274,13 +176,8 @@ class VocabSourceSearchMixinTest(TestCommon):
 
     def setUp(self):
         super(VocabSourceSearchMixinTest, self).setUp()
-        self.vocab_project = VocabProject.objects.create(
-            owner=self.user,
-            name='test project'
-        )
         self.vocab_source = VocabSource.objects.create(
             creator=self.user,
-            vocab_project=self.vocab_project,
             name='Test Source'
         )
 

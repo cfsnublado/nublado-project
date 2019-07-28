@@ -1,16 +1,15 @@
 import json
 
 from django.contrib.auth import get_user_model
-from django.core.exceptions import PermissionDenied
 from django.test import RequestFactory, TestCase
 
 from ..models import (
     VocabContext, VocabContextEntry, VocabEntry,
-    VocabProject, VocabSource
+    VocabSource
 )
 from ..serializers import (
     VocabContextSerializer, VocabEntrySerializer,
-    VocabProjectSerializer, VocabSourceSerializer
+    VocabSourceSerializer
 )
 from ..utils import (
     export_vocab_entries, export_vocab_source,
@@ -125,14 +124,9 @@ class ExportVocabSourceTest(TestCommon):
         super(ExportVocabSourceTest, self).setUp()
         self.request = self.request_factory.get('/fake-path')
         self.request.user = self.user
-        self.vocab_project = VocabProject.objects.create(
-            owner=self.user,
-            name='test project'
-        )
 
     def test_export_vocab_source_data(self):
         vocab_source = VocabSource.objects.create(
-            vocab_project=self.vocab_project,
             creator=self.user,
             name='Test source',
             source_type=VocabSource.BOOK
@@ -149,10 +143,6 @@ class ExportVocabSourceTest(TestCommon):
             vocab_context=vocab_context,
             vocab_entry=vocab_entry
         )
-        vocab_project_serializer = VocabProjectSerializer(
-            self.vocab_project,
-            context={'request': self.request}
-        )
         vocab_source_serializer = VocabSourceSerializer(
             vocab_source,
             context={'request': self.request}
@@ -166,7 +156,6 @@ class ExportVocabSourceTest(TestCommon):
             context={'request': self.request}
         )
         expected_data = json.loads(json.dumps({
-            'vocab_project_data': vocab_project_serializer.get_minimal_data(),
             'vocab_source_data': vocab_source_serializer.get_minimal_data(),
             'vocab_contexts': [
                 {
@@ -190,15 +179,10 @@ class ImportVocabSourceTest(TestCommon):
         super(ImportVocabSourceTest, self).setUp()
         self.request = self.request_factory.get('/fake-path')
         self.request.user = self.user
-        self.vocab_project = VocabProject.objects.create(
-            name='test project',
-            owner=self.user
-        )
 
     def test_import_vocab_source_data(self):
         vocab_source = VocabSource.objects.create(
             creator=self.user,
-            vocab_project=self.vocab_project,
             name='Test source',
             source_type=VocabSource.BOOK
         )
@@ -226,7 +210,6 @@ class ImportVocabSourceTest(TestCommon):
         self.assertEqual(len(VocabSource.objects.all()), 1)
         vocab_source = VocabSource.objects.get(
             creator=self.user,
-            vocab_project=self.vocab_project,
             name='Test source',
             source_type=VocabSource.BOOK
         )
@@ -252,15 +235,10 @@ class ValidateVocabSourceJSONTest(TestCommon):
         super(ValidateVocabSourceJSONTest, self).setUp()
         self.request = self.request_factory.get('/fake-path')
         self.request.user = self.user
-        self.vocab_project = VocabProject.objects.create(
-            name='test project',
-            owner=self.user
-        )
 
     def test_validate_vocab_source_data(self):
         vocab_source = VocabSource.objects.create(
             creator=self.user,
-            vocab_project=self.vocab_project,
             name='Test source',
             source_type=VocabSource.BOOK
         )
@@ -276,10 +254,6 @@ class ValidateVocabSourceJSONTest(TestCommon):
             vocab_context=vocab_context,
             vocab_entry=vocab_entry
         )
-        vocab_project_serializer = VocabProjectSerializer(
-            self.vocab_project,
-            context={'request': self.request}
-        )
         vocab_source_serializer = VocabSourceSerializer(
             vocab_source,
             context={'request': self.request}
@@ -293,7 +267,6 @@ class ValidateVocabSourceJSONTest(TestCommon):
             context={'request': self.request}
         )
         data = {
-            'vocab_project_data': vocab_project_serializer.get_minimal_data(),
             'vocab_source_data': vocab_source_serializer.get_minimal_data(),
             'vocab_contexts': [
                 {

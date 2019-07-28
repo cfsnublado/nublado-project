@@ -2,7 +2,6 @@
 source_name: The Order of Time
 source_description: Carlo Rovelli
 source_type: 1
-project_name: English Reading
 
 ---
 

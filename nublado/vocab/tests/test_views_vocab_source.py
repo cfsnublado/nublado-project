@@ -4,7 +4,7 @@ from django.views.generic import TemplateView
 from django.urls import resolve, reverse
 
 from core.views import ObjectSessionMixin
-from ..models import VocabProject, VocabSource
+from ..models import VocabSource
 from ..views.views_mixins import (
     VocabSourceEntrySearchMixin, VocabSourceMixin,
     VocabSourceSearchMixin, VocabSourceSessionMixin
@@ -74,12 +74,7 @@ class VocabSourceDashboardViewTest(TestCommon):
             email='cfs7@foo.com',
             password=self.pwd
         )
-        self.vocab_project = VocabProject.objects.create(
-            owner=self.user,
-            name='test project'
-        )
         self.vocab_source = VocabSource.objects.create(
-            vocab_project=self.vocab_project,
             creator=self.user,
             name='test source'
         )
@@ -144,12 +139,7 @@ class VocabSourceContextsViewTest(TestCommon):
             email='cfs7@foo.com',
             password=self.pwd
         )
-        self.vocab_project = VocabProject.objects.create(
-            owner=self.user,
-            name='test project'
-        )
         self.vocab_source = VocabSource.objects.create(
-            vocab_project=self.vocab_project,
             creator=self.user,
             name='test source'
         )
@@ -214,12 +204,7 @@ class VocabSourceEntriesViewTest(TestCommon):
             email='cfs7@foo.com',
             password=self.pwd
         )
-        self.vocab_project = VocabProject.objects.create(
-            owner=self.user,
-            name='test project'
-        )
         self.vocab_source = VocabSource.objects.create(
-            vocab_project=self.vocab_project,
             creator=self.user,
             name='test source'
         )

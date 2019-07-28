@@ -16,7 +16,7 @@ from ..models import (
 )
 from ..utils import export_vocab_source
 from .views_mixins import (
-    VocabProjectMixin, VocabSourceMixin,
+    VocabSourceMixin,
     VocabSourcePermissionMixin, VocabSourceSessionMixin
 )
 
@@ -45,7 +45,7 @@ class VocabSourceExportJsonView(
 
 
 class VocabSourceCreateView(
-    LoginRequiredMixin, VocabProjectMixin,
+    LoginRequiredMixin,
     MessageMixin, CreateView
 ):
     model = VocabSource
@@ -54,7 +54,6 @@ class VocabSourceCreateView(
 
     def get_form_kwargs(self):
         kwargs = super(VocabSourceCreateView, self).get_form_kwargs()
-        kwargs['vocab_project'] = self.vocab_project
         kwargs['creator'] = self.request.user
         return kwargs
 
@@ -102,10 +101,4 @@ class VocabSourceDeleteView(
         return self.vocab_source
 
     def get_success_url(self):
-        return reverse(
-            'vocab:vocab_project_dashboard',
-            kwargs={
-                'vocab_project_pk': self.vocab_project.id,
-                'vocab_project_slug': self.vocab_project.slug
-            }
-        )
+        return reverse('vocab:vocab_sources')

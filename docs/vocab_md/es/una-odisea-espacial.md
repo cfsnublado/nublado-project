@@ -2,7 +2,6 @@
 source_name: Una Odisea Espacial: La saga completa
 source_description: Arthur C. Clarke
 source_type: 1
-project_name: Spanish Reading
 
 ---
 

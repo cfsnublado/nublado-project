@@ -8,11 +8,11 @@ from django.contrib.auth import get_user_model
 from .conf import settings
 from .models import (
     VocabContextEntry, VocabEntry,
-    VocabEntryJsonData, VocabProject, VocabSource
+    VocabEntryJsonData, VocabSource
 )
 from .serializers import (
     VocabEntrySerializer,
-    VocabContextSerializer, VocabProjectSerializer,
+    VocabContextSerializer,
     VocabSourceSerializer
 )
 
@@ -48,16 +48,11 @@ def export_vocab_source(request=None, vocab_source=None):
     Generates a serialized backup of a vocab source.
     '''
     if vocab_source:
-        vocab_project_serializer = VocabProjectSerializer(
-            vocab_source.vocab_project,
-            context={'request': request}
-        )
         vocab_source_serializer = VocabSourceSerializer(
             vocab_source,
             context={'request': request}
         )
         vocab_source_dict = {
-            'vocab_project_data': vocab_project_serializer.get_minimal_data(),
             'vocab_source_data': vocab_source_serializer.get_minimal_data()
         }
 
@@ -111,37 +106,26 @@ def import_vocab_entries(data):
             )
 
 
-def import_vocab_source(data, creator):
+def import_vocab_source(data, user):
     '''
     data: Serialized json data from vocab source backup.
     '''
     validate_vocab_source_json_schema(data)
 
-    creator_id = creator.id
+    user_id = user.id
+    vocab_source_data = data['vocab_source_data']
+
     VocabSource.objects.filter(
-        creator_id=creator_id,
+        creator_id=user_id,
         name=data['vocab_source_data']['name']
     ).delete()
-    vocab_source_data = data['vocab_source_data']
-    vocab_project_data = data['vocab_project_data']
+
     vocab_source_serializer = VocabSourceSerializer(
         data=vocab_source_data
     )
     vocab_source_serializer.is_valid(raise_exception=True)
-
-    try:
-        vocab_project = VocabProject.objects.get(
-            name=vocab_project_data['name']
-        )
-    except VocabProject.DoesNotExist:
-        vocab_project = VocabProject.objects.create(
-            owner_id=creator_id,
-            **vocab_project_data
-        )
-
     vocab_source = vocab_source_serializer.save(
-        creator_id=creator_id,
-        vocab_project_id=vocab_project.id
+        creator_id=user_id
     )
 
     if 'vocab_contexts' in data:
@@ -234,15 +218,6 @@ def validate_vocab_source_json_schema(data):
     schema = {
         'type': 'object',
         'properties': {
-            'vocab_project_data': {
-                'type': 'object',
-                'properties': {
-                    'name': {
-                        'type': 'string'
-                    }
-                },
-                'required': ['name']
-            },
             'vocab_source_data': {
                 'type': 'object',
                 'properties': {

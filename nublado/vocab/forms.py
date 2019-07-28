@@ -4,26 +4,11 @@ from django.utils.translation import ugettext_lazy as _
 
 from core.forms import BaseModelForm
 from .models import (
-    VocabEntry, VocabContext, VocabProject,
+    VocabEntry, VocabContext,
     VocabSource
 )
 
 User = get_user_model()
-
-
-class VocabProjectForm(BaseModelForm):
-
-    class Meta:
-        abstract = True
-        fields = [
-            'name', 'description'
-        ]
-        error_messages = {
-            'name': {
-                'required': _('validation_field_required'),
-                'unique': _('validation_field_unique'),
-            }
-        }
 
 
 class VocabEntryForm(BaseModelForm):
@@ -64,33 +49,6 @@ class VocabSourceForm(BaseModelForm):
                 'unique': _('validation_field_unique'),
             }
         }
-
-
-class VocabProjectCreateForm(VocabProjectForm):
-
-    def __init__(self, *args, **kwargs):
-        self.owner = kwargs.pop('owner', None)
-        super(VocabProjectCreateForm, self).__init__(*args, **kwargs)
-        if not self.owner:
-            raise ValueError(_('validation_vocab_project_owner_required'))
-        self.instance.owner = self.owner
-
-    class Meta(VocabProjectForm.Meta):
-        model = VocabProject
-
-    def clean(self):
-        cleaned_data = super().clean()
-        if all(k in cleaned_data for k in ('name',)):
-            if VocabProject.objects.filter(
-                name=cleaned_data['name'],
-            ).exists():
-                self.add_error('name', _('validation_vocab_project_unique'))
-
-
-class VocabProjectUpdateForm(VocabProjectForm):
-
-    class Meta(VocabProjectForm.Meta):
-        model = VocabProject
 
 
 class VocabEntrySearchForm(forms.Form):
@@ -141,14 +99,12 @@ class VocabContextUpdateForm(VocabContextForm):
 class VocabSourceCreateForm(VocabSourceForm):
 
     def __init__(self, *args, **kwargs):
-        self.vocab_project = kwargs.pop('vocab_project', None)
         self.creator = kwargs.pop('creator', None)
         super(VocabSourceCreateForm, self).__init__(*args, **kwargs)
-        if not self.vocab_project:
-            raise ValueError(_('validation_vocab_project_required'))
+
         if not self.creator:
             raise ValueError(_('validation_vocab_content_creator_required'))
-        self.instance.vocab_project = self.vocab_project
+
         self.instance.creator = self.creator
 
     class Meta(VocabSourceForm.Meta):

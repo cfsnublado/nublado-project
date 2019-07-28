@@ -12,7 +12,7 @@ from core.serializers import (
 )
 from .models import (
     VocabEntry, VocabContextEntry,
-    VocabContext, VocabProject, VocabSource
+    VocabContext, VocabSource
 )
 
 User = get_user_model()
@@ -28,45 +28,6 @@ class VocabSourceEntrySerializer(Serializer):
 
 class VocabEntryListSerializer(ListSerializer):
     pass
-
-
-class VocabProjectSerializer(BaseSerializer, HyperlinkedModelSerializer):
-    json_encoder = UUIDEncoder
-    minimal_data_fields = [
-        'name', 'description', 'date_created'
-    ]
-    url = HyperlinkedIdentityField(
-        view_name='api:vocab-project-detail',
-        lookup_field='pk'
-    )
-    owner_id = ReadOnlyField(source='owner.id')
-    owner_url = HyperlinkedRelatedField(
-        many=False,
-        read_only=True,
-        view_name='api:user-detail',
-        lookup_field='username',
-        source='owner'
-    )
-    vocab_sources_url = HyperlinkedIdentityField(
-        view_name='api:nested-vocab-source-list',
-        lookup_url_kwarg='vocab_project_pk',
-        lookup_field='pk'
-    )
-
-    class Meta:
-        list_serializer = VocabEntryListSerializer
-        model = VocabProject
-        fields = (
-            'url', 'id', 'owner_id', 'owner_url', 'vocab_sources_url',
-            'name', 'description', 'slug', 'date_created', 'date_updated',
-        )
-        read_only_fields = (
-            'url', 'id', 'owner_id', 'owner_url', 'vocab_sources_url',
-            'slug', 'date_created', 'date_updated'
-        )
-
-    def create(self, validated_data):
-        return VocabProject.objects.create(**validated_data)
 
 
 class VocabEntrySerializer(BaseSerializer, HyperlinkedModelSerializer):
@@ -110,22 +71,6 @@ class VocabSourceSerializer(BaseSerializer, HyperlinkedModelSerializer):
         view_name='api:vocab-source-detail',
         lookup_field='pk'
     )
-    project_id = ReadOnlyField(source='vocab_project_id')
-    project_url = HyperlinkedRelatedField(
-        many=False,
-        read_only=True,
-        view_name='api:vocab-project-detail',
-        lookup_field='pk',
-        source='vocab_project'
-    )
-    project = StringRelatedField(
-        many=False,
-        source='vocab_project.name'
-    )
-    project_slug = StringRelatedField(
-        many=False,
-        source='vocab_project.slug'
-    )
     creator_id = ReadOnlyField(source='creator.id')
     creator_url = HyperlinkedRelatedField(
         many=False,
@@ -148,14 +93,13 @@ class VocabSourceSerializer(BaseSerializer, HyperlinkedModelSerializer):
         list_serializer = VocabSourceListSerializer
         model = VocabSource
         fields = (
-            'url', 'id', 'project_id', 'project', 'project_slug',
-            'project_url', 'creator_id', 'creator_url',
+            'url', 'id', 'creator_id', 'creator_url',
             'name', 'description', 'source_type', 'source_type_name',
             'slug', 'vocab_contexts_url',
             'date_created', 'date_updated'
         )
         read_only_fields = (
-            'url', 'id', 'project_id', 'project_slug', 'project_url', 'creator_id', 'creator_url',
+            'url', 'id', 'creator_id', 'creator_url',
             'slug', 'vocab_contexts_url',
             'source_type_name', 'date_created', 'date_updated'
         )

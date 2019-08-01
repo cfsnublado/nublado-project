@@ -1,6 +1,45 @@
 // Vocab entry
 
+const VocabEntry = {
+  mixins: [
+    AdminMixin,
+    BaseModel
+  ],
+  props: {
+    initEntry: {
+      type: Object,
+      required: true
+    },
+  },
+  data() {
+    return {
+      entry: this.initEntry
+    }
+  },
+  methods: {
+    remove() {
+      this.$emit('delete-entry', this.entry.id)
+    }
+  },
+  created() {
+    if (this.initViewUrl) {
+      this.viewUrl = this.initViewUrl
+        .replace('xx', this.entry.language)
+        .replace('zzz', this.entry.slug)
+    }
+
+    if (this.initDeleteUrl) {
+      this.deleteUrl = this.initDeleteUrl
+        .replace(0, this.entry.id)
+    }
+  }
+}
+
+
 const VocabEntries = {
+  components: {
+    'vocab-entry': VocabEntry
+  },
   mixins: [
     AjaxProcessMixin,
     PaginationMixin,
@@ -66,40 +105,13 @@ const VocabEntries = {
     setLanguage(language) {
       this.language = language
       this.getVocabEntries()
+    },
+    onDeleteEntry(index) {
+      this.$delete(this.vocabEntries, index)
     }
   },
   created() {
     this.getVocabEntries()
-  }
-}
-
-const VocabEntry = {
-  mixins: [
-    AdminMixin,
-    BaseModel
-  ],
-  props: {
-    initEntry: {
-      type: Object,
-      required: true
-    },
-  },
-  data() {
-    return {
-      entry: this.initEntry
-    }
-  },
-  created() {
-    if (this.initViewUrl) {
-      this.viewUrl = this.initViewUrl
-        .replace('xx', this.entry.language)
-        .replace('zzz', this.entry.slug)
-    }
-
-    if (this.initDeleteUrl) {
-      this.deleteUrl = this.initDeleteUrl
-        .replace(0, this.entry.id)
-    }
   }
 }
 
@@ -711,8 +723,45 @@ const ContextTagger = {
 }
 
 // Vocab source
+const VocabSource = {
+  mixins: [
+    AdminMixin,
+    BaseModel
+  ],
+  props: {
+    initSource: {
+      type: Object,
+      required: true
+    }
+  },
+  data() {
+    return {
+      source: this.initSource,
+    }
+  },
+  methods: {
+    remove() {
+      this.$emit('delete-source', this.source.id)
+    }
+  },
+  created() {
+    if (this.initViewUrl) {
+      this.viewUrl = this.initViewUrl
+        .replace(0, this.source.id)
+        .replace('zzz', this.source.slug)   
+    }
+
+    if (this.initDeleteUrl) {
+      this.deleteUrl = this.initDeleteUrl
+        .replace(0, this.source.id)
+    } 
+  }
+}
 
 const VocabSources = {
+  components: {
+    'vocab-source': VocabSource
+  },
   mixins: [
     AjaxProcessMixin,
     PaginationMixin,
@@ -768,41 +817,13 @@ const VocabSources = {
       .finally(() => {
         this.complete()
       })
+    },
+    onDeleteSource(index) {
+      this.$delete(this.vocabSources, index)
     }
   },
   created() {
     this.getVocabSources()
-  }
-}
-
-const VocabSource = {
-  mixins: [
-    AdminMixin,
-    BaseModel
-  ],
-  props: {
-    initSource: {
-      type: Object,
-      required: true
-    }
-  },
-  data() {
-    return {
-      source: this.initSource,
-    }
-  },
-  methods: {},
-  created() {
-    if (this.initViewUrl) {
-      this.viewUrl = this.initViewUrl
-        .replace(0, this.source.id)
-        .replace('zzz', this.source.slug)   
-    }
-
-    if (this.initDeleteUrl) {
-      this.deleteUrl = this.initDeleteUrl
-        .replace(0, this.source.id)
-    } 
   }
 }
 

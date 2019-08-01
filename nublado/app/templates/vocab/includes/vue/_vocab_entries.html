@@ -70,6 +70,7 @@ v-for="(vocabEntry, index) in vocabEntries"
 :init-entry="vocabEntry"
 init-view-url="{{ vocab_entry_url }}"
 init-delete-url="{{ vocab_entry_delete_url }}"
+@delete-entry="onDeleteEntry(index)"
 inline-template
 >
 

@@ -37,6 +37,7 @@ const AjaxDelete = {
       })
     },
     onDelete(event) {
+      this.success()
       this.process()
       clearTimeout(this.timerId)
       this.timerId = setTimeout(()=>{
@@ -190,7 +191,7 @@ const AjaxTag = {
     }
   },
   template: `
-    <transition name="fade-transition" v-on:after-enter="isVisible = true" v-on:after-leave="isVisible = false">
+    <transition name="fade-transition" v-on:after-enter="isVisible = true" v-on:after-leave="remove">
     <div 
     class="ui label tagblock"
     v-bind:key="id"
@@ -209,7 +210,7 @@ const AjaxTag = {
       v-if="canRemove"
       :delete-confirm-id="confirmId"
       :delete-url="deleteUrl"
-      @ajax-success="remove"
+      @ajax-success="isVisible = false"
       inline-template
       >
         <a

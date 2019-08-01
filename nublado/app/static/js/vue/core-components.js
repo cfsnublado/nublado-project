@@ -601,7 +601,6 @@ const BaseTag = {
     },
     remove() {
       this.$emit('tag-remove', this.id)
-      this.isVisible = false
     }
   },
   template: `

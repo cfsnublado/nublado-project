@@ -24,10 +24,11 @@ v-for="(vocabSource, index) in vocabSources"
 :init-source="vocabSource"
 init-view-url="{{ vocab_source_url }}"
 init-delete-url="{{ vocab_source_delete_url }}"
+@delete-source="onDeleteSource(index)"
 inline-template
 >
 
-<transition name="fade-transition" v-on:after-enter="isVisible = true" v-on:after-leave="isVisible = false">
+<transition name="fade-transition" v-on:after-enter="isVisible = true" v-on:after-leave="remove">
 
 <div class="col-md-6" v-show="isVisible"> <!-- col 6 -->
 
@@ -45,7 +46,7 @@ inline-template
 v-if="isAdmin"
 delete-confirm-id="delete-source"
 :delete-url="deleteUrl"
-@ajax-success="remove"
+@ajax-success="isVisible = false"
 inline-template
 >
 

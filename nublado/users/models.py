@@ -1,9 +1,6 @@
-import os
-
 from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin
 from django.urls import reverse
 from django.db import models
-from django.utils import timezone
 from django.utils.translation import ugettext_lazy as _
 
 from core.models import SerializeModel, TimestampModel, UUIDModel
@@ -13,18 +10,6 @@ from .validation import (
     email_format, name_characters, username_characters,
     username_min_length
 )
-
-IMAGE_SIZE = settings.USERS_IMAGE_DEFAULT_SIZE
-
-
-def upload_image_to(instance, filename):
-    now = timezone.now()
-    filename_base, filename_ext = os.path.splitext(filename)
-    return '{0}{1}{2}'.format(
-        instance.get_image_dir(),
-        now.strftime('%Y%m%d%H%M%S'),
-        filename_ext.lower(),
-    )
 
 
 class User(

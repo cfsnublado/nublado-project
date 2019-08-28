@@ -70,9 +70,9 @@ class VocabEntry(
     objects = VocabEntryManager()
 
     class Meta:
-        unique_together = ('entry', 'language')
         verbose_name = _('label_vocab_entry')
         verbose_name_plural = _('label_vocab_entry_plural')
+        unique_together = ('entry', 'language')
 
     def __str__(self):
         return self.entry
@@ -123,16 +123,17 @@ class VocabSource(
 
     objects = VocabSourceManager()
 
-    class Meta:
-        verbose_name = _('label_vocab_source')
-        verbose_name_plural = _('label_vocab_source_plural')
-
-    def __str__(self):
-        return self.name
-
     def get_serializer(self):
         from .serializers import VocabSourceSerializer
         return VocabSourceSerializer
+
+    class Meta:
+        verbose_name = _('label_vocab_source')
+        verbose_name_plural = _('label_vocab_source_plural')
+        unique_together = ('creator', 'name')
+
+    def __str__(self):
+        return self.name
 
 
 class VocabContext(
@@ -152,13 +153,6 @@ class VocabContext(
     content = models.TextField(
         verbose_name=_('label_content'),
     )
-
-    class Meta:
-        verbose_name = _('label_vocab_context')
-        verbose_name_plural = _('label_vocab_context_plural')
-
-    def __str__(self):
-        return self.content
 
     def get_serializer(self):
         from .serializers import VocabContextSerializer
@@ -187,6 +181,13 @@ class VocabContext(
     def get_vocab_source(self):
         return self.vocab_source
 
+    class Meta:
+        verbose_name = _('label_vocab_context')
+        verbose_name_plural = _('label_vocab_context_plural')
+
+    def __str__(self):
+        return self.content
+
 
 class VocabContextEntry(
     TimestampModel, SerializeModel, VocabSourceContentModel
@@ -201,17 +202,6 @@ class VocabContextEntry(
     )
 
     objects = VocabContextEntryManager()
-
-    class Meta:
-        unique_together = ('vocab_entry', 'vocab_context')
-        verbose_name = _('label_vocab_entry_context')
-        verbose_name_plural = _('label_vocab_entry_context_plural')
-
-    def __str__(self):
-        return 'vocab_entry: {0}, vocab_context: {1}'.format(
-            self.vocab_entry_id,
-            self.vocab_context_id
-        )
 
     def get_serializer(self):
         from .serializers import VocabContextEntrySerializer
@@ -246,6 +236,17 @@ class VocabContextEntry(
 
     def get_vocab_source(self):
         return self.vocab_context.vocab_source
+
+    class Meta:
+        verbose_name = _('label_vocab_entry_context')
+        verbose_name_plural = _('label_vocab_entry_context_plural')
+        unique_together = ('vocab_entry', 'vocab_context')
+
+    def __str__(self):
+        return 'vocab_entry: {0}, vocab_context: {1}'.format(
+            self.vocab_entry_id,
+            self.vocab_context_id
+        )
 
 
 class VocabEntryTag(VocabSourceContentModel):

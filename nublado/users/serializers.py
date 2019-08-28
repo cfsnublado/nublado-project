@@ -59,16 +59,21 @@ class UserSerializer(BaseSerializer, serializers.HyperlinkedModelSerializer):
         instance.last_name = validated_data.get('last_name', instance.last_name)
         # Password has been validated and confirmed
         password = validated_data.get('password', None)
+
         if password:
             instance.set_password(password)
+
         instance.save()
+
         return instance
 
     def validate(self, data):
         password = data.get('password', None)
         confirm_password = data.pop('confirm_password', None)
+
         if password and password != confirm_password:
             raise serializers.ValidationError({'confirm_password': _('validation_password_match')})
+
         return data
 
 

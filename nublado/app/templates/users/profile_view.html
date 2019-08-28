@@ -2,17 +2,15 @@
 {% load i18n %}
 {% load profile_image_tags %}
 
-{% block content %}
+{% block title %}
+{% trans "page_view_profile_title" %}
+{% endblock title %}
 
-<div class="row column">
-<div class="small-12 columns">
+{% block content %}
 
 <div style="text-align: center;">
 {% profile_image user_profile 150 "circle" %}
 <h3>{{ user_profile.get_full_name }}</h3>
-</div>
-
-</div>
 </div>
 
 {% endblock content %}

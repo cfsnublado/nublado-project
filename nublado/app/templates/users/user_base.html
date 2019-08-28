@@ -1,27 +1,3 @@
 {% extends "base.html" %}
 {% load staticfiles %}
 {% load i18n %}
-
-{% block body_classes %}
-
-sidebar-adaptable theme-white {{ sidebar_expanded|yesno:"sidebar-nav-expanded," }}
-
-{% endblock body_classes %}
-
-{% block content_top %}
-<div class="container" style="margin-bottom: 30px;">
-
-{% block page_header %}
-{% endblock page_header %}
-
-</div>
-{% endblock content_top %}
-
-{% block python_to_javascript %}
-
-var initSidebarSessionEnabled = true;
-var sidebarExpanded = {{ sidebar_expanded|yesno:"true,false" }};
-var appSessionUrl = "{% url 'app:app_session' %}";
-var sidebarTopPanelExpanded = {{ sidebar_top_panel_expanded|yesno:"true,false" }};
-
-{% endblock python_to_javascript %}

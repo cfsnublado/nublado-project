@@ -35,7 +35,7 @@ class IsUserMixin(object):
 class UserForgotPasswordRequestView(FormView):
     template_name = '{0}/password_reset_request.html'.format(APP_NAME)
     form_class = UserForgotPasswordRequestForm
-    confirmation_message = _('message_user_password_reset_request_confirmation')
+    confirmation_message = _('msg_password_reset_request_confirmation')
 
     def dispatch(self, request, *args, **kwargs):
         # If user is already logged in, redirect.

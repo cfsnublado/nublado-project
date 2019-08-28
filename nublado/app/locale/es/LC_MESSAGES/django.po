@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-27 17:31-0700\n"
+"POT-Creation-Date: 2019-08-26 20:06-0700\n"
 "PO-Revision-Date: 2018-11-28 21:16-0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -47,7 +47,7 @@ msgstr ""
 msgid "validation_invite_sender_receiver_equal"
 msgstr ""
 
-#: nublado/core/models.py:61 nublado/app/templates/base.html:235
+#: nublado/core/models.py:61 nublado/app/templates/base.html:164
 msgid "label_language"
 msgstr "Idioma"
 
@@ -143,7 +143,7 @@ msgstr ""
 #: nublado/users/tests/test_forms.py:317 nublado/users/tests/test_forms.py:339
 #: nublado/users/tests/test_views.py:120 nublado/users/tests/test_views.py:296
 #: nublado/users/tests/test_views.py:503 nublado/vocab/forms.py:23
-#: nublado/vocab/forms.py:36 nublado/vocab/forms.py:48
+#: nublado/vocab/forms.py:43 nublado/vocab/forms.py:55
 #: nublado/vocab/tests/test_views_vocab_entry_auth.py:145
 #: nublado/vocab/tests/test_views_vocab_source_auth.py:188
 msgid "validation_field_required"
@@ -242,7 +242,8 @@ msgid "label_profile_about"
 msgstr ""
 
 #: nublado/users/models.py:112
-#: nublado/app/templates/includes/_user_menu_items.html:17
+#: nublado/app/templates/includes/_user_menu_items.html:21
+#: nublado/app/templates/includes/_user_nav.html:45
 msgid "label_profile"
 msgstr "Perfil"
 
@@ -279,23 +280,19 @@ msgstr "La contraseña de usuario ha sido cambiada."
 msgid "label_vocab_config"
 msgstr "Tu vocabulario"
 
-#: nublado/vocab/forms.py:24 nublado/vocab/forms.py:49
+#: nublado/vocab/forms.py:24 nublado/vocab/forms.py:56
 #, fuzzy
 #| msgid "validation_field_required"
 msgid "validation_field_unique"
 msgstr "Este campo es obligatorio."
 
-#: nublado/vocab/forms.py:70
-msgid "validation_vocab_entry_unique"
-msgstr "La entrada de vocabulario existe"
-
-#: nublado/vocab/forms.py:89 nublado/vocab/tests/test_forms.py:96
+#: nublado/vocab/forms.py:94 nublado/vocab/tests/test_forms.py:96
 #, fuzzy
 #| msgid "validation_field_required"
 msgid "validation_vocab_source_required"
 msgstr "Este campo es obligatorio."
 
-#: nublado/vocab/forms.py:106 nublado/vocab/tests/test_forms.py:68
+#: nublado/vocab/forms.py:111 nublado/vocab/tests/test_forms.py:68
 #, fuzzy
 #| msgid "validation_field_required"
 msgid "validation_vocab_content_creator_required"
@@ -315,11 +312,11 @@ msgstr "Descripción"
 msgid "label_slug"
 msgstr "Iniciar sesión"
 
-#: nublado/vocab/models.py:74
+#: nublado/vocab/models.py:73
 msgid "label_vocab_entry"
 msgstr "Entrada"
 
-#: nublado/vocab/models.py:75
+#: nublado/vocab/models.py:74
 #, fuzzy
 #| msgid "label_vocab_tag_desc"
 msgid "label_vocab_entry_plural"
@@ -345,67 +342,67 @@ msgstr "Creada"
 msgid "label_name"
 msgstr "Nombre"
 
-#: nublado/vocab/models.py:115 nublado/vocab/models.py:286
+#: nublado/vocab/models.py:115 nublado/vocab/models.py:287
 msgid "label_vocab_source_type"
 msgstr "Tipo de fuente"
 
-#: nublado/vocab/models.py:127
+#: nublado/vocab/models.py:131
 #, fuzzy
 #| msgid "label_vocab_tag_desc"
 msgid "label_vocab_source"
 msgstr "Tu vocabulario"
 
-#: nublado/vocab/models.py:128
+#: nublado/vocab/models.py:132
 #, fuzzy
 #| msgid "label_vocab_tag_desc"
 msgid "label_vocab_source_plural"
 msgstr "Tu vocabulario"
 
-#: nublado/vocab/models.py:153 nublado/vocab/models.py:258
+#: nublado/vocab/models.py:154 nublado/vocab/models.py:259
 msgid "label_content"
 msgstr "Contenido"
 
-#: nublado/vocab/models.py:157
+#: nublado/vocab/models.py:185
 #, fuzzy
 #| msgid "label_vocab_tag_desc"
 msgid "label_vocab_context"
 msgstr "Tu vocabulario"
 
-#: nublado/vocab/models.py:158
+#: nublado/vocab/models.py:186
 #, fuzzy
 #| msgid "label_vocab_tag_desc"
 msgid "label_vocab_context_plural"
 msgstr "Tu vocabulario"
 
-#: nublado/vocab/models.py:207
+#: nublado/vocab/models.py:241
 #, fuzzy
 #| msgid "label_vocab_tag_desc"
 msgid "label_vocab_entry_context"
 msgstr "Tu vocabulario"
 
-#: nublado/vocab/models.py:208
+#: nublado/vocab/models.py:242
 msgid "label_vocab_entry_context_plural"
 msgstr ""
 
-#: nublado/vocab/models.py:274
+#: nublado/vocab/models.py:275
 #, fuzzy
 #| msgid "label_vocab_dashboard"
 msgid "label_json_data_oxford"
 msgstr "Escritorio de vocabulario"
 
-#: nublado/vocab/models.py:275
+#: nublado/vocab/models.py:276
 #, fuzzy
 #| msgid "label_source_website"
 msgid "label_json_data_miriam_webster"
 msgstr "Website"
 
-#: nublado/vocab/models.py:276
+#: nublado/vocab/models.py:277
 #, fuzzy
 #| msgid "label_done_editing"
 msgid "label_json_data_colins"
 msgstr "Terminar edición"
 
-#: nublado/vocab/models.py:277
+#: nublado/vocab/models.py:278
 #, fuzzy
 #| msgid "label_update"
 msgid "label_json_data_other"
@@ -437,119 +434,60 @@ msgstr "500"
 msgid "error_500_message"
 msgstr "Error de servidor"
 
-#: nublado/app/templates/base.html:72
-#: nublado/app/templates/security/login.html:63
-msgid "label_login"
-msgstr "Iniciar sesión"
+#: nublado/app/templates/base.html:113
+msgid "label_general"
+msgstr "General"
 
-#: nublado/app/templates/base.html:158
-msgid "label_main"
+#: nublado/app/templates/base.html:122
+#: nublado/app/templates/includes/_user_menu_items.html:9
+#: nublado/app/templates/includes/_user_nav.html:33
+msgid "label_home"
 msgstr "Inicio"
 
-#: nublado/app/templates/base.html:167
-#: nublado/app/templates/vocab/includes/_vocab_breadcrumbs.html:7
-#: nublado/app/templates/vocab/includes/_vocab_breadcrumbs.html:47
-#: nublado/app/templates/vocab/vocab_base.html:28
-#: nublado/app/templates/vocab/vocab_source_dashboard.html:53
-msgid "label_vocabulary"
-msgstr "Vocabulario"
-
-#: nublado/app/templates/base.html:177
+#: nublado/app/templates/base.html:130
 #: nublado/app/templates/vocab/includes/_vocab_breadcrumbs.html:22
 msgid "label_sources"
 msgstr "Fuentes"
 
-#: nublado/app/templates/base.html:193
-msgid "label_new_vocab_entry"
-msgstr "Nueva entrada"
-
-#: nublado/app/templates/base.html:206
-msgid "label_new_vocab_source"
+#: nublado/app/templates/base.html:143
+msgid "label_new_source"
 msgstr "Nueva fuente"
 
-#: nublado/app/templates/home.html:5
+#: nublado/app/templates/home.html:6
 msgid "page_home_title"
 msgstr "Inicio"
 
-#: nublado/app/templates/home.html:18
-msgid "header_project_tagline"
-msgstr "Una herramienta para anotar vocabulario mediante contextos."
+#: nublado/app/templates/home.html:23
+#, fuzzy
+#| msgid "msg_no_projects"
+msgid "msg_project_banner_desc"
+msgstr "No hay proyectos."
 
-#: nublado/app/templates/home.html:27
-#: nublado/app/templates/vocab/vocab_entries.html:34
-#: nublado/app/templates/vocab/vocab_entry.html:23
-msgid "label_search_vocabulary"
-msgstr "Buscar vocabulario"
+#: nublado/app/templates/home.html:38
+msgid "msg_lectura_at_a_glance"
+msgstr ""
 
-#: nublado/app/templates/home.html:41
-msgid "header_project_features"
-msgstr "Un vistazo a Nublado"
-
-#: nublado/app/templates/home.html:52
-msgid "label_vocab_tag_desc"
-msgstr "Tu vocabulario"
-
-#: nublado/app/templates/home.html:56
-msgid "text_vocab_tag_desc"
-msgstr "Crea y etiqueta el vocabulario que te interese."
-
-#: nublado/app/templates/home.html:65
-msgid "label_django_cool"
-msgstr "Genial.py"
-
-#: nublado/app/templates/home.html:69
-msgid "text_developed_in_django"
-msgstr "Este proyecto está desarrollado con el entorno de Django."
-
-#: nublado/app/templates/includes/_confirmation_modal.html:21
+#: nublado/app/templates/includes/_confirmation_modal.html:16
 #: nublado/app/templates/vocab/auth/vocab_context_delete_confirm.html:36
 #: nublado/app/templates/vocab/auth/vocab_entry_delete_confirm.html:34
 msgid "label_no"
 msgstr "No"
 
-#: nublado/app/templates/includes/_confirmation_modal.html:29
+#: nublado/app/templates/includes/_confirmation_modal.html:24
 #: nublado/app/templates/vocab/auth/vocab_context_delete_confirm.html:32
 #: nublado/app/templates/vocab/auth/vocab_entry_delete_confirm.html:30
 msgid "label_yes"
 msgstr "Sí"
 
-#: nublado/app/templates/includes/_pagination.html:13
-#: nublado/app/templates/includes/_pagination.html:18
-#: nublado/app/templates/vocab/includes/vue/_vocab_context_tags.html:119
-#: nublado/app/templates/vocab/includes/vue/_vocab_context_tags.html:124
-#: nublado/app/templates/vocab/includes/vue/_vocab_contexts.html:97
-#: nublado/app/templates/vocab/includes/vue/_vocab_contexts.html:102
-#: nublado/app/templates/vocab/includes/vue/_vocab_entries.html:106
-#: nublado/app/templates/vocab/includes/vue/_vocab_entries.html:111
-#: nublado/app/templates/vocab/includes/vue/_vocab_entry_contexts.html:97
-#: nublado/app/templates/vocab/includes/vue/_vocab_entry_contexts.html:102
-#: nublado/app/templates/vocab/includes/vue/_vocab_sources.html:99
-#: nublado/app/templates/vocab/includes/vue/_vocab_sources.html:104
-msgid "label_previous"
-msgstr "Anterior"
-
-#: nublado/app/templates/includes/_pagination.html:39
-#: nublado/app/templates/includes/_pagination.html:48
-#: nublado/app/templates/vocab/includes/vue/_vocab_context_tags.html:152
-#: nublado/app/templates/vocab/includes/vue/_vocab_context_tags.html:161
-#: nublado/app/templates/vocab/includes/vue/_vocab_contexts.html:130
-#: nublado/app/templates/vocab/includes/vue/_vocab_contexts.html:139
-#: nublado/app/templates/vocab/includes/vue/_vocab_entries.html:139
-#: nublado/app/templates/vocab/includes/vue/_vocab_entries.html:148
-#: nublado/app/templates/vocab/includes/vue/_vocab_entry_contexts.html:130
-#: nublado/app/templates/vocab/includes/vue/_vocab_entry_contexts.html:139
-#: nublado/app/templates/vocab/includes/vue/_vocab_sources.html:132
-#: nublado/app/templates/vocab/includes/vue/_vocab_sources.html:141
-msgid "label_next"
-msgstr "Siguiente"
-
-#: nublado/app/templates/includes/_user_menu_items.html:8
-msgid "label_dashboard"
-msgstr "Escritorio"
-
-#: nublado/app/templates/includes/_user_menu_items.html:24
+#: nublado/app/templates/includes/_user_menu_items.html:33
+#: nublado/app/templates/includes/_user_nav.html:57
 msgid "label_logout"
 msgstr "Salir"
+
+#: nublado/app/templates/includes/_user_nav.html:8
+#: nublado/app/templates/security/login.html:63
+msgid "label_login"
+msgstr "Iniciar sesión"
 
 #: nublado/app/templates/includes/vue/_autocomplete.html:6
 msgid "placeholder_search"
@@ -836,6 +774,13 @@ msgstr "Editar fuente"
 msgid "page_vocab_user_dashboard_title"
 msgstr "Escritorio de vocabulario"
 
+#: nublado/app/templates/vocab/includes/_vocab_breadcrumbs.html:7
+#: nublado/app/templates/vocab/includes/_vocab_breadcrumbs.html:47
+#: nublado/app/templates/vocab/vocab_base.html:28
+#: nublado/app/templates/vocab/vocab_source_dashboard.html:53
+msgid "label_vocabulary"
+msgstr "Vocabulario"
+
 #: nublado/app/templates/vocab/includes/_vocab_context_delete_modal.html:17
 msgid "confirm_delete_vocab_context"
 msgstr "¿Eliminar contexto?"
@@ -863,6 +808,32 @@ msgstr "No hay contextos."
 #: nublado/app/templates/vocab/includes/vue/_vocab_entry_contexts.html:18
 msgid "header_contexts"
 msgstr "Contextos"
+
+#: nublado/app/templates/vocab/includes/vue/_vocab_context_tags.html:119
+#: nublado/app/templates/vocab/includes/vue/_vocab_context_tags.html:124
+#: nublado/app/templates/vocab/includes/vue/_vocab_contexts.html:97
+#: nublado/app/templates/vocab/includes/vue/_vocab_contexts.html:102
+#: nublado/app/templates/vocab/includes/vue/_vocab_entries.html:107
+#: nublado/app/templates/vocab/includes/vue/_vocab_entries.html:112
+#: nublado/app/templates/vocab/includes/vue/_vocab_entry_contexts.html:97
+#: nublado/app/templates/vocab/includes/vue/_vocab_entry_contexts.html:102
+#: nublado/app/templates/vocab/includes/vue/_vocab_sources.html:100
+#: nublado/app/templates/vocab/includes/vue/_vocab_sources.html:105
+msgid "label_previous"
+msgstr "Anterior"
+
+#: nublado/app/templates/vocab/includes/vue/_vocab_context_tags.html:152
+#: nublado/app/templates/vocab/includes/vue/_vocab_context_tags.html:161
+#: nublado/app/templates/vocab/includes/vue/_vocab_contexts.html:130
+#: nublado/app/templates/vocab/includes/vue/_vocab_contexts.html:139
+#: nublado/app/templates/vocab/includes/vue/_vocab_entries.html:140
+#: nublado/app/templates/vocab/includes/vue/_vocab_entries.html:149
+#: nublado/app/templates/vocab/includes/vue/_vocab_entry_contexts.html:130
+#: nublado/app/templates/vocab/includes/vue/_vocab_entry_contexts.html:139
+#: nublado/app/templates/vocab/includes/vue/_vocab_sources.html:133
+#: nublado/app/templates/vocab/includes/vue/_vocab_sources.html:142
+msgid "label_next"
+msgstr "Siguiente"
 
 #: nublado/app/templates/vocab/includes/vue/_vocab_entries.html:63
 msgid "no_entries_in_selected_language"
@@ -908,6 +879,11 @@ msgstr "Vocabulario"
 msgid "header_vocabulary"
 msgstr "Vocabulario"
 
+#: nublado/app/templates/vocab/vocab_entries.html:34
+#: nublado/app/templates/vocab/vocab_entry.html:23
+msgid "label_search_vocabulary"
+msgstr "Buscar vocabulario"
+
 #: nublado/app/templates/vocab/vocab_entry.html:7
 #, python-format
 msgid "page_vocab_entry_title %(v)s"
@@ -946,6 +922,39 @@ msgstr "Fuentes"
 #: nublado/app/templates/vocab/vocab_sources.html:32
 msgid "label_search_sources"
 msgstr "Buscar fuentes"
+
+#~ msgid "validation_vocab_entry_unique"
+#~ msgstr "La entrada de vocabulario existe"
+
+#~ msgid "label_main"
+#~ msgstr "Inicio"
+
+#~ msgid "label_new_vocab_entry"
+#~ msgstr "Nueva entrada"
+
+#~ msgid "label_new_vocab_source"
+#~ msgstr "Nueva fuente"
+
+#~ msgid "header_project_tagline"
+#~ msgstr "Una herramienta para anotar vocabulario mediante contextos."
+
+#~ msgid "header_project_features"
+#~ msgstr "Un vistazo a Nublado"
+
+#~ msgid "label_vocab_tag_desc"
+#~ msgstr "Tu vocabulario"
+
+#~ msgid "text_vocab_tag_desc"
+#~ msgstr "Crea y etiqueta el vocabulario que te interese."
+
+#~ msgid "label_django_cool"
+#~ msgstr "Genial.py"
+
+#~ msgid "text_developed_in_django"
+#~ msgstr "Este proyecto está desarrollado con el entorno de Django."
+
+#~ msgid "label_dashboard"
+#~ msgstr "Escritorio"
 
 #, fuzzy
 #~| msgid "validation_field_required"
@@ -1017,9 +1026,6 @@ msgstr "Buscar fuentes"
 #~ msgid "confirm_delete_vocab_project"
 #~ msgstr "¿Eliminar proyecto?"
 
-#~ msgid "msg_no_projects"
-#~ msgstr "No hay proyectos."
-
 #~ msgid "label_edit_project"
 #~ msgstr "Editar proyecto"
 
@@ -1079,9 +1085,6 @@ msgstr "Buscar fuentes"
 
 #~ msgid "label_view_entry_tagged_in_all_sources"
 #~ msgstr "Ver entrada etiquetada en todas las fuentes"
-
-#~ msgid "label_new_source"
-#~ msgstr "Nueva fuente"
 
 #~ msgid "label_export_json"
 #~ msgstr "Exportar JSON"

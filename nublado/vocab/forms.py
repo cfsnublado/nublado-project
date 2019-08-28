@@ -25,6 +25,13 @@ class VocabEntryForm(BaseModelForm):
             }
         }
 
+    def full_clean(self):
+        super(VocabEntryForm, self).full_clean()
+        try:
+            self.instance.validate_unique()
+        except forms.ValidationError as e:
+            self._update_errors(e)
+
 
 class VocabContextForm(BaseModelForm):
 
@@ -50,6 +57,13 @@ class VocabSourceForm(BaseModelForm):
             }
         }
 
+    def full_clean(self):
+        super(VocabSourceForm, self).full_clean()
+        try:
+            self.instance.validate_unique()
+        except forms.ValidationError as e:
+            self._update_errors(e)
+
 
 class VocabEntrySearchForm(forms.Form):
     pass
@@ -59,15 +73,6 @@ class VocabEntryCreateForm(VocabEntryForm):
 
     class Meta(VocabEntryForm.Meta):
         model = VocabEntry
-
-    def clean(self):
-        cleaned_data = super().clean()
-        if all(k in cleaned_data for k in ('entry', 'language')):
-            if VocabEntry.objects.filter(
-                entry=cleaned_data['entry'],
-                language=cleaned_data['language']
-            ).exists():
-                self.add_error('entry', _('validation_vocab_entry_unique'))
 
 
 class VocabEntryUpdateForm(VocabEntryForm):

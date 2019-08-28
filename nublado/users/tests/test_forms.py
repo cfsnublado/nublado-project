@@ -94,7 +94,7 @@ class UserForgotPasswordResetFormTest(TestCase):
         self.form_data['password1'] = 'aA8*!'
         form = UserForgotPasswordResetForm(data=self.form_data)
         self.assertFalse(form.is_valid())
-        self.assertEqual(form.errors['password1'], [_('validation_password_min_length 8')])
+        self.assertEqual(form.errors['password1'], ['Password must contain at least 8 characters'])
         self.form_data['password1'] = '{0}{1}'.format(self.form_data['password2'], 'xxx')
         form = UserForgotPasswordResetForm(data=self.form_data)
         self.assertFalse(form.is_valid())
@@ -161,7 +161,7 @@ class UserPasswordResetFormTest(TestCase):
         self.form_data['password1'] = 'aA8*!'
         form = UserPasswordResetForm(data=self.form_data, instance=self.user)
         self.assertFalse(form.is_valid())
-        self.assertEqual(form.errors['password1'], [_('validation_password_min_length 8')])
+        self.assertEqual(form.errors['password1'], ['Password must contain at least 8 characters'])
         self.form_data['password1'] = '{0}{1}'.format(self.form_data['password2'], 'xxx')
         form = UserPasswordResetForm(data=self.form_data)
         self.assertFalse(form.is_valid())

@@ -157,7 +157,7 @@ class UserSerializerTest(TestCase):
         self.user_data['password'] = 'a@A8'
         serializer = UserSerializer(data=self.user_data)
         self.assertFalse(serializer.is_valid())
-        self.assertEqual(serializer.errors['password'], [_('validation_password_min_length 8')])
+        self.assertEqual(serializer.errors['password'], ['Password must contain at least 8 characters'])
 
     def test_validation_no_username(self):
         self.user_data['username'] = ''

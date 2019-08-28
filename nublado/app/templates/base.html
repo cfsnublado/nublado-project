@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 {% load staticfiles %}
-{% load i18n %}
 {% load core_extras %}
-{% load profile_image_tags %}
+{% load i18n %}
 
 <html lang="en">
 
@@ -20,293 +19,198 @@
 {% block stylesheets %}
 
 <link rel="stylesheet" href="{% static 'css/app.css' %}" />
-<link rel="stylesheet" href="{% static 'css/all.css' %}" />
-
-<style>
-.vocab-context-text {
-  font-size: 20px;
-}
-</style>
+<link rel="stylesheet" href="{% static 'css/fontawesome-all.css' %}" />
 
 {% endblock stylesheets %}
 
+{% block styles %}
+<style>
+</style>
+{% endblock styles %}
+
 </head>
 
-<body class="{% block body_classes %}theme-white{% endblock body_classes %}">
+<body class="{% block body_classes %}theme-cloudy{% endblock body_classes %}" style="min-height: 100vh;">
 
 <div id="app-container">
 
-{% block top_navbar %}
+{% block navbar %}
+<nav class="navbar is-bordered" role="navigation" aria-label="main navigation">
 
-<div class="top-navbar">
+<div class="navbar-brand">
 
-{% block top_navbar_content %}
-
-{% block top_navbar_content_left %}
-
-<div class="navbar-content">
-
-<div class="navbar-btn">
-<a href="" id="sidebar-nav-btn" class="sidebar-nav-btn" @click.prevent="toggleSidebar">
-<i class="fas fa-bars"></i>
+<a 
+role="button" 
+class="sidebar-trigger" 
+aria-label="navbar-sidebar-trigger" 
+@click.prevent="toggleSidebar"
+>
+<span></span>
+<span></span>
+<span></span>
 </a>
-</div>
 
-<div class="logo">
-<a href="{% url 'app:home' %}">
-<img src="{% static 'images/nublado-logo-sm.png' %}" alt="logo">
+<a class="navbar-item navbar-logo" href="{% url 'app:home' %}">
+<img src="{% static 'images/nublado-logo-sm.png' %}" alt="nublado-logo">
 </a>
-</div>
 
 </div>
 
-{% endblock top_navbar_content_left %}
+<div 
+id="navbar-menu" 
+class="navbar-menu"
+ref="navbarMenu"
+>
 
-<div class="navbar-content">
+<div class="navbar-end">
 
-{% block top_navbar_content_right %}
+{% include 'includes/_user_nav.html' %}
 
-{% if not user.is_authenticated %}
+</div><!-- navbar-end -->
 
-  <a href="{% url_set_param 'security:login' next=request.path %}" class="navbar-link nav-link login-link">
-  {% trans "label_login" %}
-  </a>
+</div><!-- navbar-menu -->
 
-{% else %}
+</nav><!-- navbar -->
 
-  <dropdown 
-  id="navbar-user-dropdown" 
-  container-classes="navbar-user user-toggle"
-  dropdown-classes="dropdown-right"
-  >
+{% endblock navbar %}
 
-  <template slot="trigger-content">
-    <div class="navbar-user-icon">
-    {% profile_image user 40 'circle' %}
-    <span class="navbar-username">{{ user.username }}</span>
-    </div>
-  </template>
-
-  <template slot="dropdown-content">
-
-  {% block navbar_menu_items %}
-
-  {% include "includes/_user_menu_items.html" %}
-
-  {% endblock navbar_menu_items %}
-
-  </template>
-
-  </dropdown>
-
-{% endif %}
-
-{% endblock top_navbar_content_right %}
-
-</div><!-- navbar-content -->
-
-{% endblock top_navbar_content %}
-
-</div>
-
-{% endblock top_navbar %}
-
-{# SIDEBAR_NAV #}
-
-{% block sidebar_nav %}
-
-<!-- sidebar -->
-<div id="sidebar-nav-background" class="sidebar-nav-background" @click="toggleSidebar(false)"></div>
+{% block sidebar %}
+<div id="sidebar-background" class="sidebar-background" @click="toggleSidebar(false)"></div>
 
 <div
-id="sidebar-nav"
-class="{% block sidebar_nav_classes %}sidebar-nav{% endblock sidebar_nav_classes %}"
-ref="sidebarNav"
+id="sidebar"
+class="sidebar"
+ref="sidebar"
 >
-<div class="sidebar-nav-container-outer">
-<div class="sidebar-nav-container-inner">
+<div class="sidebar-container">
 
-{% block sidebar_nav_top %}
+<div class="sidebar-navbar">
 
-<div class="sidebar-nav-navbar-top">
-
-<div class="navbar-btn">
-<a href="" id="sidebar-nav-btn-b" class="sidebar-nav-btn" @click.prevent="toggleSidebar(false)">
-<i class="fas fa-bars"></i>
+<a 
+role="button" 
+class="sidebar-trigger" 
+aria-label="sidebar-trigger" 
+@click.prevent="toggleSidebar"
+>
+<span></span>
+<span></span>
+<span></span>
 </a>
-</div>
 
-<div class="logo">
-<a href="{% url 'app:home' %}">
-<img src="{% static 'images/nublado-logo-sm.png' %}" alt="logo">
+<a class="navbar-item navbar-logo" href="{% url 'app:home' %}">
+<img src="{% static 'images/nublado-logo-sm.png' %}" alt="nublado-logo">
 </a>
-</div>
 
 </div>
 
-{% endblock sidebar_nav_top %}
-
-<div class="sidebar-nav-body">
-
-<ul class="sidebar-nav-list">
-
-{% block sidebar_nav_items_top %}{% endblock sidebar_nav_items_top %}
+<div class="sidebar-body">
 
 {% block sidebar_nav_items %}
 
-<li class="nav-list-header">
-<span> {% trans "label_main" %} </span>
-</li>
+<div class="menu">
 
-<li class="nav-item">
-<a
-id="sidebar-nav-vocab-entries" 
-class="nav-link {% block vocab_entries_link_active %}{% endblock vocab_entries_link_active %}" 
-href="{% url 'vocab:vocab_entries' %}">
-<i class="nav-link-icon fas fa-language fa-fw"></i>
-{% trans "label_vocabulary" %}
+<p class="menu-label">
+{% trans 'label_general' %}
+</p>
+
+<ul class="menu-list">
+<li>
+<a 
+class="{% block home_link_active %}{% endblock home_link_active %}"
+href="{% url 'app:home' %}"
+>
+<i class="fas fa-fw fa-home menu-icon"></i> {% trans 'label_home' %}
 </a>
 </li>
-
-<li class="nav-item">
-<a
-id="sidebar-nav-vocab-sources" 
-class="nav-link {% block vocab_sources_link_active %}{% endblock vocab_sources_link_active %}" 
-href="{% url 'vocab:vocab_sources' %}">
-<i class="nav-link-icon fas fa-book fa-fw"></i>
-{% trans "label_sources" %}
+<li>
+<a 
+class="{% block sources_link_active %}{% endblock sources_link_active %}"
+href="{% url 'vocab:vocab_sources' %}"
+>
+<i class="fas fa-fw fa-project-diagram menu-icon"></i> {% trans 'label_sources' %}
 </a>
 </li>
+</ul>
 
-{% if user.is_admin %}
+{% if user.is_authenticated and not request.session_obj %}
 
-  <li class="divider"></li>
-
-  <li class="nav-item">
-
-  <a
-  id="sidebar-nav-vocab-entry-create" 
-  class="nav-link {% block vocab_entry_create_link_active %}{% endblock vocab_entry_create_link_active %}" 
-  href="{% url 'vocab:vocab_entry_create' %}"
-  >
-  <i class="nav-link-icon fas fa-plus fa-fw"></i>
-  {% trans "label_new_vocab_entry" %}
-  </a>
-
-  </li>
-
-  <li class="nav-item">
-
-  <a
-  id="sidebar-nav-vocab-source-create" 
-  class="nav-link {% block vocab_source_create_link_active %}{% endblock vocab_source_create_link_active %}" 
+  <ul class="menu-list">
+  <li>
+  <a 
+  class="{% block source_create_link_active %}{% endblock source_create_link_active %}"
   href="{% url 'vocab:vocab_source_create' %}"
   >
-  <i class="nav-link-icon fas fa-plus fa-fw"></i>
-  {% trans "label_new_vocab_source" %}
+  <i class="fas fa-fw fa-plus menu-icon"></i> {% trans 'label_new_source' %}
   </a>
-
   </li>
+  </ul>
 
 {% endif %}
 
+</div>
+
 {% endblock sidebar_nav_items %}
 
-{% block sidebar_nav_items_bottom %}{% endblock sidebar_nav_items_bottom %}
+</div><!-- end sidebar-body -->
 
-</ul><!-- sidebar-nav-list -->
+<div class="sidebar-footer">
 
-</div><!-- sidebar-nav-body -->
+<dropdown
+id="sidebar-language-selector"
+dropdown-classes="is-up"
+>
 
-{% block sidebar_nav_footer %}
-
-<div class="sidebar-nav-footer">
-
-<div class="footer-content">
-
-{% block sidebar_language_changer %}
-
-<dropdown 
-id="sidebar-nav-language-menu" 
-trigger-classes="ui mini icon button" 
-v-bind:dropup="true">
-
-<template slot="trigger-content">
-{% trans "label_language" %}: {{ LANGUAGE_CODE|upper }}
+<template slot="dropdown-label">
+{% trans 'label_language' %}: {{ LANGUAGE_CODE|upper }}
 </template>
 
 <template slot="dropdown-content">
-
-<ul>
-
 {% get_language_info_list for LANGUAGES as languages %}
 
 {% for language in languages %}
 
-  <li>
-  <a id="sidebar-{{ language.code }}" href="{% change_language language.code %}">
+  <a id="sidebar-{{ language.code }}" class="dropdown-item" href="{% change_language language.code %}">
   {{ language.name_translated }}
   </a>
-  </li>
 
 {% endfor %}
-
-</ul>
-
 </template>
 
 </dropdown>
 
-{% endblock sidebar_language_changer %}
+</div><!-- end sidebar-footer -->
 
 </div>
+</div><!-- end sidebar -->
+{% endblock sidebar %}
 
-</div><!--sidebar-nav-footer -->
-
-{% endblock sidebar_nav_footer %}
-
-</div>
-</div>
-</div><!-- sidebar-nav -->
-
-{% endblock sidebar_nav %}
-
-<div 
-id="content-container" 
-class="{% block container_classes %}topnav-container{% endblock container_classes %}"
->
-
-{% block body %}
-
-{% block messages %}
+{% block top_messages %}
 
 <div id="messages">
 {% include "includes/_messages.html" %}
 </div><!-- messages -->
 
-{% endblock messages %}
+{% endblock top_messages %}
+
+{% block presentation %}{% endblock presentation %}
+
+<section class="section {% block main_section_classes %}main-content{% endblock main_section_classes %}">
+<div class="columns">
+<div class="column is-10 is-offset-1">
 
 {% block content_top %}{% endblock content_top %}
-
-<div id="main-content" class="main-content container">
 
 {% block content %}{% endblock content %}
 
 </div>
+</div>
+</section>
 
-{% endblock body %}
+{% block page_footer %}{% endblock page_footer %}
 
 {% block modal_content %}{% endblock modal_content %}
 
-</div><!-- main -->
-
-{% block page_footer %}
-
-{% include "includes/_page_footer.html" %}
-
-{% endblock page_footer %}
-
-</div>
+</div><!-- app-container -->
 
 <script>
 {# Block reserved for JavaScript variables whose values come from backend Python content #}
@@ -320,29 +224,20 @@ var appSessionUrl = "{% url 'app:app_session' %}";
 {% endblock python_to_javascript %}
 </script>
 
-{% block scripts_bottom %}
+{% block scripts %}
 
-<script src="{% url 'core:js_settings' %}"></script>
-<script src="{% static 'js/mark/mark.min.js' %}"></script>
 <script src="{% static 'js/showdown.min.js' %}"></script>
-<script src="{% static 'js/he.js' %}"></script>
-<script src="{% static 'js/lodash.min.js' %}"></script>
-
-{% endblock scripts_bottom %}
-
-{% block scripts_vue %}
-
-<script src="{% static 'js/vue.js' %}"></script>
 <script src="{% static 'js/axios.min.js' %}"></script>
 <script src="{% static 'js/ajax.js' %}"></script>
+<script src="{% static 'js/vue.js' %}"></script>
 <script src="{% static 'js/vue/plugins/modal.js' %}"></script>
 <script src="{% static 'js/vue/core-components.js' %}"></script>
 <script src="{% static 'js/vue/app-components.js' %}"></script>
-<script src="{% static 'js/vue/vocab-components.js' %}"></script>
+<!-- <script src="{% static 'js/vue/vocab-components.js' %}"></script> -->
 <script src="{% static 'js/vue/directives/vue-scrollto.js' %}"></script>
 <script src="{% static 'js/vue/app.js' %}"></script>
 
-{% endblock scripts_vue %}
+{% endblock scripts %}
 
 </body>
 </html>

@@ -1,0 +1,66 @@
+{% load i18n %}
+{% load core_extras %}
+{% load profile_image_tags %}
+
+{% if not user.is_authenticated %}
+
+  <a href="{% url_set_param 'security:login' next=request.path %}" class="navbar-item">
+  {% trans "label_login" %}
+  </a>
+
+{% else %}
+
+  <navbar-dropdown 
+  id="navbar-user-dropdown"
+  dropdown-classes="user-menu"
+  >
+
+  <template slot="dropdown-label">
+    {% profile_image user 40 'circle' %}
+    <span class="navbar-username" style="margin-left: 10px;">{{ user.username }}</span>
+  </template>
+
+  <template slot="dropdown-content">
+
+  {% block navbar_menu_items %}
+
+    <a class="navbar-item" href="{% url 'app:home' %}">
+
+    <span class="user-menu-icon">
+    <i class="fas fa-home fa-fw"></i>
+    </span>
+
+    {% trans "label_home" %}
+
+    </a>
+
+    <hr class="navbar-divider">
+
+    <a id="nav-menu-profile" class="navbar-item" href="{% url 'users:profile_update' user.username %}">
+
+    <span class="user-menu-icon">
+    <i class="fas fa-user-circle fa-fw"></i>
+    </span>
+
+    {% trans "label_profile" %}
+
+    </a>
+
+    <hr class="navbar-divider">
+
+    <a class="navbar-item logout-link" href="{% url 'security:logout' %}">
+
+    <span class="user-menu-icon">
+    <i class="fas fa-sign-out-alt fa-fw"></i>
+    </span>
+
+    {% trans "label_logout" %}
+
+    </a>
+  {% endblock navbar_menu_items %}
+
+  </template>
+
+  </navbar-dropdown>
+
+{% endif %}

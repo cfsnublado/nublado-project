@@ -1,35 +1,30 @@
-{% extends "includes/_modal_base.html" %}
+{% extends 'includes/_modal.html' %}
 {% load i18n %}
 
-{% block modal_body %}
-
-<h3 class="text-center">
-{% block modal_header_text %}{% endblock modal_header_text %}
-</h3>
-
-{% endblock modal_body %}
+{% block modal_classes %}confirmation-modal{% endblock modal_classes %}
 
 {% block modal_footer %}
 
-<div class="text-center">
+<span class="confirmation-buttons">
+
 <a 
 href="#"
 id="{% block cancel_id %}{% endblock cancel_id %}"
-class="ui tiny basic button"
+class="button"
 @click.prevent="close"
 >
-{% trans "label_no" %}
+{% trans 'label_no' %}
 </a>
 
 <button
 id="{% block ok_id %}{% endblock ok_id %}" 
-class="ui tiny red button"
+class="button is-danger"
 @click.prevent="confirm"
 >
-{% trans "label_yes" %}
+{% trans 'label_yes' %}
 </button>
 
-</div>
+</span>
 
 {% endblock modal_footer %}
 

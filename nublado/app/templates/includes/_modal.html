@@ -1,10 +1,10 @@
 {% load core_extras %}
 
-{% if not modal_id %}{% alias "modal" as modal_id %}{% endif %}
+{% if not modal_id %}{% alias 'modal' as modal_id %}{% endif %}
 
-{% if not modal_name %}{% alias "modal" as modal_name %}{% endif %}
+{% if not modal_name %}{% alias 'modal' as modal_name %}{% endif %}
 
-{% if not modal_trigger %}{% alias "showModal" as modal_trigger %}{% endif %}
+{% if not modal_trigger %}{% alias 'showModal' as modal_trigger %}{% endif %}
 
 <{{ modal_name }} 
 {% block modal_extra %}{% endblock modal_extra %} 
@@ -16,16 +16,16 @@ init-id="{{ modal_id }}"
 <transition name="fade-transition" v-on:after-enter="isOpen = true" v-on:after-leave="isOpen = false">
 
 <div 
-class="modal-backdrop" 
-v-show="isOpen" 
-@click="close"
->
-
-<div 
 id="{{ modal_id }}"
-class="modal" 
+class="modal {% block modal_classes %}{% endblock modal_classes %}"
+v-bind:class="[{ 'is-active': isOpen }]"
 @click.stop
 >
+
+<div class="modal-background" @click="close"></div>
+
+<div class="modal-content">
+<div class="box">
 
 {% block modal_content %}
 
@@ -49,6 +49,7 @@ class="modal"
 
 {% endblock modal_content %}
 
+</div>
 </div>
 
 </div>

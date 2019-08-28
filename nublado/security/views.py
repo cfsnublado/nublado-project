@@ -18,12 +18,14 @@ class LoginView(FormView):
     '''
     form_class = LoginForm
     redirect_field_name = REDIRECT_FIELD_NAME
+    redirect_next_url = None
     template_name = 'security/login.html'
 
     @method_decorator(sensitive_post_parameters('password'))
     @method_decorator(csrf_protect)
     @method_decorator(never_cache)
     def dispatch(self, request, *args, **kwargs):
+        self.redirect_next_url = request.GET.get(self.redirect_field_name, '')
         # If user already logged in, redirect.
         if request.user.is_authenticated:
             return HttpResponseRedirect(reverse(settings.LOGIN_REDIRECT_URL))

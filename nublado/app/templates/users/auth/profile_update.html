@@ -1,38 +1,28 @@
-{% extends "users/auth/user_base.html" %}
+{% extends "users/user_base.html" %}
 {% load staticfiles %}
 {% load i18n %}
 {% load widget_tweaks %}
 {% load profile_image_tags %}
 
 {% block title %}
-
 {% trans "page_edit_profile_title" %}
-
 {% endblock title %}
 
 {% block profile_edit_link_active %} active {% endblock profile_edit_link_active %}
 
-{% block stylesheets %}
-
-<link rel="stylesheet" href="{% static 'croppie/croppie.css' %}" />
-{{ block.super }}
-
-{% endblock stylesheets %}
-
-{% block page_header %}
-<div class="row justify-content-md-center">
-<div class="col-md-10">
-<div class="page-header">
-{% trans "label_edit_profile" %}
-</div>
-</div>
-</div>
-{% endblock page_header %}
-
 {% block content %}
 
-<div class="row justify-content-md-center">
-<div class="col-md-10">
+{% if gravatar_img %}
+
+  {% profile_image user 100 "circle" %}
+
+  <div>
+  <a href="{{ gravatar_change_url }}" id="gravatar-image-link" target="_blank">
+  {% trans "label_gravatar_change" %}
+  </a>
+  </div>
+
+{% endif %}
 
 <form id="profile-update-form" method="post" action="{% url 'users:profile_update' user_profile.username %}" novalidate>
 
@@ -42,13 +32,16 @@
 {{ form.non_field_errors }}
 </div>
 
-<div class="form-subheader">{% trans "header_name" %}</div>
+<div class="field">
 
-<div>
+<label class="label" for="id_user-first_name">
+{{ form.user.first_name.label }}
+</label>
 
-{{ form.user.first_name.label_tag }}
+<div class="control">
 {% trans "placeholder_first_name" as placeholder_first_name %}
-{% render_field form.user.first_name class+="form-control" placeholder+=placeholder_first_name %}
+{% render_field form.user.first_name class+="input" placeholder+=placeholder_first_name %}
+</div>
 
 <div id="{{ form.user.first_name.auto_id }}-errors" class="errors">
 {{ form.user.first_name.errors }}
@@ -56,11 +49,16 @@
 
 </div>
 
-<div>
+<div class="field">
 
-{{ form.user.last_name.label_tag }}
+<label class="label" for="id_user-last_name">
+{{ form.user.last_name.label }}
+</label>
+
+<div class="control">
 {% trans "placeholder_last_name" as placeholder_last_name %}
-{% render_field form.user.last_name class+="form-control" placeholder+=placeholder_last_name %}
+{% render_field form.user.last_name class+="input" placeholder+=placeholder_last_name %}
+</div>
 
 <div id="{{ form.user.last_name.auto_id }}-errors" class="errors">
 {{ form.user.last_name.errors }}
@@ -68,15 +66,16 @@
 
 </div>
 
-<hr>
+<div class="field">
 
-<div class="form-subheader">{% trans "header_contact_info" %}</div>
+<label class="label" for="id_user-email">
+{{ form.user.email.label }}
+</label>
 
-<div>
-
-{{ form.user.email.label_tag }}
+<div class="control">
 {% trans "placeholder_email" as placeholder_email %}
-{% render_field form.user.email class+="form-control" placeholder+=placeholder_email %}
+{% render_field form.user.email class+="input" placeholder+=placeholder_email %}
+</div>
 
 <div id="{{ form.user.email.auto_id }}-errors" class="errors">
 {{ form.user.email.errors }}
@@ -84,46 +83,31 @@
 
 </div>
 
-<hr>
+<div class="field">
 
-<div class="form-subheader">{% trans "header_profile_image" %}</div>
+<label class="label" for="id_profile-about">
+{{ form.profile.about.label }}
+</label>
 
-<div style="margin-bottom: 10px;">
-
-{% if gravatar_img %}
-
-{% profile_image user 100 "circle" %}
-<div>
-<a href="{{ gravatar_change_url }}" id="gravatar-image-link" target="_blank">{% trans "link_gravatar_change" %}</a>
-</div>
-
-{% endif %}
-
-</div>
-
-<hr>
-
-<div class="form-subheader">{% trans "header_about_yourself" %}</div>
-
-<div>
-
+<div class="control">
 {% trans "placeholder_profile_about" as placeholder_about %}
-{% render_field form.profile.about class+="form-control" placeholder+=placeholder_about rows=3 %}
+{% render_field form.profile.about class+="textarea" placeholder+=placeholder_about rows=3 %}
+</div>
+
 {{ form.profile.about.errors }}
 
 </div>
 
 </form>
 
-<hr>
-
-<div>
-<button id="profile-update-submit-btn" class="ui small button" type="submit" form="profile-update-form">
+<button 
+id="profile-update-submit-btn" 
+class="button is-primary" 
+type="submit" 
+form="profile-update-form"
+style="margin-top: 20px;"
+>
 {% trans "label_update" %}
 </button>
-</div>
-
-</div>
-</div>
 
 {% endblock content %}

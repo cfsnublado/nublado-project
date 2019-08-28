@@ -141,10 +141,9 @@ class UserViewSetCreateTest(TestCommon):
             format='json'
         )
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
-        self.assertEqual(response.data['email'], [_('validation_field_required')])
-        self.assertEqual(response.data['first_name'], [_('validation_field_required')])
-        self.assertEqual(response.data['last_name'], [_('validation_field_required')])
-        self.assertEqual(response.data['password'], [_('validation_field_required')])
+        self.assertEqual(str(response.data['first_name'][0]), _('validation_field_required'))
+        self.assertEqual(str(response.data['last_name'][0]), _('validation_field_required'))
+        self.assertEqual(str(response.data['password'][0]), _('validation_field_required'))
 
 
 class UserViewSetUpdateTest(TestCommon):

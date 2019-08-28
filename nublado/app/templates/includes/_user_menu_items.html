@@ -1,28 +1,35 @@
-{% load staticfiles %}
 {% load i18n %}
 
-<ul>
+<a class="navbar-item" href="{% url 'app:home' %}">
 
-<li>
-<a href="{% url 'vocab:vocab_user_dashboard' %}"><i class="fas fa-tachometer-alt fa-fw"></i>
-{% trans "label_dashboard" %}
+<span class="user-menu-icon">
+<i class="fas fa-home fa-fw"></i>
+</span>
+
+{% trans "label_home" %}
+
 </a>
-</li>
 
-<li class="divider"></li>
+<hr class="navbar-divider">
 
-<li>
-<a id="nav-menu-profile" href="{% url 'users:profile_update' user.username %}">
-<i class="nav-link-icon fas fa-user-circle fa-fw"></i>
-{% trans "label_profile" %}</a>
-</li>
+<a id="nav-menu-profile" class="navbar-item" href="{% url 'users:profile_update' user.username %}">
 
-<li class="divider"></li>
+<span class="user-menu-icon">
+<i class="fas fa-user-circle fa-fw"></i>
+</span>
 
-<li>
-<a class="logout-link" href="{% url 'security:logout' %}"><i class="fas fa-sign-out-alt fa-fw"></i>
+{% trans "label_profile" %}
+
+</a>
+
+<hr class="navbar-divider">
+
+<a class="navbar-item logout-link" href="{% url 'security:logout' %}">
+
+<span class="user-menu-icon">
+<i class="fas fa-sign-out-alt fa-fw"></i>
+</span>
+
 {% trans "label_logout" %}
-</a>
-</li>
 
-</ul>
+</a>

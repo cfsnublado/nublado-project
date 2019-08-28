@@ -1,78 +1,73 @@
 {% extends "base.html" %}
 {% load i18n %}
-{% load staticfiles %}
 
-{% block title %}{% trans "page_home_title" %}{% endblock title %}
+{% block title %}
 
-{% block container_classes %}topnav-container{% endblock container_classes %}
+{% trans "page_home_title" %}
 
-{% block content_top %}
+{% endblock title %}
 
+{% block home_link_active %}is-active{% endblock home_link_active %}
+
+{% block presentation %}
 <section id="intro" class="parallax-block intro">
 
-<div class="text-center">
+<div class="columns">
+<div class="column">
 
-<h1> {{ project_name }} </h1>
+<div class="parallax-body">
 
-<h3>
-{% trans "header_project_tagline" %}
-</h3>
+<h1 class="is-size-1 is-size-2-mobile"> {{ project_name }} </h1>
 
-<a 
-href="{% url 'vocab:vocab_entries' %}" 
-class="ui huge inverted blue basic icon button" 
-style="margin-top: 30px;"
->
-<i class="fas fa-search fa-fw"></i>
-{% trans "label_search_vocabulary" %}
-</a>
+<h2 class="is-size-3 is-size-4-mobile">
+{% trans 'msg_project_banner_desc' %}
+</h2>
+
+</div>
+
+</div>
+</div>
 
 </section>
-
-{% endblock content_top %}
+{% endblock presentation %}
 
 {% block content %}
 
-<section id="description-blocks">
+<div class="icon-blocks">
 
-<div class="row">
-<div class="col-sm text-center">
+<h2 class="icon-blocks-header">{% trans 'msg_nublado_at_a_glance' %}</h2>
 
-<h2 class="section-header">{% trans "header_project_features" %}</h2>
+<div class="columns is-multiline">
 
-</div>
-</div>
-
-<div class="row">
-
-<div class="col-sm icon-block">
+<div class="column is-6 icon-block">
 
 <header class="icon-block-header">
 <i class="fas fa-language icon-block-icon"></i>
-<h3>{% trans "label_vocab_tag_desc" %}</h3>
+<h3>A Feature</h3>
 </header>
 
 <p>
-{% trans "text_vocab_tag_desc" %}
+A description of the feature.
 </p>
 
 </div>
 
-<div class="col-sm icon-block">
+<div class="column is-6 icon-block">
+
+<i class="fab fa-python icon-block-icon"></i>
 
 <header class="icon-block-header">
-<i class="fab fa-python icon-block-icon"></i>
-<h3>{% trans "label_django_cool" %}</h3>
+<h3>Another Feature</h3>
 </header>
 
 <p>
-{% trans "text_developed_in_django" %}
+A description of the feature.
 </p>
 
 </div>
 
 </div>
 
-</section>
-
+</div>
 {% endblock content %}
+

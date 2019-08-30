@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 {% load staticfiles %}
-{% load i18n %}
 {% load core_extras %}
-{% load profile_image_tags %}
+{% load i18n %}
 
 <html lang="en">
 
@@ -28,7 +27,6 @@
 }
 
 .response-error-text {
-  margin-top: 10px;
   font-size: 22px;
 }
 </style>
@@ -37,12 +35,14 @@
 
 </head>
 
-<body class="{% block body_classes %}theme-white{% endblock body_classes %}">
+<body class="{% block body_classes %}theme-cloudy{% endblock body_classes %}">
 
 {% block body %}
 
-<div class="flex-center-container">
+<div class="centerall">
+<div class="columns is-multiline is-centered">
 {% block content %}{% endblock content %}
+</div>
 </div>
 
 {% endblock body %}

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-26 20:06-0700\n"
+"POT-Creation-Date: 2019-08-28 11:31-0700\n"
 "PO-Revision-Date: 2018-11-28 21:15-0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -87,7 +87,7 @@ msgid "validation_user_name_characters"
 msgstr ""
 
 #: nublado/core/validation.py:22 nublado/users/forms.py:25
-#: nublado/users/forms.py:106 nublado/users/tests/test_api.py:194
+#: nublado/users/forms.py:106 nublado/users/tests/test_api.py:193
 #: nublado/users/tests/test_forms.py:37 nublado/users/tests/test_models.py:136
 #: nublado/users/tests/test_serializers.py:190
 msgid "validation_email_format"
@@ -123,7 +123,7 @@ msgstr "Success"
 msgid "message_error"
 msgstr "Error"
 
-#: nublado/security/forms.py:8 nublado/users/models.py:35
+#: nublado/security/forms.py:8 nublado/users/models.py:20
 msgid "label_username"
 msgstr ""
 
@@ -136,14 +136,14 @@ msgstr ""
 #: nublado/users/forms.py:31 nublado/users/forms.py:49
 #: nublado/users/forms.py:83 nublado/users/forms.py:105
 #: nublado/users/tests/test_api.py:144 nublado/users/tests/test_api.py:145
-#: nublado/users/tests/test_api.py:146 nublado/users/tests/test_api.py:147
-#: nublado/users/tests/test_forms.py:33 nublado/users/tests/test_forms.py:87
-#: nublado/users/tests/test_forms.py:153 nublado/users/tests/test_forms.py:154
-#: nublado/users/tests/test_forms.py:227 nublado/users/tests/test_forms.py:237
-#: nublado/users/tests/test_forms.py:317 nublado/users/tests/test_forms.py:339
-#: nublado/users/tests/test_views.py:120 nublado/users/tests/test_views.py:296
-#: nublado/users/tests/test_views.py:503 nublado/vocab/forms.py:23
-#: nublado/vocab/forms.py:43 nublado/vocab/forms.py:55
+#: nublado/users/tests/test_api.py:146 nublado/users/tests/test_forms.py:33
+#: nublado/users/tests/test_forms.py:87 nublado/users/tests/test_forms.py:153
+#: nublado/users/tests/test_forms.py:154 nublado/users/tests/test_forms.py:227
+#: nublado/users/tests/test_forms.py:237 nublado/users/tests/test_forms.py:317
+#: nublado/users/tests/test_forms.py:339 nublado/users/tests/test_views.py:120
+#: nublado/users/tests/test_views.py:296 nublado/users/tests/test_views.py:503
+#: nublado/vocab/forms.py:23 nublado/vocab/forms.py:43
+#: nublado/vocab/forms.py:55
 #: nublado/vocab/tests/test_views_vocab_entry_auth.py:145
 #: nublado/vocab/tests/test_views_vocab_source_auth.py:188
 msgid "validation_field_required"
@@ -172,7 +172,7 @@ msgstr ""
 msgid "validation_username_unique"
 msgstr ""
 
-#: nublado/users/forms.py:24 nublado/users/models.py:45
+#: nublado/users/forms.py:24 nublado/users/models.py:30
 #: nublado/users/tests/test_models.py:123
 msgid "validation_email_unique"
 msgstr ""
@@ -181,7 +181,7 @@ msgstr ""
 msgid "label_password_confirm"
 msgstr ""
 
-#: nublado/users/forms.py:74 nublado/users/serializers.py:71
+#: nublado/users/forms.py:74 nublado/users/serializers.py:75
 #: nublado/users/tests/test_forms.py:101 nublado/users/tests/test_forms.py:168
 #: nublado/users/tests/test_serializers.py:148
 msgid "validation_password_match"
@@ -205,7 +205,7 @@ msgstr "Confirm new password"
 msgid "validation_password_invalid"
 msgstr "Invalid login"
 
-#: nublado/users/forms.py:101 nublado/users/models.py:41
+#: nublado/users/forms.py:101 nublado/users/models.py:26
 msgid "label_email"
 msgstr "Email"
 
@@ -217,43 +217,38 @@ msgstr ""
 msgid "validation_email_required"
 msgstr ""
 
-#: nublado/users/models.py:48
+#: nublado/users/models.py:33
 msgid "label_first_name"
 msgstr "First name"
 
-#: nublado/users/models.py:53
+#: nublado/users/models.py:38
 msgid "label_last_name"
 msgstr "Last name"
 
-#: nublado/users/models.py:58
+#: nublado/users/models.py:43
 msgid "label_is_active"
 msgstr ""
 
-#: nublado/users/models.py:62
+#: nublado/users/models.py:47
 msgid "label_is_admin"
 msgstr ""
 
-#: nublado/users/models.py:100
+#: nublado/users/models.py:85
 msgid "label_user"
 msgstr "User"
 
-#: nublado/users/models.py:103
+#: nublado/users/models.py:88
 msgid "label_profile_about"
 msgstr ""
 
-#: nublado/users/models.py:112
+#: nublado/users/models.py:97
 #: nublado/app/templates/includes/_user_menu_items.html:21
 #: nublado/app/templates/includes/_user_nav.html:45
 msgid "label_profile"
 msgstr "Profile"
 
-#: nublado/users/models.py:113
+#: nublado/users/models.py:98
 msgid "label_profile_plural"
-msgstr ""
-
-#: nublado/users/tests/test_forms.py:97 nublado/users/tests/test_forms.py:164
-#: nublado/users/tests/test_serializers.py:160
-msgid "validation_password_min_length 8"
 msgstr ""
 
 #: nublado/users/tests/test_serializers.py:178
@@ -263,7 +258,9 @@ msgid "validation_username_min_length 3"
 msgstr "Invalid login"
 
 #: nublado/users/views.py:38
-msgid "message_user_password_reset_request_confirmation"
+#, fuzzy
+#| msgid "message_user_password_reset_request_confirmation"
+msgid "msg_password_reset_request_confirmation"
 msgstr "Thank you. An email has been sent to reset your password."
 
 #: nublado/users/views.py:70
@@ -456,14 +453,28 @@ msgid "page_home_title"
 msgstr "Home"
 
 #: nublado/app/templates/home.html:23
-#, fuzzy
-#| msgid "msg_no_projects"
 msgid "msg_project_banner_desc"
-msgstr "There are no projects."
+msgstr "A tool for jotting down context-based vocabulary"
 
 #: nublado/app/templates/home.html:38
-msgid "msg_lectura_at_a_glance"
-msgstr ""
+msgid "msg_nublado_at_a_glance"
+msgstr "Nublado at a glance"
+
+#: nublado/app/templates/home.html:46
+msgid "msg_bilingual"
+msgstr "Bilingual"
+
+#: nublado/app/templates/home.html:50
+msgid "msg_bilingual_desc"
+msgstr "Jot down and tag vocabulary in English and Spanish."
+
+#: nublado/app/templates/home.html:60
+msgid "msg_python_cool"
+msgstr "cool.py"
+
+#: nublado/app/templates/home.html:64
+msgid "msg_python_cool_desc"
+msgstr "This project is developed with the Django framework."
 
 #: nublado/app/templates/includes/_confirmation_modal.html:16
 #: nublado/app/templates/vocab/auth/vocab_context_delete_confirm.html:36
@@ -483,7 +494,7 @@ msgid "label_logout"
 msgstr "Log out"
 
 #: nublado/app/templates/includes/_user_nav.html:8
-#: nublado/app/templates/security/login.html:63
+#: nublado/app/templates/security/login.html:72
 msgid "label_login"
 msgstr "Log in"
 
@@ -495,127 +506,108 @@ msgstr "Search"
 msgid "page_login_title"
 msgstr "Log in"
 
-#: nublado/app/templates/security/login.html:47
+#: nublado/app/templates/security/login.html:41
 msgid "placeholder_username"
 msgstr "Username"
 
-#: nublado/app/templates/security/login.html:56
+#: nublado/app/templates/security/login.html:58
 msgid "placeholder_password"
 msgstr "Password"
 
-#: nublado/app/templates/security/login.html:71
-msgid "forgot_password_q"
+#: nublado/app/templates/security/login.html:80
+#: nublado/app/templates/users/password_reset_request.html:24
+#, fuzzy
+#| msgid "forgot_password_q"
+msgid "msg_forgot_password_q"
 msgstr "Forgot password?"
 
 #: nublado/app/templates/users/auth/password_reset.html:8
 msgid "page_user_password_reset_title"
 msgstr "Change user password"
 
-#: nublado/app/templates/users/auth/password_reset.html:19
-msgid "header_password_change"
-msgstr "Change password"
-
-#: nublado/app/templates/users/auth/password_reset.html:39
+#: nublado/app/templates/users/auth/password_reset.html:24
 msgid "placeholder_current_password"
 msgstr "Current password"
 
-#: nublado/app/templates/users/auth/password_reset.html:44
+#: nublado/app/templates/users/auth/password_reset.html:29
 msgid "placeholder_password1_new"
 msgstr "New password"
 
-#: nublado/app/templates/users/auth/password_reset.html:49
+#: nublado/app/templates/users/auth/password_reset.html:34
 msgid "placeholder_password2_new"
 msgstr "Confirm new password"
 
-#: nublado/app/templates/users/auth/password_reset.html:54
-#: nublado/app/templates/users/auth/user_base.html:45
-#: nublado/app/templates/users/forgot_password_reset.html:39
+#: nublado/app/templates/users/auth/password_reset.html:39
+#: nublado/app/templates/users/forgot_password_reset.html:54
 msgid "label_change_password"
 msgstr "Change password"
 
-#: nublado/app/templates/users/auth/profile_update.html:9
+#: nublado/app/templates/users/auth/profile_update.html:8
 msgid "page_edit_profile_title"
 msgstr "Edit profile"
 
-#: nublado/app/templates/users/auth/profile_update.html:26
-#: nublado/app/templates/users/auth/user_base.html:30
-msgid "label_edit_profile"
-msgstr "Edit profile"
+#: nublado/app/templates/users/auth/profile_update.html:21
+#, fuzzy
+#| msgid "link_gravatar_change"
+msgid "label_gravatar_change"
+msgstr "Edit gravatar image"
 
-#: nublado/app/templates/users/auth/profile_update.html:45
-msgid "header_name"
-msgstr "Name"
-
-#: nublado/app/templates/users/auth/profile_update.html:50
+#: nublado/app/templates/users/auth/profile_update.html:42
 msgid "placeholder_first_name"
 msgstr "First name"
 
-#: nublado/app/templates/users/auth/profile_update.html:62
+#: nublado/app/templates/users/auth/profile_update.html:59
 msgid "placeholder_last_name"
 msgstr "Last name"
 
-#: nublado/app/templates/users/auth/profile_update.html:73
-msgid "header_contact_info"
-msgstr "Contact info"
-
-#: nublado/app/templates/users/auth/profile_update.html:78
-#: nublado/app/templates/users/password_reset_request.html:55
+#: nublado/app/templates/users/auth/profile_update.html:76
+#: nublado/app/templates/users/password_reset_request.html:38
 msgid "placeholder_email"
 msgstr "Email"
 
-#: nublado/app/templates/users/auth/profile_update.html:89
-msgid "header_profile_image"
-msgstr "Profile image"
-
-#: nublado/app/templates/users/auth/profile_update.html:97
-msgid "link_gravatar_change"
-msgstr "Edit gravatar image"
-
-#: nublado/app/templates/users/auth/profile_update.html:106
-msgid "header_about_yourself"
-msgstr "About you"
-
-#: nublado/app/templates/users/auth/profile_update.html:110
+#: nublado/app/templates/users/auth/profile_update.html:93
 msgid "placeholder_profile_about"
 msgstr "Write a little about you."
 
-#: nublado/app/templates/users/auth/profile_update.html:122
+#: nublado/app/templates/users/auth/profile_update.html:110
 #: nublado/app/templates/vocab/auth/vocab_entry_update.html:65
 #: nublado/app/templates/vocab/auth/vocab_source_update.html:29
 msgid "label_update"
 msgstr "Update"
 
-#: nublado/app/templates/users/auth/user_base.html:22
-msgid "label_details"
-msgstr "Details"
+#: nublado/app/templates/users/forgot_password_reset.html:7
+#, fuzzy
+#| msgid "label_change_password"
+msgid "page_change_password_title"
+msgstr "Change password"
 
-#: nublado/app/templates/users/auth/user_base.html:37
-msgid "label_security"
-msgstr "Security"
+#: nublado/app/templates/users/forgot_password_reset.html:24
+#, fuzzy
+#| msgid "label_change_password"
+msgid "msg_change_password"
+msgstr "Change password"
 
-#: nublado/app/templates/users/forgot_password_reset.html:22
+#: nublado/app/templates/users/forgot_password_reset.html:37
 msgid "placeholder_password1"
 msgstr "Password"
 
-#: nublado/app/templates/users/forgot_password_reset.html:30
+#: nublado/app/templates/users/forgot_password_reset.html:46
 msgid "placeholder_password2"
 msgstr "Password"
 
-#: nublado/app/templates/users/password_reset_request.html:8
+#: nublado/app/templates/users/password_reset_request.html:7
 msgid "page_user_password_reset_request_title"
 msgstr "Change user password"
 
-#: nublado/app/templates/users/password_reset_request.html:33
-msgid "header_user_reset_password_request"
-msgstr "Forgot your password?"
-
-#: nublado/app/templates/users/password_reset_request.html:34
-msgid "header_user_reset_password_instructions"
+#: nublado/app/templates/users/password_reset_request.html:25
+#, fuzzy
+#| msgid "header_user_reset_password_instructions"
+msgid "msg_user_reset_password_instructions"
 msgstr ""
 "Enter your account's email and a link to reset your password will be sent to "
 "you."
 
-#: nublado/app/templates/users/password_reset_request.html:64
+#: nublado/app/templates/users/password_reset_request.html:45
 msgid "label_send_email"
 msgstr "Send email"
 
@@ -642,29 +634,11 @@ msgstr ""
 msgid "user_password_reset_request_email_subject %(username)s %(site_name)s"
 msgstr ""
 
-#: nublado/app/templates/users/user_delete_confirm.html:7
-#: nublado/app/templates/vocab/auth/vocab_context_delete_confirm.html:5
-#: nublado/app/templates/vocab/auth/vocab_entry_delete_confirm.html:5
-#: nublado/app/templates/vocab/auth/vocab_source_delete_confirm.html:5
+#: nublado/app/templates/users/profile_view.html:6
 #, fuzzy
-#| msgid "page_login_title"
-msgid "page_delete_confirm_title"
-msgstr "Login"
-
-#: nublado/app/templates/users/user_delete_confirm.html:19
-#, python-format
-msgid "confirm_user_delete %(del_object)s"
-msgstr ""
-
-#: nublado/app/templates/users/user_delete_confirm.html:25
-#: nublado/app/templates/vocab/auth/vocab_source_delete_confirm.html:32
-msgid "confirm_yes"
-msgstr ""
-
-#: nublado/app/templates/users/user_delete_confirm.html:29
-#: nublado/app/templates/vocab/auth/vocab_source_delete_confirm.html:40
-msgid "confirm_no"
-msgstr ""
+#| msgid "page_edit_profile_title"
+msgid "page_view_profile_title"
+msgstr "Edit profile"
 
 #: nublado/app/templates/vocab/auth/vocab_context_create.html:5
 msgid "page_vocab_context_create_title"
@@ -686,6 +660,14 @@ msgstr "Contexts"
 #: nublado/app/templates/vocab/auth/vocab_source_create.html:40
 msgid "label_create"
 msgstr "Create"
+
+#: nublado/app/templates/vocab/auth/vocab_context_delete_confirm.html:5
+#: nublado/app/templates/vocab/auth/vocab_entry_delete_confirm.html:5
+#: nublado/app/templates/vocab/auth/vocab_source_delete_confirm.html:5
+#, fuzzy
+#| msgid "page_login_title"
+msgid "page_delete_confirm_title"
+msgstr "Login"
 
 #: nublado/app/templates/vocab/auth/vocab_context_delete_confirm.html:25
 msgid "delete_vocab_context_q"
@@ -759,6 +741,14 @@ msgstr "Create source"
 #: nublado/app/templates/vocab/includes/_vocab_source_delete_modal.html:10
 msgid "confirm_delete_vocab_source"
 msgstr "Delete source?"
+
+#: nublado/app/templates/vocab/auth/vocab_source_delete_confirm.html:32
+msgid "confirm_yes"
+msgstr ""
+
+#: nublado/app/templates/vocab/auth/vocab_source_delete_confirm.html:40
+msgid "confirm_no"
+msgstr ""
 
 #: nublado/app/templates/vocab/auth/vocab_source_update.html:5
 msgid "page_vocab_source_edit_title"
@@ -916,6 +906,33 @@ msgstr "Sources"
 #: nublado/app/templates/vocab/vocab_sources.html:32
 msgid "label_search_sources"
 msgstr "Search sources"
+
+#~ msgid "header_password_change"
+#~ msgstr "Change password"
+
+#~ msgid "label_edit_profile"
+#~ msgstr "Edit profile"
+
+#~ msgid "header_name"
+#~ msgstr "Name"
+
+#~ msgid "header_contact_info"
+#~ msgstr "Contact info"
+
+#~ msgid "header_profile_image"
+#~ msgstr "Profile image"
+
+#~ msgid "header_about_yourself"
+#~ msgstr "About you"
+
+#~ msgid "label_details"
+#~ msgstr "Details"
+
+#~ msgid "label_security"
+#~ msgstr "Security"
+
+#~ msgid "header_user_reset_password_request"
+#~ msgstr "Forgot your password?"
 
 #~ msgid "validation_vocab_entry_unique"
 #~ msgstr "Vocab entry exists"

@@ -10085,11 +10085,13 @@ blockquote p {
   display: flex;
   width: 100%;
   height: 3.125rem;
-  background-color: #f9f9f9;
+  background-color: #444;
+  color: #eee;
+  border-top: 1px solid #dfe1e3;
   align-items: center;
   justify-content: center;
 }
-/* line 26, ../scss/cfs/_layout.scss */
+/* line 28, ../scss/cfs/_layout.scss */
 .page-footer.is-fixed {
   position: fixed;
   right: 0;
@@ -10097,9 +10099,9 @@ blockquote p {
   left: 0;
   width: auto;
 }
-/* line 35, ../scss/cfs/_layout.scss */
+/* line 37, ../scss/cfs/_layout.scss */
 .page-footer.is-bordered {
-  border-top: 1px solid #eee;
+  border-top: 1px solid #dfe1e3;
 }
 
 /* line 1, ../scss/cfs/_breadcrumb.scss */

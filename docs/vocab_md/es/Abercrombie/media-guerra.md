@@ -417,5 +417,251 @@ Rakki lo aferró por el brazo izquierdo, Soryorn por el derecho y entre los dos 
 
     </div>
 
+- odría haber sido una batalla digna de canciones, allí mismo, bajo la lluvia en los muelles de Thorlby, si Grom-gil-Gorm no hubiera llegado espantando a la enfurecida multitud como un gigantesco buey abriéndose paso entre un rebaño de cabras ruidosas.
 
+    —¡Basta! —bramó el rey de Vansterlandia—. ¿Qué ridículo picoteo de pajaritos es este?
+
+    <div markdown="1" class="tagged-entries">
+
+    es: rebaño: rebaño
+
+    es: enfurecido: enfurecida
+
+    es: abrirse paso: abriéndose paso
+
+    es: cabra: cabras
+
+    es: bramar: bramó
+
+    </div>
+
+- El alboroto remitió. Raith se quitó de encima a su hermano con una sonrisa lupina en los labios, y Espina se liberó de su marido mascullando improperios. Sin duda a Brand le esperaba una noche incómoda, pero a ojos de Raith todo había salido bastante bien. Al fin y al cabo, había ido allí a pelear y no le preocupaba demasiado contra quién.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: alboroto: alboroto
+
+    es: remitir: remitió
+
+    es: al fin y al cabo: al fin y al cabo
+
+    </div>
+
+- —Y nuestra alianza es un barco en mar revuelto —añadió el padre Yarvi, con aquella sonrisa melosa que pedía a gritos que la borraran de un cabezazo—. Si lo agujereamos con rencillas, sin duda acabaremos todos ahogados.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: revuelto: revuelto
+
+    es: añadir: añadió
+
+    es: meloso: melosa
+
+    es: borrar: borraran
+
+    es: agujerear: agujerear
+
+    es: rencilla: rencillas
+
+    </div>
+
+- Raith respondió con dureza:
+
+    —No me da ningún miedo, mi rey.
+
+    Gorm le asestó una buena bofetada. Bueno, para Gorm era una bofetada. Para Raith fue como encajar un golpe de remo. Trastabilló, pero el rey lo agarró del pecho y se lo acercó aún más.
+
+    —Lo que me duele no es que hayas intentado hacerle daño, sino que hayas fracasado. —Le soltó un revés y la boca de Raith se saló de sangre—. No quiero un perro que dé ladriditos. Quiero un perro que use los dientes. Quiero un asesino. —Y dio un tercer bofetón a Raith que lo dejó mareado—. Temo que todavía pueda quedar una pizca de piedad en ti, Raith. Aplástala antes de que te aplaste ella a ti.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: responder: respondió
+
+    es: asestar: asestó
+
+    es: bofetada: bofetada
+
+    es: encajar: encajar
+
+    es: remo: remo
+
+    es: fracasar: hayas fracasado
+
+    es: revés: revés
+
+    es: salarse: se saló
+
+    es: asesino: asesino
+
+    es: bofetón: bofetón
+
+    es: piedad: piedad
+
+    es: aplastar: aplástala, aplaste
+
+    es: pizca: pizca
+
+    </div>
+
+- Gorm rascó la cabeza de Raith a modo de despedida. Como haría un padre con su hijo. O quizá como haría un cazador con su perro de presa.
+
+    —Para mi gusto no serás nunca bastante sanguinario, muchacho. Ya lo sabes.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: rascar: rascó
+
+    es: sanquinario: sanquinario
+
+    </div>
+
+- **A SALVO**
+
+    <div markdown="1" class="tagged-entries">
+
+    es: a salvo: a salvo
+
+    </div>
+
+- El peine de hueso de ballena pulido pasaba y pasaba y pasaba sibilante por el pelo de Skara.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: peine: peine
+
+    es: ballena: ballena
+
+    es: sibilante: sibilante
+
+    </div>
+
+- —Yilling el Radiante decapitó a la madre Kyre. Hundió la espada en mi abuelo hasta el puño y lo dejó caer al hogar encendido.
+
+    La reina Laithlin levantó las cejas.
+
+    —¿Tú… viste cómo ocurría?
+
+    Las chispas saltando, el brillo en las sonrisas de los guerreros, la densa sangre goteando de la punta de la espada de Yilling. Skara tomó una trémula bocanada de aire antes de asentir con la cabeza.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: decapitar: decapitó
+
+    es: gotear: goteando
+
+    es: bocanada: bocanada
+
+    es: hundir: hundió
+
+    es: puño: puño
+
+    es: asentir: asentir
+
+    </div>
+
+- —Te han enviado conmigo, prima. —La reina dio un fuerte apretón a los hombros de Skara—. Aquí estás a salvo.
+
+    El Bosque, que había sido el escenario de toda su vida, permanente como una montaña, estaba reducido a cenizas. La alta viga frontal que había visto pasar doscientos años yacía entre las ruinas. Trovenlandia estaba descuartizada como el humo en un vendaval. Nunca más volvería a sentirse a salvo en ningún lugar.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: vendaval: vendaval
+
+    es: apretón: apretón
+
+    es: ceniza: cenizas
+
+    es: descuartizado: descuartizada
+
+    es: a salvo: a salvo
+
+    </div>
+
+- Las cejas de Jenner el Azul salieron despedidas a lo alto de su frente arrugada.
+
+    —Yilling el Radiante está respaldado por todo el poderío del Alto Rey. Cincuenta mil espadas, dicen.
+
+    —Solo media guerra se libra con espadas. —Se apretó la sien con un dedo, tan fuerte que le dolió—. La otra media se libra aquí.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: respaldado: respaldado
+
+    es: poderío: poderío
+
+    es: librarse: se libra
+
+    es: apretarse: se apretó
+
+    es: sien: sien
+
+    </div>
+
+- **POR LOS DOS**
+
+    <div markdown="1" class="tagged-entries">
+
+    es: dos: dos
+
+    </div>
+
+- Hasta ese instante Raith no se dio cuenta, a la cambiante luz de la antorcha que había pasillo abajo, de que tenía a su hermano contra la pared y estaba a punto de rajarle el cuello.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: rajar: rajarle
+
+    es: estar a punto de: estar a punto de
+
+    </div>
+
+- —No —gruñó Raith, sentándose con la espalda apoyada en la pared y rascándose las sienes—.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: sien: sienes
+
+    es: rascar: rascándose
+
+    </div>
+
+- Rakki le ofreció un odre y Raith se lo quitó de las manos y se enjuagó la boca, irritada y llena de cortes por las bofetadas de Gorm, como era habitual. Vertió agua en la palma de su mano y se frotó la cara. Tenía todo el cuerpo frío de sudor.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: enjuagarse: enjuagarse
+
+    es: bofetada: bofetadas
+
+    es: verter: vertió
+
+    </div>
+
+- Rakki lo miró desde la otra pared del pasillo, sosteniendo a su espalda el escudo de Gorm lleno de marcas de guerra, con los ojos abiertos y brillantes a la luz de la antorcha. Era curioso que pudiera tener una cara tan parecida a la de Raith pero una expresión tan distinta. A veces parecían dos bestias de proa con idéntica talla, amarradas de por vida al mismo barco pero siempre mirando en sentidos opuestos.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: orgullo: orgullo
+
+    es: de por vida: de por vida
+
+    es: sostener: sosteniendo
+
+    es: proa: proa
+
+    es: talla: talla
+
+    es: amarrado: amarradas
+
+    </div>
+
+- **MANOS DIESTRAS**
+
+    <div markdown="1" class="tagged-entries">
+
+    es: diestro: diestras
+
+    </div>
+
+- 
 

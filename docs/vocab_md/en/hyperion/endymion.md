@@ -127,5 +127,356 @@ source_type: 1
 
     </div>
 
-- 
+- I stowed the night-vision glasses in my pack. The sight ahead was beautiful and somewhat frightening—the entire eastern horizon snapping and crackling with electricity, ball lightning leaping between the hundred-meter-tall tesla trees, chain lightning rippling through the air between tesla and exploding prometheus, phoenix shrubs and random ground fires burning in a thousand places. Both Martin Silenus and A. Bettik had warned me about this, and I took the hawking mat high, accepting the risk of detection at this altitude as preferable to being caught in that electric maelstrom below.
 
+    <div markdown="1" class="tagged-entries">
+
+    en: maelstrom: maelstrom
+
+    </div>
+
+- I edged the hawking mat forward, into the cavern. Trying to remember the details of the Priest’s Tale in the old man’s _Cantos_, I could remember only that it was here—just within the labyrinth entrance—that Father Dure and the Bikura had encountered the Shrike and the cruciforms.
+
+    There was no Shrike. I was not surprised—the creature had not been sighted since the Fall of the WorldWeb 274 years ago. There were no cruciforms. Again, I was not surprised—the Pax had harvested them long ago from these cavern walls.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: shrike: shrike
+
+    en: cruciform: cruciforms
+
+    en: labyrinth: labyrinthc
+
+    </div>
+
+- That field would not protect me if the carpet took a wrong turn and smashed into a wall at this speed. Rocks flashed past. The hawking mat banked sharply to make a right turn, leveled itself in the center of the long cavern, then dived to follow a descending branch.
+
+    It was terrifying to watch. I took the night-vision glasses off, secured them in my coat pocket, gripped the edge of the leaping, lurching mat, and closed my eyes. I need not have bothered. The darkness was now absolute.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: descend: descending
+
+    en: into: into
+
+    </div>
+
+- With fifteen minutes until the opening of the Sphinx, Father Captain de Soya paces the valley floor. The storm has long since arrived, and sand fills the air in a rasping blizzard. Hundreds of Swiss Guard are deployed here along the Valley floor, but their armored CTVs, their gun emplacements, their missile batteries, their observation posts—all are invisible due to the dust storm. But de Soya knows that they would be invisible at any rate, concealed behind camouflage fields and chameleon polymer. The father-captain has to rely on his infrared to see anything in this howling storm. And even then, with his visor down and sealed, fine particles of sand make their way down his combat suit collar and up into his mouth. This day tastes of grit. His sweat leaves tiny trails of red mud, like blood from some holy stigmata, on his brow and cheeks.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: stigmata: stigmata
+
+    en: polymer: polymer
+
+    en: chameleon: chameleon
+
+    </div>
+
+- He continues walking as the chorus of amens comes in over tactical channels. Suddenly he pauses. “Commander?”
+“Yes, Father Captain.” Barnes-Avne’s voice is calm in his earphones.
+
+    “Would it screw up your perimeter if I asked for Sergeant Gregorius’s squad to join me here at the Sphinx?”
+
+    There is the briefest pause, which tells him how little the ground Commander thinks of such last-minute changes in plans. The “reception committee”—a squad of specially chosen Swiss Guard, the doctor with the sedative ready to be administered, and a medic with the living cruciform in its stasis container—are even now waiting at the foot of the Sphinx’s stairs.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: stasis: stasis
+
+    en: cruciform: cruciform
+
+    en: sedative: sedative
+
+    </div>
+
+- “Two minutes,” says Barnes-Avne. “All weapons to full hot. High-speed recorders to automatic. Medical dustoff teams stand by.”
+
+    De Soya closes his eyes to fight the vertigo of the time tides. The universe, he thinks, is truly wondrous. He is sorry that he has to sedate the child within seconds of meeting her. Those are his orders—she would sleep through the attachment of the cruciform and the fatal flight back to Pacem—and he knows that he will, in all probability, never hear the girl’s voice. He is sorry. He would like to talk to her, ask her questions about the past, about herself.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: cruciform: cruciform
+
+    en: vertigo: vertigo
+
+    en: sedate: sedate
+
+    </div>
+
+- A shadow moves within darkness. The doctor begins to step toward the form, but de Soya touches her arm. “Wait.”
+The shadow becomes a figure; the figure becomes a form; the form is a child. She is smaller than de Soya expected. Her shoulder-length hair blows in the wind.
+
+    “Aenea,” says de Soya. He had not planned on speaking to her, or calling her by name.
+
+    The girl looks up at him. He sees the dark eyes, but senses no fear there—just… anxiety? Sadness?
+
+    “Aenea, don’t worry…,” he begins, but the doctor moves forward quickly at that moment, injector raised, and the girl takes a quick step back.
+
+    It is then that Father Captain de Soya sees the second figure in the gloom. And it is then that the screaming begins.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: injector: injector
+
+    en: anxiety: anxiety
+
+    </div>
+
+- I grabbed the flashlight laser and played it on the walls. A square corridor of stone. Here, outside the containment field, the heat struck me. The tunnel must be very deep. There were no stalactites, no stalagmites, no bats, no living things… only this square-hewn cavern stretching to infinity. I played the light over the hawking mat. It seemed dead, totally inert. In my haste I might have exited the program incorrectly, wiped it. If so, I was dead. We had jinked and banked on a score of branchings so far; there was no way I would ever find my own way out.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: stalactite: stalactites
+
+    en: stalagmite: stalagmites
+
+    en: inert: inert
+
+    en: haste: haste
+
+    </div>
+
+- Father Captain de Soya sees the huge shape for an instant before it is gone, and the screaming begins. Dr. Chatkra steps toward the retreating child, blocking de Soya’s view, there is a rush of air tangible even within the wind roar all around, and the doctor’s helmeted head is rolling and bouncing past de Soya’s boots.
+
+    “Mother of God,” he whispers into his open microphone. Dr. Chatkra’s body still stands. The girl—Aenea—screams then, the sound almost lost under the howling sandstorm, and as if the force of the scream has acted upon Chatkra’s body, the corpse falls to the stone. The medic, Caf, shouts something unintelligible and lunges for the girl. Again the dark blur, more sensed than seen, and Caf’s arm is separated from the medic’s body. Aenea runs toward the stairway. De Soya lunges at the child but collides with some sort of huge, metallic statue made of barbs and razor wire. Spikes puncture his combat armor—impossible!—but he feels the blood pouring from half a dozen minor wounds.
+
+    “No!” screams the girl again. “Stop! I command you!”
+
+    <div markdown="1" class="tagged-entries">
+
+    en: tangible: tangible
+
+    en: unintelligible: unintelligible
+
+    en: lunge: lunges
+
+    </div>
+
+- All of them were dead. Their bodies, still clad in impermeable impact armor, were sprawled in the unmistakable attitudes of death. Some were grouped together, their lacerated forms looking as if a plasma bomb had exploded in their midst.
+
+    But Pax body armor could withstand a plasma grenade at that distance. These corpses had been shredded.
+
+    “Don’t look,” I called over my shoulder, slowing the mat as we banked around the south end of the Keep. It was too late. Aenea stared with wide eyes.
+
+    “Damn him!” she cried again.
+
+    “Damn who?” I asked, but at that moment we flew out over the garden area on the south end of the Keep and saw what was there. Burning scarabs and an overturned skimmer littered the landscape. More bodies lay thrown like toys scattered by a vicious child. A CPB lancet, its beams capable of reaching to low orbit, lay shattered and burning by an ornamental hedge.
+
+    The Consul’s ship hovered on a tail of blue plasma sixty meters above the central fountain. Steam billowed up and around it. A. Bettik stood at the open air-lock door and beckoned us on.
+
+    I flew us directly into the air lock, so quickly that the android had to leap aside and we actually skittered down the polished corridor.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: shred: shredded
+
+    en: scarab: scarabs
+
+    en: clad: clad
+
+    </div>
+
+- The reality of de Soya’s months in Renaissance System is literally and figuratively light-years away from the Parvati experience.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: literally: literally
+
+    en: figuratively: figuratively
+
+    </div>
+
+- “You’ve really screwed the pooch, haven’t you?” says the Commander.
+
+    De Soya smiles. So far, the Groundforce Commander is the only one to speak honestly to him. He is all too aware that he has had metaphorical carnal relations with the proverbial pooch: twice he has been in charge of a major Pax operation with a single objective—take a child into custody—and twice he has failed miserably.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: proverbial: proverbial
+
+    en: metaphorical: metaphorical
+
+    </div>
+
+- “Yes,” says de Soya, “my family emigrated back to Nuevo Madrid more than twenty standard years ago. My sisters serve the Church—Loretta as a nun on Nevermore, Melinda as a priest on Nuevo Madrid.”
+
+    <div markdown="1" class="tagged-entries">
+
+    en: emigrate: emigrated
+
+    </div>
+
+- De Soya knows that there are several thousand Pax troops in and around the spaceport. Once the girl’s ship is down, it will never be allowed to take off again. He looks at the live video: the lights of DaVinci gleam from horizon to horizon. The girl’s ship has its navigation lights on, red and green beacons flashing. The powerful landing lights flick on and stab downward through clouds.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: stab: stab
+
+    </div>
+
+- On the fifth day de Soya goes before the board. The situation is odd—de Soya still holds the papal diskey and thus is technically beyond reproach or indictment—but it is understood that Pope Julius, through Cardinal Lourdusamy, has willed this Board of Review, and de Soya, shaped to obedience through both his military and Jesuit training, complies with humility. He does not expect exoneration. In the tradition of ship captains since the Middle Ages on Old Earth, de Soya knows well that the coin of a captain’s prerogatives has two sides—almost god-like power over everyone and everything aboard one’s ship, balanced by the requirement to take total responsibility for any damage to the ship or failure of one’s mission.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: prerogative: prerogatives
+
+    </div>
+
+- “In your experience, Father Captain de Soya,” says Captain Wu, “has there been any target that one minute of fully applied CPB fire would not destroy?”
+
+    De Soya thinks for a moment. “There are targets such as orbital forest or Ouster Swarm asteroids that would not be fully destroyed by even a full minute of lancefire,” he says. “But they would have been severely damaged.”
+
+    “And the farcaster portal was not damaged?” persists Father Brown.
+
+    “Not to my knowledge,” says de Soya.
+
+    Captain Wu turns to the other board members. “We have an affidavit from Chief of Planetary Engineers Rexton Hamn that the alloy of the farcaster portal—although radiating heat for more than forty-eight hours—was not damaged by the attack.”
+
+    <div markdown="1" class="tagged-entries">
+
+    en: affidavit: affidavit
+
+    </div>
+
+- I set my hands on my knees and straightened my legs, the heels of my boots digging into the red sand. “You talk about the farcaster as if it’s an intelligent, living organism,” I said.
+
+    Aenea looked back at the arch half a klick behind us. “In a way it is,” she said. “It’s hard to explain.”
+
+    “But you’re sure that the Pax troops can’t follow us through?”
+
+    “Oh, yes. The portal will not activate for anyone else.”
+
+    My eyebrows raised a bit. “Then how did A. Bettik and I… and the ship… get through?”
+
+    Aenea smiled. “You were with me.”
+
+    I stood up. “All right, we’ll hash this out later. First, I think we need a plan. Do we reconnoiter now, or get our stuff out of the ship first?”
+
+    <div markdown="1" class="tagged-entries">
+
+    en: reconnoiter: reconnoiter
+
+    </div>
+
+- We should have let A. Bettik come up to scout instead of us,” I said.
+
+    “Why?”
+
+    “From what he said about his high-altitude scouting before,” I said, “evidently he doesn’t need to breathe air, and he’s impervious to little things like depressurization.”
+
+    <div markdown="1" class="tagged-entries">
+
+    en: impervious: impervious
+
+    </div>
+
+- “According to the Cantos,” I said, “the group of Core AIs known as the Stables wanted to keep being parasites on our human brains when we used the Web. The Volatiles wanted to wipe us out. And I guess the Ultimates didn’t give much of a damn as long as they could keep working on the evolution of their own machine god… what’d they call it?”
+
+    “The UI,” said Aenea, slowing the carpet and swooping lower. “The Ultimate Intelligence.”
+
+    “Yes,” I said. “Pretty esoteric stuff. How does it relate to our going through these farcaster portals… if we ever find another portal?”
+
+    <div markdown="1" class="tagged-entries">
+
+    en: esoteric: esoteric
+
+    </div>
+
+- I thought that I remembered the weight of epiphany that had fallen on that character as he realized they would have to swim for it and that not all of them could survive. He had wanted Nature—for this is how he now thought of the universe—to be a huge glass building, just so that he could cast stones at it. But even that, he realized, would be useless.
+
+    The universe is indifferent to our fates. This was the crushing burden that the character took with him as he struggled through the surf toward survival or extinction. The universe just does not give a shit.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: epiphany: epiphany
+
+    en: indifferent: indifferent
+
+    </div>
+
+- I realized that I was laughing and weeping at the same time, shouting curses and invitations to the saberback things that were only two or three meters out. I leveled the pistol and fired at the closest fin. Amazingly, the soaked slug-thrower fired, the noise that had been so loud on the raft now seemed to be swallowed by the waves and immensity of the sea. The fish dived out of sight. Two more lunged at me. I shot at one, kicked at the other, just as something struck me hard on the neck from behind.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: immensity: immensity
+
+    en: lunge: lunged
+
+    </div>
+
+- I was not so lost in theology and philosophizing that I was ready to die. I swiveled quickly, not knowing how badly I had been bitten but determined to shoot the goddamn thing in the mouth if I had to. I had the heavy pistol cocked and aimed before I saw the girl’s face there half a meter from my own. Her hair was plastered to her skull and her dark eyes were bright in the moonlight.
+
+    “Raul!” She must have been calling my name before, but I had not heard it over the gunshot and the rushing in my ears.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: philosophize: philosophizing
+
+    en: theology: theology
+
+    en: swivel: swiveled
+
+    en: cock: cocked
+
+    en: plaster: plastered
+
+    </div>
+
+- My last conscious thought was an inventory of what I had lost on my first solo expedition: the treasured hawking mat, my night goggles, the antique automatic pistol, my boots, probably the com unit, and quite possibly my life and the lives of my friends. Total darkness cut off the end of this cynical speculation.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: speculation: speculation
+
+    en: conscious: conscious
+
+    en: expedition: expedition
+
+    </div>
+
+- “Lie back,” whispered Aenea, and tore open a sterile suture pak. She laid the clear bag against my side and the millipede suture within came to life and crawled to my wound. The sensation was not pleasant as the tailored life-form crawled into the ragged walls of my wound, secreted its antibiotic and cleansing secretions, then drew its sharp millipede legs together in a tight suture. I cried out again… then again a moment later as she applied another millipede suture to my arm.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: suture: suture
+
+    en: millipede: millipede
+
+    en: secrete: secreted, secretions
+
+    </div>
+
+- I admit that I felt nothing but pain and fever. My thoughts were like mercury—always shifting away before I could grab them or form them into a cohesive shape.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: mercury: mercury
+
+    en: cohesive: cohesive
+
+    </div>
+
+- After opening me up, cleaning me out, and then repeating the process twice more when infinitesimal traces of the oceanborne organism started colonizing again, the autosurgeon pronounced the fungus kaput and began working on my lesser life-threatening wounds. The knife cut in the side had opened me up enough that I should have bled to death—especially with all of my kicking and high pulse rate brought on by my dorsaled friends in the sea. Evidently the plasma cartridges in the old medpak and several days of being kept near comatose by Aenea’s liberal doses of ultramorph had kept me alive until the surgeon could transfuse eight more units of plasma into me.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: infinitesimal: infinitesimal
+
+    en: kaput: kaput
+
+    en: transfuse: transfuse
+
+    en: plasma: plasma
+
+    </div>
+
+- “I vote we get an EMV and travel in comfort,” I said, hearing the petulant tone in my voice and hating it even while continuing it. “Or even one of these boats. I vote we leave these logs behind.”
+
+     <div markdown="1" class="tagged-entries">
+ 
+     en: petulant: petulant
+ 
+     </div> 
+
+- 

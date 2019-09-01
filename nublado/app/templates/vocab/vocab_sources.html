@@ -11,8 +11,9 @@
 
 {% block page_header %}
 
-<div class="row justify-content-md-center">
-<div class="col-md-10">
+<div class="columns">
+<div class="column is-10">
+
 <div class="page-header"> {% trans "header_vocab_sources" %} </div>
 </div>
 </div>
@@ -21,8 +22,8 @@
 
 {% block content %}
 
-<div class="row justify-content-md-center">
-<div class="col-md-10">
+<div class="columns">
+<div class="column is-10">
 
 <div class="panel">
 <div class="panel-body">
@@ -35,12 +36,12 @@
 
 {% url 'vocab:vocab_source_autocomplete' as autocomplete_url %}
 {% url 'vocab:vocab_sources' as search_url %}
-{% include "includes/vue/_search.html" with comp_name='source-search' search_btn=True %}
+{% include "includes/vue/_search.html" with comp_name='vocab-source-search' search_btn=True %}
 
 </div>
 </div>
 
-<span id="sources-scroll-top"></span>
+<span id="vocab-sources-scroll-top"></span>
 
 </div>
 </div>

@@ -11,10 +11,10 @@
 {% block navbar %}{% endblock navbar %}
 {% block sidebar %}{% endblock sidebar %}
 
-{% block content %}
+{% block main_content %}
 <div class="centerall">
 
-<div class="columns is-multiline is-centered">
+<div class="columns is-multiline is-centered is-desktop">
 
 <div class="column is-12 has-text-centered">
 
@@ -84,4 +84,6 @@ novalidate>
 </div>
 
 </div>
-{% endblock content %}
+{% endblock main_content %}
+
+{% block page_footer %}{% endblock page_footer %}

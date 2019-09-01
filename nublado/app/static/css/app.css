@@ -10087,11 +10087,10 @@ blockquote p {
   height: 3.125rem;
   background-color: #444;
   color: #eee;
-  border-top: 1px solid #dfe1e3;
   align-items: center;
   justify-content: center;
 }
-/* line 28, ../scss/cfs/_layout.scss */
+/* line 27, ../scss/cfs/_layout.scss */
 .page-footer.is-fixed {
   position: fixed;
   right: 0;
@@ -10099,7 +10098,7 @@ blockquote p {
   left: 0;
   width: auto;
 }
-/* line 37, ../scss/cfs/_layout.scss */
+/* line 36, ../scss/cfs/_layout.scss */
 .page-footer.is-bordered {
   border-top: 1px solid #dfe1e3;
 }

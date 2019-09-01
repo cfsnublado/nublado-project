@@ -194,6 +194,8 @@ dropdown-classes="is-up"
 
 {% block presentation %}{% endblock presentation %}
 
+{% block main_content %}
+
 <section class="section {% block main_section_classes %}main-content{% endblock main_section_classes %}">
 <div class="columns">
 <div class="column is-10 is-offset-1">
@@ -202,12 +204,18 @@ dropdown-classes="is-up"
 
 {% block content %}{% endblock content %}
 
+{% endblock main_content %}
+
 </div>
 </div>
 </section>
 
 {% block page_footer %}
-{% include "includes/_page_footer.html" %}
+<footer class="page-footer">
+
+{% now "Y" %} | {{ project_name }}
+
+</footer>
 {% endblock page_footer %}
 
 {% block modal_content %}{% endblock modal_content %}

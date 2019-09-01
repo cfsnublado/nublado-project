@@ -4,6 +4,11 @@ Vue.component('dropdown', Dropdown)
 Vue.component('navbar-dropdown', NavbarDropdown)
 Vue.component('confirmation-modal', ConfirmationModal)
 
+// Vocab components
+Vue.component('vocab-sources', VocabSources)
+Vue.component('vocab-source', VocabSource)
+Vue.component('vocab-source-search', VocabSourceSearch)
+
 Vue.use(ModalPlugin)
 
 VueScrollTo.setDefaults({

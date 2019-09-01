@@ -100,6 +100,41 @@ const MarkdownMixin = {
   }
 }
 
+// const HighlightMixin = {
+//   props: {
+//     contextElement: {
+//       type: String,
+//       default: '#context'
+//     }
+//   },
+//   data() {
+//     return {
+//       highlighter: new Mark(this.contextElement),
+//       markOptions: {
+//         "className": "tagged-text",
+//         "accuracy": {
+//           "value": "exactly",
+//           "limiters": [
+//             ",", ".", "!", "?", ";", ":", "'", "-", "—",
+//             "\"", "(",  ")", "¿", "¡", 
+//             "»", "«", 
+//           ]
+//         },        
+//         "acrossElements": true,
+//         "separateWordSearch": false,
+//       }
+//     }
+//   },
+//   methods: {
+//     highlight(terms) {
+//       this.highlighter.mark(terms, this.markOptions)
+//     },
+//     clearHighlight() {
+//       this.highlighter.unmark(this.markOptions)
+//     }
+//   }
+// }
+
 const VisibleMixin = {
   props: {
     initIsVisible: {
@@ -315,5 +350,245 @@ const BaseModal = {
     close() {
       this.isOpen = false
     },
+  }
+}
+
+/** Search/Autocomplete **/
+
+const BaseSearch = {
+  mixins: [ClickOutsideMixin],
+  props: {
+    initAutocompleteUrl: {
+      type: String,
+      required: true
+    },
+    initSearchUrl: {
+      type: String,
+      default: ''
+    }
+  },
+  data() {
+    return {
+      searchTerm: '',
+      searchParams: {
+        term: ''
+      },
+      results: [],
+      isOpen: false,
+      searchTimerId: null,
+      searchDelay: 600,
+      minSearchLength: 2,
+      autocompleteUrl: this.initAutocompleteUrl,
+      searchUrl: this.initSearchUrl
+    }
+  },
+  methods: {
+    setResult(result) {
+      this.searchTerm = result
+      this.isOpen = false
+    },
+    search() {
+      console.log('search')
+    },
+    success(response) {
+      if (response.data.length) {
+        this.results = response.data
+        this.isOpen = true
+      } else {
+        this.isOpen = false
+      }
+    },
+    onAutocomplete() {
+      clearTimeout(this.searchTimerId)
+      this.searchTimerId = setTimeout(()=>{
+        if (this.searchTerm.length >= this.minSearchLength) {
+
+          this.searchParams.term = this.searchTerm
+
+          axios.get(this.autocompleteUrl, {
+            params: this.searchParams
+          })
+          .then(response => {
+            this.success(response)
+          })
+          .catch(error => {
+            this.error(error)
+            if (error.response) {
+              console.log(error.response)
+            } else if (error.request) {
+              console.log(error.request)
+            } else {
+              console.log(error.message)
+            }
+            console.log(error.config)
+          })
+          .finally(() => {})
+        } else {
+          this.isOpen = false
+        }
+      }, this.searchDelay)
+    },
+    onFocus() {
+      this.$emit('search-focus')
+    },
+    onCloseOutside() {
+      this.isOpen = false
+      this.searchTerm = ''
+    },   
+  }
+}
+
+const BaseLanguageSearch = {
+  mixins: [BaseSearch],
+  props: {
+    initLanguage: {
+      type: String,
+      default: 'en'
+    }
+  },
+  data() {
+    return {
+      language: this.initLanguage,
+      languageUrl: ''
+    }
+  },
+  methods: {
+    setLanguage(lang) {
+      this.language = lang
+      this.autocompleteUrl = this.languageUrl.replace('zz', this.language)
+      this.onAutocomplete()
+    },
+    search() {
+      url = this.searchUrl + "?search_term=" + this.searchTerm + "&search_language=" + this.language
+      window.location.replace(url);
+    }
+  },
+  created() {
+    this.languageUrl = this.autocompleteUrl
+    this.autocompleteUrl = this.languageUrl.replace('zz', this.language)
+  },
+}
+
+/** Tags **/
+
+const BaseTag = {
+  mixins: [ VisibleMixin ],
+  props: {
+    initId: {
+      type: Number,
+      default: 0
+    },
+    initValue: {
+      type: String,
+      required: true
+    },
+    initCanRemove: {
+      type: Boolean,
+      default: false
+    },
+    selectRedirectUrl: {
+      type: String,
+      default: ''
+    }
+  },
+  data() {
+    return {
+      id: this.initId,
+      value: this.initValue,
+      canRemove: this.initCanRemove,
+    }
+  },
+  methods: {
+    select() {
+      if (this.selectRedirectUrl) {
+        window.location.replace(this.selectRedirectUrl)
+      }
+      this.$emit('tag-select', this.id)
+    },
+    remove() {
+      this.$emit('tag-remove', this.id)
+    }
+  },
+  template: `
+    <div 
+    class="ui label tagblock"
+    v-show="isVisible"
+    >
+      <a 
+      class="tag-text"
+      @click.prevent="select"
+      > 
+      {{ value }} 
+      </a>
+
+      &nbsp;
+
+      <a
+      v-if="canRemove"
+      @click.prevent="remove"
+      >
+        <i class="fa-times fas"></i>
+      </a>
+
+    </div>
+  `
+}
+
+const BaseToggleTag = {
+  mixins: [BaseTag],
+  props: {
+    toggleSelect: {
+      type: Boolean,
+      default: false
+    }
+  },
+  methods: {
+    toggle() {
+      this.$emit('tag-toggle', this.id)
+    },
+  },
+  template: `
+    <transition name="fade-transition" v-on:after-enter="isVisible = true" v-on:after-leave="isVisible = false">
+
+    <div 
+    class="ui label tagblock"
+    v-show="isVisible"
+    >
+      <a 
+      class="tag-text"
+      @click.prevent="select"
+      > 
+      {{ value }} 
+      </a>
+      &nbsp;
+      <a 
+      class="toggle-tag"
+      @click.prevent="toggle"
+      >
+        <i v-bind:class="[toggleSelect ? 'fa-check-square' : 'fa-square', 'fas']"></i>
+      </a>
+    </div>
+    
+    </transition>
+  `
+}
+
+const BaseTagbox = {
+  props: {
+    tags: {
+      type: Array,
+      default: () => []
+    }
+  },
+  methods: {
+    addTag(tag) {
+      this.$emit('add-tag', tag)
+    },
+    removeTag(index) {
+      this.$emit('remove-tag', index)
+    },
+    selectTag(index) {
+      this.$emit('select-tag', index)
+    }
   }
 }

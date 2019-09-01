@@ -7,35 +7,40 @@
 
 {% if request.session.session_obj.vocab_source %}
 
-  <li class="nav-list-header">
-  <span> {% trans "label_source" %} </span>
-  </li>
+  <div class="menu">
 
-  <li class="nav-list-header-title">
+  <p class="menu-label">
+  {% trans "label_source" %}
+  </p>
+
+  <p class="menu-header">
   <a 
-  id="sidebar-nav-vocab-source-name"
-  href="{% url 'vocab:vocab_source_dashboard' vocab_source.id vocab_source.slug %}">
+  id="sidebar-nav-vocab-source-name" 
+  href="{% url 'vocab:vocab_source_dashboard' vocab_source.id vocab_source.slug %}"
+  >
   <span id="menu-vocab-source-name"> {{ vocab_source.name }} </span>
   </a>
-  </li>
+  </p>
 
-  <li class="nav-item">
+  <ul class="menu-list">
+
+  <li>
   <a 
   id="sidebar-nav-vocab-source-entries"
-  class="nav-link {% block vocab_source_entries_link_active %}{% endblock vocab_source_entries_link_active %}"
+  class="{% block vocab_source_entries_link_active %}{% endblock vocab_source_entries_link_active %}"
   href="{% url 'vocab:vocab_source_entries' vocab_source.id vocab_source.slug %}"
   >
-  <i class="nav-link-icon fas fa-language fa-fw"></i> {% trans "label_vocabulary" %}
+  <i class="menu-icon fas fa-language fa-fw"></i> {% trans "label_vocabulary" %}
   </a>
   </li>
 
-  <li class="nav-item">
+  <li>
   <a 
   id="sidebar-nav-vocab-source-contexts"
-  class="nav-link {% block vocab_source_contexts_link_active %}{% endblock vocab_source_contexts_link_active %}"
+  class="{% block vocab_source_contexts_link_active %}{% endblock vocab_source_contexts_link_active %}"
   href="{% url 'vocab:vocab_source_contexts' vocab_source.id vocab_source.slug %}"
   >
-  <i class="nav-link-icon fas fa-book fa-fw"></i> {% trans "label_contexts" %}
+  <i class="menu-icon fas fa-book fa-fw"></i> {% trans "label_contexts" %}
   </a>
   </li>
 
@@ -43,29 +48,30 @@
 
   {% if source_admin %}
 
-    <li class="nav-item">
+    <li>
     <a
     id="sidebar-nav-vocab-source-edit"
-    class="nav-link {% block vocab_source_edit_link_active %}{% endblock vocab_source_edit_link_active %}
-"
+    class="{% block vocab_source_edit_link_active %}{% endblock vocab_source_edit_link_active %}"
     href="{% url 'vocab:vocab_source_update' vocab_source.id vocab_source.slug %}">
-    <i class="nav-link-icon fas fa-edit fa-fw"></i> {% trans "label_edit_source" %}
+    <i class="menu-icon fas fa-edit fa-fw"></i> {% trans "label_edit_source" %}
     </a>
     </li>
 
-    <li class="nav-item">
+    <li>
     <a 
     id="sidebar-nav-vocab-context-create" 
-    class="nav-link {% block vocab_context_create_link_active %}{% endblock vocab_context_create_link_active %}" 
+    class="{% block vocab_context_create_link_active %}{% endblock vocab_context_create_link_active %}" 
     href="{% url 'vocab:vocab_context_create' vocab_source.id vocab_source.slug %}"
     >
-    <i class="nav-link-icon fas fa-plus fa-fw"></i> {% trans "label_new_vocab_context" %}
+    <i class="menu-icon fas fa-plus fa-fw"></i> {% trans "label_new_vocab_context" %}
     </a>
     </li>
 
     <li class="divider"></li>
 
   {% endif %}
+  </ul>
+  </div><!-- menu -->
 
 {% endif %}
 
@@ -75,7 +81,7 @@
 
 {% block body_classes %}
 
-sidebar-adaptable theme-white {{ sidebar_expanded|yesno:"sidebar-nav-expanded," }}
+sidebar-adaptable theme-cloudy {{ sidebar_expanded|yesno:'sidebar-expanded,' }}
 
 {% endblock body_classes %}
 

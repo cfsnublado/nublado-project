@@ -191,38 +191,6 @@ const BaseMessage = {
   },
 }
 
-const BaseDropdown = {
-  mixins: [ClickOutsideMixin],
-  props: {
-    id: {
-      type: String,
-      required: true
-    },
-    dropdownClasses: {
-      type: String,
-      default: ''
-    }
-  },
-  data() {
-    return {
-      isOpen: false,
-    }
-  },
-  methods: {
-    toggle(manual) {
-      this.$emit('toggle')
-      if (manual === true || manual === false) {
-        this.isOpen = manual
-      } else {
-          this.isOpen = !this.isOpen
-      }
-    },
-    onCloseOutside() {
-      this.isOpen = false
-    }
-  }
-}
-
 const BaseFileUploader = {
   mixins: [AjaxProcessMixin],
   props: {
@@ -353,10 +321,44 @@ const BaseModal = {
   }
 }
 
+const BaseDropdown = {
+  mixins: [ClickOutsideMixin],
+  props: {
+    id: {
+      type: String,
+      required: true
+    },
+    dropdownClasses: {
+      type: String,
+      default: ''
+    }
+  },
+  data() {
+    return {
+      isOpen: false,
+    }
+  },
+  methods: {
+    toggle(manual) {
+      this.$emit('toggle')
+      if (manual === true || manual === false) {
+        this.isOpen = manual
+      } else {
+          this.isOpen = !this.isOpen
+      }
+    },
+    onCloseOutside() {
+      this.isOpen = false
+    }
+  }
+}
+
 /** Search/Autocomplete **/
 
 const BaseSearch = {
-  mixins: [ClickOutsideMixin],
+  mixins: [
+    ClickOutsideMixin,
+  ],
   props: {
     initAutocompleteUrl: {
       type: String,

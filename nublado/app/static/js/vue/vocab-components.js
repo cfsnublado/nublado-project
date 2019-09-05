@@ -123,7 +123,9 @@ const VocabSources = {
 }
 
 const VocabSourceSearch = {
-  mixins: [BaseSearch],
+  mixins: [
+    BaseSearch
+  ],
   methods: {
     setResult(result) {
       this.searchTerm =result

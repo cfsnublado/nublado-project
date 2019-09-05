@@ -20,7 +20,41 @@ inline-template
 
 <div class="input-group autocomplete-container">
 
-{% include "includes/vue/_autocomplete.html" %}
+<div 
+class="dropdown"
+v-bind:class="[{ 'is-active': isOpen }]"
+>
+
+<div class="dropdown-trigger">
+<input
+  id="search-input"
+  class="autocomplete-input form-control"
+  placeholder="{% trans 'placeholder_search' %}"
+  type="text" 
+  v-model.trim="searchTerm"
+  @input="onAutocomplete"
+  @keyup.enter="search"
+  @focus="onFocus"
+/>
+</div>
+
+<div class="dropdown-menu">
+<div class="dropdown-content">
+
+<a
+  v-for="(result, i) in results"
+  :key="i"
+  class="dropdown-item"
+  href="" 
+  @click.prevent="setResult(result.value)"
+>
+[[ result.value ]]
+</a>
+
+</div>
+</div>
+
+</div>
 
 <div class="input-group-button">
 <a 

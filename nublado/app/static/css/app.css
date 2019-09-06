@@ -5821,7 +5821,7 @@ button.dropdown-item {
 /* line 83, ../../shared/scss/bulma/components/_dropdown.scss */
 a.dropdown-item:hover,
 button.dropdown-item:hover {
-  background-color: whitesmoke;
+  background-color: rgba(91, 164, 229, 0.15);
   color: #0a0a0a;
 }
 /* line 88, ../../shared/scss/bulma/components/_dropdown.scss */
@@ -11117,7 +11117,7 @@ a.navbar-item:focus, a.navbar-item:focus-within, a.navbar-item:hover, a.navbar-i
 /* line 362, ../scss/cfs/_navbar.scss */
 .navbar.is-transparent .navbar-dropdown a.navbar-item:focus, .navbar.is-transparent .navbar-dropdown a.navbar-item:hover {
   color: #0a0a0a;
-  background-color: whitesmoke;
+  background-color: rgba(91, 164, 229, 0.15);
 }
 /* line 368, ../scss/cfs/_navbar.scss */
 .navbar.is-transparent .navbar-dropdown a.navbar-item.is-active {
@@ -11214,7 +11214,7 @@ a.navbar-item:focus, a.navbar-item:focus-within, a.navbar-item:hover, a.navbar-i
 /* line 473, ../scss/cfs/_navbar.scss */
 .navbar-dropdown a.navbar-item:focus, .navbar-dropdown a.navbar-item:hover {
   color: #0a0a0a;
-  background-color: whitesmoke;
+  background-color: rgba(91, 164, 229, 0.15);
 }
 /* line 479, ../scss/cfs/_navbar.scss */
 .navbar-dropdown a.navbar-item.is-active {
@@ -11570,6 +11570,11 @@ body.sidebar-adaptable.sidebar-expanded .page-footer.is-fixed {
     padding: 9.375rem 0 25rem 0;
   }
 }
+/* line 2, ../scss/cfs/_searchbox.scss */
+.searchbox .dropdown {
+  display: block;
+}
+
 /* line 8, ../scss/cfs/_blocks.scss */
 .icon-blocks .icon-blocks-header {
   font-size: 3rem;

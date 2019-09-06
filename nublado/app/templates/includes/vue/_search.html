@@ -14,11 +14,7 @@ init-autocomplete-url="{{ autocomplete_url }}"
 inline-template
 >
 
-<div>
-
-{% if search_label %}<label>{{ search_label }}</label>{% endif %}
-
-<div class="input-group autocomplete-container">
+<div class="searchbox">
 
 <div 
 class="dropdown"
@@ -26,9 +22,18 @@ v-bind:class="[{ 'is-active': isOpen }]"
 >
 
 <div class="dropdown-trigger">
+
+{% if search_label %}
+  <label class="label" for="search-input">{{ search_label }}</label>
+{% endif %}
+
+<div class="field has-addons">
+
+<div class="control is-expanded">
 <input
   id="search-input"
-  class="autocomplete-input form-control"
+  name="search-input"
+  class="input"
   placeholder="{% trans 'placeholder_search' %}"
   type="text" 
   v-model.trim="searchTerm"
@@ -36,6 +41,21 @@ v-bind:class="[{ 'is-active': isOpen }]"
   @keyup.enter="search"
   @focus="onFocus"
 />
+</div>
+
+<div class="control">
+<a 
+id="{{ search_btn_id }}" 
+class="button" 
+href="#"
+@click.prevent="search"
+>
+<i class="fas fa-search fa-fw"></i>
+</a>
+</div>
+
+</div>
+
 </div>
 
 <div class="dropdown-menu">
@@ -52,19 +72,6 @@ v-bind:class="[{ 'is-active': isOpen }]"
 </a>
 
 </div>
-</div>
-
-</div>
-
-<div class="input-group-button">
-<a 
-id="{{ search_btn_id }}" 
-class="button" 
-href="#"
-@click.prevent="search"
->
-<i class="fas fa-search fa-fw"></i>
-</a>
 </div>
 
 </div>

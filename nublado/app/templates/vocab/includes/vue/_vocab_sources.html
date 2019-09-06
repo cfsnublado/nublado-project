@@ -15,8 +15,6 @@ v-cloak
 {% trans 'msg_no_sources' %}
 </div>
 
-<div class="row"> <!-- row -->
-
 <vocab-source
 v-for="(vocabSource, index) in vocabSources"
 :key="vocabSource.id"
@@ -86,9 +84,10 @@ v-html="markdownToHtml(source.description)"
 
 </vocab-source>
 
-<div class="col-sm-12"><!-- col 12 -->
-
 <section v-if="pageCount > 1">
+
+<div class="columns">
+<div class="column is-12">
 
 <nav role="pagination">
 
@@ -147,10 +146,9 @@ href="#"
 </ul>
 </nav>
 
-</section><!-- col 12 -->
-
-</div><!-- row -->
-
 </div>
+</div>
+
+</section>
 
 </vocab-sources>

@@ -1,7 +1,8 @@
 const VocabSource = {
   mixins: [
     AdminMixin,
-    VisibleMixin
+    VisibleMixin,
+    MarkdownMixin
   ],
   props: {
     initSource: {
@@ -71,7 +72,7 @@ const VocabSources = {
   },
   data() {
     return {
-      vocabSources: []
+      vocabSources: null
     }
   },
   methods: {

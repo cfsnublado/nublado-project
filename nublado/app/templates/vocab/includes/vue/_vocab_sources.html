@@ -11,7 +11,7 @@ class="vocab-sources"
 v-cloak
 >
 
-<div v-if="vocabSources.length == 0">
+<div v-if="vocabSources && vocabSources.length == 0">
 {% trans 'msg_no_sources' %}
 </div>
 
@@ -30,17 +30,13 @@ inline-template
 
 <transition name="fade-transition" v-on:after-enter="isVisible = true" v-on:after-leave="remove">
 
-<div class="col-md-6" v-show="isVisible"> <!-- col 6 -->
+<div 
+class="card vocab-source-card" 
+v-show="isVisible" 
+v-cloak
+>
 
-<div class="panel">
-
-<div class="panel-top">
-
-<div class="panel-top-content">
-
-</div>
-
-<div class="panel-buttons">
+<div class="card-controls">
 
 <ajax-delete
 v-if="isAdmin"
@@ -50,37 +46,42 @@ delete-confirm-id="delete-source"
 inline-template
 >
 
+<span class="control">
 <a
-class="panel-button"
 @click.prevent="confirmDelete"
 >
 <i class="fas fa-times fas"></i>
 </a>
+</span>
+
 </ajax-delete>
 
 </div>
 
-</div>
-
-<div class="panel-body">
+<div class="card-content">
 
 <div>
 <a
 href="#"
 @click.prevent="view"
 >
-[[ source.name ]]
+<span
+v-html="markdownToHtml(source.name)"
+>
+</span>
 </a>
 </div>
 
 <div>
-[[ source.description ]]
+<span
+v-html="markdownToHtml(source.description)"
+>
+</span>
 </div>
 
 </div>
 </div>
 
-</div><!-- col 6 -->
 </transition>
 
 </vocab-source>

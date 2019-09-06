@@ -479,4 +479,54 @@ The shadow becomes a figure; the figure becomes a form; the form is a child. She
  
      </div> 
 
-- 
+- But last night—when the lights in my Schrödinger cat box were off and nothing separated me from the universe but the static-dynamic shell of frozen energy around me with its little vial of cyanide, its ticking timer, and its foolproof radiation detector—last night I heard Aenea calling my name. I sat up in the absolute blackness, too startled and hopeful even to command the lights on, certain that I was still dreaming, when I felt her fingers touch my cheek. They were her fingers. I knew them when she was a child. I kissed them when she was a woman. I touched them with my lips when they took her away for the final time.
+
+    Her fingers touched my cheek. Her breath was warm and sweet against my face. Her lips were warm against the corner of my mouth.
+
+    “We’re leaving here, Raul, my darling,” she whispered in the darkness last night. “Not soon, but as soon as you finish our tale. As soon as you remember it all and understand it all.”
+
+    I reached for her then, but her warmth was receding. When the lights came on, my egg-shaped world was empty.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: cyanide: cyanide
+
+    en: recede: receding
+
+    </div>
+
+- I admit that I paced back and forth until the normal waking time arrived. My greatest fear these days or months has not been death—Aenea had taught me how to put death in perspective—but insanity. Madness would rob me of clarity, of memory… of Aenea.
+
+    Then I saw something that stopped me. The text slate was activated. The stylus was lying not in its usual place, but tucked behind the slate cover, much as Aenea had kept her pen folded away in her journal during our voyages after leaving Earth. My fingers shaking, I recycled yesterday’s writings and activated the printer port.
+
+    Only one page emerged, crowded with handwritten lines. It was Aenea’s writing; I know it well.
+
+    This is a turning point for me. Either I am truly insane and none of this matters, or I am saved and everything matters very much.
+
+    I read this, as you do, with hope for my sanity and hope for salvation, not of my soul, but salvation of self in the renewed certainty of reunion—real reunion, physical reunion—with the one whom I remember and love above all others.
+
+    And this is the best reason to read.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: stylus: stylus
+
+    </div>
+
+- Raul, consider this a postscript to the memories you wrote about today, and which I read tonight. Years ago, years ago… those last three hours of our first journey together, when you, my darling Raul, and dear sleeping A. Bettik and I flew the dropship southwest toward Taliesin West and my long apprenticeship there, I longed to tell you everything that day—the dreams that showed us being lovers of whom the poets would sing, visions of the great dangers that lay ahead, dreams of the discovery of friends, dreams of the deaths of friends, certainty of unspeakable sorrow to be borne, certainty of unimaginable triumphs still unborn.
+
+    I said nothing.
+
+    Do you remember? We dozed during our flight. How strange life is that way… our last few hours alone together, this ending to one of the most intimate periods of our life together, the end of my childhood and the beginning of our time as equals, and we spent most of our last minutes sleeping. In separate couches. Life is brutal that way… the loss of irrecoverable moments amid trivia and distraction.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: postscript: postscript
+
+    en: lie: lay
+
+    en: irrecoverable: irrecoverable
+
+    en: apprenticeship: apprenticeship
+
+    </div>

@@ -29,12 +29,12 @@ inline-template
 <transition name="fade-transition" v-on:after-enter="isVisible = true" v-on:after-leave="remove">
 
 <div 
-class="card vocab-source-card" 
+class="box vocab-source-box" 
 v-show="isVisible" 
 v-cloak
 >
 
-<div class="card-controls">
+<div class="box-controls">
 
 <ajax-delete
 v-if="isAdmin"
@@ -56,9 +56,9 @@ inline-template
 
 </div>
 
-<div class="card-content">
+<div class="box-content">
 
-<div>
+<div class="name">
 <a
 href="#"
 @click.prevent="view"
@@ -70,7 +70,7 @@ v-html="markdownToHtml(source.name)"
 </a>
 </div>
 
-<div>
+<div class="description">
 <span
 v-html="markdownToHtml(source.description)"
 >

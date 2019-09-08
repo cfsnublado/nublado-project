@@ -118,11 +118,13 @@ const Dropdown = {
     <div class="dropdown-menu">
     <div class="dropdown-content">
 
+    <div @click="toggle(false)">
     <slot name="dropdown-content">
     <div class="dropdown-item">
     Dropdown content
     </div>
     </slot>
+    </div>
 
     </div>
     </div>

@@ -66,7 +66,7 @@ ref="navbarMenu"
 
 {% include 'includes/_user_nav.html' %}
 
-</div><!-- navbar-end -->
+</div><!-- navbar -->
 
 </div><!-- navbar-menu -->
 
@@ -194,7 +194,7 @@ dropdown-classes="is-up"
 
 {% block presentation %}{% endblock presentation %}
 
-{% block main_content %}
+{% block content_container %}
 
 <section class="section {% block main_section_classes %}main-content{% endblock main_section_classes %}">
 <div class="columns">
@@ -204,11 +204,11 @@ dropdown-classes="is-up"
 
 {% block content %}{% endblock content %}
 
-{% endblock main_content %}
-
 </div>
 </div>
 </section>
+
+{% endblock content_container %}
 
 {% block page_footer %}
 <footer class="page-footer">

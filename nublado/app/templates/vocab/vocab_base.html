@@ -44,8 +44,6 @@
   </a>
   </li>
 
-  <li class="divider"></li>
-
   {% if source_admin %}
 
     <li>
@@ -70,6 +68,9 @@
     <li class="divider"></li>
 
   {% endif %}
+
+  <li class="sidebar-divider"></li>
+
   </ul>
   </div><!-- menu -->
 
@@ -85,58 +86,47 @@ sidebar-adaptable theme-cloudy {{ sidebar_expanded|yesno:'sidebar-expanded,' }}
 
 {% endblock body_classes %}
 
-{% block body %}
-<div id="main-content" class="main-content container" style="margin-top: 20px;">
+{% block content_container %}
+
+<section 
+class="section {% block main_section_classes %}main-content{% endblock main_section_classes %}"
+>
+
+<div class="columns">
+<div class="column is-10 is-offset-1">
+
+{% block content_top %}
+<div class="page-content-top" style="margin-top: 10px;">
 
 {% block page_header %}
 
 {% if request.session.session_obj.vocab_source %}
 
-  <div class="row justify-content-md-center">
-  <div class="col-md-10">
-
-  <div class="small-caps-header"> {% trans 'header_source' %} </div>
-  <div class="page-header"> {{ vocab_source.name }} </div>
-
-  </div>
+  <div class="small-caps-header">
+  {% trans 'source' %}
   </div>
 
-{% elif request.session.session_obj.vocab_entry %}
-
-  <div class="row justify-content-md-center">
-  <div class="col-md-10">
-
-  <div class="small-caps-header"> {% trans 'header_vocab_entry' %} </div>
-
-  </div>
+  <div class="page-header">
+  {{ vocab_source.name }}
   </div>
 
 {% endif %}
 
 {% endblock page_header %}
 
-{% block breadcrumbs %}
-
-<div class="row justify-content-md-center">
-<div class="col-md-10">
-
-<div class="breadcrumbs" style="margin-top: 20px; margin-bottom: 20px;">
-{% block breadcrumb_content %}
-
-{% include "vocab/includes/_vocab_breadcrumbs.html" %}
-
-{% endblock breadcrumb_content %}
 </div>
+{% endblock content_top %}
 
-</div>
-</div>
-
-{% endblock breadcrumbs %}
-
+<div class="page-content" style="margin-top: 30px;">
 {% block content %}{% endblock content %}
+</div>
 
 </div>
-{% endblock body %}
+</div>
+
+</section>
+
+{% endblock content_container %}
 
 {% block page_footer %}{% endblock page_footer %}
 

@@ -140,3 +140,30 @@ const VocabSourceSearch = {
     }
   }
 }
+
+const VocabSourceEntrySearch = {
+  mixins: [BaseLanguageSearch],
+  props: {
+    initSourceId: {
+      type: String,
+      default: null
+    }
+  },
+  data() {
+    return {
+      sourceId: this.initSourceId,
+    }
+  },
+  methods: {
+    setResult(result) {
+      this.searchTerm = result
+      this.search()
+    },
+    search(val) {
+      clearTimeout(this.searchTimerId)
+      this.isOpen = false
+      url = this.searchUrl + '?search_entry=' + encodeURIComponent(this.searchTerm) + '&search_language=' + this.language + '&search_source=' + this.sourceId
+      window.location.replace(url);
+    }
+  },
+}

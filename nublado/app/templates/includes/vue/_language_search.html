@@ -15,68 +15,100 @@ init-autocomplete-url="{{ autocomplete_url }}"
 inline-template
 >
 
-<div>
+<div class="searchbox">
+{% if search_label %}
+  <label class="label" for="search-input">{{ search_label }}</label>
+{% endif %}
 
-{% if search_label %}<label>{{ search_label }}</label>{% endif %}
+<div class="field has-addons">
 
-<div class="input-group autocomplete-container">
+<div class="control is-expanded">
 
-{% include "includes/vue/_autocomplete.html" %}
+<div 
+class="dropdown"
+v-bind:class="[{ 'is-active': isOpen }]"
+>
 
+<div class="dropdown-trigger">
+
+<input
+  id="search-input"
+  name="search-input"
+  class="input"
+  placeholder="{% trans 'placeholder_search' %}"
+  type="text" 
+  v-model.trim="searchTerm"
+  @input="onAutocomplete"
+  @keyup.enter="search"
+  @focus="onFocus"
+/>
+
+</div>
+
+<div class="dropdown-menu">
+<div class="dropdown-content">
+
+<a
+  v-for="(result, i) in results"
+  :key="i"
+  class="dropdown-item"
+  href="" 
+  @click.prevent="setResult(result.value)"
+>
+[[ result.value ]]
+</a>
+
+</div>
+</div>
+
+</div>
+
+</div>
+
+<div class="control">
 <dropdown
-id="search-language-switcher"
-container-classes="input-group-button"
-trigger-classes="button"
-dropdown-classes="dropdown-right"
+id="search-language"
+dropdown-classes="is-right"
 @toggle="isOpen = false"
 >
 
-<template slot="trigger-content">
-<span class="text-bold">[[ language ]]</span>
+<template slot="dropdown-label">
+<span class="text-bold" style="width: 20px;">[[ language ]]</span>
 </template>
 
 <template slot="dropdown-content">
 
-<ul>
-
 {% get_language_info_list for LANGUAGES as languages %}
 {% for language in languages %}
 
-  <li>
   <a
-  href="" 
+  href="#" 
   id="search-language-{{ language.code }}"
-  class="search-language"
+  class="dropdown-item"
   @click.prevent="setLanguage('{{ language.code }}')"
   >
   {{ language.name_translated }}
   </a>
-  </li>
 
 {% endfor %}
-
-</ul>
 
 </template>
 
 </dropdown>
-
-{% if search_btn %}
-
-  <div class="input-group-button">
-  <a 
-  id="{{ search_btn_id }}"
-  class="button" 
-  @click.prevent="search"
-  >
-  <i class="fas fa-search fa-fw"></i>
-  </a>
-  </div>
-
-{% endif %}
-
 </div>
 
+<div class="control">
+<a 
+id="{{ search_btn_id }}" 
+class="button" 
+href="#"
+@click.prevent="search"
+>
+<i class="fas fa-search fa-fw"></i>
+</a>
+</div>
+
+</div>
 </div>
 
 </{{ comp_name }}>

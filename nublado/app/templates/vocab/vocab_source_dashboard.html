@@ -1,40 +1,26 @@
-{% extends "vocab/vocab_base.html" %}
+{% extends 'vocab/vocab_base.html' %}
 {% load core_extras %}
 {% load i18n %}
 
-{% block title %}
-
-{{ vocab_source.name }}
-
-{% endblock title %}
+{% block title %}{{ vocab_source.name }}{% endblock title %}
 
 {% block content %}
 
-<div class="row justify-content-md-center">
-<div class="col-md-10">
+<div class="columns">
+<div class="column is-12">
 
 {% block vocab_entry_search %}
 
-<div class="panel">
-<div class="panel-body">
-
-<div class="panel-header">
-
-{% trans "label_search_vocab_in_source" %}
-
-</div>
-
 {% url 'vocab:vocab_source_entry_language_autocomplete' vocab_source.id 'zz' as autocomplete_url %}
 {% url 'vocab:vocab_source_entries' vocab_source.id vocab_source.slug  as search_url %}
-
 {% alias vocab_source.id|stringformat:"s" as source_id %}
 {% alias 'init-source-id='|add:source_id as comp_extra %}
-{% alias 'source-entry-search' as comp_name %}
+{% alias 'vocab-source-entry-search' as comp_name %}
 {% alias True as search_btn %}
+{% trans 'label_search_vocab_in_source' as search_label %}
 
+<div class="box" style="margin-bottom: 40px;">
 {% include 'includes/vue/_language_search.html' %}
-
-</div>
 </div>
 
 {% endblock vocab_entry_search %}
@@ -42,9 +28,12 @@
 </div>
 </div>
 
-<div class="row justify-content-md-center" style="margin-top: 30px;">
+<div class="icon-blocks">
 
-<div class="col-sm-4 icon-block">
+<div class="columns is-multiline">
+
+<div class="column is-6 icon-block">
+<div class="box">
 
 <a href="{% url 'vocab:vocab_source_entries' vocab_source.id vocab_source.slug %}">
 
@@ -54,27 +43,32 @@
 </header>
 
 <p>
-{% trans 'text_source_entries_desc' %}
+{% trans 'msg_source_entries_desc' %}
 </p>
 
 </a>
 
 </div>
+</div>
 
-<div class="col-sm-4 icon-block">
+<div class="column is-6 icon-block">
+<div class="box">
 
 <a href="{% url 'vocab:vocab_source_contexts' vocab_source.id vocab_source.slug %}">
 
 <header class="icon-block-header">
-<i class="fas fa-book icon-block-icon"></i>
+<i class="fas fa-language icon-block-icon"></i>
 <h3>{% trans 'label_contexts' %}</h3>
 </header>
 
 <p>
-{% trans 'text_source_contexts_desc' %}
+{% trans 'msg_source_contexts_desc' %}
 </p>
 
 </a>
+
+</div>
+</div>
 
 </div>
 

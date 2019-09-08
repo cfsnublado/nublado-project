@@ -8,6 +8,7 @@ Vue.component('confirmation-modal', ConfirmationModal)
 Vue.component('vocab-sources', VocabSources)
 Vue.component('vocab-source', VocabSource)
 Vue.component('vocab-source-search', VocabSourceSearch)
+Vue.component('vocab-source-entry-search', VocabSourceEntrySearch)
 
 Vue.use(ModalPlugin)
 

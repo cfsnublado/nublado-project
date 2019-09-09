@@ -7,8 +7,8 @@ from django.views.generic import (
 )
 
 from core.views import (
-    AjaxDeleteMixin, MessageMixin,
-    JsonAttachmentMixin
+    AjaxDeleteMixin, JsonAttachmentMixin,
+    MessageMixin, ObjectSessionMixin
 )
 from ..forms import VocabSourceCreateForm, VocabSourceUpdateForm
 from ..models import (
@@ -45,7 +45,7 @@ class VocabSourceExportJsonView(
 
 
 class VocabSourceCreateView(
-    LoginRequiredMixin,
+    LoginRequiredMixin, ObjectSessionMixin,
     MessageMixin, CreateView
 ):
     model = VocabSource

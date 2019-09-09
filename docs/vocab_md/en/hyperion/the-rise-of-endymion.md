@@ -354,4 +354,274 @@ It will make sense later. At least I hope it will.
 
     </div>
 
+- “The Reaper program which Tom Ray created more than a thousand years ago still exists in the Core medium, mutated to a million alternate forms. Ummon never mentioned the Reapers as a Core faction, but they represent a far greater bloc than the Ultimates. It was the Reapers who created and first controlled the physical construct known as the Shrike.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: reaper: reaper
+
+    en: bloc: bloc
+
+    </div>
+
+- “Jesus of Nazareth entered the Void Which Binds. We know that. His voice is among the clearest of those who speak in the language of the dead. He stayed long enough to move to the second level of responsibility and effort—of learning the language of the dead. He learned well enough to hear the music of the spheres. He was able to ride the surging probability waves far enough to see his own death and was brave enough not to avoid it when he could. And we know that—at least on one occasion while dying on the cross—he learned to take that first step—to move through and across the space/time web of the Void Which Binds, appearing to his friends and disciples several paces into the future from where he hung dying on that cross.
+
+    “And, liberated from the restrictions of his time by his glimpse of the timelessness on the Void Which Binds, Jesus realized that it was he who was the key—not his teachings, not Scriptures based on his ideas, not groveling adulation to him or the suddenly evolving Old Testament God in which he solidly believed—but him, Jesus, a human man whose cells carried the decryption code to unlock the portal. Jesus knew that his ability to open that door lay not in his mind or soul but in his skin and bones and cells… literally in his DNA.
+
+    “When, during the Last Supper, Jesus of Nazareth asked his followers to drink of his blood and eat of his body, he was not speaking in parable or asking for magical transubstantiation or setting the place for centuries of symbolic reenactment. Jesus wanted them to drink of his blood… a few drops in a great tankard of wine… and to eat of his body… a few skin scrapings in a loaf of bread. He gave of himself in the most literal terms, knowing that those who drank of his blood would share his DNA, and be able to perceive the power of the Void Which Binds the universe.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: probability: probability
+
+    en: DNA: DNA
+
+    en: transubstantiation: transubstantiation
+
+    </div>
+
+- Choose again,” she said firmly.
+
+    “Care to elaborate on that?”
+
+    “No,” said Aenea. “That’s the whole idea. Keep it simple. But name a category and you get the idea.”
+
+    “Religion,” I said.
+
+    “Choose again,” said Aenea.
+
+    I laughed.
+
+    “I’m not being totally facetious here, Raul,” she said. We began climbing again. A. Bettik seemed lost in thought.
+
+    “I know, kiddo,” I said, although I had not been sure. “Categories… ah… political systems.”
+
+    “Choose again.”
+
+    “You don’t think that the Pax is the ultimate evolution of human society? It’s brought interstellar peace, fairly good government, and… oh, yeah… immortality to its citizens.”
+
+    “It’s time to choose again,” said Aenea. “And speaking of our views of evolution…”
+
+    “What?”
+
+    “Choose again.”
+
+    “Choose what again?” I said. “The direction of evolution?”
+
+    “No,” said Aenea, “I mean our ideas about whether evolution has a direction. Most of our theories about evolution, for that matter.”
+
+    <div markdown="1" class="tagged-entries">
+
+    en: facetious: facetious
+
+    </div>
+
+- “No,” said Aenea. We climbed several minutes in silence. Then she said, “Except for mystics such as the original Teilhard, most early evolution scientists were very careful not to think of evolution in terms of ‘goals’ or ‘purposes.’ That was religion, not science. Even the idea of a direction was anathema to the pre-Hegira scientists. They could only speak in terms of ‘tendencies’ in evolution, sort of statistical quirks that kept recurring.”
+
+    <div markdown="1" class="tagged-entries">
+
+    en: anathema: anathema
+
+    </div>
+
+- Time and motion seem to slow again, as if I can once again see in the phase-shift mode, but this time it is merely the effect of adrenaline and total concentration. My mind shifts into overdrive. My senses become preternaturally alert. I see, feel, and calculate every microsecond with uncanny clarity.
+Nemes takes a step… more toward Aenea to my left than toward me.
+
+    This is a chess match more than a fight. I win if I kill the unfeeling bitch or fling her off the platform long enough for us to escape. She does not have to kill me to win… only neutralize me long enough to kill Aenea. Aenea is her target. Aenea has always been her target. This monster was created to kill Aenea.
+
+    Chess match. Nemes has just sacrificed two of her strongest pieces—her monster siblings—to neutralize our knight, the Shrike. Now all three pieces are off the board. Only Nemes—the dark queen—Aenea, humankind’s queen, and Aenea’s lowly pawn… me.
+
+    This pawn may have to sacrifice himself, but not without taking out the dark queen. Of that he is determined.
+
+    _Nemes is smiling. Her teeth are sharp and redundant. Her arms are still at her sides, long nails gleaming, her right forearm exposed like some obscene surgical exhibit… the interior not human… no, not human at all. The cutting edge of her forearm endoskeleton catches the afternoon sunlight._
+
+    <div markdown="1" class="tagged-entries">
+
+    en: chess: chess
+
+    en: pawn: pawn
+
+    en: endoskeleton: endoskeleton
+
+    en: redundant: redundant
+
+    </div>
+
+- Rachel smiled again. I could imagine that grin on the little girl Sol Weintraub had talked about in his Hyperion Canto. “Don’t worry, Raul. I happen to know for a fact that Aenea has never loved anyone but you. Even when she was a little girl. Even before she met you. You’ve always been her chosen one.” The young woman’s smile became rueful. 
+
+    “We should all be so lucky.”
+
+    I started to speak, hesitated.
+
+    Rachel’s smile faded. “Oh. She told you about the one-year eleven-month one-week six-hour interregnum?”
+
+    “Yes,” I said. “And about her having…” I stopped. It would be foolish to choke up in front of this strong woman. She would never look at me the same again.
+
+    “A baby?” finished Rachel quickly.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: interregnum: interregnum
+
+    </div>
+
+- he holo of a young man appeared in the seat opposite. He was a striking young man with clear hazel-colored eyes, low brow, hollow cheeks, a compact nose and stubborn jaw, and a wide mouth that suggested both a calm masculinity and a hint of pugnaciousness. The young man was dressed in a loose blouse and high-cut breeches. His hair was auburn-colored, thick, and very curly. The Consul knew that his guest had once been described as having “…a brisk, winning face,” and he put that down to the easy mobility of expression that came with the young man’s great intelligence and vitality.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: pugnacious: pugnaciousness
+
+    </div>
+
+- John shook his head. His bearing was very upright and he had the habit of clearing his forehead of curls with an elegant, backward toss of his head. “No,” he said softly, “to start raising hell with the Core entities. To accelerate their endless civil wars and internecine rivalries. To be what my template had been to the poetic community—an irritant.” He pointed to where he wanted his remaining knight moved.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: internecine: internecine
+
+    </div>
+
+- Martin Silenus was old, that was certain, perhaps the oldest human being in the galaxy—but he had not been the Observer, that was equally certain. The author of the Cantos was too opinionated, too active, too visible to the public at large, too obscene, and generally just too damned cantankerous to be a cool observer representing alien races so powerful that they could destroy us in an eye blink. Or so I hoped.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: cantakerous: cantankerous
+
+    </div>
+
+- I now understood both these concepts. Without seeing Aenea ’cast, and without that great rush of gestalt understanding that had come with the terrible sharing of her death, I would not have understood. But I did now.
+I had thought of hearing the music of the spheres as a sort of paranormal-radio-telescope trick—actually hearing the pop and crack and whistle of the stars as radio telescopes had for eleven centuries or more. But that had not been what Aenea had meant at all, I realized. It was not the stars she was listening to and for, but the resonance of those people—human and otherwise—who dwelt among and around those stars. She had been using the Void as a sort of directional beacon before farcasting herself.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: gestalt: gestalt
+
+    en: beacon: beacon
+
+    en: resonance: resonance
+
+    </div>
+
+- To our left, through an even narrower corridor of bones, was a path with a few boot marks in the dust, leading to another steel door, this one unlocked. It took all three of us to leverage the door open. The priest led the way down another set of rusting spiral stairs to a depth I estimated at being at least thirty-five meters beneath the street above. The match went out just as we stepped into another tunnel—much older than the subway vault, its edges and ceiling unfinished and tumbledown. I had caught a glimpse of side passages running off, of bones spilled haphazardly everywhere in these passages, of skulls upside down, of bits of rotted garments.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: haphazardly: haphazardly
+
+    </div>
+
+- I had thought—even as I wrote the narrative in the ’scriber that I held under my arm there in the Schrödinger death cell—that I had been little more than a fellow traveler in a series of picaresque adventures. But it had all held a purpose. I had been a lover traveling with my love—or to my love—through a musical score of worlds. A score that I had to learn by heart so that I could play it again someday.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: picaresque: picaresque
+
+    </div>
+
+- In that unhurried emptiness, I opened myself to the Void Which Binds and the universe to which it resonated. I could not do this, I realized, without communion with Aenea’s blood, without the nanotech tailored organisms that now dwelt in my cells and would dwell in my children’s cells. No, I thought at once, not my children. But in the cells of those in the human race who escape the cruciform. In their children’s cells. I could not do this without having learned from Aenea. I could not have heard the voices I heard then—greater choruses than I had ever heard before—without having honed my own grammar and syntax of the language of the dead and living during the months I worked on the narrative while waiting to die.
+
+    I could not do this, I realized, if I were immortal. This degree of love of life and of one another is granted, I saw for once and for ever, not to immortals, but to those who live briefly and always under the shadow of death and loss.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: syntax: syntax
+
+    </div>
+
+- It is almost overwhelming to be walking free under an open sky after my uncounted months of tight incarceration. I clutch my ’scriber to me like a shield, like some talisman, like a Bible, and walk the once-proud boulevard with shaky legs. For months my mind has been sharing memories of many places and many people, but my own eyes and lungs and legs and skin have forgotten the feeling of real freedom. Even in my sadness, there is an exultation.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: talisman: talisman
+
+    </div>
+
+- “On Pacem,” says Kee. “On Lusus and Renaissance Vector. On Mars and Qom-Riyadh and Renaissance Minor and Tau Ceti Center. On Fuji and Ixion and Deneb Drei and Sibitu’s Bitterness. On Barnard’s World and God’s Grove and Mare Infinitus. On Tsingtao Hsishuang Panna and Patawpha and Groombridge Dyson D.” Kee pauses and smiles at the sound of his own litany. “On almost every world, Raul. And in places in between. We know that the Startree felt the Shared Moment… all the startree biospheres did.”
+
+    I blink. “There are other startrees?”
+
+    Kee nods.
+
+    “How did all these worlds… share that moment?” I ask, seeing the answer even as I pose the question.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: litany: litany
+
+    </div>
+
+- Father Duré has not actually tasted his wine, but he stares down into the glass as if waiting for it to transubstantiate. “Time and time again,” he says in a tone that seems more wistful than anything else. “It is a strange life, being born just to be murdered.”
+
+    “Aenea would agree,” I say, knowing that these men are friends and good men but not feeling especially friendly to the Church in general.
+
+    “Yes,” says Paul Duré and holds up his glass in a silent toast. He drinks.
+
+    Bassin Kee fills the vacuum of silence. “Most of the faithful left on Pacem would have Father Duré as our true pope.”
+
+    <div markdown="1" class="tagged-entries">
+
+    en: transubstantiate: transubstantiate
+
+    </div>
+
+- The emaciated thing in the hoverbed at the locus of all the machines, monitors, respirators, and android nurses did not look much like the Poulsen-rejuvenated old man I had said good-bye to less than a decade of mine and only two waking years of his ago. This was a corpse that had neglected to be buried. Even his voice was an electronic restructuring of his subvocalized gasps and rattles.
+
+    “Are you finished flicking gawking, or do you want to buy another ticket for the freak show?” asked the voice synthesizer above the mummy’s head.
+
+    “Sorry,” I mumbled, feeling like a rude child caught staring.
+
+    “Sorry doesn’t feed the bulldog,” said the old poet. “Are you going to report to me or just stand there like the indigenie hick you are?”
+
+    “Report?” I said, opening my hands and setting the ’scriber on a table tray. “I think you know the essential things.”
+
+    <div markdown="1" class="tagged-entries">
+
+    en: emaciated: emaciated
+
+    en: locus: locus
+
+    </div>
+
+- The taller figure was more recognizable at this distance, of course—sunlight on its chrome carapace, the red eyes visibly glinting even at this distance, the gleam of thorns and spikes and razor fingers—but I had no time to waste looking at the motionless Shrike. It had done its job. It had farcast itself and the person with it forward through time as easily as I had learned to ’cast through space.
+
+    Aenea ran the last thirty meters. She looked younger—less worn by worry and events—her hair was almost blond in the sun and had been hastily tied back. She was younger, I realized, frozen in my place as she ran up to our small party on the hill. She was twenty, four years older than when I had left her in Hannibal but almost three years younger than when I saw her last.
+
+    Aenea kissed A. Bettik, hugged Father de Soya, leaned into the bed to kiss the old poet with great gentleness, and then turned to me.
+
+    I was still frozen in place.
+
+    Aenea walked closer and stood on tiptoe as she always had when she wanted to kiss me on the cheek.
+
+    She kissed me gently on the lips. “I’m sorry, Raul,” she whispered. “I’m sorry this had to be so hard on you. On everyone.”
+
+    So hard on me. She stood there with the full foresight of the torture to come in Castel Sant’ Angelo, with the Nemes-things circling her naked body like carrion birds, with the images of the rising flames…
+
+    She touched my cheek again. “Raul, my dear. I’m here. This is me. For the next one year, eleven months, one week, and six hours, I’ll be with you. And I will never mention the amount of time again. We have infinite time. We’ll always be together. And our child will be there with you as well.”
+
+    Our child. Not a messiah born of necessity. Not a marriage with an Observer. Our child. Our human, fallible, falling-down-and-crying child.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: fallible: fallible
+
+    en: foresight: foresight
+
+    </div>
+
+- “Thank you,” said Aenea. “Thank you, dear friend.” She freed herself enough to kiss the android a final time.
+
+    “Hey,” I said, attempting the whine of an excluded child.
+
+    She kissed me a longer time. A much longer time. A very deep time.
+
+    We waved a final good-bye, I tapped the flight threads, and the centuries-old mat rose fifty meters, flew over the errant city slab and stone tower a final time, circled the Consul’s ebony spaceship, and carried us away westward. Already trusting the North Star as our guide, softly discussing a likely looking campsite on high ground some kilometers west, we passed over the old poet’s grave where the Shrike still stood silent guard, flew out over the river where the ripples and whirlpools caught the last glows of sunset, and gained altitude as we gazed down on the lush meadows and enticing forests of our new playground, our ancient world… our new world… our first and future and finest world.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: shrike: shrike
+
+    en: enticing: enticing
+
+    </div>
+
 - 

@@ -15,6 +15,13 @@ inline-template
 >
 
 <div class="searchbox">
+{% if search_label %}
+  <label class="label" for="search-input">{{ search_label }}</label>
+{% endif %}
+
+<div class="field has-addons">
+
+<div class="control is-expanded">
 
 <div 
 class="dropdown"
@@ -23,13 +30,6 @@ v-bind:class="[{ 'is-active': isOpen }]"
 
 <div class="dropdown-trigger">
 
-{% if search_label %}
-  <label class="label" for="search-input">{{ search_label }}</label>
-{% endif %}
-
-<div class="field has-addons">
-
-<div class="control is-expanded">
 <input
   id="search-input"
   name="search-input"
@@ -41,20 +41,6 @@ v-bind:class="[{ 'is-active': isOpen }]"
   @keyup.enter="search"
   @focus="onFocus"
 />
-</div>
-
-<div class="control">
-<a 
-id="{{ search_btn_id }}" 
-class="button" 
-href="#"
-@click.prevent="search"
->
-<i class="fas fa-search fa-fw"></i>
-</a>
-</div>
-
-</div>
 
 </div>
 
@@ -78,4 +64,17 @@ href="#"
 
 </div>
 
+<div class="control">
+<a 
+id="{{ search_btn_id }}" 
+class="button" 
+href="#"
+@click.prevent="search"
+>
+<i class="fas fa-search fa-fw"></i>
+</a>
+</div>
+
+</div>
+</div>
 </{{ comp_name }}>

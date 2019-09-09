@@ -338,7 +338,7 @@ El rey Fynn inspiró hondo por la nariz y se irguió con orgullo. Un fugaz atisb
 
     </div>
 
-- —. ¿Qué ha sido del terreno sagrado del Padre Paz?
+- —¿Qué ha sido del terreno sagrado del Padre Paz?
 
     Yarvi se encogió de hombros.
 
@@ -413,7 +413,7 @@ Rakki lo aferró por el brazo izquierdo, Soryorn por el derecho y entre los dos 
 
     es: rebaño: rebaño
 
-    es: bravura
+    es: bravura: bravura
 
     </div>
 
@@ -994,5 +994,3 @@ Rakki lo aferró por el brazo izquierdo, Soryorn por el derecho y entre los dos 
     es: latigazo: latigazos
 
     </div>
-
-- 

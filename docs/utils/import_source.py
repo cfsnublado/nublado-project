@@ -21,65 +21,65 @@ Options:
     --localhost: if provided, the localhost api is called. Otherwise, the production api is called.
 '''
 
-LOCALHOST = 'http://127.0.0.1:8000'
-PRODUCTION_HOST = 'http://cfsnublado.herokuapp.com'
-TOKEN_PATH = 'api/api-token-auth/'
-IMPORT_PATH = 'api/vocab/source/import/'
+LOCALHOST = "http://127.0.0.1:8000"
+PRODUCTION_HOST = "http://cfsnublado.herokuapp.com"
+TOKEN_PATH = "api/api-token-auth/"
+IMPORT_PATH = "api/vocab/source/import/"
 
 
 def import_source(token, filename):
     print_color(96, filename)
-    with open(filename, 'r') as file:
+    with open(filename, "r") as file:
         mimetype = get_mimetype(filename)
-        if mimetype == 'application/json':
+        if mimetype == "application/json":
             data = json.load(file)
-        elif mimetype == 'text/markdown':
+        elif mimetype == "text/markdown":
             data = convert_markdown_to_dict(file.read())
         else:
-            sys.exit('Source file must be json or markdown.')
-    headers = {'Authorization': 'token {0}'.format(token)}
+            sys.exit("Source file must be json or markdown.")
+    headers = {"Authorization": "token {0}".format(token)}
     requests.post(vocab_source_import_url, headers=headers, json=data)
 
 
 def convert_markdown_to_dict(md_text, display_html=False):
-    html = markdown2.markdown(md_text, extras=['metadata', 'markdown-in-html'])
+    html = markdown2.markdown(md_text, extras=["metadata", "markdown-in-html"])
     source_data = {}
 
-    if 'source_name' not in html.metadata:
-        raise TypeError('Missing source_name attribute in metadata.')
-    source_data['name'] = html.metadata['source_name']
+    if "source_name" not in html.metadata:
+        raise TypeError("Missing source_name attribute in metadata.")
+    source_data["name"] = html.metadata["source_name"]
 
-    if 'source_type' in html.metadata:
-        source_data['source_type'] = int(html.metadata['source_type'])
+    if "source_type" in html.metadata:
+        source_data["source_type"] = int(html.metadata["source_type"])
 
-    if 'source_description' in html.metadata:
-        source_data['description'] = html.metadata['source_description']
+    if "source_description" in html.metadata:
+        source_data["description"] = html.metadata["source_description"]
 
     data_dict = {
-        'vocab_source_data': source_data,
-        'vocab_contexts': []
+        "vocab_source_data": source_data,
+        "vocab_contexts": []
     }
-    soup = BeautifulSoup(html, 'html.parser')
-    lis = soup.ul.find_all('li', recursive=False)
+    soup = BeautifulSoup(html, "html.parser")
+    lis = soup.ul.find_all("li", recursive=False)
     for li in lis:
         vocab_context_dict = {
-            'vocab_context_data': {}
+            "vocab_context_data": {}
         }
         # Tagged entries
-        tagged_vocab = li.find('div', 'tagged-entries')
+        tagged_vocab = li.find("div", "tagged-entries")
         if tagged_vocab:
-            vocab_context_dict['vocab_entries'] = []
-            for entry_tag in tagged_vocab.find_all('p', recursive=False):
+            vocab_context_dict["vocab_entries"] = []
+            for entry_tag in tagged_vocab.find_all("p", recursive=False):
                 # entry: language: tag1, tag2, tag3...
-                entry_list = [x.strip() for x in entry_tag.string.split(':')]
-                tags = [x.strip() for x in entry_list[2].split(',')]
-                vocab_context_dict['vocab_entries'].append(
+                entry_list = [x.strip() for x in entry_tag.string.split(":")]
+                tags = [x.strip() for x in entry_list[2].split(",")]
+                vocab_context_dict["vocab_entries"].append(
                     {
-                        'vocab_entry_data': {
-                            'language': entry_list[0],
-                            'entry': entry_list[1]
+                        "vocab_entry_data": {
+                            "language": entry_list[0],
+                            "entry": entry_list[1]
                         },
-                        'vocab_entry_tags': tags
+                        "vocab_entry_tags": tags
                     }
                 )
 
@@ -88,28 +88,28 @@ def convert_markdown_to_dict(md_text, display_html=False):
         li_content = li.decode_contents()
 
         # Revert li content back to markdown. (Hacky I know).
-        vocab_context_dict['vocab_context_data']['content'] = md(li_content)
-        data_dict['vocab_contexts'].append(vocab_context_dict)
+        vocab_context_dict["vocab_context_data"]["content"] = md(li_content)
+        data_dict["vocab_contexts"].append(vocab_context_dict)
 
     if display_html:
-        print_color(92, '\n\nSource html')
+        print_color(92, "\n\nSource html")
         print(soup.prettify())
 
     return data_dict
 
 
-if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description='Import vocab source json data.')
-    parser.add_argument('--localhost', help='request from Nublado localhost', action='store_true')
-    parser.add_argument('source', help='vocab source file or directory')
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description="Import vocab source json data.")
+    parser.add_argument("--localhost", help="request from Nublado localhost", action="store_true")
+    parser.add_argument("source", help="vocab source file or directory")
     args = parser.parse_args()
 
     if args.localhost:
-        token_url = '{0}/{1}'.format(LOCALHOST, TOKEN_PATH)
-        vocab_source_import_url = '{0}/{1}'.format(LOCALHOST, IMPORT_PATH)
+        token_url = "{0}/{1}".format(LOCALHOST, TOKEN_PATH)
+        vocab_source_import_url = "{0}/{1}".format(LOCALHOST, IMPORT_PATH)
     else:
-        token_url = '{0}/{1}'.format(PRODUCTION_HOST, TOKEN_PATH)
-        vocab_source_import_url = '{0}/{1}'.format(PRODUCTION_HOST, IMPORT_PATH)
+        token_url = "{0}/{1}".format(PRODUCTION_HOST, TOKEN_PATH)
+        vocab_source_import_url = "{0}/{1}".format(PRODUCTION_HOST, IMPORT_PATH)
 
     token = get_user_auth_token(token_url)
 
@@ -121,4 +121,4 @@ if __name__ == '__main__':
                 for file in files:
                     import_source(token, os.path.join(root, file))
     else:
-        sys.exit('Invalid login.')
+        sys.exit("Invalid login.")

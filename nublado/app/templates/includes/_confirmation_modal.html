@@ -1,4 +1,4 @@
-{% extends 'includes/_modal.html' %}
+{% extends "includes/_modal.html" %}
 {% load i18n %}
 
 {% block modal_classes %}confirmation-modal{% endblock modal_classes %}
@@ -13,7 +13,7 @@ id="{% block cancel_id %}{% endblock cancel_id %}"
 class="button"
 @click.prevent="close"
 >
-{% trans 'label_no' %}
+{% trans "label_no" %}
 </a>
 
 <button
@@ -21,7 +21,7 @@ id="{% block ok_id %}{% endblock ok_id %}"
 class="button is-danger"
 @click.prevent="confirm"
 >
-{% trans 'label_yes' %}
+{% trans "label_yes" %}
 </button>
 
 </span>

@@ -1,14 +1,14 @@
-Vue.component('ajax-delete', AjaxDelete)
-Vue.component('alert-message', AlertMessage)
-Vue.component('dropdown', Dropdown)
-Vue.component('navbar-dropdown', NavbarDropdown)
-Vue.component('confirmation-modal', ConfirmationModal)
+Vue.component("ajax-delete", AjaxDelete)
+Vue.component("alert-message", AlertMessage)
+Vue.component("dropdown", Dropdown)
+Vue.component("navbar-dropdown", NavbarDropdown)
+Vue.component("confirmation-modal", ConfirmationModal)
 
 // Vocab components
-Vue.component('vocab-sources', VocabSources)
-Vue.component('vocab-source', VocabSource)
-Vue.component('vocab-source-search', VocabSourceSearch)
-Vue.component('vocab-source-entry-search', VocabSourceEntrySearch)
+Vue.component("vocab-sources", VocabSources)
+Vue.component("vocab-source", VocabSource)
+Vue.component("vocab-source-search", VocabSourceSearch)
+Vue.component("vocab-source-entry-search", VocabSourceEntrySearch)
 
 Vue.use(ModalPlugin)
 
@@ -28,15 +28,15 @@ VueScrollTo.setDefaults({
 
 // Instantiate main app instance.
 const vm = new Vue({
-  el: '#app-container',
-  delimiters: ['[[', ']]'],
+  el: "#app-container",
+  delimiters: ["[[", "]]"],
   data: {
     appSessionUrl: appSessionUrl,
     showSidebar: sidebarExpanded,
     sidebarSessionEnabled: initSidebarSessionEnabled,
-    sidebarOpenClass: 'sidebar-expanded',
+    sidebarOpenClass: "sidebar-expanded",
     showNavbarMenu: false,
-    navbarMenuOpenClass: 'is-active',
+    navbarMenuOpenClass: "is-active",
     windowWidth: 0,
     windowWidthSmall: 640,
     windowResizeTimer: null,
@@ -107,7 +107,7 @@ const vm = new Vue({
       this.windowResizeTimer = setTimeout(()=>{
         this.windowWidth = document.documentElement.clientWidth
         if (this.smallWindow) {
-          console.log('small')
+          console.log("small")
           if (this.sidebarSessionEnabled) {
             this.setSidebarSession(true)
             this.sidebarSessionEnabled = false
@@ -123,11 +123,11 @@ const vm = new Vue({
   },
   mounted() {
     this.$nextTick(function() {
-      window.addEventListener('resize', this.windowResize);
+      window.addEventListener("resize", this.windowResize);
       this.windowResize()
     })
   },
   beforeDestroy() {
-    window.removeEventListener('resize', this.windowResize);
+    window.removeEventListener("resize", this.windowResize);
   }
 })

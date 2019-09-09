@@ -3,15 +3,15 @@ const AjaxDelete = {
   props: {
     deleteConfirmId: {
       type: String,
-      default: 'confirmation-modal'
+      default: "confirmation-modal"
     },
     deleteUrl: {
       type: String,
-      default: '',
+      default: "",
     },
     deleteRedirectUrl: {
       type: String,
-      default: ''
+      default: ""
     },
     initTimerDelay: {
       type: Number,
@@ -187,11 +187,11 @@ const ConfirmationModal = {
   },
   methods: {
     confirm() {
-      this.yes('yes')
+      this.yes("yes")
       this.isOpen = false
     },
     close() {
-      this.no('no')
+      this.no("no")
       this.isOpen = false
     }
   },

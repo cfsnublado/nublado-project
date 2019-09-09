@@ -28,15 +28,15 @@ const AjaxProcessMixin = {
   methods: {
     process() {
       this.processing = true
-      this.$emit('ajax-process')
+      this.$emit("ajax-process")
     },
     complete() {
       this.processing = false
-      this.$emit('ajax-complete')
+      this.$emit("ajax-complete")
     },
     success() {
       this.processing = false
-      this.$emit('ajax-success')
+      this.$emit("ajax-success")
     }
   }
 }
@@ -44,7 +44,7 @@ const AjaxProcessMixin = {
 const ClickOutsideMixin = {
   methods: {
     onCloseOutside() {
-      console.log('clicked outside')
+      console.log("clicked outside")
     },
     closeOutside(event) {
       if (!this.$el.contains(event.target)) {
@@ -52,10 +52,10 @@ const ClickOutsideMixin = {
       }
     },
     addClickOutsideHandler() {
-      window.addEventListener('click', this.closeOutside)
+      window.addEventListener("click", this.closeOutside)
     },
     removeClickOutsideHandler() {
-      window.removeEventListener('click', this.closeOutside)
+      window.removeEventListener("click", this.closeOutside)
     }
   },
   created() {
@@ -104,7 +104,7 @@ const MarkdownMixin = {
 //   props: {
 //     contextElement: {
 //       type: String,
-//       default: '#context'
+//       default: "#context"
 //     }
 //   },
 //   data() {
@@ -154,11 +154,11 @@ const BaseMessage = {
   props: {
     messageType: {
       type: String,
-      default: 'success'
+      default: "success"
     },
     messageText: {
       type: String,
-      default: ''
+      default: ""
     },
     initAutoClose: {
       type: Boolean,
@@ -208,20 +208,20 @@ const BaseFileUploader = {
   methods: {
     handleFileUpload() {
       this.file = this.$refs.file.files[0]
-      this.$emit('change-file')
+      this.$emit("change-file")
     },
     submitFile() {
       if (this.validateFile()) {
         this.process()
         let formData = new FormData()
-        formData.append('file', this.file);
+        formData.append("file", this.file);
 
         axios.post(
           this.uploadUrl,
           formData,
           {
             headers: {
-              'Content-Type': 'multipart/form-data'
+              "Content-Type": "multipart/form-data"
             }
           }
         )
@@ -301,7 +301,7 @@ const BaseModal = {
   props: {
     initId: {
       type: String,
-      default: 'modal'
+      default: "modal"
     }
   },
   data() {
@@ -330,7 +330,7 @@ const BaseDropdown = {
     },
     dropdownClasses: {
       type: String,
-      default: ''
+      default: ""
     }
   },
   data() {
@@ -340,7 +340,7 @@ const BaseDropdown = {
   },
   methods: {
     toggle(manual) {
-      this.$emit('toggle')
+      this.$emit("toggle")
       if (manual === true || manual === false) {
         this.isOpen = manual
       } else {
@@ -366,14 +366,14 @@ const BaseSearch = {
     },
     initSearchUrl: {
       type: String,
-      default: ''
+      default: ""
     }
   },
   data() {
     return {
-      searchTerm: '',
+      searchTerm: "",
       searchParams: {
-        term: ''
+        term: ""
       },
       results: [],
       isOpen: false,
@@ -390,7 +390,7 @@ const BaseSearch = {
       this.isOpen = false
     },
     search() {
-      console.log('search')
+      console.log("search")
     },
     success(response) {
       if (response.data.length) {
@@ -431,11 +431,11 @@ const BaseSearch = {
       }, this.searchDelay)
     },
     onFocus() {
-      this.$emit('search-focus')
+      this.$emit("search-focus")
     },
     onCloseOutside() {
       this.isOpen = false
-      this.searchTerm = ''
+      this.searchTerm = ""
     },   
   }
 }
@@ -445,19 +445,19 @@ const BaseLanguageSearch = {
   props: {
     initLanguage: {
       type: String,
-      default: 'en'
+      default: "en"
     }
   },
   data() {
     return {
       language: this.initLanguage,
-      languageUrl: ''
+      languageUrl: ""
     }
   },
   methods: {
     setLanguage(lang) {
       this.language = lang
-      this.autocompleteUrl = this.languageUrl.replace('zz', this.language)
+      this.autocompleteUrl = this.languageUrl.replace("zz", this.language)
       this.onAutocomplete()
     },
     search() {
@@ -467,7 +467,7 @@ const BaseLanguageSearch = {
   },
   created() {
     this.languageUrl = this.autocompleteUrl
-    this.autocompleteUrl = this.languageUrl.replace('zz', this.language)
+    this.autocompleteUrl = this.languageUrl.replace("zz", this.language)
   },
 }
 
@@ -490,7 +490,7 @@ const BaseTag = {
     },
     selectRedirectUrl: {
       type: String,
-      default: ''
+      default: ""
     }
   },
   data() {
@@ -505,10 +505,10 @@ const BaseTag = {
       if (this.selectRedirectUrl) {
         window.location.replace(this.selectRedirectUrl)
       }
-      this.$emit('tag-select', this.id)
+      this.$emit("tag-select", this.id)
     },
     remove() {
-      this.$emit('tag-remove', this.id)
+      this.$emit("tag-remove", this.id)
     }
   },
   template: `
@@ -546,7 +546,7 @@ const BaseToggleTag = {
   },
   methods: {
     toggle() {
-      this.$emit('tag-toggle', this.id)
+      this.$emit("tag-toggle", this.id)
     },
   },
   template: `
@@ -584,13 +584,13 @@ const BaseTagbox = {
   },
   methods: {
     addTag(tag) {
-      this.$emit('add-tag', tag)
+      this.$emit("add-tag", tag)
     },
     removeTag(index) {
-      this.$emit('remove-tag', index)
+      this.$emit("remove-tag", index)
     },
     selectTag(index) {
-      this.$emit('select-tag', index)
+      this.$emit("select-tag", index)
     }
   }
 }

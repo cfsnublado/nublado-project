@@ -16,33 +16,29 @@
 
 {% block page_header %}
 
-<div class="row justify-content-md-center">
-<div class="col-md-10">
 <div class="page-header">
-{% trans "header_create_source" %}
-</div>
-</div>
+{% trans "label_create_source" %}
 </div>
 
 {% endblock page_header %}
 
 {% block content %}
-<div class="row justify-content-md-center">
-<div class="col-md-10">
 
-<form id="edit-form" action="{% url 'vocab:vocab_source_create' %}" method="post" novalidate>
+<form 
+id="create-form" 
+action="{% url 'vocab:vocab_source_create' %}"
+method="post" 
+novalidate
+>
 
 {% csrf_token %}
 
 {% include "vocab/includes/forms/_vocab_source_form.html" %}
 
-<button id="submit-btn" class="ui small button" type="submit" form="edit-form">
+<button id="submit-btn" class="button is-info" type="submit" form="create-form">
 {% trans "label_create" %}
 </button>
 
 </form>
-
-</div>
-</div>
 
 {% endblock content %}

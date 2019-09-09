@@ -1,30 +1,54 @@
-{% load i18n %}
 {% load widget_tweaks %}
+{% load i18n %}
 
 <div id="__all__-errors" class="errors">
 {{ form.non_field_errors }}
 </div>
 
-<div class="form-group">
-{{ form.source_type.label_tag }}
-{% render_field form.source_type class+="form-control" %}
-<div id="{{ form.source_type.auto_id }}-errors" class="errors">
-{{ form.source_type.errors }}
-</div>
+<div class="field">
+
+<label class="label" for="source_type">
+{{ form.source_type.label }}
+</label>
+
+<div class="control select">
+{% render_field form.source_type class+="select" %}
 </div>
 
-<div class="form-group">
-{{ form.name.label_tag }}
-{% render_field form.name class+="form-control" %}
+<div id="{{ form.description.auto_id }}-errors" class="errors">
+{{ form.source_type.errors }}
+</div>
+
+</div>
+
+<div class="field">
+
+<label class="label" for="name">
+{{ form.name.label }}
+</label>
+
+<div class="control">
+{% render_field form.name class+="input" %}
+</div>
+
 <div id="{{ form.name.auto_id }}-errors" class="errors">
 {{ form.name.errors }}
 </div>
+
 </div>
 
-<div class="form-group">
-{{ form.description.label_tag }}
-{% render_field form.description class+="form-control" rows="3" %}
+<div class="field">
+
+<label class="label" for="description">
+{{ form.description.label }}
+</label>
+
+<div class="control">
+{% render_field form.description class+="textarea" %}
+</div>
+
 <div id="{{ form.description.auto_id }}-errors" class="errors">
 {{ form.description.errors }}
 </div>
+
 </div>

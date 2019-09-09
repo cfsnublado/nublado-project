@@ -11,15 +11,15 @@ const VocabSource = {
     },
     initViewUrl: {
       type: String,
-      default: ''
+      default: ""
     },
     initEditUrl: {
       type: String,
-      default: ''
+      default: ""
     },
     initDeleteUrl: {
       type: String,
-      default: ''
+      default: ""
     }
   },
   data() {
@@ -38,14 +38,14 @@ const VocabSource = {
     },
     edit() {},
     remove() {
-      this.$emit('delete-vocab-source', this.project.id)
+      this.$emit("delete-vocab-source", this.project.id)
     }
   },
   created() {
     if (this.initViewUrl) {
       this.viewUrl = this.initViewUrl
         .replace(0, this.source.id)
-        .replace('zzz', this.source.slug)   
+        .replace("zzz", this.source.slug)   
     }
 
     if (this.initDeleteUrl) {
@@ -57,7 +57,7 @@ const VocabSource = {
 
 const VocabSources = {
   components: {
-    'vocab-source': VocabSource
+    "vocab-source": VocabSource
   },
   mixins: [
     AdminMixin,
@@ -96,7 +96,7 @@ const VocabSources = {
           response.data.num_pages
         )
         VueScrollTo.scrollTo({
-          el: '#vocab-sources-scroll-top',
+          el: "#vocab-sources-scroll-top",
         })
         this.success()
       })
@@ -162,7 +162,7 @@ const VocabSourceEntrySearch = {
     search(val) {
       clearTimeout(this.searchTimerId)
       this.isOpen = false
-      url = this.searchUrl + '?search_entry=' + encodeURIComponent(this.searchTerm) + '&search_language=' + this.language + '&search_source=' + this.sourceId
+      url = this.searchUrl + "?search_entry=" + encodeURIComponent(this.searchTerm) + "&search_language=" + this.language + "&search_source=" + this.sourceId
       window.location.replace(url);
     }
   },

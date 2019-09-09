@@ -1,9 +1,9 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 {% load i18n %}
 
 {% block title %}
 
-{% trans 'page_home_title' %}
+{% trans "page_home_title" %}
 
 {% endblock title %}
 
@@ -20,7 +20,7 @@
 <h1 class="is-size-1 is-size-2-mobile"> {{ project_name }} </h1>
 
 <h2 class="is-size-3 is-size-4-mobile">
-{% trans 'msg_project_banner_desc' %}
+{% trans "msg_project_banner_desc" %}
 </h2>
 
 </div>
@@ -35,7 +35,7 @@
 
 <div class="icon-blocks">
 
-<h2 class="icon-blocks-header">{% trans 'msg_nublado_at_a_glance' %}</h2>
+<h2 class="icon-blocks-header">{% trans "msg_nublado_at_a_glance" %}</h2>
 
 <div class="columns is-multiline">
 
@@ -43,11 +43,11 @@
 
 <header class="icon-block-header">
 <i class="fas fa-language icon-block-icon"></i>
-<h3>{% trans 'msg_bilingual' %}</h3>
+<h3>{% trans "msg_bilingual" %}</h3>
 </header>
 
 <p>
-{% trans 'msg_bilingual_desc' %}
+{% trans "msg_bilingual_desc" %}
 </p>
 
 </div>
@@ -57,11 +57,11 @@
 <i class="fab fa-python icon-block-icon"></i>
 
 <header class="icon-block-header">
-<h3>{% trans 'msg_python_cool' %}</h3>
+<h3>{% trans "msg_python_cool" %}</h3>
 </header>
 
 <p>
-{% trans 'msg_python_cool_desc' %}
+{% trans "msg_python_cool_desc" %}
 </p>
 
 </div>

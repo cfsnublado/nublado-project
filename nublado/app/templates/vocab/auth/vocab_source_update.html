@@ -16,16 +16,18 @@
 
 {% block content %}
 
-<div class="row justify-content-md-center">
-<div class="col-md-10">
-
-<form id="edit-form" action="{% url 'vocab:vocab_source_update' vocab_source.id vocab_source.slug %}" method="post" novalidate>
+<form 
+id="edit-form" 
+action="{% url 'vocab:vocab_source_update' vocab_source.id vocab_source.slug %}" 
+method="post" 
+novalidate
+>
 
 {% csrf_token %}
 
 {% include "vocab/includes/forms/_vocab_source_form.html" %}
 
-<button id="submit-btn" class="ui small button" type="submit" form="edit-form">
+<button id="submit-btn" class="button is-info" type="submit" form="edit-form">
 {% trans "label_update" %}
 </button>
 
@@ -48,14 +50,11 @@ class="ui small red button"
 
 </form>
 
-</div>
-</div>
-
 {% endblock content %}
 
 {% block modal_content %}
 
-{% include "vocab/includes/_vocab_source_delete_modal.html" with modal_id='delete-source' modal_name='confirmation-modal' %} 
+{% include "vocab/includes/_vocab_source_delete_modal.html" with modal_id="delete-source" modal_name="confirmation-modal" %} 
 
 {% endblock modal_content %}
 

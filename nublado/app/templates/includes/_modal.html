@@ -1,10 +1,10 @@
 {% load core_extras %}
 
-{% if not modal_id %}{% alias 'modal' as modal_id %}{% endif %}
+{% if not modal_id %}{% alias "modal" as modal_id %}{% endif %}
 
-{% if not modal_name %}{% alias 'modal' as modal_name %}{% endif %}
+{% if not modal_name %}{% alias "modal" as modal_name %}{% endif %}
 
-{% if not modal_trigger %}{% alias 'showModal' as modal_trigger %}{% endif %}
+{% if not modal_trigger %}{% alias "showModal" as modal_trigger %}{% endif %}
 
 <{{ modal_name }} 
 {% block modal_extra %}{% endblock modal_extra %} 

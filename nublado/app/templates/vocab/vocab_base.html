@@ -82,7 +82,7 @@
 
 {% block body_classes %}
 
-sidebar-adaptable theme-cloudy {{ sidebar_expanded|yesno:'sidebar-expanded,' }}
+sidebar-adaptable theme-cloudy {{ sidebar_expanded|yesno:"sidebar-expanded," }}
 
 {% endblock body_classes %}
 
@@ -103,7 +103,7 @@ class="section {% block main_section_classes %}main-content{% endblock main_sect
 {% if request.session.session_obj.vocab_source %}
 
   <div class="small-caps-header">
-  {% trans 'source' %}
+  {% trans "source" %}
   </div>
 
   <div class="page-header">

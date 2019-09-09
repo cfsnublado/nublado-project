@@ -1,10 +1,10 @@
 {% load core_extras %}
 {% load i18n %}
 
-{% if not comp_name %}{% alias 'search' as comp_name %}{% endif %}
-{% if not search_url %}{% alias '/search/' as search_url %}{% endif %}
-{% if not autocomplete_url %}{% alias '/autocomplete/' as autocomplete_url %}{% endif %}
-{% if not search_btn_id %}{% alias 'search-btn' as search_btn_id %}{% endif %}
+{% if not comp_name %}{% alias "search" as comp_name %}{% endif %}
+{% if not search_url %}{% alias "/search/" as search_url %}{% endif %}
+{% if not autocomplete_url %}{% alias "/autocomplete/" as autocomplete_url %}{% endif %}
+{% if not search_btn_id %}{% alias "search-btn" as search_btn_id %}{% endif %}
 
 <{{ comp_name }} 
 init-search-url="{{ search_url }}" 

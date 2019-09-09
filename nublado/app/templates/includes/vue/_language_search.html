@@ -1,12 +1,12 @@
-{% extends 'includes/vue/_search.html' %}
+{% extends "includes/vue/_search.html" %}
 {% load core_extras %}
 {% load i18n %}
 
-{% if not comp_name %}{% alias 'language-search' as comp_name %}{% endif %}
-{% if not search_language %}{% alias 'en' as search_language %}{% endif %}
-{% if not search_url %}{% alias '/search/' as search_url %}{% endif %}
-{% if not autocomplete_url %}{% alias '/autocomplete/zz/' as autocomplete_url %}{% endif %}
-{% if not comp_extra %}{% alias '' as comp_extra %}{% endif %}
+{% if not comp_name %}{% alias "language-search" as comp_name %}{% endif %}
+{% if not search_language %}{% alias "en" as search_language %}{% endif %}
+{% if not search_url %}{% alias "/search/" as search_url %}{% endif %}
+{% if not autocomplete_url %}{% alias "/autocomplete/zz/" as autocomplete_url %}{% endif %}
+{% if not comp_extra %}{% alias "" as comp_extra %}{% endif %}
 
 {% block comp_extra %}init-autocomplete-url="{{ autocomplete_url }}"{% endblock comp_extra %}
 

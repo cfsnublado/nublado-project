@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-07 18:16-0700\n"
+"POT-Creation-Date: 2019-09-08 20:28-0700\n"
 "PO-Revision-Date: 2018-11-28 21:15-0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -494,8 +494,7 @@ msgstr "Log in"
 msgid "label_logout"
 msgstr "Log out"
 
-#: nublado/app/templates/includes/vue/_language_search.html:38
-#: nublado/app/templates/includes/vue/_search.html:37
+#: nublado/app/templates/includes/vue/_search.html:36
 msgid "placeholder_search"
 msgstr "Search"
 
@@ -652,7 +651,7 @@ msgstr "Contexts"
 #: nublado/app/templates/vocab/auth/vocab_entry_create.html:25
 #: nublado/app/templates/vocab/auth/vocab_entry_create.html:42
 #: nublado/app/templates/vocab/auth/vocab_source_create.html:13
-#: nublado/app/templates/vocab/auth/vocab_source_create.html:40
+#: nublado/app/templates/vocab/auth/vocab_source_create.html:34
 msgid "label_create"
 msgstr "Create"
 
@@ -728,8 +727,8 @@ msgstr "Delete"
 msgid "page_vocab_source_create_title"
 msgstr "Create source"
 
-#: nublado/app/templates/vocab/auth/vocab_source_create.html:22
-msgid "header_create_source"
+#: nublado/app/templates/vocab/auth/vocab_source_create.html:19
+msgid "label_create_source"
 msgstr "Create source"
 
 #: nublado/app/templates/vocab/auth/vocab_source_delete_confirm.html:25
@@ -837,15 +836,15 @@ msgstr "There are no sources."
 msgid "label_source"
 msgstr "Source"
 
-#: nublado/app/templates/vocab/vocab_base.html:56
+#: nublado/app/templates/vocab/vocab_base.html:54
 msgid "label_edit_source"
 msgstr "Edit source"
 
-#: nublado/app/templates/vocab/vocab_base.html:66
+#: nublado/app/templates/vocab/vocab_base.html:64
 msgid "label_new_vocab_context"
 msgstr "New context"
 
-#: nublado/app/templates/vocab/vocab_base.html:105
+#: nublado/app/templates/vocab/vocab_base.html:106
 #, fuzzy
 #| msgid "label_source"
 msgid "source"
@@ -896,12 +895,18 @@ msgid "page_vocab_sources_title"
 msgstr "Sources"
 
 #: nublado/app/templates/vocab/vocab_sources.html:14
-msgid "header_vocab_sources"
+msgid "label_vocab_sources"
 msgstr "Sources"
 
 #: nublado/app/templates/vocab/vocab_sources.html:20
 msgid "label_search_sources"
 msgstr "Search sources"
+
+#~ msgid "header_create_source"
+#~ msgstr "Create source"
+
+#~ msgid "header_vocab_sources"
+#~ msgstr "Sources"
 
 #~ msgid "header_source"
 #~ msgstr "Source"

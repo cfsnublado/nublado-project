@@ -6,50 +6,38 @@
 {{ vocab_source.name }} - {% trans "page_vocab_source_entries_title" %}
 {% endblock title %}
 
-{% block vocab_source_entries_link_active %}active{% endblock vocab_source_entries_link_active %}
+{% block vocab_source_entries_link_active %}is-active{% endblock vocab_source_entries_link_active %}
+
+{% block breadcrumb_content %}
+
+{{ block.super }}
+&nbsp;>&nbsp;
+{% trans "label_vocabulary" %}
+
+{% endblock breadcrumb_content %}
 
 {% block content %}
 
-<div class="row justify-content-md-center">
-<div class="col-md-10">
-
 {% block vocab_entry_search %}
 
-<div class="panel">
-<div class="panel-body">
-
-<div class="panel-header">
-
-{% trans "label_search_vocab_in_source" %}
-
-</div>
-
-{% url 'vocab:vocab_source_entry_language_autocomplete' vocab_source.id 'zz' as autocomplete_url %}
-{% url 'vocab:vocab_source_entries' vocab_source.id vocab_source.slug  as search_url %}
+{% url "vocab:vocab_source_entry_language_autocomplete" vocab_source.id "zz" as autocomplete_url %}
+{% url "vocab:vocab_source_entries" vocab_source.id vocab_source.slug  as search_url %}
 
 {% alias vocab_source.id|stringformat:"s" as source_id %}
-{% alias 'init-source-id='|add:source_id as comp_extra %}
-{% alias 'source-entry-search' as comp_name %}
-{% alias True as search_btn %}
+{% alias "init-source-id="|add:source_id as comp_extra %}
+{% alias "vocab-source-entry-search" as comp_name %}
+{% trans "label_search_vocab_in_source" as search_label %}
 
+<div class="box" style="margin-bottom: 40px;">
 {% include 'includes/vue/_language_search.html' %}
-
-</div>
 </div>
 
 {% endblock vocab_entry_search %}
 
-</div>
-</div>
+<span id="vocab-entries-scroll-top"></span>
 
-<div class="row justify-content-md-center">
-<div class="col-md-10">
-
-{% url 'api:vocab-source-entry-list' vocab_source.id as vocab_entries_url %}
-{% url 'vocab:vocab_source_entry' vocab_source.id vocab_source.slug 'xx' 'zzz' as vocab_entry_url %}
-{% include 'vocab/includes/vue/_vocab_entries.html' %}
-
-</div>
-</div>
+{% url "api:vocab-source-entry-list" vocab_source.id as vocab_entries_url %}
+{% url "vocab:vocab_source_entry" vocab_source.id vocab_source.slug "xx" "zzz" as vocab_entry_url %}
+{% include "vocab/includes/vue/_vocab_entries.html" %}
 
 {% endblock content %}

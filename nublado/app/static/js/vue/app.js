@@ -1,4 +1,5 @@
 Vue.component("ajax-delete", AjaxDelete)
+Vue.component("ajax-tag", AjaxTag)
 Vue.component("alert-message", AlertMessage)
 Vue.component("dropdown", Dropdown)
 Vue.component("navbar-dropdown", NavbarDropdown)
@@ -9,6 +10,8 @@ Vue.component("vocab-sources", VocabSources)
 Vue.component("vocab-source", VocabSource)
 Vue.component("vocab-source-search", VocabSourceSearch)
 Vue.component("vocab-source-entry-search", VocabSourceEntrySearch)
+Vue.component("vocab-entries", VocabEntries)
+Vue.component("vocab-entry", VocabEntry)
 
 Vue.use(ModalPlugin)
 

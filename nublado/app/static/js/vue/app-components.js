@@ -68,6 +68,59 @@ const AjaxDelete = {
   }
 }
 
+const AjaxTag = {
+  mixins: [BaseTag],
+  props: {
+    initConfirmId: {
+      type: String,
+      default: "delete-modal"
+    },
+    initDeleteUrl: {
+      type: String,
+      default: ""
+    }
+  },
+  data() {
+    return {
+      confirmId: this.initConfirmId,
+      deleteUrl: this.initDeleteUrl
+    }
+  },
+  template: `
+    <transition name="fade-transition" v-on:after-enter="isVisible = true" v-on:after-leave="remove">
+    <div 
+    class="ui label tagblock"
+    v-bind:key="id"
+    v-show="isVisible"
+    >
+      <a 
+      class="tag-text"
+      @click.prevent="select"
+      > 
+      {{ value }} 
+      </a>
+
+      &nbsp;
+
+      <ajax-delete
+      v-if="canRemove"
+      :delete-confirm-id="confirmId"
+      :delete-url="deleteUrl"
+      @ajax-success="isVisible = false"
+      inline-template
+      >
+        <a
+        @click.prevent="confirmDelete"
+        >
+          <i class="fa-times fas"></i>
+        </a>
+      </ajax-delete>
+
+    </div>
+    </transition>
+  `
+}
+
 const AlertMessage = {
   mixins: [BaseMessage],
   template: `

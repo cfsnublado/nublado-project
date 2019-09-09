@@ -1,4 +1,4 @@
-{% extends 'vocab/vocab_base.html' %}
+{% extends "vocab/vocab_base.html" %}
 {% load core_extras %}
 {% load i18n %}
 
@@ -11,16 +11,15 @@
 
 {% block vocab_entry_search %}
 
-{% url 'vocab:vocab_source_entry_language_autocomplete' vocab_source.id 'zz' as autocomplete_url %}
-{% url 'vocab:vocab_source_entries' vocab_source.id vocab_source.slug  as search_url %}
+{% url "vocab:vocab_source_entry_language_autocomplete" vocab_source.id "zz" as autocomplete_url %}
+{% url "vocab:vocab_source_entries" vocab_source.id vocab_source.slug  as search_url %}
 {% alias vocab_source.id|stringformat:"s" as source_id %}
-{% alias 'init-source-id='|add:source_id as comp_extra %}
-{% alias 'vocab-source-entry-search' as comp_name %}
-{% alias True as search_btn %}
-{% trans 'label_search_vocab_in_source' as search_label %}
+{% alias "init-source-id="|add:source_id as comp_extra %}
+{% alias "vocab-source-entry-search" as comp_name %}
+{% trans "label_search_vocab_in_source" as search_label %}
 
 <div class="box" style="margin-bottom: 40px;">
-{% include 'includes/vue/_language_search.html' %}
+{% include "includes/vue/_language_search.html" %}
 </div>
 
 {% endblock vocab_entry_search %}
@@ -39,11 +38,11 @@
 
 <header class="icon-block-header">
 <i class="fas fa-language icon-block-icon"></i>
-<h3>{% trans 'label_vocabulary' %}</h3>
+<h3>{% trans "label_vocabulary" %}</h3>
 </header>
 
 <p>
-{% trans 'msg_source_entries_desc' %}
+{% trans "msg_source_entries_desc" %}
 </p>
 
 </a>
@@ -58,11 +57,11 @@
 
 <header class="icon-block-header">
 <i class="fas fa-language icon-block-icon"></i>
-<h3>{% trans 'label_contexts' %}</h3>
+<h3>{% trans "label_contexts" %}</h3>
 </header>
 
 <p>
-{% trans 'msg_source_contexts_desc' %}
+{% trans "msg_source_contexts_desc" %}
 </p>
 
 </a>

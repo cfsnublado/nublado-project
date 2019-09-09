@@ -114,6 +114,26 @@ class="section {% block main_section_classes %}main-content{% endblock main_sect
 
 {% endblock page_header %}
 
+{% block breadcrumbs %}
+
+{% if request.session.session_obj %}
+
+  <nav class="breadcrumb" style="margin-top: 20px;">
+
+  <ul>
+  {% block breadcrumb_content %}
+
+  {% include "vocab/includes/_vocab_breadcrumbs.html" %}
+
+  {% endblock breadcrumb_content %}
+  </ul>
+
+  </nav>
+
+{% endif %}
+
+{% endblock breadcrumbs %}
+
 </div>
 {% endblock content_top %}
 

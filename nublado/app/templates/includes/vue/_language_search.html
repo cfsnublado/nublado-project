@@ -1,3 +1,4 @@
+{% extends 'includes/vue/_search.html' %}
 {% load core_extras %}
 {% load i18n %}
 
@@ -7,63 +8,9 @@
 {% if not autocomplete_url %}{% alias '/autocomplete/zz/' as autocomplete_url %}{% endif %}
 {% if not comp_extra %}{% alias '' as comp_extra %}{% endif %}
 
-<{{ comp_name }} 
-init-language="{{ search_language }}"
-init-search-url="{{ search_url }}" 
-init-autocomplete-url="{{ autocomplete_url }}" 
-{{ comp_extra }} 
-inline-template
->
+{% block comp_extra %}init-autocomplete-url="{{ autocomplete_url }}"{% endblock comp_extra %}
 
-<div class="searchbox">
-{% if search_label %}
-  <label class="label" for="search-input">{{ search_label }}</label>
-{% endif %}
-
-<div class="field has-addons">
-
-<div class="control is-expanded">
-
-<div 
-class="dropdown"
-v-bind:class="[{ 'is-active': isOpen }]"
->
-
-<div class="dropdown-trigger">
-
-<input
-  id="search-input"
-  name="search-input"
-  class="input"
-  placeholder="{% trans 'placeholder_search' %}"
-  type="text" 
-  v-model.trim="searchTerm"
-  @input="onAutocomplete"
-  @keyup.enter="search"
-  @focus="onFocus"
-/>
-
-</div>
-
-<div class="dropdown-menu">
-<div class="dropdown-content">
-
-<a
-  v-for="(result, i) in results"
-  :key="i"
-  class="dropdown-item"
-  href="" 
-  @click.prevent="setResult(result.value)"
->
-[[ result.value ]]
-</a>
-
-</div>
-</div>
-
-</div>
-
-</div>
+{% block control_addons %}
 
 <div class="control">
 <dropdown
@@ -97,18 +44,6 @@ dropdown-classes="is-right"
 </dropdown>
 </div>
 
-<div class="control">
-<a 
-id="{{ search_btn_id }}" 
-class="button" 
-href="#"
-@click.prevent="search"
->
-<i class="fas fa-search fa-fw"></i>
-</a>
-</div>
+{{ block.super }}
 
-</div>
-</div>
-
-</{{ comp_name }}>
+{% endblock control_addons %}

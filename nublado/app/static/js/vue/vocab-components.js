@@ -302,6 +302,22 @@ const VocabEntries = {
   }
 }
 
+const VocabEntrySearch = {
+  mixins: [BaseLanguageSearch],
+  methods: {
+    setResult(result) {
+      this.searchTerm = result
+      this.search()
+    },
+    search(val) {
+      clearTimeout(this.searchTimerId)
+      this.isOpen = false
+      url = this.searchUrl + "?search_entry=" + encodeURIComponent(this.searchTerm) + "&search_language=" + this.language
+      window.location.replace(url);
+    }
+  },
+}
+
 const VocabEntryInfo = {
   mixins: [AjaxProcessMixin],
   props: {

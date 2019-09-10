@@ -15,6 +15,7 @@ Vue.component("vocab-entries", VocabEntries)
 Vue.component("vocab-entry", VocabEntry)
 Vue.component("vocab-entry-contexts", VocabEntryContexts)
 Vue.component("vocab-entry-context", VocabEntryContext)
+Vue.component("vocab-entry-search", VocabEntrySearch)
 Vue.component("vocab-entry-info", VocabEntryInfo)
 
 Vue.use(ModalPlugin)

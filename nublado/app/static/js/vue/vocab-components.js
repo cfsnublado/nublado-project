@@ -301,3 +301,217 @@ const VocabEntries = {
     this.getVocabEntries()
   }
 }
+
+const VocabEntryInfo = {
+  mixins: [AjaxProcessMixin],
+  props: {
+    endpointUrl: {
+      type: String,
+      required: true
+    },
+    msgShowVocabEntryInfo: {
+      type: String,
+      default: "Show entry info"
+    },
+    msgHideVocabEntryInfo: {
+      type: String,
+      default: "Hide entry info"
+    }
+  },
+  data() {
+    return {
+      vocabEntryInfo: {},
+      vocabEntryInfoVisible: false,
+      vocabEntryInfoLoaded: false,
+    }
+  },
+  methods: {
+    toggleVocabEntryInfoVisible() {
+      this.vocabEntryInfoVisible = !this.vocabEntryInfoVisible
+      if (this.vocabEntryInfoVisible && !this.vocabEntryInfoLoaded) {
+        this.getVocabEntryInfo()
+      }
+    },
+    getVocabEntryInfo() {
+      console.log('Get vocab entry info')
+      this.process()
+      axios.get(
+        this.endpointUrl
+      )
+      .then(response => {
+        this.vocabEntryInfo = response.data;
+        console.log(this.vocabEntryInfo)
+        this.vocabEntryInfoLoaded = true
+        this.success()
+      })
+      .catch(error => {
+        if (error.response) {
+          console.log(error.response)
+        } else if (error.request) {
+          console.log(error.request)
+        } else {
+          console.log(error.message)
+        }
+        console.log(error.config)
+      })
+      .finally(() => this.complete())
+    }
+  }
+}
+
+// const VocabContext = {
+//   mixins: [
+//     MarkdownMixin,
+//     HighlightMixin,
+//     AdminMixin
+//   ],
+//   props: {
+//     initContext: {
+//       type: Object,
+//       required: true
+//     },
+//     initSourceUrl: {
+//       type: String,
+//       default: ''
+//     }
+//   },
+//   data() {
+//     return {
+//       context: this.initContext,
+//       sourceUrl: this.initSourceUrl
+//     }
+//   },
+//   methods: {
+//     selectSource() {
+//       if (this.sourceUrl) {
+//         window.location.replace(this.sourceUrl)
+//       }
+//     }
+//   },
+//   created() {
+//     if (this.initDeleteUrl) {
+//       this.deleteUrl = this.initDeleteUrl
+//         .replace(0, this.context.id)
+//     }
+
+//     if (this.initSourceUrl) {
+//       this.sourceUrl = this.initSourceUrl
+//         .replace(0, this.context.vocab_source_id)
+//         .replace('zzz', this.context.vocab_source_slug)
+//     }
+//   }
+// }
+
+const VocabEntryContext = {
+  mixins: [
+    MarkdownMixin,
+    HighlightMixin,
+    VisibleMixin,
+    AdminMixin
+  ],
+  props: {
+    initVocabEntryContext: {
+      type: Object,
+      required: true
+    },
+    initVocabSourceUrl: {
+      type: String,
+      default: ''
+    }
+  },
+  data() {
+    return {
+      vocabEntryContext: this.initVocabEntryContext,
+      vocabSourceUrl: this.initVocabSourceUrl
+    }
+  },
+  methods: {
+    selectVocabSource() {
+      if (this.vocabSourceUrl) {
+        window.location.replace(this.vocabSourceUrl)
+      }
+    }
+  },
+  created() {
+    this.$nextTick(() => {
+      this.highlight(this.vocabEntryContext.vocab_entry_tags)
+    })
+
+    if (this.initVocabSourceUrl) {
+      this.vocabSourceUrl = this.initVocabSourceUrl
+        .replace(0, this.vocabEntryContext.vocab_source_id)
+        .replace('zzz', this.vocabEntryContext.vocab_source_slug)
+    }
+  
+    if (this.initDeleteUrl) {
+      this.deleteUrl = this.initDeleteUrl
+        .replace(0, this.entryContext.vocab_context_id)
+    }  
+  }
+}
+
+const VocabContexts = {
+  mixins: [
+    AjaxProcessMixin,
+    PaginationMixin,
+    AdminMixin
+  ],
+  props: {
+    vocabContextsUrl: {
+      type: String,
+      required: true
+    }
+  },
+  data() {
+    return {
+      vocabContexts: null
+    }
+  },
+  methods: {
+    getVocabContexts(page=1) {
+      this.process()
+
+      params = {
+        page: page
+      }
+
+      axios.get(this.vocabContextsUrl, {
+        params: params
+      })
+      .then(response => {
+        this.vocabContexts = response.data.results
+        this.setPagination(
+          response.data.previous,
+          response.data.next,
+          response.data.page_num,
+          response.data.count,
+          response.data.num_pages
+        )
+        VueScrollTo.scrollTo({
+          el: '#vocab-contexts-scroll-top',
+        })
+        this.success()
+      })
+      .catch(error => {
+        if (error.response) {
+          console.log(error.response)
+        } else if (error.request) {
+          console.log(error.request)
+        } else {
+          console.log(error.message)
+        }
+        console.log(error.config)
+      })
+      .finally(() => {
+        this.complete()
+      })
+    }
+  },
+  created() {
+    this.getVocabContexts()
+  }
+}
+
+const VocabEntryContexts = {
+  mixins: [ VocabContexts ]
+}

@@ -10,25 +10,19 @@
 
 {% block content %}
 
-<div class="row justify-content-md-center">
-<div class="col-md-10">
+<div class="columns">
+<div class="column is-12">
 
 {% block vocab_entry_search %}
 
-<div class="panel">
-<div class="panel-body">
-
-<div class="panel-header">
-
-{% trans "label_search_vocabulary" %}
-
-</div>
+<div class="box">
 
 {% url 'vocab:vocab_entry_language_autocomplete' 'zz' as autocomplete_url %}
 {% url 'vocab:vocab_entries' as search_url %}
-{% include 'includes/vue/_language_search.html' with comp_name='entry-search' search_btn=True %}
+{% trans "label_search_vocabulary" as search_label %}
 
-</div>
+{% include 'includes/vue/_language_search.html' with comp_name="vocab-entry-search" %}
+
 </div>
 
 {% endblock vocab_entry_search %}
@@ -36,29 +30,29 @@
 </div>
 </div>
 
-<span id="contexts-scroll-top"></span>
+<span id="vocab-contexts-scroll-top"></span>
 
-<div class="row justify-content-md-center">
-<div class="col-md-10">
+<div class="columns">
+<div class="column is-12">
 
-<div class="entry-header" style="margin-top: 30px;">
+<div class="entry-header">
 {{ vocab_entry.entry }}
 </div>
 
-{% url 'api:vocab_entry_info' vocab_entry.id as vocab_entry_info_url %}
-{% include "vocab/includes/vue/_vocab_info.html" %}
+{% url "api:vocab_entry_info" vocab_entry.id as vocab_entry_info_url %}
+{% include "vocab/includes/vue/_vocab_entry_info.html" %}
 
 </div>
 </div>
 
-<div class="row justify-content-md-center">
-<div class="col-md-10">
+<div class="columns">
+<div class="column is-12">
 
 {% block vocab_contexts %}
 
-{% url_set_param 'api:vocab-context-entry-list' vocab_entry=vocab_entry.id as vocab_contexts_url %}
-{% url 'vocab:vocab_context_delete' 0 as vocab_context_delete_url %}
-{% url 'vocab:vocab_source_dashboard' 0 'zzz' as vocab_source_url %}
+{% url_set_param "api:vocab-context-entry-list" vocab_entry=vocab_entry.id as vocab_contexts_url %}
+{% url "vocab:vocab_context_delete" 0 as vocab_context_delete_url %}
+{% url "vocab:vocab_source_dashboard" 0 "zzz" as vocab_source_url %}
 {% include "vocab/includes/vue/_vocab_entry_contexts.html" %}
 
 {% endblock vocab_contexts %}

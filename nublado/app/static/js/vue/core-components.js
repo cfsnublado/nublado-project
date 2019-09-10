@@ -100,40 +100,40 @@ const MarkdownMixin = {
   }
 }
 
-// const HighlightMixin = {
-//   props: {
-//     contextElement: {
-//       type: String,
-//       default: "#context"
-//     }
-//   },
-//   data() {
-//     return {
-//       highlighter: new Mark(this.contextElement),
-//       markOptions: {
-//         "className": "tagged-text",
-//         "accuracy": {
-//           "value": "exactly",
-//           "limiters": [
-//             ",", ".", "!", "?", ";", ":", "'", "-", "—",
-//             "\"", "(",  ")", "¿", "¡", 
-//             "»", "«", 
-//           ]
-//         },        
-//         "acrossElements": true,
-//         "separateWordSearch": false,
-//       }
-//     }
-//   },
-//   methods: {
-//     highlight(terms) {
-//       this.highlighter.mark(terms, this.markOptions)
-//     },
-//     clearHighlight() {
-//       this.highlighter.unmark(this.markOptions)
-//     }
-//   }
-// }
+const HighlightMixin = {
+  props: {
+    contextElement: {
+      type: String,
+      default: "#context"
+    }
+  },
+  data() {
+    return {
+      highlighter: new Mark(this.contextElement),
+      markOptions: {
+        "className": "tagged-text",
+        "accuracy": {
+          "value": "exactly",
+          "limiters": [
+            ",", ".", "!", "?", ";", ":", "'", "-", "—",
+            "\"", "(",  ")", "¿", "¡", 
+            "»", "«", 
+          ]
+        },        
+        "acrossElements": true,
+        "separateWordSearch": false,
+      }
+    }
+  },
+  methods: {
+    highlight(terms) {
+      this.highlighter.mark(terms, this.markOptions)
+    },
+    clearHighlight() {
+      this.highlighter.unmark(this.markOptions)
+    }
+  }
+}
 
 const VisibleMixin = {
   props: {

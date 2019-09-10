@@ -2,7 +2,7 @@
 
 <vocab-entry-contexts
 :init-is-admin="{{ user.is_admin|yesno:'true,false' }}"
-init-vocab-contexts-url="{{ vocab_contexts_url }}"
+vocab-contexts-url="{{ vocab_contexts_url }}"
 inline-template
 >
 
@@ -11,29 +11,26 @@ class="vocab-contexts"
 v-cloak
 >
 
-<div v-if="vocabContexts.length == 0">
-{% trans 'msg_no_contexts' %}
+<div v-if="vocabContexts && vocabContexts.length == 0">
+{% trans "msg_no_contexts" %}
 </div>
 
-<div v-else class="page-subheader">{% trans 'header_contexts' %}</div>
+<div v-else class="page-subheader">{% trans "label_contexts" %}</div>
 
 <vocab-entry-context
-v-for="(entryContext, index) in vocabContexts"
-:key="entryContext.vocab_context_id"
+v-for="(vocabEntryContext, index) in vocabContexts"
+:key="vocabEntryContext.vocab_context_id"
 :init-is-admin="isAdmin"
-:init-entry-context=entryContext
-:context-element="'#context-' + entryContext.id"
+:init-vocab-entry-context=vocabEntryContext
+:context-element="'#context-' + vocabEntryContext.id"
 init-delete-url="{{ vocab_context_delete_url }}"
-init-source-url="{{ vocab_source_url }}"
+init-vocab-source-url="{{ vocab_source_url }}"
 inline-template
 >
 
 <transition name="fade-transition" v-on:after-enter="isVisible = true" v-on:after-leave="isVisible = false">
 
-<div class="panel" v-show="isVisible">
-
-<div class="panel-top">
-<div class="panel-buttons">
+<div class="box vocab-context-box" v-show="isVisible">
 
 <ajax-delete
 v-if="isAdmin"
@@ -44,39 +41,30 @@ inline-template
 >
 
 <a
-class="panel-button"
 @click.prevent="confirmDelete"
 >
 <i class="fas fa-times fas"></i>
 </a>
 </ajax-delete>
 
-</div>
-</div>
-
-<div class="panel-body">
-
-<div class="panel-header">
 <a
 href="#"
-@click.prevent="selectSource"
+@click.prevent="selectVocabSource"
 >
-[[ entryContext.vocab_source ]]
+[[ vocabEntryContext.vocab_source ]]
 </a>
-</div>
 
-<div :id="[[ entryContext.id ]]" class="vocab-context">
+<div :id="[[ vocabEntryContext.id ]]" class="vocab-context">
 
 <div 
-:id="'context-' + entryContext.id"
+:id="'context-' + vocabEntryContext.id"
 class="vocab-context-text"
-v-html="markdownToHtml(entryContext.vocab_context)"
+v-html="markdownToHtml(vocabEntryContext.vocab_context)"
 >
 </div>
 
 </div>
 
-</div>
 </div>
 
 </transition>

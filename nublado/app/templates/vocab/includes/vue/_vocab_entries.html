@@ -4,12 +4,12 @@
 {% if not edit_entries %}{% alias False as edit_entries %}{% endif %}
 
 <vocab-entries
-:init-is-admin="{{ edit_entries|yesno:'true,false' }}"
+:init-is-admin="{{ user.is_admin|yesno:'true,false' }}"
 vocab-entries-url="{{ vocab_entries_url }}"
 inline-template
 >
 
-<div>
+<div class="box">
 
 <dropdown 
 id="vocabulary-language-menu"
@@ -45,7 +45,8 @@ id="vocabulary-language-menu"
 
 <div 
 id="vocab-entry-tag-group" 
-class="vocab-entry-tag-group ui labels"
+class="tags are-medium"
+style="margin-top: 20px;"
 v-show="!processing"
 v-cloak
 >
@@ -71,7 +72,7 @@ inline-template
   :init-value="entry.entry"
   :init-delete-url="deleteUrl"
   :init-can-remove="isAdmin"
-  init-confirm-id="delete-entry"
+  init-confirm-id="delete-vocab-entry"
   @tag-select="view"
   @tag-remove="remove"
 >

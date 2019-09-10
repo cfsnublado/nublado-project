@@ -10,34 +10,25 @@
 
 {% block vocab_entry_search %}
 
-<div class="panel">
-<div class="panel-body">
-
-<div class="panel-header">
-
-{% trans "label_search_vocab_in_source" %}
-
-</div>
-
 {% url 'vocab:vocab_source_entry_language_autocomplete' vocab_source.id 'zz' as autocomplete_url %}
 {% url 'vocab:vocab_source_dashboard' vocab_source.id vocab_source.slug  as search_url %}
-
 {% alias vocab_source.id|stringformat:"s" as source_id %}
 {% alias 'init-source-id='|add:source_id as comp_extra %}
-{% alias 'source-entry-search' as comp_name %}
-{% alias True as search_btn %}
+{% trans "label_search_vocab_in_source" as search_label %}
 
-{% include 'includes/vue/_language_search.html' %}
+{% alias 'vocab-source-entry-search' as comp_name %}
 
-</div>
+<div class="box" style="margin-bottom: 40px;">
+{% include "includes/vue/_language_search.html" %}
 </div>
 
 {% endblock vocab_entry_search %}
 
 {% block vocab_contexts %}
 
-{% url_set_param 'api:vocab-context-entry-list' vocab_entry=vocab_entry.id vocab_source=vocab_source.id as vocab_contexts_url %}
-{% url 'vocab:vocab_source_dashboard' 0 'zzz' as vocab_source_url %}
+{% url_set_param "api:vocab-context-entry-list" vocab_entry=vocab_entry.id vocab_source=vocab_source.id as vocab_contexts_url %}
+{% url "vocab:vocab_source_dashboard" 0 "zzz" as vocab_source_url %}
+
 {% include "vocab/includes/vue/_vocab_entry_contexts.html" %}
 
 {% endblock vocab_contexts %}

@@ -1,48 +1,47 @@
 {% load i18n %}
 
-<entry-info 
-init-endpoint-url="{{ vocab_entry_info_url }}"
-init-msg-show-entry-info="{% trans 'label_show_details' %}"
-init-msg-hide-entry-info="{% trans 'label_hide_details' %}"
+<vocab-entry-info 
+endpoint-url="{{ vocab_entry_info_url }}"
+msg-show-entry-info="{% trans 'label_show_details' %}"
+msg-hide-entry-info="{% trans 'label_hide_details' %}"
 inline-template
 >
 
 <div style="margin-top: 10px; margin-bottom: 20px;" v-cloak>
   <a 
   href="#" 
-  class="ui small button"
-  @click.prevent="toggleEntryInfoVisible"
+  class="button"
+  @click.prevent="toggleVocabEntryInfoVisible"
   >
 
-  <span v-if="!entryInfoVisible"> 
-  [[ msgShowEntryInfo ]]
+  <span v-if="!vocabEntryInfoVisible"> 
+  [[ msgShowVocabEntryInfo ]]
   </span>
 
   <span v-else> 
-  [[ msgHideEntryInfo ]]
+  [[ msgHideVocabEntryInfo ]]
   </span>
 
   </a>
 
   <div 
   class="vocab-entry-info"
-  v-show="entryInfoVisible"
+  v-show="vocabEntryInfoVisible"
   >
 
   <span v-show="processing"><i class="fas fa-spin fa-spinner"></i></span>
 
   <div 
-  class="panel"
-  v-show="entryInfoLoaded && entryInfo.lexicalEntries.length > 0"
+  class="box"
+  v-show="vocabEntryInfoLoaded && vocabEntryInfo.lexicalEntries.length > 0"
   v-cloak
   >
-  <div class="panel-body">
 
   <ul 
   id="vocab-entry-info"
   >
     <li 
-      v-for="lexicalEntry in entryInfo.lexicalEntries"
+      v-for="lexicalEntry in vocabEntryInfo.lexicalEntries"
     >
       <span class="vocab-lexical-category"> [[ lexicalEntry.lexicalCategory ]] </span>
       &nbsp;
@@ -80,10 +79,9 @@ inline-template
   </ul>
 
   </div>
-  </div>
 
   </div>
 
 </div>
 
-</entry-info>
+</vocab-entry-info>

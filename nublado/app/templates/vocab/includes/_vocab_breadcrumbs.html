@@ -4,37 +4,54 @@
 
   {% if request.session.session_obj.vocab_entry %}
 
-    <a href="{% url 'vocab:vocab_entries' %}">{% trans 'label_vocabulary' %}</a>
+    <li>
+    <a href="{% url 'vocab:vocab_entries' %}">{% trans "label_vocabulary" %}</a>
+    </li>
 
-    {% if url_name == 'vocab_entry' %}
+    {% if url_name == "vocab_entry" %}
 
-      &nbsp;>&nbsp;
-      <span>{{ vocab_entry.entry }}</span>
+      <li class="is-active">
+      <a href="#">{{ vocab_entry.entry }}</a>
+      </li>
 
     {% else %}
 
-      &nbsp;>&nbsp;
+      <li>
       <a href="{% url 'vocab:vocab_entry' vocab_entry.language vocab_entry.slug %}">{{ vocab_entry.entry }}</a>
+      </li>
 
     {% endif %}
 
   {% elif request.session.session_obj.vocab_source %}
-    <a href="{% url 'vocab:vocab_sources' %}">{% trans 'label_sources' %}</a>
 
-    {% if url_name == 'vocab_source_dashboard' %}
+    <li>
+    <a href="{% url 'vocab:vocab_sources' %}">{% trans "label_sources" %}</a>
+    </li>
+
+    {% if url_name == "vocab_source_dashboard" %}
    
-      &nbsp;>&nbsp;
-      <span> {{ vocab_source.name }} </span>
-  
+      <li class="is-active">
+      <a href="#">{{ vocab_source.name }} </a>
+      </li>
+
     {% else %}
 
-      &nbsp;>&nbsp;
+      <li>
       <a href="{% url 'vocab:vocab_source_dashboard' vocab_source.id vocab_source.slug %}">{{ vocab_source.name }}</a>
+      </li>
 
       {% if vocab_entry %}
 
-        &nbsp;>&nbsp;
-        <span> {{ vocab_entry }} </span>
+        <li>
+        <a 
+        href="{% url 'vocab:vocab_source_entries' vocab_source.id vocab_source.slug %}">
+        {% trans "label_vocabulary" %}
+        </a>
+        </li>
+
+       <li class="is-active">
+        <a href="#">{{ vocab_entry }}</a>
+       </li>
 
       {% endif %}
 
@@ -42,9 +59,11 @@
 
   {% else %}
 
-    {% if url_name != 'vocab_entries' and url_name != 'vocab_sources' %}
+    {% if url_name != "vocab_entries" and url_name != "vocab_sources" %}
 
-      <a href="{% url 'vocab:vocab_entries' %}">{% trans 'label_vocabulary' %}</a>
+      <li>
+      <a href="{% url 'vocab:vocab_entries' %}">{% trans "label_vocabulary" %}</a>
+      </li>
 
     {% endif %}
 

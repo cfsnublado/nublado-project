@@ -15,7 +15,9 @@ v-cloak
 {% trans "msg_no_contexts" %}
 </div>
 
-<div v-else class="page-subheader">{% trans "label_contexts" %}</div>
+<div v-else class="page-subheader" style="font-size: 24px; margin-bottom: 20px;">
+{% trans "label_contexts" %}
+</div>
 
 <vocab-entry-context
 v-for="(vocabEntryContext, index) in vocabContexts"
@@ -25,12 +27,15 @@ v-for="(vocabEntryContext, index) in vocabContexts"
 :context-element="'#context-' + vocabEntryContext.id"
 init-delete-url="{{ vocab_context_delete_url }}"
 init-vocab-source-url="{{ vocab_source_url }}"
+@delete-vocab-context="onDeleteVocabContext(index)"
 inline-template
 >
 
 <transition name="fade-transition" v-on:after-enter="isVisible = true" v-on:after-leave="isVisible = false">
 
 <div class="box vocab-context-box" v-show="isVisible">
+
+<div class="box-controls">
 
 <ajax-delete
 v-if="isAdmin"
@@ -40,12 +45,16 @@ delete-confirm-id="delete-context"
 inline-template
 >
 
+<span class="control">
 <a
 @click.prevent="confirmDelete"
 >
 <i class="fas fa-times fas"></i>
 </a>
 </ajax-delete>
+</span>
+
+</div>
 
 <a
 href="#"

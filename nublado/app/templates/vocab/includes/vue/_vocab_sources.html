@@ -22,7 +22,7 @@ v-for="(vocabSource, index) in vocabSources"
 :init-source="vocabSource"
 init-view-url="{{ vocab_source_url }}"
 init-delete-url="{{ vocab_source_delete_url }}"
-@delete-source="onDeleteSource(index)"
+@delete-vocab-source="onDeleteVocabSource(index)"
 inline-template
 >
 

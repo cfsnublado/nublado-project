@@ -38,7 +38,7 @@ const VocabSource = {
     },
     edit() {},
     remove() {
-      this.$emit("delete-vocab-source", this.project.id)
+      this.$emit("delete-vocab-source")
     }
   },
   created() {
@@ -430,6 +430,9 @@ const VocabEntryContext = {
       if (this.vocabSourceUrl) {
         window.location.replace(this.vocabSourceUrl)
       }
+    },
+    remove() {
+      this.$emit("delete-vocab-context")
     }
   },
   created() {
@@ -505,6 +508,9 @@ const VocabContexts = {
       .finally(() => {
         this.complete()
       })
+    },
+    onDeleteVocabContext(index) {
+      this.$delete(this.vocabContexts, index)
     }
   },
   created() {

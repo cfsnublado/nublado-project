@@ -3,36 +3,14 @@
 {% load i18n %}
 {% load core_extras %}
 
-{% block vocab_entry_edit_link_active %}active{% endblock vocab_entry_edit_link_active %}
+{% block vocab_entry_edit_link_active %}is-active{% endblock vocab_entry_edit_link_active %}
 
 {% block title %}{% trans "page_vocab_entry_edit_title" %}{% endblock title %}
 
-{% block stylesheets %}
-
-{{ block.super }}
-
-<style>
-
-.ipa-symbols .button {
-  width: 40px;
-  height: 40px;
-  font-weight: 700;
-  margin-right: 0.25em;
-  margin-bottom: 0.25em;
-}
-
-</style>
-
-{% endblock stylesheets %}
-
 {% block page_header %}
 
-<div class="row justify-content-md-center">
-<div class="col-md-10">
 <div class="page-header">
 {% trans "header_edit_vocab_entry" %}
-</div>
-</div>
 </div>
 
 {% endblock page_header %}
@@ -40,41 +18,42 @@
 {% block breadcrumb_content %}
 
 {{ block.super }}
-&nbsp;>&nbsp;
+
+<li class="is-active">
+<a href="#">
 {% trans "label_edit" %}
+</a>
+</li>
 
 {% endblock breadcrumb_content %}
 
 {% block content %}
 
-<div class="row justify-content-md-center">
-
-<div class="col-md-10">
-<form id="edit-form" action="{% url 'vocab:vocab_entry_update' vocab_entry.language vocab_entry.slug %}" method="post" novalidate>
-
-{% csrf_token %}
-
-<div id="__all__-errors" class="errors">
-{{ form.non_field_errors }}
-</div>
+<form 
+id="edit-form" 
+action="{% url 'vocab:vocab_entry_update' vocab_entry.language vocab_entry.slug %}" 
+method="post" 
+novalidate
+>
 
 {% csrf_token %}
+
 {% include "vocab/includes/forms/_vocab_entry_form.html" %}
 
-<button id="submit-btn" class="ui button" type="submit" form="edit-form">
+<button id="submit-btn" class="button is-info" type="submit">
 {% trans "label_update" %}
 </button>
 
 <ajax-delete
-confirmation-id="delete-entry-modal"
-delete-url="{% url 'vocab:vocab_entry_delete' vocab_entry.id %}"
-redirect-url="{% url 'vocab:vocab_entries' %}"
+delete-confirm-id="delete-vocab-entry"
+delete-url="{% url 'api:vocab-entry-detail' vocab_entry.id %}" 
+delete-redirect-url="{% url 'vocab:vocab_entries' %}"
 inline-template
 >
 
 <button 
-id="vocab-entry-delete-trigger" 
-class="ui red button"
+id="vocab-source-delete-trigger" 
+class="button is-danger"
 @click.prevent="confirmDelete"
 >
 {% trans "label_delete" %}
@@ -83,16 +62,11 @@ class="ui red button"
 </ajax-delete>
 
 </form>
-</div>
-
-</div>
 
 {% endblock content %}
 
 {% block modal_content %}
 
-{{ block.super }}
-
-{% include "vocab/includes/_vocab_entry_delete_modal.html" with modal_id='delete-entry-modal' modal_name='confirmation-modal' %} 
+{% include "vocab/includes/_vocab_entry_delete_modal.html" with modal_id="delete-vocab-entry"  modal_name="confirmation-modal" %} 
 
 {% endblock modal_content %}

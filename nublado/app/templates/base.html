@@ -143,6 +143,15 @@ href="{% url 'vocab:vocab_sources' %}"
 {% if user.is_authenticated and not request.session_obj %}
 
   <ul class="menu-list">
+  <li class="sidebar-divider"></li>
+  <li>
+  <a 
+  class="{% block vocab_entry_create_link_active %}{% endblock vocab_entry_create_link_active %}"
+  href="{% url 'vocab:vocab_entry_create' %}"
+  >
+  <i class="fas fa-fw fa-plus menu-icon"></i> {% trans 'label_new_entry' %}
+  </a>
+  </li>
   <li>
   <a 
   class="{% block vocab_source_create_link_active %}{% endblock vocab_source_create_link_active %}"

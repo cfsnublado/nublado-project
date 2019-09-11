@@ -65,14 +65,50 @@
     </a>
     </li>
 
-    <li class="divider"></li>
-
   {% endif %}
 
   <li class="sidebar-divider"></li>
 
   </ul>
   </div><!-- menu -->
+
+{% elif request.session.session_obj.vocab_entry %}
+
+  <div class="menu">
+
+  <p class="menu-label">
+  {% trans "label_entry" %}
+  </p>
+
+  <p class="menu-header">
+  <a 
+  id="sidebar-nav-vocab-entry-name" 
+  href="{% url 'vocab:vocab_entry' vocab_entry.language vocab_entry.slug %}"
+  >
+  <span id="menu-vocab-entry-name"> {{ vocab_entry.entry }} </span>
+  </a>
+  </p>
+
+  <ul class="menu-list">
+
+  {% if user.is_admin %}
+
+    <li>
+    <a
+    id="sidebar-nav-vocab-entry-edit"
+    class="{% block vocab_entry_edit_link_active %}{% endblock vocab_entry_edit_link_active %}"
+    href="{% url 'vocab:vocab_entry_update' vocab_entry.language vocab_entry.slug %}">
+    <i class="menu-icon fas fa-edit fa-fw"></i> {% trans "label_edit_entry" %}
+    </a>
+    </li>
+
+  {% endif %}
+
+  <li class="sidebar-divider"></li>
+
+  </ul>
+
+  </div>
 
 {% endif %}
 

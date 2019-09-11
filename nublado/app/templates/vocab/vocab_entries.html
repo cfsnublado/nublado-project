@@ -41,10 +41,8 @@
 <div class="column is-12">
 
 {% url 'api:vocab-entry-list' as vocab_entries_url %}
-{% url 'vocab:vocab_entry_delete' 0 as vocab_entry_delete_url %}
+{% url 'api:vocab-entry-detail' 0 as vocab_entry_delete_url %}
 {% url 'vocab:vocab_entry' 'xx' 'zzz' as vocab_entry_url %}
-
-{% alias user.is_admin as edit_entries %}
 
 {% include 'vocab/includes/vue/_vocab_entries.html' %}
 
@@ -57,8 +55,6 @@
 
 {{ block.super }}
 
-{% include "vocab/includes/_vocab_entry_delete_modal.html" with modal_id=
-delete-vocab-entry" modal_name="confirmation-modal" %} 
+{% include "vocab/includes/_vocab_entry_delete_modal.html" with modal_id="delete-vocab-entry"  modal_name="confirmation-modal" %} 
 
 {% endblock modal_content %}
-

@@ -10,8 +10,12 @@
 {% block breadcrumb_content %}
 
 {{ block.super }}
-&nbsp;>&nbsp;
+
+<li class="is-active">
+<a href="#">
 {% trans "label_contexts" %}
+</a>
+</li>
 
 {% endblock breadcrumb_content %}
 

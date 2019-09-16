@@ -12,7 +12,6 @@ const AdminMixin = {
   },
 }
 
-
 const AjaxProcessMixin = {
   props: {
     parentProcessing: {
@@ -43,19 +42,19 @@ const AjaxProcessMixin = {
 
 const ClickOutsideMixin = {
   methods: {
-    onCloseOutside() {
+    onClickOutside() {
       console.log("clicked outside")
     },
-    closeOutside(event) {
+    clickOutside(event) {
       if (!this.$el.contains(event.target)) {
-        this.onCloseOutside()
+        this.onClickOutside()
       }
     },
     addClickOutsideHandler() {
-      window.addEventListener("click", this.closeOutside)
+      window.addEventListener("click", this.clickOutside)
     },
     removeClickOutsideHandler() {
-      window.removeEventListener("click", this.closeOutside)
+      window.removeEventListener("click", this.clickOutside)
     }
   },
   created() {
@@ -347,7 +346,7 @@ const BaseDropdown = {
           this.isOpen = !this.isOpen
       }
     },
-    onCloseOutside() {
+    onClickOutside() {
       this.isOpen = false
     }
   }
@@ -433,7 +432,7 @@ const BaseSearch = {
     onFocus() {
       this.$emit("search-focus")
     },
-    onCloseOutside() {
+    onClickOutside() {
       this.isOpen = false
       this.searchTerm = ""
     },   
@@ -474,7 +473,7 @@ const BaseLanguageSearch = {
 /** Tags **/
 
 const BaseTag = {
-  mixins: [ VisibleMixin ],
+  mixins: [VisibleMixin],
   props: {
     initId: {
       type: Number,
@@ -484,7 +483,7 @@ const BaseTag = {
       type: String,
       required: true
     },
-    initCanRemove: {
+    initHasRemove: {
       type: Boolean,
       default: false
     },
@@ -497,7 +496,7 @@ const BaseTag = {
     return {
       id: this.initId,
       value: this.initValue,
-      canRemove: this.initCanRemove,
+      hasRemove: this.initHasRemove
     }
   },
   methods: {
@@ -505,6 +504,7 @@ const BaseTag = {
       if (this.selectRedirectUrl) {
         window.location.replace(this.selectRedirectUrl)
       }
+
       this.$emit("tag-select", this.id)
     },
     remove() {
@@ -513,25 +513,22 @@ const BaseTag = {
   },
   template: `
     <div 
-    class="ui label tagblock"
+    class="tag"
     v-show="isVisible"
     >
       <a 
-      class="tag-text"
       @click.prevent="select"
       > 
       {{ value }} 
       </a>
 
-      &nbsp;
-
       <a
-      v-if="canRemove"
+      v-if="hasRemove"
       @click.prevent="remove"
       >
-        <i class="fa-times fas"></i>
+      &nbsp;
+      <i class="fa-times fas"></i>
       </a>
-
     </div>
   `
 }
@@ -577,9 +574,14 @@ const BaseToggleTag = {
 
 const BaseTagbox = {
   props: {
-    tags: {
+    initTags: {
       type: Array,
       default: () => []
+    }
+  },
+  data() {
+    return {
+      tags: this.initTags
     }
   },
   methods: {
@@ -587,10 +589,12 @@ const BaseTagbox = {
       this.$emit("add-tag", tag)
     },
     removeTag(index) {
+      this.$delete(this.tags, index)
       this.$emit("remove-tag", index)
     },
     selectTag(index) {
       this.$emit("select-tag", index)
-    }
+    },
   }
 }
+

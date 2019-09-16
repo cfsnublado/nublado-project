@@ -994,3 +994,47 @@ Rakki lo aferró por el brazo izquierdo, Soryorn por el derecho y entre los dos 
     es: latigazo: latigazos
 
     </div>
+
+- **PODER**
+
+    <div markdown="1" class="tagged-entries">
+
+    es: poder: poder
+
+    </div>
+
+- —¿Cómo puede ser un zurullo más propicio que otro? —preguntó Skara.
+
+    —Quienes tienen la suerte de expulsar zurullos propicios siempre lo preguntan, mi reina. ¿Vuestra sangre llega con regularidad?
+
+    <div markdown="1" class="tagged-entries">
+
+    es: zurullo: zurullo, zurullos
+
+    es: propicio: propicio, propicios
+
+    </div>
+
+- Se frotó los ojos con el dorso de la mano.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: dorso: dorso
+
+    </div>
+
+- Skara chasqueó los dedos.
+
+    —Trae el peine.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: peine: peine
+
+    es: traer: trae
+
+    es: chasquear: chasqueó
+
+    </div>
+
+-

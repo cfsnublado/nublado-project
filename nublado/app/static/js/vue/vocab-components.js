@@ -318,6 +318,44 @@ const VocabEntrySearch = {
   },
 }
 
+const VocabEntryTagSearch = {
+  mixins: [BaseLanguageSearch],
+  methods: {
+    setResult(result) {
+      this.searchTerm = result
+      this.search()
+    },
+    search() {
+      clearTimeout(this.searchTimerId)
+      this.isOpen = false
+      var tag = {
+        language: this.language,
+        entry: this.searchTerm
+      }
+      this.searchTerm = ""
+      this.$emit("search", tag)
+    }
+  },
+}
+
+const VocabEntryTagbox = {
+  components: {
+    VocabEntryTagSearch
+  },
+  mixins: [BaseTagbox],
+  methods: {
+    addTag(tag) {
+      if (tag.entry) {
+        this.tags.push({
+          language: tag.language,
+          entry: tag.entry
+        })
+        this.$emit("add-tag")
+      }
+    }
+  }
+}
+
 const VocabEntryInfo = {
   mixins: [AjaxProcessMixin],
   props: {
@@ -535,5 +573,22 @@ const VocabContexts = {
 }
 
 const VocabEntryContexts = {
-  mixins: [ VocabContexts ]
+  mixins: [VocabContexts]
+}
+
+const VocabContextEditor = {
+  components: {
+    "markdown-editor": MarkdownEditor
+  },
+  mixins: [
+  ],
+  props: {
+  },
+  data() {
+    return {
+    }
+  },
+  methods: {
+
+  },
 }

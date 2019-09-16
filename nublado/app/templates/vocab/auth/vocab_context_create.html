@@ -4,38 +4,47 @@
 
 {% block title %}{% trans "page_vocab_context_create_title" %}{% endblock title %}
 
-{% block vocab_context_create_link_active %}active{% endblock vocab_context_create_link_active %}
+{% block vocab_context_create_link_active %}is-active{% endblock vocab_context_create_link_active %}
 
 {% block breadcrumb_content %}
 
 {{ block.super }}
-&nbsp;>&nbsp;
+
+<li>
 <a href="{% url 'vocab:vocab_source_contexts' vocab_source.id vocab_source.slug %}">
 {% trans "label_contexts" %}
 </a>
-&nbsp;>&nbsp;
+</li>
+
+<li class="is-active">
+<a href="#">
 {% trans "label_create" %}
+</a>
+</li>
 
 {% endblock breadcrumb_content %}
 
 {% block content %}
 
-<div class="row justify-content-md-center">
-<div class="col-md-10">
-
-<form id="edit-form" action="{% url 'vocab:vocab_context_create' vocab_source.id vocab_source.slug %}" method="post" novalidate>
+<form 
+id="edit-form" 
+action="{% url 'vocab:vocab_context_create' vocab_source.id vocab_source.slug %}" 
+method="post" 
+novalidate
+>
 
 {% csrf_token %}
 
 {% include "vocab/includes/forms/_vocab_context_form.html" %}
 
-<button id="submit-btn" class="ui button" type="submit" form="edit-form" style="margin-top: 10px;">
+<button 
+id="submit-btn" 
+class="button is-info" 
+type="submit"
+>
 {% trans "label_create" %}
 </button>
 
 </form>
-
-</div>
-</div>
 
 {% endblock content %}

@@ -1,3 +1,212 @@
+const Tag = {
+  mixins: [BaseTag]
+}
+
+const AjaxTag = {
+  mixins: [BaseTag],
+  props: {
+    initConfirmId: {
+      type: String,
+      default: "delete-modal"
+    },
+    initDeleteUrl: {
+      type: String,
+      default: ""
+    }
+  },
+  data() {
+    return {
+      confirmId: this.initConfirmId,
+      deleteUrl: this.initDeleteUrl
+    }
+  },
+  template: `
+    <transition name="fade-transition" v-on:after-enter="isVisible = true" v-on:after-leave="remove">
+    <div 
+    class="tag"
+    v-bind:key="id"
+    v-show="isVisible"
+    >
+
+      <a 
+      @click.prevent="select"
+      > 
+      {{ value }} 
+      </a>
+
+      <ajax-delete
+      v-if="canRemove"
+      :delete-confirm-id="confirmId"
+      :delete-url="deleteUrl"
+      @ajax-success="isVisible = false"
+      inline-template
+      >
+        <a
+        @click.prevent="confirmDelete"
+        >
+          &nbsp;
+          <i class="fa-times fas"></i>
+        </a>
+
+      </ajax-delete>
+
+    </div>
+    </transition>
+  `
+}
+
+const Tagbox = {
+  mixins: [
+    BaseTagbox,
+    ClickOutsideMixin
+  ],
+
+  data() {
+    return {
+      tagInput: "",
+    }
+  },
+  methods: {
+    addTag(tag) {
+      if (this.tagInput.trim()) {
+        this.tags.push({"id": this.tags.length, "value": tag})
+      }
+
+      this.clearTagInput()
+      this.$emit("add-tag", tag)
+    },
+    clearTagInput() {
+      this.tagInput = ""
+    },
+    onClickOutside() {
+      this.clearTagInput()
+    }
+  }
+}
+
+const MarkdownEditor = {
+  mixins: [
+    AjaxProcessMixin,
+    MarkdownMixin
+  ],
+  props: {
+    initMarkdown: {
+      type: String,
+      default: ""
+    },
+    saveUrl: {
+      type: String,
+      default: ""
+    }
+  },
+  data() {
+    return {
+      markdown: this.initMarkdown,
+      html: "",
+      isEditing: false,
+      saveTimerId: null
+    }
+  },
+  methods: {
+    edit() {
+      this.isEditing = true
+    },
+    view() {
+      this.isEditing = false
+      this.convertMarkdown()
+    },
+    save() {
+      if (this.saveUrl) {
+        this.process()
+        this.convertMarkdown()
+
+        this.saveTimerId = setTimeout(()=>{
+          axios.put(this.saveUrl, {"content": this.markdown})
+          .then(response => {
+            this.success()
+          })
+          .catch(error => {
+            if (error.response) {
+              console.log(error.response)
+            } else if (error.request) {
+              console.log(error.request)
+            } else {
+              console.log(error.message)
+            }
+            console.log(error.config)
+          })
+          .finally(() => {
+            this.complete()
+          })
+        }, 500)
+      }
+    },
+    convertMarkdown() {
+      this.html = this.markdownToHtml(this.markdown)
+    }
+  },
+  created() {
+    if (this.markdown) {
+      this.convertMarkdown()
+    }
+
+    this.edit()
+  },
+  template: `
+  <div>
+
+  <a 
+  v-bind:class="['button', { 'is-info': isEditing }]"
+  :disabled="processing"
+  href="#"
+  @click.prevent="edit"
+  >
+  Edit
+  </a>
+
+  <a 
+  v-bind:class="['button', { 'is-info': !isEditing }]"
+  :disabled="processing"
+  href="#"
+  @click.prevent="view"
+  >
+  View
+  </a>
+
+  <a 
+  v-bind:class="['button is-success', { 'is-loading': processing }]"
+  href="#"
+  @click.prevent="save"
+  >
+  Save
+  </a>
+
+  <div class="box">
+
+  <div class="field">
+  <div class="control">
+  <textarea 
+  class="textarea"
+  v-model="markdown"
+  v-show="isEditing"
+  >
+  </textarea>
+  </div>
+  </div>
+
+  <div 
+  class=""
+  v-html="html"
+  v-show="!isEditing"
+  >
+  </div>
+
+  </div>
+
+  </div>
+  `
+}
+
 const AjaxDelete = {
   mixins: [AjaxProcessMixin],
   props: {
@@ -66,59 +275,6 @@ const AjaxDelete = {
       }, this.timerDelay)
     }
   }
-}
-
-const AjaxTag = {
-  mixins: [BaseTag],
-  props: {
-    initConfirmId: {
-      type: String,
-      default: "delete-modal"
-    },
-    initDeleteUrl: {
-      type: String,
-      default: ""
-    }
-  },
-  data() {
-    return {
-      confirmId: this.initConfirmId,
-      deleteUrl: this.initDeleteUrl
-    }
-  },
-  template: `
-    <transition name="fade-transition" v-on:after-enter="isVisible = true" v-on:after-leave="remove">
-    <div 
-    class="tag"
-    v-bind:key="id"
-    v-show="isVisible"
-    >
-
-      <a 
-      @click.prevent="select"
-      > 
-      {{ value }} 
-      </a>
-
-      <ajax-delete
-      v-if="canRemove"
-      :delete-confirm-id="confirmId"
-      :delete-url="deleteUrl"
-      @ajax-success="isVisible = false"
-      inline-template
-      >
-        <a
-        @click.prevent="confirmDelete"
-        >
-          &nbsp;
-          <i class="fa-times fas"></i>
-        </a>
-
-      </ajax-delete>
-
-    </div>
-    </transition>
-  `
 }
 
 const AudioPlayer = {

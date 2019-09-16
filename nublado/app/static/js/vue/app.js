@@ -5,6 +5,9 @@ Vue.component("alert-message", AlertMessage)
 Vue.component("dropdown", Dropdown)
 Vue.component("navbar-dropdown", NavbarDropdown)
 Vue.component("confirmation-modal", ConfirmationModal)
+Vue.component("tag", Tag)
+Vue.component("tagbox", Tagbox)
+Vue.component("markdown-editor", MarkdownEditor)
 
 // Vocab components
 Vue.component("vocab-sources", VocabSources)
@@ -16,7 +19,10 @@ Vue.component("vocab-entry", VocabEntry)
 Vue.component("vocab-entry-contexts", VocabEntryContexts)
 Vue.component("vocab-entry-context", VocabEntryContext)
 Vue.component("vocab-entry-search", VocabEntrySearch)
+Vue.component("vocab-entry-tag-search", VocabEntryTagSearch)
+Vue.component("vocab-entry-tagbox", VocabEntryTagbox)
 Vue.component("vocab-entry-info", VocabEntryInfo)
+Vue.component("vocab-context-editor", VocabContextEditor)
 
 Vue.use(ModalPlugin)
 

@@ -5,132 +5,72 @@
 
 {% block title %}{% trans "page_vocab_context_edit_title" %}{% endblock title %}
 
-{% block page_header_text %}
+{% block page_header %}
 
+<div class="page-header">
 {% trans "label_edit_tag_vocab_context" %}
+</div>
 
-{% endblock page_header_text %}
+{% endblock page_header %}
 
 {% block breadcrumb_content %}
 
 {{ block.super }}
-&nbsp;>&nbsp;
+
+<li>
 <a href="{% url 'vocab:vocab_source_contexts' vocab_source.id vocab_source.slug%}">
 {% trans "label_contexts" %}
 </a>
-&nbsp;>&nbsp;
+</li>
+
+<li class="is-active">
+<a href="#">
 {% trans "label_edit" %}
+</a>
+</li>
 
 {% endblock breadcrumb_content %}
 
 {% block content %}
 
-{% url 'api:vocab-entry-detail-data' as entry_url%}
-{% url 'api:vocab-context-add-vocab-entry' vocab_context.id as add_entry_url %}
-{% url 'api:vocab-context-add-vocab-entry-tag' vocab_context.id as add_entry_tag_url %}
-{% url 'api:vocab-context-remove-vocab-entry' vocab_context.id as remove_entry_url %}
-{% url 'api:vocab-context-remove-vocab-entry-tag' vocab_context.id as remove_entry_tag_url %}
-{% url 'api:vocab-context-entry-detail-data' as context_entry_detail_url %}
-{% url 'api:vocab-context-detail' vocab_context.id as context_edit_url %}
+{% url 'api:vocab-context-detail' vocab_context.id as vocab_context_edit_url %}
 
-<context-tagger
-init-entry-detail-url="{{ entry_url }}"
-init-add-entry-url="{{ add_entry_url }}"
-init-add-entry-tag-url="{{ add_entry_tag_url }}"
-init-remove-entry-url="{{ remove_entry_url }}"
-init-remove-entry-tag-url="{{ remove_entry_tag_url }}"
-init-context-edit-url="{{ context_edit_url }}"
-:init-entries='{{ vocab_entry_tags|safe }}'
-init-context="{{ vocab_context.content }}"
-context-element="#vocab-context-text"
+<div class="columns">
+
+<div class="column is-6">
+
+<markdown-editor
+init-markdown="{{ vocab_context.content }}"
+save-url="{{ vocab_context_edit_url }}"
+>
+</markdown-editor>
+</div>
+
+<div class="column is-6">
+
+<div class="columns is-multiline">
+
+<div class="column is-12">
+<vocab-entry-tagbox
 inline-template
 >
+<div class="tagbox" style="margin-top: 30px;">
 
-<div class="row justify-content-md-center">
+<label class="label">Tagged vocabulary</label>
 
-<div class="col-md-5">
+{% url "vocab:vocab_entry_language_autocomplete" "zz" as autocomplete_url %}
+{% include "includes/vue/_language_search.html" with comp_name="vocab-entry-tag-search" comp_extra='@search="addTag"' %}
 
-<a 
-id="vocab-context-update-trigger" 
-class="ui button tiny" 
-href="#"
-v-show="!isEditing"
-@click.prevent="editContext"
->
+<div class="box">
 
-{% trans "label_edit" %}
-
-</a>
-
-<a 
-id="vocab-context-done-editing" 
-class="ui green button tiny" 
-href="#"
-v-show="isEditing"
-v-cloak
-@click.prevent="doneEditing"
->
-
-{% trans "label_done_editing" %}
-
-</a>
-
-<div class="panel">
-<div class="panel-body">
-
-<div 
-id="vocab-context-text" 
-class="vocab-context-text" 
-style="margin-top: 20px;"
-v-show="!isEditing"
-v-html="contextHtml"
->
-
-</div>
-
-<div 
-style="margin-top: 20px;"
-v-show="isEditing"
-v-cloak
->
-<textarea rows="7" class="form-control" style="font-size: 14px;" v-model="context">
-</textarea>
-</div>
-
-</div>
-</div>
-
-</div><!-- column -->
-
-<div class="col-md-5">
-
-<label for="vocab-entries">{% trans "label_vocab_context_entry_tags" %}</label>
-
-<entry-tagbox 
-:tags="entries"
-@add-tag="addEntry"
-@remove-tag="removeEntry"
-@select-tag="selectEntry"
-@tagbox-focus="reset"
-inline-template
->
-<div>
-
-<div id="vocab-entry-tagbox" class="tagbox">
-
-{% url 'vocab:vocab_entry_language_autocomplete' 'zz' as autocomplete_url %}
-{% include "includes/vue/_language_search.html" with comp_name='entry-tag-search' comp_extra='@add-tag="addTag" @search-focus="onFocus"' %}
-
-<div id="vocab-entry-tags" class="tagbox-container ui labels">
+<div class="tags are-medium">
 
 <tag
-  v-for="(tag, index) in tags"
-  :key="tag.id"
-  :init-id="index"
-  :init-value="tag.value"
-  :init-has-delete="true"
-  @tag-select="selectTag"
-  @tag-remove="removeTag"
+v-for="(tag, index) in tags"
+:key="index"
+:init-value="tag.entry"
+:init-has-remove="true"
+@tag-remove="removeTag(index)"
 >
 </tag>
 
@@ -139,56 +79,47 @@ inline-template
 </div>
 
 </div>
-</entry-tagbox>
+</tagbox>
+</div>
 
-<entry-instance-tagbox 
-:entry="currentEntry"
-@add-tag="addEntryTag"
-@remove-tag="removeEntryTag"
-@select-tag="selectEntryTag"
-v-show="currentEntry != null"
+<div class="column is-12">
+<tagbox
 inline-template
 >
-<div>
+<div class="tagbox" style="margin-top: 30px;">
 
-<label>{% trans "label_instances_of" %} <span style="color: #1779ba;">[[ entry.value ]]</span></label>
-
-<div id="vocab-entry-instance-tagbox" class="tagbox">
-
-<div class="input-group">
+<label class="label">Instances of <span class="blue">vocab</span></label>
 <input 
-id="vocab-entry-instance-input" 
-class="autocomplete-input form-control" 
-type="text" 
-placeholder="{% trans 'placeholder_tag_text' %}"
-v-model="input"
+class="input"
+v-model="tagInput"
 @keyup.enter="addTag($event.target.value)"
 >
-</div>
 
-<div id="vocab-entry-instance-tags" class="tagbox-container ui labels">
+<div class="box">
+
+<div class="tags are-medium">
 
 <tag
-  v-for="(tag, index) in entry.tags"
-  :key="tag"
-  :init-id="index"
-  :init-value="tag"
-  :init-has-delete="true"
-  @tag-select="selectTag"
-  @tag-remove="removeTag"
+v-for="(tag, index) in tags"
+:key="tag.id"
+:init-value="tag.value"
+:init-has-remove="true"
+@tag-remove="removeTag(index)"
 >
 </tag>
 
 </div>
+
+</div>
+
+</div>
+</tagbox>
 </div>
 
 </div>
-</entry-instance-tagbox>
 
-</div><!-- column -->
+</div>
 
-</div><!-- row -->
-
-</context-tagger>
+</div>
 
 {% endblock content %}

@@ -35,7 +35,7 @@ const AjaxTag = {
       </a>
 
       <ajax-delete
-      v-if="canRemove"
+      v-if="hasRemove"
       :delete-confirm-id="confirmId"
       :delete-url="deleteUrl"
       @ajax-success="isVisible = false"

@@ -35,6 +35,18 @@
 
 {% url 'api:vocab-context-detail' vocab_context.id as vocab_context_edit_url %}
 
+<vocab-context-editor
+:init-vocab-entries="{{ vocab_entry_tags|safe }}"
+inline-template
+>
+
+<div>
+
+</div>
+
+</vocab-context-editor>
+
+
 <div class="columns">
 
 <div class="column is-6">

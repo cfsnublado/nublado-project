@@ -470,13 +470,18 @@ const VocabEntryContext = {
     },
     initVocabSourceUrl: {
       type: String,
-      default: ''
+      default: ""
+    },
+    initDeleteUrl: {
+      type: String,
+      default: ""
     }
   },
   data() {
     return {
       vocabEntryContext: this.initVocabEntryContext,
-      vocabSourceUrl: this.initVocabSourceUrl
+      vocabSourceUrl: this.initVocabSourceUrl,
+      deleteUrl: this.initDeleteUrl
     }
   },
   methods: {
@@ -583,12 +588,33 @@ const VocabContextEditor = {
   mixins: [
   ],
   props: {
+    initVocabEntries: {
+      type: Array,
+      default: () => ([])
+    },
   },
   data() {
     return {
+      vocabEntries: []
     }
   },
   methods: {
+    loadVocabEntries() {
+      for (var k in this.initVocabEntries) {
+        const initVocabEntry = this.initVocabEntries[k]["vocab_entry"]
+        const initTags = this.initVocabEntries[k]["tags"]
 
+        const vocabEntry = {
+          id: initVocabEntry.id,
+          value: initVocabEntry.entry,
+          language: initVocabEntry.language,
+          tags: initTags
+        }
+        this.entries.push(vocabEntry)
+      }
+    },
   },
+  created() {
+    this.loadVocabEntries()
+  }
 }

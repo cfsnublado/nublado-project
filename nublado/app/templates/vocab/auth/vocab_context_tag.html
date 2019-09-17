@@ -33,37 +33,32 @@
 
 {% block content %}
 
-{% url 'api:vocab-context-detail' vocab_context.id as vocab_context_edit_url %}
+{% url "api:vocab-context-detail" vocab_context.id as vocab_context_edit_url %}
+{% url "api:vocab-entry-detail-data" as vocab_entry_detail_url%}
+{% url "api:vocab-context-add-vocab-entry" vocab_context.id as add_vocab_entry_url %}
+{% url "api:vocab-context-remove-vocab-entry" vocab_context.id as remove_vocab_entry_url %}
+
 
 <vocab-context-editor
-:init-vocab-entries="{{ vocab_entry_tags|safe }}"
+:init-vocab-entries='{{ vocab_entry_tags|safe }}'
+vocab-entry-detail-url="{{ vocab_entry_detail_url }}"
+add-vocab-entry-url="{{ add_vocab_entry_url }}"
+remove-vocab-entry-url="{{ remove_vocab_entry_url }}"
 inline-template
 >
 
-<div>
-
-</div>
-
-</vocab-context-editor>
-
-
 <div class="columns">
-
-<div class="column is-6">
-
-<markdown-editor
-init-markdown="{{ vocab_context.content }}"
-save-url="{{ vocab_context_edit_url }}"
->
-</markdown-editor>
-</div>
 
 <div class="column is-6">
 
 <div class="columns is-multiline">
 
 <div class="column is-12">
+
 <vocab-entry-tagbox
+:tags="vocabEntries"
+@add-tag="addVocabEntry"
+@remove-tag="removeVocabEntry"
 inline-template
 >
 <div class="tagbox" style="margin-top: 30px;">
@@ -79,44 +74,10 @@ inline-template
 
 <tag
 v-for="(tag, index) in tags"
-:key="index"
-:init-value="tag.entry"
-:init-has-remove="true"
-@tag-remove="removeTag(index)"
->
-</tag>
-
-</div>
-
-</div>
-
-</div>
-</tagbox>
-</div>
-
-<div class="column is-12">
-<tagbox
-inline-template
->
-<div class="tagbox" style="margin-top: 30px;">
-
-<label class="label">Instances of <span class="blue">vocab</span></label>
-<input 
-class="input"
-v-model="tagInput"
-@keyup.enter="addTag($event.target.value)"
->
-
-<div class="box">
-
-<div class="tags are-medium">
-
-<tag
-v-for="(tag, index) in tags"
 :key="tag.id"
 :init-value="tag.value"
 :init-has-remove="true"
-@tag-remove="removeTag(index)"
+@remove-tag="removeTag(index)"
 >
 </tag>
 
@@ -124,14 +85,17 @@ v-for="(tag, index) in tags"
 
 </div>
 
-</div>
-</tagbox>
-</div>
+</div><!-- tagbox -->
+</vocab-entry-tagbox>
 
-</div>
+</div><!-- col 12 -->
 
-</div>
+</div><!-- columns -->
 
-</div>
+</div><!-- col 6 -->
+
+</div><!-- columns -->
+
+</vocab-context-editor>
 
 {% endblock content %}

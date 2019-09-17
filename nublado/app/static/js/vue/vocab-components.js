@@ -346,13 +346,16 @@ const VocabEntryTagbox = {
   methods: {
     addTag(tag) {
       if (tag.entry) {
-        this.tags.push({
+        const vocabEntryTag = {
           language: tag.language,
-          entry: tag.entry
-        })
-        this.$emit("add-tag")
+          value: tag.entry
+        }
+        this.$emit("add-tag", vocabEntryTag)
       }
-    }
+    },
+    removeTag(index) {
+      this.$emit("remove-tag", index)
+    },
   }
 }
 
@@ -592,6 +595,18 @@ const VocabContextEditor = {
       type: Array,
       default: () => ([])
     },
+    vocabEntryDetailUrl: {
+      type: String,
+      required: true
+    },
+    addVocabEntryUrl: {
+      type: String,
+      required: true
+    },
+    removeVocabEntryUrl: {
+      type: String,
+      required: true
+    }
   },
   data() {
     return {
@@ -599,10 +614,81 @@ const VocabContextEditor = {
     }
   },
   methods: {
+    addVocabEntry(tag) {
+      params = {language: tag.language, entry: tag.value}
+
+      axios.get(this.vocabEntryDetailUrl, {
+        params: params
+      })
+      .then(response => {
+        console.log("Vocab entry verified.")
+
+        const data = response.data
+        const vocabEntryId = data.id
+
+        const vocabEntry = {
+          id: vocabEntryId,
+          value: data.entry,
+          language: data.language,
+          tags: []
+        }
+
+        console.log(vocabEntry)
+        console.log(this.vocabEntries)
+        console.log(this.addVocabEntryUrl)
+        axios.post(this.addVocabEntryUrl, {"vocab_entry_id": vocabEntryId})
+        .then(response => {
+          console.log("Vocab entry added.")
+          this.vocabEntries.push(vocabEntry)
+        })
+        .catch(error => {
+          if (error.response) {
+            console.log(error.response)
+          } else if (error.request) {
+            console.log(error.request)
+          } else {
+            console.log(error.message)
+          }
+          console.log(error.config)
+        })
+        .finally(() => {})
+      })
+      .catch(error => {
+        if (error.response) {
+          console.log(error.response)
+        } else if (error.request) {
+          console.log(error.request)
+        } else {
+          console.log(error.message)
+        }
+        console.log(error.config)
+      })
+      .finally(() => {})    
+    },
+    removeVocabEntry(index) {
+      const vocabEntry = this.vocabEntries[index]
+
+      axios.post(this.removeVocabEntryUrl, {"vocab_entry_id": vocabEntry.id})
+      .then(response => {
+        console.log("Vocab entry deleted.")
+        this.$delete(this.vocabEntries, index)
+      })
+      .catch(error => {
+        if (error.response) {
+          console.log(error.response)
+        } else if (error.request) {
+          console.log(error.request)
+        } else {
+          console.log(error.message)
+        }
+        console.log(error.config)
+      })
+      .finally(() => {})      
+    },
     loadVocabEntries() {
-      for (var k in this.initVocabEntries) {
-        const initVocabEntry = this.initVocabEntries[k]["vocab_entry"]
-        const initTags = this.initVocabEntries[k]["tags"]
+      for (var i in this.initVocabEntries) {
+        const initVocabEntry = this.initVocabEntries[i]["vocab_entry"]
+        const initTags = this.initVocabEntries[i]["tags"]
 
         const vocabEntry = {
           id: initVocabEntry.id,
@@ -610,7 +696,7 @@ const VocabContextEditor = {
           language: initVocabEntry.language,
           tags: initTags
         }
-        this.entries.push(vocabEntry)
+        this.vocabEntries.push(vocabEntry)
       }
     },
   },

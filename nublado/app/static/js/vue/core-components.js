@@ -505,10 +505,10 @@ const BaseTag = {
         window.location.replace(this.selectRedirectUrl)
       }
 
-      this.$emit("tag-select", this.id)
+      this.$emit("select-tag", this.id)
     },
     remove() {
-      this.$emit("tag-remove", this.id)
+      this.$emit("remove-tag", this.id)
     }
   },
   template: `
@@ -574,22 +574,19 @@ const BaseToggleTag = {
 
 const BaseTagbox = {
   props: {
-    initTags: {
+    tags: {
       type: Array,
       default: () => []
     }
   },
   data() {
-    return {
-      tags: this.initTags
-    }
+    return {}
   },
   methods: {
     addTag(tag) {
       this.$emit("add-tag", tag)
     },
     removeTag(index) {
-      this.$delete(this.tags, index)
       this.$emit("remove-tag", index)
     },
     selectTag(index) {

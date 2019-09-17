@@ -67,14 +67,6 @@ const Tagbox = {
     }
   },
   methods: {
-    addTag(tag) {
-      if (this.tagInput.trim()) {
-        this.tags.push({"id": this.tags.length, "value": tag})
-      }
-
-      this.clearTagInput()
-      this.$emit("add-tag", tag)
-    },
     clearTagInput() {
       this.tagInput = ""
     },
@@ -90,6 +82,10 @@ const MarkdownEditor = {
     MarkdownMixin
   ],
   props: {
+    viewElementId: {
+      type: String,
+      default: "markdown-html-view"
+    },
     initMarkdown: {
       type: String,
       default: ""
@@ -194,7 +190,8 @@ const MarkdownEditor = {
   </div>
   </div>
 
-  <div 
+  <div
+  :id="viewElementId" 
   class=""
   v-html="html"
   v-show="!isEditing"

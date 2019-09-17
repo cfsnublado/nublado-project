@@ -21,6 +21,7 @@ Vue.component("vocab-entry-context", VocabEntryContext)
 Vue.component("vocab-entry-search", VocabEntrySearch)
 Vue.component("vocab-entry-tag-search", VocabEntryTagSearch)
 Vue.component("vocab-entry-tagbox", VocabEntryTagbox)
+Vue.component("vocab-entry-instance-tagbox", VocabEntryInstanceTagbox)
 Vue.component("vocab-entry-info", VocabEntryInfo)
 Vue.component("vocab-context-editor", VocabContextEditor)
 

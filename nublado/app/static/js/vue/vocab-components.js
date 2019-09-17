@@ -345,6 +345,9 @@ const VocabEntryTagbox = {
   mixins: [BaseTagbox],
   methods: {
     addTag(tag) {
+      /*
+      tag: Object with language and entry properties
+      */
       if (tag.entry) {
         const vocabEntryTag = {
           language: tag.language,
@@ -352,10 +355,19 @@ const VocabEntryTagbox = {
         }
         this.$emit("add-tag", vocabEntryTag)
       }
-    },
-    removeTag(index) {
-      this.$emit("remove-tag", index)
-    },
+    }
+  }
+}
+
+const VocabEntryInstanceTagbox = {
+  mixins: [Tagbox],
+  methods: {
+    addTag(tag) {
+      /*
+      tag: text value
+      */
+      this.$emit("add-tag", vocabEntryTag)
+    }
   }
 }
 
@@ -589,6 +601,7 @@ const VocabContextEditor = {
     "markdown-editor": MarkdownEditor
   },
   mixins: [
+    HighlightMixin
   ],
   props: {
     initVocabEntries: {
@@ -610,11 +623,21 @@ const VocabContextEditor = {
   },
   data() {
     return {
-      vocabEntries: []
+      vocabEntries: [],
+      selectedVocabEntry: null
     }
   },
   methods: {
+    selectVocabEntry(index) {
+      this.selectedVocabEntry = this.vocabEntries[index]
+      console.log(this.selectedVocabEntry.value)
+      this.clearHighlight()
+      this.highlight(this.selectedVocabEntry.tags)
+    },
     addVocabEntry(tag) {
+      /*
+      tag: Object with value and language properties
+      */
       params = {language: tag.language, entry: tag.value}
 
       axios.get(this.vocabEntryDetailUrl, {
@@ -633,9 +656,6 @@ const VocabContextEditor = {
           tags: []
         }
 
-        console.log(vocabEntry)
-        console.log(this.vocabEntries)
-        console.log(this.addVocabEntryUrl)
         axios.post(this.addVocabEntryUrl, {"vocab_entry_id": vocabEntryId})
         .then(response => {
           console.log("Vocab entry added.")

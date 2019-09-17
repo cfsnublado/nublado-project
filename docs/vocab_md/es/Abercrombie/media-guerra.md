@@ -1037,4 +1037,150 @@ Rakki lo aferró por el brazo izquierdo, Soryorn por el derecho y entre los dos 
 
     </div>
 
--
+- **LAS OPINIONES DE LOS CERDOS**
+
+    <div markdown="1" class="tagged-entries">
+
+    es: cerdo: cerdos
+
+    </div>
+
+- —¡Me vengaré de ti! —ladró Isriun—. ¡De ti y de tu hijo tullido! ¡Lo he jurado!
+
+    <div markdown="1" class="tagged-entries">
+
+    es: vengarse: me vengaré
+
+    es: ladrar: ladró
+
+    es: tullido: tullido
+
+    </div>
+
+- —El sabio no libra guerra alguna, pero solo un necio libra más de una a la vez.
+
+    Espina hizo un gesto con la cabeza a los guerreros que montaban guardia fuera de los aposentos de la reina y abrió la puerta hacia dentro.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: librar: libra
+
+    es: aposento: aposentos
+
+    es: necio: necio
+
+    </div>
+
+- En las sombras del fondo de la estancia, sentada con las piernas cruzadas en una mesa, había una silueta envuelta en una capa harapienta, con la capucha echada. Koll estuvo a punto de dejar caer la daga a sus pies, de cómo le latía el corazón. Hasta los dedos más ágiles tienden a fallar cuando se siente el frío aliento de la Muerte en la nuca.
+
+    Por suerte, Espina no se amilanaba con tanta facilidad.
+
+    —Habla ahora mismo —masculló, ya en postura baja de lucha entre la reina y su visitante—. O te mato.
+
+    —¿Me atacarías con mi propia hacha, Espina Bathu? —El movimiento de la capucha dejó entrever el brillo de un ojo en su interior—. Has crecido, Koll. Te recuerdo colgado de la gavia del _Viento del Sur_, con tu madre chillándote para que bajaras. Recuerdo que me suplicaste que te mostrara la magia.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: chillar: chillándote
+
+    es: gavia: gavia
+
+    es: estancia: estancia
+
+    es: harapiento: harapienta
+
+    es: tender: tienden
+
+    es: suplicar: suplicaste
+
+    </div>
+
+- —Debo hablar con el padre Yarvi. —Skifr retrajo los labios para enseñar los dientes y ladró sus siguientes palabras—: ¡Y luego iré a la guerra!
+
+    <div markdown="1" class="tagged-entries">
+
+    es: retraer: retrajo
+
+    es: ladrar: ladró
+
+    </div>
+
+- **CENIZAS**
+
+    La flota de Uthil se disponía a escupir al Alto Rey en la cara.
+
+    Sobre una roca se erguía un trovenlandés pelirrojo berreando a los cuatro vientos, con poca afinación pero energía a raudales, las estrofas de la Trova de Ashenleer que más gustaban a los guerreros, la parte en que los más allegados de la reina se preparaban para una muerte gloriosa en batalla.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: ceniza: cenizas
+
+    es: allegado: allegados
+
+    es: escupir: escupir
+
+    es: berrear: berreando
+
+    es: afinación: afinación
+
+    es: raudal: raudales
+
+    es: estrofa: estrofas
+
+    </div>
+
+- —Y tú deberías dejar la pelea a hombres más duros. —Raith lo agarró, a medio camino entre el abrazo y el apretón de brazos, y se lo acercó. Siempre había sido el más fuerte de los dos—. No dejes que Gorm te pisotee, ¿eh, hermano? Todas mis esperanzas te incluyen a ti.
+
+    —Y tú no dejes que Uthil te ahogue —dijo Rakki, soltándose—. Te he traído una cosa. —Le tendió una rebanada de pan rojizo—. Ya que estos trovenlandeses descreídos no comen la última hogaza.
+
+    —Sabes que no creo demasiado en la suerte —respondió Raith antes de dar un mordisco y saborear la sangre.
+
+    —Pero yo sí —dijo Rakki, empezando a alejarse—. ¡Nos vemos al terminar, para que puedas maravillarte de mis pillajes!
+
+    —¡Me extrañaría que te llevaras algo, merodeando en la retaguardia! —Y Raith le lanzó el resto de la rebanada, esparciendo migajas por los aires.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: pillaje: pillajes
+
+    es: maravillarse: maravillarte
+
+    es: rebanada: rebanada
+
+    es: migaja: migajas
+
+    es: esparcir: esparciendo
+
+    es: tender: tendió
+
+    es: merodear: merodeando
+
+    </div>
+
+- Las joyas del pendiente de Skara relucieron al sol de la tarde cuando se volvió hacia Jenner el Azul.
+
+    —¿Cuánto más tendremos que esperar?
+
+    —No mucho, mi reina. El Alto Rey tiene demasiados hombres y muy pocos barcos. —Hizo un gesto con la cabeza hacia el promontorio, un contorno negro a cuyo pie se mecía y resplandecía el agua—. Están llevándolos poco a poco a la playa que hay detrás de ese espolón. Cuando Gorm considere que es buen momento, hará sonar su cuerno y aplastará a los que hayan tomado tierra. Para entonces ya habremos zarpado, confiando en atrapar a los barcos bien cargados en los estrechos. Al menos eso es lo que planea Uthil.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: relucir: relucieron
+
+    es: promontorio: promontorio
+
+    es: contorno: contorno
+
+    es: cuyo: cuyo
+
+    es: mecerse: se mecía
+
+    es: resplandecer: resplandecía
+
+    es: zarpar: habremos zarpado
+
+    es: estrecho: estrechos
+
+    </div>
+
+-  

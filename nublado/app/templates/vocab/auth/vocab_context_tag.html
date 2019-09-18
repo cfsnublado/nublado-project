@@ -8,7 +8,7 @@
 {% block page_header %}
 
 <div class="page-header">
-{% trans "label_edit_tag_vocab_context" %}
+{% trans "label_edit_context" %}
 </div>
 
 {% endblock page_header %}
@@ -55,19 +55,20 @@ inline-template
 
 <div class="columns">
 
-<div class="column is-6">
+<div class="column is-7">
 
 <markdown-editor
 init-markdown="{{ vocab_context.content }}"
 save-url="{{ vocab_context_edit_url }}"
 :editor-rows="12"
 :default-mode-edit="false"
+view-box-classes="vocab-context-box"
 >
 </markdown-editor>
 
 </div><!-- col 6 -->
 
-<div class="column is-6">
+<div class="column is-5">
 
 <div class="columns is-multiline">
 
@@ -119,6 +120,7 @@ v-for="(tag, index) in tags"
 
 <vocab-entry-instance-tagbox
 :tags="selectedVocabEntry.tags"
+:repeated-tags="false"
 @add-tag="addVocabEntryInstance"
 @remove-tag="removeVocabEntryInstance"
 inline-template

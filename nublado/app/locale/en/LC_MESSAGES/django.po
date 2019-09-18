@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-18 07:31-0700\n"
+"POT-Creation-Date: 2019-09-18 12:02-0700\n"
 "PO-Revision-Date: 2018-11-28 21:15-0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -685,8 +685,8 @@ msgid "page_vocab_context_edit_title"
 msgstr "Edit context"
 
 #: nublado/app/templates/vocab/auth/vocab_context_tag.html:11
-msgid "label_edit_tag_vocab_context"
-msgstr ""
+msgid "label_edit_context"
+msgstr "Edit context"
 
 #: nublado/app/templates/vocab/auth/vocab_context_tag.html:28
 #: nublado/app/templates/vocab/auth/vocab_entry_update.html:24
@@ -694,11 +694,11 @@ msgstr ""
 msgid "label_edit"
 msgstr "Edit"
 
-#: nublado/app/templates/vocab/auth/vocab_context_tag.html:86
+#: nublado/app/templates/vocab/auth/vocab_context_tag.html:87
 msgid "label_tagged_vocab"
 msgstr "Tagged vocabulary"
 
-#: nublado/app/templates/vocab/auth/vocab_context_tag.html:118
+#: nublado/app/templates/vocab/auth/vocab_context_tag.html:119
 msgid "label_instances_of"
 msgstr "Instances of"
 
@@ -1190,11 +1190,6 @@ msgstr "Search sources"
 #, fuzzy
 #~| msgid "label_next"
 #~ msgid "label_entry_edit"
-#~ msgstr "Next"
-
-#, fuzzy
-#~| msgid "label_next"
-#~ msgid "label_pending_contexts"
 #~ msgstr "Next"
 
 #~ msgid "page_404_title"

@@ -60,7 +60,16 @@ const Tagbox = {
     BaseTagbox,
     ClickOutsideMixin
   ],
-
+  props: {
+    repeatedTags: {
+      type: Boolean,
+      default: false
+    },
+    caseSensitive: {
+      type: Boolean,
+      default: true
+    }
+  },
   data() {
     return {
       tagInput: "",
@@ -72,7 +81,24 @@ const Tagbox = {
     },
     addTag(tag) {
       this.clearTagInput()
-      this.$emit("add-tag", tag)
+
+      if (!this.repeatedTags) {
+        var repeatFound = false
+
+        for (var i = 0; i < this.tags.length; i++) {
+            if (this.tags.indexOf(tag) != -1) {
+              repeatFound = true
+              break
+            }
+        }
+
+        if (!repeatFound) {
+          this.$emit("add-tag", tag)
+        }
+      } else {
+
+        this.$emit("add-tag", tag)
+      }
     },
     removeTag(index) {
       this.clearTagInput()
@@ -113,7 +139,7 @@ const MarkdownEditor = {
     defaultModeEdit: {
       type: Boolean,
       default: true
-    }
+    },
   },
   data() {
     return {
@@ -173,7 +199,7 @@ const MarkdownEditor = {
     }
   },
   template: `
-  <div>
+  <div class="markdown-editor">
 
   <a 
   v-bind:class="['button', { 'is-info': !isEditing }]"
@@ -201,25 +227,29 @@ const MarkdownEditor = {
   Save
   </a>
 
-  <div class="box">
-
-  <div class="field">
+  <div 
+  class="field"
+  v-show="isEditing"
+  >
   <div class="control">
   <textarea 
   class="textarea"
   :rows="editorRows"
   v-model="markdown"
-  v-show="isEditing"
   >
   </textarea>
   </div>
   </div>
 
+  <div 
+  class="box view-box"
+  v-show="!isEditing"
+  >
+
   <div
   :id="viewElementId" 
-  class=""
+  class="view-text"
   v-html="html"
-  v-show="!isEditing"
   >
   </div>
 

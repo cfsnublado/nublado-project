@@ -12283,12 +12283,12 @@ animated buttons - animate the text inside prev and next buttons
   opacity: 0.5;
 }
 
-/* line 1, ../scss/cfs/_vue.scss */
+/* line 1, ../scss/cfs/vue/_vue.scss */
 [v-cloak] {
   display: none;
 }
 
-/* line 5, ../scss/cfs/_vue.scss */
+/* line 5, ../scss/cfs/vue/_vue.scss */
 .fade-transition-enter,
 .fade-transition-slow-enter,
 .fade-transition-leave-active,
@@ -12296,16 +12296,26 @@ animated buttons - animate the text inside prev and next buttons
   opacity: 0;
 }
 
-/* line 12, ../scss/cfs/_vue.scss */
+/* line 12, ../scss/cfs/vue/_vue.scss */
 .fade-transition-enter-active,
 .fade-transition-leave-active {
   transition: opacity 0.5s ease;
 }
 
-/* line 17, ../scss/cfs/_vue.scss */
+/* line 17, ../scss/cfs/vue/_vue.scss */
 .fade-transition-slow-enter-active,
 .fade-transition-slow-leave-active {
   transition: opacity 1.0s ease;
+}
+
+/* line 6, ../scss/cfs/vue/_markdown-editor.scss */
+.markdown-editor .view-box .view-text {
+  font-size: 1.125rem;
+}
+/* line 9, ../scss/cfs/vue/_markdown-editor.scss */
+.markdown-editor .view-box .view-text .tagged-text {
+  padding: 5px 0;
+  background-color: #e0eee8;
 }
 
 /* line 3, ../scss/cfs/vocab/_vocab.scss */

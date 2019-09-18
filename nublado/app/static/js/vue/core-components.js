@@ -592,6 +592,9 @@ const BaseTagbox = {
     selectTag(index) {
       this.$emit("select-tag", index)
     },
+    focusTagInput() {
+      this.$emit("focus-tag-input")
+    }
   }
 }
 

@@ -1183,4 +1183,93 @@ Rakki lo aferró por el brazo izquierdo, Soryorn por el derecho y entre los dos 
 
     </div>
 
--  
+-  El rey se irguió aún más y el cabello canoso azotó su rostro lleno de cicatrices, pasó ante el brillo febril de sus ojos.
+
+    —La muerte nos espera a todos, hermanos míos. ¿Pasaréis ante ella cabizbajos por la Última Puerta? ¿O la afrontaréis con la frente bien alta, espada en mano?
+
+    <div markdown="1" class="tagged-entries">
+
+    es: erguirse: se irguió
+
+    es: canoso: canoso
+
+    es: cicatriz: cicatrices
+
+    es: cabizbajo: cabizbajos
+
+    es: afrontar: afrontaréis
+
+    </div>
+
+- Skara tenía el corazón en la garganta cuando asió una raíz y se izó en dirección a la cima. No era precisamente el comportamiento más regio del mundo, como la hermana Owd se había apresurado a recalcar, pero Skara no pensaba quedarse en la playa mordiéndose las uñas mientras se decidía el futuro de Trovenlandia.
+
+    Quizá no pudiera combatir en la batalla, pero como mínimo podía verla.
+
+    El terreno empezaba a allanarse y Skara siguió ascendiendo, agachada. La escarpada costa de Yutmarca apareció en su campo de visión hacia el sur. Las suaves colinas, seguidas de las playas grises, el agua centelleante de los estrechos y por último, en el centro, los barcos.
+
+    —La flota del Alto Rey —susurró la hermana Owd, con la cara más parecida a un melocotón que de costumbre después del ascenso.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: melocotón: melocotón
+
+    es: asir: asió
+
+    es: izarse: se izó
+
+    es: comportamiento: comportamiento
+
+    es: campo de visión: campo de visión
+
+    es: regio: regio
+
+    es: allanar: allanarse
+
+    es: centelleante: centelleante
+
+    </div>
+
+- Tras la acometida de Gorm, la playa había quedado salpicada de formas negras, como madera a la deriva después de una tempestad. Escudos rotos, armas rotas. Hombres rotos. Los ojos muy abiertos de Skara recorrieron la desolación, tratando de estimar la cantidad de muertos, y apenas pudo tragar por el nudo repentino que se había formado en su garganta.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: acometida: acometida
+
+    es: salpicar: salpicada
+
+    es: roto: rotos, rotas
+
+    es: a la deriva: a la deriva
+
+    es: tempestad: tempestad
+
+    es: repentino: repentino
+
+    </div>
+
+- —Esto lo he hecho yo —susurró—. Mis palabras. Mi voto.
+La hermana Owd intentó infundirle ánimos con un apretón.
+
+    —Y habéis hecho bien, mi reina. Las vidas perdonadas aquí habrían costado vidas más adelante. Esto ha sido el bien mayor.
+
+    —El mal menor —musitó Skara, recordando las lecciones de la madre Kyre, pero su clériga prestada la había malinterpretado. Lo que sentía no era remordimiento, sino fascinación por su propio poder. Por fin se sentía como una reina.
+
+    —Los encargados de las piras tendrán trabajo esta noche —dijo el padre Yarvi.
+
+    —Y a su debido tiempo, también los tratantes de esclavos en Vulsgard. —Por una vez, el tono de la madre Scaer revelaba una reticente aprobación—. Hasta ahora, todo transcurre según tus designios.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: pira: piras
+
+    es: indundir: infundirle
+
+    es: remordimiento: remordimiento
+
+    es: reticente: reticente
+
+    es: designio: designios
+
+    </div>
+
+- 

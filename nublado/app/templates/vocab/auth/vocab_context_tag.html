@@ -34,15 +34,21 @@
 {% block content %}
 
 {% url "api:vocab-context-detail" vocab_context.id as vocab_context_edit_url %}
+
 {% url "api:vocab-entry-detail-data" as vocab_entry_detail_url%}
 {% url "api:vocab-context-add-vocab-entry" vocab_context.id as add_vocab_entry_url %}
 {% url "api:vocab-context-remove-vocab-entry" vocab_context.id as remove_vocab_entry_url %}
+
+{% url "api:vocab-context-add-vocab-entry-tag" vocab_context.id as add_vocab_entry_instance_url %}
+{% url "api:vocab-context-remove-vocab-entry-tag" vocab_context.id as remove_vocab_entry_instance_url %}
 
 <vocab-context-editor
 :init-vocab-entries='{{ vocab_entry_tags|safe }}'
 vocab-entry-detail-url="{{ vocab_entry_detail_url }}"
 add-vocab-entry-url="{{ add_vocab_entry_url }}"
 remove-vocab-entry-url="{{ remove_vocab_entry_url }}"
+add-vocab-entry-instance-url="{{ add_vocab_entry_instance_url }}"
+remove-vocab-entry-instance-url="{{ remove_vocab_entry_instance_url }}"
 context-element="#markdown-html-view"
 inline-template
 >
@@ -54,6 +60,8 @@ inline-template
 <markdown-editor
 init-markdown="{{ vocab_context.content }}"
 save-url="{{ vocab_context_edit_url }}"
+:editor-rows="12"
+:default-mode-edit="false"
 >
 </markdown-editor>
 
@@ -70,14 +78,15 @@ save-url="{{ vocab_context_edit_url }}"
 @select-tag="selectVocabEntry"
 @add-tag="addVocabEntry"
 @remove-tag="removeVocabEntry"
+@focus-tag-input="deselectVocabEntry"
 inline-template
 >
 <div class="tagbox" style="margin-top: 30px;">
 
-<label class="label">Tagged vocabulary</label>
+<label class="label">{% trans "label_tagged_vocab" %}</label>
 
 {% url "vocab:vocab_entry_language_autocomplete" "zz" as autocomplete_url %}
-{% include "includes/vue/_language_search.html" with comp_name="vocab-entry-tag-search" comp_extra='@search="addTag"' %}
+{% include "includes/vue/_language_search.html" with comp_name="vocab-entry-tag-search" comp_extra='@search="addTag" @search-focus="focusTagInput"' %}
 
 <div class="box">
 
@@ -106,11 +115,12 @@ v-for="(tag, index) in tags"
 
 <div v-if="selectedVocabEntry != null" v-cloak>
 
-<label class="label">Instances of <span class="has-text-info">[[ selectedVocabEntry.value ]]</span></label>
+<label class="label">{% trans "label_instances_of" %} <span class="has-text-info">[[ selectedVocabEntry.value ]]</span></label>
 
 <vocab-entry-instance-tagbox
 :tags="selectedVocabEntry.tags"
-v-show="selectedVocabEntry != null"
+@add-tag="addVocabEntryInstance"
+@remove-tag="removeVocabEntryInstance"
 inline-template
 >
 <div class="tagbox">
@@ -131,6 +141,7 @@ v-for="(tag, index) in tags"
 :init-id="index"
 :init-value="tag"
 :init-has-remove="true"
+@select-tag="selectTag(index)"
 @remove-tag="removeTag(index)"
 >
 </tag>

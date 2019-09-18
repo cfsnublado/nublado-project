@@ -70,6 +70,18 @@ const Tagbox = {
     clearTagInput() {
       this.tagInput = ""
     },
+    addTag(tag) {
+      this.clearTagInput()
+      this.$emit("add-tag", tag)
+    },
+    removeTag(index) {
+      this.clearTagInput()
+      this.$emit("remove-tag", index)
+    },
+    selectTag(index) {
+      this.clearTagInput()
+      this.$emit("select-tag", index)
+    },
     onClickOutside() {
       this.clearTagInput()
     }
@@ -93,6 +105,14 @@ const MarkdownEditor = {
     saveUrl: {
       type: String,
       default: ""
+    },
+    editorRows: {
+      type: Number,
+      default: 6
+    },
+    defaultModeEdit: {
+      type: Boolean,
+      default: true
     }
   },
   data() {
@@ -142,23 +162,18 @@ const MarkdownEditor = {
     }
   },
   created() {
-    if (this.markdown) {
-      this.convertMarkdown()
-    }
+    if (this.defaultModeEdit) {
+      if (this.markdown) {
+        this.convertMarkdown()
+      }
 
-    this.edit()
+      this.edit()
+    } else {
+      this.view()
+    }
   },
   template: `
   <div>
-
-  <a 
-  v-bind:class="['button', { 'is-info': isEditing }]"
-  :disabled="processing"
-  href="#"
-  @click.prevent="edit"
-  >
-  Edit
-  </a>
 
   <a 
   v-bind:class="['button', { 'is-info': !isEditing }]"
@@ -167,6 +182,15 @@ const MarkdownEditor = {
   @click.prevent="view"
   >
   View
+  </a>
+
+  <a 
+  v-bind:class="['button', { 'is-info': isEditing }]"
+  :disabled="processing"
+  href="#"
+  @click.prevent="edit"
+  >
+  Edit
   </a>
 
   <a 
@@ -183,6 +207,7 @@ const MarkdownEditor = {
   <div class="control">
   <textarea 
   class="textarea"
+  :rows="editorRows"
   v-model="markdown"
   v-show="isEditing"
   >

@@ -362,12 +362,6 @@ const VocabEntryTagbox = {
 const VocabEntryInstanceTagbox = {
   mixins: [Tagbox],
   methods: {
-    addTag(tag) {
-      /*
-      tag: text value
-      */
-      this.$emit("add-tag", vocabEntryTag)
-    }
   }
 }
 
@@ -597,6 +591,10 @@ const VocabEntryContexts = {
 }
 
 const VocabContextEditor = {
+  /**
+  Quick note: In this component, VocabEntry refers to the base vocab entry,
+  and VocabEntryInstance refers to the usages of said VocabEntry in the context.
+  **/
   components: {
     "markdown-editor": MarkdownEditor
   },
@@ -619,6 +617,14 @@ const VocabContextEditor = {
     removeVocabEntryUrl: {
       type: String,
       required: true
+    },
+    addVocabEntryInstanceUrl: {
+      type: String,
+      required: true
+    },
+    removeVocabEntryInstanceUrl: {
+      type: String,
+      required: true
     }
   },
   data() {
@@ -630,9 +636,13 @@ const VocabContextEditor = {
   methods: {
     selectVocabEntry(index) {
       this.selectedVocabEntry = this.vocabEntries[index]
-      console.log(this.selectedVocabEntry.value)
       this.clearHighlight()
       this.highlight(this.selectedVocabEntry.tags)
+    },
+    deselectVocabEntry() {
+      console.log("deselect")
+      this.clearHighlight()
+      this.selectedVocabEntry = null
     },
     addVocabEntry(tag) {
       /*
@@ -692,6 +702,58 @@ const VocabContextEditor = {
       .then(response => {
         console.log("Vocab entry deleted.")
         this.$delete(this.vocabEntries, index)
+        this.deselectVocabEntry()
+      })
+      .catch(error => {
+        if (error.response) {
+          console.log(error.response)
+        } else if (error.request) {
+          console.log(error.request)
+        } else {
+          console.log(error.message)
+        }
+        console.log(error.config)
+      })
+      .finally(() => {})      
+    },
+    addVocabEntryInstance(tag) {
+      const vocabEntryInstance = {
+        "vocab_entry_id": this.selectedVocabEntry.id,
+        "vocab_entry_tag": tag
+      }
+
+      axios.post(this.addVocabEntryInstanceUrl, vocabEntryInstance)
+      .then(response => {
+        console.log("Vocab entry instance added.")
+        this.selectedVocabEntry.tags.push(tag)
+        this.highlight(this.selectedVocabEntry.tags)
+      })
+      .catch(error => {
+        if (error.response) {
+          console.log(error.response)
+        } else if (error.request) {
+          console.log(error.request)
+        } else {
+          console.log(error.message)
+        }
+        console.log(error.config)
+      })
+      .finally(() => {})
+    },
+    removeVocabEntryInstance(index) {
+      const tag = this.selectedVocabEntry.tags[index]
+
+      const vocabEntryInstance = {
+        "vocab_entry_id": this.selectedVocabEntry.id,
+        "vocab_entry_tag": tag
+      }
+
+      axios.post(this.removeVocabEntryInstanceUrl, vocabEntryInstance)
+      .then(response => {
+        this.$delete(this.selectedVocabEntry.tags, index)
+        this.clearHighlight()
+        this.highlight(this.selectedVocabEntry.tags)
+        console.log("Vocab entry instance " + tag + " removed.")
       })
       .catch(error => {
         if (error.response) {

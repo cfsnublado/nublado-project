@@ -289,4 +289,228 @@ Hearing this modern joke, Wang knew that the man before him wasn’t a program b
 
     </div>
 
+- “Are the Adventists loyal believers in this plan?”
+
+    “Of course! Commander, please do not believe false rumors.”
+
+    “It’s not a false rumor!” a man shouted. He made his way to the front. “I’m Rafael, from Israel. Three years ago, my fourteen-year-old son died in an accident. I had his kidney donated to a Palestinian girl suffering kidney failure as an expression of my hope that the two peoples could live together in peace. For this ideal, I was willing to give my life. Many, many Israelis and Palestinians sincerely strove toward the same goal by my side. But all this was useless. Our home remained trapped in the quagmire of cycles of vengeance.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: quagmire: quagmire
+
+    en: vengeance: vengeance
+
+    </div>
+
+- Pan looked around, apparently reassessing the situation. His gesture didn’t go unnoticed by Ye.
+
+    “You can see that most people attending this meeting are comrades from the Redemptionist faction. I trust that the few Adventists who are here will stand on the side of the Organization. But men like Evans and you can no longer be saved. To protect the program and ideals of the ETO, we must completely solve the problem of the Adventists.”
+
+    Silence returned. A few moments later, one of the bodyguards near Ye, a young woman, smiled. She walked toward Pan Han casually.
+
+    Pan’s face changed. He stuck a hand inside the lapel of his jacket, but the young woman dashed quicker than the eye could follow. Before anyone could react, she wrapped one of her slender arms around Pan’s neck, placed her other hand on top of his head, and, by applying her unexpected strength at just the right angle, she twisted Pan’s head 180 degrees with practiced ease. The cracks from his cervical vertebrae breaking stood out against the complete silence.
+
+    The young woman’s hands immediately let go, as though Pan’s head was too hot. Pan fell to the ground, and the gun that had killed Shen Yufei slid under the table. His body still spasmed, and his eyes remained open, his tongue sticking out. But his head no longer moved, as though it were never a part of the rest of his body. Several men came and dragged him away, the blood oozing from his mouth leaving a long trail.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: ooze: oozing
+
+    en: reassess: reassessing
+
+    en: lapel: lapel
+
+    en: vertebrae: vertebrae
+
+    </div>
+
+- Commissar Lei never forgot that it was Chief Yang who first trusted Ye, but Lei was happy to assign important topics to her. Given Ye’s status, she had no rights to the results of her research. And Lei, who had studied astrophysics, was a political officer who was also an intellectual, rare at the time. Thus he could take credit for all of Ye’s research results and papers, and cast himself as an exemplary political officer with both technical acumen and revolutionary zeal.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: acumen: acumen
+
+    en: zeal: zeal
+
+    en: exemplary: exemplary
+
+    </div>
+
+- When the Earth, an artificial satellite, and the sun are in a straight line, the line of sight from the ground-based antenna to the satellite will have the sun as its background. The sun is a giant source of electromagnetic radiation, and, as a result, satellite transmissions to the ground will be overwhelmed by interference from the solar radiation. This problem could not be completely solved, even in the twenty-first century.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: satellite: satellite
+
+    </div>
+
+- Lei’s agenda was even simpler: He just wanted Ye’s paper. The research topic was highly theoretical and would show off his expertise and skill. Now that the chaos in society was finally subsiding, the demands on cadres were also changing. There was an acute need for men like him, politically mature and academically accomplished. Of course he would have a bright future. As to whether the problem of interference from solar outages could be solved, he didn’t really care.
+
+    But in the end, Ye didn’t hand in her report. She thought that if the research project were terminated, the base library would stop receiving foreign language journals and other research materials, and she would no longer have access to such a rich trove of astrophysics references. So she nominally continued her research, while in reality she focused on refining her mathematical model of the sun.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: acute: acute
+
+    en: refine: refining
+
+    en: trove: trove
+
+    </div>
+
+- One night, Ye was, as usual, the only person in the cold reading room of the base library. On the long table in front of her, a pile of documents and journals were spread open. After completing a set of tedious and cumbersome matrix calculations, she blew on her hands to warm them, and picked up the latest issue of the _Journal of Astrophysics_ to take a break. As she flipped through it, a brief note about Jupiter caught her attention
+
+    <div markdown="1" class="tagged-entries">
+
+    en: tedious: tedious
+
+    en: cumbersome: cumbersome
+
+    </div>
+
+- Ye referred to her solar structure mathematical model and tried to find a theoretical explanation. Her eyes were drawn to her description of what she called “energy mirrors” within the solar radiation zone.
+
+    Energy produced by reaction within the solar core is initially in the form of high-energy gamma rays. The radiation zone, the region of the sun’s interior that surrounds the core, absorbs these high-energy photons and re-emits them at a slightly lower energy level. After a long period of successive absorption and re-emission (a photon might take a thousand years to leave the sun), gamma rays become x-rays, extreme ultraviolet, ultraviolet, then eventually turn into visible light and other forms of radiation.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: ultraviolet: ultraviolet
+
+    en: photon: photon, photons
+
+    en: gamma ray: gamma rays
+
+    </div>
+
+- The problem with solar outages was not resolved, but another exciting possibility presented itself: Humans could use the sun as a superantenna, and, through it, broadcast radio waves to the universe. The radio waves would be sent with the power of the sun, hundreds of millions of times greater than the total usable transmission power on Earth.
+
+    Earth civilization had a way to transmit at the level of a Kardashev Type II civilization.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: Kardashev: Kardashev
+
+    </div>
+
+- She glanced around. The three operators at the control panel were shutting down the equipment piece by piece in accordance with the instructions in the operating manual. The engineer was drinking a glass of water in a corner of the control room, and the technician was asleep in his chair. No matter how historians and writers later tried to portray the scene, the reality at the time was completely prosaic.
+
+    The transmission completed, Ye rushed out of the control room and dashed into Yang Weining’s office. Catching her breath, she said, “Tell the base station to begin monitoring the twelve thousand megahertz channel!”
+
+    <div markdown="1" class="tagged-entries">
+
+    en: prosaic: prosaic
+
+    en: portray: portray
+
+    </div>
+
+- The insanity of the human race had reached its historical zenith. The Cold War was at its height. Nuclear missiles capable of destroying the Earth ten times over could be launched at a moment’s notice, spread out among the countless missile silos dotting two continents and hidden within ghostlike nuclear-powered ballistic missile submarines patrolling deep under the sea. A single Lafayette- or Yankee-class submarine held enough warheads to destroy hundreds of cities and kill hundreds of millions, but most people continued their lives as if nothing was wrong.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: zenith: zenith
+
+    </div>
+
+- The Transmit button was a long rectangle—very similar to the Space key on a computer keyboard, except that it was red.
+
+    Ye’s hand hovered two centimeters above it.
+
+    The fate of the entire human race was now tied to these slender fingers.
+
+    Without hesitation, Ye pressed the button.
+
+    “What are you doing?” one of the men on duty asked, still sleepy.
+
+    Ye smiled at him and said nothing. She pressed a yellow button to stop the transmission. Then she moved the control stick until the antenna was pointed elsewhere. She left the control panel and walked away.
+
+    The man looked at his watch. It was time to get off work. He picked up the diary and thought about recording Ye’s operation of the transmission system. It was, after all, out of the ordinary. But then he looked at the paper tape and saw that she had transmitted for no more than three seconds. He tossed the diary back, yawned, put on his army cap, and left.
+
+    The message that was winging its way to the sun said, _Come here! I will help you conquer this world. Our civilization is no longer capable of solving its own problems. We need your force to intervene._
+
+    The newly risen sun dazzled Ye Wenjie. Not too far from the door of the main control room, she collapsed onto the lawn in a faint.    
+
+    <div markdown="1" class="tagged-entries">
+
+    en: civilization: civilization
+
+    en: antenna: antenna
+
+    en: transmission: transmission
+
+    en: wing: winging
+
+    en: dazzle: dazzled
+
+    </div>
+
+- “This… Lord that you talk about. Why is it so afraid of nanomaterial?”
+
+    “Because it can allow humans to escape gravity and engage in space construction at a much larger scale.”
+
+    “The space elevator?” Wang suddenly understood.
+
+    “Yes. If ultrastrong nanomaterials could be mass produced, then that would lay the technical foundation for building a space elevator from the ground up to a geostationary point in space. For our Lord, this is but a tiny invention; but for humans on Earth, its meaning would be significant. With this technology, humans could easily enter near-Earth space and build up large-scale defensive structures. Thus, this technology must be extinguished.”
+
+    <div markdown="1" class="tagged-entries">
+
+    en: nanomaterial: nanomaterial, nanomaterials
+
+    en: significant: significant
+
+    en: extinguish: extinguished
+
+    </div>
+
+- “I have some information you’ll definitely want to know. Your mother has been found.”
+
+    The young woman’s feverish eyes dimmed. At that moment her eyes were truly windows to her soul.
+
+    Da Shi took two steps forward. He was now no more than five meters from her. She raised the bomb and warned him with her eyes, but she was already distracted. One of the two ETO members who had tossed away fake bombs strode toward Da Shi to take the envelope from him. As the man blocked the woman’s view of Da Shi, he drew his gun with a lightning-fast motion. The woman only saw a flash by the ear of the man trying to take the letter from Da Shi before the bomb in her hands exploded.
+
+    After hearing the muffled explosion, Wang saw nothing before his eyes but darkness. Someone dragged him out of the cafeteria. Thick, yellow smoke poured out of the door, and a cacophony of shouting and gunshots came from inside. From time to time, people rushed through the smoke and out of the cafeteria.
+
+    Wang got up and tried to go back into the cafeteria, but the explosives expert grabbed him around the waist and stopped him.
+
+    “Careful. Radiation!”
+
+    <div markdown="1" class="tagged-entries">
+
+    en: cacophony: cacophony
+
+    </div>
+
+- Lei was a typical political cadre of the time, so he possessed an extremely keen sense for politics and saw everything through an ideological lens. Unbeknownst to most of the technical staff at Red Coast Base, he ran a small program in the background on the main computer. This program constantly read from the transmission and reception buffers and stored the results in a hidden encrypted file. This way, there would be a copy of everything Red Coast sent and received that only he could read. It was from this copy that he discovered the extraterrestrial message.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: unbeknownst: unbeknownst
+
+    </div>
+
+- After I explained to him what had happened, he looked over the cliff edge. Then he said that to inspect the ground terminal in the cliff face required digging, and the work would be too much for just Lei. He wanted to go down to help, so he put on the safety harness left by that other soldier. I asked him to use another rope, but he said no—the rope that Lei was on was thick and sturdy and could easily bear the weight of two. I insisted, so he told me to go get the rope. By the time I rushed back to the cliff with the rope, he had already gone down over the side. I poked my head over the edge and saw that he and Lei had already finished their inspection and were climbing back up. Lei was in the front.
+
+    There would never be another chance. I took out my hacksaw and cut through the rope.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: hacksaw: hacksaw
+
+    </div>
+
+- Ye eventually returned to Red Coast Base with Yang Dong. Another two years passed, divided between anxiety and peace. Ye then received a notice: Both she and her father had been politically rehabilitated. Soon after, a letter arrived for her from Tsinghua, stating that she could return to teach right away. Accompanying the letter was a sum of money: the back pay owed to her father after his rehabilitation. Finally, at base meetings, her supervisors could call her comrade.
+
+    Ye faced all these changes with equanimity, showing no sign of excitement or elation. She had no interest in the outside world, only wanting to stay at the quiet, out-of-the-way Red Coast Base. But for the sake of Yang Dong’s education, she finally left the base that she had once thought would be her home for the rest of her life, and returned to her alma mater.
+
+    <div markdown="1" class="tagged-entries">
+
+    en: equanimity: equanimity
+
+    en: anxiety: anxiety
+
+    en: elation: elation
+
+    </div>
+
 - 

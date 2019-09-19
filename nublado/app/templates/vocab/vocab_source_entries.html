@@ -29,7 +29,7 @@
 {% trans "label_search_vocab_in_source" as search_label %}
 
 <div class="box" style="margin-bottom: 40px;">
-{% include 'includes/vue/_language_search.html' %}
+{% include "includes/vue/_language_search.html" %}
 </div>
 
 {% endblock vocab_entry_search %}
@@ -38,7 +38,7 @@
 
 {% url "api:vocab-source-entry-list" vocab_source.id as vocab_entries_url %}
 {% url "vocab:vocab_source_entry" vocab_source.id vocab_source.slug "xx" "zzz" as vocab_entry_url %}
-{% url 'api:vocab-entry-detail' 0 as vocab_entry_delete_url %}
+{% url "api:vocab-entry-detail" 0 as vocab_entry_delete_url %}
 
 {% include "vocab/includes/vue/_vocab_entries.html" %}
 

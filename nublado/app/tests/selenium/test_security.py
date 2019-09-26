@@ -45,8 +45,8 @@ class LoginTest(FunctionalTest):
         self.login_user(
             password=DEFAULT_PWD
         )
-        self.assertIn(page_titles["user_login_redirect_title_en"], self.browser.title)
+        self.assertIn(page_titles["user_login_redirect_en"], self.browser.title)
         self.logout_user()
-        self.assertIn(page_titles["home_page_title_en"], self.browser.title)
+        self.assertIn(page_titles["home_en"], self.browser.title)
         login_link = self.get_login_link()
         self.assertIn(links["login_link_en"], login_link.text)

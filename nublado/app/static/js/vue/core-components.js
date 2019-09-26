@@ -359,6 +359,10 @@ const BaseSearch = {
     ClickOutsideMixin,
   ],
   props: {
+    id: {
+      type: String,
+      default: "search"
+    },
     initAutocompleteUrl: {
       type: String,
       required: true

@@ -50,10 +50,31 @@ class VocabEntrySearchTest(TestCommon):
             reverse("vocab:vocab_entries"))
         )
         self.load_page(page_titles["vocab_entry_search_en"])
-        search_language = "es"
-        link = self.search_autocomplete_by_language(search_language, self.vocab_entry_es.entry)
+
+        # Not found
+        search_language = "en"
+        search_term = "foo"
+        self.search_click_by_language(language=search_language, search_text=search_term)
+        self.load_page(page_titles["vocab_entry_search_en"])
+        url = '{0}{1}?search_entry={2}&search_language={3}'.format(
+            self.live_server_url,
+            reverse("vocab:vocab_entries"),
+            search_term,
+            search_language
+        )
+        self.assertEqual(url, self.browser.current_url)
+
+        # Found
+        link = self.search_autocomplete_by_language(
+            self.vocab_entry_es.language,
+            self.vocab_entry_es.entry
+        )
         link.click()
-        self.load_page("{0} - {1} | {2}".format("Vocabulary", self.vocab_entry_es.entry, PROJECT_NAME))
+        self.load_page("{0} - {1} | {2}".format(
+            "Vocabulary",
+            self.vocab_entry_es.entry,
+            PROJECT_NAME)
+        )
         url = "{0}{1}".format(
             self.live_server_url,
             reverse(

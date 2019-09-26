@@ -6,7 +6,9 @@
 {% if not comp_name %}{% alias "search" as comp_name %}{% endif %}
 {% if not search_url %}{% alias "/search/" as search_url %}{% endif %}
 {% if not autocomplete_url %}{% alias "/autocomplete/" as autocomplete_url %}{% endif %}
-{% if not search_btn_id %}{% alias "search-btn" as search_btn_id %}{% endif %}
+
+<h1>{{ search_btn_id }}</h1>
+
 {% if not comp_extra %}{% alias "" as comp_extra %}{% endif %}
 
 {% endblock aliases %}
@@ -72,7 +74,7 @@ v-bind:class="[{ 'is-active': isOpen }]"
 
 <div class="control">
 <a 
-id="{{ search_btn_id }}" 
+:id="(id + '-btn')"
 class="button" 
 href="#"
 @click.prevent="search"

@@ -83,12 +83,15 @@ class FunctionalTest(StaticLiveServerTestCase):
 
     def login_user(self, username=None, password=None):
         self.load_page(page_titles["login_en"])
+
         if username is not None:
             self.get_element_by_id("username").send_keys(username)
+
         if password is not None:
             self.get_element_by_id("password").send_keys(password)
         else:
             self.get_element_by_id("password").send_keys(DEFAULT_PWD)
+
         self.get_submit_button().click()
 
     def logout_user(self):
@@ -117,13 +120,33 @@ class FunctionalTest(StaticLiveServerTestCase):
     def load_page(self, page_title):
         self.wait.until(EC.title_contains(page_title))
 
+    def search_click(self, search_text=None, search_btn_id="search-btn"):
+        search_input = self.get_element_by_id("search-input")
+        search_input.clear()
+        search_input.send_keys(search_text)
+        search_btn = self.get_element_by_id(search_btn_id)
+        search_btn.click()
+
+    def search_click_by_language(
+        self, search_text=None, language="en", search_btn_id="search-btn"
+    ):
+        language_id = "search-language-{0}".format(language)
+        language_switcher = self.get_element_by_id("search-language")
+        language_switcher.click()
+        self.wait.until(EC.element_to_be_clickable((By.ID, language_id)))
+        self.get_element_by_id(language_id).click()
+        self.search_click(search_text=search_text, search_btn_id=search_btn_id)
+
     def search_autocomplete(self, search_text=None, autocomplete_text=None):
         search_input = self.get_element_by_id("search-input")
         search_input.clear()
         search_input.send_keys(search_text)
+
         if autocomplete_text is None:
             autocomplete_text = search_text
+
         self.wait.until(EC.element_to_be_clickable((By.LINK_TEXT, autocomplete_text)))
+
         return self.get_element_by_link_text(autocomplete_text)
 
     def search_autocomplete_by_language(self, language="en", search_text=None, autocomplete_text=None):
@@ -133,4 +156,5 @@ class FunctionalTest(StaticLiveServerTestCase):
         self.wait.until(EC.element_to_be_clickable((By.ID, language_id)))
         self.get_element_by_id(language_id).click()
         result_link = self.search_autocomplete(search_text=search_text, autocomplete_text=autocomplete_text)
+
         return result_link

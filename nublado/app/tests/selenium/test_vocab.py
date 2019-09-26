@@ -14,7 +14,7 @@ from vocab.models import (
 User = get_user_model()
 
 page_titles.update({
-    "vocab_entry_search_en": "{0} | {1}".format("Search vocabulary", PROJECT_NAME),
+    "vocab_entry_search_en": "{0} | {1}".format("Vocabulary", PROJECT_NAME),
     "vocab_user_dashboard_en": "{0} | {1}".format("Vocabulary dashboard", PROJECT_NAME),
     "vocab_context_tag_en": "{0} | {1}".format("Edit context", PROJECT_NAME),
     "vocab_entries_en": "{0} | {1}".format("Vocabulary", PROJECT_NAME),
@@ -47,18 +47,22 @@ class VocabEntrySearchTest(TestCommon):
     def test_vocab_entry_search(self):
         self.browser.get("{0}{1}".format(
             self.live_server_url,
-            reverse("vocab:vocab_entry_search"))
+            reverse("vocab:vocab_entries"))
         )
         self.load_page(page_titles["vocab_entry_search_en"])
         search_language = "es"
         link = self.search_autocomplete_by_language(search_language, self.vocab_entry_es.entry)
         link.click()
-        self.load_page(page_titles["vocab_entry_search_en"])
-        url = "{0}{1}?search_entry={2}&search_language={3}".format(
+        self.load_page("{0} - {1} | {2}".format("Vocabulary", self.vocab_entry_es.entry, PROJECT_NAME))
+        url = "{0}{1}".format(
             self.live_server_url,
-            reverse("vocab:vocab_entry_search"),
-            self.vocab_entry_es.entry,
-            search_language
+            reverse(
+                "vocab:vocab_entry",
+                kwargs={
+                    "vocab_entry_language": self.vocab_entry_es.language,
+                    "vocab_entry_slug": self.vocab_entry_es.slug
+                }
+            ),
         )
         self.assertEqual(url, self.browser.current_url)
         header = self.get_element_by_id("vocab-entry-header")

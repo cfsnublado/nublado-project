@@ -128,7 +128,7 @@ class FunctionalTest(StaticLiveServerTestCase):
 
     def search_autocomplete_by_language(self, language="en", search_text=None, autocomplete_text=None):
         language_id = "search-language-{0}".format(language)
-        language_switcher = self.get_element_by_id("search-language-switcher")
+        language_switcher = self.get_element_by_id("search-language")
         language_switcher.click()
         self.wait.until(EC.element_to_be_clickable((By.ID, language_id)))
         self.get_element_by_id(language_id).click()

@@ -17,11 +17,11 @@
 
 <div class="box">
 
-{% url 'vocab:vocab_entry_language_autocomplete' 'zz' as autocomplete_url %}
-{% url 'vocab:vocab_entries' as search_url %}
+{% url "vocab:vocab_entry_language_autocomplete" "zz" as autocomplete_url %}
+{% url "vocab:vocab_entries" as search_url %}
 {% trans "label_search_vocabulary" as search_label %}
 
-{% include 'includes/vue/_language_search.html' with comp_name="vocab-entry-search" %}
+{% include "includes/vue/_language_search.html" with comp_name="vocab-entry-search" %}
 
 </div>
 
@@ -35,7 +35,7 @@
 <div class="columns">
 <div class="column is-12">
 
-<div class="entry-header">
+<div id="vocab-entry-header" class="entry-header">
 {{ vocab_entry.entry }}
 </div>
 
@@ -66,7 +66,7 @@
 
 {{ block.super }}
 
-{% include "vocab/includes/_vocab_context_delete_modal.html" with modal_id='delete-context' modal_name='confirmation-modal' %} 
+{% include "vocab/includes/_vocab_context_delete_modal.html" with modal_id="delete-context" modal_name="confirmation-modal" %} 
 
 {% endblock modal_content %}
 

@@ -12,13 +12,13 @@ USER_URL_PREFIX = ProfileConf.URL_PREFIX
 VOCAB_URL_PREFIX = VocabConf.URL_PREFIX
 
 urlpatterns = i18n_patterns(
-    path('', include('core.urls', namespace='core')),
-    path('', include('app.urls')),
-    path('api/', include('app.api.urls', namespace='api')),
-    path('djangoadmin/', admin.site.urls),
-    path('{0}/'.format(SECURITY_URL_PREFIX), include('security.urls', namespace='security')),
-    path('{0}/'.format(USER_URL_PREFIX), include('users.urls', namespace='users')),
-    path('{0}/'.format(VOCAB_URL_PREFIX), include('vocab.urls', namespace='vocab')),
+    path("", include("core.urls", namespace="core")),
+    path("", include("app.urls")),
+    path("api/", include("app.api.urls", namespace="api")),
+    path("djangoadmin/", admin.site.urls),
+    path("{0}/".format(SECURITY_URL_PREFIX), include("security.urls", namespace="security")),
+    path("{0}/".format(USER_URL_PREFIX), include("users.urls", namespace="users")),
+    path("{0}/".format(VOCAB_URL_PREFIX), include("vocab.urls", namespace="vocab")),
 
     prefix_default_language=False
 )
@@ -26,5 +26,5 @@ urlpatterns = i18n_patterns(
 if settings.DEBUG:
     import debug_toolbar
     urlpatterns += [
-        path('__debug__/', include(debug_toolbar.urls)),
+        path("__debug__/", include(debug_toolbar.urls)),
     ]

@@ -3,9 +3,11 @@
 {% load core_extras %}
 {% load i18n %}
 
-{% block title %}{{ vocab_source.name }} - {% trans "page_vocab_source_contexts_title" %}{% endblock title %}
+{% block title %}
+{{ vocab_source.name }} - {% trans "page_vocab_source_contexts_title" %}
+{% endblock title %}
 
-{% block vocab_source_contexts_link_active %}active{% endblock vocab_source_contexts_link_active %}
+{% block vocab_source_contexts_link_active %}is-active{% endblock vocab_source_contexts_link_active %}
 
 {% block breadcrumb_content %}
 
@@ -21,22 +23,16 @@
 
 {% block content %}
 
-<div class="row justify-content-md-center">
-<div class="col-md-10">
-
 {% block vocab_contexts %}
 
-{% url 'api:nested-vocab-context-list' vocab_source.id as vocab_contexts_url %}
-{% url 'api:vocab-context-detail' 0 as vocab_context_delete_url %}
-{% url 'vocab:vocab_source_dashboard' 0 'zzz' as vocab_source_url %}
-{% url 'vocab:vocab_source_entry' vocab_source.id vocab_source.slug 'xx' 'zzz' as tag_select_url %}
+{% url "api:nested-vocab-context-list" vocab_source.id as vocab_contexts_url %}
+{% url "api:vocab-context-detail" 0 as vocab_context_delete_url %}
+{% url "vocab:vocab_source_dashboard" 0 'zzz' as vocab_source_url %}
+{% url "vocab:vocab_source_entry" vocab_source.id vocab_source.slug 'xx' 'zzz' as tag_select_url %}
 
 {% include "vocab/includes/vue/_vocab_context_tags.html" %}
 
 {% endblock vocab_contexts %}
-
-</div>
-</div>
 
 {% endblock content %}
 
@@ -44,7 +40,7 @@
 
 {{ block.super }}
 
-{% include "vocab/includes/_vocab_context_delete_modal.html" with modal_id='delete-context' modal_name='confirmation-modal' %} 
+{% include "vocab/includes/_vocab_context_delete_modal.html" with modal_id="delete-context" modal_name='confirmation-modal' %} 
 
 {% endblock modal_content %}
 

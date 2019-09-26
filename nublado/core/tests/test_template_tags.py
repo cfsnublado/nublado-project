@@ -31,16 +31,6 @@ class SetUrlParamTest(TestCommon):
         rendered = template.render(context)
         self.assertIn('{0}?foo=cham&language=en'.format(current_url), rendered)
 
-    def test_tag_with_url(self):
-        current_url = '/foo/list/'
-        new_url = '/foo/new/'
-        request = self.request_factory.get(current_url)
-        context = Context({}, autoescape=False)
-        context.request = request
-        template = Template('{% load core_extras %} {% url_set_param "/foo/new/" foo="cham" language="en" %}')
-        rendered = template.render(context)
-        self.assertIn('{0}?foo=cham&language=en'.format(new_url), rendered)
-
     def test_tag_replace_query_paraml(self):
         path = '/foo/list'
         current_url = '{0}?foo=cham&language=en'.format(path)

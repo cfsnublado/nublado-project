@@ -5,14 +5,6 @@ source_type: 1
 
 ---
 
-- **LA CAÍDA**
-
-    <div markdown="1" class="tagged-entries">
-
-    es: caída: cáída
-
-    </div>
-
 - Despojado de su orgullo, el rey Fynn flaqueaba como una vela sin su mástil. Skara siempre había creído que su abuelo era tan invencible como el Padre Tierra. No soportaba tener que verlo así. O quizá lo que no soportaba era darse cuenta de lo infantil que había sido al tener tanta fe en él.
 
     <div markdown="1" class="tagged-entries">
@@ -272,14 +264,6 @@ El rey Fynn inspiró hondo por la nariz y se irguió con orgullo. Un fugaz atisb
 
     </div>
 
-- **NO HABRÁ PAZ**
-
-    <div markdown="1" class="tagged-entries">
-
-    es: haber: habrá
-
-    </div>
-
 - El padre Yarvi estaba sentado con la espalda apoyada en un árbol, las piernas cruzadas y un libro de aspecto vetusto encajado entre las rodillas. Cualquiera habría dicho que dormía, si sus ojos no estuvieran recorriendo la escritura bajo unos párpados entornados.
 
     <div markdown="1" class="tagged-entries">
@@ -373,14 +357,6 @@ El rey Fynn inspiró hondo por la nariz y se irguió con orgullo. Un fugaz atisb
     es: encogerse de hombros: se encogió de hombros
 
     es: inclinarse: se inclinó
-
-    </div>
-
-- **NUNCA BASTANTE SANGUINARIO**
-
-    <div markdown="1" class="tagged-entries">
-
-    es: sanguinario: sanguinario
 
     </div>
 
@@ -515,14 +491,6 @@ Rakki lo aferró por el brazo izquierdo, Soryorn por el derecho y entre los dos 
 
     </div>
 
-- **A SALVO**
-
-    <div markdown="1" class="tagged-entries">
-
-    es: a salvo: a salvo
-
-    </div>
-
 - El peine de hueso de ballena pulido pasaba y pasaba y pasaba sibilante por el pelo de Skara.
 
     <div markdown="1" class="tagged-entries">
@@ -597,14 +565,6 @@ Rakki lo aferró por el brazo izquierdo, Soryorn por el derecho y entre los dos 
 
     </div>
 
-- **POR LOS DOS**
-
-    <div markdown="1" class="tagged-entries">
-
-    es: dos: dos
-
-    </div>
-
 - Hasta ese instante Raith no se dio cuenta, a la cambiante luz de la antorcha que había pasillo abajo, de que tenía a su hermano contra la pared y estaba a punto de rajarle el cuello.
 
     <div markdown="1" class="tagged-entries">
@@ -655,14 +615,6 @@ Rakki lo aferró por el brazo izquierdo, Soryorn por el derecho y entre los dos 
 
     </div>
 
-- **MANOS DIESTRAS**
-
-    <div markdown="1" class="tagged-entries">
-
-    es: diestro: diestras
-
-    </div>
-
 - Koll terminó la última runa y sonrió mientras soplaba, levantando una nubecilla de serrín. Por fin había terminado la vaina, y estaba más que orgulloso y satisfecho del resultado.
 
     <div markdown="1" class="tagged-entries">
@@ -710,14 +662,6 @@ Rakki lo aferró por el brazo izquierdo, Soryorn por el derecho y entre los dos 
     es: muslo: muslo
 
     es: escalofrío: escalofrío
-
-    </div>
-
-- **AMIGOS COMO ESTOS**
-
-    <div markdown="1" class="tagged-entries">
-
-    es: amigo: amigos
 
     </div>
 
@@ -804,14 +748,6 @@ Rakki lo aferró por el brazo izquierdo, Soryorn por el derecho y entre los dos 
     es: cerradura: cerradura
 
     es: verter: se había vertido
-
-    </div>
-
-- **LA SANGRE DE BAIL**
-
-    <div markdown="1" class="tagged-entries">
-
-    es: sangre: sangre
 
     </div>
 
@@ -915,9 +851,7 @@ Rakki lo aferró por el brazo izquierdo, Soryorn por el derecho y entre los dos 
 
     </div>
 
-- **OPORTUNIDADES**
-    
-    —No hemos tenido oportunidad de hablar —dijo Jenner el Azul.
+- —No hemos tenido oportunidad de hablar —dijo Jenner el Azul.
 
     —No soy muy hablador —gruñó Raith.
 
@@ -959,9 +893,7 @@ Rakki lo aferró por el brazo izquierdo, Soryorn por el derecho y entre los dos 
 
     </div>
 
-- **CÓMO GANAR**
-
-    —Cuando toque la campanilla, empezaréis a trepar.
+- —Cuando toque la campanilla, empezaréis a trepar.
 
     —Sí, mi reina —dijo Koll, nervioso.
 
@@ -992,14 +924,6 @@ Rakki lo aferró por el brazo izquierdo, Soryorn por el derecho y entre los dos 
     es: frenéticos: frenéticos
 
     es: latigazo: latigazos
-
-    </div>
-
-- **PODER**
-
-    <div markdown="1" class="tagged-entries">
-
-    es: poder: poder
 
     </div>
 
@@ -1034,14 +958,6 @@ Rakki lo aferró por el brazo izquierdo, Soryorn por el derecho y entre los dos 
     es: traer: trae
 
     es: chasquear: chasqueó
-
-    </div>
-
-- **LAS OPINIONES DE LOS CERDOS**
-
-    <div markdown="1" class="tagged-entries">
-
-    es: cerdo: cerdos
 
     </div>
 
@@ -1105,9 +1021,7 @@ Rakki lo aferró por el brazo izquierdo, Soryorn por el derecho y entre los dos 
 
     </div>
 
-- **CENIZAS**
-
-    La flota de Uthil se disponía a escupir al Alto Rey en la cara.
+- La flota de Uthil se disponía a escupir al Alto Rey en la cara.
 
     Sobre una roca se erguía un trovenlandés pelirrojo berreando a los cuatro vientos, con poca afinación pero energía a raudales, las estrofas de la Trova de Ashenleer que más gustaban a los guerreros, la parte en que los más allegados de la reina se preparaban para una muerte gloriosa en batalla.
 
@@ -1269,6 +1183,651 @@ La hermana Owd intentó infundirle ánimos con un apretón.
     es: reticente: reticente
 
     es: designio: designios
+
+    </div>
+
+- Raith le dio un golpe en la cabeza y lo levantó del suelo. Una ola alcanzó el casco del barco y empapó a aliados y enemigos. Espuma de mar, borbotones de sangre, hombres empujando, aplastando, hendiendo, chillando. Un remolino de rostros enloquecidos. La ola hizo cabecear el barco y Raith la acompañó, obligando a retroceder a hombres con su escudo, resoplando y aullando, voz lupina, corazón lupino.
+
+    A su alrededor todo era una tormenta de madera astillada, tañidos metálicos y voces quebradas que resonaban en la cabeza de Raith hasta que su cráneo retumbó al unísono, se partió al unísono, estalló al unísono. La cubierta estaba resbaladiza de agua y sangre. Los hombres trastabillaron cuando el barco se escoró y topó contra el casco de otro que tenía tantas flechas clavadas en la bestia de proa que parecía un erizo.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: erizo: erizo
+
+    es: resoplar: resoplar
+
+    es: empapar: empapó
+
+    es: borbotón: borbotones
+
+    es: resbaladizo: resbaladiza
+
+    es: trastabillar: trastabillaron
+
+    es: escorarse: se escoró
+
+    es: topar: topó
+
+    es: aullar: aullando
+
+    es: cabecear: cabecear
+
+    es: retroceder: retroceder
+
+    </div>
+
+- Uthil se lanzó para dar el golpe final y su pie se torció sobre una piedra. Fue solo un levísimo traspié antes que su espada cayera siseando. Levísimo, pero suficiente para dar tiempo a Yilling de caer arrodillado e inclinarse a un lado, de forma que la hoja del rey le hizo un corte en la suave mejilla y tintineó contra las piedras del patio a su lado.
+
+    La espada de Yilling estaba atravesada en el cuerpo de Uthil, casi todo el filo asomando ensangrentado de su espalda.
+
+
+    <div markdown="1" class="tagged-entries">
+
+    es: torcerse: se torció
+
+    es: sisear: siseando
+
+    es: inclinarse: inclinarse
+
+    es: tintinear: tintineó
+
+    es: traspié: traspié
+
+    </div>
+
+- —El rey Uthil está muerto —murmuró. Le había parecido un hombre forjado en hierro, indestructible. Pero lo había visto tendido, frío y blanquecino ante la Silla de Bail.
+
+    —La muerte nos espera a todos —dijo Raith—. Basta con un guijarro suelto para que ninguna habilidad, ningún renombre, ninguna fama, te pueda escudar de ella.
+
+    Skara lanzó un vistazo a la puerta cerrada, rodeada de la luz de la antorcha. Allí fuera tenía que ser fuerte. No podía mostrar temor ni vacilación. Pero nadie podía ser fuerte a todas horas.
+
+    —Estamos condenados —susurró.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: guijarro: guijarro
+
+    es: escudar: escudar
+
+    es: vistazo: vistazo
+
+    es: vacilación: vacilación
+
+    </div>
+
+- Había renunciado a la armadura y se parecía menos al gran mural de Ashenleer que se alzaba tras ella. Pero seguía llevando la larga daga en el cinturón, y el aro con la piedra roja que Bail el Constructor llevó una vez a la batalla. Conservaba la espada que le había forjado Rin, aunque, arrodillado junto a ella y sosteniéndola, había algún chico de los que habían huido de sus granjas quemadas en lugar de Raith.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: renuncia: había renunciado
+
+    </div>
+
+- Quizá hubiera el más leve atisbo de dolor en sus facciones. Quizá solo quisiera verlo. En cualquier caso, el tono de Skara se mantuvo liso como el cristal.
+
+    —Eres súbdito de Vansterlandia. No me has hecho juramento alguno. Eres libre de marchar.
+
+    —Tengo que hacerlo —dijo Raith—. Por mi hermano.
+
+    Sintió un auténtico dolor en el pecho de tanto desear que respondiera: «No, quédate, te necesito, te amo».
+
+    Pero Skara se limitó a asentir.
+
+    —Entonces, te agradezco tu leal servicio. —Raith no pudo evitar que se le contrajera un pómulo. Leales servicios, eso era todo lo que le había prestado. Como un perro cualquiera—. Se te echará mucho de menos.
+
+    Buscó en su rostro el menor signo de que de verdad lo añoraría, pero solo encontró una máscara. Miró hacia atrás y vio esperando a un mensajero del príncipe de Kalyiv, con un sombrero de piel aferrado en sus manos ansiosas, impaciente por que le llegara el turno.
+
+    La madre Owd ya le fruncía el ceño en todo su esplendor.
+
+    —¿Alguna otra cosa? —dijo. Sin duda había adivinado al menos parte de lo ocurrido y se moría de ganas de verlo marchar. Raith no podía reprochárselo.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: atisbo: atisbo
+
+    es: liso: liso
+
+    es: súbdito: súbdito
+
+    es: juramento: juramento
+
+    es: echar de menos: se te echará mucho de menos
+
+    es: añorar: añoraría
+
+    </div>
+
+- Se volvió con los hombros caídos. Se sentía como si se hubiera engañado por completo a sí mismo. Hubo un tiempo en que su único incentivo era la oportunidad de aporrear las cabezas de otros. Skara le había mostrado un atisbo de algo mejor, y acababa de trocarlo por una venganza que ni siquiera anhelaba.
+
+    Jenner el Azul le dio alcance en la puerta.
+
+    —Haz lo que tengas que hacer. Aquí siempre tendrás un sitio.
+
+    Raith no estaba tan convencido.
+
+    —Dime, abuelo, ¿haber cometido maldades… te vuelve un hombre malvado?
+
+    Jenner parpadeó.
+
+    —Ojalá tuviera las respuestas, muchacho. Lo único que sé es que el ayer no puede cambiarse. Solo puedes confiar en hacerlo mejor mañana.
+
+    —Sí, supongo que sí.
+
+    Raith quiso dar al viejo saqueador un abrazo de despedida, pero aquella cadena de oro lo hacía demasiado majestuoso. De modo que se conformó con una sonrisa incómoda mientras se miraba las botas, sucias de cavar, y se fue por donde había venido.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: engañar: se hubiera engañado
+
+    es: incentivo: incentivo
+
+    es: aporrear: aporrear
+
+    es: atisbo: atisbo
+
+    es: trocar: trocarlo
+
+    es: maldad: haber cometido maldades
+
+    es: volverse: te vuelve, se volvió
+
+    </div>
+
+- El alba era fresca y clara, y el aliento de Skara, junto al de Laithlin, el de Druin y el de sus guardias y esclavos y sirvientes, se elevó poco a poco en una nube de vaho mientras miraban desde la rampa que llevaba al puerto.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: alba: alba
+
+    es: vaho: vaho
+
+    </div>
+
+- Del rey Uthil solo quedaban cenizas y el rey Druin era demasiado pequeño para la tarea, de modo que correspondió al padre Yarvi comandar la flota que ajustaría cuentas con el Alto Rey en Casa Skeken. Hablar en nombre del Padre Paz no había impedido al joven clérigo de Gettlandia hacer el trabajo de la Madre Guerra aquella mañana, y mejor que cualquier guerrero.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: cenizas: cenizas
+
+    es: ajustar cuentas: ajustaría cuentas
+
+    es: impedir: había impedido
+
+    </div>
+
+- Jenner el Azul saludó a Skara con la cabeza desde la toldilla del _Perro Negro_, y cuando ella levantó el brazo en respuesta se elevaron unos vítores entusiastas de las tripulaciones de Trovenlandia. Después de la victoria no había cesado el aluvión de hombres que llegaban al cabo de Bail para arrodillarse ante ella y jurarle lealtad, y aunque los barcos los hubiera tomado del Alto Rey, los guerreros eran suyos.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: toldilla: toldilla
+
+    es: aluvión: aluvión
+
+    es: vítor: vítores
+
+    </div>
+
+- Pronto serás la Alta Reina y gobernarás todo el mar Quebrado, a fin de cuentas.
+Skara se la quedó mirando.
+
+    —¿Cómo dices?
+
+    —Si los vientos nos son propicios, derribaremos a la abuela Wexen de su alta percha en la Torre de la Clerecía. Los sacerdotes de la Diosa Única serán devueltos al sur. El Alto Rey caerá. ¿No has dedicado ni un momento a pensar en quién va a sustituirlo?
+
+    —Estaba un poco entretenida sobreviviendo día a día.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: a fin de cuentas: a fin de cuentas
+
+    es: propicio: propicios
+
+    es: derribar: derribaremos
+
+    es: sustituir: sustituirlo
+
+    en: entretenido: entretenida
+
+    es: sobrevivir: sobreviviendo
+
+    </div>
+
+- —Juntos seremos tan formidables como la Madre Mar y el Padre Tierra. —Recobró el ánimo al pasar a territorio más conocido—. ¡Y empezaré por traeros la cabeza del Alto Rey como regalo de bodas!
+Skara hizo una mueca.
+
+    —Preferiría la paz.
+
+    —La paz llega cuando se ha acabado con todos los enemigos, mi reina.
+
+    Gorm separó la mano, volvió a inclinarse y marchó dando zancadas hacia su barco.
+
+    —Si esa cadena de su cuello debería haberle enseñado algo —murmuró Laithlin— es que siempre hay más enemigos.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: formidable: formidables
+
+    es: recobrar: recobró
+
+    es: preferir: preferiría
+
+    es: inclinarse: inclinarse
+
+    es: zancada: zancadas
+
+    </div>
+
+- —¡Agarra la vida con las dos manos! —exclamó Skifr, provocando un respingo a Koll y casi que se volcara el cazo encima—. Regocíjate en lo que tienes. ¡El poder, la riqueza y el renombre no son más que fantasmas! Son como la brisa, imposible de retener. No hay ningún rumbo que lleve a la gloria. Todos los caminos terminan en la Última Puerta. Deléitate con las chispas que una persona hace saltar en otra. —Se arrebujó en su capa de harapos—. Son la única luz en la penumbra del tiempo.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: volcar: volcara
+
+    es: regocijarse: regocíjate
+
+    es: rumbo: rumbo
+
+    es: arrebujarse: se arrebujó
+
+    es: deleitarse: deléitate
+
+    es: penumbra: penumbra
+
+    </div>
+
+- **EL VASO COLMADO**
+
+    Aunque el padre Yarvi hubiera ordenado que no ardiera nada, en alguna parte había fuego.
+
+    El humo era una tenue neblina que convertía en sucio ocaso el día en las calles de Casa Skeken. Raith tenía la garganta rasposa y le costaba respirar. En la lobreguez se movían siluetas. Corrían. Tal vez los saqueadores, tal vez los saqueados.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: colmar: colmado
+
+    es: arder: ardiera
+
+    es: tenue: tenue
+
+    es: ocaso: ocaso
+
+    es: lobreguez: lobreguez
+
+    </div>
+
+- Raith tenía los ojos húmedos. Sería por el humo, o quizá estaba llorando. Pensó en aquella granja ardiendo. Se sintió aplastado, tan enterrado como su hermano, y le faltó el aliento. Le parecía que todo lo digno de salvar en él había muerto con Rakki, o había quedado atrás con Skara.
+
+    Forcejeó con la correa de su yelmo, se lo quitó y lo arrojó al suelo con un golpe hueco. Vio cómo rodaba por el borde entre los adoquines. Se rascó con fuerza el pelo aplanado y apenas lo notó.
+
+    Miró de soslayo la hilera de personas arrodilladas en la calle. Vio que un chico apretaba el puño y lo llenaba con un puñado de tierra del albañal. Vio una lágrima colgando de la nariz de una mujer. Oyó que el viejo del final jadeaba temeroso.
+
+    Las botas de Espina crujieron mientras se acercaba al hombre.
+
+    Ella se lo tomó con calma. Quizá estuviera haciendo acopio de valor. O disfrutando del camino, tal vez. Dejó que el mango del hacha resbalara despacio por su mano hasta agarrarlo por el extremo que había pulido el tiempo.
+
+    El viejo se encogió al oír los pies de Espina tras él, hundiéndose en el suelo como los de un leñador frente al tajo.
+
+    Espina cuadró los hombros, carraspeó, giró la cabeza y escupió.
+
+    Levantó el hacha.
+
+    Y Raith dejó escapar el aire con un suspiro tembloroso, se interpuso entre Espina y el viejo y se encaró con ella.
+
+    No abrió la boca. No estaba seguro de que lograra articular una sola palabra, de lo irritada que tenía la garganta y lo fuerte que le latía el corazón. Se quedó allí plantado.
+
+    Silencio.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: soslayo: soslayo
+
+    es: adoquín: adoquines
+
+    es: crujir: crujieron
+
+    es: acopio: acopio
+
+    es: forcejear: forcejeó
+
+    </div>
+
+- —¡Abuela Wexen! —gritó Yarvi.
+
+    La anciana se quedó petrificada con los hombros levantados, y luego se volvió despacio.
+
+    La mujer que había gobernado el mar Quebrado, decidido los destinos de incontables millares, acobardado a guerreros y utilizado a reyes como títeres no era en absoluto lo que Koll había esperado. No era una villana que riera a carcajadas. No era la personificación de una maldad sin límites. Koll vio solo un rostro maternal, redondo y con profundas arrugas. Tenía un aire de sabiduría. Un aire amistoso. No llevaba chillones distintivos de su elevada posición, sino solo una fina cadena al cuello, entre cuyos eslabones había entrelazados papeles escritos. Mandatos, y sentencias, y deudas que saldar, y órdenes que obedecer.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: volverse: se volvió
+
+    es: títer: títeres
+
+    es: carcajada: reír a carcajadas
+
+    es: maldad: maldad
+
+    es: eslabón: eslabones
+
+    es: saldar: saldar
+
+    es: entrelazado: entrelazados
+
+    es: acobardar: acobardado
+
+    </div>
+
+- —Ya conoces el dicho. Que el Padre Paz derrame lágrimas por los métodos; la Madre Guerra sonríe a los resultados.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: dicho: dicho
+
+    es: derramar: derrame
+
+    es: método: métodos
+
+    es: resultado: resultados
+
+    </div>
+
+- Los hombros de la abuela Wexen se hundieron.
+
+    —Tengo mis arrepentimientos. Son todo lo que te deja el poder, al final. Pero la arrogancia de Laithlin nos habría arrastrado a todos al abrazo de la Madre Guerra tarde o temprano. Yo intentaba mantenernos apartados de las rocas. Intentaba escoger el mal menor y el bien mayor. Pero vosotros exigíais el caos. —La Primera Entre Clérigos arrancó un papel de la cadena que llevaba al cuello y lo lanzó hacia Yarvi para que cayera flotando entre ellos—. Yo te maldigo, traidor. —Levantó la mano y Koll vio que en la palma tenía tatuados círculos concéntricos de diminuta escritura—. Te maldigo en nombre de la Diosa Única y de los muchos. —Su voz resonó y resonó en la inmensidad de la Cámara de los Susurros—. ¡Que todo lo que amas te traicione! ¡Que todo lo que hagas se pudra! ¡Que todo lo que construyas caiga!
+
+    El padre Yarvi respondió con un encogimiento de hombros.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: arrepentimiento: arrepentimientos
+
+    es: arrastrar: habría arrastrado
+
+    es: arrancar: arrancó
+
+    es: pudrirse: se pudra
+
+    </div>
+
+- —Debemos encontrar algo nuevo a lo que aspirar. —El padre Yarvi apoyó la mano deforme en el parapeto y se inclinó hacia abajo—. ¡Madre Adwyn!
+
+    La clériga pelirroja se levantó despacio y miró hacia arriba, con lágrimas en las mejillas que reflejaban la luz del fuego.
+
+    —Envía águilas a los clérigos de Yutmarca y las Tierras Bajas —le ordenó Yarvi—. Envía águilas a los clérigos de Inglefold y las islas. Envía águilas a todo clérigo que haya hincado la rodilla ante la abuela Wexen.
+
+    La madre Adwyn bajó la mirada hacia el cadáver de su maestra, parpadeó y volvió a alzarla. Se secó las lágrimas con el dorso de la mano y, en opinión de Koll, se adaptó con bastante cintura a la nueva realidad. ¿Qué otra opción tenía? ¿Qué otra opción tenía ninguno de ellos?
+
+    —¿Con qué mensaje? —preguntó la clériga, con una pequeña inclinación envarada.
+
+    —Diles que ahora hincan la rodilla ante el abuelo Yarvi.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: hincar: hincan
+
+    es: parpadear: parpadeó
+
+    </div>
+
+- Raith se sorbió la nariz rota y aplastó astillas al entrar pisando unas puertas destrozadas al gran templo del Alto Rey.
+
+    Solo había medio tejado terminado. Se veían vigas desnudas contra el cielo blanco y la lluvia tamborileaba contra un mosaico también a medio acabar. Había bancos alargados, quizá para que los fieles se sentaran a rezar, pero allí dentro ya no había fieles, sino los guerreros de Vansterlandia bebiendo, riendo y destruyendo.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: sorber: se sorbió
+
+    es: tejado: tejado
+
+    es: viga: vigas
+
+    es: tamborilear: tamborileaba
+
+    es: mosaico: mosaico
+
+    </div>
+
+- —¿De verdad no tienes nada mejor que hacer, madre Scaer, que arrojar amenazas vacías sobre mi aprendiz? —Hizo un despreocupado encogimiento de hombros—. Gorm murió sin heredero. Vansterlandia podría precipitarse a la confusión cuando todo guerrero compita para demostrar quién es el más fuerte. Debes mantener el orden y asegurarte de que emerja un nuevo rey sin demasiado derramamiento de sangre.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: emerger: emerja
+
+    es: derramamiento: derramamiento
+
+    es: arrojar: arrojar
+
+    es: competir: compita
+
+    es: encogimiento: encogimiento
+
+    </div>
+
+- —Ah, encontraré a un nuevo rey, créeme. —Fulminó con la mirada a Yarvi y gruñó las palabras—. Y luego llegaré al fondo de este asunto y ajustaremos cuentas. —Señaló las estatuas de los dioses con un dedo que parecía una zarpa—. ¡Los dioses lo ven todo! ¡Su juicio siempre espera!
+
+    Yarvi arrugó el entrecejo.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: ajustar cuentas: ajustaremos cuentas
+
+    es: zarpa: zarpa
+
+    es: entrecejo: entrecejo
+
+    </div>
+
+- —Hasta ahora nunca se han dado mucha prisa. Llega al fondo de lo que se te antoje, pero de momento no habrá Alto Rey. Lo único que nos trajo el último fue sangre, y el mar Quebrado necesita tiempo para sanar. —Se puso la mano deforme en el pecho, como a regañadientes—. Por ahora el poder lo ejercerá la Clerecía, y daremos una oportunidad al Padre Paz.
+
+    La madre Scaer siseó, disgustada.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: antojar: antoje
+
+    es: regañadientes: regañadientes
+
+    es: ejercer: ejercerá
+
+    </div>
+
+- El abuelo Yarvi se detuvo en seco y Koll oyó a los guardias dar el alto a su espalda. Vio sus sombras extendidas hacia él sobre los adoquines. Las sombras de las armas élficas que portaban.
+
+    —¿Y a quién beneficia?
+
+    —A ti —graznó Koll, sin levantar la mirada de los dedos, y se apresuró a añadir—: O más bien a nosotros. A Gettlandia. A todos. Si su familia no hubiera sido quemada, Skifr no habría venido al norte. Sin Skifr, no habría habido travesía a Strokom. Sin travesía a Strokom, no habría habido armas élficas. Sin armas élficas, no habría habido victoria en el cabo de Bail. Sin victoria en el cabo de Bail…
+
+    El peso de la mano mala del abuelo Yarvi sobre su hombro detuvo el parloteo de Koll.
+
+    —El futuro es un terreno sumido en la bruma. ¿De verdad me crees capaz de haber planeado todo eso?
+
+    —Podría ser…
+
+    —Entonces me halagas y me insultas a la vez. Suelo decir que el poder exige tener un hombro siempre en las sombras. Pero no los dos, Koll. Skifr era amiga nuestra. ¿De verdad crees que podría enviar a unos hombres a matarla? ¿A quemar a sus hijos?
+
+    <div markdown="1" class="tagged-entries">
+
+    es: beneficiar: beneficia
+
+    es: graznar: graznó
+
+    es: añadir: añadir
+
+    es: travesía: travesía
+
+    es: parloteo: parloteo
+
+    es: bruma: bruma
+
+    es: halagar: halagas
+
+    </div>
+
+- —Tienes la misma edad que yo cuando tomé el báculo de la madre Gundring. Sé que no tienes mucha confianza en ti mismo, pero yo sí la tengo. Es el momento de que pases la prueba, hagas el juramento y seas un clérigo. Te sentarás junto a la Silla Negra y serás el padre Koll, y tu prerrogativa serán las plantas, los libros y las palabras suaves.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: prerrogativa: prerrogativa
+
+    </div>
+
+- —Te necesito a mi lado, Koll. Prometí a tu padre que te liberaría y lo hice. Prometí a tu madre que cuidaría de ti y lo he hecho. —Su voz ganó suavidad—. Yo también albergo dudas y tú… me ayudas a elegir lo correcto. —Transmitía una debilidad que Koll nunca había oído antes, ni había esperado oír nunca. Desesperación, casi—. Rulf ha vuelto a Thorlby con su esposa. Necesito a alguien en quien pueda confiar. Alguien que me recuerde que puedo hacer el bien. No solo el bien mayor, sino… el bien. Por favor. Ayúdame a vivir en la luz.
+
+    —Aún me queda tanto que aprender… —balbuceó Koll, pero por mucho que se retorciera no había forma de escapar.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: retorcerse: se retorciera
+
+    es: liberar: liberaría
+
+    es: balbucear: balbuceó
+
+    </div>
+
+- El Primero Entre Clérigos anduvo hacia ella, con el flaco rostro tirante de ira.
+
+    —¡No pretendas desafiarme, flacucha vomitona! —bramó, dándose golpes en el pecho con la mano tullida—. ¡No tienes ni idea de lo que he sacrificado, de lo que he sufrido! ¡No llegas ni a imaginar los fuegos en los que me he forjado! No tienes el oro, ni los hombres, ni las espadas…
+
+    —Solo media guerra se libra con espadas. —La madre Kyre siempre le había dicho que las sonrisas no cuestan nada, de modo que Skara le dedicó la más dulce que fue capaz mientras sacaba el papelito de detrás de su espalda, doblado entre dos dedos, y se lo tendía al clérigo—. Un regalo para vos, abuelo Yarvi —dijo—. De Yilling el Radiante.
+
+    Quizá no hubiera hombre más astucioso en el mar Quebrado que él, pero Skara había aprendido a interpretar las expresiones, captó la contracción en la comisura de un ojo y supo que con su último susurro en el campo de batalla ante el cabo de Bail, Yilling le había dicho la verdad.
+
+    —Me declaro culpable de ser una flacucha vomitona —dijo mientras Yarvi le arrancaba el papel de los dedos—. Me han dicho que guardo el miedo en el estómago. Pero yo también me he templado estos últimos meses. ¿Reconocéis la letra?
+
+    <div markdown="1" class="tagged-entries">
+
+    es: pretender: pretendas
+
+    es: tullido: tullida
+
+    es: astucioso: astucioso
+
+    es: comisura: comisura
+
+    es: arrancar: arrancaba
+
+    </div>
+
+- El padre Yarvi arrugó el papel en un puño que temblaba, pero Skara solo ensanchó la sonrisa.
+
+    —Quedaos con ese, por supuesto —dijo—. Yilling el Radiante me entregó un saquito lleno. Hay siete personas en las que confío repartidas por toda Trovenlandia, cada cual con uno como el que tenéis. Nunca sabréis quiénes son. Nunca sabréis dónde están. Pero si yo sufro algún accidente, si una noche tropiezo y caigo por la Última Puerta como el que iba a ser mi marido, se enviarán mensajes, y se repetirá la historia por todas las costas del mar Quebrado… —Se inclinó hacia él y musitó las palabras—. La historia de que el padre Yarvi era el traidor que había en nuestra alianza.
+
+    —Nadie la creerá —repuso él, pero había perdido todo el color en la cara.
+
+    —Un mensaje acabará llegando al maestro Hunnan y los guerreros de Gettlandia, contándoles que fuisteis vos quien traicionó a su amado rey Uthil.
+
+    —No tengo miedo a Hunnan —dijo, pero le temblaba la mano en el báculo.
+
+    —Un mensaje acabará llegando a vuestra madre, la Reina Dorada de Gettlandia, contándole que su propio hijo vendió su ciudad al enemigo.
+
+    —Mi madre nunca se volvería contra mí —dijo él, pero le titilaban los ojos.
+
+    —Un mensaje acabará llegando a Espina Bathu, cuyo marido Brand murió en la incursión que vos tramasteis. —La voz de Skara era fría, lenta e implacable como la marea—. Pero quizá sea más indulgente de lo que parece. Vos la conocéis mucho mejor que yo.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: traidor: traidor
+
+    es: inclinarse: se inclinó
+
+    es: musitar: musitó
+
+    es: implacable: implacable
+
+    es: reponer: repuso
+
+    </div>
+
+- Quizá debería haber montado una escenita vengativa. Quizá debería haberse marchado él dándose aires, como si tuviera a cien mujeres mejores suplicando sus atenciones. Pero la triste realidad era que la amaba demasiado para hacer ninguna de las dos cosas. La amaba demasiado para hacer cualquier cosa aparte de quedarse allí de pie, acariciándose la mano dolorida y la nariz rota y mirándola con la avidez de un perro al que han dejado fuera de casa, a la fría intemperie. Deseando que se detuviera. Deseando que cambiara de opinión. Deseando que al menos mirara hacia atrás.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: intemperie: intemperie
+
+    </div>
+
+- La tarde tocaba a su fin y las sombras del muelle iban alargándose a medida que la Madre Sol descendía sobre Casa Skeken. La última luz destelló en el cristal de la mano abierta de Raith, en la ampolla que le había dado la madre Scaer, ya vacía. Decían los presagios que ningún hombre podía matar a Grom-gil-Gorm, pero unas gotas en una copa de vino lo habían logrado. Koll estaba en lo cierto: la muerte los esperaba a todos.
+
+    Raith respiró hondo, cerró el puño y sintió el viejo dolor recorriendo sus nudillos rotos. Cualquiera habría pensado que el dolor menguaría con el tiempo, pero cuanto más lo sentía más le dolía. Jenner también había estado en lo cierto: nada llegaba a curarse del todo.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: menguar: menguaría
+
+    es: muelle: muelle
+
+    es: a medida que: a medida que
+
+    es: ampolla: ampolla
+
+    es: presagio: presagios
+
+    </div>
+
+- —Podría venirme bien un pequeño cabrón sanguinario, y tengo un remo de popa libre. —Espina Bathu se levantó y le ofreció la mano—. ¿Te vienes?
+
+    Raith la miró parpadeando.
+
+    —¿Quieres que me una a la tripulación de alguien a quien he odiado siempre, que casi me mató hace un par de días, para navegar a medio mundo de distancia de todo lo que he conocido y querido, con solo la promesa de trabajo duro y mal tiempo?
+
+    —Sí, exacto. —Sonrió—. ¿Por qué, estás alejándote de ofertas mucho mejores?
+
+    Raith abrió el puño y miró la ampolla vacía. Entonces giró la mano y la dejó caer al agua.
+
+    —La verdad es que no.
+
+    Asió la mano de Espina y dejó que lo levantara.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: asir: asió
+
+    es: tripulación: tripulación
+
+    es: sanguinario: sanguinario
+
+    es: remo: remo
+
+    es: popa: popa
+
+    es: unirse: me una
+
+    es: ampolla: ampolla
+
+    </div>
+
+- Era cierto. La nueva ciudad estaba brotando de las cenizas de la vieja y ya se veían los armazones de elegantes casas nuevas asomando a lo largo de las amplias y rectas calles que la madre Owd había trazado entre el solar del salón y el mar, se oían las sierras y los martillos y los gritos de los peones en una constante retahíla desde el alba hasta el ocaso.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: alba: alba
+
+    es: ocaso: ocaso
+
+    </div>
+
+- —Del mismo modo que un arco solo tiene las flechas que tiene —dijo Owd—, parece que esas armas élficas solo pueden enviar la Muerte un número determinado de veces. Y con la bruja Skifr desaparecida en el sur, Strokom vuelve a ser territorio prohibido.
+
+    Jenner el Azul hundió su rostro curtido en las manos encallecidas y gimió.
+
+    —Parece que el mundo no ha cambiado tanto como creíamos.
+
+    —En las cenizas de cada guerra arraigan las semillas de la siguiente —murmuró Skara. Notó que los viejos nervios le burbujeaban en la garganta, se apretó la tripa con una mano e intentó obligarlos a descender tragando—. Envía un ave a la madre Scaer con nuestra enhorabuena y otra a la reina Laithlin con nuestra solidaridad.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: burbujear: burbujeaban
+
+    es: enhorabuena: enhorabuena
+
+    es: curtido: curtido
+
+    es: ceniza: cenizas
+
+    es: arraigar: arraigan
+
+    es: semilla: semillas
 
     </div>
 

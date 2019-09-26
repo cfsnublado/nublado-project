@@ -25,9 +25,9 @@ const VocabSource = {
   data() {
     return {
       source: this.initSource,
-      viewUrl: this.initViewUrl,
-      editUrl: this.initEditUrl,
-      deleteUrl: this.initDeleteUrl
+      viewUrl: "",
+      editUrl: "",
+      deleteUrl: ""
     }
   },
   methods: {
@@ -36,7 +36,11 @@ const VocabSource = {
         window.location.replace(this.viewUrl)
       }
     },
-    edit() {},
+    edit() {
+      if (this.editUrl) {
+        window.location.replace(this.editUrl)
+      }
+    },
     remove() {
       this.$emit("delete-vocab-source")
     }
@@ -46,6 +50,12 @@ const VocabSource = {
       this.viewUrl = this.initViewUrl
         .replace(0, this.source.id)
         .replace("zzz", this.source.slug)   
+    }
+
+    if (this.initEditUrl) {
+      this.editUrl = this.initEditUrl
+        .replace(0, this.source.id)
+        .replace("zzz", this.source.slug) 
     }
 
     if (this.initDeleteUrl) {
@@ -422,50 +432,11 @@ const VocabEntryInfo = {
   }
 }
 
-// const VocabContext = {
-//   mixins: [
-//     MarkdownMixin,
-//     HighlightMixin,
-//     AdminMixin
-//   ],
-//   props: {
-//     initContext: {
-//       type: Object,
-//       required: true
-//     },
-//     initSourceUrl: {
-//       type: String,
-//       default: ''
-//     }
-//   },
-//   data() {
-//     return {
-//       context: this.initContext,
-//       sourceUrl: this.initSourceUrl
-//     }
-//   },
-//   methods: {
-//     selectSource() {
-//       if (this.sourceUrl) {
-//         window.location.replace(this.sourceUrl)
-//       }
-//     }
-//   },
-//   created() {
-//     if (this.initDeleteUrl) {
-//       this.deleteUrl = this.initDeleteUrl
-//         .replace(0, this.context.id)
-//     }
-
-//     if (this.initSourceUrl) {
-//       this.sourceUrl = this.initSourceUrl
-//         .replace(0, this.context.vocab_source_id)
-//         .replace('zzz', this.context.vocab_source_slug)
-//     }
-//   }
-// }
-
 const VocabEntryContext = {
+  /**
+  From many-to-many VocabContextEntry that refers to VocabEntry and VocabContext objects
+  in Django
+  **/
   mixins: [
     MarkdownMixin,
     HighlightMixin,
@@ -478,6 +449,10 @@ const VocabEntryContext = {
       required: true
     },
     initVocabSourceUrl: {
+      type: String,
+      default: ""
+    },
+    initEditUrl: {
       type: String,
       default: ""
     },
@@ -516,7 +491,7 @@ const VocabEntryContext = {
   
     if (this.initDeleteUrl) {
       this.deleteUrl = this.initDeleteUrl
-        .replace(0, this.entryContext.vocab_context_id)
+        .replace(0, this.vocabContextEntry.vocab_context_id)
     }  
   }
 }

@@ -266,7 +266,7 @@ def send_user_token_email(
     '''
     if not user or not request or not subject_template_name or not email_template_name:
         pass
-    uid = urlsafe_base64_encode(force_bytes(user.pk)).decode()
+    uid = urlsafe_base64_encode(force_bytes(user.pk))
     token = token_generator.make_token(user)
     token_url = request.build_absolute_uri(
         reverse(

@@ -14,11 +14,11 @@ from vocab.models import (
 User = get_user_model()
 
 page_titles.update({
-    'vocab_entry_search_en': '{0} | {1}'.format('Search vocabulary', PROJECT_NAME),
-    'vocab_user_dashboard_en': '{0} | {1}'.format('Vocabulary dashboard', PROJECT_NAME),
-    'vocab_context_tag_en': '{0} | {1}'.format('Edit context', PROJECT_NAME),
-    'vocab_entries_en': '{0} | {1}'.format('Vocabulary', PROJECT_NAME),
-    'vocab_entry_update_en': '{0} | {1}'.format('Edit entry', PROJECT_NAME)
+    "vocab_entry_search_en": "{0} | {1}".format("Search vocabulary", PROJECT_NAME),
+    "vocab_user_dashboard_en": "{0} | {1}".format("Vocabulary dashboard", PROJECT_NAME),
+    "vocab_context_tag_en": "{0} | {1}".format("Edit context", PROJECT_NAME),
+    "vocab_entries_en": "{0} | {1}".format("Vocabulary", PROJECT_NAME),
+    "vocab_entry_update_en": "{0} | {1}".format("Edit entry", PROJECT_NAME)
 })
 
 
@@ -27,10 +27,10 @@ class TestCommon(FunctionalTest):
     def setUp(self):
         super(TestCommon, self).setUp()
         self.user = User.objects.create_user(
-            username='cfs7',
-            first_name='Christopher',
-            last_name='Sanders',
-            email='cfs7@cfs.com',
+            username="cfs7",
+            first_name="Christopher",
+            last_name="Sanders",
+            email="cfs7@cfs.com",
             password=DEFAULT_PWD
         )
 
@@ -40,28 +40,28 @@ class VocabEntrySearchTest(TestCommon):
     def setUp(self):
         super(VocabEntrySearchTest, self).setUp()
         self.vocab_entry_es = VocabEntry.objects.create(
-            language='es',
-            entry='comer'
+            language="es",
+            entry="comer"
         )
 
     def test_vocab_entry_search(self):
-        self.browser.get('{0}{1}'.format(
+        self.browser.get("{0}{1}".format(
             self.live_server_url,
-            reverse('vocab:vocab_entry_search'))
+            reverse("vocab:vocab_entry_search"))
         )
-        self.load_page(page_titles['vocab_entry_search_en'])
-        search_language = 'es'
+        self.load_page(page_titles["vocab_entry_search_en"])
+        search_language = "es"
         link = self.search_autocomplete_by_language(search_language, self.vocab_entry_es.entry)
         link.click()
-        self.load_page(page_titles['vocab_entry_search_en'])
-        url = '{0}{1}?search_entry={2}&search_language={3}'.format(
+        self.load_page(page_titles["vocab_entry_search_en"])
+        url = "{0}{1}?search_entry={2}&search_language={3}".format(
             self.live_server_url,
-            reverse('vocab:vocab_entry_search'),
+            reverse("vocab:vocab_entry_search"),
             self.vocab_entry_es.entry,
             search_language
         )
         self.assertEqual(url, self.browser.current_url)
-        header = self.get_element_by_id('vocab-entry-header')
+        header = self.get_element_by_id("vocab-entry-header")
         self.assertEqual(header.text, self.vocab_entry_es.entry)
 
 
@@ -70,31 +70,31 @@ class VocabEntryAuthTest(TestCommon):
     def setUp(self):
         super(VocabEntryAuthTest, self).setUp()
         self.vocab_entry_es = VocabEntry.objects.create(
-            language='es',
-            entry='tergiversar'
+            language="es",
+            entry="tergiversar"
         )
 
     def test_create_entry(self):
-        self.browser.get('{0}{1}'.format(
+        self.browser.get("{0}{1}".format(
             self.live_server_url,
-            reverse('vocab:vocab_user_dashboard'))
+            reverse("vocab:vocab_user_dashboard"))
         )
         self.login_user(self.user.username)
-        self.load_page(page_titles['vocab_user_dashboard_en'])
+        self.load_page(page_titles["vocab_user_dashboard_en"])
         self.open_sidebar()
         self.open_modal(
-            trigger_id='sidebar-nav-vocab-entry-create',
-            modal_id='create-entry-modal'
+            trigger_id="sidebar-nav-vocab-entry-create",
+            modal_id="create-entry-modal"
         )
 
     def test_entries(self):
-        self.browser.get('{0}{1}'.format(
+        self.browser.get("{0}{1}".format(
             self.live_server_url,
-            reverse('vocab:vocab_entries'))
+            reverse("vocab:vocab_entries"))
         )
         self.login_user(self.user.username)
-        self.load_page(page_titles['vocab_entries_en'])
-        search_language = 'es'
+        self.load_page(page_titles["vocab_entries_en"])
+        search_language = "es"
         self.search_autocomplete_by_language(search_language, self.vocab_entry_es.entry)
 
     def test_delete_entry(self):
@@ -106,25 +106,25 @@ class VocabEntryAuthTest(TestCommon):
         self.assertTrue(VocabEntry.objects.filter(id=entry_id).exists())
 
         self.browser.get(
-            '{0}{1}'.format(
+            "{0}{1}".format(
                 self.live_server_url,
                 reverse(
-                    'vocab:vocab_entry_update',
+                    "vocab:vocab_entry_update",
                     kwargs={
-                        'vocab_entry_language': self.vocab_entry_es.language,
-                        'vocab_entry_slug': self.vocab_entry_es.slug
+                        "vocab_entry_language": self.vocab_entry_es.language,
+                        "vocab_entry_slug": self.vocab_entry_es.slug
                     }
                 )
             )
         )
         self.login_user(self.user.username)
-        self.load_page(page_titles['vocab_entry_update_en'])
+        self.load_page(page_titles["vocab_entry_update_en"])
         self.open_modal(
-            trigger_id='vocab-entry-delete-trigger',
-            modal_id='delete-entry-modal'
+            trigger_id="vocab-entry-delete-trigger",
+            modal_id="delete-entry-modal"
         )
-        self.get_element_by_id('vocab-entry-delete-ok').click()
-        self.load_page(page_titles['vocab_entries_en'])
+        self.get_element_by_id("vocab-entry-delete-ok").click()
+        self.load_page(page_titles["vocab_entries_en"])
 
         self.assertFalse(VocabEntry.objects.filter(id=entry_id).exists())
 
@@ -134,31 +134,31 @@ class VocabEntryAuthTest(TestCommon):
 #     def setUp(self):
 #         super(VocabEntryAuthTest, self).setUp()
 #         self.vocab_entry_es = VocabEntry.objects.create(
-#             language='es',
-#             entry='tergiversar'
+#             language="es",
+#             entry="tergiversar"
 #         )
 
 #     def test_create_entry(self):
-#         self.browser.get('{0}{1}'.format(
+#         self.browser.get("{0}{1}".format(
 #             self.live_server_url,
-#             reverse('vocab:vocab_user_dashboard'))
+#             reverse("vocab:vocab_user_dashboard"))
 #         )
 #         self.login_user(self.user.username)
-#         self.load_page(page_titles['vocab_user_dashboard_en'])
+#         self.load_page(page_titles["vocab_user_dashboard_en"])
 #         self.open_sidebar()
 #         self.open_modal(
-#             trigger_id='sidebar-nav-vocab-entry-create',
-#             modal_id='create-entry-modal'
+#             trigger_id="sidebar-nav-vocab-entry-create",
+#             modal_id="create-entry-modal"
 #         )
 
 #     def test_entries(self):
-#         self.browser.get('{0}{1}'.format(
+#         self.browser.get("{0}{1}".format(
 #             self.live_server_url,
-#             reverse('vocab:vocab_entries'))
+#             reverse("vocab:vocab_entries"))
 #         )
 #         self.login_user(self.user.username)
-#         self.load_page(page_titles['vocab_entries_en'])
-#         search_language = 'es'
+#         self.load_page(page_titles["vocab_entries_en"])
+#         search_language = "es"
 #         self.search_autocomplete_by_language(search_language, self.vocab_entry_es.entry)
 
 #     def test_delete_entry(self):
@@ -170,25 +170,25 @@ class VocabEntryAuthTest(TestCommon):
 #         self.assertTrue(VocabEntry.objects.filter(id=entry_id).exists())
 
 #         self.browser.get(
-#             '{0}{1}'.format(
+#             "{0}{1}".format(
 #                 self.live_server_url,
 #                 reverse(
-#                     'vocab:vocab_entry_update',
+#                     "vocab:vocab_entry_update",
 #                     kwargs={
-#                         'vocab_entry_language': self.vocab_entry_es.language,
-#                         'vocab_entry_slug': self.vocab_entry_es.slug
+#                         "vocab_entry_language": self.vocab_entry_es.language,
+#                         "vocab_entry_slug": self.vocab_entry_es.slug
 #                     }
 #                 )
 #             )
 #         )
 #         self.login_user(self.user.username)
-#         self.load_page(page_titles['vocab_entry_update_en'])
+#         self.load_page(page_titles["vocab_entry_update_en"])
 #         self.open_modal(
-#             trigger_id='vocab-entry-delete-trigger',
-#             modal_id='delete-entry-modal'
+#             trigger_id="vocab-entry-delete-trigger",
+#             modal_id="delete-entry-modal"
 #         )
-#         self.get_element_by_id('vocab-entry-delete-ok').click()
-#         self.load_page(page_titles['vocab_entries_en'])
+#         self.get_element_by_id("vocab-entry-delete-ok").click()
+#         self.load_page(page_titles["vocab_entries_en"])
 
 #         self.assertFalse(VocabEntry.objects.filter(id=entry_id).exists())
 
@@ -200,27 +200,27 @@ class VocabContextAuthTest(TestCommon):
         self.vocab_source = VocabSource.objects.create(
             creator=self.user,
             source_type=VocabSource.CREATED,
-            name='Una prueba'
+            name="Una prueba"
         )
         self.vocab_context = VocabContext.objects.create(
             vocab_source=self.vocab_source,
-            content='He likes to eat pizza on Sunday. She likes to eat pizza on Friday.'
+            content="He likes to eat pizza on Sunday. She likes to eat pizza on Friday."
         )
         self.vocab_entry = VocabEntry.objects.create(
-            language='en',
-            entry='pizza'
+            language="en",
+            entry="pizza"
         )
 
     def get_tag_xpath(self, tagbox_id=None, tag=None, close=False):
         if tagbox_id and tag:
             if not close:
-                xpath = '//a[contains(., "{0}") and ancestor::div[@id="{1}"]]'.format(
+                xpath = "//a[contains(., '{0}') and ancestor::div[@id='{1}']]".format(
                     tag,
                     tagbox_id
                 )
             else:
-                # Get tag's close button xpath.
-                xpath = '//a[@class="delete-tag" and preceding-sibling::a[contains(., "{0}")] and ancestor::div[@id="{1}"]]'.format(
+                # Get tag"s close button xpath.
+                xpath = "//a[@class='delete-tag' and preceding-sibling::a[contains(., '{0}')] and ancestor::div[@id='{1}']]".format(
                     tag,
                     tagbox_id
                 )
@@ -228,11 +228,11 @@ class VocabContextAuthTest(TestCommon):
 
     def add_tag(self, tagbox_id=None, tag=None, return_key=False):
         if tagbox_id and tag:
-            css_selector = '#{0} .autocomplete-input'.format(tagbox_id)
+            css_selector = "#{0} .autocomplete-input".format(tagbox_id)
             tagbox_input = self.get_element_by_css(css_selector)
             tagbox_input.send_keys(tag)
         if return_key:
-            tagbox_input.send_keys(u'\ue007')
+            tagbox_input.send_keys(u"\ue007")
 
     def get_highlight_xpath(self, tag):
         xpath = "//mark[@class='tagged-text' and contains(., '{0}')]".format(tag)
@@ -243,21 +243,21 @@ class VocabContextAuthTest(TestCommon):
         hover.perform()
 
     def test_tag_context(self):
-        vocab_entry_tagbox_id = 'vocab-entry-tags'
-        vocab_entry_instance_tagbox_id = 'vocab-entry-instance-tagbox'
-        vocab_entry_instance_container_id = 'vocab-entry-instance-tags'
+        vocab_entry_tagbox_id = "vocab-entry-tags"
+        vocab_entry_instance_tagbox_id = "vocab-entry-instance-tagbox"
+        vocab_entry_instance_container_id = "vocab-entry-instance-tags"
 
-        self.browser.get('{0}{1}'.format(
+        self.browser.get("{0}{1}".format(
             self.live_server_url,
             reverse(
-                'vocab:vocab_context_tag',
-                kwargs={'vocab_context_pk': self.vocab_context.id}
+                "vocab:vocab_context_tag",
+                kwargs={"vocab_context_pk": self.vocab_context.id}
             )
         ))
         self.login_user(self.user.username)
-        self.load_page(page_titles['vocab_context_tag_en'])
+        self.load_page(page_titles["vocab_context_tag_en"])
 
-        # Context entry doesn't exist yet.
+        # Context entry doesn"t exist yet.
         self.assertFalse(
             VocabContextEntry.objects.filter(
                 vocab_context_id=self.vocab_context,

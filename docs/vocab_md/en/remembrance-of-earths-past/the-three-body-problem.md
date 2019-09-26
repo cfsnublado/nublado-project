@@ -513,4 +513,42 @@ Hearing this modern joke, Wang knew that the man before him wasn’t a program b
 
     </div>
 
-- 
+- “I just want to ask the two of you one question: Is the technological gap between humans and Trisolarans greater than the one between locusts and humans?”
+
+    The question hit the two scientists like a bucket of cold water. As they stared at the clumps of locusts before them, their expressions grew solemn. They got Shi Qiang’s point.
+
+    Look at them, the bugs. Humans have used everything in their power to extinguish them: every kind of poison, aerial sprays, introducing and cultivating their natural predators, searching for and destroying their eggs, using genetic modification to sterilize them, burning with fire, drowning with water. Every family has bug spray, every desk has a flyswatter under it… this long war has been going on for the entire history of human civilization. But the outcome is still in doubt. The bugs have not been eliminated. They still proudly live between the heavens and the earth, and their numbers have not diminished from the time before the appearance of the humans.
+
+    The Trisolarans who deemed the humans bugs seemed to have forgotten one fact: The bugs have never been truly defeated.
+
+    A small black cloud covered the sun and cast a moving shadow against the ground. This was not a common cloud, but a swarm of locusts that had just arrived. As the swarm landed in the fields nearby, the three men stood in the middle of a living shower, feeling the dignity of life on Earth. Ding Yi and Wang Miao poured the two bottles of wine they had with them on the ground beneath their feet, a toast for the bugs.
+
+    “Da Shi, thank you.” Wang held out his hand.
+
+    “I thank you as well.” Ding gripped Da Shi’s other hand.
+
+    “Let’s get back,” Wang said. “There’s so much to do.”
+
+    <div markdown="1" class="tagged-entries">
+
+    en: locust: locusts
+
+    en: extinguish: extinguish
+
+    en: deem: deemed
+
+    </div>
+
+- Ye’s heart beat with effort, like a string on some musical instrument about to break. Black fog appeared before her eyes. She used the last bit of her strength to stay upright. Before everything sank into darkness, she wanted to see sunset at Red Coast Base one more time.
+
+    Over the western horizon, the sun that was slowly sinking into the sea of clouds seemed to melt. The ruddy sun dissolved into the clouds and spread over the sky, illuminating a large patch in magnificent, bloody red.
+
+    “My sunset,” Ye whispered. “And sunset for humanity.”
+
+    <div markdown="1" class="tagged-entries">
+
+    en: ruddy: ruddy
+
+    en: horizon: horizon
+
+    </div>

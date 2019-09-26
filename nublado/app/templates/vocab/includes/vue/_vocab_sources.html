@@ -12,7 +12,7 @@ v-cloak
 >
 
 <div v-if="vocabSources && vocabSources.length == 0">
-{% trans 'msg_no_sources' %}
+{% trans "msg_no_sources" %}
 </div>
 
 <vocab-source
@@ -20,7 +20,8 @@ v-for="(vocabSource, index) in vocabSources"
 :key="vocabSource.id"
 :init-is-admin="isAdmin"
 :init-source="vocabSource"
-init-view-url="{{ vocab_source_url }}"
+init-view-url="{{ vocab_source_view_url }}"
+init-edit-url="{{ vocab_source_edit_url }}"
 init-delete-url="{{ vocab_source_delete_url }}"
 @delete-vocab-source="onDeleteVocabSource(index)"
 inline-template
@@ -35,6 +36,17 @@ v-cloak
 >
 
 <div class="box-controls">
+
+<span 
+class="control"
+v-if="isAdmin"
+>
+<a
+@click.prevent="edit"
+>
+<i class="fas fa-edit fas"></i>
+</a>
+</span>
 
 <ajax-delete
 v-if="isAdmin"
@@ -97,12 +109,12 @@ v-html="markdownToHtml(source.description)"
 <a
 @click.prevent="getVocabSources(pageNum - 1)"
 >
-{% trans 'label_previous' %}
+{% trans "label_previous" %}
 </a>
 </li>
 
 <li v-else>
-<a class="disabled" href="#">{% trans 'label_previous' %}</a>
+<a class="disabled" href="#">{% trans "label_previous" %}</a>
 </li>
 
 <li 
@@ -130,7 +142,7 @@ v-else
 <a
 @click.prevent="getVocabSources(pageNum + 1)"
 >
-{% trans 'label_next' %}
+{% trans "label_next" %}
 </a>
 </li>
 
@@ -139,7 +151,7 @@ v-else
 class="disabled" 
 href="#"
 >
-{% trans 'label_next' %}
+{% trans "label_next" %}
 </a>
 </li>
 

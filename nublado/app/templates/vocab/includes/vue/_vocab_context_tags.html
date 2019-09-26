@@ -2,7 +2,7 @@
 
 <vocab-contexts
 :init-is-admin="{{ source_admin|yesno:'true,false' }}"
-init-vocab-contexts-url="{{ vocab_contexts_url }}"
+vocab-contexts-url="{{ vocab_contexts_url }}"
 inline-template
 >
 
@@ -11,99 +11,11 @@ class="vocab-contexts"
 v-cloak
 >
 
-<div v-if="vocabContexts.length == 0">
+<div v-if="vocabContexts && vocabContexts.length == 0">
 {% trans 'msg_no_contexts' %}
 </div>
 
 <div v-else class="page-subheader">{% trans 'header_contexts' %}</div>
-
-<vocab-context-tags
-v-for="(context, index) in vocabContexts"
-:key="context.id"
-:init-is-admin="isAdmin"
-:init-context="context"
-:init-entries="context.vocab_entry_tags"
-:context-element="'#context-' + context.id"
-init-delete-url="{{ vocab_context_delete_url }}"
-init-source-url="{{ vocab_source_url }}"
-init-tag-select-url="{{ tag_select_url }}"
-inline-template
->
-
-<transition name="fade-transition" v-on:after-enter="isVisible = true" v-on:after-leave="isVisible = false">
-
-<div class="panel" v-show="isVisible">
-
-<div class="panel-top">
-<div class="panel-buttons">
-
-<ajax-delete
-v-if="isAdmin"
-delete-confirm-id="delete-context"
-:delete-url="deleteUrl"
-@ajax-success="remove"
-inline-template
->
-
-<a
-class="panel-button"
-@click.prevent="confirmDelete"
->
-<i class="fas fa-times fas"></i>
-</a>
-</ajax-delete>
-
-</div>
-</div>
-
-<div class="panel-body">
-
-<div class="panel-header">
-<a
-href="#"
-@click.prevent="selectSource"
->
-[[ context.vocab_source ]]
-</a>
-</div>
-
-<div :id="[[ context.id ]]" class="vocab-context">
-
-<div 
-:id="'context-' + context.id"
-class="vocab-context-text"
-v-html="markdownToHtml(context.content)"
->
-</div>
-
-</div>
-
-</div><!-- panel-body -->
-
-<div class="panel-bottom">
-
-<div class="vocab-entries ui labels">
-
-<toggle-tag
-  v-for="(tag, index) in entries"
-  :key="index"
-  :init-id="index"
-  :init-value="tag.value"
-  :toggle-select="tag.selected"
-  @tag-select="selectTag"
-  @tag-toggle="toggleTag"
->
-</toggle-tag>
-
-</div>
-
-</div>
-
-</div><!-- panel -->
-
-</transition>
-
-</vocab-context-tags>
 
 <section
 v-if="pageCount > 1"

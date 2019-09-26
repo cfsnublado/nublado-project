@@ -11,8 +11,10 @@
 {% block breadcrumb_content %}
 
 {{ block.super }}
-&nbsp;>&nbsp;
-{% trans "label_vocabulary" %}
+
+<li class="is-active">
+<a href="#">{% trans "label_vocabulary" %}</a>
+</li>
 
 {% endblock breadcrumb_content %}
 

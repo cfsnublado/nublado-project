@@ -17,10 +17,10 @@ User = get_user_model()
 page_titles.update({
     "vocab_entry_search_en": "{0} | {1}".format("Vocabulary", PROJECT_NAME),
     "vocab_entry_create_en": "{0} | {1}".format("Create vocab entry", PROJECT_NAME),
+    "vocab_entry_update_en": "{0} | {1}".format("Edit vocab entry", PROJECT_NAME),
     "vocab_user_dashboard_en": "{0} | {1}".format("Vocabulary dashboard", PROJECT_NAME),
     "vocab_context_tag_en": "{0} | {1}".format("Edit context", PROJECT_NAME),
     "vocab_entries_en": "{0} | {1}".format("Vocabulary", PROJECT_NAME),
-    "vocab_entry_update_en": "{0} | {1}".format("Edit entry", PROJECT_NAME)
 })
 
 
@@ -28,6 +28,13 @@ class TestCommon(FunctionalTest):
 
     def setUp(self):
         super(TestCommon, self).setUp()
+        self.superuser = User.objects.create_superuser(
+            username="cfs",
+            first_name="Christopher",
+            last_name="Sand",
+            email="cfs@cfs.com",
+            password=DEFAULT_PWD
+        )
         self.user = User.objects.create_user(
             username="cfs7",
             first_name="Christopher",
@@ -120,35 +127,55 @@ class VocabEntryTest(TestCommon):
             "language": "es",
             "entry": "trastabillar"
         }
+
         self.assertFalse(
             VocabEntry.objects.filter(
                 language=vocab_entry_data["language"],
                 entry=vocab_entry_data["entry"]
             ).exists()
         )
+
         self.browser.get("{0}{1}".format(
             self.live_server_url,
             reverse("app:home"))
         )
-        login_link = self.get_login_link()
-        login_link.click()
+
+        self.get_login_link().click()
         self.login_user(self.user.username)
         self.load_page(page_titles["home_en"])
         self.open_sidebar()
         self.get_element_by_id("sidebar-new-vocab-entry").click()
         self.load_page(page_titles["vocab_entry_create_en"])
         self.fill_vocab_entry_form(language="es", entry="trastabillar")
+
         self.assertTrue(
             VocabEntry.objects.filter(
                 language=vocab_entry_data["language"],
                 entry=vocab_entry_data["entry"]
             ).exists()
         )
+
         self.load_page("{0} - {1} | {2}".format(
             "Vocabulary",
             vocab_entry_data["entry"],
             PROJECT_NAME)
         )
+
+    def test_update_vocab_entry(self):
+        self.browser.get("{0}{1}".format(
+            self.live_server_url,
+            reverse(
+                "vocab:vocab_entry_update",
+                kwargs={
+                    "vocab_entry_language": self.vocab_entry_es.language,
+                    "vocab_entry_slug": self.vocab_entry_es.slug
+                }
+            )
+        ))
+        self.login_user(self.superuser.username)
+        self.load_page(page_titles["vocab_entry_update_en"])
+
+
     # def test_entries(self):
     #     self.browser.get("{0}{1}".format(
     #         self.live_server_url,

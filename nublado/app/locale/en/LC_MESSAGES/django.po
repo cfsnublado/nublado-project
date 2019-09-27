@@ -716,7 +716,7 @@ msgstr ""
 
 #: nublado/app/templates/vocab/auth/vocab_entry_update.html:8
 msgid "page_vocab_entry_edit_title"
-msgstr "Edit entry"
+msgstr "Edit vocab entry"
 
 #: nublado/app/templates/vocab/auth/vocab_entry_update.html:13
 msgid "header_edit_vocab_entry"

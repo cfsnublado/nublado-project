@@ -1,6 +1,7 @@
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.ui import Select
 
 from django.contrib.auth import get_user_model
 from django.urls import reverse
@@ -15,6 +16,7 @@ User = get_user_model()
 
 page_titles.update({
     "vocab_entry_search_en": "{0} | {1}".format("Vocabulary", PROJECT_NAME),
+    "vocab_entry_create_en": "{0} | {1}".format("Create vocab entry", PROJECT_NAME),
     "vocab_user_dashboard_en": "{0} | {1}".format("Vocabulary dashboard", PROJECT_NAME),
     "vocab_context_tag_en": "{0} | {1}".format("Edit context", PROJECT_NAME),
     "vocab_entries_en": "{0} | {1}".format("Vocabulary", PROJECT_NAME),
@@ -90,68 +92,103 @@ class VocabEntrySearchTest(TestCommon):
         self.assertEqual(header.text, self.vocab_entry_es.entry)
 
 
-class VocabEntryAuthTest(TestCommon):
+class VocabEntryTest(TestCommon):
 
     def setUp(self):
-        super(VocabEntryAuthTest, self).setUp()
+        super(VocabEntryTest, self).setUp()
         self.vocab_entry_es = VocabEntry.objects.create(
             language="es",
             entry="tergiversar"
         )
 
-    def test_create_entry(self):
+    def fill_vocab_entry_form(
+        self, entry=None, language=None
+    ):
+        if entry is not None:
+            entry_input = self.get_element_by_id("entry")
+            entry_input.clear()
+            entry_input.send_keys(entry)
+
+        if language is not None:
+            language_select = Select(self.get_element_by_id("language"))
+            language_select.select_by_value(language)
+
+        self.get_submit_button().click()
+
+    def test_create_vocab_entry(self):
+        vocab_entry_data = {
+            "language": "es",
+            "entry": "trastabillar"
+        }
+        self.assertFalse(
+            VocabEntry.objects.filter(
+                language=vocab_entry_data["language"],
+                entry=vocab_entry_data["entry"]
+            ).exists()
+        )
         self.browser.get("{0}{1}".format(
             self.live_server_url,
-            reverse("vocab:vocab_user_dashboard"))
+            reverse("app:home"))
         )
+        login_link = self.get_login_link()
+        login_link.click()
         self.login_user(self.user.username)
-        self.load_page(page_titles["vocab_user_dashboard_en"])
+        self.load_page(page_titles["home_en"])
         self.open_sidebar()
-        self.open_modal(
-            trigger_id="sidebar-nav-vocab-entry-create",
-            modal_id="create-entry-modal"
+        self.get_element_by_id("sidebar-new-vocab-entry").click()
+        self.load_page(page_titles["vocab_entry_create_en"])
+        self.fill_vocab_entry_form(language="es", entry="trastabillar")
+        self.assertTrue(
+            VocabEntry.objects.filter(
+                language=vocab_entry_data["language"],
+                entry=vocab_entry_data["entry"]
+            ).exists()
         )
-
-    def test_entries(self):
-        self.browser.get("{0}{1}".format(
-            self.live_server_url,
-            reverse("vocab:vocab_entries"))
+        self.load_page("{0} - {1} | {2}".format(
+            "Vocabulary",
+            vocab_entry_data["entry"],
+            PROJECT_NAME)
         )
-        self.login_user(self.user.username)
-        self.load_page(page_titles["vocab_entries_en"])
-        search_language = "es"
-        self.search_autocomplete_by_language(search_language, self.vocab_entry_es.entry)
+    # def test_entries(self):
+    #     self.browser.get("{0}{1}".format(
+    #         self.live_server_url,
+    #         reverse("vocab:vocab_entries"))
+    #     )
+    #     self.login_user(self.user.username)
+    #     self.load_page(page_titles["vocab_entries_en"])
+    #     search_language = "es"
+    #     self.search_autocomplete_by_language(search_language, self.vocab_entry_es.entry)
 
-    def test_delete_entry(self):
-        self.user.is_superuser = True
-        self.user.save()
+    # def test_delete_entry(self):
+    #     self.user.is_superuser = True
+    #     self.user.save()
 
-        entry_id = self.vocab_entry_es.id
+    #     entry_id = self.vocab_entry_es.id
 
-        self.assertTrue(VocabEntry.objects.filter(id=entry_id).exists())
+    #     self.assertTrue(VocabEntry.objects.filter(id=entry_id).exists())
 
-        self.browser.get(
-            "{0}{1}".format(
-                self.live_server_url,
-                reverse(
-                    "vocab:vocab_entry_update",
-                    kwargs={
-                        "vocab_entry_language": self.vocab_entry_es.language,
-                        "vocab_entry_slug": self.vocab_entry_es.slug
-                    }
-                )
-            )
-        )
-        self.login_user(self.user.username)
-        self.load_page(page_titles["vocab_entry_update_en"])
-        self.open_modal(
-            trigger_id="vocab-entry-delete-trigger",
-            modal_id="delete-entry-modal"
-        )
-        self.get_element_by_id("vocab-entry-delete-ok").click()
-        self.load_page(page_titles["vocab_entries_en"])
+    #     self.browser.get(
+    #         "{0}{1}".format(
+    #             self.live_server_url,
+    #             reverse(
+    #                 "vocab:vocab_entry_update",
+    #                 kwargs={
+    #                     "vocab_entry_language": self.vocab_entry_es.language,
+    #                     "vocab_entry_slug": self.vocab_entry_es.slug
+    #                 }
+    #             )
+    #         )
+    #     )
+    #     self.login_user(self.user.username)
+    #     self.load_page(page_titles["vocab_entry_update_en"])
+    #     self.open_modal(
+    #         trigger_id="vocab-entry-delete-trigger",
+    #         modal_id="delete-entry-modal"
+    #     )
+    #     self.get_element_by_id("vocab-entry-delete-ok").click()
+    #     self.load_page(page_titles["vocab_entries_en"])
 
-        self.assertFalse(VocabEntry.objects.filter(id=entry_id).exists())
+    #     self.assertFalse(VocabEntry.objects.filter(id=entry_id).exists())
 
 
 # class VocabEntryAuthTest(TestCommon):

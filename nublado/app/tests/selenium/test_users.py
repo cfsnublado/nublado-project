@@ -44,7 +44,10 @@ class TestCommon(FunctionalTest):
             "password2": DEFAULT_PWD
         }
 
-    def fill_and_submit_user_registration_form(self, username=None, email=None, first_name=None, last_name=None, pwd1=None, pwd2=None):
+    def fill_and_submit_user_registration_form(
+        self, username=None, email=None,
+        first_name=None, last_name=None, pwd1=None, pwd2=None
+    ):
         if username is not None:
             username_input = self.get_element_by_id("id_username")
             username_input.clear()

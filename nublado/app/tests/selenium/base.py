@@ -99,12 +99,12 @@ class FunctionalTest(StaticLiveServerTestCase):
         self.get_logout_link().click()
 
     def open_sidebar(self):
-        self.get_element_by_id("sidebar-nav-btn").click()
-        self.wait.until(EC.element_to_be_clickable((By.ID, "sidebar-nav-language-menu")))
+        self.get_element_by_id("navbar-sidebar-trigger").click()
+        self.wait.until(EC.element_to_be_clickable((By.ID, "sidebar-language-selector")))
 
     def close_sidebar(self):
-        self.get_element_by_id("sidebar-nav-btn").click()
-        self.wait.until(EC.invisibility_of_element_located((By.ID, "sidebar-nav-dropdown-toggle")))
+        self.get_element_by_id("sidebar-trigger").click()
+        self.wait.until(EC.invisibility_of_element_located((By.ID, "sidebar")))
 
     def open_modal(self, trigger_id=None, modal_id=None):
         self.get_element_by_id(trigger_id).click()

@@ -479,28 +479,21 @@ const BaseLanguageSearch = {
 const BaseTag = {
   mixins: [VisibleMixin],
   props: {
-    initId: {
-      type: Number,
-      default: 0
+    id: {
+      type: String,
+      default: ""
     },
-    initValue: {
+    value: {
       type: String,
       required: true
     },
-    initHasRemove: {
+    hasRemove: {
       type: Boolean,
       default: false
     },
     selectRedirectUrl: {
       type: String,
       default: ""
-    }
-  },
-  data() {
-    return {
-      id: this.initId,
-      value: this.initValue,
-      hasRemove: this.initHasRemove
     }
   },
   methods: {

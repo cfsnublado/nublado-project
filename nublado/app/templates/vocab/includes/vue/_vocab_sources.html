@@ -18,6 +18,7 @@ v-cloak
 <vocab-source
 v-for="(vocabSource, index) in vocabSources"
 :key="vocabSource.id"
+:id="('source-' + vocabSource.id)"
 :init-is-admin="isAdmin"
 :init-source="vocabSource"
 init-view-url="{{ vocab_source_view_url }}"
@@ -29,7 +30,8 @@ inline-template
 
 <transition name="fade-transition" v-on:after-enter="isVisible = true" v-on:after-leave="remove">
 
-<div 
+<div
+:id="id"
 class="box vocab-source-box" 
 v-show="isVisible" 
 v-cloak
@@ -50,7 +52,7 @@ v-if="isAdmin"
 
 <ajax-delete
 v-if="isAdmin"
-delete-confirm-id="delete-source"
+delete-confirm-id="delete-vocab-source"
 :delete-url="deleteUrl"
 @ajax-success="isVisible = false"
 inline-template
@@ -58,6 +60,7 @@ inline-template
 
 <span class="control">
 <a
+class="delete-trigger"
 @click.prevent="confirmDelete"
 >
 <i class="fas fa-times fas"></i>

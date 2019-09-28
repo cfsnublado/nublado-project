@@ -36,14 +36,14 @@ novalidate
 </button>
 
 <ajax-delete
-delete-confirm-id="delete-source"
+delete-confirm-id="delete-vocab-source"
 delete-url="{% url 'api:vocab-source-detail' vocab_source.id %}" 
 delete-redirect-url="{% url 'vocab:vocab_sources' %}"
 inline-template
 >
 
 <button 
-id="vocab-source-delete-trigger" 
+id="vocab-source-delete-btn" 
 class="button is-danger"
 @click.prevent="confirmDelete"
 >
@@ -58,7 +58,7 @@ class="button is-danger"
 
 {% block modal_content %}
 
-{% include "vocab/includes/_vocab_source_delete_modal.html" with modal_id="delete-source" modal_name="confirmation-modal" %} 
+{% include "vocab/includes/_vocab_source_delete_modal.html" with modal_id="delete-vocab-source" modal_name="confirmation-modal" %} 
 
 {% endblock modal_content %}
 

@@ -1,5 +1,4 @@
 from selenium.webdriver.common.by import By
-from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import Select
 
@@ -8,19 +7,18 @@ from django.urls import reverse
 
 from .base import FunctionalTest, page_titles, DEFAULT_PWD, PROJECT_NAME
 from vocab.models import (
-    VocabEntry, VocabContext, VocabContextEntry,
-    VocabSource
+    VocabEntry, VocabSource
 )
 
 User = get_user_model()
 
 page_titles.update({
-    "vocab_entry_search_en": "{0} | {1}".format("Vocabulary", PROJECT_NAME),
+    "vocab_entries_en": "{0} | {1}".format("Vocabulary", PROJECT_NAME),
     "vocab_entry_create_en": "{0} | {1}".format("Create vocab entry", PROJECT_NAME),
     "vocab_entry_update_en": "{0} | {1}".format("Edit vocab entry", PROJECT_NAME),
-    "vocab_user_dashboard_en": "{0} | {1}".format("Vocabulary dashboard", PROJECT_NAME),
-    "vocab_context_tag_en": "{0} | {1}".format("Edit context", PROJECT_NAME),
-    "vocab_entries_en": "{0} | {1}".format("Vocabulary", PROJECT_NAME),
+    "vocab_sources_en": "{0} | {1}".format("Sources", PROJECT_NAME),
+    "vocab_source_create_en": "{0} | {1}".format("Create source", PROJECT_NAME),
+    "vocab_source_update_en": "{0} | {1}".format("Edit source", PROJECT_NAME),
 })
 
 
@@ -48,7 +46,7 @@ class VocabEntrySearchTest(TestCommon):
 
     def setUp(self):
         super(VocabEntrySearchTest, self).setUp()
-        self.vocab_entry_es = VocabEntry.objects.create(
+        self.vocab_entry = VocabEntry.objects.create(
             language="es",
             entry="comer"
         )
@@ -58,13 +56,13 @@ class VocabEntrySearchTest(TestCommon):
             self.live_server_url,
             reverse("vocab:vocab_entries"))
         )
-        self.load_page(page_titles["vocab_entry_search_en"])
+        self.load_page(page_titles["vocab_entries_en"])
 
         # Not found
         search_language = "en"
         search_term = "foo"
         self.search_click_by_language(language=search_language, search_text=search_term)
-        self.load_page(page_titles["vocab_entry_search_en"])
+        self.load_page(page_titles["vocab_entries_en"])
         url = '{0}{1}?search_entry={2}&search_language={3}'.format(
             self.live_server_url,
             reverse("vocab:vocab_entries"),
@@ -75,13 +73,13 @@ class VocabEntrySearchTest(TestCommon):
 
         # Found
         link = self.search_autocomplete_by_language(
-            self.vocab_entry_es.language,
-            self.vocab_entry_es.entry
+            self.vocab_entry.language,
+            self.vocab_entry.entry
         )
         link.click()
         self.load_page("{0} - {1} | {2}".format(
             "Vocabulary",
-            self.vocab_entry_es.entry,
+            self.vocab_entry.entry,
             PROJECT_NAME)
         )
         url = "{0}{1}".format(
@@ -89,21 +87,21 @@ class VocabEntrySearchTest(TestCommon):
             reverse(
                 "vocab:vocab_entry",
                 kwargs={
-                    "vocab_entry_language": self.vocab_entry_es.language,
-                    "vocab_entry_slug": self.vocab_entry_es.slug
+                    "vocab_entry_language": self.vocab_entry.language,
+                    "vocab_entry_slug": self.vocab_entry.slug
                 }
             ),
         )
         self.assertEqual(url, self.browser.current_url)
         header = self.get_element_by_id("vocab-entry-header")
-        self.assertEqual(header.text, self.vocab_entry_es.entry)
+        self.assertEqual(header.text, self.vocab_entry.entry)
 
 
-class VocabEntryTest(TestCommon):
+class VocabEntryAuthTest(TestCommon):
 
     def setUp(self):
-        super(VocabEntryTest, self).setUp()
-        self.vocab_entry_es = VocabEntry.objects.create(
+        super(VocabEntryAuthTest, self).setUp()
+        self.vocab_entry = VocabEntry.objects.create(
             language="es",
             entry="tergiversar"
         )
@@ -112,12 +110,12 @@ class VocabEntryTest(TestCommon):
         self, entry=None, language=None
     ):
         if entry is not None:
-            entry_input = self.get_element_by_id("entry")
+            entry_input = self.get_element_by_id("id_entry")
             entry_input.clear()
             entry_input.send_keys(entry)
 
         if language is not None:
-            language_select = Select(self.get_element_by_id("language"))
+            language_select = Select(self.get_element_by_id("id_language"))
             language_select.select_by_value(language)
 
         self.get_submit_button().click()
@@ -139,14 +137,22 @@ class VocabEntryTest(TestCommon):
             self.live_server_url,
             reverse("app:home"))
         )
-
         self.get_login_link().click()
-        self.login_user(self.user.username)
+        self.login_user(self.superuser.username)
         self.load_page(page_titles["home_en"])
+
         self.open_sidebar()
         self.get_element_by_id("sidebar-new-vocab-entry").click()
         self.load_page(page_titles["vocab_entry_create_en"])
-        self.fill_vocab_entry_form(language="es", entry="trastabillar")
+        self.fill_vocab_entry_form(
+            language=vocab_entry_data["language"],
+            entry=vocab_entry_data["entry"]
+        )
+        self.load_page("{0} - {1} | {2}".format(
+            "Vocabulary",
+            vocab_entry_data["entry"],
+            PROJECT_NAME)
+        )
 
         self.assertTrue(
             VocabEntry.objects.filter(
@@ -155,282 +161,242 @@ class VocabEntryTest(TestCommon):
             ).exists()
         )
 
-        self.load_page("{0} - {1} | {2}".format(
-            "Vocabulary",
-            vocab_entry_data["entry"],
-            PROJECT_NAME)
+    def test_update_vocab_entry(self):
+        vocab_entry_data = {
+            "language": "en",
+            "entry": "dog"
+        }
+
+        self.assertFalse(
+            VocabEntry.objects.filter(
+                language=vocab_entry_data["language"],
+                entry=vocab_entry_data["entry"]
+            ).exists()
         )
 
-    def test_update_vocab_entry(self):
         self.browser.get("{0}{1}".format(
             self.live_server_url,
             reverse(
                 "vocab:vocab_entry_update",
                 kwargs={
-                    "vocab_entry_language": self.vocab_entry_es.language,
-                    "vocab_entry_slug": self.vocab_entry_es.slug
+                    "vocab_entry_language": self.vocab_entry.language,
+                    "vocab_entry_slug": self.vocab_entry.slug
                 }
             )
         ))
         self.login_user(self.superuser.username)
         self.load_page(page_titles["vocab_entry_update_en"])
 
-
-    # def test_entries(self):
-    #     self.browser.get("{0}{1}".format(
-    #         self.live_server_url,
-    #         reverse("vocab:vocab_entries"))
-    #     )
-    #     self.login_user(self.user.username)
-    #     self.load_page(page_titles["vocab_entries_en"])
-    #     search_language = "es"
-    #     self.search_autocomplete_by_language(search_language, self.vocab_entry_es.entry)
-
-    # def test_delete_entry(self):
-    #     self.user.is_superuser = True
-    #     self.user.save()
-
-    #     entry_id = self.vocab_entry_es.id
-
-    #     self.assertTrue(VocabEntry.objects.filter(id=entry_id).exists())
-
-    #     self.browser.get(
-    #         "{0}{1}".format(
-    #             self.live_server_url,
-    #             reverse(
-    #                 "vocab:vocab_entry_update",
-    #                 kwargs={
-    #                     "vocab_entry_language": self.vocab_entry_es.language,
-    #                     "vocab_entry_slug": self.vocab_entry_es.slug
-    #                 }
-    #             )
-    #         )
-    #     )
-    #     self.login_user(self.user.username)
-    #     self.load_page(page_titles["vocab_entry_update_en"])
-    #     self.open_modal(
-    #         trigger_id="vocab-entry-delete-trigger",
-    #         modal_id="delete-entry-modal"
-    #     )
-    #     self.get_element_by_id("vocab-entry-delete-ok").click()
-    #     self.load_page(page_titles["vocab_entries_en"])
-
-    #     self.assertFalse(VocabEntry.objects.filter(id=entry_id).exists())
-
-
-# class VocabEntryAuthTest(TestCommon):
-
-#     def setUp(self):
-#         super(VocabEntryAuthTest, self).setUp()
-#         self.vocab_entry_es = VocabEntry.objects.create(
-#             language="es",
-#             entry="tergiversar"
-#         )
-
-#     def test_create_entry(self):
-#         self.browser.get("{0}{1}".format(
-#             self.live_server_url,
-#             reverse("vocab:vocab_user_dashboard"))
-#         )
-#         self.login_user(self.user.username)
-#         self.load_page(page_titles["vocab_user_dashboard_en"])
-#         self.open_sidebar()
-#         self.open_modal(
-#             trigger_id="sidebar-nav-vocab-entry-create",
-#             modal_id="create-entry-modal"
-#         )
-
-#     def test_entries(self):
-#         self.browser.get("{0}{1}".format(
-#             self.live_server_url,
-#             reverse("vocab:vocab_entries"))
-#         )
-#         self.login_user(self.user.username)
-#         self.load_page(page_titles["vocab_entries_en"])
-#         search_language = "es"
-#         self.search_autocomplete_by_language(search_language, self.vocab_entry_es.entry)
-
-#     def test_delete_entry(self):
-#         self.user.is_superuser = True
-#         self.user.save()
-
-#         entry_id = self.vocab_entry_es.id
-
-#         self.assertTrue(VocabEntry.objects.filter(id=entry_id).exists())
-
-#         self.browser.get(
-#             "{0}{1}".format(
-#                 self.live_server_url,
-#                 reverse(
-#                     "vocab:vocab_entry_update",
-#                     kwargs={
-#                         "vocab_entry_language": self.vocab_entry_es.language,
-#                         "vocab_entry_slug": self.vocab_entry_es.slug
-#                     }
-#                 )
-#             )
-#         )
-#         self.login_user(self.user.username)
-#         self.load_page(page_titles["vocab_entry_update_en"])
-#         self.open_modal(
-#             trigger_id="vocab-entry-delete-trigger",
-#             modal_id="delete-entry-modal"
-#         )
-#         self.get_element_by_id("vocab-entry-delete-ok").click()
-#         self.load_page(page_titles["vocab_entries_en"])
-
-#         self.assertFalse(VocabEntry.objects.filter(id=entry_id).exists())
-
-
-class VocabContextAuthTest(TestCommon):
-
-    def setUp(self):
-        super(VocabContextAuthTest, self).setUp()
-        self.vocab_source = VocabSource.objects.create(
-            creator=self.user,
-            source_type=VocabSource.CREATED,
-            name="Una prueba"
+        self.fill_vocab_entry_form(
+            language=vocab_entry_data["language"],
+            entry=vocab_entry_data["entry"]
         )
-        self.vocab_context = VocabContext.objects.create(
-            vocab_source=self.vocab_source,
-            content="He likes to eat pizza on Sunday. She likes to eat pizza on Friday."
-        )
-        self.vocab_entry = VocabEntry.objects.create(
-            language="en",
-            entry="pizza"
-        )
+        self.vocab_entry.refresh_from_db()
 
-    def get_tag_xpath(self, tagbox_id=None, tag=None, close=False):
-        if tagbox_id and tag:
-            if not close:
-                xpath = "//a[contains(., '{0}') and ancestor::div[@id='{1}']]".format(
-                    tag,
-                    tagbox_id
-                )
-            else:
-                # Get tag"s close button xpath.
-                xpath = "//a[@class='delete-tag' and preceding-sibling::a[contains(., '{0}')] and ancestor::div[@id='{1}']]".format(
-                    tag,
-                    tagbox_id
-                )
-            return xpath
+        self.assertEqual(self.vocab_entry.language, vocab_entry_data["language"])
+        self.assertEqual(self.vocab_entry.entry, vocab_entry_data["entry"])
 
-    def add_tag(self, tagbox_id=None, tag=None, return_key=False):
-        if tagbox_id and tag:
-            css_selector = "#{0} .autocomplete-input".format(tagbox_id)
-            tagbox_input = self.get_element_by_css(css_selector)
-            tagbox_input.send_keys(tag)
-        if return_key:
-            tagbox_input.send_keys(u"\ue007")
-
-    def get_highlight_xpath(self, tag):
-        xpath = "//mark[@class='tagged-text' and contains(., '{0}')]".format(tag)
-        return xpath
-
-    def tag_hover(self, tag_element):
-        hover = ActionChains(self.browser).move_to_element(tag_element)
-        hover.perform()
-
-    def test_tag_context(self):
-        vocab_entry_tagbox_id = "vocab-entry-tags"
-        vocab_entry_instance_tagbox_id = "vocab-entry-instance-tagbox"
-        vocab_entry_instance_container_id = "vocab-entry-instance-tags"
+    def test_delete_vocab_entry(self):
+        # Delete from vocab entry update page.
+        vocab_entry_id = self.vocab_entry.id
 
         self.browser.get("{0}{1}".format(
             self.live_server_url,
             reverse(
-                "vocab:vocab_context_tag",
-                kwargs={"vocab_context_pk": self.vocab_context.id}
+                "vocab:vocab_entry_update",
+                kwargs={
+                    "vocab_entry_language": self.vocab_entry.language,
+                    "vocab_entry_slug": self.vocab_entry.slug
+                }
+            )
+        ))
+        self.login_user(self.superuser.username)
+        self.load_page(page_titles["vocab_entry_update_en"])
+
+        self.open_modal(
+            trigger_id="vocab-entry-delete-btn",
+            modal_id="delete-vocab-entry"
+        )
+        self.get_element_by_id("vocab-entry-delete-ok").click()
+        self.load_page(page_titles["vocab_entries_en"])
+
+        self.assertFalse(
+            VocabEntry.objects.filter(id=vocab_entry_id).exists()
+        )
+
+        # Delete from vocab entries page.
+        self.vocab_entry = VocabEntry.objects.create(language="en", entry="unbeknownst")
+        vocab_entry_id = self.vocab_entry.id
+
+        self.browser.get("{0}{1}".format(
+            self.live_server_url,
+            reverse("vocab:vocab_entries")
+        ))
+        self.load_page(page_titles["vocab_entries_en"])
+
+        vocab_entry_tag = "#{0}-{1}".format(self.vocab_entry.language, self.vocab_entry.entry)
+        vocab_entry_tag_delete = "{0} .delete-trigger".format(vocab_entry_tag)
+
+        self.get_element_by_css(vocab_entry_tag_delete).click()
+        self.wait.until(EC.element_to_be_clickable((By.ID, "vocab-entry-delete-ok")))
+        self.get_element_by_id("vocab-entry-delete-ok").click()
+        self.wait.until(EC.invisibility_of_element_located((By.ID, vocab_entry_tag)))
+
+        self.assertFalse(VocabEntry.objects.filter(id=vocab_entry_id).exists())
+
+
+class VocabSourceAuthTest(TestCommon):
+
+    def setUp(self):
+        super(VocabSourceAuthTest, self).setUp()
+        self.vocab_source = VocabSource.objects.create(
+            creator=self.user,
+            source_type=VocabSource.CREATED,
+            name="Test source",
+            description="This is a test source."
+        )
+
+    def fill_vocab_source_form(
+        self, source_type=None, name=None, description=None
+    ):
+        if source_type is not None:
+            source_type_select = Select(self.get_element_by_id("id_source_type"))
+            source_type_select.select_by_value(source_type)
+
+        if name is not None:
+            name_input = self.get_element_by_id("id_name")
+            name_input.clear()
+            name_input.send_keys(name)
+
+        if description is not None:
+            description_input = self.get_element_by_id("id_description")
+            description_input.clear()
+            description_input.send_keys(description)
+
+        self.get_submit_button().click()
+
+    def test_create_vocab_source(self):
+        vocab_source_data = {
+            "source_type": VocabSource.CREATED,
+            "name": "Another test source",
+            "description": "This is another test source."
+        }
+
+        self.assertFalse(
+            VocabSource.objects.filter(
+                source_type=vocab_source_data["source_type"],
+                name=vocab_source_data["name"],
+                description=vocab_source_data["description"]
+            ).exists()
+        )
+
+        self.browser.get("{0}{1}".format(
+            self.live_server_url,
+            reverse("app:home"))
+        )
+        self.get_login_link().click()
+        self.login_user(self.user.username)
+        self.load_page(page_titles["home_en"])
+
+        self.open_sidebar()
+        self.get_element_by_id("sidebar-new-vocab-source").click()
+        self.load_page(page_titles["vocab_source_create_en"])
+        self.fill_vocab_source_form(
+            source_type=str(vocab_source_data["source_type"]),
+            name=vocab_source_data["name"],
+            description=vocab_source_data["description"]
+        )
+        self.load_page("{0} | {1}".format(vocab_source_data["name"], PROJECT_NAME))
+
+        self.assertTrue(
+            VocabSource.objects.filter(
+                source_type=vocab_source_data["source_type"],
+                name=vocab_source_data["name"],
+                description=vocab_source_data["description"]
+            ).exists()
+        )
+
+    def test_update_vocab_source(self):
+        vocab_source_data = {
+            "source_type": VocabSource.BOOK,
+            "name": "Foo",
+            "description": "Lorem ipsum"
+        }
+
+        self.browser.get("{0}{1}".format(
+            self.live_server_url,
+            reverse(
+                "vocab:vocab_source_update",
+                kwargs={
+                    "vocab_source_pk": self.vocab_source.id,
+                    "vocab_source_slug": self.vocab_source.slug
+                }
             )
         ))
         self.login_user(self.user.username)
-        self.load_page(page_titles["vocab_context_tag_en"])
+        self.load_page(page_titles["vocab_source_update_en"])
 
-        # Context entry doesn"t exist yet.
+        self.fill_vocab_source_form(
+            source_type=str(vocab_source_data["source_type"]),
+            name=vocab_source_data["name"],
+            description=vocab_source_data["description"]
+        )
+        self.vocab_source.refresh_from_db()
+
+        self.assertEqual(self.vocab_source.source_type, vocab_source_data["source_type"])
+        self.assertEqual(self.vocab_source.name, vocab_source_data["name"])
+        self.assertEqual(self.vocab_source.description, vocab_source_data["description"])
+
+    def test_delete_vocab_source(self):
+        # Delete from vocab source update page.
+        vocab_source_id = self.vocab_source.id
+
+        self.browser.get("{0}{1}".format(
+            self.live_server_url,
+            reverse(
+                "vocab:vocab_source_update",
+                kwargs={
+                    "vocab_source_pk": self.vocab_source.id,
+                    "vocab_source_slug": self.vocab_source.slug
+                }
+            )
+        ))
+        self.login_user(self.superuser.username)
+        self.load_page(page_titles["vocab_source_update_en"])
+
+        self.open_modal(
+            trigger_id="vocab-source-delete-btn",
+            modal_id="delete-vocab-source"
+        )
+        self.get_element_by_id("vocab-source-delete-ok").click()
+        self.load_page(page_titles["vocab_sources_en"])
+
         self.assertFalse(
-            VocabContextEntry.objects.filter(
-                vocab_context_id=self.vocab_context,
-                vocab_entry_id=self.vocab_entry
-            ).exists()
+            VocabSource.objects.filter(id=vocab_source_id).exists()
         )
 
-        # Search and select entry through autocompilete.
-        link = self.search_autocomplete_by_language(
-            self.vocab_entry.language,
-            self.vocab_entry.entry
+        # Delete from vocab sources page.
+        self.vocab_source = VocabSource.objects.create(
+            creator=self.superuser,
+            source_type=VocabSource.BOOK,
+            name="Una fuente",
+            description="Una nueva fuente"
         )
-        link.click()
+        vocab_source_id = self.vocab_source.id
 
-        # Load tag in vocab entry tagbox and select it.
-        vocab_entry_xp = self.get_tag_xpath(tagbox_id=vocab_entry_tagbox_id, tag=self.vocab_entry.entry)
-        self.wait.until(EC.element_to_be_clickable((By.XPATH, vocab_entry_xp)))
-        self.get_element_by_xpath(vocab_entry_xp).click()
+        self.browser.get("{0}{1}".format(
+            self.live_server_url,
+            reverse("vocab:vocab_sources")
+        ))
+        self.load_page(page_titles["vocab_sources_en"])
 
-        # Vocab entry instance tagbox appears.
-        self.wait.until(EC.element_to_be_clickable((By.ID, vocab_entry_instance_tagbox_id)))
+        vocab_source_box = "#source-{0}".format(self.vocab_source.id)
+        vocab_source_box_delete = "{0} .delete-trigger".format(vocab_source_box)
 
-        # Context entry now exists.
-        self.assertTrue(
-            VocabContextEntry.objects.filter(
-                vocab_context_id=self.vocab_context,
-                vocab_entry_id=self.vocab_entry
-            ).exists()
-        )
-        vocab_context_entry = VocabContextEntry.objects.get(
-            vocab_context_id=self.vocab_context,
-            vocab_entry_id=self.vocab_entry
-        )
-        self.assertEqual(list(vocab_context_entry.get_vocab_entry_tags()), [])
+        self.wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, vocab_source_box)))
+        self.get_element_by_css(vocab_source_box_delete).click()
+        self.wait.until(EC.element_to_be_clickable((By.ID, "vocab-source-delete-ok")))
+        self.get_element_by_id("vocab-source-delete-ok").click()
+        self.wait.until(EC.invisibility_of_element_located((By.CSS_SELECTOR, vocab_source_box)))
 
-        # Add tag to vocab context entry.
-        self.add_tag(
-            tagbox_id=vocab_entry_instance_tagbox_id,
-            tag=self.vocab_entry.entry,
-            return_key=True
-        )
-        vocab_entry_instance_xp = self.get_tag_xpath(
-            tagbox_id=vocab_entry_instance_container_id,
-            tag=self.vocab_entry.entry
-        )
-        self.wait.until(EC.element_to_be_clickable((By.XPATH, vocab_entry_instance_xp)))
-        vocab_entry_instance_tag = self.get_element_by_xpath(vocab_entry_instance_xp)
-
-        # Vocab entry tags have been saved to VocabContextEntry object.
-        self.assertEqual(list(vocab_context_entry.get_vocab_entry_tags()), [self.vocab_entry.entry])
-
-        # Vocab entry instance is highlighted in text.
-        vocab_entry_highlight_xp = self.get_highlight_xpath(tag=self.vocab_entry.entry)
-        vocab_entry_highlighted = self.get_elements_by_xpath(vocab_entry_highlight_xp)
-        self.assertEqual(len(vocab_entry_highlighted), 2)
-
-        # Delete vocab instance tag.
-        self.tag_hover(tag_element=vocab_entry_instance_tag)
-        vocab_entry_instance_close_xp = self.get_tag_xpath(
-            tagbox_id=vocab_entry_instance_container_id,
-            tag=self.vocab_entry.entry,
-            close=True
-        )
-        self.wait.until(EC.element_to_be_clickable((By.XPATH, vocab_entry_instance_close_xp)))
-        self.get_element_by_xpath(vocab_entry_instance_close_xp).click()
-        self.wait.until(EC.invisibility_of_element_located((By.XPATH, vocab_entry_instance_xp)))
-        self.assertEqual(list(vocab_context_entry.get_vocab_entry_tags()), [])
-
-        # Delete vocab entry tag
-        vocab_entry_tag = self.get_element_by_xpath(vocab_entry_xp)
-        self.tag_hover(vocab_entry_tag)
-        vocab_entry_close_xp = self.get_tag_xpath(
-            tagbox_id=vocab_entry_tagbox_id,
-            tag=self.vocab_entry.entry,
-            close=True
-        )
-        self.wait.until(EC.element_to_be_clickable((By.XPATH, vocab_entry_close_xp)))
-        self.get_element_by_xpath(vocab_entry_close_xp).click()
-        self.wait.until(EC.invisibility_of_element_located((By.XPATH, vocab_entry_xp)))
-
-        # Context entry no longer exists.
-        self.assertFalse(
-            VocabContextEntry.objects.filter(
-                vocab_context_id=self.vocab_context,
-                vocab_entry_id=self.vocab_entry
-            ).exists()
-        )
+        self.assertFalse(VocabSource.objects.filter(id=vocab_source_id).exists())

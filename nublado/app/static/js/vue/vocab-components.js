@@ -5,6 +5,10 @@ const VocabSource = {
     MarkdownMixin
   ],
   props: {
+    id: {
+      type: String,
+      default: ""
+    },
     initSource: {
       type: Object,
       required: true
@@ -184,6 +188,10 @@ const VocabEntry = {
     VisibleMixin
   ],
   props: {
+    id: {
+      type: String,
+      default: ""
+    },
     initEntry: {
       type: Object,
       required: true

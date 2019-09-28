@@ -58,6 +58,7 @@ v-cloak
 <vocab-entry
 v-for="(vocabEntry, index) in vocabEntries"
 :key="vocabEntry.id"
+:id="(vocabEntry.language + '-' + vocabEntry.entry)"
 :init-is-admin="isAdmin"
 :init-entry="vocabEntry"
 init-view-url="{{ vocab_entry_url }}"
@@ -68,11 +69,11 @@ inline-template
 
 <ajax-tag
   :key="entry.id"
-  :init-id="entry.id"
-  :init-value="entry.entry"
-  :init-delete-url="deleteUrl"
-  :init-has-remove="isAdmin"
-  init-confirm-id="delete-vocab-entry"
+  :id="id"
+  :value="entry.entry"
+  :delete-url="deleteUrl"
+  :has-remove="isAdmin"
+  confirm-id="delete-vocab-entry"
   @select-tag="view"
   @remove-tag="remove"
 >

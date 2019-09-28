@@ -5,24 +5,19 @@ const Tag = {
 const AjaxTag = {
   mixins: [BaseTag],
   props: {
-    initConfirmId: {
+    confirmId: {
       type: String,
       default: "delete-modal"
     },
-    initDeleteUrl: {
+    deleteUrl: {
       type: String,
       default: ""
     }
   },
-  data() {
-    return {
-      confirmId: this.initConfirmId,
-      deleteUrl: this.initDeleteUrl
-    }
-  },
   template: `
     <transition name="fade-transition" v-on:after-enter="isVisible = true" v-on:after-leave="remove">
-    <div 
+    <div
+    :id="id" 
     class="tag"
     v-bind:key="id"
     v-show="isVisible"
@@ -42,6 +37,7 @@ const AjaxTag = {
       inline-template
       >
         <a
+        class="delete-trigger"
         @click.prevent="confirmDelete"
         >
           &nbsp;

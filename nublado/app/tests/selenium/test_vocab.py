@@ -452,7 +452,7 @@ class VocabContextAuthTest(TestCommon):
             )
         ))
         self.get_login_link().click()
-        self.login_user(self.user.username)
+        self.login_user(self.superuser.username)
         self.load_page("{0} | {1}".format(self.vocab_source.name, PROJECT_NAME))
 
         self.open_sidebar()

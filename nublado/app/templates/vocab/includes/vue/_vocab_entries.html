@@ -58,7 +58,7 @@ v-cloak
 <vocab-entry
 v-for="(vocabEntry, index) in vocabEntries"
 :key="vocabEntry.id"
-:id="(vocabEntry.language + '-' + vocabEntry.entry)"
+:id="('entry-' + vocabEntry.id)"
 :init-is-admin="isAdmin"
 :init-entry="vocabEntry"
 init-view-url="{{ vocab_entry_url }}"

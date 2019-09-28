@@ -6,35 +6,35 @@ from ..models import VocabContextEntry, VocabEntry, VocabSource
 
 class VocabEntryAutocompleteView(AutocompleteMixin, View):
     search_model = VocabEntry
-    search_field = 'entry'
-    id_attr = 'id'
-    value_attr = 'entry'
-    extra_attr = {'language': 'language'}
+    search_field = "entry"
+    id_attr = "id"
+    value_attr = "entry"
+    extra_attr = {"language": "language"}
 
     def get_queryset(self, **kwargs):
         qs = super(VocabEntryAutocompleteView, self).get_queryset(**kwargs)
-        language = self.kwargs.get('language', None)
+        language = self.kwargs.get("language", None)
         if language:
             qs = qs.filter(language=language)
         return qs
 
     def set_label_attr(self, obj):
-        return '{0} - {1}'.format(obj.language, obj.entry)
+        return "{0} - {1}".format(obj.language, obj.entry)
 
 
 class VocabSourceAutocompleteView(AutocompleteMixin, View):
     search_model = VocabSource
-    search_field = 'name'
-    search_filter = 'istartswith'
-    id_attr = 'id'
-    label_attr = 'name'
-    value_attr = 'name'
+    search_field = "name"
+    search_filter = "istartswith"
+    id_attr = "id"
+    label_attr = "name"
+    value_attr = "name"
 
 
 class VocabSourceCreatorAutocompleteView(VocabSourceAutocompleteView):
-    '''
+    """
     Autocomplete for sources belonging to authernticated user.
-    '''
+    """
 
     def get_queryset(self, **kwargs):
         qs = super(VocabSourceCreatorAutocompleteView, self).get_queryset(**kwargs)
@@ -44,18 +44,18 @@ class VocabSourceCreatorAutocompleteView(VocabSourceAutocompleteView):
 
 class VocabSourceEntryAutocompleteView(AutocompleteMixin, View):
     search_model = VocabContextEntry
-    search_field = 'vocab_entry__entry'
-    id_attr = 'vocab_entry_id'
-    language_attr = 'vocab_entry__language'
-    extra_attr = {'language': language_attr}
+    search_field = "vocab_entry__entry"
+    id_attr = "vocab_entry_id"
+    language_attr = "vocab_entry__language"
+    extra_attr = {"language": language_attr}
 
     def get_queryset(self, **kwargs):
         qs = super(VocabSourceEntryAutocompleteView, self).get_queryset(**kwargs)
-        qs = qs.select_related('vocab_context', 'vocab_entry')
-        qs = qs.filter(vocab_context__vocab_source_id=self.kwargs['vocab_source_pk'])
-        language = self.kwargs.get('language', None)
+        qs = qs.select_related("vocab_context", "vocab_entry")
+        qs = qs.filter(vocab_context__vocab_source_id=self.kwargs["vocab_source_pk"])
+        language = self.kwargs.get("language", None)
         if language:
-            qs = qs.filter(vocab_entry__language=self.kwargs['language'])
+            qs = qs.filter(vocab_entry__language=self.kwargs["language"])
         qs = qs.values(self.id_attr, self.search_field, self.language_attr)
         qs = qs.distinct(self.search_field, self.id_attr)
         return qs
@@ -64,10 +64,10 @@ class VocabSourceEntryAutocompleteView(AutocompleteMixin, View):
         return obj[self.id_attr]
 
     def set_label_attr(self, obj):
-        return '{0} - {1}'.format(obj['vocab_entry__language'], obj['vocab_entry__entry'])
+        return "{0} - {1}".format(obj["vocab_entry__language"], obj["vocab_entry__entry"])
 
     def set_value_attr(self, obj):
-        return obj['vocab_entry__entry']
+        return obj["vocab_entry__entry"]
 
     def set_extra_attr(self, obj):
         extra_dict = {}

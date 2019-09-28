@@ -22,6 +22,7 @@ v-cloak
 <vocab-entry-context
 v-for="(vocabEntryContext, index) in vocabContexts"
 :key="vocabEntryContext.vocab_context_id"
+:id="('context-' + vocabEntryContext.vocab_context_id)"
 :init-is-admin="isAdmin"
 :init-vocab-entry-context=vocabEntryContext
 :context-element="'#context-' + vocabEntryContext.id"
@@ -33,13 +34,17 @@ inline-template
 
 <transition name="fade-transition" v-on:after-enter="isVisible = true" v-on:after-leave="isVisible = false">
 
-<div class="box vocab-context-box" v-show="isVisible">
+<div 
+:id="id"
+class="box vocab-context-box" 
+v-show="isVisible"
+>
 
 <div class="box-controls">
 
 <ajax-delete
 v-if="isAdmin"
-delete-confirm-id="delete-context"
+delete-confirm-id="delete-vocab-context"
 :delete-url="deleteUrl"
 @ajax-success="remove"
 inline-template
@@ -47,6 +52,7 @@ inline-template
 
 <span class="control">
 <a
+class="delete-trigger"
 @click.prevent="confirmDelete"
 >
 <i class="fas fa-times fas"></i>
@@ -66,7 +72,6 @@ href="#"
 <div :id="[[ vocabEntryContext.id ]]" class="vocab-context">
 
 <div 
-:id="'context-' + vocabEntryContext.id"
 class="vocab-context-text"
 v-html="markdownToHtml(vocabEntryContext.vocab_context)"
 >

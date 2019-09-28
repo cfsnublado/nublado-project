@@ -452,6 +452,10 @@ const VocabEntryContext = {
     AdminMixin
   ],
   props: {
+    id: {
+      type: String,
+      default: ""
+    },
     initVocabEntryContext: {
       type: Object,
       required: true
@@ -499,7 +503,8 @@ const VocabEntryContext = {
   
     if (this.initDeleteUrl) {
       this.deleteUrl = this.initDeleteUrl
-        .replace(0, this.vocabContextEntry.vocab_context_id)
+        .replace(0, this.vocabEntryContext.vocab_context_id)
+      console.log(this.deleteUrl)
     }  
   }
 }

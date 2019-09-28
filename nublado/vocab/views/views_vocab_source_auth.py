@@ -20,7 +20,7 @@ from .views_mixins import (
     VocabSourcePermissionMixin, VocabSourceSessionMixin
 )
 
-APP_NAME = apps.get_app_config('vocab').name
+APP_NAME = apps.get_app_config("vocab").name
 
 
 class VocabSourceExportJsonView(
@@ -28,18 +28,18 @@ class VocabSourceExportJsonView(
     VocabSourceSessionMixin, VocabSourcePermissionMixin,
     JsonAttachmentMixin, View
 ):
-    content_type = 'application/json'
+    content_type = "application/json"
     json_indent = 4
 
     def get_file_content(self):
         vocab_source = get_object_or_404(
             VocabSource.objects.prefetch_related(
-                'creator',
-                'vocab_contexts__vocabcontextentry_set__vocab_entry'
+                "creator",
+                "vocab_contexts__vocabcontextentry_set__vocab_entry"
             ),
-            id=self.kwargs['vocab_source_pk']
+            id=self.kwargs["vocab_source_pk"]
         )
-        self.filename = '{0}.json'.format(vocab_source.slug)
+        self.filename = "{0}.json".format(vocab_source.slug)
         data = export_vocab_source(self.request, vocab_source)
         return data
 
@@ -50,19 +50,19 @@ class VocabSourceCreateView(
 ):
     model = VocabSource
     form_class = VocabSourceCreateForm
-    template_name = '{0}/auth/vocab_source_create.html'.format(APP_NAME)
+    template_name = "{0}/auth/vocab_source_create.html".format(APP_NAME)
 
     def get_form_kwargs(self):
         kwargs = super(VocabSourceCreateView, self).get_form_kwargs()
-        kwargs['creator'] = self.request.user
+        kwargs["creator"] = self.request.user
         return kwargs
 
     def get_success_url(self):
         return reverse(
-            'vocab:vocab_source_dashboard',
+            "vocab:vocab_source_dashboard",
             kwargs={
-                'vocab_source_pk': self.object.id,
-                'vocab_source_slug': self.object.slug
+                "vocab_source_pk": self.object.id,
+                "vocab_source_slug": self.object.slug
             }
         )
 
@@ -74,17 +74,17 @@ class VocabSourceUpdateView(
 ):
     model = VocabSource
     form_class = VocabSourceUpdateForm
-    template_name = '{0}/auth/vocab_source_update.html'.format(APP_NAME)
+    template_name = "{0}/auth/vocab_source_update.html".format(APP_NAME)
 
     def get_object(self, **kwargs):
         return self.vocab_source
 
     def get_success_url(self):
         return reverse(
-            'vocab:vocab_source_dashboard',
+            "vocab:vocab_source_dashboard",
             kwargs={
-                'vocab_source_pk': self.object.id,
-                'vocab_source_slug': self.object.slug
+                "vocab_source_pk": self.object.id,
+                "vocab_source_slug": self.object.slug
             }
         )
 
@@ -95,10 +95,10 @@ class VocabSourceDeleteView(
     AjaxDeleteMixin, DeleteView
 ):
     model = VocabSource
-    template_name = '{0}/auth/vocab_source_delete_confirm.html'.format(APP_NAME)
+    template_name = "{0}/auth/vocab_source_delete_confirm.html".format(APP_NAME)
 
     def get_object(self, **kwargs):
         return self.vocab_source
 
     def get_success_url(self):
-        return reverse('vocab:vocab_sources')
+        return reverse("vocab:vocab_sources")

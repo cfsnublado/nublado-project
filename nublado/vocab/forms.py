@@ -16,12 +16,12 @@ class VocabEntryForm(BaseModelForm):
     class Meta:
         abstract = True
         fields = [
-            'language', 'entry', 'description'
+            "language", "entry", "description"
         ]
         error_messages = {
-            'entry': {
-                'required': _('validation_field_required'),
-                'unique': _('validation_field_unique'),
+            "entry": {
+                "required": _("validation_field_required"),
+                "unique": _("validation_field_unique"),
             }
         }
 
@@ -37,10 +37,10 @@ class VocabContextForm(BaseModelForm):
 
     class Meta:
         abstract = True
-        fields = ['content']
+        fields = ["content"]
         error_messages = {
-            'content': {
-                'required': _('validation_field_required'),
+            "content": {
+                "required": _("validation_field_required"),
             }
         }
 
@@ -49,11 +49,11 @@ class VocabSourceForm(BaseModelForm):
 
     class Meta:
         abstract = True
-        fields = ['name', 'description', 'source_type']
+        fields = ["name", "description", "source_type"]
         error_messages = {
-            'name': {
-                'required': _('validation_field_required'),
-                'unique': _('validation_field_unique'),
+            "name": {
+                "required": _("validation_field_required"),
+                "unique": _("validation_field_unique"),
             }
         }
 
@@ -87,11 +87,11 @@ class VocabContextCreateForm(VocabContextForm):
         model = VocabContext
 
     def __init__(self, *args, **kwargs):
-        self.vocab_source = kwargs.pop('vocab_source', None)
-        self.creator = kwargs.pop('creator', None)
+        self.vocab_source = kwargs.pop("vocab_source", None)
+        self.creator = kwargs.pop("creator", None)
         super(VocabContextCreateForm, self).__init__(*args, **kwargs)
         if not self.vocab_source:
-            raise ValueError(_('validation_vocab_source_required'))
+            raise ValueError(_("validation_vocab_source_required"))
         self.instance.vocab_source = self.vocab_source
 
 
@@ -104,11 +104,11 @@ class VocabContextUpdateForm(VocabContextForm):
 class VocabSourceCreateForm(VocabSourceForm):
 
     def __init__(self, *args, **kwargs):
-        self.creator = kwargs.pop('creator', None)
+        self.creator = kwargs.pop("creator", None)
         super(VocabSourceCreateForm, self).__init__(*args, **kwargs)
 
         if not self.creator:
-            raise ValueError(_('validation_vocab_content_creator_required'))
+            raise ValueError(_("validation_vocab_content_creator_required"))
 
         self.instance.creator = self.creator
 

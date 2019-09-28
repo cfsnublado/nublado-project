@@ -5,7 +5,7 @@ from rest_framework.response import Response
 
 class BatchMixin(object):
 
-    @action(methods=['post'], detail=False)
+    @action(methods=["post"], detail=False)
     def create_batch(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data, many=True)
         serializer.is_valid(raise_exception=True)

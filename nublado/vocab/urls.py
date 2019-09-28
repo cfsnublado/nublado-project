@@ -26,106 +26,106 @@ from .views.views_vocab_autocomplete import (
 )
 
 
-app_name = 'vocab'
+app_name = "vocab"
 
 auth_urls = [
-    path('', VocabUserDashboardView.as_view(), name='vocab_user_dashboard'),
+    path("", VocabUserDashboardView.as_view(), name="vocab_user_dashboard"),
     path(
-        'source/create/',
+        "source/create/",
         VocabSourceCreateView.as_view(),
-        name='vocab_source_create'
+        name="vocab_source_create"
     ),
-    path('entry/create/', VocabEntryCreateView.as_view(), name='vocab_entry_create'),
+    path("entry/create/", VocabEntryCreateView.as_view(), name="vocab_entry_create"),
     re_path(
-        '^entry/(?P<vocab_entry_language>[a-z]{2})/(?P<vocab_entry_slug>[-\w]+)/update/$',
+        "^entry/(?P<vocab_entry_language>[a-z]{2})/(?P<vocab_entry_slug>[-\w]+)/update/$",
         VocabEntryUpdateView.as_view(),
-        name='vocab_entry_update'
+        name="vocab_entry_update"
     ),
-    path('entry/<int:vocab_entry_pk>/delete/', VocabEntryDeleteView.as_view(), name='vocab_entry_delete'),
+    path("entry/<int:vocab_entry_pk>/delete/", VocabEntryDeleteView.as_view(), name="vocab_entry_delete"),
     path(
-        'source/<int:vocab_source_pk>-<slug:vocab_source_slug>/update/',
+        "source/<int:vocab_source_pk>-<slug:vocab_source_slug>/update/",
         VocabSourceUpdateView.as_view(),
-        name='vocab_source_update'
+        name="vocab_source_update"
     ),
-    path('source/<int:vocab_source_pk>/delete/', VocabSourceDeleteView.as_view(), name='vocab_source_delete'),
+    path("source/<int:vocab_source_pk>/delete/", VocabSourceDeleteView.as_view(), name="vocab_source_delete"),
     path(
-        'source/<int:vocab_source_pk>)/export/',
+        "source/<int:vocab_source_pk>)/export/",
         VocabSourceExportJsonView.as_view(),
-        name='vocab_source_export_json'
+        name="vocab_source_export_json"
     ),
     path(
-        'source/<int:vocab_source_pk>-<slug:vocab_source_slug>/context/create',
+        "source/<int:vocab_source_pk>-<slug:vocab_source_slug>/context/create",
         VocabContextCreateView.as_view(),
-        name='vocab_context_create'
+        name="vocab_context_create"
     ),
-    path('context/<int:vocab_context_pk>/edit/', VocabContextTagView.as_view(), name='vocab_context_tag'),
+    path("context/<int:vocab_context_pk>/edit/", VocabContextTagView.as_view(), name="vocab_context_tag"),
     path(
-        'vocabcontextentry/<int:vocab_context_entry_pk>/tag/',
+        "vocabcontextentry/<int:vocab_context_entry_pk>/tag/",
         VocabContextEntryTagView.as_view(),
-        name='vocab_context_entry_tag'
+        name="vocab_context_entry_tag"
     ),
 ]
 
 urlpatterns = [
     path(
-        '',
+        "",
         VocabEntriesView.as_view(),
-        name='vocab_entries'
+        name="vocab_entries"
     ),
     path(
-        'autocomplete/entry',
+        "autocomplete/entry",
         VocabEntryAutocompleteView.as_view(),
-        name='vocab_entry_autocomplete'
+        name="vocab_entry_autocomplete"
     ),
     path(
-        'autocomplete/entry/<slug:language>/',
+        "autocomplete/entry/<slug:language>/",
         VocabEntryAutocompleteView.as_view(),
-        name='vocab_entry_language_autocomplete'
+        name="vocab_entry_language_autocomplete"
     ),
     path(
-        'autocomplete/source/',
+        "autocomplete/source/",
         VocabSourceAutocompleteView.as_view(),
-        name='vocab_source_autocomplete'
+        name="vocab_source_autocomplete"
     ),
     path(
-        'autocomplete/source/<int:vocab_source_pk>/entry/',
+        "autocomplete/source/<int:vocab_source_pk>/entry/",
         VocabSourceEntryAutocompleteView.as_view(),
-        name='vocab_source_entry_autocomplete'
+        name="vocab_source_entry_autocomplete"
     ),
     path(
-        'autocomplete/source/(<int:vocab_source_pk>/entry/<slug:language>/',
+        "autocomplete/source/(<int:vocab_source_pk>/entry/<slug:language>/",
         VocabSourceEntryAutocompleteView.as_view(),
-        name='vocab_source_entry_language_autocomplete'
+        name="vocab_source_entry_language_autocomplete"
     ),
     path(
-        'entry/<slug:vocab_entry_language>/<slug:vocab_entry_slug>/',
+        "entry/<slug:vocab_entry_language>/<slug:vocab_entry_slug>/",
         VocabEntryView.as_view(),
-        name='vocab_entry'
+        name="vocab_entry"
     ),
     path(
-        'sources/',
+        "sources/",
         VocabSourcesView.as_view(),
-        name='vocab_sources'
+        name="vocab_sources"
     ),
     path(
-        'source/<int:vocab_source_pk>-<slug:vocab_source_slug>/',
+        "source/<int:vocab_source_pk>-<slug:vocab_source_slug>/",
         VocabSourceDashboardView.as_view(),
-        name='vocab_source_dashboard'
+        name="vocab_source_dashboard"
     ),
     path(
-        'source/<int:vocab_source_pk>-<slug:vocab_source_slug>/contexts/',
+        "source/<int:vocab_source_pk>-<slug:vocab_source_slug>/contexts/",
         VocabSourceContextsView.as_view(),
-        name='vocab_source_contexts'
+        name="vocab_source_contexts"
     ),
     path(
-        'source/<int:vocab_source_pk>-<slug:vocab_source_slug>/entries/',
+        "source/<int:vocab_source_pk>-<slug:vocab_source_slug>/entries/",
         VocabSourceEntriesView.as_view(),
-        name='vocab_source_entries'
+        name="vocab_source_entries"
     ),
     path(
-        'source/<int:vocab_source_pk>-<slug:vocab_source_slug>/entry/<slug:vocab_entry_language>/<slug:vocab_entry_slug>/',
+        "source/<int:vocab_source_pk>-<slug:vocab_source_slug>/entry/<slug:vocab_entry_language>/<slug:vocab_entry_slug>/",
         VocabSourceEntryView.as_view(),
-        name='vocab_source_entry'
+        name="vocab_source_entry"
     ),
-    path('auth/', include(auth_urls)),
+    path("auth/", include(auth_urls)),
 ]

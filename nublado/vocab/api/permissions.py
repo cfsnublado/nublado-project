@@ -4,7 +4,7 @@ from rest_framework.permissions import BasePermission
 class ReadWritePermission(BasePermission):
 
     def has_permission(self, request, view):
-        if view.action in ['create', 'update', 'partial_update', 'destroy']:
+        if view.action in ["create", "update", "partial_update", "destroy"]:
             return request.user.is_authenticated
         else:
             return True
@@ -13,7 +13,7 @@ class ReadWritePermission(BasePermission):
 class ReadPermission(BasePermission):
 
     def has_permission(self, request, view):
-        if view.action not in ['retrieve', 'list']:
+        if view.action not in ["retrieve", "list"]:
             return request.user.is_authenticated
         else:
             return True
@@ -26,16 +26,16 @@ class IsSuperuser(BasePermission):
 
 
 class CreatorPermission(BasePermission):
-    '''
+    """
     Permission granted to object creator or superuser.
-    '''
+    """
 
     superuser_override = True
 
     def has_object_permission(self, request, view, obj):
         user = request.user
 
-        if view.action not in ['retrieve', 'list']:
+        if view.action not in ["retrieve", "list"]:
             return self.check_creator_permission(user, obj)
         else:
             return True

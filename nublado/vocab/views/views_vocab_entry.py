@@ -7,14 +7,14 @@ from .views_mixins import (
     VocabEntrySessionMixin
 )
 
-APP_NAME = apps.get_app_config('vocab').name
+APP_NAME = apps.get_app_config("vocab").name
 
 
 class VocabEntryView(
     VocabEntryMixin, VocabEntrySessionMixin,
     TemplateView
 ):
-    template_name = '{0}/vocab_entry.html'.format(APP_NAME)
+    template_name = "{0}/vocab_entry.html".format(APP_NAME)
 
 
 class VocabEntriesView(
@@ -23,4 +23,4 @@ class VocabEntriesView(
 ):
     search_term = None
     search_language = None
-    template_name = '{0}/vocab_entries.html'.format(APP_NAME)
+    template_name = "{0}/vocab_entries.html".format(APP_NAME)

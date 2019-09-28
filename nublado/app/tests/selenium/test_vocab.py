@@ -7,18 +7,22 @@ from django.urls import reverse
 
 from .base import FunctionalTest, page_titles, DEFAULT_PWD, PROJECT_NAME
 from vocab.models import (
-    VocabEntry, VocabSource
+    VocabContext, VocabContextEntry, VocabEntry, VocabSource
 )
 
 User = get_user_model()
 
 page_titles.update({
+    "vocab_entry_en": "Vocabulary - {0} | {1}",
     "vocab_entries_en": "{0} | {1}".format("Vocabulary", PROJECT_NAME),
     "vocab_entry_create_en": "{0} | {1}".format("Create vocab entry", PROJECT_NAME),
     "vocab_entry_update_en": "{0} | {1}".format("Edit vocab entry", PROJECT_NAME),
     "vocab_sources_en": "{0} | {1}".format("Sources", PROJECT_NAME),
+    "vocab_source_entry_en": "{0} - {1} | {2}",
     "vocab_source_create_en": "{0} | {1}".format("Create source", PROJECT_NAME),
     "vocab_source_update_en": "{0} | {1}".format("Edit source", PROJECT_NAME),
+    "vocab_context_create_en": "{0} | {1}".format("Create context", PROJECT_NAME),
+    "vocab_context_update_en": "{0} | {1}".format("Edit context", PROJECT_NAME),
 })
 
 
@@ -234,7 +238,7 @@ class VocabEntryAuthTest(TestCommon):
         ))
         self.load_page(page_titles["vocab_entries_en"])
 
-        vocab_entry_tag = "#{0}-{1}".format(self.vocab_entry.language, self.vocab_entry.entry)
+        vocab_entry_tag = "#entry-{0}".format(self.vocab_entry.id)
         vocab_entry_tag_delete = "{0} .delete-trigger".format(vocab_entry_tag)
 
         self.get_element_by_css(vocab_entry_tag_delete).click()
@@ -269,9 +273,9 @@ class VocabSourceAuthTest(TestCommon):
             name_input.send_keys(name)
 
         if description is not None:
-            description_input = self.get_element_by_id("id_description")
-            description_input.clear()
-            description_input.send_keys(description)
+            description_textarea = self.get_element_by_id("id_description")
+            description_textarea.clear()
+            description_textarea.send_keys(description)
 
         self.get_submit_button().click()
 
@@ -400,3 +404,133 @@ class VocabSourceAuthTest(TestCommon):
         self.wait.until(EC.invisibility_of_element_located((By.CSS_SELECTOR, vocab_source_box)))
 
         self.assertFalse(VocabSource.objects.filter(id=vocab_source_id).exists())
+
+
+class VocabContextAuthTest(TestCommon):
+    def setUp(self):
+        super(VocabContextAuthTest, self).setUp()
+        self.vocab_entry = VocabEntry.objects.create(
+            language="en",
+            entry="context"
+        )
+        self.vocab_source = VocabSource.objects.create(
+            creator=self.superuser,
+            source_type=VocabSource.CREATED,
+            name="Test source",
+            description="This is a test source."
+        )
+        self.vocab_context = VocabContext.objects.create(
+            vocab_source=self.vocab_source,
+            content="This is some content."
+        )
+        VocabContextEntry.objects.create(
+            vocab_entry=self.vocab_entry,
+            vocab_context=self.vocab_context
+        )
+
+    def fill_vocab_context_form(self, content=None):
+        if content is not None:
+            content_textarea = self.get_element_by_id("id_content")
+            content_textarea.clear()
+            content_textarea.send_keys(content)
+
+        self.get_submit_button().click()
+
+    def test_create_vocab_context(self):
+        vocab_context_data = {
+            "content": "The cat walked across the room."
+        }
+
+        self.browser.get("{0}{1}".format(
+            self.live_server_url,
+            reverse(
+                "vocab:vocab_source_dashboard",
+                kwargs={
+                    "vocab_source_pk": self.vocab_source.id,
+                    "vocab_source_slug": self.vocab_source.slug
+                }
+            )
+        ))
+        self.get_login_link().click()
+        self.login_user(self.user.username)
+        self.load_page("{0} | {1}".format(self.vocab_source.name, PROJECT_NAME))
+
+        self.open_sidebar()
+        self.get_element_by_id("sidebar-new-vocab-context").click()
+        self.load_page(page_titles["vocab_context_create_en"])
+        self.fill_vocab_context_form(content=vocab_context_data["content"])
+        self.load_page(page_titles["vocab_context_update_en"])
+
+    def test_delete_vocab_context(self):
+        # Delete from entry contexts
+        self.browser.get("{0}{1}".format(
+            self.live_server_url,
+            reverse(
+                "vocab:vocab_entry",
+                kwargs={
+                    "vocab_entry_language": self.vocab_entry.language,
+                    "vocab_entry_slug": self.vocab_entry.slug
+                }
+            )
+        ))
+        self.get_login_link().click()
+        self.login_user(self.superuser.username)
+        self.load_page(
+            page_titles["vocab_entry_en"].format(self.vocab_entry.entry, PROJECT_NAME)
+        )
+
+        vocab_context_id = self.vocab_context.id
+        vocab_context_box = "#context-{0}".format(self.vocab_context.id)
+        vocab_context_box_delete = "{0} .delete-trigger".format(vocab_context_box)
+
+        self.wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, vocab_context_box)))
+        self.get_element_by_css(vocab_context_box_delete).click()
+        self.wait.until(EC.element_to_be_clickable((By.ID, "vocab-context-delete-ok")))
+        self.get_element_by_id("vocab-context-delete-ok").click()
+        self.wait.until(EC.invisibility_of_element_located((By.CSS_SELECTOR, vocab_context_box)))
+
+        self.assertFalse(VocabContext.objects.filter(id=vocab_context_id).exists())
+
+        # Delete from source entry contexts
+        self.vocab_context = VocabContext.objects.create(
+            vocab_source=self.vocab_source,
+            content="This is some content."
+        )
+        VocabContextEntry.objects.create(
+            vocab_entry=self.vocab_entry,
+            vocab_context=self.vocab_context
+        )
+
+        self.browser.get("{0}{1}".format(
+            self.live_server_url,
+            reverse(
+                "vocab:vocab_source_entry",
+                kwargs={
+                    "vocab_source_pk": self.vocab_source.id,
+                    "vocab_source_slug": self.vocab_source.slug,
+                    "vocab_entry_language": self.vocab_entry.language,
+                    "vocab_entry_slug": self.vocab_entry.slug
+                }
+            )
+        ))
+        self.load_page(
+            page_titles["vocab_source_entry_en"].format(
+                self.vocab_source.name,
+                self.vocab_entry.entry,
+                PROJECT_NAME
+            )
+        )
+
+        vocab_context_id = self.vocab_context.id
+        vocab_context_box = "#context-{0}".format(self.vocab_context.id)
+        vocab_context_box_delete = "{0} .delete-trigger".format(vocab_context_box)
+
+        self.wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, vocab_context_box)))
+        self.get_element_by_css(vocab_context_box_delete).click()
+        self.wait.until(EC.element_to_be_clickable((By.ID, "vocab-context-delete-ok")))
+        self.get_element_by_id("vocab-context-delete-ok").click()
+        self.wait.until(EC.invisibility_of_element_located((By.CSS_SELECTOR, vocab_context_box)))
+
+        self.assertFalse(VocabContext.objects.filter(id=vocab_context_id).exists())
+
+        # Delete from source contexts

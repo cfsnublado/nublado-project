@@ -34,15 +34,15 @@ class VocabSourceViewSet(
     APIDefaultsMixin, RetrieveModelMixin, UpdateModelMixin,
     DestroyModelMixin, ListModelMixin, GenericViewSet
 ):
-    lookup_field = 'pk'
-    lookup_url_kwarg = 'pk'
+    lookup_field = "pk"
+    lookup_url_kwarg = "pk"
     serializer_class = VocabSourceSerializer
-    queryset = VocabSource.objects.prefetch_related('vocab_contexts')
+    queryset = VocabSource.objects.prefetch_related("vocab_contexts")
     permission_classes = [ReadPermission, SourceCreatorPermission]
     pagination_class = SmallPagination
 
     def get_object(self):
-        obj = get_object_or_404(self.get_queryset(), pk=self.kwargs['pk'])
+        obj = get_object_or_404(self.get_queryset(), pk=self.kwargs["pk"])
         self.check_object_permissions(self.request, obj)
 
         return obj
@@ -54,28 +54,28 @@ class VocabSourceEntryViewSet(APIDefaultsMixin, ListModelMixin, GenericViewSet):
     pagination_class = LargePagination
 
     def get_queryset(self):
-        language = self.request.query_params.get('language', None)
-        qs = VocabContextEntry.objects.select_related('vocab_context', 'vocab_entry')
+        language = self.request.query_params.get("language", None)
+        qs = VocabContextEntry.objects.select_related("vocab_context", "vocab_entry")
 
         if language:
             qs = qs.filter(vocab_entry__language=language)
 
         qs = qs.filter(vocab_context__vocab_source_id=self.vocab_source_pk)
-        qs = qs.order_by('vocab_entry__entry').distinct()
+        qs = qs.order_by("vocab_entry__entry").distinct()
         qs = qs.values(
-            language=Lower('vocab_entry__language'),
-            slug=Lower('vocab_entry__slug'),
-            entry=Lower('vocab_entry__entry')
+            language=Lower("vocab_entry__language"),
+            slug=Lower("vocab_entry__slug"),
+            entry=Lower("vocab_entry__entry")
         )
         qs = qs.annotate(vocab_source_id=Value(self.vocab_source_pk, output_field=IntegerField()))
-        qs = qs.annotate(id=F('vocab_entry_id'))
+        qs = qs.annotate(id=F("vocab_entry_id"))
 
         return qs
 
     def list(self, request, vocab_source_pk=None):
 
         if not vocab_source_pk:
-            raise ParseError('Vocab source required.')
+            raise ParseError("Vocab source required.")
         else:
             self.vocab_source_pk = vocab_source_pk
 
@@ -86,14 +86,14 @@ class VocabSourceEntryViewSet(APIDefaultsMixin, ListModelMixin, GenericViewSet):
             serializer = VocabSourceEntrySerializer(
                 page,
                 many=True,
-                context={'request': request}
+                context={"request": request}
             )
             return self.get_paginated_response(serializer.data)
         else:
             serializer = VocabSourceEntrySerializer(
                 qs,
                 many=True,
-                context={'request': request}
+                context={"request": request}
             )
             return Response(serializer.data)
 
@@ -104,7 +104,7 @@ class VocabSourceImportView(APIDefaultsMixin, APIView):
         data = request.data
         import_vocab_source(data, request.user)
 
-        return Response(data={'success_msg': 'OK!'}, status=status.HTTP_201_CREATED)
+        return Response(data={"success_msg": "OK!"}, status=status.HTTP_201_CREATED)
 
 
 class VocabSourceExportView(APIDefaultsMixin, APIView):
@@ -121,10 +121,10 @@ class VocabSourceExportView(APIDefaultsMixin, APIView):
     def get_object(self):
         obj = get_object_or_404(
             VocabSource.objects.prefetch_related(
-                'creator',
-                'vocab_contexts__vocabcontextentry_set__vocab_entry'
+                "creator",
+                "vocab_contexts__vocabcontextentry_set__vocab_entry"
             ),
-            id=self.kwargs['vocab_source_pk']
+            id=self.kwargs["vocab_source_pk"]
         )
         self.check_object_permissions(self.request, obj)
 

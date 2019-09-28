@@ -14,7 +14,7 @@ from .views_mixins import (
     VocabSourceSessionMixin
 )
 
-APP_NAME = apps.get_app_config('vocab').name
+APP_NAME = apps.get_app_config("vocab").name
 
 
 # VocabContext
@@ -25,15 +25,15 @@ class VocabContextCreateView(
 ):
     model = VocabContext
     form_class = VocabContextCreateForm
-    template_name = '{0}/auth/vocab_context_create.html'.format(APP_NAME)
+    template_name = "{0}/auth/vocab_context_create.html".format(APP_NAME)
 
     def get_form_kwargs(self):
         kwargs = super(VocabContextCreateView, self).get_form_kwargs()
-        kwargs['vocab_source'] = self.vocab_source
+        kwargs["vocab_source"] = self.vocab_source
         return kwargs
 
     def get_success_url(self):
-        return reverse('vocab:vocab_context_tag', kwargs={'vocab_context_pk': self.object.id})
+        return reverse("vocab:vocab_context_tag", kwargs={"vocab_context_pk": self.object.id})
 
 
 class VocabContextTagView(
@@ -42,24 +42,24 @@ class VocabContextTagView(
     DetailView
 ):
     model = VocabContext
-    pk_url_kwarg = 'vocab_context_pk'
-    context_object_name = 'vocab_context'
-    template_name = '{0}/auth/vocab_context_tag.html'.format(APP_NAME)
+    pk_url_kwarg = "vocab_context_pk"
+    context_object_name = "vocab_context"
+    template_name = "{0}/auth/vocab_context_tag.html".format(APP_NAME)
 
     def get_queryset(self):
         qs = super(VocabContextTagView, self).get_queryset()
-        qs = qs.select_related('vocab_source')
+        qs = qs.select_related("vocab_source")
         qs = qs.prefetch_related(
-            'vocabcontextentry_set__vocab_entry',
-            'vocabcontextentry_set__vocab_entry_tags'
+            "vocabcontextentry_set__vocab_entry",
+            "vocabcontextentry_set__vocab_entry_tags"
         )
-        qs = qs.order_by('-date_created')
+        qs = qs.order_by("-date_created")
         return qs
 
     def get_context_data(self, **kwargs):
         context = super(VocabContextTagView, self).get_context_data(**kwargs)
         vocab_entry_tags = self.object.get_entries_and_tags()
-        context['vocab_entry_tags'] = json.dumps(vocab_entry_tags)
+        context["vocab_entry_tags"] = json.dumps(vocab_entry_tags)
         return context
 
 
@@ -67,12 +67,12 @@ class VocabContextEntryTagView(
     LoginRequiredMixin, DetailView
 ):
     model = VocabContextEntry
-    pk_url_kwarg = 'vocab_context_entry_pk'
-    context_object_name = 'vocab_context_entry'
-    template_name = '{0}/auth/vocab_context_entry_tag.html'.format(APP_NAME)
+    pk_url_kwarg = "vocab_context_entry_pk"
+    context_object_name = "vocab_context_entry"
+    template_name = "{0}/auth/vocab_context_entry_tag.html".format(APP_NAME)
 
     def get_queryset(self, **kwargs):
         qs = super(VocabContextEntryTagView, self).get_queryset(**kwargs)
-        qs = qs.select_related('vocab_entry', 'vocab_context')
-        qs = qs.prefetch_related('vocab_entry_tags')
+        qs = qs.select_related("vocab_entry", "vocab_context")
+        qs = qs.prefetch_related("vocab_entry_tags")
         return qs

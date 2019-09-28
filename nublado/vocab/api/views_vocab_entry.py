@@ -25,36 +25,36 @@ from ..utils import (
 )
 from .views_mixins import BatchMixin
 
-OXFORD_API_ID = getattr(settings, 'OXFORD_API_ID', None)
-OXFORD_API_KEY = getattr(settings, 'OXFORD_API_KEY', None)
+OXFORD_API_ID = getattr(settings, "OXFORD_API_ID", None)
+OXFORD_API_KEY = getattr(settings, "OXFORD_API_KEY", None)
 
 
 class VocabEntryViewSet(APIDefaultsMixin, BatchMixin, ModelViewSet):
-    lookup_field = 'pk'
-    lookup_url_kwarg = 'pk'
+    lookup_field = "pk"
+    lookup_url_kwarg = "pk"
     serializer_class = VocabEntrySerializer
     permission_classes = [ReadWritePermission]
     pagination_class = LargePagination
 
     def get_queryset(self):
-        language = self.request.query_params.get('language', None)
-        qs = VocabEntry.objects.order_by('entry')
+        language = self.request.query_params.get("language", None)
+        qs = VocabEntry.objects.order_by("entry")
 
         if language:
             qs = qs.filter(language=language)
 
         return qs
 
-    @action(methods=['get'], detail=False)
+    @action(methods=["get"], detail=False)
     def detail_data(self, request):
-        '''
+        """
         Retrieve VocabEntry object
-        '''
-        entry = request.query_params.get('entry', None)
-        language = request.query_params.get('language', 'en')
+        """
+        entry = request.query_params.get("entry", None)
+        language = request.query_params.get("language", "en")
 
         if not entry:
-            raise ParseError('Vocab entry required.')
+            raise ParseError("Vocab entry required.")
 
         vocab_entry = get_object_or_404(
             VocabEntry,
@@ -77,11 +77,11 @@ class VocabEntryImportView(APIDefaultsMixin, APIView):
     def post(self, request, *args, **kwargs):
         data = request.data
 
-        if 'vocab_entries' in data:
+        if "vocab_entries" in data:
             import_vocab_entries(data)
-            return Response(data={'success_msg': 'OK!'}, status=status.HTTP_201_CREATED)
+            return Response(data={"success_msg": "OK!"}, status=status.HTTP_201_CREATED)
         else:
-            return Response(data={'error': 'vocab-data required'}, status=status.HTTP_400_BAD_REQUEST)
+            return Response(data={"error": "vocab-data required"}, status=status.HTTP_400_BAD_REQUEST)
 
 
 class VocabEntryExportView(APIDefaultsMixin, APIView):
@@ -100,7 +100,7 @@ class VocabEntryLanguageExportView(VocabEntryExportView):
     def get(self, request, *args, **kwargs):
         data = export_vocab_entries(
             request,
-            language=kwargs['language']
+            language=kwargs["language"]
         )
 
         return Response(data=data)
@@ -114,7 +114,7 @@ class VocabEntryInfoView(APIView):
             self.vocab_entry = get_object_or_404(VocabEntry, id=vocab_entry_pk)
 
     def get(self, request, *args, **kwargs):
-        self.get_vocab_entry(kwargs['vocab_entry_pk'])
+        self.get_vocab_entry(kwargs["vocab_entry_pk"])
         json_data = get_oxford_entry_json(
             OXFORD_API_ID,
             OXFORD_API_KEY,

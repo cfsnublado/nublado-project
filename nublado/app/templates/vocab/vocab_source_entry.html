@@ -16,7 +16,7 @@
 {% alias "init-source-id="|add:source_id as comp_extra %}
 {% trans "label_search_vocab_in_source" as search_label %}
 
-{% alias 'vocab-source-entry-search' as comp_name %}
+{% alias "vocab-source-entry-search" as comp_name %}
 
 <div class="box">
 {% include "includes/vue/_language_search.html" %}
@@ -25,6 +25,8 @@
 {% endblock vocab_entry_search %}
 
 {% block vocab_contexts %}
+
+{% url "api:vocab-context-detail" 0 as vocab_context_delete_url %}
 
 {% url_set_param "api:vocab-context-entry-list" vocab_entry=vocab_entry.id vocab_source=vocab_source.id as vocab_contexts_url %}
 {% url "vocab:vocab_source_dashboard" 0 "zzz" as vocab_source_url %}

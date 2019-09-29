@@ -7,7 +7,8 @@ from django.urls import reverse
 
 from .base import FunctionalTest, page_titles, DEFAULT_PWD, PROJECT_NAME
 from vocab.models import (
-    VocabContext, VocabContextEntry, VocabEntry, VocabSource
+    VocabContext, VocabContextEntry, VocabEntry,
+    VocabEntryTag, VocabSource
 )
 
 User = get_user_model()
@@ -404,6 +405,69 @@ class VocabSourceAuthTest(TestCommon):
         self.wait.until(EC.invisibility_of_element_located((By.CSS_SELECTOR, vocab_source_box)))
 
         self.assertFalse(VocabSource.objects.filter(id=vocab_source_id).exists())
+
+
+class VocabContextTest(TestCommon):
+    def setUp(self):
+        super(VocabContextTest, self).setUp()
+        self.vocab_entry = VocabEntry.objects.create(
+            language="en",
+            entry="content"
+        )
+        self.vocab_source = VocabSource.objects.create(
+            creator=self.superuser,
+            source_type=VocabSource.CREATED,
+            name="Test source",
+            description="This is a test source."
+        )
+        self.vocab_context = VocabContext.objects.create(
+            vocab_source=self.vocab_source,
+            content="This is the context's content. Each context has content."
+        )
+        self.vocab_context_entry = VocabContextEntry.objects.create(
+            vocab_entry=self.vocab_entry,
+            vocab_context=self.vocab_context
+        )
+        VocabEntryTag.objects.create(
+            vocab_context_entry=self.vocab_context_entry,
+            content="content"
+        )
+
+    def get_highlight_xpath(self, tag, context_text_id):
+        xpath = "//mark[@class='tagged-text' and contains(., '{0}') and ancestor::div[@id='{1}']]".format(
+            tag,
+            context_text_id
+        )
+        return xpath
+
+    def test_view_tagged_context(self):
+        self.browser.get("{0}{1}".format(
+            self.live_server_url,
+            reverse(
+                "vocab:vocab_entry",
+                kwargs={
+                    "vocab_entry_language": self.vocab_entry.language,
+                    "vocab_entry_slug": self.vocab_entry.slug
+                }
+            )
+        ))
+        self.load_page(
+            page_titles["vocab_entry_en"].format(self.vocab_entry.entry, PROJECT_NAME)
+        )
+
+        vocab_context_box = "#context-{0}".format(self.vocab_context.id)
+        vocab_context_text_id = "context-{0}-text".format(self.vocab_context.id)
+
+        self.wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, vocab_context_box)))
+
+        # Vocab entry instance is highlighted in text.
+        vocab_entry_highlight_xp = self.get_highlight_xpath(
+            tag=self.vocab_entry.entry,
+            context_text_id=vocab_context_text_id
+        )
+        vocab_entry_highlighted = self.get_elements_by_xpath(vocab_entry_highlight_xp)
+
+        self.assertEqual(len(vocab_entry_highlighted), 2)
 
 
 class VocabContextAuthTest(TestCommon):

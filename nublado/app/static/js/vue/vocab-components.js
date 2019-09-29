@@ -495,6 +495,8 @@ const VocabEntryContext = {
       this.highlight(this.vocabEntryContext.vocab_entry_tags)
     })
 
+    console.log(this.vocabEntryContext.vocab_entry_tags)
+
     if (this.initVocabSourceUrl) {
       this.vocabSourceUrl = this.initVocabSourceUrl
         .replace(0, this.vocabEntryContext.vocab_source_id)

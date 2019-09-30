@@ -20,6 +20,7 @@ page_titles.update({
     "vocab_entry_update_en": "{0} | {1}".format("Edit vocab entry", PROJECT_NAME),
     "vocab_sources_en": "{0} | {1}".format("Sources", PROJECT_NAME),
     "vocab_source_entry_en": "{0} - {1} | {2}",
+    "vocab_source_contexts_en": "{0} - Contexts | {1}",
     "vocab_source_create_en": "{0} | {1}".format("Create source", PROJECT_NAME),
     "vocab_source_update_en": "{0} | {1}".format("Edit source", PROJECT_NAME),
     "vocab_context_create_en": "{0} | {1}".format("Create context", PROJECT_NAME),
@@ -598,3 +599,40 @@ class VocabContextAuthTest(TestCommon):
         self.assertFalse(VocabContext.objects.filter(id=vocab_context_id).exists())
 
         # Delete from source contexts
+        self.vocab_context = VocabContext.objects.create(
+            vocab_source=self.vocab_source,
+            content="This is some content."
+        )
+        VocabContextEntry.objects.create(
+            vocab_entry=self.vocab_entry,
+            vocab_context=self.vocab_context
+        )
+
+        self.browser.get("{0}{1}".format(
+            self.live_server_url,
+            reverse(
+                "vocab:vocab_source_contexts",
+                kwargs={
+                    "vocab_source_pk": self.vocab_source.id,
+                    "vocab_source_slug": self.vocab_source.slug,
+                }
+            )
+        ))
+        self.load_page(
+            page_titles["vocab_source_contexts_en"].format(
+                self.vocab_source.name,
+                PROJECT_NAME
+            )
+        )
+
+        vocab_context_id = self.vocab_context.id
+        vocab_context_box = "#context-{0}".format(self.vocab_context.id)
+        vocab_context_box_delete = "{0} .delete-trigger".format(vocab_context_box)
+
+        self.wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, vocab_context_box)))
+        self.get_element_by_css(vocab_context_box_delete).click()
+        self.wait.until(EC.element_to_be_clickable((By.ID, "vocab-context-delete-ok")))
+        self.get_element_by_id("vocab-context-delete-ok").click()
+        self.wait.until(EC.invisibility_of_element_located((By.CSS_SELECTOR, vocab_context_box)))
+
+        self.assertFalse(VocabContext.objects.filter(id=vocab_context_id).exists())

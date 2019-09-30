@@ -15,9 +15,14 @@ v-cloak
 {% trans "msg_no_contexts" %}
 </div>
 
+<div v-else class="page-header">
+{% trans "label_contexts" %}
+</div>
+
 <vocab-context-tags
 v-for="(vocabContext, index) in vocabContexts"
 :key="vocabContext.id"
+:id="('context-' + vocabContext.id)"
 :init-is-admin="isAdmin"
 :init-vocab-context="vocabContext"
 :init-vocab-entries="vocabContext.vocab_entry_tags"
@@ -25,6 +30,7 @@ v-for="(vocabContext, index) in vocabContexts"
 init-delete-url="{{ vocab_context_delete_url }}"
 init-source-url="{{ vocab_source_url }}"
 init-tag-select-url="{{ tag_select_url }}"
+@delete-vocab-context="onDeleteVocabContext(index)"
 inline-template
 >
 

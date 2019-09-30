@@ -2,8 +2,6 @@
 
 <vocab-entry-info 
 endpoint-url="{{ vocab_entry_info_url }}"
-msg-show-entry-info="{% trans 'label_show_details' %}"
-msg-hide-entry-info="{% trans 'label_hide_details' %}"
 inline-template
 >
 
@@ -15,11 +13,11 @@ inline-template
   >
 
   <span v-if="!vocabEntryInfoVisible"> 
-  [[ msgShowVocabEntryInfo ]]
+  {% trans "label_show_details" %}
   </span>
 
   <span v-else> 
-  [[ msgHideVocabEntryInfo ]]
+  {% trans "label_hide_details" %}
   </span>
 
   </a>

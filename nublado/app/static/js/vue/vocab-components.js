@@ -389,14 +389,6 @@ const VocabEntryInfo = {
       type: String,
       required: true
     },
-    msgShowVocabEntryInfo: {
-      type: String,
-      default: "Show entry info"
-    },
-    msgHideVocabEntryInfo: {
-      type: String,
-      default: "Hide entry info"
-    }
   },
   data() {
     return {
@@ -495,7 +487,7 @@ const VocabContext = {
   
     if (this.initDeleteUrl) {
       this.deleteUrl = this.initDeleteUrl
-        .replace(0, this.vocabContext.vocab_context_id)
+        .replace(0, this.vocabContext.id)
       console.log(this.deleteUrl)
     }
   }
@@ -639,7 +631,6 @@ const VocabEntryContext = {
     if (this.initDeleteUrl) {
       this.deleteUrl = this.initDeleteUrl
         .replace(0, this.vocabEntryContext.vocab_context_id)
-      console.log(this.deleteUrl)
     }
   }
 }

@@ -540,29 +540,27 @@ const BaseToggleTag = {
   },
   methods: {
     toggle() {
-      this.$emit("tag-toggle", this.id)
+      this.$emit("toggle-tag", this.id)
     },
   },
   template: `
     <transition name="fade-transition" v-on:after-enter="isVisible = true" v-on:after-leave="isVisible = false">
-
     <div 
-    class="ui label tagblock"
+    class="tag"
     v-show="isVisible"
     >
       <a 
-      class="tag-text"
       @click.prevent="select"
       > 
       {{ value }} 
       </a>
-      &nbsp;
+    
       <a 
-      class="toggle-tag"
       @click.prevent="toggle"
       >
-        <i v-bind:class="[toggleSelect ? 'fa-check-square' : 'fa-square', 'fas']"></i>
+      &nbsp; <i v-bind:class="[toggleSelect ? 'fa-check-square' : 'fa-square', 'fas']"></i>
       </a>
+
     </div>
     
     </transition>

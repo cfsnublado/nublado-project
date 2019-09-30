@@ -2,6 +2,10 @@ const Tag = {
   mixins: [BaseTag]
 }
 
+const ToggleTag = {
+  mixins: [BaseToggleTag]
+}
+
 const AjaxTag = {
   mixins: [BaseTag],
   props: {

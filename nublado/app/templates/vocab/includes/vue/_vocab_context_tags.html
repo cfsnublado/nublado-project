@@ -53,8 +53,9 @@ class="delete-trigger"
 >
 <i class="fas fa-times fas"></i>
 </a>
-</ajax-delete>
 </span>
+
+</ajax-delete>
 
 </div>
 
@@ -73,6 +74,25 @@ class="vocab-context-text"
 v-html="markdownToHtml(vocabContext.content)"
 >
 </div>
+
+</div>
+
+<div 
+id="vocab-entry-tag-group" 
+class="tags are-medium"
+style="margin-top: 20px;"
+>
+
+<toggle-tag
+  v-for="(tag, index) in vocabEntries"
+  :key="index"
+  :id="index.toString()"
+  :value="tag.value"
+  :toggle-select="tag.selected"
+  @select-tag="selectTag"
+  @toggle-tag="toggleTag"
+>
+</toggle-tag>
 
 </div>
 

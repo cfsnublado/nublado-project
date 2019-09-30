@@ -6,6 +6,7 @@ Vue.component("dropdown", Dropdown)
 Vue.component("navbar-dropdown", NavbarDropdown)
 Vue.component("confirmation-modal", ConfirmationModal)
 Vue.component("tag", Tag)
+Vue.component("toggle-tag", ToggleTag)
 Vue.component("tagbox", Tagbox)
 Vue.component("markdown-editor", MarkdownEditor)
 

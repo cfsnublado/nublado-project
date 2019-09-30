@@ -210,7 +210,7 @@ const VocabEntry = {
   },
   data() {
     return {
-      entry: this.initVocabEntry,
+      vocabEntry: this.initVocabEntry,
       viewUrl: this.initViewUrl,
       editUrl: this.initEditUrl,
       deleteUrl: this.initDeleteUrl
@@ -224,19 +224,19 @@ const VocabEntry = {
     },
     edit() {},
     remove() {
-      this.$emit("delete-vocab-entry", this.entry.id)
+      this.$emit("delete-vocab-entry", this.vocabEntry.id)
     },
   },
   created() {
     if (this.initViewUrl) {
       this.viewUrl = this.initViewUrl
-        .replace("xx", this.entry.language)
-        .replace("zzz", this.entry.slug)
+        .replace("xx", this.vocabEntry.language)
+        .replace("zzz", this.vocabEntry.slug)
     }
 
     if (this.initDeleteUrl) {
       this.deleteUrl = this.initDeleteUrl
-        .replace(0, this.entry.id)
+        .replace(0, this.vocabEntry.id)
     }
   }
 }
@@ -522,6 +522,7 @@ const VocabContextTags = {
   },
   methods: {
     selectTag(index) {
+      console.log("SHITTTT")
       this.selectedVocabEntry = this.vocabEntries[index]
       if (this.tagSelectUrl) {
         this.tagSelectUrl = this.tagSelectUrl

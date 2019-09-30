@@ -60,7 +60,7 @@ v-for="(vocabEntry, index) in vocabEntries"
 :key="vocabEntry.id"
 :id="('entry-' + vocabEntry.id)"
 :init-is-admin="isAdmin"
-:init-entry="vocabEntry"
+:init-vocab-entry="vocabEntry"
 init-view-url="{{ vocab_entry_url }}"
 init-delete-url="{{ vocab_entry_delete_url }}"
 @delete-vocab-entry="onDeleteVocabEntry(index)"
@@ -68,9 +68,9 @@ inline-template
 >
 
 <ajax-tag
-  :key="entry.id"
+  :key="vocabEntry.id"
   :id="id"
-  :value="entry.entry"
+  :value="vocabEntry.entry"
   :delete-url="deleteUrl"
   :has-remove="isAdmin"
   confirm-id="delete-vocab-entry"

@@ -47,7 +47,7 @@ const VocabSource = {
     },
     remove() {
       this.$emit("delete-vocab-source")
-    }
+    },
   },
   created() {
     if (this.initViewUrl) {
@@ -79,6 +79,10 @@ const VocabSources = {
     PaginationMixin,
   ],
   props: {
+    id: {
+      type: String,
+      default: ""
+    },
     vocabSourcesUrl: {
       type: String,
       required: true
@@ -158,14 +162,9 @@ const VocabSourceSearch = {
 const VocabSourceEntrySearch = {
   mixins: [BaseLanguageSearch],
   props: {
-    initSourceId: {
+    sourceId: {
       type: String,
       default: null
-    }
-  },
-  data() {
-    return {
-      sourceId: this.initSourceId,
     }
   },
   methods: {
@@ -192,7 +191,7 @@ const VocabEntry = {
       type: String,
       default: ""
     },
-    initEntry: {
+    initVocabEntry: {
       type: Object,
       required: true
     },
@@ -211,7 +210,7 @@ const VocabEntry = {
   },
   data() {
     return {
-      entry: this.initEntry,
+      entry: this.initVocabEntry,
       viewUrl: this.initViewUrl,
       editUrl: this.initEditUrl,
       deleteUrl: this.initDeleteUrl
@@ -226,7 +225,7 @@ const VocabEntry = {
     edit() {},
     remove() {
       this.$emit("delete-vocab-entry", this.entry.id)
-    }
+    },
   },
   created() {
     if (this.initViewUrl) {
@@ -440,6 +439,139 @@ const VocabEntryInfo = {
   }
 }
 
+const VocabContext = {
+  mixins: [
+    MarkdownMixin,
+    HighlightMixin,
+    VisibleMixin,
+    AdminMixin
+  ],
+  props: {
+    id: {
+      type: String,
+      default: ""
+    },    
+    initVocabContext: {
+      type: Object,
+      required: true
+    },
+    initVocabSourceUrl: {
+      type: String,
+      default: ""
+    },
+    initEditUrl: {
+      type: String,
+      default: ""
+    },
+    initDeleteUrl: {
+      type: String,
+      default: ""
+    }
+  },
+  data() {
+    return {
+      vocabContext: this.initVocabContext,
+      vocabSourceUrl: this.initVocabSourceUrl,
+      deleteUrl: this.initDeleteUrl
+    }
+  },
+  methods: {
+    selectVocabSource() {
+      if (this.vocabSourceUrl) {
+        window.location.replace(this.vocabSourceUrl)
+      }
+    },
+    remove() {
+      this.$emit("delete-vocab-context")
+    },
+  },
+  created() {
+
+    if (this.initVocabSourceUrl) {
+      this.vocabSourceUrl = this.initVocabSourceUrl
+        .replace(0, this.vocabContext.vocab_source_id)
+        .replace('zzz', this.vocabContext.vocab_source_slug)
+    }
+  
+    if (this.initDeleteUrl) {
+      this.deleteUrl = this.initDeleteUrl
+        .replace(0, this.vocabContext.vocab_context_id)
+      console.log(this.deleteUrl)
+    }
+  }
+}
+
+const VocabContextTags = {
+  mixins: [VocabContext],
+  props: {
+    initVocabEntries: {
+      type: Array,
+      default: []
+    },
+    initTagSelectUrl: {
+      type: String,
+      default: ""
+    }
+  },
+  data() {
+    return {
+      vocabEntries: [],
+      selectedVocabEntry: null,
+      tagSelectUrl: this.initTagSelectUrl
+    }
+  },
+  methods: {
+    selectTag(index) {
+      this.selectedVocabEntry = this.vocabEntries[index]
+      if (this.tagSelectUrl) {
+        this.tagSelectUrl = this.tagSelectUrl
+          .replace("xx", this.selectedVocabEntry.language)
+          .replace("zzz", this.selectedVocabEntry.slug)
+        window.location.replace(this.tagSelectUrl)
+      }
+    },
+    toggleTag(index) {
+      if (this.selectedVocabEntry == null) {
+        this.selectedVocabEntry = this.vocabEntries[index]
+        this.selectedVocabEntry.selected = true
+        this.highlight(this.selectedVocabEntry.tags)
+      } else if (this.selectedVocabEntry.id != this.vocabEntries[index].id) {
+        this.selectedVocabEntry.selected = false
+        this.clearHighlight()
+        this.selectedVocabEntry = this.vocabEntries[index]
+        this.selectedVocabEntry.selected = true
+        this.highlight(this.selectedVocabEntry.tags)
+      } else {
+        this.selectedVocabEntry.selected = !this.selectedVocabEntry.selected
+
+        if (this.selectedVocabEntry.selected) {
+          this.highlight(this.selectedVocabEntry.tags)
+        } else {
+          this.clearHighlight()
+        }
+      }
+    },
+    loadEntries() {
+      for (var k in this.initVocabEntries) {
+        const initVocabEntry = this.initVocabEntries[k]["vocab_entry"]
+        const initTags = this.initVocabEntries[k]["tags"]
+        const vocabEntry = {
+          id: initVocabEntry.id,
+          value: initVocabEntry.entry,
+          slug: initVocabEntry.slug,
+          language: initVocabEntry.language,
+          selected: false,
+          tags: initTags
+        }
+        this.vocabEntries.push(vocabEntry)
+      }
+    },
+  },
+  created() {
+    this.loadEntries()
+  }
+}
+
 const VocabEntryContext = {
   /**
   From many-to-many VocabContextEntry that refers to VocabEntry and VocabContext objects
@@ -455,7 +587,7 @@ const VocabEntryContext = {
     id: {
       type: String,
       default: ""
-    },
+    },    
     initVocabEntryContext: {
       type: Object,
       required: true
@@ -488,14 +620,14 @@ const VocabEntryContext = {
     },
     remove() {
       this.$emit("delete-vocab-context")
-    }
+    },
   },
   created() {
+    console.log(this.vocabEntryContext)
+
     this.$nextTick(() => {
       this.highlight(this.vocabEntryContext.vocab_entry_tags)
     })
-
-    console.log(this.vocabEntryContext.vocab_entry_tags)
 
     if (this.initVocabSourceUrl) {
       this.vocabSourceUrl = this.initVocabSourceUrl
@@ -507,7 +639,7 @@ const VocabEntryContext = {
       this.deleteUrl = this.initDeleteUrl
         .replace(0, this.vocabEntryContext.vocab_context_id)
       console.log(this.deleteUrl)
-    }  
+    }
   }
 }
 

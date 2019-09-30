@@ -12,10 +12,75 @@ v-cloak
 >
 
 <div v-if="vocabContexts && vocabContexts.length == 0">
-{% trans 'msg_no_contexts' %}
+{% trans "msg_no_contexts" %}
 </div>
 
-<div v-else class="page-subheader">{% trans 'header_contexts' %}</div>
+<vocab-context-tags
+v-for="(vocabContext, index) in vocabContexts"
+:key="vocabContext.id"
+:init-is-admin="isAdmin"
+:init-vocab-context="vocabContext"
+:init-vocab-entries="vocabContext.vocab_entry_tags"
+:context-element="('#context-' + vocabContext.id + '-text')"
+init-delete-url="{{ vocab_context_delete_url }}"
+init-source-url="{{ vocab_source_url }}"
+init-tag-select-url="{{ tag_select_url }}"
+inline-template
+>
+
+<transition name="fade-transition" v-on:after-enter="isVisible = true" v-on:after-leave="isVisible = false">
+
+<div 
+:id="id"
+class="box vocab-context-box" 
+v-show="isVisible"
+>
+
+<div class="box-controls">
+
+<ajax-delete
+v-if="isAdmin"
+delete-confirm-id="delete-vocab-context"
+:delete-url="deleteUrl"
+@ajax-success="remove"
+inline-template
+>
+
+<span class="control">
+<a
+class="delete-trigger"
+@click.prevent="confirmDelete"
+>
+<i class="fas fa-times fas"></i>
+</a>
+</ajax-delete>
+</span>
+
+</div>
+
+<a
+href="#"
+@click.prevent="selectVocabSource"
+>
+[[ vocabContext.vocab_source ]]
+</a>
+
+<div :id="[[ vocabContext.id ]]" class="vocab-context">
+
+<div 
+:id="('context-' + vocabContext.id + '-text')"
+class="vocab-context-text"
+v-html="markdownToHtml(vocabContext.content)"
+>
+</div>
+
+</div>
+
+</div>
+
+</transition>
+
+</vocab-context-tags>
 
 <section
 v-if="pageCount > 1"

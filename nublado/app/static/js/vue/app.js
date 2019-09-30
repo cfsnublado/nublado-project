@@ -24,6 +24,7 @@ Vue.component("vocab-entry-instance-tagbox", VocabEntryInstanceTagbox)
 Vue.component("vocab-entry-info", VocabEntryInfo)
 Vue.component("vocab-entry-context", VocabEntryContext)
 Vue.component("vocab-contexts", VocabContexts)
+Vue.component("vocab-context-tags", VocabContextTags)
 Vue.component("vocab-context-editor", VocabContextEditor)
 
 Vue.use(ModalPlugin)

@@ -13,7 +13,7 @@
 {% url "vocab:vocab_source_entry_language_autocomplete" vocab_source.id "zz" as autocomplete_url %}
 {% url "vocab:vocab_source_entries" vocab_source.id vocab_source.slug  as search_url %}
 {% alias vocab_source.id|stringformat:"s" as source_id %}
-{% alias "init-source-id="|add:source_id as comp_extra %}
+{% alias "source-id="|add:source_id as comp_extra %}
 {% trans "label_search_vocab_in_source" as search_label %}
 
 {% alias "vocab-source-entry-search" as comp_name %}

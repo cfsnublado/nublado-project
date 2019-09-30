@@ -882,7 +882,7 @@ msgstr "Vocabulario etiquetado en esta fuente"
 
 #: nublado/app/templates/vocab/vocab_source_dashboard.html:64
 msgid "msg_source_contexts_desc"
-msgstr "Contextos de esta fuente"
+msgstr "Contextos en esta fuente"
 
 #: nublado/app/templates/vocab/vocab_source_entries.html:6
 msgid "page_vocab_source_entries_title"

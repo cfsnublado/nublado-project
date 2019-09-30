@@ -1,6 +1,6 @@
 ---
 source_name: Media guerra
-source_description: El tercer libro de la trilogía _El mar quebrado_. de Joe Abercrombie
+source_description: El tercer libro de la trilogía _El mar quebrado_. de Joe Abercrombie, tradujo por Manuel Viciano Delibano
 source_type: 1
 
 ---
@@ -1386,7 +1386,7 @@ Skara se la quedó mirando.
 
     es: sustituir: sustituirlo
 
-    en: entretenido: entretenida
+    es: entretenido: entretenida
 
     es: sobrevivir: sobreviviendo
 

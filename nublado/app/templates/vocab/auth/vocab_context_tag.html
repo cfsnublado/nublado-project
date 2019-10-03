@@ -96,8 +96,8 @@ inline-template
 <tag
 v-for="(tag, index) in tags"
 :key="tag.id"
-:init-value="tag.value"
-:init-has-remove="true"
+:value="tag.value"
+:has-remove="true"
 @select-tag="selectTag(index)"
 @remove-tag="removeTag(index)"
 >
@@ -140,9 +140,9 @@ v-model="tagInput"
 <tag
 v-for="(tag, index) in tags"
 :key="tag"
-:init-id="index"
-:init-value="tag"
-:init-has-remove="true"
+:id="index.toString()"
+:value="tag"
+:has-remove="true"
 @select-tag="selectTag(index)"
 @remove-tag="removeTag(index)"
 >

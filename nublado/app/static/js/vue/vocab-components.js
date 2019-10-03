@@ -405,7 +405,6 @@ const VocabEntryInfo = {
       }
     },
     getVocabEntryInfo() {
-      console.log('Get vocab entry info')
       this.process()
       axios.get(
         this.endpointUrl
@@ -424,6 +423,7 @@ const VocabEntryInfo = {
         } else {
           console.log(error.message)
         }
+        console.error("VocabEntryInfo error")
         console.log(error.config)
       })
       .finally(() => this.complete())
@@ -464,6 +464,7 @@ const VocabContext = {
     return {
       vocabContext: this.initVocabContext,
       vocabSourceUrl: this.initVocabSourceUrl,
+      editUrl: this.initDeleteUrl,
       deleteUrl: this.initDeleteUrl
     }
   },
@@ -471,6 +472,11 @@ const VocabContext = {
     selectVocabSource() {
       if (this.vocabSourceUrl) {
         window.location.replace(this.vocabSourceUrl)
+      }
+    },
+    edit() {
+      if (this.editUrl) {
+        window.location.replace(this.editUrl)
       }
     },
     remove() {
@@ -484,11 +490,15 @@ const VocabContext = {
         .replace(0, this.vocabContext.vocab_source_id)
         .replace('zzz', this.vocabContext.vocab_source_slug)
     }
+
+    if (this.initEditUrl) {
+      this.editUrl = this.initEditUrl
+        .replace(0, this.vocabContext.id)
+    }
   
     if (this.initDeleteUrl) {
       this.deleteUrl = this.initDeleteUrl
         .replace(0, this.vocabContext.id)
-      console.log(this.deleteUrl)
     }
   }
 }
@@ -514,8 +524,8 @@ const VocabContextTags = {
   },
   methods: {
     selectTag(index) {
-      console.log("SHITTTT")
       this.selectedVocabEntry = this.vocabEntries[index]
+
       if (this.tagSelectUrl) {
         this.tagSelectUrl = this.tagSelectUrl
           .replace("xx", this.selectedVocabEntry.language)
@@ -611,6 +621,11 @@ const VocabEntryContext = {
         window.location.replace(this.vocabSourceUrl)
       }
     },
+    edit() {
+      if (this.editUrl) {
+        window.location.replace(this.editUrl)
+      }
+    },
     remove() {
       this.$emit("delete-vocab-context")
     },
@@ -626,6 +641,11 @@ const VocabEntryContext = {
       this.vocabSourceUrl = this.initVocabSourceUrl
         .replace(0, this.vocabEntryContext.vocab_source_id)
         .replace('zzz', this.vocabEntryContext.vocab_source_slug)
+    }
+
+    if (this.initEditUrl) {
+      this.editUrl = this.initEditUrl
+        .replace(0, this.vocabEntryContext.vocab_context_id)
     }
   
     if (this.initDeleteUrl) {

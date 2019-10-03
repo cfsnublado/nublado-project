@@ -26,6 +26,7 @@ v-for="(vocabEntryContext, index) in vocabContexts"
 :init-is-admin="isAdmin"
 :init-vocab-entry-context=vocabEntryContext
 :context-element="('#context-' + vocabEntryContext.vocab_context_id + '-text')"
+init-edit-url="{{ vocab_context_edit_url }}"
 init-delete-url="{{ vocab_context_delete_url }}"
 init-vocab-source-url="{{ vocab_source_url }}"
 @delete-vocab-context="onDeleteVocabContext(index)"
@@ -41,6 +42,17 @@ v-show="isVisible"
 >
 
 <div class="box-controls">
+
+<span 
+class="control"
+v-if="isAdmin"
+>
+<a
+@click.prevent="edit"
+>
+<i class="fas fa-edit fas"></i>
+</a>
+</span>
 
 <ajax-delete
 v-if="isAdmin"

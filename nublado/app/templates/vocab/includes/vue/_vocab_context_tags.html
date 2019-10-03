@@ -27,6 +27,7 @@ v-for="(vocabContext, index) in vocabContexts"
 :init-vocab-context="vocabContext"
 :init-vocab-entries="vocabContext.vocab_entry_tags"
 :context-element="('#context-' + vocabContext.id + '-text')"
+init-edit-url="{{ vocab_context_edit_url }}"
 init-delete-url="{{ vocab_context_delete_url }}"
 init-source-url="{{ vocab_source_url }}"
 init-tag-select-url="{{ tag_select_url }}"
@@ -43,6 +44,17 @@ v-show="isVisible"
 >
 
 <div class="box-controls">
+
+<span 
+class="control"
+v-if="isAdmin"
+>
+<a
+@click.prevent="edit"
+>
+<i class="fas fa-edit fas"></i>
+</a>
+</span>
 
 <ajax-delete
 v-if="isAdmin"

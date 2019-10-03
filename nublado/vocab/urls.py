@@ -47,7 +47,11 @@ auth_urls = [
         VocabSourceUpdateView.as_view(),
         name="vocab_source_update"
     ),
-    path("source/<int:vocab_source_pk>/delete/", VocabSourceDeleteView.as_view(), name="vocab_source_delete"),
+    path(
+        "source/<int:vocab_source_pk>/delete/",
+        VocabSourceDeleteView.as_view(),
+        name="vocab_source_delete"
+    ),
     path(
         "source/<int:vocab_source_pk>)/export/",
         VocabSourceExportJsonView.as_view(),
@@ -58,7 +62,11 @@ auth_urls = [
         VocabContextCreateView.as_view(),
         name="vocab_context_create"
     ),
-    path("context/<int:vocab_context_pk>/edit/", VocabContextTagView.as_view(), name="vocab_context_tag"),
+    path(
+        "context/<int:vocab_context_pk>/edit/",
+        VocabContextTagView.as_view(),
+        name="vocab_context_tag"
+    ),
     path(
         "vocabcontextentry/<int:vocab_context_entry_pk>/tag/",
         VocabContextEntryTagView.as_view(),

@@ -35,6 +35,16 @@
 <div class="columns">
 <div class="column is-12">
 
+{% if user.is_admin %}
+  <span>
+  <a
+  href="{% url 'vocab:vocab_entry_update' vocab_entry.language vocab_entry.slug %}"
+  >
+  {% trans "label_edit_entry" %}
+  </a>
+  </span>
+{% endif %}
+
 <div id="vocab-entry-header" class="entry-header">
 {{ vocab_entry.entry }}
 </div>

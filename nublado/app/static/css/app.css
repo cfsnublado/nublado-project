@@ -12318,6 +12318,12 @@ animated buttons - animate the text inside prev and next buttons
   background-color: #e0eee8;
 }
 
+/* line 18, ../scss/cfs/vue/_markdown-editor.scss */
+.markdown-editor-controls {
+  display: flex;
+  justify-content: space-between;
+}
+
 /* line 3, ../scss/cfs/vocab/_vocab.scss */
 .vocab-source-box {
   margin-bottom: 1.875rem;

@@ -612,6 +612,7 @@ const VocabEntryContext = {
     return {
       vocabEntryContext: this.initVocabEntryContext,
       vocabSourceUrl: this.initVocabSourceUrl,
+      editUrl: this.initEditUrl,
       deleteUrl: this.initDeleteUrl
     }
   },

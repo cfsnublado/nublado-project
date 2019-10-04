@@ -115,11 +115,16 @@ class VocabEntryInfoView(APIView):
 
     def get(self, request, *args, **kwargs):
         self.get_vocab_entry(kwargs["vocab_entry_pk"])
+        result_data = {}
         json_data = get_oxford_entry_json(
             OXFORD_API_ID,
             OXFORD_API_KEY,
             self.vocab_entry
         )
-        parsed_json_data = parse_oxford_entry_json(json_data)
 
-        return Response(data=parsed_json_data)
+        if json_data:
+            result_data = parse_oxford_entry_json(json_data)
+
+            return Response(data=result_data)
+        else:
+            return Response(status=status.HTTP_404_NOT_FOUND)

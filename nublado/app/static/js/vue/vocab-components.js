@@ -395,6 +395,7 @@ const VocabEntryInfo = {
       vocabEntryInfo: {},
       vocabEntryInfoVisible: false,
       vocabEntryInfoLoaded: false,
+      hasError: false
     }
   },
   methods: {
@@ -411,7 +412,6 @@ const VocabEntryInfo = {
       )
       .then(response => {
         this.vocabEntryInfo = response.data;
-        console.log(this.vocabEntryInfo)
         this.vocabEntryInfoLoaded = true
         this.success()
       })
@@ -424,7 +424,7 @@ const VocabEntryInfo = {
           console.log(error.message)
         }
         console.error("VocabEntryInfo error")
-        console.log(error.config)
+        this.hasError = true
       })
       .finally(() => this.complete())
     }

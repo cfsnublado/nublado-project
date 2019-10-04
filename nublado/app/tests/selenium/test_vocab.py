@@ -241,7 +241,7 @@ class VocabEntryAuthTest(TestCommon):
         self.load_page(page_titles["vocab_entries_en"])
 
         vocab_entry_tag = "#entry-{0}".format(self.vocab_entry.id)
-        vocab_entry_tag_delete = "{0} .delete-trigger".format(vocab_entry_tag)
+        vocab_entry_tag_delete = "{0} .delete-btn".format(vocab_entry_tag)
 
         self.get_element_by_css(vocab_entry_tag_delete).click()
         self.wait.until(EC.element_to_be_clickable((By.ID, "vocab-entry-delete-ok")))
@@ -397,7 +397,7 @@ class VocabSourceAuthTest(TestCommon):
         self.load_page(page_titles["vocab_sources_en"])
 
         vocab_source_box = "#source-{0}".format(self.vocab_source.id)
-        vocab_source_box_delete = "{0} .delete-trigger".format(vocab_source_box)
+        vocab_source_box_delete = "{0} .delete-btn".format(vocab_source_box)
 
         self.wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, vocab_source_box)))
         self.get_element_by_css(vocab_source_box_delete).click()
@@ -546,7 +546,7 @@ class VocabContextAuthTest(TestCommon):
 
         vocab_context_id = self.vocab_context.id
         vocab_context_box = "#context-{0}".format(self.vocab_context.id)
-        vocab_context_box_delete = "{0} .delete-trigger".format(vocab_context_box)
+        vocab_context_box_delete = "{0} .delete-btn".format(vocab_context_box)
 
         self.wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, vocab_context_box)))
         self.get_element_by_css(vocab_context_box_delete).click()
@@ -588,7 +588,7 @@ class VocabContextAuthTest(TestCommon):
 
         vocab_context_id = self.vocab_context.id
         vocab_context_box = "#context-{0}".format(self.vocab_context.id)
-        vocab_context_box_delete = "{0} .delete-trigger".format(vocab_context_box)
+        vocab_context_box_delete = "{0} .delete-btn".format(vocab_context_box)
 
         self.wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, vocab_context_box)))
         self.get_element_by_css(vocab_context_box_delete).click()
@@ -627,7 +627,7 @@ class VocabContextAuthTest(TestCommon):
 
         vocab_context_id = self.vocab_context.id
         vocab_context_box = "#context-{0}".format(self.vocab_context.id)
-        vocab_context_box_delete = "{0} .delete-trigger".format(vocab_context_box)
+        vocab_context_box_delete = "{0} .delete-btn".format(vocab_context_box)
 
         self.wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, vocab_context_box)))
         self.get_element_by_css(vocab_context_box_delete).click()

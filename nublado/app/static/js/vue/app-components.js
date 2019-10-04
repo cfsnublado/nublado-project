@@ -41,7 +41,7 @@ const AjaxTag = {
       inline-template
       >
         <a
-        class="delete-trigger"
+        class="delete-btn"
         @click.prevent="confirmDelete"
         >
           &nbsp;
@@ -154,6 +154,10 @@ const MarkdownEditor = {
       this.isEditing = true
     },
     view() {
+      if (this.isEditing) {
+        this.save()
+      }
+
       this.isEditing = false
       this.convertMarkdown()
     },
@@ -178,7 +182,7 @@ const MarkdownEditor = {
             console.log(error.config)
           })
           .finally(() => {
-            this.complete()
+            this.$emit("markdown-save")
           })
         }, 500)
       }
@@ -201,6 +205,10 @@ const MarkdownEditor = {
   template: `
   <div class="markdown-editor">
 
+  <div class="markdown-editor-controls">
+
+  <div class="controls-left">
+
   <a 
   v-bind:class="['button', { 'is-info': !isEditing }]"
   :disabled="processing"
@@ -219,6 +227,10 @@ const MarkdownEditor = {
   Edit
   </a>
 
+  </div>
+
+  <div class="controls-right">
+
   <a 
   v-bind:class="['button is-success', { 'is-loading': processing }]"
   href="#"
@@ -226,6 +238,10 @@ const MarkdownEditor = {
   >
   Save
   </a>
+
+  </div>
+
+  </div><!-- markdown-editor-controls -->
 
   <div 
   class="field"

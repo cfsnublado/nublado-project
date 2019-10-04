@@ -915,6 +915,14 @@ const VocabContextEditor = {
         this.vocabEntries.push(vocabEntry)
       }
     },
+    onMarkdownSave() {
+      if (this.selectedVocabEntry) {
+        this.clearHighlight()
+        this.highlight(this.selectedVocabEntry.tags)
+      }
+      
+      console.log("onMarkdownSave")
+    }
   },
   created() {
     this.loadVocabEntries()

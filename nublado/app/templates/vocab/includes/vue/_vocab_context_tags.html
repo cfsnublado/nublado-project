@@ -50,6 +50,7 @@ class="control"
 v-if="isAdmin"
 >
 <a
+class="edit-btn"
 @click.prevent="edit"
 >
 <i class="fas fa-edit fas"></i>
@@ -66,7 +67,7 @@ inline-template
 
 <span class="control">
 <a
-class="delete-trigger"
+class="delete-btn"
 @click.prevent="confirmDelete"
 >
 <i class="fas fa-times fas"></i>

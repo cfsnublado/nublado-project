@@ -5,7 +5,7 @@ from django.utils.translation import ugettext_lazy as _
 
 from core.models import (
     LanguageModel, SerializeModel,
-    SlugifyModel, TimestampModel, TrackedFieldModel
+    SlugifyModel, TimestampModel
 )
 from core.utils import tag_text
 from .managers import (
@@ -47,7 +47,7 @@ class JsonDataModel(models.Model):
 
 class VocabEntry(
     TimestampModel, LanguageModel, SlugifyModel,
-    TrackedFieldModel, SerializeModel
+    SerializeModel
 ):
     unique_slug = False
     value_field_name = "entry"

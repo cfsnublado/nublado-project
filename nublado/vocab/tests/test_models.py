@@ -4,7 +4,7 @@ from django.test import TestCase
 
 from core.models import (
     LanguageModel, SerializeModel,
-    SlugifyModel, TimestampModel, TrackedFieldModel
+    SlugifyModel, TimestampModel
 )
 from ..managers import (
     VocabContextEntryManager, VocabEntryManager,
@@ -50,7 +50,7 @@ class VocabEntryTest(TestCommon):
     def test_inheritance(self):
         classes = (
             LanguageModel, SerializeModel, SlugifyModel,
-            TimestampModel, TrackedFieldModel
+            TimestampModel
         )
         for class_name in classes:
             self.assertTrue(

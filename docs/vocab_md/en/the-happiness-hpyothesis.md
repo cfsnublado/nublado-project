@@ -1,7 +1,7 @@
 ---
 source_name: The Happiness Hypothesis: Finding Modern Truth in Ancient Wisdom
 source_description: A book
-source_type: 1
+source_type: book
 
 ---
 

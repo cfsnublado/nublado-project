@@ -1,7 +1,7 @@
 ---
 source_name: The Three-Body Problem
 source_description: Book 1 of the trilogy _Remembrance of Earth's Past_, by Liu Cixin
-source_type: 1
+source_type: book
 
 ---
 

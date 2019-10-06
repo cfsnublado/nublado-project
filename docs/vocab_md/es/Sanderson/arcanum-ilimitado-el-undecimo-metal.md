@@ -1,7 +1,7 @@
 ---
 source_name: Arcanum ilimitado: El undécimo metal
 source_description: Brandon Sanderson
-source_type: 1
+source_type: book
 
 ---
 

@@ -1,7 +1,7 @@
 ---
 source_name: Arcanum ilimitado: El alma del emperador
 source_description: Brandon Sanderson
-source_type: 1
+source_type: book
 
 ---
 

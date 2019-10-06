@@ -1,7 +1,7 @@
 ---
 source_name: The Dark Forest
 source_description: Book 2 of the trilogy _Remembrance of Earth's Past_, by Liu Cixin
-source_type: 1
+source_type: book
 
 ---
 

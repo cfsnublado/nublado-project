@@ -1,7 +1,7 @@
 ---
 source_name: The Fall of Hyperion
 source_description: Book 2 of _The Hyperion Cantos_, by Dan Simmons
-source_type: 1
+source_type: book
 
 ---
 

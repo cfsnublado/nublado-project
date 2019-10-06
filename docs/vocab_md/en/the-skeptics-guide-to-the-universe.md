@@ -1,7 +1,7 @@
 ---
 source_name: The Skeptics' Guide to the Universe
 source_description: A book
-source_type: 1
+source_type: book
 
 ---
 
@@ -775,4 +775,3 @@ source_type: 1
 
     </div>
 
-- 

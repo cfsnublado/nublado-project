@@ -50,7 +50,18 @@ def convert_markdown_to_dict(md_text, display_html=False):
     source_data["name"] = html.metadata["source_name"]
 
     if "source_type" in html.metadata:
-        source_data["source_type"] = int(html.metadata["source_type"])
+        # See VocabSource model for source types.
+        vocab_source_types = {
+            "book": 1,
+            "website": 2,
+            "blog": 3,
+            "created": 4,
+            "other": 5
+        }
+        vocab_source_type = html.metadata["source_type"].lower()
+
+        if vocab_source_type in vocab_source_types:
+            source_data["source_type"] = vocab_source_types[vocab_source_type]
 
     if "source_description" in html.metadata:
         source_data["description"] = html.metadata["source_description"]

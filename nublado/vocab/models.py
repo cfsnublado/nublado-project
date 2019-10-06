@@ -93,11 +93,13 @@ class VocabSource(
     WEBSITE = 2
     BLOG = 3
     CREATED = 4
+    OTHER = 5
     SOURCE_TYPE_CHOICES = (
         (BOOK, _("label_source_book")),
         (WEBSITE, _("label_source_website")),
         (BLOG, _("label_source_blog")),
         (CREATED, _("label_source_created")),
+        (OTHER, _("label_source_other")),
     )
     unique_slug = False
     value_field_name = "name"

@@ -1,7 +1,7 @@
 ---
 source_name: Media guerra
 source_description: El tercer libro de la trilogía _El mar quebrado_. de Joe Abercrombie, tradujo por Manuel Viciano Delibano
-source_type: 1
+source_type: book
 
 ---
 

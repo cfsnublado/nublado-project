@@ -1,7 +1,7 @@
 ---
 source_name: El bosque oscuro
 source_description: El segundo libro de la trilogía _El problema de los tres cuerpos_, de Cixin Liu.
-source_type: 1
+source_type: book
 
 ---
 
@@ -56,6 +56,22 @@ source_type: 1
     es: desintegración: desintegración
 
     es: encomendar: encomendó
+
+    </div>
+
+- Quién sabe, igual dentro de ciento veinte años, mucho antes de que llegue la flota extraterrestre, el mundo entero esté en guerra! Nadie puede predecir qué clase de vida tendrá la generación de sus bisnietos. Además, las naves del escape no serán como usted se imagina, nada que ver con la Shenzhou ni con la Estación Espacial Internacional. Serán enormes, del tamaño de una pequeña ciudad, y contarán con ecosistema propio, como si fueran una Tierra en miniatura. La humanidad podrá vivir en ellas de forma indefinida, sin necesidad de recurrir al abastecimiento externo. Ah, y lo que es más importante: contarán con sistema de hibernación. Esto es algo que ya somos capaces de hacer. Los pasajeros pasarán la mayor parte de su tiempo a bordo y en estado de hibernación, donde un siglo puede resultar tan breve como un día, hasta que realmente se alcance un nuevo mundo o se llegue a un acuerdo con los trisolarianos que nos permita volver al Sistema Solar; solo entonces despertarán. ¿No le parece una vida mucho más placentera que la que tendrían si se quedaran a sufrir en la Tierra?
+
+    <div markdown="1" class="tagged-entries">
+
+    es: abastecimiento: abastecimiento
+
+    es: ecosistema: ecosistema
+
+    es: placentero: placentera
+
+    es: indefinido: indefinida
+
+    es: recurrir: recurrir
 
     </div>
 

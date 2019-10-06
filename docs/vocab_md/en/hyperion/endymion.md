@@ -1,7 +1,7 @@
 ---
 source_name: Endymion
 source_description: Book 3 of the saga _Hyperion Cantos_, by Dan Simmons
-source_type: 1
+source_type: book
 
 ---
 

@@ -111,7 +111,7 @@ aria-label="sidebar-trigger"
 <div class="menu">
 
 <p class="menu-label">
-{% trans 'label_general' %}
+{% trans "label_general" %}
 </p>
 
 <ul class="menu-list">
@@ -120,7 +120,7 @@ aria-label="sidebar-trigger"
 class="{% block home_link_active %}{% endblock home_link_active %}"
 href="{% url 'app:home' %}"
 >
-<i class="fas fa-fw fa-home menu-icon"></i> {% trans 'label_home' %}
+<i class="fas fa-fw fa-home menu-icon"></i> {% trans "label_home" %}
 </a>
 </li>
 <li>
@@ -128,7 +128,7 @@ href="{% url 'app:home' %}"
 class="{% block vocab_entries_link_active %}{% endblock vocab_entries_link_active %}"
 href="{% url 'vocab:vocab_entries' %}"
 >
-<i class="fas fa-fw fa-language menu-icon"></i> {% trans 'label_vocabulary' %}
+<i class="fas fa-fw fa-language menu-icon"></i> {% trans "label_vocabulary" %}
 </a>
 </li>
 <li>
@@ -136,7 +136,7 @@ href="{% url 'vocab:vocab_entries' %}"
 class="{% block vocab_sources_link_active %}{% endblock vocab_sources_link_active %}"
 href="{% url 'vocab:vocab_sources' %}"
 >
-<i class="fas fa-fw fa-project-diagram menu-icon"></i> {% trans 'label_sources' %}
+<i class="fas fa-fw fa-project-diagram menu-icon"></i> {% trans "label_sources" %}
 </a>
 </li>
 </ul>
@@ -151,7 +151,7 @@ href="{% url 'vocab:vocab_sources' %}"
   class="{% block vocab_entry_create_link_active %}{% endblock vocab_entry_create_link_active %}"
   href="{% url 'vocab:vocab_entry_create' %}"
   >
-  <i class="fas fa-fw fa-plus menu-icon"></i> {% trans 'label_new_entry' %}
+  <i class="fas fa-fw fa-plus menu-icon"></i> {% trans "label_new_entry" %}
   </a>
   </li>
   <li>
@@ -160,7 +160,7 @@ href="{% url 'vocab:vocab_sources' %}"
   class="{% block vocab_source_create_link_active %}{% endblock vocab_source_create_link_active %}"
   href="{% url 'vocab:vocab_source_create' %}"
   >
-  <i class="fas fa-fw fa-plus menu-icon"></i> {% trans 'label_new_source' %}
+  <i class="fas fa-fw fa-plus menu-icon"></i> {% trans "label_new_source" %}
   </a>
   </li>
   </ul>
@@ -181,7 +181,7 @@ dropdown-classes="is-up"
 >
 
 <template slot="dropdown-label">
-{% trans 'label_language' %}: {{ LANGUAGE_CODE|upper }}
+{% trans "label_language" %}: {{ LANGUAGE_CODE|upper }}
 </template>
 
 <template slot="dropdown-content">

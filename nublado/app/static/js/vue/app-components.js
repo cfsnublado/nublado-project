@@ -215,7 +215,9 @@ const MarkdownEditor = {
   href="#"
   @click.prevent="view"
   >
+  <slot name="view-label">
   View
+  </slot>
   </a>
 
   <a 
@@ -224,7 +226,9 @@ const MarkdownEditor = {
   href="#"
   @click.prevent="edit"
   >
+  <slot name="edit-label">
   Edit
+  </slot>
   </a>
 
   </div>
@@ -236,7 +240,9 @@ const MarkdownEditor = {
   href="#"
   @click.prevent="save"
   >
+  <slot name="save-label">
   Save
+  </slot>
   </a>
 
   </div>

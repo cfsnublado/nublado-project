@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-10-05 22:32-0700\n"
+"POT-Creation-Date: 2019-10-06 16:09-0700\n"
 "PO-Revision-Date: 2018-11-28 21:15-0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -716,16 +716,25 @@ msgid "label_edit_context"
 msgstr "Edit context"
 
 #: nublado/app/templates/vocab/auth/vocab_context_tag.html:28
+#: nublado/app/templates/vocab/auth/vocab_context_tag.html:74
 #: nublado/app/templates/vocab/auth/vocab_entry_update.html:24
 #: nublado/app/templates/vocab/auth/vocab_source_update.html:15
 msgid "label_edit"
 msgstr "Edit"
 
-#: nublado/app/templates/vocab/auth/vocab_context_tag.html:88
+#: nublado/app/templates/vocab/auth/vocab_context_tag.html:70
+msgid "label_view"
+msgstr "View"
+
+#: nublado/app/templates/vocab/auth/vocab_context_tag.html:78
+msgid "label_save"
+msgstr "Save"
+
+#: nublado/app/templates/vocab/auth/vocab_context_tag.html:101
 msgid "label_tagged_vocab"
 msgstr "Tagged vocabulary"
 
-#: nublado/app/templates/vocab/auth/vocab_context_tag.html:120
+#: nublado/app/templates/vocab/auth/vocab_context_tag.html:133
 msgid "label_instances_of"
 msgstr "Instances of"
 
@@ -1184,12 +1193,6 @@ msgstr "Search sources"
 
 #~ msgid "label_adjective"
 #~ msgstr "adjective"
-
-#~ msgid "label_verb"
-#~ msgstr "verb"
-
-#~ msgid "label_adverb"
-#~ msgstr "adverb"
 
 #~ msgid "label_expression"
 #~ msgstr "expression"

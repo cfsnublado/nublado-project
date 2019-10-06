@@ -75,4 +75,28 @@ source_type: book
 
     </div>
 
-- 
+- —Ni tú ni yo aprenderemos nada a estas alturas —contestó ella, también con la vista fija en los coches, tratando de localizar un taxi.
+
+    —Entonces… —Luo Ji la miró con expresión inquisitiva. Ya no tendría que recordar su nombre.
+
+    —Adiós —zanjó ella, asintiendo en su dirección.
+
+    Luego se dieron la mano. También compartieron un escueto beso.
+
+    —Quizá volvamos a encontrarnos —dijo él, arrepintiéndose al instante. Con lo bien que marchaba todo hasta aquel momento, ¿qué necesidad tenía de abrir la boca? Sin embargo, enseguida comprobó que no había razón para preocuparse.
+
+    —Lo dudo —replicó ella, girando tan rápidamente sobre sus talones que hizo volar el bolso que llevaba al hombro.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: zanjar: zanjó
+
+    es: arrepentirse: arrepitiéndose
+
+    es: enseguida: enseguida
+
+    es: marchar: marchaba
+
+    es: inquisitivo: inquisitiva
+
+    </div>

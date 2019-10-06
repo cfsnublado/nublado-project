@@ -65,6 +65,19 @@ save-url="{{ vocab_context_edit_url }}"
 view-box-classes="vocab-context-box"
 @markdown-save="onMarkdownSave"
 >
+
+<template slot="view-label">
+{% trans "label_view" %}
+</template>
+
+<template slot="edit-label">
+{% trans "label_edit" %}
+</template>
+
+<template slot="save-label">
+{% trans "label_save" %}
+</template>
+
 </markdown-editor>
 
 </div><!-- col 6 -->

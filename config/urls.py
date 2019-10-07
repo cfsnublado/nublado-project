@@ -7,6 +7,7 @@ from security.conf import SecurityConf
 from users.conf import ProfileConf
 from vocab.conf import VocabConf
 
+
 SECURITY_URL_PREFIX = SecurityConf.URL_PREFIX
 USER_URL_PREFIX = ProfileConf.URL_PREFIX
 VOCAB_URL_PREFIX = VocabConf.URL_PREFIX

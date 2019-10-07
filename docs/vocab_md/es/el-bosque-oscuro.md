@@ -100,3 +100,47 @@ source_type: book
     es: inquisitivo: inquisitiva
 
     </div>
+
+- Justo en ese instante, al otro lado de la carretera, dos vehículos colisionaban de frente. Antes de que el sonido remitiera, el conductor de un Volkswagen Polo que venía detrás dio un volantazo para evitar el impacto y se dirigió a toda velocidad hacia donde estaban ellos. Luo Ji fue muy afortunado de caer al suelo; lo único que le ocurrió fue que el parachoques frontal del Polo pasó rozándole el pie, que aún mantenía en alto, haciéndolo girar noventa grados hasta quedar de cara a la parte trasera del coche. No oyó el siguiente impacto, pero sí vio cómo el cuerpo de ella volaba por encima del vehículo y se estampaba sobre el asfalto como si fuera una muñeca de trapo. La forma que el reguero de sangre dejó sobre el pavimento parecía querer decir algo. Fue al observar aquel símbolo sanguinolento cuando al fin Luo Ji recordó su nombre.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: remitir: remitiera
+
+    es: colisionar: colisionaban
+
+    es: dirigirse: se dirigió
+
+    es: estamparse: se estampaba
+
+    es: sanguinolento: sanguinolento
+
+    es: reguero: reguero
+
+    </div>
+
+- La nuera de Zhang Yuanchao estaba en el hospital a punto de dar a luz. Se la habían llevado a la sala de partos y el resto de la familia aguardaba ansiosamente en una habitación contigua, donde un monitor pasaba un vídeo explicativo sobre los cuidados de la madre y del recién nacido. A Zhang todo aquello le transmitía una ternura y un calor humano inesperados, esa plácida sensación de seguridad típica de la edad dorada que acababa de terminar, y que la actual crisis hacía menguar día a día.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: menguar: menguar
+
+    es: nuero: nuera
+
+    es: dar a luz: dar a luz
+
+    </div>
+
+- Dicha resolución condena en términos categóricos la división creada en la sociedad humana por el Escapismo, al que califica de crimen contra la humanidad que debe ser perseguido por la ley internacional. También insta a los estados miembros a promulgar lo antes posible una legislación que lo prohíba.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: promulgar: promulgar
+
+    es: instar: insta
+
+    es: prohibir: prohíba
+
+    </div>
+
+- 

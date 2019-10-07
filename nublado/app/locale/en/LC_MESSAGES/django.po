@@ -504,16 +504,12 @@ msgid "msg_vue_cool_desc"
 msgstr "This project is developed with the Django framework."
 
 #: nublado/app/templates/home.html:88
-#, fuzzy
-#| msgid "msg_no_vocab_info"
 msgid "msg_import_vocab_markdown"
-msgstr "Info not found."
+msgstr "Markdown"
 
 #: nublado/app/templates/home.html:92
-#, fuzzy
-#| msgid "msg_project_banner_desc"
 msgid "msg_import_vocab_markdown_desc"
-msgstr "A tool for jotting down context-based vocabulary"
+msgstr "Create and import sources, contexts, and tagged vocabulary with the ease and fluidity of Markdown."
 
 #: nublado/app/templates/includes/_confirmation_modal.html:16
 #: nublado/app/templates/vocab/auth/vocab_context_delete_confirm.html:36

@@ -1,0 +1,8 @@
+site_name: My Docs
+
+docs_dir: "mkdocs"
+site_dir: "nublado/appdocs/static/mkdocs_build"
+
+nav:
+  - Home: index.md
+

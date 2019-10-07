@@ -2,6 +2,8 @@ import os
 import sys
 from pathlib import Path
 
+import yaml
+
 from django.core.exceptions import ImproperlyConfigured
 from django.utils.translation import ugettext_lazy as _
 

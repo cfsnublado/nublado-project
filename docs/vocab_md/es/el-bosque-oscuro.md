@@ -37,11 +37,11 @@ source_type: book
 
     </div>
 
-- Para nosotros, la expresión de pensamientos deformados es precisamente lo que convierte el intercambio de información en la sociedad humana, sobre todo en su literatura, en un laberinto enrevesado… Tengo entendido que la Organización Terrícola-trisolariana se encuentra al borde del colapso.
+- **Para nosotros, la expresión de pensamientos deformados es precisamente lo que convierte el intercambio de información en la sociedad humana, sobre todo en su literatura, en un laberinto enrevesado… Tengo entendido que la Organización Terrícola-trisolariana se encuentra al borde del colapso.**
 
     —¡Eso es porque nos abandonaron! Sufrimos dos golpes muy duros en muy poco tiempo. Ahora, tras la desintegración de la facción redencionista, solo los adventistas siguen estando organizados. Seguro que usted ya lo sabe, pero el peor daño causado fue el psicológico. Su abandono puso a prueba la devoción que los miembros de la Organización sentimos por nuestro Señor. ¡A fin de mantenerla, necesitamos desesperadamente su ayuda!
 
-    No podemos daros tecnología.
+    **No podemos daros tecnología.**
 
     —No hace falta. Nos basta con que vuelvan a transmitirnos información a través de los sofones.
 
@@ -140,6 +140,68 @@ source_type: book
     es: instar: insta
 
     es: prohibir: prohíba
+
+    </div>
+
+- —¡Entonces pídele a nuestro Señor una transferencia de tecnología!
+
+    Muchas otras voces se sumaron a esa propuesta. Qin Shi Huang dijo:
+
+    —También lo solicité. Para mi sorpresa, en un gesto muy poco habitual, nuestro Señor no la rechazó categóricamente.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: categóricamente: categóricamente
+
+    </div>
+
+- —Nuestro Señor le tiene miedo.
+
+    Einstein, también presente, dijo:
+
+    —Lo he meditado durante mucho tiempo y creo que el miedo que nuestro Señor siente por Luo Ji solo tiene una explicación posible: es el portavoz de cierto poder.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: portavoz: portavoz
+
+    </div>
+
+- En la pantalla se inició la entrada de los delegados nacionales. Tras sentarse se pusieron a hablar en voz baja, como si no se hubiesen percatado de la presencia de Luo Ji. El presidente de turno del consejo inició la reunión diciendo:
+
+    —Vallado Luo Ji, la Ley de los Vallados fue enmendada en la sesión especial de la Asamblea General de Naciones Unidas que acaba de terminar. ¿Lo sabe?
+
+    <div markdown="1" class="tagged-entries">
+
+    es: percatarse: se hubieran percatado
+
+    </div>
+
+- —Vallado Luo Ji, tengo una pregunta. Tratándose de una maldición, ¿por qué no la dirige contra el mundo enemigo?
+
+    Luo Ji respondió:
+
+    —Se trata de una forma de probar la idea. La implementación real debe esperar a la batalla del Día del Juicio Final.
+
+    —¿Trisolaris no puede ser el objetivo de la prueba?
+
+    Luo Ji negó seriamente con la cabeza.
+
+    —En absoluto. Trisolaris está demasiado cerca. Tan cerca que los efectos de la maldición podrían alcanzarnos. Es por esa razón que rechacé cualquier sistema planetario a menos de cincuenta años luz.
+
+    —Una última pregunta: ¿qué planea hacer durante los próximos cien años o más?
+
+    —Se habrán librado de mí. Hibernación. Deben despertarme cuando se detecten los efectos de la maldición contra 187J3X1.
+
+    <div markdown="1" class="tagged-entries">
+
+    es: en absoluto: en absoluto
+
+    es: librarse: se habrán librado
+
+    es: maldición: maldición
+
+    es: planear: planea
 
     </div>
 

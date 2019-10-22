@@ -19,7 +19,7 @@ Markdown==3.1.1
 markdown2==2.3.8
 markdownify==0.4.1
 MarkupSafe==1.1.1
-Pillow==6.1.0
+Pillow==6.2.0
 pip-autoremove==0.9.1
 psycopg2-binary==2.8.3
 pyrsistent==0.15.4

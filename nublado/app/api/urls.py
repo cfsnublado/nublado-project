@@ -16,7 +16,8 @@ from vocab.api.views_vocab_entry import (
 )
 from vocab.api.views_vocab_source import (
     VocabSourceExportView, VocabSourceImportView,
-    VocabSourceViewSet, VocabSourceEntryViewSet
+    VocabSourceImportMarkdownView, VocabSourceViewSet,
+    VocabSourceEntryViewSet
 )
 
 from vocab.api.views_third_party_api import OxfordAPIEntryView
@@ -55,7 +56,16 @@ urlpatterns = [
         vocab_source_entry_list,
         name="vocab-source-entry-list"
     ),
-    path("vocab/source/import/", VocabSourceImportView.as_view(), name="vocab_source_import"),
+    path(
+        "vocab/source/import/",
+        VocabSourceImportView.as_view(),
+        name="vocab_source_import"
+    ),
+    path(
+        "vocab/source/import/markdown/",
+        VocabSourceImportMarkdownView.as_view(),
+        name="vocab_source_import_markdown"
+    ),
     path(
         "vocab/source/<int:vocab_source_pk>/export/",
         VocabSourceExportView.as_view(),

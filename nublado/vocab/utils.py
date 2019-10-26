@@ -1,6 +1,9 @@
 import requests
 from jsonschema import validate as validate_schema
 
+import markdown2
+from bs4 import BeautifulSoup
+from markdownify import markdownify as md
 from rest_framework import status
 
 from django.contrib.auth import get_user_model
@@ -104,6 +107,65 @@ def import_vocab_entries(data):
             VocabEntry.objects.create(
                 **vocab_entry_data
             )
+
+
+def vocab_source_markdown_to_dict(md_text):
+    html = markdown2.markdown(md_text, extras=["metadata", "markdown-in-html"])
+    source_data = {}
+
+    if "source_name" not in html.metadata:
+        raise TypeError("Missing source_name attribute in metadata.")
+
+    source_data["name"] = html.metadata["source_name"]
+
+    print(source_data["name"])
+
+    if "source_type" in html.metadata:
+        vocab_source_type = getattr(VocabSource, html.metadata["source_type"].upper(), None)
+
+        if vocab_source_type is not None:
+            source_data["source_type"] = vocab_source_type
+
+    if "source_description" in html.metadata:
+        source_data["description"] = html.metadata["source_description"]
+
+    data_dict = {
+        "vocab_source_data": source_data,
+        "vocab_contexts": []
+    }
+    soup = BeautifulSoup(html, "html.parser")
+    lis = soup.ul.find_all("li", recursive=False)
+    for li in lis:
+        vocab_context_dict = {
+            "vocab_context_data": {}
+        }
+        # Tagged entries
+        tagged_vocab = li.find("div", "tagged-entries")
+        if tagged_vocab:
+            vocab_context_dict["vocab_entries"] = []
+            for entry_tag in tagged_vocab.find_all("p", recursive=False):
+                # entry: language: tag1, tag2, tag3...
+                entry_list = [x.strip() for x in entry_tag.string.split(":")]
+                tags = [x.strip() for x in entry_list[2].split(",")]
+                vocab_context_dict["vocab_entries"].append(
+                    {
+                        "vocab_entry_data": {
+                            "language": entry_list[0],
+                            "entry": entry_list[1]
+                        },
+                        "vocab_entry_tags": tags
+                    }
+                )
+
+            tagged_vocab.extract()
+
+        li_content = li.decode_contents()
+
+        # Revert li content back to markdown. (Hacky I know).
+        vocab_context_dict["vocab_context_data"]["content"] = md(li_content)
+        data_dict["vocab_contexts"].append(vocab_context_dict)
+
+    return data_dict
 
 
 def import_vocab_source(data, user):

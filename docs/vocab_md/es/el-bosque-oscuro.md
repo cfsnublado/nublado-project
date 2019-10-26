@@ -204,5 +204,3 @@ source_type: book
     es: planear: planea
 
     </div>
-
-- 

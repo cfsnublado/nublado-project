@@ -15,7 +15,7 @@ from vocab.api.views_vocab_entry import (
     VocabEntryLanguageExportView, VocabEntryImportView
 )
 from vocab.api.views_vocab_source import (
-    VocabSourceExportView, VocabSourceImportView,
+    VocabSourceExportView, VocabSourceImportJSONView,
     VocabSourceImportMarkdownView, VocabSourceViewSet,
     VocabSourceEntryViewSet
 )
@@ -58,8 +58,8 @@ urlpatterns = [
     ),
     path(
         "vocab/source/import/",
-        VocabSourceImportView.as_view(),
-        name="vocab_source_import"
+        VocabSourceImportJSONView.as_view(),
+        name="vocab_source_import_json"
     ),
     path(
         "vocab/source/import/markdown/",

@@ -26,7 +26,7 @@ from .permissions import (
     ReadPermission, ReadWritePermission
 )
 from ..utils import (
-    export_vocab_source, import_vocab_source,
+    export_vocab_source, import_vocab_source_json,
     vocab_source_markdown_to_dict
 )
 
@@ -105,11 +105,11 @@ class VocabSourceEntryViewSet(APIDefaultsMixin, ListModelMixin, GenericViewSet):
             return Response(serializer.data)
 
 
-class VocabSourceImportView(APIDefaultsMixin, APIView):
+class VocabSourceImportJSONView(APIDefaultsMixin, APIView):
 
     def post(self, request, *args, **kwargs):
         data = request.data
-        import_vocab_source(data, request.user)
+        import_vocab_source_json(data, request.user)
 
         return Response(data={"success_msg": "OK!"}, status=status.HTTP_201_CREATED)
 
@@ -119,7 +119,7 @@ class VocabSourceImportMarkdownView(APIDefaultsMixin, APIView):
     def post(self, request, *args, **kwargs):
         data = request.data
         vocab_source_data = vocab_source_markdown_to_dict(data)
-        import_vocab_source(vocab_source_data, request.user)
+        import_vocab_source_json(vocab_source_data, request.user)
 
         return Response(data={"success_msg": "OK!"}, status=status.HTTP_201_CREATED)
 

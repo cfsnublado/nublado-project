@@ -3,6 +3,12 @@ import mimetypes
 
 import requests
 
+LOCALHOST = "http://127.0.0.1:8000"
+PRODUCTION_HOST = "http://cfsnublado.herokuapp.com"
+TOKEN_PATH = "api/api-token-auth/"
+
+domain = LOCALHOST
+
 
 def print_color(color_code, text):
     '''

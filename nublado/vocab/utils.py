@@ -138,14 +138,17 @@ def vocab_source_markdown_to_dict(md_text):
     }
     soup = BeautifulSoup(html, "html.parser")
     lis = soup.ul.find_all("li", recursive=False)
+
     for li in lis:
         vocab_context_dict = {
             "vocab_context_data": {}
         }
         # Tagged entries
         tagged_vocab = li.find("div", "tagged-entries")
+
         if tagged_vocab:
             vocab_context_dict["vocab_entries"] = []
+
             for entry_tag in tagged_vocab.find_all("p", recursive=False):
                 # entry: language: tag1, tag2, tag3...
                 entry_list = [x.strip() for x in entry_tag.string.split(":")]
@@ -171,9 +174,9 @@ def vocab_source_markdown_to_dict(md_text):
     return data_dict
 
 
-def import_vocab_source(data, user):
+def import_vocab_source_json(data, user):
     """
-    data: Serialized json data from vocab source backup.
+    data: Serialized vocab source json data
     """
 
     validate_vocab_source_json_schema(data)

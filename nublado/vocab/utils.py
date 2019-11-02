@@ -110,7 +110,10 @@ def import_vocab_entries(data):
 
 
 def vocab_source_markdown_to_dict(md_text):
-    html = markdown2.markdown(md_text, extras=["metadata", "markdown-in-html"])
+    html = markdown2.markdown(
+        md_text,
+        extras=["metadata", "markdown-in-html"]
+    )
     source_data = {}
 
     if "source_name" not in html.metadata:
@@ -172,6 +175,7 @@ def import_vocab_source(data, user):
     """
     data: Serialized json data from vocab source backup.
     """
+
     validate_vocab_source_json_schema(data)
 
     user_id = user.id

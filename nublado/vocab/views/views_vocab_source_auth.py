@@ -29,7 +29,7 @@ class VocabSourceExportJsonView(
     JsonAttachmentMixin, View
 ):
     content_type = "application/json"
-    json_indent = 4
+    json_indent = 2
 
     def get_file_content(self):
         vocab_source = get_object_or_404(

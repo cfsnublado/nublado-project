@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-10-06 16:09-0700\n"
+"POT-Creation-Date: 2019-11-05 08:33-0800\n"
 "PO-Revision-Date: 2018-11-28 21:16-0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -18,12 +18,12 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 2.0.6\n"
 
-#: config/settings/base.py:95 nublado/core/tests/test_models.py:63
+#: config/settings/base.py:97 nublado/core/tests/test_models.py:63
 #: nublado/core/tests/test_models.py:67 nublado/core/tests/test_models.py:70
 msgid "English"
 msgstr "English"
 
-#: config/settings/base.py:96 nublado/core/tests/test_models.py:70
+#: config/settings/base.py:98 nublado/core/tests/test_models.py:70
 msgid "Spanish"
 msgstr "Español"
 
@@ -293,7 +293,7 @@ msgstr "Este campo es obligatorio."
 msgid "validation_vocab_content_creator_required"
 msgstr "Este campo es obligatorio."
 
-#: nublado/vocab/models.py:58 nublado/app/templates/vocab/vocab_base.html:80
+#: nublado/vocab/models.py:58 nublado/app/templates/vocab/vocab_base.html:88
 msgid "label_entry"
 msgstr "Entrada"
 
@@ -511,7 +511,9 @@ msgstr "Markdown"
 
 #: nublado/app/templates/home.html:92
 msgid "msg_import_vocab_markdown_desc"
-msgstr "Crea e importa fuentes, contextos, y vocabulario etiquetado con la facilidad y fluidez de Markdown."
+msgstr ""
+"Crea e importa fuentes, contextos, y vocabulario etiquetado con la facilidad "
+"y fluidez de Markdown."
 
 #: nublado/app/templates/includes/_confirmation_modal.html:16
 #: nublado/app/templates/vocab/auth/vocab_context_delete_confirm.html:36
@@ -862,7 +864,7 @@ msgid "msg_no_sources"
 msgstr "No hay fuentes."
 
 #: nublado/app/templates/vocab/vocab_base.html:13
-#: nublado/app/templates/vocab/vocab_base.html:142
+#: nublado/app/templates/vocab/vocab_base.html:150
 msgid "label_source"
 msgstr "Fuente"
 
@@ -870,11 +872,15 @@ msgstr "Fuente"
 msgid "label_edit_source"
 msgstr "Editar fuente"
 
-#: nublado/app/templates/vocab/vocab_base.html:64
+#: nublado/app/templates/vocab/vocab_base.html:62
+msgid "label_export_source_json"
+msgstr "Exportar JSON"
+
+#: nublado/app/templates/vocab/vocab_base.html:72
 msgid "label_new_vocab_context"
 msgstr "Nuevo contexto"
 
-#: nublado/app/templates/vocab/vocab_base.html:101
+#: nublado/app/templates/vocab/vocab_base.html:109
 #: nublado/app/templates/vocab/vocab_entry.html:43
 msgid "label_edit_entry"
 msgstr "Editar entrada"
@@ -1149,9 +1155,6 @@ msgstr "Buscar fuentes"
 
 #~ msgid "label_view_entry_tagged_in_all_sources"
 #~ msgstr "Ver entrada etiquetada en todas las fuentes"
-
-#~ msgid "label_export_json"
-#~ msgstr "Exportar JSON"
 
 #~ msgid "label_new_vocab_project"
 #~ msgstr "Nuevo proyecto"

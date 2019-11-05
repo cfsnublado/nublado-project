@@ -56,6 +56,14 @@
     </li>
 
     <li>
+    <a
+    id="sidebar-vocab-source-export"
+    href="{% url 'vocab:vocab_source_export_json' vocab_source.id %}">
+    <i class="menu-icon fas fa-download fa-fw"></i> {% trans "label_export_source_json" %}
+    </a>
+    </li>
+
+    <li>
     <a 
     id="sidebar-new-vocab-context" 
     class="{% block vocab_context_create_link_active %}{% endblock vocab_context_create_link_active %}" 

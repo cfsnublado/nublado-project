@@ -8,7 +8,7 @@ from django.utils import timezone
 from django.utils.translation import ugettext as _
 
 from coretest.models import (
-    TestLanguageModel, TestParentModel, TestPublishModel,
+    TestLanguageModel, TestParentModel, TestTrackedFieldModel,
     TestTranslationModel, TestTimestampModel, TestUserstampModel,
     TestUUIDModel
 )
@@ -16,6 +16,22 @@ from coretest.models import (
 User = get_user_model()
 
 # Testing abstract classes in core using test models from coretest.
+
+
+class TrackedFieldModelTest(TestCase):
+
+    def setUp(self):
+        self.test_model = TestTrackedFieldModel.objects.create(name="hello")
+
+    def test_field_changed(self):
+        self.test_model.name = "hello"
+        self.assertFalse(self.test_model.field_changed("name"))
+        self.test_model.name = "something"
+        self.assertTrue(self.test_model.field_changed("name"))
+        self.test_model.save()
+        self.assertFalse(self.test_model.field_changed("name"))
+        self.test_model.name = "hello"
+        self.assertTrue(self.test_model.field_changed("name"))
 
 
 class ParentModelTest(TestCase):
@@ -159,12 +175,3 @@ class LanguageModelTest(TestCase):
         with self.assertRaises(ValidationError):
             self.test_model_en.language = 'xx'
             self.test_model_en.full_clean()
-
-
-class PublishModelTest(TestCase):
-
-    def setUp(self):
-        self.test_model = TestPublishModel.objects.create(name='hello')
-
-    def test_default_status_is_draft(self):
-        self.assertEqual(TestPublishModel.DRAFT, self.test_model.status)

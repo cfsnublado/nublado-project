@@ -41,9 +41,6 @@ class InviteModel(models.Model):
         default=PENDING,
     )
 
-    class Meta:
-        abstract = True
-
     def clean(self):
         # Raise error if sender and receiver refer to the same object.
         if self.sender_id == self.receiver_id:
@@ -51,6 +48,9 @@ class InviteModel(models.Model):
                 _('validation_invite_sender_receiver_equal'),
                 code='invite_sender_receiver_equal'
             )
+
+    class Meta:
+        abstract = True
 
 
 class LanguageModel(models.Model):
@@ -84,9 +84,6 @@ class ParentModel(models.Model):
 
     objects = ParentManager()
 
-    class Meta:
-        abstract = True
-
     @property
     def is_parent(self):
         if self.parent_id:
@@ -94,41 +91,13 @@ class ParentModel(models.Model):
         else:
             return True
 
-
-class PublishModel(models.Model):
-    DRAFT = 1
-    PUBLISHED = 2
-    ARCHIVED = 3
-    STATUS_CHOICES = (
-        (ARCHIVED, _('status_archived')),
-        (DRAFT, _('status_draft')),
-        (PUBLISHED, _('status_published'))
-    )
-    status = models.IntegerField(
-        verbose_name=_('label_status'),
-        choices=STATUS_CHOICES,
-        default=DRAFT,
-    )
-
     class Meta:
         abstract = True
-
-    def is_draft(self):
-        return self.status == self.DRAFT
-
-    def is_published(self):
-        return self.status == self.PUBLISHED
-
-    def is_archived(self):
-        return self.status == self.ARCHIVED
 
 
 class SerializeModel(models.Model):
 
     serializer = None
-
-    class Meta:
-        abstract = True
 
     def get_serializer(self):
         if self.serializer is not None:
@@ -139,6 +108,9 @@ class SerializeModel(models.Model):
     def serialize(self):
         if self.serializer is not None:
             return self.get_serializer().data
+
+    class Meta:
+        abstract = True
 
 
 class SlugifyModel(models.Model):
@@ -151,9 +123,6 @@ class SlugifyModel(models.Model):
     * max_iterations - how many iterations to search for an open slug before raising IntegrityError, default 1000
     * slug_separator - the character to put in place of spaces and other non url friendly characters, default '-'
     '''
-
-    class Meta:
-        abstract = True
 
     def save(self, *args, **kwargs):
 
@@ -195,7 +164,11 @@ class SlugifyModel(models.Model):
         else:
             slug = slugify(getattr(self, value_field_name))
         self.slug = slug
+
         super(SlugifyModel, self).save(*args, **kwargs)
+
+    class Meta:
+        abstract = True
 
 
 class TimestampModel(models.Model):
@@ -218,8 +191,9 @@ class TrackedFieldModel(models.Model):
     # Fields to be 'listened' to for changes.
     tracked_fields = []
 
-    class Meta:
-        abstract = True
+    def __init__(self, *args, **kwargs):
+        super(TrackedFieldModel, self).__init__(*args, **kwargs)
+        self.init_tracked_fields()
 
     def save(self, force_insert=False, force_update=False, *args, **kwargs):
         super(TrackedFieldModel, self).save(force_insert, force_update, *args, **kwargs)
@@ -227,20 +201,22 @@ class TrackedFieldModel(models.Model):
 
     def init_tracked_fields(self):
         for field in self.tracked_fields:
-            setattr(self, '_original_{0}'.format(field), getattr(self, field))
+            if hasattr(self, field):
+                setattr(self, "_original_{0}".format(field), getattr(self, field))
 
     def field_changed(self, field):
-        value = getattr(self, field)
-        orig_value = getattr(self, '_original_{0}'.format(field))
-        return value != orig_value
+        if hasattr(self, field) and field in self.tracked_fields:
+            value = getattr(self, field)
+            orig_value = getattr(self, "_original_{0}".format(field))
+            return value != orig_value
+
+    class Meta:
+        abstract = True
 
 
 class TranslationModel(ParentModel, LanguageModel):
 
     objects = TranslationManager()
-
-    class Meta:
-        abstract = True
 
     @property
     def translations(self):
@@ -283,6 +259,9 @@ class TranslationModel(ParentModel, LanguageModel):
     def get_translation(self, language):
         translation = self.translations.filter(language=language).first()
         return translation
+
+    class Meta:
+        abstract = True
 
 
 class UserstampModel(models.Model):

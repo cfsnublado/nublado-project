@@ -1,9 +1,9 @@
 from django.db import models
 
 from core.models import (
-    LanguageModel, ParentModel, PublishModel,
-    TimestampModel, TranslationModel, UserstampModel,
-    UUIDModel
+    LanguageModel, ParentModel,
+    TimestampModel, TrackedFieldModel, TranslationModel,
+    UserstampModel, UUIDModel
 )
 
 # These models are only used for testing purposes. They are to be migrated only into the test db.
@@ -40,6 +40,10 @@ class TestColorModel(BaseTestModel):
     )
 
 
+class TestTrackedFieldModel(BaseTestModel, TrackedFieldModel):
+    tracked_fields = ["name"]
+
+
 class TestLanguageModel(BaseTestModel, LanguageModel):
 
     class Meta:
@@ -47,10 +51,6 @@ class TestLanguageModel(BaseTestModel, LanguageModel):
 
 
 class TestParentModel(BaseTestModel, ParentModel):
-    pass
-
-
-class TestPublishModel(BaseTestModel, PublishModel):
     pass
 
 

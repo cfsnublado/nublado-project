@@ -41,6 +41,9 @@ class InviteModel(models.Model):
         default=PENDING,
     )
 
+    class Meta:
+        abstract = True
+
     def clean(self):
         # Raise error if sender and receiver refer to the same object.
         if self.sender_id == self.receiver_id:
@@ -48,9 +51,6 @@ class InviteModel(models.Model):
                 _('validation_invite_sender_receiver_equal'),
                 code='invite_sender_receiver_equal'
             )
-
-    class Meta:
-        abstract = True
 
 
 class LanguageModel(models.Model):
@@ -99,6 +99,9 @@ class SerializeModel(models.Model):
 
     serializer = None
 
+    class Meta:
+        abstract = True
+
     def get_serializer(self):
         if self.serializer is not None:
             return self.serializer(self)
@@ -108,9 +111,6 @@ class SerializeModel(models.Model):
     def serialize(self):
         if self.serializer is not None:
             return self.get_serializer().data
-
-    class Meta:
-        abstract = True
 
 
 class SlugifyModel(models.Model):
@@ -123,6 +123,9 @@ class SlugifyModel(models.Model):
     * max_iterations - how many iterations to search for an open slug before raising IntegrityError, default 1000
     * slug_separator - the character to put in place of spaces and other non url friendly characters, default '-'
     '''
+
+    class Meta:
+        abstract = True
 
     def save(self, *args, **kwargs):
 
@@ -167,9 +170,6 @@ class SlugifyModel(models.Model):
 
         super(SlugifyModel, self).save(*args, **kwargs)
 
-    class Meta:
-        abstract = True
-
 
 class TimestampModel(models.Model):
     date_created = models.DateTimeField(
@@ -191,6 +191,9 @@ class TrackedFieldModel(models.Model):
     # Fields to be 'listened' to for changes.
     tracked_fields = []
 
+    class Meta:
+        abstract = True
+
     def __init__(self, *args, **kwargs):
         super(TrackedFieldModel, self).__init__(*args, **kwargs)
         self.init_tracked_fields()
@@ -210,13 +213,13 @@ class TrackedFieldModel(models.Model):
             orig_value = getattr(self, "_original_{0}".format(field))
             return value != orig_value
 
-    class Meta:
-        abstract = True
-
 
 class TranslationModel(ParentModel, LanguageModel):
 
     objects = TranslationManager()
+
+    class Meta:
+        abstract = True
 
     @property
     def translations(self):
@@ -259,9 +262,6 @@ class TranslationModel(ParentModel, LanguageModel):
     def get_translation(self, language):
         translation = self.translations.filter(language=language).first()
         return translation
-
-    class Meta:
-        abstract = True
 
 
 class UserstampModel(models.Model):

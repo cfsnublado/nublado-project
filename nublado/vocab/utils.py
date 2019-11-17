@@ -62,7 +62,7 @@ def export_vocab_source(request=None, vocab_source=None):
         if vocab_source.vocab_contexts.count():
             vocab_source_dict["vocab_contexts"] = []
 
-            for vocab_context in vocab_source.vocab_contexts.all():
+            for vocab_context in vocab_source.vocab_contexts.all().order_by("date_created"):
                 vocab_context_serializer = VocabContextSerializer(
                     vocab_context,
                     context={"request": request}

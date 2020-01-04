@@ -1,4 +1,3 @@
-from betterforms.multiform import MultiModelForm
 from django import forms
 from django.utils.translation import ugettext_lazy as _
 
@@ -125,10 +124,3 @@ class ProfileUpdateForm(forms.ModelForm):
     class Meta:
         model = Profile
         fields = ['about']
-
-
-class ProfileUpdateMultiForm(MultiModelForm):
-    form_classes = {
-        'user': ProfileUserUpdateForm,
-        'profile': ProfileUpdateForm,
-    }

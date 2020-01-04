@@ -27,22 +27,22 @@ app_name = "app"
 router = DefaultRouter()
 
 # users
-router.register("user", UserViewSet, base_name="user")
-router.register("profile", ProfileViewSet, base_name="profile")
+router.register("user", UserViewSet, basename="user")
+router.register("profile", ProfileViewSet, basename="profile")
 # vocab
-router.register("entry", VocabEntryViewSet, base_name="vocab-entry")
-router.register("source", VocabSourceViewSet, base_name="vocab-source")
-router.register("vocab-context", VocabContextViewSet, base_name="vocab-context")
-router.register("vocab-context-entry", VocabContextEntryViewSet, base_name="vocab-context-entry")
+router.register("entry", VocabEntryViewSet, basename="vocab-entry")
+router.register("source", VocabSourceViewSet, basename="vocab-source")
+router.register("vocab-context", VocabContextViewSet, basename="vocab-context")
+router.register("vocab-context-entry", VocabContextEntryViewSet, basename="vocab-context-entry")
 
 vocab_context_router = NestedSimpleRouter(router, "source", lookup="vocab_source")
-vocab_context_router.register("vocab-context", NestedVocabContextViewSet, base_name="nested-vocab-context")
+vocab_context_router.register("vocab-context", NestedVocabContextViewSet, basename="nested-vocab-context")
 
 vocab_entry_context_router = NestedSimpleRouter(router, "vocab-context", lookup="vocab_context")
 vocab_entry_context_router.register(
     "vocab-context-entry",
     NestedVocabContextEntryViewSet,
-    base_name="nested-vocab-context-entry"
+    basename="nested-vocab-context-entry"
 )
 
 vocab_source_entry_list = VocabSourceEntryViewSet.as_view({"get": "list"})

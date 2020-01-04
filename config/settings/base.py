@@ -2,8 +2,6 @@ import os
 import sys
 from pathlib import Path
 
-import yaml
-
 from django.core.exceptions import ImproperlyConfigured
 from django.utils.translation import ugettext_lazy as _
 
@@ -64,6 +62,7 @@ LOCAL_APPS = [
     "core",
     "security",
     "vocab",
+    "social_django",
 ]
 
 THIRD_PARTY_APPS = [
@@ -128,6 +127,11 @@ TEMPLATES = [
         },
     },
 ]
+
+AUTHENTICATION_BACKENDS = (
+    "social_core.backends.google.GoogleOAuth2",
+    "django.contrib.auth.backends.ModelBackend",
+)
 
 # Oxford API
 OXFORD_API_ID = os.environ["OXFORD_API_ID"]

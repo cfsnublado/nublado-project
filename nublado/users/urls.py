@@ -4,7 +4,7 @@ from .views import (
     ProfileDetailView,
     UserForgotPasswordRequestView, UserForgotPasswordResetView
 )
-from .views_auth import ProfileUpdateView, UserPasswordResetView
+from .views_auth import UserPasswordResetView
 
 app_name = 'users'
 
@@ -23,11 +23,6 @@ urlpatterns = [
         r'^forgot-password-reset/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})/$',
         UserForgotPasswordResetView.as_view(),
         name='user_forgot_password_reset'
-    ),
-    path(
-        'update/<slug:username>/',
-        ProfileUpdateView.as_view(),
-        name='profile_update'
     ),
     path(
         'update/<slug:username>/password-reset/',

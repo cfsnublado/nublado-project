@@ -15,7 +15,6 @@ from django.core.files.base import File
 from django.core.serializers.json import DjangoJSONEncoder
 from django.template import loader
 from django.urls import reverse
-from django.utils import six
 from django.utils.encoding import force_bytes, force_text
 from django.utils.functional import Promise, keep_lazy
 from django.utils.http import urlsafe_base64_encode
@@ -101,7 +100,7 @@ class FuzzyInt(int):
 
 
 # Application utilities
-@keep_lazy(six.text_type)
+@keep_lazy(str)
 def format_lazy(string, *args, **kwargs):
     return string.format(*args, **kwargs)
 

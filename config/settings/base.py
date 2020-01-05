@@ -31,10 +31,13 @@ SECRET_KEY = get_env_variable("DJANGO_SECRET_KEY")
 # Custom User model
 AUTH_USER_MODEL = "users.User"
 
-# Authentication defaults
-LOGIN_URL = "security:login"
+# Authentication details
+LOGIN_URL = "/auth/login/google-oauth2/"
 LOGIN_REDIRECT_URL = PROJECT_AUTH_HOME_URL
 LOGOUT_REDIRECT_URL = PROJECT_HOME_URL
+SOCIAL_AUTH_URL_NAMESPACE = "social"
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = get_env_variable("SOCIAL_AUTH_GOOGLE_OAUTH2_KEY")
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = get_env_variable("SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET")
 
 MEDIA_ROOT = PROJECT_ROOT / "media"
 MEDIA_URL = "/media/"

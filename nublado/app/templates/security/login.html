@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load staticfiles %}
+{% load static %}
 {% load core_extras %}
 {% load widget_tweaks %}
 {% load i18n %}
@@ -78,6 +78,10 @@ novalidate>
 
 <div style="margin-top: 20px;">
 <a href="{% url 'users:user_password_reset_request' %}">{% trans "msg_forgot_password_q" %}</a>
+</div>
+
+<div style="margin-top: 20px;">
+<a href="{% url 'social:begin' 'google-oauth2' %}">{% trans "msg_login_google" %}</a>
 </div>
 
 </div>

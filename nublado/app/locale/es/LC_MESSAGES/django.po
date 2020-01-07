@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-11-05 08:33-0800\n"
+"POT-Creation-Date: 2020-01-07 15:04-0800\n"
 "PO-Revision-Date: 2018-11-28 21:16-0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -18,12 +18,12 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 2.0.6\n"
 
-#: config/settings/base.py:97 nublado/core/tests/test_models.py:63
-#: nublado/core/tests/test_models.py:67 nublado/core/tests/test_models.py:70
+#: config/settings/base.py:114 nublado/core/tests/test_models.py:79
+#: nublado/core/tests/test_models.py:83 nublado/core/tests/test_models.py:86
 msgid "English"
 msgstr "English"
 
-#: config/settings/base.py:98 nublado/core/tests/test_models.py:70
+#: config/settings/base.py:115 nublado/core/tests/test_models.py:86
 msgid "Spanish"
 msgstr "Español"
 
@@ -39,7 +39,7 @@ msgstr ""
 msgid "label_invite_status_declined"
 msgstr ""
 
-#: nublado/core/models.py:39 nublado/core/models.py:108
+#: nublado/core/models.py:39
 msgid "label_status"
 msgstr ""
 
@@ -51,27 +51,15 @@ msgstr ""
 msgid "label_language"
 msgstr "Idioma"
 
-#: nublado/core/models.py:103
-msgid "status_archived"
-msgstr ""
-
-#: nublado/core/models.py:104
-msgid "status_draft"
-msgstr ""
-
-#: nublado/core/models.py:105
-msgid "status_published"
-msgstr ""
-
-#: nublado/core/models.py:203
+#: nublado/core/models.py:176
 msgid "label_date_created"
 msgstr ""
 
-#: nublado/core/models.py:208
+#: nublado/core/models.py:181
 msgid "label_date_updated"
 msgstr ""
 
-#: nublado/core/models.py:259
+#: nublado/core/models.py:238
 msgid "validation_translation_languages_equal"
 msgstr ""
 
@@ -86,8 +74,8 @@ msgstr ""
 msgid "validation_user_name_characters"
 msgstr ""
 
-#: nublado/core/validation.py:22 nublado/users/forms.py:25
-#: nublado/users/forms.py:106 nublado/users/tests/test_api.py:193
+#: nublado/core/validation.py:22 nublado/users/forms.py:24
+#: nublado/users/forms.py:105 nublado/users/tests/test_api.py:193
 #: nublado/users/tests/test_forms.py:37 nublado/users/tests/test_models.py:136
 #: nublado/users/tests/test_serializers.py:190
 msgid "validation_email_format"
@@ -131,10 +119,10 @@ msgstr ""
 #: nublado/security/tests/test_forms.py:37
 #: nublado/security/tests/test_forms.py:42
 #: nublado/security/tests/test_views.py:120
-#: nublado/security/tests/test_views.py:121 nublado/users/forms.py:19
-#: nublado/users/forms.py:23 nublado/users/forms.py:28
-#: nublado/users/forms.py:31 nublado/users/forms.py:49
-#: nublado/users/forms.py:83 nublado/users/forms.py:105
+#: nublado/security/tests/test_views.py:121 nublado/users/forms.py:18
+#: nublado/users/forms.py:22 nublado/users/forms.py:27
+#: nublado/users/forms.py:30 nublado/users/forms.py:48
+#: nublado/users/forms.py:82 nublado/users/forms.py:104
 #: nublado/users/tests/test_api.py:144 nublado/users/tests/test_api.py:145
 #: nublado/users/tests/test_api.py:146 nublado/users/tests/test_forms.py:33
 #: nublado/users/tests/test_forms.py:87 nublado/users/tests/test_forms.py:153
@@ -149,7 +137,7 @@ msgstr ""
 msgid "validation_field_required"
 msgstr "Este campo es obligatorio."
 
-#: nublado/security/forms.py:15 nublado/users/forms.py:46
+#: nublado/security/forms.py:15 nublado/users/forms.py:45
 msgid "label_password"
 msgstr ""
 
@@ -168,44 +156,44 @@ msgstr ""
 msgid "label_user_config"
 msgstr ""
 
-#: nublado/users/forms.py:20
+#: nublado/users/forms.py:19
 msgid "validation_username_unique"
 msgstr ""
 
-#: nublado/users/forms.py:24 nublado/users/models.py:30
+#: nublado/users/forms.py:23 nublado/users/models.py:30
 #: nublado/users/tests/test_models.py:123
 msgid "validation_email_unique"
 msgstr ""
 
-#: nublado/users/forms.py:55
+#: nublado/users/forms.py:54
 msgid "label_password_confirm"
 msgstr ""
 
-#: nublado/users/forms.py:74 nublado/users/serializers.py:75
+#: nublado/users/forms.py:73 nublado/users/serializers.py:75
 #: nublado/users/tests/test_forms.py:101 nublado/users/tests/test_forms.py:168
 #: nublado/users/tests/test_serializers.py:148
 msgid "validation_password_match"
 msgstr ""
 
-#: nublado/users/forms.py:80
+#: nublado/users/forms.py:79
 msgid "label_current_password"
 msgstr "Contraseña actual"
 
-#: nublado/users/forms.py:89
+#: nublado/users/forms.py:88
 msgid "label_new_password"
 msgstr "Nueva contraseña"
 
-#: nublado/users/forms.py:90
+#: nublado/users/forms.py:89
 msgid "label_new_password_confirm"
 msgstr "Confirmar nueva contraseña"
 
-#: nublado/users/forms.py:95 nublado/users/tests/test_forms.py:174
+#: nublado/users/forms.py:94 nublado/users/tests/test_forms.py:174
 #, fuzzy
 #| msgid "validation_invalid_login"
 msgid "validation_password_invalid"
 msgstr "Login inválido"
 
-#: nublado/users/forms.py:101 nublado/users/models.py:26
+#: nublado/users/forms.py:100 nublado/users/models.py:26
 msgid "label_email"
 msgstr "Correo electrónico"
 
@@ -241,11 +229,17 @@ msgstr "Usuario"
 msgid "label_profile_about"
 msgstr ""
 
-#: nublado/users/models.py:97 nublado/app/templates/includes/_user_nav.html:45
+#: nublado/users/models.py:92
+#, fuzzy
+#| msgid "link_gravatar_change"
+msgid "label_avatar_url"
+msgstr "Editar imagen de gravatar"
+
+#: nublado/users/models.py:101
 msgid "label_profile"
 msgstr "Perfil"
 
-#: nublado/users/models.py:98
+#: nublado/users/models.py:102
 msgid "label_profile_plural"
 msgstr ""
 
@@ -265,7 +259,7 @@ msgstr "Gracias. Un correo ha sido enviado para cambiar tu contraseña."
 msgid "user_password_reset_success_msg"
 msgstr ""
 
-#: nublado/users/views_auth.py:27
+#: nublado/users/views_auth.py:26
 msgid "message_password_reset_success"
 msgstr "La contraseña de usuario ha sido cambiada."
 
@@ -297,11 +291,11 @@ msgstr "Este campo es obligatorio."
 msgid "label_entry"
 msgstr "Entrada"
 
-#: nublado/vocab/models.py:62 nublado/vocab/models.py:113
+#: nublado/vocab/models.py:62 nublado/vocab/models.py:122
 msgid "label_description"
 msgstr "Descripción"
 
-#: nublado/vocab/models.py:66 nublado/vocab/models.py:122
+#: nublado/vocab/models.py:66 nublado/vocab/models.py:131
 #, fuzzy
 #| msgid "label_login"
 msgid "label_slug"
@@ -317,91 +311,91 @@ msgstr "Entrada"
 msgid "label_vocab_entry_plural"
 msgstr "Tu vocabulario"
 
-#: nublado/vocab/models.py:98
+#: nublado/vocab/models.py:107
 msgid "label_source_book"
 msgstr "Libro"
 
-#: nublado/vocab/models.py:99
+#: nublado/vocab/models.py:108
 msgid "label_source_website"
 msgstr "Website"
 
-#: nublado/vocab/models.py:100
+#: nublado/vocab/models.py:109
 msgid "label_source_blog"
 msgstr "Blog"
 
-#: nublado/vocab/models.py:101
+#: nublado/vocab/models.py:110
 msgid "label_source_created"
 msgstr "Creada"
 
-#: nublado/vocab/models.py:102
+#: nublado/vocab/models.py:111
 msgid "label_source_other"
 msgstr "Otro"
 
-#: nublado/vocab/models.py:109
+#: nublado/vocab/models.py:118
 msgid "label_name"
 msgstr "Nombre"
 
-#: nublado/vocab/models.py:117 nublado/vocab/models.py:289
+#: nublado/vocab/models.py:126 nublado/vocab/models.py:298
 msgid "label_vocab_source_type"
 msgstr "Tipo de fuente"
 
-#: nublado/vocab/models.py:133
+#: nublado/vocab/models.py:138
 #, fuzzy
 #| msgid "label_vocab_tag_desc"
 msgid "label_vocab_source"
 msgstr "Tu vocabulario"
 
-#: nublado/vocab/models.py:134
+#: nublado/vocab/models.py:139
 #, fuzzy
 #| msgid "label_vocab_tag_desc"
 msgid "label_vocab_source_plural"
 msgstr "Tu vocabulario"
 
-#: nublado/vocab/models.py:156 nublado/vocab/models.py:261
+#: nublado/vocab/models.py:165 nublado/vocab/models.py:270
 msgid "label_content"
 msgstr "Contenido"
 
-#: nublado/vocab/models.py:187
+#: nublado/vocab/models.py:169
 #, fuzzy
 #| msgid "label_vocab_tag_desc"
 msgid "label_vocab_context"
 msgstr "Tu vocabulario"
 
-#: nublado/vocab/models.py:188
+#: nublado/vocab/models.py:170
 #, fuzzy
 #| msgid "label_vocab_tag_desc"
 msgid "label_vocab_context_plural"
 msgstr "Tu vocabulario"
 
-#: nublado/vocab/models.py:243
+#: nublado/vocab/models.py:218
 #, fuzzy
 #| msgid "label_vocab_tag_desc"
 msgid "label_vocab_entry_context"
 msgstr "Tu vocabulario"
 
-#: nublado/vocab/models.py:244
+#: nublado/vocab/models.py:219
 msgid "label_vocab_entry_context_plural"
 msgstr ""
 
-#: nublado/vocab/models.py:277
+#: nublado/vocab/models.py:286
 #, fuzzy
 #| msgid "label_vocab_dashboard"
 msgid "label_json_data_oxford"
 msgstr "Escritorio de vocabulario"
 
-#: nublado/vocab/models.py:278
+#: nublado/vocab/models.py:287
 #, fuzzy
 #| msgid "label_source_website"
 msgid "label_json_data_miriam_webster"
 msgstr "Website"
 
-#: nublado/vocab/models.py:279
+#: nublado/vocab/models.py:288
 #, fuzzy
 #| msgid "label_done_editing"
 msgid "label_json_data_colins"
 msgstr "Terminar edición"
 
-#: nublado/vocab/models.py:280
+#: nublado/vocab/models.py:289
 #, fuzzy
 #| msgid "label_update"
 msgid "label_json_data_other"
@@ -486,30 +480,10 @@ msgid "msg_bilingual_desc"
 msgstr "Anota y etiqueta vocabulario en inglés y español."
 
 #: nublado/app/templates/home.html:60
-msgid "msg_python_cool"
-msgstr "genial.py"
-
-#: nublado/app/templates/home.html:64
-msgid "msg_python_cool_desc"
-msgstr "Se desarrolla este proyecto con el entorno de Django."
-
-#: nublado/app/templates/home.html:74
-#, fuzzy
-#| msgid "msg_python_cool"
-msgid "msg_vue_cool"
-msgstr "genial.py"
-
-#: nublado/app/templates/home.html:78
-#, fuzzy
-#| msgid "msg_python_cool_desc"
-msgid "msg_vue_cool_desc"
-msgstr "Se desarrolla este proyecto con el entorno de Django."
-
-#: nublado/app/templates/home.html:88
 msgid "msg_import_vocab_markdown"
 msgstr "Markdown"
 
-#: nublado/app/templates/home.html:92
+#: nublado/app/templates/home.html:64
 msgid "msg_import_vocab_markdown_desc"
 msgstr ""
 "Crea e importa fuentes, contextos, y vocabulario etiquetado con la facilidad "
@@ -532,7 +506,7 @@ msgstr "Sí"
 msgid "label_login"
 msgstr "Iniciar sesión"
 
-#: nublado/app/templates/includes/_user_nav.html:57
+#: nublado/app/templates/includes/_user_nav.html:45
 msgid "label_logout"
 msgstr "Salir"
 
@@ -557,6 +531,10 @@ msgstr "Contraseña"
 msgid "msg_forgot_password_q"
 msgstr "¿Olvidaste tu contraseña?"
 
+#: nublado/app/templates/security/login.html:89
+msgid "msg_login_google"
+msgstr "Iniciar sesión en Google"
+
 #: nublado/app/templates/users/auth/password_reset.html:8
 msgid "page_user_password_reset_title"
 msgstr "Cambiar contraseña de usuario"
@@ -577,39 +555,6 @@ msgstr "Confirmar nueva contraseña"
 #: nublado/app/templates/users/forgot_password_reset.html:54
 msgid "label_change_password"
 msgstr "Cambiar contraseña"
-
-#: nublado/app/templates/users/auth/profile_update.html:8
-msgid "page_edit_profile_title"
-msgstr "Actualizar perfil"
-
-#: nublado/app/templates/users/auth/profile_update.html:21
-#, fuzzy
-#| msgid "link_gravatar_change"
-msgid "label_gravatar_change"
-msgstr "Editar imagen de gravatar"
-
-#: nublado/app/templates/users/auth/profile_update.html:42
-msgid "placeholder_first_name"
-msgstr "Nombre de pila"
-
-#: nublado/app/templates/users/auth/profile_update.html:59
-msgid "placeholder_last_name"
-msgstr "Apellido"
-
-#: nublado/app/templates/users/auth/profile_update.html:76
-#: nublado/app/templates/users/password_reset_request.html:38
-msgid "placeholder_email"
-msgstr "Contraseña"
-
-#: nublado/app/templates/users/auth/profile_update.html:93
-msgid "placeholder_profile_about"
-msgstr "Escribe un poco acerca de ti."
-
-#: nublado/app/templates/users/auth/profile_update.html:110
-#: nublado/app/templates/vocab/auth/vocab_entry_update.html:44
-#: nublado/app/templates/vocab/auth/vocab_source_update.html:35
-msgid "label_update"
-msgstr "Actualizar"
 
 #: nublado/app/templates/users/forgot_password_reset.html:7
 #, fuzzy
@@ -644,6 +589,10 @@ msgid "msg_user_reset_password_instructions"
 msgstr ""
 "Ingresa el correo de tu cuenta y se te enviará un link para cambiar tu "
 "contraseña."
+
+#: nublado/app/templates/users/password_reset_request.html:38
+msgid "placeholder_email"
+msgstr "Contraseña"
 
 #: nublado/app/templates/users/password_reset_request.html:45
 msgid "label_send_email"
@@ -761,6 +710,11 @@ msgstr "Editar entrada"
 #: nublado/app/templates/vocab/auth/vocab_entry_update.html:13
 msgid "header_edit_vocab_entry"
 msgstr "Editar entrada"
+
+#: nublado/app/templates/vocab/auth/vocab_entry_update.html:44
+#: nublado/app/templates/vocab/auth/vocab_source_update.html:35
+msgid "label_update"
+msgstr "Actualizar"
 
 #: nublado/app/templates/vocab/auth/vocab_entry_update.html:59
 #: nublado/app/templates/vocab/auth/vocab_source_update.html:50
@@ -936,6 +890,31 @@ msgstr "Fuentes"
 #: nublado/app/templates/vocab/vocab_sources.html:20
 msgid "label_search_sources"
 msgstr "Buscar fuentes"
+
+#~ msgid "msg_python_cool_desc"
+#~ msgstr "Se desarrolla este proyecto con el entorno de Django."
+
+#, fuzzy
+#~| msgid "msg_python_cool"
+#~ msgid "msg_vue_cool"
+#~ msgstr "genial.py"
+
+#, fuzzy
+#~| msgid "msg_python_cool_desc"
+#~ msgid "msg_vue_cool_desc"
+#~ msgstr "Se desarrolla este proyecto con el entorno de Django."
+
+#~ msgid "page_edit_profile_title"
+#~ msgstr "Actualizar perfil"
+
+#~ msgid "placeholder_first_name"
+#~ msgstr "Nombre de pila"
+
+#~ msgid "placeholder_last_name"
+#~ msgstr "Apellido"
+
+#~ msgid "placeholder_profile_about"
+#~ msgstr "Escribe un poco acerca de ti."
 
 #~ msgid "label_show_definitions"
 #~ msgstr "Mostrar definiciones"

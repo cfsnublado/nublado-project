@@ -81,7 +81,13 @@ novalidate>
 </div>
 
 <div style="margin-top: 20px;">
-<a href="{% url 'social:begin' 'google-oauth2' %}">{% trans "msg_login_google" %}</a>
+<a
+class="button"
+href="{% url 'social:begin' 'google-oauth2' %}"
+>
+<span class="icon"><i class="fab fa-google"></i></span>
+<span>{% trans "msg_login_google" %}</span>
+</a>
 </div>
 
 </div>

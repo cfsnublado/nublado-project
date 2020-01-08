@@ -489,7 +489,7 @@ const NavbarDropdown = {
 
     </a>
 
-    <div class="navbar-dropdown is-right">
+    <div class="navbar-dropdown is-right" style="min-width: 250px;">
 
     <slot name="dropdown-content">
       Put something here, ideally a list of menu items.

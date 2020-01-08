@@ -17,12 +17,18 @@
 
   <template slot="dropdown-label">
     {% profile_image user 40 "circle" %}
-    <span class="navbar-username" style="margin-left: 10px;">{{ user.username }}</span>
   </template>
 
   <template slot="dropdown-content">
 
   {% block navbar_menu_items %}
+
+    <div class="navbar-item">
+    {% profile_image user 40 "circle" %}
+    <span class="navbar-username" style="margin-left: 10px;">{{ user.username }}</span>
+    </div>
+
+    <hr class="navbar-divider">
 
     <a class="navbar-item" href="{% url 'app:home' %}">
 

@@ -146,28 +146,11 @@ href="{% url 'vocab:vocab_sources' %}"
 </li>
 </ul>
 
-{% if user.is_authenticated and not request.session_obj %}
+{% if user.is_authenticated and 'session_obj' not in request.session %}
 
   <ul class="menu-list">
   <li class="sidebar-divider"></li>
-  <li>
-  <a 
-  id="sidebar-new-vocab-entry"
-  class="{% block vocab_entry_create_link_active %}{% endblock vocab_entry_create_link_active %}"
-  href="{% url 'vocab:vocab_entry_create' %}"
-  >
-  <i class="fas fa-fw fa-plus menu-icon"></i> {% trans "label_new_entry" %}
-  </a>
-  </li>
-  <li>
-  <a 
-  id="sidebar-new-vocab-source"
-  class="{% block vocab_source_create_link_active %}{% endblock vocab_source_create_link_active %}"
-  href="{% url 'vocab:vocab_source_create' %}"
-  >
-  <i class="fas fa-fw fa-plus menu-icon"></i> {% trans "label_new_source" %}
-  </a>
-  </li>
+
   </ul>
 
 {% endif %}

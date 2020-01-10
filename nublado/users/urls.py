@@ -6,27 +6,27 @@ from .views import (
 )
 from .views_auth import UserPasswordResetView
 
-app_name = 'users'
+app_name = "users"
 
 urlpatterns = [
     path(
-        '<slug:username>',
+        "<slug:username>",
         ProfileDetailView.as_view(),
-        name='profile_view'
+        name="profile_view"
     ),
     path(
-        'forgot-password/',
+        "forgot-password/",
         UserForgotPasswordRequestView.as_view(),
-        name='user_password_reset_request'
+        name="user_password_reset_request"
     ),
     re_path(
-        r'^forgot-password-reset/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})/$',
+        r"^forgot-password-reset/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})/$",
         UserForgotPasswordResetView.as_view(),
-        name='user_forgot_password_reset'
+        name="user_forgot_password_reset"
     ),
     path(
-        'update/<slug:username>/password-reset/',
+        "update/<slug:username>/password-reset/",
         UserPasswordResetView.as_view(),
-        name='user_password_reset'
+        name="user_password_reset"
     )
 ]

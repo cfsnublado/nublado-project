@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-07 15:04-0800\n"
+"POT-Creation-Date: 2020-01-09 17:45-0800\n"
 "PO-Revision-Date: 2018-11-28 21:15-0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -47,7 +47,7 @@ msgstr ""
 msgid "validation_invite_sender_receiver_equal"
 msgstr ""
 
-#: nublado/core/models.py:61 nublado/app/templates/base.html:184
+#: nublado/core/models.py:61 nublado/app/templates/base.html:172
 msgid "label_language"
 msgstr "Language"
 
@@ -425,16 +425,15 @@ msgstr "500"
 msgid "error_500_message"
 msgstr "Server error"
 
-#: nublado/app/templates/base.html:114
+#: nublado/app/templates/base.html:119
 msgid "label_general"
 msgstr "General"
 
-#: nublado/app/templates/base.html:123
-#: nublado/app/templates/includes/_user_nav.html:33
+#: nublado/app/templates/base.html:128
 msgid "label_home"
 msgstr "Home"
 
-#: nublado/app/templates/base.html:131
+#: nublado/app/templates/base.html:136
 #: nublado/app/templates/vocab/includes/_vocab_breadcrumbs.html:8
 #: nublado/app/templates/vocab/includes/_vocab_breadcrumbs.html:48
 #: nublado/app/templates/vocab/includes/_vocab_breadcrumbs.html:65
@@ -444,18 +443,11 @@ msgstr "Home"
 msgid "label_vocabulary"
 msgstr "Vocabulary"
 
-#: nublado/app/templates/base.html:139
+#: nublado/app/templates/base.html:144
+#: nublado/app/templates/includes/_user_nav.html:40
 #: nublado/app/templates/vocab/includes/_vocab_breadcrumbs.html:28
 msgid "label_sources"
 msgstr "Sources"
-
-#: nublado/app/templates/base.html:154
-msgid "label_new_entry"
-msgstr "New entry"
-
-#: nublado/app/templates/base.html:163
-msgid "label_new_source"
-msgstr "New source"
 
 #: nublado/app/templates/home.html:6
 msgid "page_home_title"
@@ -504,7 +496,15 @@ msgstr "Yes"
 msgid "label_login"
 msgstr "Log in"
 
-#: nublado/app/templates/includes/_user_nav.html:45
+#: nublado/app/templates/includes/_user_nav.html:52
+msgid "label_new_source"
+msgstr "New source"
+
+#: nublado/app/templates/includes/_user_nav.html:64
+msgid "label_new_entry"
+msgstr "New entry"
+
+#: nublado/app/templates/includes/_user_nav.html:73
 msgid "label_logout"
 msgstr "Log out"
 
@@ -739,6 +739,19 @@ msgstr ""
 msgid "page_vocab_source_edit_title"
 msgstr "Edit source"
 
+#: nublado/app/templates/vocab/auth/vocab_sources.html:7
+msgid "page_your_vocab_sources_title"
+msgstr "Your sources"
+
+#: nublado/app/templates/vocab/auth/vocab_sources.html:14
+msgid "label_your_vocab_sources"
+msgstr "Your sources"
+
+#: nublado/app/templates/vocab/auth/vocab_sources.html:20
+#: nublado/app/templates/vocab/vocab_sources.html:20
+msgid "label_search_sources"
+msgstr "Search sources"
+
 #: nublado/app/templates/vocab/auth/vocab_user_dashboard.html:6
 msgid "page_vocab_user_dashboard_title"
 msgstr "Vocabulary dashboard"
@@ -880,10 +893,6 @@ msgstr "Sources"
 #: nublado/app/templates/vocab/vocab_sources.html:14
 msgid "label_vocab_sources"
 msgstr "Sources"
-
-#: nublado/app/templates/vocab/vocab_sources.html:20
-msgid "label_search_sources"
-msgstr "Search sources"
 
 #~ msgid "msg_python_cool_desc"
 #~ msgstr "This project is developed with the Django framework."

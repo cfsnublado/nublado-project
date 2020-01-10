@@ -13,7 +13,7 @@ help_texts = {
 
 # only letters (Spanish characters included) and single spaces.
 name_characters = RegexValidator(
-    regex=r'^([a-zA-ZáéíóúüñÁÉÍÓÚÜÑ]+ ?)+$',
+    regex=r'^([a-zA-ZáéíóúüñÁÉÍÓÚÜÑ.]+ ?)+$',
     message=_('validation_user_name_characters'),
     code='characters'
 )

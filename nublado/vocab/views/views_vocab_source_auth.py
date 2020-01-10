@@ -3,7 +3,8 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import get_object_or_404
 from django.urls import reverse
 from django.views.generic import (
-    CreateView, DeleteView, UpdateView, View
+    CreateView, DeleteView, TemplateView,
+    UpdateView, View
 )
 
 from core.views import (
@@ -16,32 +17,18 @@ from ..models import (
 )
 from ..utils import export_vocab_source
 from .views_mixins import (
-    VocabSourceMixin,
-    VocabSourcePermissionMixin, VocabSourceSessionMixin
+    VocabSourceMixin, VocabSourcePermissionMixin,
+    VocabSourceSearchMixin, VocabSourceSessionMixin
 )
 
 APP_NAME = apps.get_app_config("vocab").name
 
 
-class VocabSourceExportJsonView(
-    LoginRequiredMixin, VocabSourceMixin,
-    VocabSourceSessionMixin, VocabSourcePermissionMixin,
-    JsonAttachmentMixin, View
+class VocabSourcesView(
+    LoginRequiredMixin, ObjectSessionMixin,
+    VocabSourceSearchMixin, TemplateView
 ):
-    content_type = "application/json"
-    json_indent = 2
-
-    def get_file_content(self):
-        vocab_source = get_object_or_404(
-            VocabSource.objects.prefetch_related(
-                "creator",
-                "vocab_contexts__vocabcontextentry_set__vocab_entry"
-            ),
-            id=self.kwargs["vocab_source_pk"]
-        )
-        self.filename = "{0}.json".format(vocab_source.slug)
-        data = export_vocab_source(self.request, vocab_source)
-        return data
+    template_name = "{0}/auth/vocab_sources.html".format(APP_NAME)
 
 
 class VocabSourceCreateView(
@@ -55,6 +42,7 @@ class VocabSourceCreateView(
     def get_form_kwargs(self):
         kwargs = super(VocabSourceCreateView, self).get_form_kwargs()
         kwargs["creator"] = self.request.user
+
         return kwargs
 
     def get_success_url(self):
@@ -102,3 +90,25 @@ class VocabSourceDeleteView(
 
     def get_success_url(self):
         return reverse("vocab:vocab_sources")
+
+
+class VocabSourceExportJsonView(
+    LoginRequiredMixin, VocabSourceMixin,
+    VocabSourceSessionMixin, VocabSourcePermissionMixin,
+    JsonAttachmentMixin, View
+):
+    content_type = "application/json"
+    json_indent = 2
+
+    def get_file_content(self):
+        vocab_source = get_object_or_404(
+            VocabSource.objects.prefetch_related(
+                "creator",
+                "vocab_contexts__vocabcontextentry_set__vocab_entry"
+            ),
+            id=self.kwargs["vocab_source_pk"]
+        )
+        self.filename = "{0}.json".format(vocab_source.slug)
+        data = export_vocab_source(self.request, vocab_source)
+
+        return data

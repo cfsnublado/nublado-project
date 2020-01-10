@@ -18,7 +18,7 @@ from .views.views_vocab_source import (
 )
 from .views.views_vocab_source_auth import (
     VocabSourceCreateView, VocabSourceDeleteView, VocabSourceExportJsonView,
-    VocabSourceUpdateView
+    VocabSourceUpdateView, VocabSourcesView as VocabSourcesAuthView
 )
 from .views.views_vocab_autocomplete import (
     VocabEntryAutocompleteView,
@@ -41,7 +41,16 @@ auth_urls = [
         VocabEntryUpdateView.as_view(),
         name="vocab_entry_update"
     ),
-    path("entry/<int:vocab_entry_pk>/delete/", VocabEntryDeleteView.as_view(), name="vocab_entry_delete"),
+    path(
+        "entry/<int:vocab_entry_pk>/delete/",
+        VocabEntryDeleteView.as_view(),
+        name="vocab_entry_delete"
+    ),
+    path(
+        "sources/",
+        VocabSourcesAuthView.as_view(),
+        name="auth_vocab_sources"
+    ),
     path(
         "source/<int:vocab_source_pk>-<slug:vocab_source_slug>/update/",
         VocabSourceUpdateView.as_view(),

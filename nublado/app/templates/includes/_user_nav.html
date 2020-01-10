@@ -30,26 +30,47 @@
 
     <hr class="navbar-divider">
 
-    <a class="navbar-item" href="{% url 'app:home' %}">
-
+    <a 
+    class="navbar-item"
+    href="{% url 'vocab:auth_vocab_sources' %}"
+    >
     <span class="user-menu-icon">
-    <i class="fas fa-home fa-fw"></i>
+    <i class="fas fa-fw fa-book-open"></i>
     </span>
+    {% trans "label_sources" %}
+    </a>
 
-    {% trans "label_home" %}
+    <hr class="navbar-divider">
 
+    <a 
+    class="navbar-item"
+    href="{% url 'vocab:vocab_source_create' %}"
+    >
+    <span class="user-menu-icon">
+    <i class="fas fa-fw fa-plus"></i>
+    </span>
+    {% trans "label_new_source" %}
+    </a>
+
+    <hr class="navbar-divider">
+
+    <a 
+    class="navbar-item"
+    href="{% url 'vocab:vocab_entry_create' %}"
+    >
+    <span class="user-menu-icon">
+    <i class="fas fa-fw fa-plus"></i>
+    </span>
+    {% trans "label_new_entry" %}
     </a>
 
     <hr class="navbar-divider">
 
     <a class="navbar-item logout-link" href="{% url 'security:logout' %}">
-
     <span class="user-menu-icon">
     <i class="fas fa-sign-out-alt fa-fw"></i>
     </span>
-
     {% trans "label_logout" %}
-
     </a>
   {% endblock navbar_menu_items %}
 

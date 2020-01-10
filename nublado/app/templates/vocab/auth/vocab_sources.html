@@ -1,0 +1,55 @@
+{% extends "vocab/vocab_base.html" %}
+{% load static %}
+{% load core_extras %}
+{% load i18n %}
+
+{% block title %}
+{% trans "page_your_vocab_sources_title" %}
+{% endblock title %}
+
+{% block vocab_sources_link_active %}is-active{% endblock vocab_sources_link_active %}
+
+{% block page_header %}
+
+<div class="page-header"> {% trans "label_your_vocab_sources" %} </div>
+
+{% endblock page_header %}
+
+{% block content %}
+
+{% trans "label_search_sources" as search_label %}
+{% url "vocab:vocab_source_autocomplete" as autocomplete_url %}
+{% url "vocab:vocab_sources" as search_url %}
+
+<div class="columns">
+<div class="column is-12">
+
+<div class="box" style="margin-bottom: 40px;">
+{% include "includes/vue/_search.html" with comp_name="vocab-source-search" %}
+</div>
+
+</div>
+</div>
+
+<span id="vocab-sources-scroll-top"></span>
+
+{% block vocab_sources %}
+
+{% url "api:vocab-source-list" as vocab_sources_url %}
+{% url "api:vocab-source-detail" 0 as vocab_source_delete_url %}
+{% url "vocab:vocab_source_dashboard" 0 "zzz" as vocab_source_view_url %}
+{% url "vocab:vocab_source_update" 0 "zzz" as vocab_source_edit_url %}
+
+{% include "vocab/includes/vue/_vocab_sources.html" %}
+
+{% endblock vocab_sources %}
+
+{% endblock content %}
+
+{% block modal_content %}
+
+{{ block.super }}
+
+{% include "vocab/includes/_vocab_source_delete_modal.html" with modal_id="delete-vocab-source" modal_name="confirmation-modal" %} 
+
+{% endblock modal_content %}

@@ -12,7 +12,18 @@ v-cloak
 >
 
 <div v-if="vocabSources && vocabSources.length == 0">
+<div>
 {% trans "msg_no_sources" %}
+</div>
+<div>
+<a 
+href="{% url 'vocab:vocab_source_create' %}" 
+class="button is-info" 
+style="margin-top: 20px;"
+>
+{% trans "label_create_source" %}
+</a>
+</div>
 </div>
 
 <vocab-source

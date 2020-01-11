@@ -24,7 +24,9 @@
   {% block navbar_menu_items %}
 
     <div class="navbar-item">
+    <span class="user-nav-avatar">
     {% profile_image user 40 "circle" %}
+    </span>
     <span class="navbar-username" style="margin-left: 10px;">{{ user.username }}</span>
     </div>
 
@@ -37,7 +39,7 @@
     <span class="user-menu-icon">
     <i class="fas fa-fw fa-book-open"></i>
     </span>
-    {% trans "label_sources" %}
+    {% trans "label_your_sources" %}
     </a>
 
     <hr class="navbar-divider">

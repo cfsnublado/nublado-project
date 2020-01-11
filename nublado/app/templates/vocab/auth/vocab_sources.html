@@ -7,8 +7,6 @@
 {% trans "page_your_vocab_sources_title" %}
 {% endblock title %}
 
-{% block vocab_sources_link_active %}is-active{% endblock vocab_sources_link_active %}
-
 {% block page_header %}
 
 <div class="page-header"> {% trans "label_your_vocab_sources" %} </div>
@@ -17,8 +15,8 @@
 
 {% block content %}
 
-{% trans "label_search_sources" as search_label %}
-{% url "vocab:vocab_source_autocomplete" as autocomplete_url %}
+{% trans "label_search_your_sources" as search_label %}
+{% url "vocab:vocab_source_creator_autocomplete" as autocomplete_url %}
 {% url "vocab:vocab_sources" as search_url %}
 
 <div class="columns">
@@ -35,7 +33,7 @@
 
 {% block vocab_sources %}
 
-{% url "api:vocab-source-list" as vocab_sources_url %}
+{% url_set_param "api:vocab-source-list" creator=user.id|stringformat:"s" as vocab_sources_url %}
 {% url "api:vocab-source-detail" 0 as vocab_source_delete_url %}
 {% url "vocab:vocab_source_dashboard" 0 "zzz" as vocab_source_view_url %}
 {% url "vocab:vocab_source_update" 0 "zzz" as vocab_source_edit_url %}

@@ -38,12 +38,17 @@ class VocabSourceViewSet(
     lookup_field = "pk"
     lookup_url_kwarg = "pk"
     serializer_class = VocabSourceSerializer
-    queryset = VocabSource.objects.prefetch_related("vocab_contexts")
+    queryset = VocabSource.objects.select_related("creator").prefetch_related("vocab_contexts")
     permission_classes = [ReadPermission, SourceCreatorPermission]
     pagination_class = SmallPagination
 
     def get_queryset(self):
         qs = super(VocabSourceViewSet, self).get_queryset()
+        creator = self.request.query_params.get("creator", None)
+
+        if creator:
+            qs = qs.filter(creator_id=creator)
+
         qs = qs.order_by("-date_created")
 
         return qs
@@ -95,6 +100,7 @@ class VocabSourceEntryViewSet(APIDefaultsMixin, ListModelMixin, GenericViewSet):
                 many=True,
                 context={"request": request}
             )
+
             return self.get_paginated_response(serializer.data)
         else:
             serializer = VocabSourceEntrySerializer(
@@ -102,6 +108,7 @@ class VocabSourceEntryViewSet(APIDefaultsMixin, ListModelMixin, GenericViewSet):
                 many=True,
                 context={"request": request}
             )
+
             return Response(serializer.data)
 
 

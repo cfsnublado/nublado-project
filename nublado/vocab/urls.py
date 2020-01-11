@@ -22,7 +22,8 @@ from .views.views_vocab_source_auth import (
 )
 from .views.views_vocab_autocomplete import (
     VocabEntryAutocompleteView,
-    VocabSourceAutocompleteView, VocabSourceEntryAutocompleteView
+    VocabSourceAutocompleteView, VocabSourceCreatorAutocompleteView,
+    VocabSourceEntryAutocompleteView
 )
 
 
@@ -103,6 +104,11 @@ urlpatterns = [
         "autocomplete/source/",
         VocabSourceAutocompleteView.as_view(),
         name="vocab_source_autocomplete"
+    ),
+    path(
+        "autocomplete/source/creator/",
+        VocabSourceCreatorAutocompleteView.as_view(),
+        name="vocab_source_creator_autocomplete"
     ),
     path(
         "autocomplete/source/<int:vocab_source_pk>/entry/",

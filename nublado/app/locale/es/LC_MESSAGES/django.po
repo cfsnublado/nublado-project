@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-10 22:11-0800\n"
+"POT-Creation-Date: 2020-01-11 00:29-0800\n"
 "PO-Revision-Date: 2018-11-28 21:16-0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -47,7 +47,7 @@ msgstr ""
 msgid "validation_invite_sender_receiver_equal"
 msgstr ""
 
-#: nublado/core/models.py:61 nublado/app/templates/base.html:176
+#: nublado/core/models.py:61 nublado/app/templates/base.html:195
 msgid "label_language"
 msgstr "Idioma"
 
@@ -427,15 +427,24 @@ msgstr "500"
 msgid "error_500_message"
 msgstr "Error de servidor"
 
-#: nublado/app/templates/base.html:123
+#: nublado/app/templates/base.html:125
+msgid "label_your_menu"
+msgstr "Tu Menú"
+
+#: nublado/app/templates/base.html:135
+#: nublado/app/templates/includes/_user_nav.html:42
+msgid "label_your_sources"
+msgstr "Tus fuentes"
+
+#: nublado/app/templates/base.html:147
 msgid "label_general"
 msgstr "General"
 
-#: nublado/app/templates/base.html:132
+#: nublado/app/templates/base.html:157
 msgid "label_home"
 msgstr "Inicio"
 
-#: nublado/app/templates/base.html:140
+#: nublado/app/templates/base.html:166
 #: nublado/app/templates/vocab/includes/_vocab_breadcrumbs.html:8
 #: nublado/app/templates/vocab/includes/_vocab_breadcrumbs.html:48
 #: nublado/app/templates/vocab/includes/_vocab_breadcrumbs.html:65
@@ -445,7 +454,7 @@ msgstr "Inicio"
 msgid "label_vocabulary"
 msgstr "Vocabulario"
 
-#: nublado/app/templates/base.html:148
+#: nublado/app/templates/base.html:175
 #: nublado/app/templates/vocab/includes/_vocab_breadcrumbs.html:28
 msgid "label_sources"
 msgstr "Fuentes"
@@ -496,10 +505,6 @@ msgstr "Sí"
 #: nublado/app/templates/security/login.html:72
 msgid "label_login"
 msgstr "Iniciar sesión"
-
-#: nublado/app/templates/includes/_user_nav.html:42
-msgid "label_your_sources"
-msgstr "Tus fuentes"
 
 #: nublado/app/templates/includes/_user_nav.html:54
 msgid "label_new_source"
@@ -729,6 +734,7 @@ msgid "page_vocab_source_create_title"
 msgstr "Crear fuente"
 
 #: nublado/app/templates/vocab/auth/vocab_source_create.html:12
+#: nublado/app/templates/vocab/includes/vue/_vocab_sources.html:24
 msgid "label_create_source"
 msgstr "Crear fuente"
 
@@ -752,11 +758,11 @@ msgstr "Editar fuente"
 msgid "page_your_vocab_sources_title"
 msgstr "Tus fuentes"
 
-#: nublado/app/templates/vocab/auth/vocab_sources.html:12
+#: nublado/app/templates/vocab/auth/vocab_sources.html:14
 msgid "label_your_vocab_sources"
 msgstr "Tus fuentes"
 
-#: nublado/app/templates/vocab/auth/vocab_sources.html:18
+#: nublado/app/templates/vocab/auth/vocab_sources.html:20
 msgid "label_search_your_sources"
 msgstr "Buscar tus fuentes"
 
@@ -790,8 +796,8 @@ msgstr "No hay contextos."
 #: nublado/app/templates/vocab/includes/vue/_vocab_entries.html:102
 #: nublado/app/templates/vocab/includes/vue/_vocab_entry_contexts.html:114
 #: nublado/app/templates/vocab/includes/vue/_vocab_entry_contexts.html:119
-#: nublado/app/templates/vocab/includes/vue/_vocab_sources.html:115
-#: nublado/app/templates/vocab/includes/vue/_vocab_sources.html:120
+#: nublado/app/templates/vocab/includes/vue/_vocab_sources.html:126
+#: nublado/app/templates/vocab/includes/vue/_vocab_sources.html:131
 msgid "label_previous"
 msgstr "Anterior"
 
@@ -803,8 +809,8 @@ msgstr "Anterior"
 #: nublado/app/templates/vocab/includes/vue/_vocab_entries.html:139
 #: nublado/app/templates/vocab/includes/vue/_vocab_entry_contexts.html:147
 #: nublado/app/templates/vocab/includes/vue/_vocab_entry_contexts.html:156
-#: nublado/app/templates/vocab/includes/vue/_vocab_sources.html:148
-#: nublado/app/templates/vocab/includes/vue/_vocab_sources.html:157
+#: nublado/app/templates/vocab/includes/vue/_vocab_sources.html:159
+#: nublado/app/templates/vocab/includes/vue/_vocab_sources.html:168
 msgid "label_next"
 msgstr "Siguiente"
 
@@ -828,7 +834,7 @@ msgstr "Ocultar detalles"
 msgid "msg_no_vocab_info"
 msgstr "La información no fue encontrada."
 
-#: nublado/app/templates/vocab/includes/vue/_vocab_sources.html:15
+#: nublado/app/templates/vocab/includes/vue/_vocab_sources.html:16
 msgid "msg_no_sources"
 msgstr "No hay fuentes."
 

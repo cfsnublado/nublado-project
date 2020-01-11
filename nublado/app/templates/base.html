@@ -119,11 +119,36 @@ aria-label="sidebar-trigger"
 
 <div class="menu">
 
+{% if user.is_authenticated %}
+
+  <p class="menu-label">
+  {% trans "label_your_menu" %}
+  </p>
+
+  <ul class="menu-list">
+
+  <li>
+  <a 
+  class="{% block your_sources_link_active %}{% endblock your_sources_link_active %}"
+  href="{% url 'vocab:auth_vocab_sources' %}"
+  >
+  <i class="fas fa-fw fa-book-open menu-icon"></i> {% trans "label_your_sources" %}
+  </a>
+
+  </li>
+
+  <li class="sidebar-divider"></li>
+
+  </ul>
+
+{% endif %}
+
 <p class="menu-label">
 {% trans "label_general" %}
 </p>
 
 <ul class="menu-list">
+
 <li>
 <a 
 class="{% block home_link_active %}{% endblock home_link_active %}"
@@ -132,6 +157,7 @@ href="{% url 'app:home' %}"
 <i class="fas fa-fw fa-home menu-icon"></i> {% trans "label_home" %}
 </a>
 </li>
+
 <li>
 <a 
 class="{% block vocab_entries_link_active %}{% endblock vocab_entries_link_active %}"
@@ -140,6 +166,7 @@ href="{% url 'vocab:vocab_entries' %}"
 <i class="fas fa-fw fa-language menu-icon"></i> {% trans "label_vocabulary" %}
 </a>
 </li>
+
 <li>
 <a 
 class="{% block vocab_sources_link_active %}{% endblock vocab_sources_link_active %}"
@@ -148,16 +175,8 @@ href="{% url 'vocab:vocab_sources' %}"
 <i class="fas fa-fw fa-project-diagram menu-icon"></i> {% trans "label_sources" %}
 </a>
 </li>
+
 </ul>
-
-{% if user.is_authenticated and 'session_obj' not in request.session %}
-
-  <ul class="menu-list">
-  <li class="sidebar-divider"></li>
-
-  </ul>
-
-{% endif %}
 
 </div>
 

@@ -69,6 +69,7 @@ class OxfordAPIEntryView(APIDefaultsMixin, APIView):
         }
         url = self.oxford_entry_url.format(language, entry)
         response = requests.get(url, headers=headers)
+
         if response.status_code == status.HTTP_200_OK:
             response_json = response.json()
             return Response(data=response_json, content_type="application/json")

@@ -460,6 +460,12 @@ def parse_oxford_entry_json(json_data):
                                     for definition in sense["definitions"]:
                                         lexical_entry_dict["definitions"].append(definition)
 
+                                if "subsenses" in sense:
+                                    for subsense in sense["subsenses"]:
+                                        if "definitions" in subsense:
+                                            for definition in subsense["definitions"]:
+                                                lexical_entry_dict["definitions"].append(definition)
+
                 results_dict["lexicalEntries"].append(lexical_entry_dict)
 
     return results_dict

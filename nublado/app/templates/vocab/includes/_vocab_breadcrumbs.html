@@ -24,9 +24,15 @@
 
   {% elif request.session.session_obj.vocab_source %}
 
-    <li>
-    <a href="{% url 'vocab:vocab_sources' %}">{% trans "label_sources" %}</a>
-    </li>
+    {% if user.is_authenticated %}
+      <li>
+      <a href="{% url 'vocab:auth_vocab_sources' %}">{% trans "label_your_sources" %}</a>
+      </li>
+    {% else %}
+      <li>
+      <a href="{% url 'vocab:vocab_sources' %}">{% trans "label_sources" %}</a>
+      </li>
+    {% endif %}
 
     {% if url_name == "vocab_source_dashboard" %}
    

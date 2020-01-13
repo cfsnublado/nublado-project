@@ -1,7 +1,10 @@
+{% load core_extras %}
 {% load i18n %}
 
+{% if not source_admin %}{% alias False as source_admin %}{% endif %}
+
 <vocab-sources
-:init-is-admin="{{ user.is_admin|yesno:'true,false' }}"
+:init-is-admin="{{ source_admin|yesno:'true,false' }}"
 vocab-sources-url="{{ vocab_sources_url }}"
 inline-template
 >

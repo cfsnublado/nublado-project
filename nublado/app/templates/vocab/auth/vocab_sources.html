@@ -40,6 +40,8 @@
 {% url "vocab:vocab_source_dashboard" 0 "zzz" as vocab_source_view_url %}
 {% url "vocab:vocab_source_update" 0 "zzz" as vocab_source_edit_url %}
 
+{% alias user.is_authenticated as source_admin %}
+
 {% include "vocab/includes/vue/_vocab_sources.html" %}
 
 {% endblock vocab_sources %}

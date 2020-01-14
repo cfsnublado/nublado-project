@@ -11581,7 +11581,7 @@ body.sidebar-adaptable.sidebar-expanded .page-footer.is-fixed {
 
 /* line 16, ../scss/cfs/_page_section.scss */
 .random-word-section .random-word {
-  font-size: 4rem;
+  font-size: 3rem;
   text-align: center;
 }
 
@@ -11593,7 +11593,7 @@ body.sidebar-adaptable.sidebar-expanded .page-footer.is-fixed {
 
   /* line 29, ../scss/cfs/_page_section.scss */
   .random-word-section .random-word {
-    font-size: 3rem;
+    font-size: 2rem;
   }
 }
 /* line 3, ../scss/cfs/_parallax.scss */

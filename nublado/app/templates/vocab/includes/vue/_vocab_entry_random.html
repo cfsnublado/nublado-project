@@ -1,0 +1,40 @@
+{% load i18n %}
+
+<vocab-entry-random 
+endpoint-url="{{ vocab_entry_url }}"
+init-view-url="{% url 'vocab:vocab_entry' 'xx' 'zzz' %}"
+inline-template
+>
+
+<div v-cloak>
+
+  <div class="random-word">
+  <span v-show="processing"><i class="fas fa-spin fa-spinner"></i></span>
+  <span v-if="vocabEntryLoaded">
+  <a 
+  href=""
+  @click.prevent="viewEntry"
+  >
+  [[ vocabEntry.language ]]: [[ vocabEntry.entry ]]
+  </a>
+  </span>
+  </div>
+
+  <div>
+  <a 
+  href="#" 
+  class="button"
+  style="margin-top: 20px;"
+  @click.prevent="getVocabEntry"
+  >
+
+  <span> 
+  {% trans "label_get_random_vocab_entry" %}
+  </span>
+
+  </a>
+  </div>
+
+</div>
+
+</vocab-entry-random>

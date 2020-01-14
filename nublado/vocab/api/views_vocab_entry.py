@@ -21,7 +21,8 @@ from .permissions import (
 )
 from ..utils import (
     export_vocab_entries, get_oxford_entry_json,
-    import_vocab_entries, parse_oxford_entry_json
+    get_random_vocab_entry, import_vocab_entries,
+    parse_oxford_entry_json
 )
 from .views_mixins import BatchMixin
 
@@ -61,6 +62,22 @@ class VocabEntryViewSet(APIDefaultsMixin, BatchMixin, ModelViewSet):
             language=language,
             entry=entry
         )
+        serializer = self.get_serializer(vocab_entry)
+
+        return Response(
+            status=status.HTTP_200_OK,
+            data=serializer.data
+        )
+
+    @action(methods=["get"], detail=False)
+    def random_detail_data(self, request):
+        """
+        Retrieve random VocabEntry object
+        """
+        language = request.query_params.get("language", None)
+
+        vocab_entry = get_random_vocab_entry(language=language)
+
         serializer = self.get_serializer(vocab_entry)
 
         return Response(

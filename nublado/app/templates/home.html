@@ -32,14 +32,11 @@
 
 <div class="page-sections">
 
-<section class="section page-section random-word-section">
+<section class="section page-section random-word-section" style="text-align: center;">
 <h2 class="page-section-header"> {% trans "msg_random_vocab_entry" %} </h2>
 
-<div class="random-word">
-<a href="{% url 'vocab:vocab_entry' random_vocab_entry.language random_vocab_entry.slug %}">
-{{ random_vocab_entry.language }}: {{ random_vocab_entry.entry }}
-</a>
-</div>
+{% url "api:vocab-entry-random-detail-data" as vocab_entry_url%}
+{% include "vocab/includes/vue/_vocab_entry_random.html" %}
 
 </section>
 

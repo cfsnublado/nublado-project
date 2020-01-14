@@ -401,6 +401,7 @@ const VocabEntryInfo = {
   methods: {
     toggleVocabEntryInfoVisible() {
       this.vocabEntryInfoVisible = !this.vocabEntryInfoVisible
+      
       if (this.vocabEntryInfoVisible && !this.vocabEntryInfoLoaded) {
         this.getVocabEntryInfo()
       }
@@ -430,6 +431,72 @@ const VocabEntryInfo = {
     }
   }
 }
+
+const VocabEntryRandom = {
+  mixins: [AjaxProcessMixin],
+  props: {
+    endpointUrl: {
+      type: String,
+      required: true
+    },
+    initViewUrl: {
+      type: String,
+      default: ""
+    },
+  },
+  data() {
+    return {
+      vocabEntry: {},
+      vocabEntryLoaded: false,
+      viewUrl: "",
+      hasError: false,
+      timerId: null,
+      timerDelay: 500,
+    }
+  },
+  methods: {
+    viewEntry() {
+      if (this.initViewUrl) {
+        this.viewUrl = this.initViewUrl
+        .replace("xx", this.vocabEntry.language)
+        .replace("zzz", this.vocabEntry.slug)  
+        window.location.replace(this.viewUrl)
+      }
+    },
+    getVocabEntry() {
+      clearTimeout(this.timerId)
+      this.vocabEntryLoaded = false
+      this.process()
+
+      this.timerId = setTimeout(()=>{
+        axios.get(
+          this.endpointUrl
+        )
+        .then(response => {
+          this.vocabEntry = response.data;
+          this.vocabEntryLoaded = true
+          this.success()
+        })
+        .catch(error => {
+          if (error.response) {
+            console.log(error.response)
+          } else if (error.request) {
+            console.log(error.request)
+          } else {
+            console.log(error.message)
+          }
+          console.error("VocabEntry error")
+          this.hasError = true
+        })
+        .finally(() => this.complete())
+      }, this.timerDelay)
+    }
+  },
+  created() {
+    this.getVocabEntry()
+  }
+}
+
 
 const VocabContext = {
   mixins: [

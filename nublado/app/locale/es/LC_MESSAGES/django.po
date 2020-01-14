@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-13 17:34-0800\n"
+"POT-Creation-Date: 2020-01-13 22:34-0800\n"
 "PO-Revision-Date: 2018-11-28 21:16-0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -471,23 +471,23 @@ msgstr "Una herramienta para anotar vocabulario mediante contextos"
 msgid "msg_random_vocab_entry"
 msgstr "Entrada aleatoria"
 
-#: nublado/app/templates/home.html:51
+#: nublado/app/templates/home.html:48
 msgid "msg_nublado_at_a_glance"
 msgstr "Un vistazo a Nublado"
 
-#: nublado/app/templates/home.html:59
+#: nublado/app/templates/home.html:56
 msgid "msg_bilingual"
 msgstr "Bilingüe"
 
-#: nublado/app/templates/home.html:63
+#: nublado/app/templates/home.html:60
 msgid "msg_bilingual_desc"
 msgstr "Anota y etiqueta vocabulario en inglés y español."
 
-#: nublado/app/templates/home.html:73
+#: nublado/app/templates/home.html:70
 msgid "msg_import_vocab_markdown"
 msgstr "Markdown"
 
-#: nublado/app/templates/home.html:77
+#: nublado/app/templates/home.html:74
 msgid "msg_import_vocab_markdown_desc"
 msgstr ""
 "Crea e importa fuentes, contextos, y vocabulario etiquetado con la facilidad "
@@ -837,6 +837,10 @@ msgstr "Ocultar detalles"
 #: nublado/app/templates/vocab/includes/vue/_vocab_entry_info.html:82
 msgid "msg_no_vocab_info"
 msgstr "La información no fue encontrada."
+
+#: nublado/app/templates/vocab/includes/vue/_vocab_entry_random.html:17
+msgid "label_get_random_vocab_entry"
+msgstr "Generar"
 
 #: nublado/app/templates/vocab/includes/vue/_vocab_sources.html:19
 msgid "msg_no_sources"

@@ -1,3 +1,5 @@
+import random
+
 import requests
 from jsonschema import validate as validate_schema
 
@@ -20,6 +22,15 @@ from .serializers import (
 )
 
 User = get_user_model()
+
+
+def get_random_vocab_entry(language=None):
+    if language is None:
+        vocab_entry = random.choice(VocabEntry.objects.all())
+    else:
+        vocab_entry = random.choice(VocabEntry.objects.filter(language=language))
+
+    return vocab_entry
 
 
 def export_vocab_entries(request=None, language=None):

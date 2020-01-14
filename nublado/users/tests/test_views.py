@@ -1,5 +1,3 @@
-import json
-
 from django.contrib.auth import get_user_model
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.tokens import default_token_generator
@@ -12,12 +10,11 @@ from django.utils.translation import ugettext_lazy as _
 from django.views.generic import UpdateView
 
 from core.views import (
-    AjaxMultiFormMixin, CachedObjectMixin, ObjectSessionMixin,
+    ObjectSessionMixin,
     UserRequiredMixin
 )
 from ..conf import settings
 from ..forms import (
-    ProfileUpdateMultiForm,
     UserForgotPasswordRequestForm,
     UserForgotPasswordResetForm, UserPasswordResetForm
 )
@@ -26,7 +23,7 @@ from ..views import (
     UserForgotPasswordResetView
 )
 from ..views_auth import (
-    ProfileUpdateView, UserPasswordResetView
+    UserPasswordResetView
 )
 
 User = get_user_model()
@@ -349,155 +346,155 @@ class ProfileDetailViewTest(TestCommon):
         self.assertFalse(response.context['is_user'])
 
 
-class ProfileUpdateViewTest(TestCommon):
+# class ProfileUpdateViewTest(TestCommon):
 
-    def setUp(self):
-        super(ProfileUpdateViewTest, self).setUp()
-        self.profile_data = {
-            'user-email': 'cfs@cfs.com',
-            'user-first_name': 'Foo',
-            'user-last_name': 'Fum',
-            'profile-about': 'Hello. I am fine.'
-        }
-        self.user = User.objects.create_user(
-            username=self.user_data['username'],
-            email=self.user_data['email'],
-            first_name=self.user_data['first_name'],
-            last_name=self.user_data['last_name'],
-            password=self.user_data['password1'],
-        )
-        self.profile = self.user.profile
+#     def setUp(self):
+#         super(ProfileUpdateViewTest, self).setUp()
+#         self.profile_data = {
+#             'user-email': 'cfs@cfs.com',
+#             'user-first_name': 'Foo',
+#             'user-last_name': 'Fum',
+#             'profile-about': 'Hello. I am fine.'
+#         }
+#         self.user = User.objects.create_user(
+#             username=self.user_data['username'],
+#             email=self.user_data['email'],
+#             first_name=self.user_data['first_name'],
+#             last_name=self.user_data['last_name'],
+#             password=self.user_data['password1'],
+#         )
+#         self.profile = self.user.profile
 
-    def test_inheritance(self):
-        classes = (
-            LoginRequiredMixin,
-            UserRequiredMixin,
-            CachedObjectMixin,
-            AjaxMultiFormMixin,
-            ObjectSessionMixin,
-            UpdateView
-        )
-        for class_name in classes:
-            self.assertTrue(issubclass(ProfileUpdateView, class_name))
+#     def test_inheritance(self):
+#         classes = (
+#             LoginRequiredMixin,
+#             UserRequiredMixin,
+#             CachedObjectMixin,
+#             AjaxMultiFormMixin,
+#             ObjectSessionMixin,
+#             UpdateView
+#         )
+#         for class_name in classes:
+#             self.assertTrue(issubclass(ProfileUpdateView, class_name))
 
-    def test_view_redirects_to_login_for_unathenticated_user(self):
-        # non authenticated user
-        response = self.client.get(reverse('users:profile_update', kwargs={'username': self.user.username}))
-        self.assertRedirects(
-            response,
-            expected_url='{0}?next=/{1}/update/{2}/'.format(
-                reverse(settings.LOGIN_URL),
-                URL_PREFIX,
-                self.user.username
-            ),
-            status_code=302,
-            target_status_code=200,
-            msg_prefix=''
-        )
+#     def test_view_redirects_to_login_for_unathenticated_user(self):
+#         # non authenticated user
+#         response = self.client.get(reverse('users:profile_update', kwargs={'username': self.user.username}))
+#         self.assertRedirects(
+#             response,
+#             expected_url='{0}?next=/{1}/update/{2}/'.format(
+#                 reverse(settings.LOGIN_URL),
+#                 URL_PREFIX,
+#                 self.user.username
+#             ),
+#             status_code=302,
+#             target_status_code=200,
+#             msg_prefix=''
+#         )
 
-    def test_view_user_permissions(self):
-        user2 = User.objects.create_user(
-            username='kfl',
-            email='kfl@kfl.com',
-            first_name='Karen',
-            last_name='Fuentes',
-            password=self.pwd,
-        )
-        # owner of profile
-        self.login_test_user(self.user.username)
-        response = self.client.get(reverse('users:profile_update', kwargs={'username': self.user.username}))
-        self.assertEqual(response.status_code, 200)
-        self.client.logout()
-        # authenticated user other than same profile user
-        self.login_test_user(user2.username)
-        response = self.client.get(reverse('users:profile_update', kwargs={'username': self.user.username}))
-        self.assertEqual(response.status_code, 403)
-        self.client.logout()
-        # superuser
-        user2.is_superuser = True
-        user2.save()
-        self.login_test_user(user2.username)
-        response = self.client.get(reverse('users:profile_update', kwargs={'username': self.user.username}))
-        self.assertEqual(response.status_code, 200)
-        self.client.logout()
+#     def test_view_user_permissions(self):
+#         user2 = User.objects.create_user(
+#             username='kfl',
+#             email='kfl@kfl.com',
+#             first_name='Karen',
+#             last_name='Fuentes',
+#             password=self.pwd,
+#         )
+#         # owner of profile
+#         self.login_test_user(self.user.username)
+#         response = self.client.get(reverse('users:profile_update', kwargs={'username': self.user.username}))
+#         self.assertEqual(response.status_code, 200)
+#         self.client.logout()
+#         # authenticated user other than same profile user
+#         self.login_test_user(user2.username)
+#         response = self.client.get(reverse('users:profile_update', kwargs={'username': self.user.username}))
+#         self.assertEqual(response.status_code, 403)
+#         self.client.logout()
+#         # superuser
+#         user2.is_superuser = True
+#         user2.save()
+#         self.login_test_user(user2.username)
+#         response = self.client.get(reverse('users:profile_update', kwargs={'username': self.user.username}))
+#         self.assertEqual(response.status_code, 200)
+#         self.client.logout()
 
-    def test_correct_view_used(self):
-        self.login_test_user(self.user.username)
-        found = resolve(reverse('users:profile_update', kwargs={'username': self.user.username}))
-        self.assertEqual(found.func.__name__, ProfileUpdateView.as_view().__name__)
+#     def test_correct_view_used(self):
+#         self.login_test_user(self.user.username)
+#         found = resolve(reverse('users:profile_update', kwargs={'username': self.user.username}))
+#         self.assertEqual(found.func.__name__, ProfileUpdateView.as_view().__name__)
 
-    def test_view_updates_profile(self):
-        self.profile_data['profile-about'] = 'Ooooh yeah'
-        self.login_test_user(self.user.username)
-        self.client.post(
-            reverse('users:profile_update', kwargs={'username': self.user.username}),
-            data=self.profile_data
-        )
-        self.user.refresh_from_db()
-        self.profile.refresh_from_db()
-        self.assertEqual(self.profile.about, self.profile_data['profile-about'])
+#     def test_view_updates_profile(self):
+#         self.profile_data['profile-about'] = 'Ooooh yeah'
+#         self.login_test_user(self.user.username)
+#         self.client.post(
+#             reverse('users:profile_update', kwargs={'username': self.user.username}),
+#             data=self.profile_data
+#         )
+#         self.user.refresh_from_db()
+#         self.profile.refresh_from_db()
+#         self.assertEqual(self.profile.about, self.profile_data['profile-about'])
 
-    def test_view_renders_correct_template(self):
-        self.login_test_user(self.user.username)
-        response = self.client.get(reverse('users:profile_update', kwargs={'username': self.user.username}))
-        self.assertTemplateUsed(response, '{0}/auth/profile_update.html'.format(MODULE_NAME))
+#     def test_view_renders_correct_template(self):
+#         self.login_test_user(self.user.username)
+#         response = self.client.get(reverse('users:profile_update', kwargs={'username': self.user.username}))
+#         self.assertTemplateUsed(response, '{0}/auth/profile_update.html'.format(MODULE_NAME))
 
-    def test_view_returns_correct_status_code(self):
-        self.login_test_user(self.user.username)
-        response = self.client.get(reverse('users:profile_update', kwargs={'username': self.user.username}))
-        self.assertEqual(response.status_code, 200)
+#     def test_view_returns_correct_status_code(self):
+#         self.login_test_user(self.user.username)
+#         response = self.client.get(reverse('users:profile_update', kwargs={'username': self.user.username}))
+#         self.assertEqual(response.status_code, 200)
 
-    def test_view_uses_correct_form(self):
-        self.login_test_user(self.user.username)
-        response = self.client.get(reverse('users:profile_update', kwargs={'username': self.user.username}))
-        self.assertIsInstance(response.context['form'], ProfileUpdateMultiForm)
+#     def test_view_uses_correct_form(self):
+#         self.login_test_user(self.user.username)
+#         response = self.client.get(reverse('users:profile_update', kwargs={'username': self.user.username}))
+#         self.assertIsInstance(response.context['form'], ProfileUpdateMultiForm)
 
-    def test_view_success_url(self):
-        self.login_test_user(self.user.username)
-        response = self.client.post(
-            reverse('users:profile_update', kwargs={'username': self.user.username}),
-            data=self.profile_data
-        )
-        self.assertRedirects(
-            response,
-            expected_url=reverse('users:profile_update', kwargs={'username': self.user.username}),
-            status_code=302,
-            target_status_code=200,
-            msg_prefix=''
-        )
+#     def test_view_success_url(self):
+#         self.login_test_user(self.user.username)
+#         response = self.client.post(
+#             reverse('users:profile_update', kwargs={'username': self.user.username}),
+#             data=self.profile_data
+#         )
+#         self.assertRedirects(
+#             response,
+#             expected_url=reverse('users:profile_update', kwargs={'username': self.user.username}),
+#             status_code=302,
+#             target_status_code=200,
+#             msg_prefix=''
+#         )
 
-    def test_view_context_data(self):
-        self.login_test_user(self.user.username)
-        response = self.client.get(reverse('users:profile_update', kwargs={'username': self.user.username}))
-        self.assertEqual(response.context['gravatar_change_url'], settings.USERS_GRAVATAR_CHANGE_URL)
+#     def test_view_context_data(self):
+#         self.login_test_user(self.user.username)
+#         response = self.client.get(reverse('users:profile_update', kwargs={'username': self.user.username}))
+#         self.assertEqual(response.context['gravatar_change_url'], settings.USERS_GRAVATAR_CHANGE_URL)
 
-    def test_view_ajax(self):
-        self.profile_data['profile-about'] = "I don't know"
-        kwargs = {'HTTP_X_REQUESTED_WITH': 'XMLHttpRequest'}
-        self.login_test_user(self.user.username)
-        response = self.client.post(
-            reverse('users:profile_update', kwargs={'username': self.user.username}),
-            data=self.profile_data,
-            **kwargs
-        )
-        self.profile.refresh_from_db()
-        self.assertEqual(self.profile.about, self.profile_data['profile-about'])
-        self.assertEqual(response.status_code, 200)
-        json_string = response.content.decode('utf-8')
-        response_data = json.loads(json_string)
-        self.assertEqual(_('message_success'), response_data['messages'][0]['message'])
+#     def test_view_ajax(self):
+#         self.profile_data['profile-about'] = "I don't know"
+#         kwargs = {'HTTP_X_REQUESTED_WITH': 'XMLHttpRequest'}
+#         self.login_test_user(self.user.username)
+#         response = self.client.post(
+#             reverse('users:profile_update', kwargs={'username': self.user.username}),
+#             data=self.profile_data,
+#             **kwargs
+#         )
+#         self.profile.refresh_from_db()
+#         self.assertEqual(self.profile.about, self.profile_data['profile-about'])
+#         self.assertEqual(response.status_code, 200)
+#         json_string = response.content.decode('utf-8')
+#         response_data = json.loads(json_string)
+#         self.assertEqual(_('message_success'), response_data['messages'][0]['message'])
 
-    def test_view_ajax_errors(self):
-        self.profile_data['user-first_name'] = ''
-        kwargs = {'HTTP_X_REQUESTED_WITH': 'XMLHttpRequest'}
-        self.login_test_user(self.user.username)
-        response = self.client.post(
-            reverse('users:profile_update', kwargs={'username': self.user.username}),
-            data=self.profile_data,
-            **kwargs
-        )
-        self.assertEqual(response.status_code, 400)
-        json_string = response.content.decode('utf-8')
-        response_data = json.loads(json_string)
-        self.assertEqual(_('message_error'), response_data['messages'][0]['message'])
-        self.assertEqual(response_data['errors']['fields']['first_name']['message'], [_('validation_field_required')])
+#     def test_view_ajax_errors(self):
+#         self.profile_data['user-first_name'] = ''
+#         kwargs = {'HTTP_X_REQUESTED_WITH': 'XMLHttpRequest'}
+#         self.login_test_user(self.user.username)
+#         response = self.client.post(
+#             reverse('users:profile_update', kwargs={'username': self.user.username}),
+#             data=self.profile_data,
+#             **kwargs
+#         )
+#         self.assertEqual(response.status_code, 400)
+#         json_string = response.content.decode('utf-8')
+#         response_data = json.loads(json_string)
+#         self.assertEqual(_('message_error'), response_data['messages'][0]['message'])
+#         self.assertEqual(response_data['errors']['fields']['first_name']['message'], [_('validation_field_required')])

@@ -9,7 +9,7 @@
 
 {% block home_link_active %}is-active{% endblock home_link_active %}
 
-{% block presentation %}
+{% block full_width_sections %}
 <section id="intro" class="parallax-block intro">
 
 <div class="columns">
@@ -29,13 +29,26 @@
 </div>
 
 </section>
-{% endblock presentation %}
 
-{% block content %}
+<div class="page-sections">
 
-<div class="icon-blocks">
+<section class="section page-section random-word-section">
+<h2 class="page-section-header"> {% trans "msg_random_vocab_entry" %} </h2>
 
-<h2 class="icon-blocks-header">{% trans "msg_nublado_at_a_glance" %}</h2>
+<div class="random-word">
+<a href="{% url 'vocab:vocab_entry' random_vocab_entry.language random_vocab_entry.slug %}">
+{{ random_vocab_entry.language }}: {{ random_vocab_entry.entry }}
+</a>
+</div>
+
+</section>
+
+<section class="section page-section icon-blocks">
+
+<div class="columns">
+<div class="column is-10 is-offset-1">
+
+<h2 class="page-section-header">{% trans "msg_nublado_at_a_glance" %}</h2>
 
 <div class="columns is-multiline">
 
@@ -69,5 +82,12 @@
 </div>
 
 </div>
+</div>
+
+</section>
+</div>
+{% endblock full_width_sections %}
+
+{% block content %}
 {% endblock content %}
 

@@ -11568,31 +11568,58 @@ body.sidebar-adaptable.sidebar-expanded .page-footer.is-fixed {
     display: flex;
   }
 }
+/* line 3, ../scss/cfs/_page_section.scss */
+.page-section-header {
+  font-size: 3rem;
+  text-align: center;
+}
+
+/* line 9, ../scss/cfs/_page_section.scss */
+.page-section:not(:last-of-type) {
+  border-bottom: 1px solid #eaeaea;
+}
+
+/* line 16, ../scss/cfs/_page_section.scss */
+.random-word-section .random-word {
+  font-size: 4rem;
+  text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  /* line 24, ../scss/cfs/_page_section.scss */
+  .page-section-header {
+    font-size: 2rem;
+  }
+
+  /* line 29, ../scss/cfs/_page_section.scss */
+  .random-word-section .random-word {
+    font-size: 3rem;
+  }
+}
 /* line 3, ../scss/cfs/_parallax.scss */
 .parallax-block {
-  margin-bottom: 1.875rem;
   padding: 11.25rem 0 31.25rem 0;
   background-attachment: fixed;
   background-size: cover;
 }
-/* line 10, ../scss/cfs/_parallax.scss */
+/* line 9, ../scss/cfs/_parallax.scss */
 .parallax-block .parallax-body {
   padding-right: 1.125rem;
   padding-left: 1.125rem;
   text-align: center;
 }
-/* line 17, ../scss/cfs/_parallax.scss */
+/* line 16, ../scss/cfs/_parallax.scss */
 .parallax-block.intro {
   color: #fff;
   background-image: url("../images/jumbo_bg.png");
 }
-/* line 21, ../scss/cfs/_parallax.scss */
+/* line 20, ../scss/cfs/_parallax.scss */
 .parallax-block.intro h1 {
   margin-bottom: 0.9375rem;
 }
 
 @media screen and (max-width: 768px) {
-  /* line 28, ../scss/cfs/_parallax.scss */
+  /* line 27, ../scss/cfs/_parallax.scss */
   .parallax-block {
     padding: 9.375rem 0 25rem 0;
   }
@@ -11640,7 +11667,7 @@ body.sidebar-adaptable.sidebar-expanded .page-footer.is-fixed {
 
   /* line 48, ../scss/cfs/_blocks.scss */
   .icon-block:not(:last-of-type) {
-    border-bottom: 1px solid #efefef;
+    border-bottom: 1px solid #eaeaea;
   }
 }
 /* line 2, ../scss/cfs/_modal.scss */

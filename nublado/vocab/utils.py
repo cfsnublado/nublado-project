@@ -25,10 +25,15 @@ User = get_user_model()
 
 
 def get_random_vocab_entry(language=None):
+    vocab_entry = None
+
     if language is None:
-        vocab_entry = random.choice(VocabEntry.objects.all())
+        queryset = VocabEntry.objects.all()
     else:
-        vocab_entry = random.choice(VocabEntry.objects.filter(language=language))
+        queryset = VocabEntry.objects.filter(language=language)
+
+    if len(queryset):
+        vocab_entry = random.choice(queryset)
 
     return vocab_entry
 

@@ -1,11 +1,9 @@
-from collections import OrderedDict
-
 from django.contrib.auth import get_user_model
 from django.test import TestCase
 from django.utils.translation import ugettext_lazy as _
 
 from ..forms import (
-    ProfileUpdateForm, ProfileUpdateMultiForm, ProfileUserUpdateForm,
+    ProfileUpdateForm, ProfileUserUpdateForm,
     UserForgotPasswordRequestForm, UserForgotPasswordResetForm,
     UserPasswordResetForm
 )
@@ -239,111 +237,3 @@ class ProfileUserUpdateFormTest(TestCase):
         form = ProfileUserUpdateForm(data=self.form_data, instance=self.user)
         self.assertFalse(form.is_valid())
         self.assertEqual(form.errors['last_name'], [_('validation_user_name_characters')])
-
-
-class ProfileUpdateMultiFormTest(TestCase):
-
-    def setUp(self):
-        super(ProfileUpdateMultiFormTest, self).setUp()
-        self.user = User.objects.create_user(
-            username='cfs',
-            email='cfs@cfs.com',
-            first_name='Christopher',
-            last_name='Sanders',
-            password='Pizza?69p'
-        )
-        self.profile = self.user.profile
-        self.form_data = {
-            'user-email': 'cfs@cfs.com',
-            'user-first_name': 'Christopher',
-            'user-last_name': 'Sanders',
-            'profile-about': 'Hello there.'
-        }
-
-    def test_form_classes(self):
-        form = ProfileUpdateMultiForm(
-            instance={
-                'user': self.user,
-                'profile': self.profile
-            },
-            data=self.form_data
-        )
-        self.assertEqual(form.form_classes['user'], ProfileUserUpdateForm)
-        self.assertEqual(form.form_classes['profile'], ProfileUpdateForm)
-
-    def test_instances(self):
-        form = ProfileUpdateMultiForm(
-            instance={
-                'user': self.user,
-                'profile': self.profile
-            },
-            data=self.form_data
-        )
-        self.assertEqual(form['user'].instance, self.user)
-        self.assertEqual(form['profile'].instance, self.profile)
-
-    def test_valid_data(self):
-        form = ProfileUpdateMultiForm(
-            instance={
-                'user': self.user,
-                'profile': self.profile
-            },
-            data=self.form_data
-        )
-        self.assertTrue(form.is_valid())
-
-    def test_save_returns_dic(self):
-        form = ProfileUpdateMultiForm(
-            instance={
-                'user': self.user,
-                'profile': self.profile
-            },
-            data=self.form_data
-        )
-        self.assertTrue(form.is_valid())
-        result = form.save()
-        self.assertIsInstance(result, OrderedDict)
-
-    def test_form_validation_first_name(self):
-        self.form_data['user-first_name'] = ''
-        form = ProfileUpdateMultiForm(
-            instance={
-                'user': self.user,
-                'profile': self.profile
-            },
-            data=self.form_data
-        )
-        self.assertFalse(form.is_valid())
-        self.assertEqual(form['user'].errors['first_name'], [_('validation_field_required')])
-        self.form_data['user-first_name'] = 'a@@  s'
-        form = ProfileUpdateMultiForm(
-            instance={
-                'user': self.user,
-                'profile': self.profile
-            },
-            data=self.form_data
-        )
-        self.assertFalse(form.is_valid())
-        self.assertEqual(form['user'].errors['first_name'], [_('validation_user_name_characters')])
-
-    def test_form_validation_last_name(self):
-        self.form_data['user-last_name'] = ''
-        form = ProfileUpdateMultiForm(
-            instance={
-                'user': self.user,
-                'profile': self.profile
-            },
-            data=self.form_data
-        )
-        self.assertFalse(form.is_valid())
-        self.assertEqual(form['user'].errors['last_name'], [_('validation_field_required')])
-        self.form_data['user-last_name'] = 'a@@  s'
-        form = ProfileUpdateMultiForm(
-            instance={
-                'user': self.user,
-                'profile': self.profile
-            },
-            data=self.form_data
-        )
-        self.assertFalse(form.is_valid())
-        self.assertEqual(form['user'].errors['last_name'], [_('validation_user_name_characters')])

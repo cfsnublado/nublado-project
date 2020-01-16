@@ -13,8 +13,8 @@ from ..serializers import (
 )
 from ..utils import (
     export_vocab_entries, export_vocab_source,
-    import_vocab_entries, import_vocab_source,
-    validate_vocab_source_json_schema
+    get_random_vocab_entry, import_vocab_entries,
+    import_vocab_source_json, validate_vocab_source_json_schema
 )
 
 User = get_user_model()
@@ -32,6 +32,50 @@ class TestCommon(TestCase):
             email='cfs7@foo.com',
             password=self.pwd
         )
+
+
+class GetRandomVocabEntryTest(TestCommon):
+
+    def test_get_random_vocab_entry_with_empty_queryset(self):
+        random_vocab_entry = get_random_vocab_entry()
+        self.assertIsNone(random_vocab_entry)
+        random_vocab_entry = get_random_vocab_entry(language="en")
+        self.assertIsNone(random_vocab_entry)
+
+    def test_get_random_vocab_entry_with_one_entry_in_queryset(self):
+        vocab_entry = VocabEntry.objects.create(
+            language="en",
+            entry="cat"
+        )
+        random_vocab_entry = get_random_vocab_entry()
+        self.assertEqual(vocab_entry, random_vocab_entry)
+
+    def test_get_random_vocab_entry_with_entries_in_queryset(self):
+        VocabEntry.objects.create(
+            language="en",
+            entry="cat"
+        )
+        VocabEntry.objects.create(
+            language="en",
+            entry="dog"
+        )
+        VocabEntry.objects.create(
+            language="es",
+            entry="gato"
+        )
+        VocabEntry.objects.create(
+            language="es",
+            entry="perro"
+        )
+
+        random_vocab_entry = get_random_vocab_entry()
+        self.assertTrue(random_vocab_entry in VocabEntry.objects.all())
+
+        random_vocab_entry = get_random_vocab_entry(language="en")
+        self.assertTrue(random_vocab_entry in VocabEntry.objects.filter(language="en"))
+
+        random_vocab_entry = get_random_vocab_entry(language="es")
+        self.assertTrue(random_vocab_entry in VocabEntry.objects.filter(language="es"))
 
 
 class ExportVocabEntriesTest(TestCommon):
@@ -180,7 +224,7 @@ class ImportVocabSourceTest(TestCommon):
         self.request = self.request_factory.get('/fake-path')
         self.request.user = self.user
 
-    def test_import_vocab_source_data(self):
+    def test_import_vocab_source_json(self):
         vocab_source = VocabSource.objects.create(
             creator=self.user,
             name='Test source',
@@ -206,7 +250,7 @@ class ImportVocabSourceTest(TestCommon):
         self.assertEqual(len(VocabEntry.objects.all()), 0)
         self.assertEqual(len(VocabContext.objects.all()), 0)
         self.assertEqual(len(VocabEntry.objects.all()), 0)
-        import_vocab_source(data, self.user)
+        import_vocab_source_json(data, self.user)
         self.assertEqual(len(VocabSource.objects.all()), 1)
         vocab_source = VocabSource.objects.get(
             creator=self.user,

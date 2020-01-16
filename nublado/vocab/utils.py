@@ -434,7 +434,7 @@ def get_oxford_entry_json(api_id, api_key, vocab_entry):
     return json_data
 
 
-def parse_oxford_entry_json(json_data):
+def parse_oxford_entry_json(json_data, language="en"):
     results_dict = {
         "lexicalEntries": []
     }
@@ -448,7 +448,7 @@ def parse_oxford_entry_json(json_data):
                         "ipa": [],
                         "audioFile": ""
                     },
-                    "definitions": []
+                    "definitions": [],
                 }
 
                 if "pronunciations" in lexical_entry:

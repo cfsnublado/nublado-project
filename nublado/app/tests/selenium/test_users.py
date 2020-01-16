@@ -74,26 +74,6 @@ class TestCommon(FunctionalTest):
             pwd2_input.send_keys(pwd2)
         self.get_submit_button().click()
 
-    def fill_and_submit_profile_update_form(self, email=None, first_name=None, last_name=None, about=None):
-        if email is not None:
-            email_input = self.get_element_by_id("id_user-email")
-            email_input.clear()
-            email_input.send_keys(email)
-        if first_name is not None:
-            first_name_input = self.get_element_by_id("id_user-first_name")
-            first_name_input.clear()
-            first_name_input.send_keys(first_name)
-        if last_name is not None:
-            last_name_input = self.get_element_by_id("id_user-last_name")
-            last_name_input.clear()
-            last_name_input.send_keys(last_name)
-        if about is not None:
-            about_input = self.get_element_by_id("id_profile-about")
-            about_input.clear()
-            about_input.send_keys(about)
-        self.get_submit_button().click()
-        self.wait.until(EC.element_to_be_clickable((By.ID, "profile-update-submit-btn")))
-
     def fill_and_submit_password_reset_form(self, pwd, new_pwd1=None, new_pwd2=None):
         if pwd is not None:
             pwd_input = self.get_element_by_id("id_current_password")
@@ -206,44 +186,3 @@ class TestUser(TestCommon):
             new_pwd2=NEW_PWD
         )
         self.load_page(page_titles["login_en"])
-
-
-class TestProfile(TestCommon):
-
-    def setUp(self):
-        super(TestProfile, self).setUp()
-        self.user = User.objects.create_user(
-            username=self.user_data["username"],
-            email=self.user_data["email"],
-            first_name=self.user_data["first_name"],
-            last_name=self.user_data["last_name"],
-            password=DEFAULT_PWD,
-        )
-        self.profile = self.user.profile
-
-    def test_update_profile_info(self):
-        self.browser.get(self.live_server_url)
-        self.get_login_link().click()
-        self.login_user(
-            username=self.user.username,
-            password=DEFAULT_PWD
-        )
-        self.load_page(page_titles["user_login_redirect_en"])
-        self.get_user_toggle().click()
-        self.get_element_by_id("nav-menu-profile").click()
-        self.load_page(page_titles["profile_update_en"])
-
-        # Invalid data
-        self.fill_and_submit_profile_update_form(first_name="")
-        self.get_element_by_id("profile-update-form")
-        first_name_errors = self.get_element_by_id("id_user-first_name-errors")
-        messages = self.get_messages()
-        self.assertIn(msgs["msg_error_en"], messages.get_attribute("innerHTML"))
-        self.assertIn(error_msgs["field_required"], first_name_errors.get_attribute("innerHTML"))
-
-        # Valid data
-        self.fill_and_submit_profile_update_form(first_name="Christopher", about="Hello, I'm Christopher.")
-        messages = self.get_messages()
-        self.assertIn(msgs["msg_success_en"], messages.get_attribute("innerHTML"))
-        self.profile.refresh_from_db()
-        self.assertEqual(self.profile.about, self.get_element_by_id("id_profile-about").get_attribute("value"))

@@ -147,8 +147,8 @@ class VocabEntryAuthTest(TestCommon):
         self.login_user(self.superuser.username)
         self.load_page(page_titles["home_en"])
 
-        self.open_sidebar()
-        self.get_element_by_id("sidebar-new-vocab-entry").click()
+        self.get_user_toggle().click()
+        self.get_element_by_id("user-nav-new-entry").click()
         self.load_page(page_titles["vocab_entry_create_en"])
         self.fill_vocab_entry_form(
             language=vocab_entry_data["language"],
@@ -304,8 +304,8 @@ class VocabSourceAuthTest(TestCommon):
         self.login_user(self.user.username)
         self.load_page(page_titles["home_en"])
 
-        self.open_sidebar()
-        self.get_element_by_id("sidebar-new-vocab-source").click()
+        self.get_user_toggle().click()
+        self.get_element_by_id("user-nav-new-source").click()
         self.load_page(page_titles["vocab_source_create_en"])
         self.fill_vocab_source_form(
             source_type=str(vocab_source_data["source_type"]),

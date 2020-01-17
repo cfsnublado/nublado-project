@@ -1,4 +1,5 @@
 import json
+import random
 
 from django.contrib.auth import get_user_model
 from django.test import RequestFactory, TestCase
@@ -60,6 +61,18 @@ class GetRandomVocabEntryTest(TestCommon):
             entry="dog"
         )
         VocabEntry.objects.create(
+            language="en",
+            entry="bird"
+        )
+        VocabEntry.objects.create(
+            language="en",
+            entry="whale"
+        )
+        VocabEntry.objects.create(
+            language="en",
+            entry="fish"
+        )
+        VocabEntry.objects.create(
             language="es",
             entry="gato"
         )
@@ -67,7 +80,10 @@ class GetRandomVocabEntryTest(TestCommon):
             language="es",
             entry="perro"
         )
-
+        VocabEntry.objects.create(
+            language="es",
+            entry="abominación"
+        )
         random_vocab_entry = get_random_vocab_entry()
         self.assertTrue(random_vocab_entry in VocabEntry.objects.all())
 
@@ -76,6 +92,31 @@ class GetRandomVocabEntryTest(TestCommon):
 
         random_vocab_entry = get_random_vocab_entry(language="es")
         self.assertTrue(random_vocab_entry in VocabEntry.objects.filter(language="es"))
+
+        random.seed(0)
+        random_vocab_entry_0 = get_random_vocab_entry()
+        print(random_vocab_entry_0)
+
+        random.seed(1)
+        random_vocab_entry_1 = get_random_vocab_entry()
+        print(random_vocab_entry_1)
+
+        random.seed(2)
+        random_vocab_entry_2 = get_random_vocab_entry()
+        print(random_vocab_entry_2)
+
+        random.seed(0)
+        self.assertEqual(random_vocab_entry_0, get_random_vocab_entry())
+        random.seed(1)
+        self.assertEqual(random_vocab_entry_1, get_random_vocab_entry())
+        random.seed(2)
+        self.assertEqual(random_vocab_entry_2, get_random_vocab_entry())
+        random.seed(0)
+        self.assertEqual(random_vocab_entry_0, get_random_vocab_entry())
+        random.seed(1)
+        self.assertEqual(random_vocab_entry_1, get_random_vocab_entry())
+        random.seed(2)
+        self.assertEqual(random_vocab_entry_2, get_random_vocab_entry())
 
 
 class ExportVocabEntriesTest(TestCommon):

@@ -9,10 +9,11 @@ inline-template
 <div v-cloak>
 
   <div class="random-word">
-  <span v-show="processing"><i class="fas fa-spin fa-spinner"></i></span>
+  <span v-show="processing" style="color: #777;"><i class="fas fa-cog fa-spin"></i></span>
   <span v-if="vocabEntryLoaded">
   <a 
   href=""
+  style="color: #3298dc;"
   @click.prevent="viewEntry"
   >
   [[ vocabEntry.language ]]: [[ vocabEntry.entry ]]

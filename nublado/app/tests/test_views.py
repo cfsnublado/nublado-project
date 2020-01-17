@@ -5,6 +5,7 @@ from django.contrib.auth import get_user_model
 from django.urls import resolve, reverse
 from django.test import TestCase
 
+from vocab.models import VocabEntry
 from ..views import HomeView, AppSessionView
 
 User = get_user_model()
@@ -53,6 +54,10 @@ class HomeViewTest(TestCommon):
     def test_view_context_data(self):
         response = self.client.get(reverse("app:home"))
         self.assertEqual(response.context["project_name"], settings.PROJECT_NAME)
+        self.assertIsNone(response.context["random_vocab_entry"])
+        v = VocabEntry.objects.create(language="en", entry="cat")
+        response = self.client.get(reverse("app:home"))
+        self.assertEqual(response.context["random_vocab_entry"], v)
 
 
 class AppSessionViewTest(TestCase):

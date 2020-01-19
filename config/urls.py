@@ -6,11 +6,14 @@ from django.urls import include, path
 from security.conf import SecurityConf
 from users.conf import ProfileConf
 from vocab.conf import VocabConf
+from appdocs.conf import AppdocsConf
 
 
 SECURITY_URL_PREFIX = SecurityConf.URL_PREFIX
 USER_URL_PREFIX = ProfileConf.URL_PREFIX
 VOCAB_URL_PREFIX = VocabConf.URL_PREFIX
+DOCS_URL_PREFIX = AppdocsConf.URL_PREFIX
+
 
 urlpatterns = i18n_patterns(
     path("", include("social_django.urls", namespace="social")),
@@ -21,6 +24,7 @@ urlpatterns = i18n_patterns(
     path("{0}/".format(SECURITY_URL_PREFIX), include("security.urls", namespace="security")),
     path("{0}/".format(USER_URL_PREFIX), include("users.urls", namespace="users")),
     path("{0}/".format(VOCAB_URL_PREFIX), include("vocab.urls", namespace="vocab")),
+    path("{0}/".format(DOCS_URL_PREFIX), include("appdocs.urls", namespace="docs")),
 
     prefix_default_language=False
 )

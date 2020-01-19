@@ -1,36 +1,111 @@
-// Vocab project
-
-const VocabProjects = {
+const VocabSource = {
   mixins: [
-    AjaxProcessMixin,
-    PaginationMixin,
-    AdminMixin
+    AdminMixin,
+    VisibleMixin,
+    MarkdownMixin
   ],
   props: {
-    initVocabProjectsUrl: {
+    id: {
       type: String,
-      default: ''
+      default: ""
+    },
+    initSource: {
+      type: Object,
+      required: true
+    },
+    initViewUrl: {
+      type: String,
+      default: ""
+    },
+    initEditUrl: {
+      type: String,
+      default: ""
+    },
+    initDeleteUrl: {
+      type: String,
+      default: ""
     }
   },
   data() {
     return {
-      vocabProjectsUrl: this.initVocabProjectsUrl,
-      vocabProjects: null
+      source: this.initSource,
+      viewUrl: "",
+      editUrl: "",
+      deleteUrl: ""
     }
   },
   methods: {
-    getVocabProjects(page=1) {
+    view() {
+      if (this.viewUrl) {
+        window.location.replace(this.viewUrl)
+      }
+    },
+    edit() {
+      if (this.editUrl) {
+        window.location.replace(this.editUrl)
+      }
+    },
+    remove() {
+      this.$emit("delete-vocab-source")
+    },
+  },
+  created() {
+    if (this.initViewUrl) {
+      this.viewUrl = this.initViewUrl
+        .replace(0, this.source.id)
+        .replace("zzz", this.source.slug)   
+    }
+
+    if (this.initEditUrl) {
+      this.editUrl = this.initEditUrl
+        .replace(0, this.source.id)
+        .replace("zzz", this.source.slug) 
+    }
+
+    if (this.initDeleteUrl) {
+      this.deleteUrl = this.initDeleteUrl
+        .replace(0, this.source.id)
+    } 
+  }
+}
+
+const VocabSources = {
+  components: {
+    "vocab-source": VocabSource
+  },
+  mixins: [
+    AdminMixin,
+    AjaxProcessMixin,
+    PaginationMixin,
+  ],
+  props: {
+    id: {
+      type: String,
+      default: ""
+    },
+    vocabSourcesUrl: {
+      type: String,
+      required: true
+    }
+  },
+  data() {
+    return {
+      vocabSources: null
+    }
+  },
+  methods: {
+    getVocabSources(page=1) {
       this.process()
 
       params = {
         page: page
       }
 
-      axios.get(this.vocabProjectsUrl, {
+      axios.get(this.vocabSourcesUrl, {
         params: params
       })
       .then(response => {
-        this.vocabProjects = response.data.results
+        this.vocabSources = response.data.results
         this.setPagination(
           response.data.previous,
           response.data.next,
@@ -39,7 +114,7 @@ const VocabProjects = {
           response.data.num_pages
         )
         VueScrollTo.scrollTo({
-          el: '#projects-scroll-top',
+          el: "#vocab-sources-scroll-top",
         })
         this.success()
       })
@@ -57,64 +132,137 @@ const VocabProjects = {
         this.complete()
       })
     },
+    onDeleteVocabSource(index) {
+      this.$delete(this.vocabSources, index)
+    }
   },
   created() {
-    this.getVocabProjects()
+    this.getVocabSources()
   }
 }
 
-const VocabProject = {
+const VocabSourceSearch = {
+  mixins: [
+    BaseSearch
+  ],
+  methods: {
+    setResult(result) {
+      this.searchTerm =result
+      this.search()
+    },
+    search() {
+      clearTimeout(this.searchTimerId)
+      this.isOpen = false
+      url = this.searchUrl + "?source=" + encodeURIComponent(this.searchTerm)
+      window.location.replace(url)
+    }
+  }
+}
+
+const VocabSourceEntrySearch = {
+  mixins: [BaseLanguageSearch],
+  props: {
+    sourceId: {
+      type: String,
+      default: null
+    }
+  },
+  methods: {
+    setResult(result) {
+      this.searchTerm = result
+      this.search()
+    },
+    search(val) {
+      clearTimeout(this.searchTimerId)
+      this.isOpen = false
+      url = this.searchUrl + "?search_entry=" + encodeURIComponent(this.searchTerm) + "&search_language=" + this.language + "&search_source=" + this.sourceId
+      window.location.replace(url);
+    }
+  },
+}
+
+const VocabEntry = {
   mixins: [
     AdminMixin,
-    BaseModel
+    VisibleMixin
   ],
   props: {
-    initProject: {
+    id: {
+      type: String,
+      default: ""
+    },
+    initVocabEntry: {
       type: Object,
       required: true
     },
+    initViewUrl: {
+      type: String,
+      default: ""
+    },
+    initEditUrl: {
+      type: String,
+      default: ""
+    },
+    initDeleteUrl: {
+      type: String,
+      default: ""
+    }
   },
   data() {
     return {
-      project: this.initProject
+      vocabEntry: this.initVocabEntry,
+      viewUrl: this.initViewUrl,
+      editUrl: this.initEditUrl,
+      deleteUrl: this.initDeleteUrl
     }
+  },
+  methods: {
+    view() {
+      if (this.viewUrl) {
+        window.location.replace(this.viewUrl)
+      }
+    },
+    edit() {},
+    remove() {
+      this.$emit("delete-vocab-entry", this.vocabEntry.id)
+    },
   },
   created() {
     if (this.initViewUrl) {
       this.viewUrl = this.initViewUrl
-        .replace(0, this.project.id)
-        .replace('zzz', this.project.slug)   
+        .replace("xx", this.vocabEntry.language)
+        .replace("zzz", this.vocabEntry.slug)
     }
 
     if (this.initDeleteUrl) {
       this.deleteUrl = this.initDeleteUrl
-        .replace(0, this.project.id)
+        .replace(0, this.vocabEntry.id)
     }
   }
 }
 
-// Vocab entry
-
 const VocabEntries = {
+  components: {
+    "vocab-entry": VocabEntry
+  },
   mixins: [
     AjaxProcessMixin,
+    AdminMixin,
     PaginationMixin,
-    AdminMixin
   ],
   props: {
     initLanguage: {
       type: String,
-      default: 'en'
+      default: "en"
     },
-    initVocabEntriesUrl: {
+    vocabEntriesUrl: {
       type: String,
-      default: ''
+      required: true
     }
   },
   data() {
     return {
       language: this.initLanguage,
-      vocabEntriesUrl: this.initVocabEntriesUrl,
       vocabEntries: null
     }
   },
@@ -140,7 +288,7 @@ const VocabEntries = {
           response.data.num_pages
         )
         VueScrollTo.scrollTo({
-          el: '#entries-scroll-top',
+          el: "#vocab-entries-scroll-top",
         })
         this.success()
       })
@@ -161,6 +309,9 @@ const VocabEntries = {
     setLanguage(language) {
       this.language = language
       this.getVocabEntries()
+    },
+    onDeleteVocabEntry(index) {
+      this.$delete(this.vocabEntries, index)
     }
   },
   created() {
@@ -168,98 +319,7 @@ const VocabEntries = {
   }
 }
 
-const VocabEntry = {
-  mixins: [
-    AdminMixin,
-    BaseModel
-  ],
-  props: {
-    initEntry: {
-      type: Object,
-      required: true
-    },
-  },
-  data() {
-    return {
-      entry: this.initEntry
-    }
-  },
-  created() {
-    if (this.initViewUrl) {
-      this.viewUrl = this.initViewUrl
-        .replace('xx', this.entry.language)
-        .replace('zzz', this.entry.slug)
-    }
-
-    if (this.initDeleteUrl) {
-      this.deleteUrl = this.initDeleteUrl
-        .replace(0, this.entry.id)
-    }
-  }
-}
-
-const EntryInfo = {
-  mixins: [AjaxProcessMixin],
-  props: {
-    initEndpointUrl: {
-      type: String,
-      required: true
-    },
-    initMsgShowEntryInfo: {
-      type: String,
-      default: 'Show entry info'
-    },
-    initMsgHideEntryInfo: {
-      type: String,
-      default: 'Hide entry info'
-    }
-  },
-  data() {
-    return {
-      endpointUrl: this.initEndpointUrl,
-      entryInfo: {},
-      entryInfoVisible: false,
-      entryInfoLoaded: false,
-      msgShowEntryInfo: this.initMsgShowEntryInfo,
-      msgHideEntryInfo: this.initMsgHideEntryInfo
-    }
-  },
-  methods: {
-    toggleEntryInfoVisible() {
-      this.entryInfoVisible = !this.entryInfoVisible
-      if (this.entryInfoVisible && !this.entryInfoLoaded) {
-        this.getEntryInfo()
-      }
-      console.log(this.entryInfoVisible)
-    },
-    getEntryInfo() {
-      console.log('Get entry info')
-      this.process()
-      axios.get(
-        this.endpointUrl
-      )
-      .then(response => {
-        this.entryInfo = response.data;
-        console.log(this.entryInfo)
-        this.entryInfoLoaded = true
-        this.success()
-      })
-      .catch(error => {
-        if (error.response) {
-          console.log(error.response)
-        } else if (error.request) {
-          console.log(error.request)
-        } else {
-          console.log(error.message)
-        }
-        console.log(error.config)
-      })
-      .finally(() => this.complete())
-    }
-  }
-}
-
-const EntrySearch = {
+const VocabEntrySearch = {
   mixins: [BaseLanguageSearch],
   methods: {
     setResult(result) {
@@ -275,7 +335,7 @@ const EntrySearch = {
   },
 }
 
-const EntryTagSearch = {
+const VocabEntryTagSearch = {
   mixins: [BaseLanguageSearch],
   methods: {
     setResult(result) {
@@ -289,60 +349,379 @@ const EntryTagSearch = {
         language: this.language,
         entry: this.searchTerm
       }
-      this.searchTerm = ''
-      this.$emit('add-tag', tag)
+      this.searchTerm = ""
+      this.$emit("search", tag)
     }
   },
 }
 
-const EntryToggleTag = {
-  mixins: [BaseToggleTag],
-  methods: {},
-}
-
-const EntryTagbox = {
+const VocabEntryTagbox = {
+  components: {
+    VocabEntryTagSearch
+  },
   mixins: [BaseTagbox],
   methods: {
-    onFocus() {
-      this.$emit('tagbox-focus')
+    addTag(tag) {
+      /*
+      tag: Object with language and entry properties
+      */
+      if (tag.entry) {
+        const vocabEntryTag = {
+          language: tag.language,
+          value: tag.entry
+        }
+        this.$emit("add-tag", vocabEntryTag)
+      }
     }
   }
 }
 
-const EntryInstanceTagbox = {
-  mixins: [BaseTagbox, ClickOutsideMixin],
+const VocabEntryInstanceTagbox = {
+  mixins: [Tagbox],
+  methods: {
+  }
+}
+
+const VocabEntryInfo = {
+  mixins: [AjaxProcessMixin],
   props: {
-    entry: {
+    endpointUrl: {
+      type: String,
+      required: true
+    },
+  },
+  data() {
+    return {
+      vocabEntryInfo: {},
+      vocabEntryInfoVisible: false,
+      vocabEntryInfoLoaded: false,
+      hasError: false
+    }
+  },
+  methods: {
+    toggleVocabEntryInfoVisible() {
+      this.vocabEntryInfoVisible = !this.vocabEntryInfoVisible
+      
+      if (this.vocabEntryInfoVisible && !this.vocabEntryInfoLoaded) {
+        this.getVocabEntryInfo()
+      }
+    },
+    getVocabEntryInfo() {
+      this.process()
+      axios.get(
+        this.endpointUrl
+      )
+      .then(response => {
+        this.vocabEntryInfo = response.data;
+        this.vocabEntryInfoLoaded = true
+        this.success()
+      })
+      .catch(error => {
+        if (error.response) {
+          console.log(error.response)
+        } else if (error.request) {
+          console.log(error.request)
+        } else {
+          console.log(error.message)
+        }
+        console.error("VocabEntryInfo error")
+        this.hasError = true
+      })
+      .finally(() => this.complete())
+    }
+  }
+}
+
+const VocabEntryRandom = {
+  mixins: [AjaxProcessMixin],
+  props: {
+    endpointUrl: {
+      type: String,
+      required: true
+    },
+    initViewUrl: {
+      type: String,
+      default: ""
+    },
+  },
+  data() {
+    return {
+      vocabEntry: {},
+      vocabEntryLoaded: false,
+      viewUrl: "",
+      hasError: false,
+      timerId: null,
+      timerDelay: 500,
+    }
+  },
+  methods: {
+    viewEntry() {
+      if (this.initViewUrl) {
+        this.viewUrl = this.initViewUrl
+        .replace("xx", this.vocabEntry.language)
+        .replace("zzz", this.vocabEntry.slug)  
+        window.location.replace(this.viewUrl)
+      }
+    },
+    getVocabEntry() {
+      clearTimeout(this.timerId)
+      this.vocabEntryLoaded = false
+      this.process()
+
+      this.timerId = setTimeout(()=>{
+        axios.get(
+          this.endpointUrl
+        )
+        .then(response => {
+          this.vocabEntry = response.data;
+          this.vocabEntryLoaded = true
+          this.success()
+        })
+        .catch(error => {
+          if (error.response) {
+            console.log(error.response)
+          } else if (error.request) {
+            console.log(error.request)
+          } else {
+            console.log(error.message)
+          }
+          console.error("VocabEntry error")
+          this.hasError = true
+        })
+        .finally(() => this.complete())
+      }, this.timerDelay)
+    }
+  },
+  created() {
+    this.getVocabEntry()
+  }
+}
+
+
+const VocabContext = {
+  mixins: [
+    MarkdownMixin,
+    HighlightMixin,
+    VisibleMixin,
+    AdminMixin
+  ],
+  props: {
+    id: {
+      type: String,
+      default: ""
+    },    
+    initVocabContext: {
       type: Object,
-      default: () => {}
+      required: true
+    },
+    initVocabSourceUrl: {
+      type: String,
+      default: ""
+    },
+    initEditUrl: {
+      type: String,
+      default: ""
+    },
+    initDeleteUrl: {
+      type: String,
+      default: ""
     }
   },
   data() {
     return {
-      input: ''
+      vocabContext: this.initVocabContext,
+      vocabSourceUrl: this.initVocabSourceUrl,
+      editUrl: this.initDeleteUrl,
+      deleteUrl: this.initDeleteUrl
     }
   },
   methods: {
-    addTag(tag) {
-      this.input = ''
-      this.$emit('add-tag', tag)
+    selectVocabSource() {
+      if (this.vocabSourceUrl) {
+        window.location.replace(this.vocabSourceUrl)
+      }
     },
-    removeTag(index) {
-      this.input = ''
-      this.$emit('remove-tag', index)
+    edit() {
+      if (this.editUrl) {
+        window.location.replace(this.editUrl)
+      }
     },
-    selectTag(index) {
-      this.input = ''
-      this.$emit('select-tag', index)
+    remove() {
+      this.$emit("delete-vocab-context")
     },
-    onCloseOutside() {
-      this.input = ''
-    },   
+  },
+  created() {
+
+    if (this.initVocabSourceUrl) {
+      this.vocabSourceUrl = this.initVocabSourceUrl
+        .replace(0, this.vocabContext.vocab_source_id)
+        .replace('zzz', this.vocabContext.vocab_source_slug)
+    }
+
+    if (this.initEditUrl) {
+      this.editUrl = this.initEditUrl
+        .replace(0, this.vocabContext.id)
+    }
+  
+    if (this.initDeleteUrl) {
+      this.deleteUrl = this.initDeleteUrl
+        .replace(0, this.vocabContext.id)
+    }
   }
 }
 
+const VocabContextTags = {
+  mixins: [VocabContext],
+  props: {
+    initVocabEntries: {
+      type: Array,
+      default: []
+    },
+    initTagSelectUrl: {
+      type: String,
+      default: ""
+    }
+  },
+  data() {
+    return {
+      vocabEntries: [],
+      selectedVocabEntry: null,
+      tagSelectUrl: this.initTagSelectUrl
+    }
+  },
+  methods: {
+    selectTag(index) {
+      this.selectedVocabEntry = this.vocabEntries[index]
 
-// Vocab context
+      if (this.tagSelectUrl) {
+        this.tagSelectUrl = this.tagSelectUrl
+          .replace("xx", this.selectedVocabEntry.language)
+          .replace("zzz", this.selectedVocabEntry.slug)
+        window.location.replace(this.tagSelectUrl)
+      }
+    },
+    toggleTag(index) {
+      if (this.selectedVocabEntry == null) {
+        this.selectedVocabEntry = this.vocabEntries[index]
+        this.selectedVocabEntry.selected = true
+        this.highlight(this.selectedVocabEntry.tags)
+      } else if (this.selectedVocabEntry.id != this.vocabEntries[index].id) {
+        this.selectedVocabEntry.selected = false
+        this.clearHighlight()
+        this.selectedVocabEntry = this.vocabEntries[index]
+        this.selectedVocabEntry.selected = true
+        this.highlight(this.selectedVocabEntry.tags)
+      } else {
+        this.selectedVocabEntry.selected = !this.selectedVocabEntry.selected
+
+        if (this.selectedVocabEntry.selected) {
+          this.highlight(this.selectedVocabEntry.tags)
+        } else {
+          this.clearHighlight()
+        }
+      }
+    },
+    loadEntries() {
+      for (var k in this.initVocabEntries) {
+        const initVocabEntry = this.initVocabEntries[k]["vocab_entry"]
+        const initTags = this.initVocabEntries[k]["tags"]
+        const vocabEntry = {
+          id: initVocabEntry.id,
+          value: initVocabEntry.entry,
+          slug: initVocabEntry.slug,
+          language: initVocabEntry.language,
+          selected: false,
+          tags: initTags
+        }
+        this.vocabEntries.push(vocabEntry)
+      }
+    },
+  },
+  created() {
+    this.loadEntries()
+  }
+}
+
+const VocabEntryContext = {
+  /**
+  From many-to-many VocabContextEntry that refers to VocabEntry and VocabContext objects
+  in Django
+  **/
+  mixins: [
+    MarkdownMixin,
+    HighlightMixin,
+    VisibleMixin,
+    AdminMixin
+  ],
+  props: {
+    id: {
+      type: String,
+      default: ""
+    },    
+    initVocabEntryContext: {
+      type: Object,
+      required: true
+    },
+    initVocabSourceUrl: {
+      type: String,
+      default: ""
+    },
+    initEditUrl: {
+      type: String,
+      default: ""
+    },
+    initDeleteUrl: {
+      type: String,
+      default: ""
+    }
+  },
+  data() {
+    return {
+      vocabEntryContext: this.initVocabEntryContext,
+      vocabSourceUrl: this.initVocabSourceUrl,
+      editUrl: this.initEditUrl,
+      deleteUrl: this.initDeleteUrl
+    }
+  },
+  methods: {
+    selectVocabSource() {
+      if (this.vocabSourceUrl) {
+        window.location.replace(this.vocabSourceUrl)
+      }
+    },
+    edit() {
+      if (this.editUrl) {
+        window.location.replace(this.editUrl)
+      }
+    },
+    remove() {
+      this.$emit("delete-vocab-context")
+    },
+  },
+  created() {
+    console.log(this.vocabEntryContext)
+
+    this.$nextTick(() => {
+      this.highlight(this.vocabEntryContext.vocab_entry_tags)
+    })
+
+    if (this.initVocabSourceUrl) {
+      this.vocabSourceUrl = this.initVocabSourceUrl
+        .replace(0, this.vocabEntryContext.vocab_source_id)
+        .replace('zzz', this.vocabEntryContext.vocab_source_slug)
+    }
+
+    if (this.initEditUrl) {
+      this.editUrl = this.initEditUrl
+        .replace(0, this.vocabEntryContext.vocab_context_id)
+    }
+  
+    if (this.initDeleteUrl) {
+      this.deleteUrl = this.initDeleteUrl
+        .replace(0, this.vocabEntryContext.vocab_context_id)
+    }
+  }
+}
 
 const VocabContexts = {
   mixins: [
@@ -351,14 +730,13 @@ const VocabContexts = {
     AdminMixin
   ],
   props: {
-    initVocabContextsUrl: {
+    vocabContextsUrl: {
       type: String,
-      default: ''
+      required: true
     }
   },
   data() {
     return {
-      vocabContextsUrl: this.initVocabContextsUrl,
       vocabContexts: null
     }
   },
@@ -383,7 +761,7 @@ const VocabContexts = {
           response.data.num_pages
         )
         VueScrollTo.scrollTo({
-          el: '#contexts-scroll-top',
+          el: '#vocab-contexts-scroll-top',
         })
         this.success()
       })
@@ -400,6 +778,9 @@ const VocabContexts = {
       .finally(() => {
         this.complete()
       })
+    },
+    onDeleteVocabContext(index) {
+      this.$delete(this.vocabContexts, index)
     }
   },
   created() {
@@ -408,244 +789,89 @@ const VocabContexts = {
 }
 
 const VocabEntryContexts = {
-  mixins: [ VocabContexts ]
+  mixins: [VocabContexts]
 }
 
-const VocabContext = {
+const VocabContextEditor = {
+  /**
+  Quick note: In this component, VocabEntry refers to the base vocab entry,
+  and VocabEntryInstance refers to the usages of said VocabEntry in the context.
+  **/
+  components: {
+    "markdown-editor": MarkdownEditor
+  },
   mixins: [
-    BaseModel,
-    MarkdownMixin,
-    HighlightMixin,
-    AdminMixin
+    HighlightMixin
   ],
   props: {
-    initContext: {
-      type: Object,
-      required: true
-    },
-    initSourceUrl: {
-      type: String,
-      default: ''
-    }
-  },
-  data() {
-    return {
-      context: this.initContext,
-      sourceUrl: this.initSourceUrl
-    }
-  },
-  methods: {
-    selectSource() {
-      if (this.sourceUrl) {
-        window.location.replace(this.sourceUrl)
-      }
-    }
-  },
-  created() {
-    if (this.initDeleteUrl) {
-      this.deleteUrl = this.initDeleteUrl
-        .replace(0, this.context.id)
-    }
-
-    if (this.initSourceUrl) {
-      this.sourceUrl = this.initSourceUrl
-        .replace(0, this.context.vocab_source_id)
-        .replace('zzz', this.context.vocab_source_slug)
-    }
-  }
-}
-
-const VocabContextTags = {
-  mixins: [ VocabContext ],
-  props: {
-    initEntries: {
+    initVocabEntries: {
       type: Array,
-      default: []
+      default: () => ([])
     },
-    initTagSelectUrl: {
+    vocabEntryDetailUrl: {
       type: String,
-      default: ''
+      required: true
+    },
+    addVocabEntryUrl: {
+      type: String,
+      required: true
+    },
+    removeVocabEntryUrl: {
+      type: String,
+      required: true
+    },
+    addVocabEntryInstanceUrl: {
+      type: String,
+      required: true
+    },
+    removeVocabEntryInstanceUrl: {
+      type: String,
+      required: true
     }
   },
   data() {
     return {
-      entries: [],
-      currentEntry: null,
-      tagSelectUrl: this.initTagSelectUrl
+      vocabEntries: [],
+      selectedVocabEntry: null
     }
   },
   methods: {
-    selectTag(index) {
-      this.currentEntry = this.entries[index]
-      if (this.tagSelectUrl) {
-        this.tagSelectUrl = this.tagSelectUrl
-          .replace('xx', this.currentEntry.language)
-          .replace('zzz', this.currentEntry.slug)
-        window.location.replace(this.tagSelectUrl)
-      }
+    selectVocabEntry(index) {
+      this.selectedVocabEntry = this.vocabEntries[index]
+      this.clearHighlight()
+      this.highlight(this.selectedVocabEntry.tags)
     },
-    toggleTag(index) {
-      if (this.currentEntry == null) {
-        this.currentEntry = this.entries[index]
-        this.currentEntry.selected = true
-        this.highlight(this.currentEntry.tags)
-      } else if (this.currentEntry.id != this.entries[index].id) {
-        this.currentEntry.selected = false
-        this.clearHighlight()
-        this.currentEntry = this.entries[index]
-        this.currentEntry.selected = true
-        this.highlight(this.currentEntry.tags)
-      } else {
-        this.currentEntry.selected = !this.currentEntry.selected
+    deselectVocabEntry() {
+      console.log("deselect")
+      this.clearHighlight()
+      this.selectedVocabEntry = null
+    },
+    addVocabEntry(tag) {
+      /*
+      tag: Object with value and language properties
+      */
+      params = {language: tag.language, entry: tag.value}
 
-        if (this.currentEntry.selected) {
-          this.highlight(this.currentEntry.tags)
-        } else {
-          this.clearHighlight()
-        }
-      }
-    },
-    loadEntries() {
-      for (var k in this.initEntries) {
-        const initEntry = this.initEntries[k]['vocab_entry']
-        const initTags = this.initEntries[k]['tags']
-        const entry = {
-          id: initEntry.id,
-          value: initEntry.entry,
-          slug: initEntry.slug,
-          language: initEntry.language,
-          selected: false,
-          tags: initTags
-        }
-        this.entries.push(entry)
-      }
-    },
-  },
-  created() {
-    this.loadEntries()
-  }
-}
-
-const VocabEntryContext = {
-  mixins: [
-    BaseModel,
-    MarkdownMixin,
-    HighlightMixin,
-    AdminMixin
-  ],
-  props: {
-    initEntryContext: {
-      type: Object,
-      required: true
-    },
-    initSourceUrl: {
-      type: String,
-      default: ''
-    }
-  },
-  data() {
-    return {
-      entryContext: this.initEntryContext
-    }
-  },
-  methods: {
-    selectSource() {
-      if (this.initSourceUrl) {
-        this.sourceUrl = this.initSourceUrl
-          .replace(0, this.entryContext.vocab_source_id)
-          .replace('zzz', this.entryContext.vocab_source_slug)
-        window.location.replace(this.sourceUrl)
-      }
-    }
-  },
-  created() {
-    this.$nextTick(() => {
-      this.highlight(this.entryContext.vocab_entry_tags)
-    })
-  
-    if (this.initDeleteUrl) {
-      this.deleteUrl = this.initDeleteUrl
-        .replace(0, this.entryContext.vocab_context_id)
-    }  
-  }
-}
-
-const ContextTagger = {
-  mixins: [MarkdownMixin, HighlightMixin],
-  props: {
-    initEntryDetailUrl: {
-      type: String,
-      required: true
-    },
-    initAddEntryUrl: {
-      type: String,
-      required: true
-    },
-    initAddEntryTagUrl: {
-      type: String,
-      required: true
-    },   
-    initRemoveEntryUrl: {
-      type: String,
-      required: true
-    },
-    initRemoveEntryTagUrl: {
-      type: String,
-      required: true
-    },
-    initContextEditUrl: {
-      type: String,
-      required: true
-    },          
-    initEntries: {
-      type: Object,
-      default: () => ({})
-    },
-    initContext: {
-      type: String,
-      default: ''
-    }
-  },
-  data() {
-    return {
-      entryDetailUrl: this.initEntryDetailUrl,
-      addEntryUrl: this.initAddEntryUrl,
-      addEntryTagUrl: this.initAddEntryTagUrl,
-      removeEntryUrl: this.initRemoveEntryUrl,
-      removeEntryTagUrl: this.initRemoveEntryTagUrl,
-      contextEditUrl: this.initContextEditUrl,
-      entries: [],
-      currentEntry: null,
-      context: this.initContext,
-      contextHtml: '',
-      isEditing: false
-    }
-  },
-  methods: {
-    addEntry(tag) {
-      params = {language: tag.language, entry: tag.entry}
-
-      axios.get(this.entryDetailUrl, {
+      axios.get(this.vocabEntryDetailUrl, {
         params: params
       })
       .then(response => {
-        console.log('Entry verified.')
+        console.log("Vocab entry verified.")
 
         const data = response.data
-        console.log(data)
-        const entryId = data.id
+        const vocabEntryId = data.id
 
-        const entry = {
-          id: entryId,
+        const vocabEntry = {
+          id: vocabEntryId,
           value: data.entry,
           language: data.language,
           tags: []
         }
 
-        axios.post(this.addEntryUrl, {"vocab_entry_id": entryId})
+        axios.post(this.addVocabEntryUrl, {"vocab_entry_id": vocabEntryId})
         .then(response => {
-          console.log('Entry added.')
-          this.entries.push(entry)
+          console.log("Vocab entry added.")
+          this.vocabEntries.push(vocabEntry)
         })
         .catch(error => {
           if (error.response) {
@@ -669,16 +895,16 @@ const ContextTagger = {
         }
         console.log(error.config)
       })
-      .finally(() => {})
+      .finally(() => {})    
     },
-    removeEntry(index) {
-      var tag = this.entries[index]
+    removeVocabEntry(index) {
+      const vocabEntry = this.vocabEntries[index]
 
-      axios.post(this.removeEntryUrl, {"vocab_entry_id": tag.id})
+      axios.post(this.removeVocabEntryUrl, {"vocab_entry_id": vocabEntry.id})
       .then(response => {
-        console.log('Tag deleted from db.')
-        this.entries.splice(index, 1)
-        this.reset()
+        console.log("Vocab entry deleted.")
+        this.$delete(this.vocabEntries, index)
+        this.deselectVocabEntry()
       })
       .catch(error => {
         if (error.response) {
@@ -692,28 +918,17 @@ const ContextTagger = {
       })
       .finally(() => {})      
     },
-    selectEntry(index) {
-      this.currentEntry = this.entries[index]
-      this.clearHighlight()
-      this.highlight(this.currentEntry.tags)
-      console.log(this.currentEntry.value)
-      this.$nextTick(() => {
-        if (vm.smallWindow) {
-          window.location.hash = "#vocab-entry-instance-tags"
-          window.location = window.location.href
-        }
-      })
-    },
-    addEntryTag(tag) {
-      const data = {
-        "vocab_entry_id": this.currentEntry.id,
+    addVocabEntryInstance(tag) {
+      const vocabEntryInstance = {
+        "vocab_entry_id": this.selectedVocabEntry.id,
         "vocab_entry_tag": tag
       }
-      axios.post(this.addEntryTagUrl, data)
+
+      axios.post(this.addVocabEntryInstanceUrl, vocabEntryInstance)
       .then(response => {
-        console.log('Entry tag added.')
-        this.currentEntry.tags.push(tag)
-        this.highlight(this.currentEntry.tags)
+        console.log("Vocab entry instance added.")
+        this.selectedVocabEntry.tags.push(tag)
+        this.highlight(this.selectedVocabEntry.tags)
       })
       .catch(error => {
         if (error.response) {
@@ -727,21 +942,20 @@ const ContextTagger = {
       })
       .finally(() => {})
     },
-    removeEntryTag(index) {
-      var tag = this.currentEntry.tags[index]
+    removeVocabEntryInstance(index) {
+      const tag = this.selectedVocabEntry.tags[index]
 
-      const data = {
-        "vocab_entry_id": this.currentEntry.id,
+      const vocabEntryInstance = {
+        "vocab_entry_id": this.selectedVocabEntry.id,
         "vocab_entry_tag": tag
       }
 
-      axios.post(this.removeEntryTagUrl, data)
+      axios.post(this.removeVocabEntryInstanceUrl, vocabEntryInstance)
       .then(response => {
-        console.log('Tag instance deleted from db.')
-        this.currentEntry.tags.splice(index, 1)
+        this.$delete(this.selectedVocabEntry.tags, index)
         this.clearHighlight()
-        this.highlight(this.currentEntry.tags)
-        console.log('entry instance removed ' + tag)
+        this.highlight(this.selectedVocabEntry.tags)
+        console.log("Vocab entry instance " + tag + " removed.")
       })
       .catch(error => {
         if (error.response) {
@@ -755,306 +969,30 @@ const ContextTagger = {
       })
       .finally(() => {})      
     },
-    selectEntryTag(index) {
-      console.log('entry instance selected ' + this.currentEntry.tags[index])
-    },
-    reset() {
-      this.currentEntry = null
-      this.clearHighlight()
-    },
-    loadEntries() {
-      for (var k in this.initEntries) {
-        const initEntry = this.initEntries[k]['vocab_entry']
-        const initTags = this.initEntries[k]['tags']
+    loadVocabEntries() {
+      for (var i in this.initVocabEntries) {
+        const initVocabEntry = this.initVocabEntries[i]["vocab_entry"]
+        const initTags = this.initVocabEntries[i]["tags"]
 
-        const entry = {
-          id: initEntry.id,
-          value: initEntry.entry,
-          language: initEntry.language,
+        const vocabEntry = {
+          id: initVocabEntry.id,
+          value: initVocabEntry.entry,
+          language: initVocabEntry.language,
           tags: initTags
         }
-        this.entries.push(entry)
+        this.vocabEntries.push(vocabEntry)
       }
     },
-    editContext() {
-      this.isEditing = true
-      this.reset()
-    },
-    doneEditing() {      
-      axios.put(this.contextEditUrl, {"content": this.context})
-      .then(response => {
-        this.isEditing = false
-        this.contextHtml = this.markdownToHtml(this.context)
-      })
-      .catch(error => {
-        if (error.response) {
-          console.log(error.response)
-        } else if (error.request) {
-          console.log(error.request)
-        } else {
-          console.log(error.message)
-        }
-        console.log(error.config)
-      })
-      .finally(() => {})
+    onMarkdownSave() {
+      if (this.selectedVocabEntry) {
+        this.clearHighlight()
+        this.highlight(this.selectedVocabEntry.tags)
+      }
+      
+      console.log("onMarkdownSave")
     }
   },
   created() {
-    this.contextHtml = this.markdownToHtml(this.context)
-    this.loadEntries()
+    this.loadVocabEntries()
   }
-}
-
-// Vocab source
-
-const VocabSources = {
-  mixins: [
-    AjaxProcessMixin,
-    PaginationMixin,
-    AdminMixin
-  ],
-  props: {
-    initVocabSourcesUrl: {
-      type: String,
-      default: ''
-    }
-  },
-  data() {
-    return {
-      vocabSourcesUrl: this.initVocabSourcesUrl,
-      vocabSources: null
-    }
-  },
-  methods: {
-    getVocabSources(page=1) {
-      this.process()
-
-      params = {
-        page: page
-      }
-
-      axios.get(this.vocabSourcesUrl, {
-        params: params
-      })
-      .then(response => {
-        this.vocabSources = response.data.results
-        this.setPagination(
-          response.data.previous,
-          response.data.next,
-          response.data.page_num,
-          response.data.count,
-          response.data.num_pages
-        )
-        VueScrollTo.scrollTo({
-          el: '#sources-scroll-top',
-        })
-        this.success()
-      })
-      .catch(error => {
-        if (error.response) {
-          console.log(error.response)
-        } else if (error.request) {
-          console.log(error.request)
-        } else {
-          console.log(error.message)
-        }
-        console.log(error.config)
-      })
-      .finally(() => {
-        this.complete()
-      })
-    }
-  },
-  created() {
-    this.getVocabSources()
-  }
-}
-
-const VocabSource = {
-  mixins: [
-    AdminMixin,
-    BaseModel
-  ],
-  props: {
-    initSource: {
-      type: Object,
-      required: true
-    },
-    initProjectUrl: {
-      type: String,
-      default: ''
-    }
-  },
-  data() {
-    return {
-      source: this.initSource,
-      projectUrl: this.initProjectUrl
-    }
-  },
-  methods: {
-    viewProject() {
-      if (this.projectUrl) {
-        window.location.replace(this.projectUrl)
-      }
-    }
-  },
-  created() {
-    if (this.initViewUrl) {
-      this.viewUrl = this.initViewUrl
-        .replace(0, this.source.id)
-        .replace('zzz', this.source.slug)   
-    }
-
-    if (this.initDeleteUrl) {
-      this.deleteUrl = this.initDeleteUrl
-        .replace(0, this.source.id)
-    }
-
-    if (this.initProjectUrl) {
-      this.projectUrl = this.initProjectUrl
-        .replace(0, this.source.project_id)
-        .replace('zzz', this.source.project_slug)
-    }    
-  }
-}
-
-const SourceEntrySearch = {
-  mixins: [BaseLanguageSearch],
-  props: {
-    initSourceId: {
-      type: String,
-      default: null
-    }
-  },
-  data() {
-    return {
-      sourceId: this.initSourceId,
-    }
-  },
-  methods: {
-    setResult(result) {
-      this.searchTerm = result
-      this.search()
-    },
-    search(val) {
-      clearTimeout(this.searchTimerId)
-      this.isOpen = false
-      url = this.searchUrl + '?search_entry=' + encodeURIComponent(this.searchTerm) + '&search_language=' + this.language + '&search_source=' + this.sourceId
-      window.location.replace(url);
-    }
-  },
-}
-
-const SourceSearch = {
-  mixins: [BaseSearch],
-  methods: {
-    setResult(result) {
-      this.searchTerm =result
-      this.search()
-    },
-    search() {
-      clearTimeout(this.searchTimerId)
-      this.isOpen = false
-      url = this.searchUrl + "?source=" + encodeURIComponent(this.searchTerm)
-      window.location.replace(url);
-    },
-  },
-}
-
-// Forms
-
-const ProjectForm = {
-  mixins: [BaseForm],
-  data() {
-    return {
-      formData: {
-        name: '',
-        description: ''
-      },
-    }
-  },
-  methods: {
-    resetForm() {
-      this.formData.name = ''
-      this.formData.description = ''
-      this.errors = {}
-    }
-  },
-}
-
-const EntryForm = {
-  mixins: [BaseForm],
-  data() {
-    return {
-      formData: {
-        entry: '',
-        language: 'en',
-        pronunciation_spelling: '',
-        description: ''
-      },
-    }
-  },
-  methods: {
-    resetForm() {
-      this.formData.entry = ''
-      this.formData.language = 'en'
-      this.formData.pronunciation_spelling = ''
-      this.formData.description = ''
-      this.errors = {}
-    }
-  },
-}
-
-const ContextForm = {
-  mixins: [BaseForm],
-  data() {
-    return {
-      formData: {
-        content: '',
-      },
-    }
-  },
-  methods: {
-    resetForm() {
-      this.formData.content = ''
-      this.errors = {}
-    }
-  },
-}
-
-// Keypad
-
-const IpaSymbolKey = {
-  mixins: [BaseSymbolKey],
-  data() {
-    return {
-      symbol: he.decode(this.initSymbol)
-    }
-  },
-  template: `
-    <a 
-    href="#" 
-    class="ui tiny basic icon button"
-    :title="symbol"
-    v-html="symbol"
-    @click.prevent="displaySymbol"
-    >
-    </a>
-  `
-}
-
-const IpaSymbolKeypad = {
-  mixins: [BaseSymbolKeypad],
-  data() {
-    return {
-      ipaSymbolCodes: [
-        "&#712;", "&#716;", "&#618;", "&aelig;", "&#593;",
-        "&#596;", "&#650;", "&#652;", "&#603;", "&#604;",
-        "&#601;", "e&#618;", "a&#618;", "&#596;&#618;", "&#650;",
-        "&#618;&#601;", "e&#601;", "&#650;&#601;", "&#952;",
-        "&#240;", "&#643;", "&#658;", "t&#643;", "d&#658;",
-        "&#331;"
-      ]
-    }
-  },
 }

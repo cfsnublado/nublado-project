@@ -1,46 +1,33 @@
+Vue.component("ajax-delete", AjaxDelete)
+Vue.component("ajax-tag", AjaxTag)
+Vue.component("audio-player", AudioPlayer)
+Vue.component("alert-message", AlertMessage)
+Vue.component("dropdown", Dropdown)
+Vue.component("navbar-dropdown", NavbarDropdown)
+Vue.component("confirmation-modal", ConfirmationModal)
+Vue.component("tag", Tag)
+Vue.component("toggle-tag", ToggleTag)
+Vue.component("tagbox", Tagbox)
+Vue.component("markdown-editor", MarkdownEditor)
 
-// app components
-Vue.component('ajax-delete', AjaxDelete)
-Vue.component('alert-message', AlertMessage)
-Vue.component('dropdown', Dropdown)
-Vue.component('modal', Modal)
-Vue.component('confirmation-modal', ConfirmationModal)
-Vue.component('tag', Tag)
-Vue.component('toggle-tag', ToggleTag)
-Vue.component('ajax-tag', AjaxTag)
-Vue.component('audio-player', AudioPlayer)
-
-// vocab components
-Vue.component('vocab-projects', VocabProjects)
-Vue.component('vocab-project', VocabProject)
-
-Vue.component('vocab-sources', VocabSources)
-Vue.component('vocab-source', VocabSource)
-Vue.component('source-search', SourceSearch)
-Vue.component('source-entry-search', SourceEntrySearch)
-
-Vue.component('vocab-entries', VocabEntries)
-Vue.component('vocab-entry', VocabEntry)
-Vue.component('entry-search', EntrySearch)
-Vue.component('entry-info', EntryInfo)
-Vue.component('entry-toggle-tag', EntryToggleTag)
-Vue.component('entry-tag-search', EntryTagSearch)
-Vue.component('entry-tagbox', EntryTagbox)
-Vue.component('entry-instance-tagbox', EntryInstanceTagbox)
-
-Vue.component('vocab-contexts', VocabContexts)
-Vue.component('vocab-entry-contexts', VocabEntryContexts)
-Vue.component('vocab-context', VocabContext)
-Vue.component('vocab-context-tags', VocabContextTags)
-Vue.component('vocab-entry-context', VocabEntryContext)
-Vue.component('context-tagger', ContextTagger)
-
-Vue.component('entry-form', EntryForm)
-Vue.component('context-form', ContextForm)
-Vue.component('project-form', ProjectForm)
-
-Vue.component('ipa-symbol-key', IpaSymbolKey)
-Vue.component('ipa-symbol-keypad', IpaSymbolKeypad)
+// Vocab components
+Vue.component("vocab-sources", VocabSources)
+Vue.component("vocab-source", VocabSource)
+Vue.component("vocab-source-search", VocabSourceSearch)
+Vue.component("vocab-source-entry-search", VocabSourceEntrySearch)
+Vue.component("vocab-entries", VocabEntries)
+Vue.component("vocab-entry", VocabEntry)
+Vue.component("vocab-entry-contexts", VocabEntryContexts)
+Vue.component("vocab-entry-search", VocabEntrySearch)
+Vue.component("vocab-entry-tag-search", VocabEntryTagSearch)
+Vue.component("vocab-entry-tagbox", VocabEntryTagbox)
+Vue.component("vocab-entry-instance-tagbox", VocabEntryInstanceTagbox)
+Vue.component("vocab-entry-info", VocabEntryInfo)
+Vue.component("vocab-entry-random", VocabEntryRandom)
+Vue.component("vocab-entry-context", VocabEntryContext)
+Vue.component("vocab-contexts", VocabContexts)
+Vue.component("vocab-context-tags", VocabContextTags)
+Vue.component("vocab-context-editor", VocabContextEditor)
 
 Vue.use(ModalPlugin)
 
@@ -58,21 +45,17 @@ VueScrollTo.setDefaults({
     y: true
 })
 
-Vue.filter('capitalize', function (value) {
-  if (!value) return ''
-  value = value.toString()
-  return value.charAt(0).toUpperCase() + value.slice(1)
-})
-
 // Instantiate main app instance.
 const vm = new Vue({
-  el: '#app-container',
-  delimiters: ['[[', ']]'],
+  el: "#app-container",
+  delimiters: ["[[", "]]"],
   data: {
+    appSessionUrl: appSessionUrl,
     showSidebar: sidebarExpanded,
     sidebarSessionEnabled: initSidebarSessionEnabled,
-    sidebarOpenClass: 'sidebar-nav-expanded',
-    appSessionUrl: appSessionUrl,
+    sidebarOpenClass: "sidebar-expanded",
+    showNavbarMenu: false,
+    navbarMenuOpenClass: "is-active",
     windowWidth: 0,
     windowWidthSmall: 640,
     windowResizeTimer: null,
@@ -109,6 +92,20 @@ const vm = new Vue({
         this.setSidebarSession()
       }
     },
+    toggleNavbarMenu(manual) {
+      // If manual is set to true or false, override toggle.
+      if (manual === true || manual === false) {
+        this.showNavbarMenu = manual
+      } else {
+        this.showNavbarMenu = !this.showNavbarMenu
+      }
+  
+      if (this.showNavbarMenu) {
+        this.$refs.navbarMenu.classList.add(this.navbarMenuOpenClass)
+      } else {
+        this.$refs.navbarMenu.classList.remove(this.navbarMenuOpenClass)
+      }
+    },
     setSidebarSession(disableLock = false) {
       var locked = disableLock ? false : this.showSidebar
       axios.post(this.appSessionUrl, {
@@ -129,7 +126,7 @@ const vm = new Vue({
       this.windowResizeTimer = setTimeout(()=>{
         this.windowWidth = document.documentElement.clientWidth
         if (this.smallWindow) {
-          console.log('small')
+          console.log("small")
           if (this.sidebarSessionEnabled) {
             this.setSidebarSession(true)
             this.sidebarSessionEnabled = false
@@ -145,11 +142,11 @@ const vm = new Vue({
   },
   mounted() {
     this.$nextTick(function() {
-      window.addEventListener('resize', this.windowResize);
+      window.addEventListener("resize", this.windowResize);
       this.windowResize()
     })
   },
   beforeDestroy() {
-    window.removeEventListener('resize', this.windowResize);
+    window.removeEventListener("resize", this.windowResize);
   }
 })

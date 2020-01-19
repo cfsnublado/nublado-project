@@ -26,8 +26,6 @@ Markdown==3.1.1
 markdown2==2.3.8
 markdownify==0.4.1
 MarkupSafe==1.1.1
-mkdocs==1.0.4
-mkdocs-cinder==0.17.0
 more-itertools==8.0.2
 oauthlib==3.1.0
 packaging==20.0

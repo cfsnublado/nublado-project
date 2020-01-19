@@ -2,8 +2,6 @@ import os
 import sys
 from pathlib import Path
 
-import yaml
-
 from django.core.exceptions import ImproperlyConfigured
 from django.utils.translation import ugettext_lazy as _
 
@@ -26,15 +24,6 @@ PROJECT_ROOT = BASE_DIR / PROJECT_DIR_NAME
 PROJECT_NAME = "Nublado"
 PROJECT_HOME_URL = "app:home"
 PROJECT_AUTH_HOME_URL = "app:home"
-
-# Documentation
-MKDOCS_CONFIG = os.path.join(BASE_DIR, "mkdocs.yml")
-DOCS_DIR = ""
-DOCS_STATIC_NAMESPACE = ""
-
-with open(MKDOCS_CONFIG, "r") as f:
-    DOCS_DIR = yaml.load(f, Loader=yaml.Loader)["site_dir"]
-    DOCS_STATIC_NAMESPACE = os.path.basename(DOCS_DIR)
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = get_env_variable("DJANGO_SECRET_KEY")
@@ -91,8 +80,7 @@ LOCAL_APPS = [
     "users",
     "core",
     "security",
-    "vocab",
-    "appdocs"
+    "vocab"
 ]
 
 THIRD_PARTY_APPS = [

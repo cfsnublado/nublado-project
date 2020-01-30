@@ -10016,18 +10016,18 @@ label.panel-block:hover {
   padding: 3rem 1.5rem 6rem;
 }
 
-/* line 3, ../scss/cfs/_app.scss */
+/* line 3, ../../shared/scss/cfs/_app.scss */
 #app-container {
   position: relative;
   min-height: 100vh;
 }
 
-/* line 9, ../scss/cfs/_app.scss */
+/* line 9, ../../shared/scss/cfs/_app.scss */
 .theme-cloudy {
   background: #f9f9f9;
 }
 
-/* line 13, ../scss/cfs/_app.scss */
+/* line 13, ../../shared/scss/cfs/_app.scss */
 .small-caps-header {
   font-size: 0.875rem;
   font-weight: bold;
@@ -10035,7 +10035,7 @@ label.panel-block:hover {
   color: #aaa;
 }
 
-/* line 22, ../scss/cfs/_app.scss */
+/* line 22, ../../shared/scss/cfs/_app.scss */
 .page-header {
   font-size: 1.5rem;
   margin-top: 10px;
@@ -10054,13 +10054,13 @@ label.panel-block:hover {
   font-weight: bold;
   src: url("../fonts/oxygen/oxygen-bold.ttf") format("truetype");
 }
-/* line 5, ../scss/cfs/_typography.scss */
+/* line 5, ../../shared/scss/cfs/_typography.scss */
 p {
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
 
-/* line 10, ../scss/cfs/_typography.scss */
+/* line 10, ../../shared/scss/cfs/_typography.scss */
 blockquote {
   color: #888;
   font-size: 2.125rem;
@@ -10072,27 +10072,27 @@ blockquote {
   padding-left: 1.25rem;
   border-left: 4px solid;
 }
-/* line 24, ../scss/cfs/_typography.scss */
+/* line 24, ../../shared/scss/cfs/_typography.scss */
 blockquote:before, blockquote:after {
   content: '\201C';
 }
-/* line 30, ../scss/cfs/_typography.scss */
+/* line 30, ../../shared/scss/cfs/_typography.scss */
 blockquote:after {
   content: '\201D';
 }
-/* line 34, ../scss/cfs/_typography.scss */
+/* line 34, ../../shared/scss/cfs/_typography.scss */
 blockquote p {
   display: inline;
 }
 
 @media screen and (max-width: 768px) {
-  /* line 41, ../scss/cfs/_typography.scss */
+  /* line 41, ../../shared/scss/cfs/_typography.scss */
   blockquote {
     font-size: 1.5rem;
     line-height: 2.375rem;
   }
 }
-/* line 1, ../scss/cfs/_layout.scss */
+/* line 1, ../../shared/scss/cfs/_layout.scss */
 .centerall {
   display: flex;
   height: 100vh;
@@ -10102,12 +10102,12 @@ blockquote p {
   align-items: center;
 }
 
-/* line 12, ../scss/cfs/_layout.scss */
+/* line 12, ../../shared/scss/cfs/_layout.scss */
 .main-content {
   padding-top: 2.5rem;
 }
 
-/* line 16, ../scss/cfs/_layout.scss */
+/* line 16, ../../shared/scss/cfs/_layout.scss */
 .page-footer {
   display: flex;
   width: 100%;
@@ -10117,7 +10117,7 @@ blockquote p {
   align-items: center;
   justify-content: center;
 }
-/* line 28, ../scss/cfs/_layout.scss */
+/* line 28, ../../shared/scss/cfs/_layout.scss */
 .page-footer.is-fixed {
   position: fixed;
   right: 0;
@@ -10125,27 +10125,27 @@ blockquote p {
   left: 0;
   width: auto;
 }
-/* line 37, ../scss/cfs/_layout.scss */
+/* line 37, ../../shared/scss/cfs/_layout.scss */
 .page-footer.is-bordered {
   border-top: 1px solid #dfe1e3;
 }
 
-/* line 1, ../scss/cfs/_breadcrumb.scss */
+/* line 1, ../../shared/scss/cfs/_breadcrumb.scss */
 .breadcrumb {
   font-size: 1rem;
 }
-/* line 5, ../scss/cfs/_breadcrumb.scss */
+/* line 5, ../../shared/scss/cfs/_breadcrumb.scss */
 .breadcrumb li + li::before {
   content: ">";
 }
 
 @media screen and (max-width: 768px) {
-  /* line 12, ../scss/cfs/_breadcrumb.scss */
+  /* line 12, ../../shared/scss/cfs/_breadcrumb.scss */
   .breadcrumb {
     display: none;
   }
 }
-/* line 9, ../scss/cfs/_navbar.scss */
+/* line 9, ../../shared/scss/cfs/_navbar.scss */
 .navbar {
   position: relative;
   z-index: 30;
@@ -10153,24 +10153,24 @@ blockquote p {
   max-height: 3.125rem;
   background-color: #f9f9f9;
 }
-/* line 18, ../scss/cfs/_navbar.scss */
+/* line 18, ../../shared/scss/cfs/_navbar.scss */
 .navbar.is-bordered {
   border-bottom: 1px solid #eee;
 }
-/* line 27, ../scss/cfs/_navbar.scss */
+/* line 27, ../../shared/scss/cfs/_navbar.scss */
 .navbar.is-white {
   color: #0a0a0a;
   background-color: white;
 }
 @media screen and (min-width: 769px) {
-  /* line 31, ../scss/cfs/_navbar.scss */
+  /* line 31, ../../shared/scss/cfs/_navbar.scss */
   .navbar.is-white .navbar-start > .navbar-item,
   .navbar.is-white .navbar-start .navbar-link,
   .navbar.is-white .navbar-end > .navbar-item,
   .navbar.is-white .navbar-end .navbar-link {
     color: #0a0a0a;
   }
-  /* line 38, ../scss/cfs/_navbar.scss */
+  /* line 38, ../../shared/scss/cfs/_navbar.scss */
   .navbar.is-white .navbar-start > a.navbar-item:focus, .navbar.is-white .navbar-start > a.navbar-item:hover, .navbar.is-white .navbar-start > a.navbar-item.is-active,
   .navbar.is-white .navbar-start .navbar-link:focus,
   .navbar.is-white .navbar-start .navbar-link:hover,
@@ -10184,30 +10184,30 @@ blockquote p {
     color: #0a0a0a;
     background-color: #f2f2f2;
   }
-  /* line 47, ../scss/cfs/_navbar.scss */
+  /* line 47, ../../shared/scss/cfs/_navbar.scss */
   .navbar.is-white .navbar-start .navbar-link::after,
   .navbar.is-white .navbar-end .navbar-link::after {
     border-color: #0a0a0a;
   }
-  /* line 53, ../scss/cfs/_navbar.scss */
+  /* line 53, ../../shared/scss/cfs/_navbar.scss */
   .navbar.is-white .navbar-item.has-dropdown:focus .navbar-link,
   .navbar.is-white .navbar-item.has-dropdown:hover .navbar-link,
   .navbar.is-white .navbar-item.has-dropdown.is-active .navbar-link {
     color: #0a0a0a;
     background-color: #f2f2f2;
   }
-  /* line 62, ../scss/cfs/_navbar.scss */
+  /* line 62, ../../shared/scss/cfs/_navbar.scss */
   .navbar.is-white .navbar-dropdown a.navbar-item.is-active {
     color: #0a0a0a;
     background-color: white;
   }
 }
-/* line 74, ../scss/cfs/_navbar.scss */
+/* line 74, ../../shared/scss/cfs/_navbar.scss */
 .navbar.is-white .navbar-brand > .navbar-item,
 .navbar.is-white .navbar-brand .navbar-link {
   color: #0a0a0a;
 }
-/* line 81, ../scss/cfs/_navbar.scss */
+/* line 81, ../../shared/scss/cfs/_navbar.scss */
 .navbar.is-white .navbar-brand > a.navbar-item:focus, .navbar.is-white .navbar-brand > a.navbar-item:hover, .navbar.is-white .navbar-brand > a.navbar-item.is-active,
 .navbar.is-white .navbar-brand .navbar-link:focus,
 .navbar.is-white .navbar-brand .navbar-link:hover,
@@ -10215,28 +10215,28 @@ blockquote p {
   color: #0a0a0a;
   background-color: #f2f2f2;
 }
-/* line 90, ../scss/cfs/_navbar.scss */
+/* line 90, ../../shared/scss/cfs/_navbar.scss */
 .navbar.is-white .navbar-brand .navbar-link::after {
   border-color: #0a0a0a;
 }
-/* line 96, ../scss/cfs/_navbar.scss */
+/* line 96, ../../shared/scss/cfs/_navbar.scss */
 .navbar.is-white .navbar-burger {
   color: #0a0a0a;
 }
-/* line 27, ../scss/cfs/_navbar.scss */
+/* line 27, ../../shared/scss/cfs/_navbar.scss */
 .navbar.is-black {
   color: white;
   background-color: #0a0a0a;
 }
 @media screen and (min-width: 769px) {
-  /* line 31, ../scss/cfs/_navbar.scss */
+  /* line 31, ../../shared/scss/cfs/_navbar.scss */
   .navbar.is-black .navbar-start > .navbar-item,
   .navbar.is-black .navbar-start .navbar-link,
   .navbar.is-black .navbar-end > .navbar-item,
   .navbar.is-black .navbar-end .navbar-link {
     color: white;
   }
-  /* line 38, ../scss/cfs/_navbar.scss */
+  /* line 38, ../../shared/scss/cfs/_navbar.scss */
   .navbar.is-black .navbar-start > a.navbar-item:focus, .navbar.is-black .navbar-start > a.navbar-item:hover, .navbar.is-black .navbar-start > a.navbar-item.is-active,
   .navbar.is-black .navbar-start .navbar-link:focus,
   .navbar.is-black .navbar-start .navbar-link:hover,
@@ -10250,30 +10250,30 @@ blockquote p {
     color: white;
     background-color: black;
   }
-  /* line 47, ../scss/cfs/_navbar.scss */
+  /* line 47, ../../shared/scss/cfs/_navbar.scss */
   .navbar.is-black .navbar-start .navbar-link::after,
   .navbar.is-black .navbar-end .navbar-link::after {
     border-color: white;
   }
-  /* line 53, ../scss/cfs/_navbar.scss */
+  /* line 53, ../../shared/scss/cfs/_navbar.scss */
   .navbar.is-black .navbar-item.has-dropdown:focus .navbar-link,
   .navbar.is-black .navbar-item.has-dropdown:hover .navbar-link,
   .navbar.is-black .navbar-item.has-dropdown.is-active .navbar-link {
     color: white;
     background-color: black;
   }
-  /* line 62, ../scss/cfs/_navbar.scss */
+  /* line 62, ../../shared/scss/cfs/_navbar.scss */
   .navbar.is-black .navbar-dropdown a.navbar-item.is-active {
     color: white;
     background-color: #0a0a0a;
   }
 }
-/* line 74, ../scss/cfs/_navbar.scss */
+/* line 74, ../../shared/scss/cfs/_navbar.scss */
 .navbar.is-black .navbar-brand > .navbar-item,
 .navbar.is-black .navbar-brand .navbar-link {
   color: white;
 }
-/* line 81, ../scss/cfs/_navbar.scss */
+/* line 81, ../../shared/scss/cfs/_navbar.scss */
 .navbar.is-black .navbar-brand > a.navbar-item:focus, .navbar.is-black .navbar-brand > a.navbar-item:hover, .navbar.is-black .navbar-brand > a.navbar-item.is-active,
 .navbar.is-black .navbar-brand .navbar-link:focus,
 .navbar.is-black .navbar-brand .navbar-link:hover,
@@ -10281,28 +10281,28 @@ blockquote p {
   color: white;
   background-color: black;
 }
-/* line 90, ../scss/cfs/_navbar.scss */
+/* line 90, ../../shared/scss/cfs/_navbar.scss */
 .navbar.is-black .navbar-brand .navbar-link::after {
   border-color: white;
 }
-/* line 96, ../scss/cfs/_navbar.scss */
+/* line 96, ../../shared/scss/cfs/_navbar.scss */
 .navbar.is-black .navbar-burger {
   color: white;
 }
-/* line 27, ../scss/cfs/_navbar.scss */
+/* line 27, ../../shared/scss/cfs/_navbar.scss */
 .navbar.is-light {
   color: #363636;
   background-color: whitesmoke;
 }
 @media screen and (min-width: 769px) {
-  /* line 31, ../scss/cfs/_navbar.scss */
+  /* line 31, ../../shared/scss/cfs/_navbar.scss */
   .navbar.is-light .navbar-start > .navbar-item,
   .navbar.is-light .navbar-start .navbar-link,
   .navbar.is-light .navbar-end > .navbar-item,
   .navbar.is-light .navbar-end .navbar-link {
     color: #363636;
   }
-  /* line 38, ../scss/cfs/_navbar.scss */
+  /* line 38, ../../shared/scss/cfs/_navbar.scss */
   .navbar.is-light .navbar-start > a.navbar-item:focus, .navbar.is-light .navbar-start > a.navbar-item:hover, .navbar.is-light .navbar-start > a.navbar-item.is-active,
   .navbar.is-light .navbar-start .navbar-link:focus,
   .navbar.is-light .navbar-start .navbar-link:hover,
@@ -10316,30 +10316,30 @@ blockquote p {
     color: #363636;
     background-color: #e8e8e8;
   }
-  /* line 47, ../scss/cfs/_navbar.scss */
+  /* line 47, ../../shared/scss/cfs/_navbar.scss */
   .navbar.is-light .navbar-start .navbar-link::after,
   .navbar.is-light .navbar-end .navbar-link::after {
     border-color: #363636;
   }
-  /* line 53, ../scss/cfs/_navbar.scss */
+  /* line 53, ../../shared/scss/cfs/_navbar.scss */
   .navbar.is-light .navbar-item.has-dropdown:focus .navbar-link,
   .navbar.is-light .navbar-item.has-dropdown:hover .navbar-link,
   .navbar.is-light .navbar-item.has-dropdown.is-active .navbar-link {
     color: #363636;
     background-color: #e8e8e8;
   }
-  /* line 62, ../scss/cfs/_navbar.scss */
+  /* line 62, ../../shared/scss/cfs/_navbar.scss */
   .navbar.is-light .navbar-dropdown a.navbar-item.is-active {
     color: #363636;
     background-color: whitesmoke;
   }
 }
-/* line 74, ../scss/cfs/_navbar.scss */
+/* line 74, ../../shared/scss/cfs/_navbar.scss */
 .navbar.is-light .navbar-brand > .navbar-item,
 .navbar.is-light .navbar-brand .navbar-link {
   color: #363636;
 }
-/* line 81, ../scss/cfs/_navbar.scss */
+/* line 81, ../../shared/scss/cfs/_navbar.scss */
 .navbar.is-light .navbar-brand > a.navbar-item:focus, .navbar.is-light .navbar-brand > a.navbar-item:hover, .navbar.is-light .navbar-brand > a.navbar-item.is-active,
 .navbar.is-light .navbar-brand .navbar-link:focus,
 .navbar.is-light .navbar-brand .navbar-link:hover,
@@ -10347,28 +10347,28 @@ blockquote p {
   color: #363636;
   background-color: #e8e8e8;
 }
-/* line 90, ../scss/cfs/_navbar.scss */
+/* line 90, ../../shared/scss/cfs/_navbar.scss */
 .navbar.is-light .navbar-brand .navbar-link::after {
   border-color: #363636;
 }
-/* line 96, ../scss/cfs/_navbar.scss */
+/* line 96, ../../shared/scss/cfs/_navbar.scss */
 .navbar.is-light .navbar-burger {
   color: #363636;
 }
-/* line 27, ../scss/cfs/_navbar.scss */
+/* line 27, ../../shared/scss/cfs/_navbar.scss */
 .navbar.is-dark {
   color: whitesmoke;
   background-color: #363636;
 }
 @media screen and (min-width: 769px) {
-  /* line 31, ../scss/cfs/_navbar.scss */
+  /* line 31, ../../shared/scss/cfs/_navbar.scss */
   .navbar.is-dark .navbar-start > .navbar-item,
   .navbar.is-dark .navbar-start .navbar-link,
   .navbar.is-dark .navbar-end > .navbar-item,
   .navbar.is-dark .navbar-end .navbar-link {
     color: whitesmoke;
   }
-  /* line 38, ../scss/cfs/_navbar.scss */
+  /* line 38, ../../shared/scss/cfs/_navbar.scss */
   .navbar.is-dark .navbar-start > a.navbar-item:focus, .navbar.is-dark .navbar-start > a.navbar-item:hover, .navbar.is-dark .navbar-start > a.navbar-item.is-active,
   .navbar.is-dark .navbar-start .navbar-link:focus,
   .navbar.is-dark .navbar-start .navbar-link:hover,
@@ -10382,30 +10382,30 @@ blockquote p {
     color: whitesmoke;
     background-color: #292929;
   }
-  /* line 47, ../scss/cfs/_navbar.scss */
+  /* line 47, ../../shared/scss/cfs/_navbar.scss */
   .navbar.is-dark .navbar-start .navbar-link::after,
   .navbar.is-dark .navbar-end .navbar-link::after {
     border-color: whitesmoke;
   }
-  /* line 53, ../scss/cfs/_navbar.scss */
+  /* line 53, ../../shared/scss/cfs/_navbar.scss */
   .navbar.is-dark .navbar-item.has-dropdown:focus .navbar-link,
   .navbar.is-dark .navbar-item.has-dropdown:hover .navbar-link,
   .navbar.is-dark .navbar-item.has-dropdown.is-active .navbar-link {
     color: whitesmoke;
     background-color: #292929;
   }
-  /* line 62, ../scss/cfs/_navbar.scss */
+  /* line 62, ../../shared/scss/cfs/_navbar.scss */
   .navbar.is-dark .navbar-dropdown a.navbar-item.is-active {
     color: whitesmoke;
     background-color: #363636;
   }
 }
-/* line 74, ../scss/cfs/_navbar.scss */
+/* line 74, ../../shared/scss/cfs/_navbar.scss */
 .navbar.is-dark .navbar-brand > .navbar-item,
 .navbar.is-dark .navbar-brand .navbar-link {
   color: whitesmoke;
 }
-/* line 81, ../scss/cfs/_navbar.scss */
+/* line 81, ../../shared/scss/cfs/_navbar.scss */
 .navbar.is-dark .navbar-brand > a.navbar-item:focus, .navbar.is-dark .navbar-brand > a.navbar-item:hover, .navbar.is-dark .navbar-brand > a.navbar-item.is-active,
 .navbar.is-dark .navbar-brand .navbar-link:focus,
 .navbar.is-dark .navbar-brand .navbar-link:hover,
@@ -10413,28 +10413,28 @@ blockquote p {
   color: whitesmoke;
   background-color: #292929;
 }
-/* line 90, ../scss/cfs/_navbar.scss */
+/* line 90, ../../shared/scss/cfs/_navbar.scss */
 .navbar.is-dark .navbar-brand .navbar-link::after {
   border-color: whitesmoke;
 }
-/* line 96, ../scss/cfs/_navbar.scss */
+/* line 96, ../../shared/scss/cfs/_navbar.scss */
 .navbar.is-dark .navbar-burger {
   color: whitesmoke;
 }
-/* line 27, ../scss/cfs/_navbar.scss */
+/* line 27, ../../shared/scss/cfs/_navbar.scss */
 .navbar.is-primary {
   color: #fff;
   background-color: #00d1b2;
 }
 @media screen and (min-width: 769px) {
-  /* line 31, ../scss/cfs/_navbar.scss */
+  /* line 31, ../../shared/scss/cfs/_navbar.scss */
   .navbar.is-primary .navbar-start > .navbar-item,
   .navbar.is-primary .navbar-start .navbar-link,
   .navbar.is-primary .navbar-end > .navbar-item,
   .navbar.is-primary .navbar-end .navbar-link {
     color: #fff;
   }
-  /* line 38, ../scss/cfs/_navbar.scss */
+  /* line 38, ../../shared/scss/cfs/_navbar.scss */
   .navbar.is-primary .navbar-start > a.navbar-item:focus, .navbar.is-primary .navbar-start > a.navbar-item:hover, .navbar.is-primary .navbar-start > a.navbar-item.is-active,
   .navbar.is-primary .navbar-start .navbar-link:focus,
   .navbar.is-primary .navbar-start .navbar-link:hover,
@@ -10448,30 +10448,30 @@ blockquote p {
     color: #fff;
     background-color: #00b89c;
   }
-  /* line 47, ../scss/cfs/_navbar.scss */
+  /* line 47, ../../shared/scss/cfs/_navbar.scss */
   .navbar.is-primary .navbar-start .navbar-link::after,
   .navbar.is-primary .navbar-end .navbar-link::after {
     border-color: #fff;
   }
-  /* line 53, ../scss/cfs/_navbar.scss */
+  /* line 53, ../../shared/scss/cfs/_navbar.scss */
   .navbar.is-primary .navbar-item.has-dropdown:focus .navbar-link,
   .navbar.is-primary .navbar-item.has-dropdown:hover .navbar-link,
   .navbar.is-primary .navbar-item.has-dropdown.is-active .navbar-link {
     color: #fff;
     background-color: #00b89c;
   }
-  /* line 62, ../scss/cfs/_navbar.scss */
+  /* line 62, ../../shared/scss/cfs/_navbar.scss */
   .navbar.is-primary .navbar-dropdown a.navbar-item.is-active {
     color: #fff;
     background-color: #00d1b2;
   }
 }
-/* line 74, ../scss/cfs/_navbar.scss */
+/* line 74, ../../shared/scss/cfs/_navbar.scss */
 .navbar.is-primary .navbar-brand > .navbar-item,
 .navbar.is-primary .navbar-brand .navbar-link {
   color: #fff;
 }
-/* line 81, ../scss/cfs/_navbar.scss */
+/* line 81, ../../shared/scss/cfs/_navbar.scss */
 .navbar.is-primary .navbar-brand > a.navbar-item:focus, .navbar.is-primary .navbar-brand > a.navbar-item:hover, .navbar.is-primary .navbar-brand > a.navbar-item.is-active,
 .navbar.is-primary .navbar-brand .navbar-link:focus,
 .navbar.is-primary .navbar-brand .navbar-link:hover,
@@ -10479,28 +10479,28 @@ blockquote p {
   color: #fff;
   background-color: #00b89c;
 }
-/* line 90, ../scss/cfs/_navbar.scss */
+/* line 90, ../../shared/scss/cfs/_navbar.scss */
 .navbar.is-primary .navbar-brand .navbar-link::after {
   border-color: #fff;
 }
-/* line 96, ../scss/cfs/_navbar.scss */
+/* line 96, ../../shared/scss/cfs/_navbar.scss */
 .navbar.is-primary .navbar-burger {
   color: #fff;
 }
-/* line 27, ../scss/cfs/_navbar.scss */
+/* line 27, ../../shared/scss/cfs/_navbar.scss */
 .navbar.is-link {
   color: #fff;
   background-color: #3273dc;
 }
 @media screen and (min-width: 769px) {
-  /* line 31, ../scss/cfs/_navbar.scss */
+  /* line 31, ../../shared/scss/cfs/_navbar.scss */
   .navbar.is-link .navbar-start > .navbar-item,
   .navbar.is-link .navbar-start .navbar-link,
   .navbar.is-link .navbar-end > .navbar-item,
   .navbar.is-link .navbar-end .navbar-link {
     color: #fff;
   }
-  /* line 38, ../scss/cfs/_navbar.scss */
+  /* line 38, ../../shared/scss/cfs/_navbar.scss */
   .navbar.is-link .navbar-start > a.navbar-item:focus, .navbar.is-link .navbar-start > a.navbar-item:hover, .navbar.is-link .navbar-start > a.navbar-item.is-active,
   .navbar.is-link .navbar-start .navbar-link:focus,
   .navbar.is-link .navbar-start .navbar-link:hover,
@@ -10514,30 +10514,30 @@ blockquote p {
     color: #fff;
     background-color: #2366d1;
   }
-  /* line 47, ../scss/cfs/_navbar.scss */
+  /* line 47, ../../shared/scss/cfs/_navbar.scss */
   .navbar.is-link .navbar-start .navbar-link::after,
   .navbar.is-link .navbar-end .navbar-link::after {
     border-color: #fff;
   }
-  /* line 53, ../scss/cfs/_navbar.scss */
+  /* line 53, ../../shared/scss/cfs/_navbar.scss */
   .navbar.is-link .navbar-item.has-dropdown:focus .navbar-link,
   .navbar.is-link .navbar-item.has-dropdown:hover .navbar-link,
   .navbar.is-link .navbar-item.has-dropdown.is-active .navbar-link {
     color: #fff;
     background-color: #2366d1;
   }
-  /* line 62, ../scss/cfs/_navbar.scss */
+  /* line 62, ../../shared/scss/cfs/_navbar.scss */
   .navbar.is-link .navbar-dropdown a.navbar-item.is-active {
     color: #fff;
     background-color: #3273dc;
   }
 }
-/* line 74, ../scss/cfs/_navbar.scss */
+/* line 74, ../../shared/scss/cfs/_navbar.scss */
 .navbar.is-link .navbar-brand > .navbar-item,
 .navbar.is-link .navbar-brand .navbar-link {
   color: #fff;
 }
-/* line 81, ../scss/cfs/_navbar.scss */
+/* line 81, ../../shared/scss/cfs/_navbar.scss */
 .navbar.is-link .navbar-brand > a.navbar-item:focus, .navbar.is-link .navbar-brand > a.navbar-item:hover, .navbar.is-link .navbar-brand > a.navbar-item.is-active,
 .navbar.is-link .navbar-brand .navbar-link:focus,
 .navbar.is-link .navbar-brand .navbar-link:hover,
@@ -10545,28 +10545,28 @@ blockquote p {
   color: #fff;
   background-color: #2366d1;
 }
-/* line 90, ../scss/cfs/_navbar.scss */
+/* line 90, ../../shared/scss/cfs/_navbar.scss */
 .navbar.is-link .navbar-brand .navbar-link::after {
   border-color: #fff;
 }
-/* line 96, ../scss/cfs/_navbar.scss */
+/* line 96, ../../shared/scss/cfs/_navbar.scss */
 .navbar.is-link .navbar-burger {
   color: #fff;
 }
-/* line 27, ../scss/cfs/_navbar.scss */
+/* line 27, ../../shared/scss/cfs/_navbar.scss */
 .navbar.is-info {
   color: #fff;
   background-color: #209cee;
 }
 @media screen and (min-width: 769px) {
-  /* line 31, ../scss/cfs/_navbar.scss */
+  /* line 31, ../../shared/scss/cfs/_navbar.scss */
   .navbar.is-info .navbar-start > .navbar-item,
   .navbar.is-info .navbar-start .navbar-link,
   .navbar.is-info .navbar-end > .navbar-item,
   .navbar.is-info .navbar-end .navbar-link {
     color: #fff;
   }
-  /* line 38, ../scss/cfs/_navbar.scss */
+  /* line 38, ../../shared/scss/cfs/_navbar.scss */
   .navbar.is-info .navbar-start > a.navbar-item:focus, .navbar.is-info .navbar-start > a.navbar-item:hover, .navbar.is-info .navbar-start > a.navbar-item.is-active,
   .navbar.is-info .navbar-start .navbar-link:focus,
   .navbar.is-info .navbar-start .navbar-link:hover,
@@ -10580,30 +10580,30 @@ blockquote p {
     color: #fff;
     background-color: #118fe4;
   }
-  /* line 47, ../scss/cfs/_navbar.scss */
+  /* line 47, ../../shared/scss/cfs/_navbar.scss */
   .navbar.is-info .navbar-start .navbar-link::after,
   .navbar.is-info .navbar-end .navbar-link::after {
     border-color: #fff;
   }
-  /* line 53, ../scss/cfs/_navbar.scss */
+  /* line 53, ../../shared/scss/cfs/_navbar.scss */
   .navbar.is-info .navbar-item.has-dropdown:focus .navbar-link,
   .navbar.is-info .navbar-item.has-dropdown:hover .navbar-link,
   .navbar.is-info .navbar-item.has-dropdown.is-active .navbar-link {
     color: #fff;
     background-color: #118fe4;
   }
-  /* line 62, ../scss/cfs/_navbar.scss */
+  /* line 62, ../../shared/scss/cfs/_navbar.scss */
   .navbar.is-info .navbar-dropdown a.navbar-item.is-active {
     color: #fff;
     background-color: #209cee;
   }
 }
-/* line 74, ../scss/cfs/_navbar.scss */
+/* line 74, ../../shared/scss/cfs/_navbar.scss */
 .navbar.is-info .navbar-brand > .navbar-item,
 .navbar.is-info .navbar-brand .navbar-link {
   color: #fff;
 }
-/* line 81, ../scss/cfs/_navbar.scss */
+/* line 81, ../../shared/scss/cfs/_navbar.scss */
 .navbar.is-info .navbar-brand > a.navbar-item:focus, .navbar.is-info .navbar-brand > a.navbar-item:hover, .navbar.is-info .navbar-brand > a.navbar-item.is-active,
 .navbar.is-info .navbar-brand .navbar-link:focus,
 .navbar.is-info .navbar-brand .navbar-link:hover,
@@ -10611,28 +10611,28 @@ blockquote p {
   color: #fff;
   background-color: #118fe4;
 }
-/* line 90, ../scss/cfs/_navbar.scss */
+/* line 90, ../../shared/scss/cfs/_navbar.scss */
 .navbar.is-info .navbar-brand .navbar-link::after {
   border-color: #fff;
 }
-/* line 96, ../scss/cfs/_navbar.scss */
+/* line 96, ../../shared/scss/cfs/_navbar.scss */
 .navbar.is-info .navbar-burger {
   color: #fff;
 }
-/* line 27, ../scss/cfs/_navbar.scss */
+/* line 27, ../../shared/scss/cfs/_navbar.scss */
 .navbar.is-success {
   color: #fff;
   background-color: #23d160;
 }
 @media screen and (min-width: 769px) {
-  /* line 31, ../scss/cfs/_navbar.scss */
+  /* line 31, ../../shared/scss/cfs/_navbar.scss */
   .navbar.is-success .navbar-start > .navbar-item,
   .navbar.is-success .navbar-start .navbar-link,
   .navbar.is-success .navbar-end > .navbar-item,
   .navbar.is-success .navbar-end .navbar-link {
     color: #fff;
   }
-  /* line 38, ../scss/cfs/_navbar.scss */
+  /* line 38, ../../shared/scss/cfs/_navbar.scss */
   .navbar.is-success .navbar-start > a.navbar-item:focus, .navbar.is-success .navbar-start > a.navbar-item:hover, .navbar.is-success .navbar-start > a.navbar-item.is-active,
   .navbar.is-success .navbar-start .navbar-link:focus,
   .navbar.is-success .navbar-start .navbar-link:hover,
@@ -10646,30 +10646,30 @@ blockquote p {
     color: #fff;
     background-color: #20bc56;
   }
-  /* line 47, ../scss/cfs/_navbar.scss */
+  /* line 47, ../../shared/scss/cfs/_navbar.scss */
   .navbar.is-success .navbar-start .navbar-link::after,
   .navbar.is-success .navbar-end .navbar-link::after {
     border-color: #fff;
   }
-  /* line 53, ../scss/cfs/_navbar.scss */
+  /* line 53, ../../shared/scss/cfs/_navbar.scss */
   .navbar.is-success .navbar-item.has-dropdown:focus .navbar-link,
   .navbar.is-success .navbar-item.has-dropdown:hover .navbar-link,
   .navbar.is-success .navbar-item.has-dropdown.is-active .navbar-link {
     color: #fff;
     background-color: #20bc56;
   }
-  /* line 62, ../scss/cfs/_navbar.scss */
+  /* line 62, ../../shared/scss/cfs/_navbar.scss */
   .navbar.is-success .navbar-dropdown a.navbar-item.is-active {
     color: #fff;
     background-color: #23d160;
   }
 }
-/* line 74, ../scss/cfs/_navbar.scss */
+/* line 74, ../../shared/scss/cfs/_navbar.scss */
 .navbar.is-success .navbar-brand > .navbar-item,
 .navbar.is-success .navbar-brand .navbar-link {
   color: #fff;
 }
-/* line 81, ../scss/cfs/_navbar.scss */
+/* line 81, ../../shared/scss/cfs/_navbar.scss */
 .navbar.is-success .navbar-brand > a.navbar-item:focus, .navbar.is-success .navbar-brand > a.navbar-item:hover, .navbar.is-success .navbar-brand > a.navbar-item.is-active,
 .navbar.is-success .navbar-brand .navbar-link:focus,
 .navbar.is-success .navbar-brand .navbar-link:hover,
@@ -10677,28 +10677,28 @@ blockquote p {
   color: #fff;
   background-color: #20bc56;
 }
-/* line 90, ../scss/cfs/_navbar.scss */
+/* line 90, ../../shared/scss/cfs/_navbar.scss */
 .navbar.is-success .navbar-brand .navbar-link::after {
   border-color: #fff;
 }
-/* line 96, ../scss/cfs/_navbar.scss */
+/* line 96, ../../shared/scss/cfs/_navbar.scss */
 .navbar.is-success .navbar-burger {
   color: #fff;
 }
-/* line 27, ../scss/cfs/_navbar.scss */
+/* line 27, ../../shared/scss/cfs/_navbar.scss */
 .navbar.is-warning {
   color: rgba(0, 0, 0, 0.7);
   background-color: #ffdd57;
 }
 @media screen and (min-width: 769px) {
-  /* line 31, ../scss/cfs/_navbar.scss */
+  /* line 31, ../../shared/scss/cfs/_navbar.scss */
   .navbar.is-warning .navbar-start > .navbar-item,
   .navbar.is-warning .navbar-start .navbar-link,
   .navbar.is-warning .navbar-end > .navbar-item,
   .navbar.is-warning .navbar-end .navbar-link {
     color: rgba(0, 0, 0, 0.7);
   }
-  /* line 38, ../scss/cfs/_navbar.scss */
+  /* line 38, ../../shared/scss/cfs/_navbar.scss */
   .navbar.is-warning .navbar-start > a.navbar-item:focus, .navbar.is-warning .navbar-start > a.navbar-item:hover, .navbar.is-warning .navbar-start > a.navbar-item.is-active,
   .navbar.is-warning .navbar-start .navbar-link:focus,
   .navbar.is-warning .navbar-start .navbar-link:hover,
@@ -10712,30 +10712,30 @@ blockquote p {
     color: rgba(0, 0, 0, 0.7);
     background-color: #ffd83d;
   }
-  /* line 47, ../scss/cfs/_navbar.scss */
+  /* line 47, ../../shared/scss/cfs/_navbar.scss */
   .navbar.is-warning .navbar-start .navbar-link::after,
   .navbar.is-warning .navbar-end .navbar-link::after {
     border-color: rgba(0, 0, 0, 0.7);
   }
-  /* line 53, ../scss/cfs/_navbar.scss */
+  /* line 53, ../../shared/scss/cfs/_navbar.scss */
   .navbar.is-warning .navbar-item.has-dropdown:focus .navbar-link,
   .navbar.is-warning .navbar-item.has-dropdown:hover .navbar-link,
   .navbar.is-warning .navbar-item.has-dropdown.is-active .navbar-link {
     color: rgba(0, 0, 0, 0.7);
     background-color: #ffd83d;
   }
-  /* line 62, ../scss/cfs/_navbar.scss */
+  /* line 62, ../../shared/scss/cfs/_navbar.scss */
   .navbar.is-warning .navbar-dropdown a.navbar-item.is-active {
     color: rgba(0, 0, 0, 0.7);
     background-color: #ffdd57;
   }
 }
-/* line 74, ../scss/cfs/_navbar.scss */
+/* line 74, ../../shared/scss/cfs/_navbar.scss */
 .navbar.is-warning .navbar-brand > .navbar-item,
 .navbar.is-warning .navbar-brand .navbar-link {
   color: rgba(0, 0, 0, 0.7);
 }
-/* line 81, ../scss/cfs/_navbar.scss */
+/* line 81, ../../shared/scss/cfs/_navbar.scss */
 .navbar.is-warning .navbar-brand > a.navbar-item:focus, .navbar.is-warning .navbar-brand > a.navbar-item:hover, .navbar.is-warning .navbar-brand > a.navbar-item.is-active,
 .navbar.is-warning .navbar-brand .navbar-link:focus,
 .navbar.is-warning .navbar-brand .navbar-link:hover,
@@ -10743,28 +10743,28 @@ blockquote p {
   color: rgba(0, 0, 0, 0.7);
   background-color: #ffd83d;
 }
-/* line 90, ../scss/cfs/_navbar.scss */
+/* line 90, ../../shared/scss/cfs/_navbar.scss */
 .navbar.is-warning .navbar-brand .navbar-link::after {
   border-color: rgba(0, 0, 0, 0.7);
 }
-/* line 96, ../scss/cfs/_navbar.scss */
+/* line 96, ../../shared/scss/cfs/_navbar.scss */
 .navbar.is-warning .navbar-burger {
   color: rgba(0, 0, 0, 0.7);
 }
-/* line 27, ../scss/cfs/_navbar.scss */
+/* line 27, ../../shared/scss/cfs/_navbar.scss */
 .navbar.is-danger {
   color: #fff;
   background-color: #ff3860;
 }
 @media screen and (min-width: 769px) {
-  /* line 31, ../scss/cfs/_navbar.scss */
+  /* line 31, ../../shared/scss/cfs/_navbar.scss */
   .navbar.is-danger .navbar-start > .navbar-item,
   .navbar.is-danger .navbar-start .navbar-link,
   .navbar.is-danger .navbar-end > .navbar-item,
   .navbar.is-danger .navbar-end .navbar-link {
     color: #fff;
   }
-  /* line 38, ../scss/cfs/_navbar.scss */
+  /* line 38, ../../shared/scss/cfs/_navbar.scss */
   .navbar.is-danger .navbar-start > a.navbar-item:focus, .navbar.is-danger .navbar-start > a.navbar-item:hover, .navbar.is-danger .navbar-start > a.navbar-item.is-active,
   .navbar.is-danger .navbar-start .navbar-link:focus,
   .navbar.is-danger .navbar-start .navbar-link:hover,
@@ -10778,30 +10778,30 @@ blockquote p {
     color: #fff;
     background-color: #ff1f4b;
   }
-  /* line 47, ../scss/cfs/_navbar.scss */
+  /* line 47, ../../shared/scss/cfs/_navbar.scss */
   .navbar.is-danger .navbar-start .navbar-link::after,
   .navbar.is-danger .navbar-end .navbar-link::after {
     border-color: #fff;
   }
-  /* line 53, ../scss/cfs/_navbar.scss */
+  /* line 53, ../../shared/scss/cfs/_navbar.scss */
   .navbar.is-danger .navbar-item.has-dropdown:focus .navbar-link,
   .navbar.is-danger .navbar-item.has-dropdown:hover .navbar-link,
   .navbar.is-danger .navbar-item.has-dropdown.is-active .navbar-link {
     color: #fff;
     background-color: #ff1f4b;
   }
-  /* line 62, ../scss/cfs/_navbar.scss */
+  /* line 62, ../../shared/scss/cfs/_navbar.scss */
   .navbar.is-danger .navbar-dropdown a.navbar-item.is-active {
     color: #fff;
     background-color: #ff3860;
   }
 }
-/* line 74, ../scss/cfs/_navbar.scss */
+/* line 74, ../../shared/scss/cfs/_navbar.scss */
 .navbar.is-danger .navbar-brand > .navbar-item,
 .navbar.is-danger .navbar-brand .navbar-link {
   color: #fff;
 }
-/* line 81, ../scss/cfs/_navbar.scss */
+/* line 81, ../../shared/scss/cfs/_navbar.scss */
 .navbar.is-danger .navbar-brand > a.navbar-item:focus, .navbar.is-danger .navbar-brand > a.navbar-item:hover, .navbar.is-danger .navbar-brand > a.navbar-item.is-active,
 .navbar.is-danger .navbar-brand .navbar-link:focus,
 .navbar.is-danger .navbar-brand .navbar-link:hover,
@@ -10809,57 +10809,57 @@ blockquote p {
   color: #fff;
   background-color: #ff1f4b;
 }
-/* line 90, ../scss/cfs/_navbar.scss */
+/* line 90, ../../shared/scss/cfs/_navbar.scss */
 .navbar.is-danger .navbar-brand .navbar-link::after {
   border-color: #fff;
 }
-/* line 96, ../scss/cfs/_navbar.scss */
+/* line 96, ../../shared/scss/cfs/_navbar.scss */
 .navbar.is-danger .navbar-burger {
   color: #fff;
 }
-/* line 102, ../scss/cfs/_navbar.scss */
+/* line 102, ../../shared/scss/cfs/_navbar.scss */
 .navbar > .container {
   display: flex;
   width: 100%;
   min-height: 3.125rem;
   align-items: stretch;
 }
-/* line 111, ../scss/cfs/_navbar.scss */
+/* line 111, ../../shared/scss/cfs/_navbar.scss */
 .navbar.has-shadow {
   box-shadow: 0 2px 0 0 whitesmoke;
 }
-/* line 115, ../scss/cfs/_navbar.scss */
+/* line 115, ../../shared/scss/cfs/_navbar.scss */
 .navbar.is-fixed-bottom, .navbar.is-fixed-top {
   position: fixed;
   z-index: 30;
   right: 0;
   left: 0;
 }
-/* line 120, ../scss/cfs/_navbar.scss */
+/* line 120, ../../shared/scss/cfs/_navbar.scss */
 .navbar.is-fixed-bottom {
   bottom: 0;
 }
-/* line 123, ../scss/cfs/_navbar.scss */
+/* line 123, ../../shared/scss/cfs/_navbar.scss */
 .navbar.is-fixed-bottom.has-shadow {
   box-shadow: 0 -2px 0 0 whitesmoke;
 }
-/* line 128, ../scss/cfs/_navbar.scss */
+/* line 128, ../../shared/scss/cfs/_navbar.scss */
 .navbar.is-fixed-top {
   top: 0;
 }
 
-/* line 135, ../scss/cfs/_navbar.scss */
+/* line 135, ../../shared/scss/cfs/_navbar.scss */
 html.has-navbar-fixed-top,
 body.has-navbar-fixed-top {
   padding-top: 3.125rem;
 }
-/* line 139, ../scss/cfs/_navbar.scss */
+/* line 139, ../../shared/scss/cfs/_navbar.scss */
 html.has-navbar-fixed-bottom,
 body.has-navbar-fixed-bottom {
   padding-bottom: 3.125rem;
 }
 
-/* line 144, ../scss/cfs/_navbar.scss */
+/* line 144, ../../shared/scss/cfs/_navbar.scss */
 .navbar-brand,
 .navbar-tabs {
   display: flex;
@@ -10868,12 +10868,12 @@ body.has-navbar-fixed-bottom {
   flex-shrink: 0;
 }
 
-/* line 156, ../scss/cfs/_navbar.scss */
+/* line 156, ../../shared/scss/cfs/_navbar.scss */
 .navbar-brand a.navbar-item:focus, .navbar-brand a.navbar-item:hover {
   background-color: transparent;
 }
 
-/* line 163, ../scss/cfs/_navbar.scss */
+/* line 163, ../../shared/scss/cfs/_navbar.scss */
 .navbar-tabs {
   -webkit-overflow-scrolling: touch;
   overflow-x: auto;
@@ -10881,7 +10881,7 @@ body.has-navbar-fixed-bottom {
   max-width: 100vw;
 }
 
-/* line 172, ../scss/cfs/_navbar.scss */
+/* line 172, ../../shared/scss/cfs/_navbar.scss */
 .navbar-burger {
   cursor: pointer;
   display: block;
@@ -10933,7 +10933,7 @@ body.has-navbar-fixed-bottom {
   transform: translateY(-5px) rotate(-45deg);
 }
 
-/* line 180, ../scss/cfs/_navbar.scss */
+/* line 180, ../../shared/scss/cfs/_navbar.scss */
 .sidebar-trigger {
   cursor: pointer;
   display: block;
@@ -10984,12 +10984,12 @@ body.has-navbar-fixed-bottom {
   transform: translateY(-5px) rotate(-45deg);
 }
 
-/* line 186, ../scss/cfs/_navbar.scss */
+/* line 186, ../../shared/scss/cfs/_navbar.scss */
 .navbar-menu {
   display: none;
 }
 
-/* line 190, ../scss/cfs/_navbar.scss */
+/* line 190, ../../shared/scss/cfs/_navbar.scss */
 .navbar-item,
 .navbar-link {
   display: block;
@@ -10998,24 +10998,24 @@ body.has-navbar-fixed-bottom {
   padding: 0.5rem 0.75rem;
   color: #4a4a4a;
 }
-/* line 202, ../scss/cfs/_navbar.scss */
+/* line 202, ../../shared/scss/cfs/_navbar.scss */
 .navbar-item.navbar-logo,
 .navbar-link.navbar-logo {
   padding-left: 0;
 }
-/* line 207, ../scss/cfs/_navbar.scss */
+/* line 207, ../../shared/scss/cfs/_navbar.scss */
 .navbar-item .icon:only-child,
 .navbar-link .icon:only-child {
   margin-right: -0.25rem;
   margin-left: -0.25rem;
 }
 
-/* line 214, ../scss/cfs/_navbar.scss */
+/* line 214, ../../shared/scss/cfs/_navbar.scss */
 a.navbar-item,
 .navbar-link {
   cursor: pointer;
 }
-/* line 218, ../scss/cfs/_navbar.scss */
+/* line 218, ../../shared/scss/cfs/_navbar.scss */
 a.navbar-item:focus, a.navbar-item:focus-within, a.navbar-item:hover, a.navbar-item.is-active,
 .navbar-link:focus,
 .navbar-link:focus-within,
@@ -11025,37 +11025,37 @@ a.navbar-item:focus, a.navbar-item:focus-within, a.navbar-item:hover, a.navbar-i
   background-color: #fafafa;
 }
 
-/* line 227, ../scss/cfs/_navbar.scss */
+/* line 227, ../../shared/scss/cfs/_navbar.scss */
 .navbar-item {
   display: block;
   flex-grow: 0;
   flex-shrink: 0;
 }
-/* line 233, ../scss/cfs/_navbar.scss */
+/* line 233, ../../shared/scss/cfs/_navbar.scss */
 .navbar-item img {
   max-height: 2.5rem;
 }
-/* line 237, ../scss/cfs/_navbar.scss */
+/* line 237, ../../shared/scss/cfs/_navbar.scss */
 .navbar-item.has-dropdown {
   padding: 0;
 }
-/* line 241, ../scss/cfs/_navbar.scss */
+/* line 241, ../../shared/scss/cfs/_navbar.scss */
 .navbar-item.is-expanded {
   flex-grow: 1;
   flex-shrink: 1;
 }
-/* line 246, ../scss/cfs/_navbar.scss */
+/* line 246, ../../shared/scss/cfs/_navbar.scss */
 .navbar-item.is-tab {
   min-height: 3.125rem;
   padding-bottom: calc(0.5rem - 1px);
   border-bottom: 1px solid transparent;
 }
-/* line 252, ../scss/cfs/_navbar.scss */
+/* line 252, ../../shared/scss/cfs/_navbar.scss */
 .navbar-item.is-tab:focus, .navbar-item.is-tab:hover {
   border-bottom-color: #3273dc;
   background-color: transparent;
 }
-/* line 258, ../scss/cfs/_navbar.scss */
+/* line 258, ../../shared/scss/cfs/_navbar.scss */
 .navbar-item.is-tab.is-active {
   padding-bottom: calc(0.5rem - 3px);
   color: #3273dc;
@@ -11065,36 +11065,36 @@ a.navbar-item:focus, a.navbar-item:focus-within, a.navbar-item:hover, a.navbar-i
   background-color: transparent;
 }
 
-/* line 270, ../scss/cfs/_navbar.scss */
+/* line 270, ../../shared/scss/cfs/_navbar.scss */
 .navbar-content {
   flex-grow: 1;
   flex-shrink: 1;
 }
 
-/* line 275, ../scss/cfs/_navbar.scss */
+/* line 275, ../../shared/scss/cfs/_navbar.scss */
 .navbar-link:not(.is-arrowless) {
   padding-right: 2.5em;
 }
-/* line 278, ../scss/cfs/_navbar.scss */
+/* line 278, ../../shared/scss/cfs/_navbar.scss */
 .navbar-link:not(.is-arrowless)::after {
   right: 1.125em;
   margin-top: -0.375em;
   border-color: #3273dc;
 }
 
-/* line 289, ../scss/cfs/_navbar.scss */
+/* line 289, ../../shared/scss/cfs/_navbar.scss */
 .navbar-dropdown {
   font-size: 0.875rem;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
 }
-/* line 295, ../scss/cfs/_navbar.scss */
+/* line 295, ../../shared/scss/cfs/_navbar.scss */
 .navbar-dropdown .navbar-item {
   padding-right: 1.5rem;
   padding-left: 1.5rem;
 }
 
-/* line 301, ../scss/cfs/_navbar.scss */
+/* line 301, ../../shared/scss/cfs/_navbar.scss */
 .navbar-divider {
   display: none;
   height: 2px;
@@ -11103,7 +11103,7 @@ a.navbar-item:focus, a.navbar-item:focus-within, a.navbar-item:hover, a.navbar-i
   background-color: whitesmoke;
 }
 
-/* line 313, ../scss/cfs/_navbar.scss */
+/* line 313, ../../shared/scss/cfs/_navbar.scss */
 .navbar,
 .navbar-menu,
 .navbar-start,
@@ -11112,71 +11112,71 @@ a.navbar-item:focus, a.navbar-item:focus-within, a.navbar-item:hover, a.navbar-i
   align-items: stretch;
 }
 
-/* line 322, ../scss/cfs/_navbar.scss */
+/* line 322, ../../shared/scss/cfs/_navbar.scss */
 .navbar {
   min-height: 3.125rem;
 }
-/* line 325, ../scss/cfs/_navbar.scss */
+/* line 325, ../../shared/scss/cfs/_navbar.scss */
 .navbar.is-spaced {
   padding: 1rem 2rem;
 }
-/* line 328, ../scss/cfs/_navbar.scss */
+/* line 328, ../../shared/scss/cfs/_navbar.scss */
 .navbar.is-spaced .navbar-start,
 .navbar.is-spaced .navbar-end {
   align-items: center;
 }
-/* line 333, ../scss/cfs/_navbar.scss */
+/* line 333, ../../shared/scss/cfs/_navbar.scss */
 .navbar.is-spaced a.navbar-item,
 .navbar.is-spaced .navbar-link {
   border-radius: 4px;
 }
-/* line 342, ../scss/cfs/_navbar.scss */
+/* line 342, ../../shared/scss/cfs/_navbar.scss */
 .navbar.is-transparent a.navbar-item:focus, .navbar.is-transparent a.navbar-item:hover, .navbar.is-transparent a.navbar-item.is-active,
 .navbar.is-transparent .navbar-link:focus,
 .navbar.is-transparent .navbar-link:hover,
 .navbar.is-transparent .navbar-link.is-active {
   background-color: transparent !important;
 }
-/* line 354, ../scss/cfs/_navbar.scss */
+/* line 354, ../../shared/scss/cfs/_navbar.scss */
 .navbar.is-transparent .navbar-item.has-dropdown.is-active .navbar-link, .navbar.is-transparent .navbar-item.has-dropdown.is-hoverable:focus .navbar-link, .navbar.is-transparent .navbar-item.has-dropdown.is-hoverable:focus-within .navbar-link, .navbar.is-transparent .navbar-item.has-dropdown.is-hoverable:hover .navbar-link {
   background-color: transparent !important;
 }
-/* line 362, ../scss/cfs/_navbar.scss */
+/* line 362, ../../shared/scss/cfs/_navbar.scss */
 .navbar.is-transparent .navbar-dropdown a.navbar-item:focus, .navbar.is-transparent .navbar-dropdown a.navbar-item:hover {
   color: #0a0a0a;
   background-color: rgba(91, 164, 229, 0.15);
 }
-/* line 368, ../scss/cfs/_navbar.scss */
+/* line 368, ../../shared/scss/cfs/_navbar.scss */
 .navbar.is-transparent .navbar-dropdown a.navbar-item.is-active {
   color: #3273dc;
   background-color: whitesmoke;
 }
 
-/* line 377, ../scss/cfs/_navbar.scss */
+/* line 377, ../../shared/scss/cfs/_navbar.scss */
 .navbar-burger {
   display: none;
 }
 
-/* line 381, ../scss/cfs/_navbar.scss */
+/* line 381, ../../shared/scss/cfs/_navbar.scss */
 .navbar-item,
 .navbar-link {
   display: flex;
   align-items: center;
 }
 
-/* line 388, ../scss/cfs/_navbar.scss */
+/* line 388, ../../shared/scss/cfs/_navbar.scss */
 .navbar-item {
   display: flex;
 }
-/* line 391, ../scss/cfs/_navbar.scss */
+/* line 391, ../../shared/scss/cfs/_navbar.scss */
 .navbar-item.has-dropdown {
   align-items: stretch;
 }
-/* line 396, ../scss/cfs/_navbar.scss */
+/* line 396, ../../shared/scss/cfs/_navbar.scss */
 .navbar-item.has-dropdown-up .navbar-link::after {
   transform: rotate(135deg) translate(0.25em, -0.25em);
 }
-/* line 400, ../scss/cfs/_navbar.scss */
+/* line 400, ../../shared/scss/cfs/_navbar.scss */
 .navbar-item.has-dropdown-up .navbar-dropdown {
   top: auto;
   bottom: 100%;
@@ -11185,36 +11185,36 @@ a.navbar-item:focus, a.navbar-item:focus-within, a.navbar-item:hover, a.navbar-i
   border-radius: 6px 6px 0 0;
   box-shadow: 0 -8px 8px rgba(10, 10, 10, 0.1);
 }
-/* line 415, ../scss/cfs/_navbar.scss */
+/* line 415, ../../shared/scss/cfs/_navbar.scss */
 .navbar-item.is-active .navbar-dropdown, .navbar-item.is-hoverable:focus .navbar-dropdown, .navbar-item.is-hoverable:focus-within .navbar-dropdown, .navbar-item.is-hoverable:hover .navbar-dropdown {
   display: block;
 }
-/* line 418, ../scss/cfs/_navbar.scss */
+/* line 418, ../../shared/scss/cfs/_navbar.scss */
 .navbar.is-spaced .navbar-item.is-active .navbar-dropdown, .navbar-item.is-active .navbar-dropdown.is-boxed, .navbar.is-spaced .navbar-item.is-hoverable:focus .navbar-dropdown, .navbar-item.is-hoverable:focus .navbar-dropdown.is-boxed, .navbar.is-spaced .navbar-item.is-hoverable:focus-within .navbar-dropdown, .navbar-item.is-hoverable:focus-within .navbar-dropdown.is-boxed, .navbar.is-spaced .navbar-item.is-hoverable:hover .navbar-dropdown, .navbar-item.is-hoverable:hover .navbar-dropdown.is-boxed {
   transform: translateY(0);
   pointer-events: auto;
   opacity: 1;
 }
 
-/* line 429, ../scss/cfs/_navbar.scss */
+/* line 429, ../../shared/scss/cfs/_navbar.scss */
 .navbar-menu {
   flex-grow: 1;
   flex-shrink: 0;
 }
 
-/* line 434, ../scss/cfs/_navbar.scss */
+/* line 434, ../../shared/scss/cfs/_navbar.scss */
 .navbar-start {
   margin-right: auto;
   justify-content: flex-start;
 }
 
-/* line 440, ../scss/cfs/_navbar.scss */
+/* line 440, ../../shared/scss/cfs/_navbar.scss */
 .navbar-end {
   margin-left: auto;
   justify-content: flex-end;
 }
 
-/* line 446, ../scss/cfs/_navbar.scss */
+/* line 446, ../../shared/scss/cfs/_navbar.scss */
 .navbar-dropdown {
   display: none;
   font-size: 0.875rem;
@@ -11229,26 +11229,26 @@ a.navbar-item:focus, a.navbar-item:focus-within, a.navbar-item:hover, a.navbar-i
   background-color: white;
   box-shadow: 0 8px 8px rgba(10, 10, 10, 0.1);
 }
-/* line 464, ../scss/cfs/_navbar.scss */
+/* line 464, ../../shared/scss/cfs/_navbar.scss */
 .navbar-dropdown .navbar-item {
   padding: 0.375rem 1rem;
   white-space: nowrap;
 }
-/* line 470, ../scss/cfs/_navbar.scss */
+/* line 470, ../../shared/scss/cfs/_navbar.scss */
 .navbar-dropdown a.navbar-item {
   padding-right: 3rem;
 }
-/* line 473, ../scss/cfs/_navbar.scss */
+/* line 473, ../../shared/scss/cfs/_navbar.scss */
 .navbar-dropdown a.navbar-item:focus, .navbar-dropdown a.navbar-item:hover {
   color: #0a0a0a;
   background-color: rgba(91, 164, 229, 0.15);
 }
-/* line 479, ../scss/cfs/_navbar.scss */
+/* line 479, ../../shared/scss/cfs/_navbar.scss */
 .navbar-dropdown a.navbar-item.is-active {
   color: #3273dc;
   background-color: whitesmoke;
 }
-/* line 485, ../scss/cfs/_navbar.scss */
+/* line 485, ../../shared/scss/cfs/_navbar.scss */
 .navbar.is-spaced .navbar-dropdown, .navbar-dropdown.is-boxed {
   display: block;
   top: calc(100% + (-4px));
@@ -11261,91 +11261,91 @@ a.navbar-item:focus, a.navbar-item:focus-within, a.navbar-item:hover, a.navbar-i
   border-radius: 6px;
   box-shadow: 0 8px 8px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);
 }
-/* line 502, ../scss/cfs/_navbar.scss */
+/* line 502, ../../shared/scss/cfs/_navbar.scss */
 .navbar-dropdown.is-right {
   right: 0;
   left: auto;
 }
 
-/* line 508, ../scss/cfs/_navbar.scss */
+/* line 508, ../../shared/scss/cfs/_navbar.scss */
 .navbar-divider {
   display: block;
 }
 
-/* line 514, ../scss/cfs/_navbar.scss */
+/* line 514, ../../shared/scss/cfs/_navbar.scss */
 .navbar > .container .navbar-brand,
 .container > .navbar .navbar-brand {
   margin-left: -0.75rem;
 }
-/* line 518, ../scss/cfs/_navbar.scss */
+/* line 518, ../../shared/scss/cfs/_navbar.scss */
 .navbar > .container .navbar-menu,
 .container > .navbar .navbar-menu {
   margin-right: -0.75rem;
 }
 
-/* line 525, ../scss/cfs/_navbar.scss */
+/* line 525, ../../shared/scss/cfs/_navbar.scss */
 .navbar.is-fixed-bottom-desktop, .navbar.is-fixed-top-desktop {
   position: fixed;
   z-index: 30;
   right: 0;
   left: 0;
 }
-/* line 530, ../scss/cfs/_navbar.scss */
+/* line 530, ../../shared/scss/cfs/_navbar.scss */
 .navbar.is-fixed-bottom-desktop {
   bottom: 0;
 }
-/* line 533, ../scss/cfs/_navbar.scss */
+/* line 533, ../../shared/scss/cfs/_navbar.scss */
 .navbar.is-fixed-bottom-desktop.has-shadow {
   box-shadow: 0 -2px 3px rgba(10, 10, 10, 0.1);
 }
-/* line 538, ../scss/cfs/_navbar.scss */
+/* line 538, ../../shared/scss/cfs/_navbar.scss */
 .navbar.is-fixed-top-desktop {
   top: 0;
 }
 
-/* line 545, ../scss/cfs/_navbar.scss */
+/* line 545, ../../shared/scss/cfs/_navbar.scss */
 html.has-navbar-fixed-top-desktop,
 body.has-navbar-fixed-top-desktop {
   padding-top: 3.125rem;
 }
-/* line 549, ../scss/cfs/_navbar.scss */
+/* line 549, ../../shared/scss/cfs/_navbar.scss */
 html.has-navbar-fixed-bottom-desktop,
 body.has-navbar-fixed-bottom-desktop {
   padding-bottom: 3.125rem;
 }
-/* line 553, ../scss/cfs/_navbar.scss */
+/* line 553, ../../shared/scss/cfs/_navbar.scss */
 html.has-spaced-navbar-fixed-top,
 body.has-spaced-navbar-fixed-top {
   padding-top: 5.125rem;
 }
-/* line 557, ../scss/cfs/_navbar.scss */
+/* line 557, ../../shared/scss/cfs/_navbar.scss */
 html.has-spaced-navbar-fixed-bottom,
 body.has-spaced-navbar-fixed-bottom {
   padding-bottom: 5.125rem;
 }
 
-/* line 565, ../scss/cfs/_navbar.scss */
+/* line 565, ../../shared/scss/cfs/_navbar.scss */
 a.navbar-item.is-active,
 .navbar-link.is-active {
   color: #0a0a0a;
 }
-/* line 569, ../scss/cfs/_navbar.scss */
+/* line 569, ../../shared/scss/cfs/_navbar.scss */
 a.navbar-item.is-active:not(:focus):not(:hover),
 .navbar-link.is-active:not(:focus):not(:hover) {
   background-color: transparent;
 }
 
-/* line 578, ../scss/cfs/_navbar.scss */
+/* line 578, ../../shared/scss/cfs/_navbar.scss */
 .navbar-item.has-dropdown:focus .navbar-link, .navbar-item.has-dropdown:hover .navbar-link, .navbar-item.has-dropdown.is-active .navbar-link {
   background-color: #fafafa;
 }
 
-/* line 587, ../scss/cfs/_navbar.scss */
+/* line 587, ../../shared/scss/cfs/_navbar.scss */
 .hero.is-fullheight-with-navbar {
   min-height: calc(100vh - 3.125rem);
 }
 
-/* line 1, ../scss/cfs/_sidebar.scss */
+/* line 1, ../../shared/scss/cfs/_sidebar.scss */
 .sidebar-background {
   display: none;
   position: fixed;
@@ -11357,7 +11357,7 @@ a.navbar-item.is-active:not(:focus):not(:hover),
   background-color: rgba(10, 10, 10, 0.6);
 }
 
-/* line 14, ../scss/cfs/_sidebar.scss */
+/* line 14, ../../shared/scss/cfs/_sidebar.scss */
 .sidebar {
   -moz-transition-duration: 0.3s;
   -o-transition-duration: 0.3s;
@@ -11376,13 +11376,13 @@ a.navbar-item.is-active:not(:focus):not(:hover),
   outline: 1px solid transparent;
   background: #f5f7f8;
 }
-/* line 31, ../scss/cfs/_sidebar.scss */
+/* line 31, ../../shared/scss/cfs/_sidebar.scss */
 .sidebar.sidebar-expanded .sidebar-nav {
   -moz-transform: translate3d(0, 0, 0);
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
 }
-/* line 36, ../scss/cfs/_sidebar.scss */
+/* line 36, ../../shared/scss/cfs/_sidebar.scss */
 .sidebar .menu-list li a {
   display: -webkit-flex;
   display: flex;
@@ -11392,21 +11392,21 @@ a.navbar-item.is-active:not(:focus):not(:hover),
   padding-left: 1rem;
   color: #6a6a6a;
 }
-/* line 46, ../scss/cfs/_sidebar.scss */
+/* line 46, ../../shared/scss/cfs/_sidebar.scss */
 .sidebar .menu-list li a .menu-icon {
   font-size: 1rem;
   padding-right: 2.25rem;
 }
-/* line 52, ../scss/cfs/_sidebar.scss */
+/* line 52, ../../shared/scss/cfs/_sidebar.scss */
 .sidebar .menu-list li a.is-active {
   color: #fff;
   background: #88beec;
 }
-/* line 58, ../scss/cfs/_sidebar.scss */
+/* line 58, ../../shared/scss/cfs/_sidebar.scss */
 .sidebar .menu-label {
   padding-left: 1rem;
 }
-/* line 62, ../scss/cfs/_sidebar.scss */
+/* line 62, ../../shared/scss/cfs/_sidebar.scss */
 .sidebar .menu-header {
   font-size: 1.125rem;
   font-weight: bold;
@@ -11414,16 +11414,16 @@ a.navbar-item.is-active:not(:focus):not(:hover),
   padding-left: 1rem;
   color: #444;
 }
-/* line 71, ../scss/cfs/_sidebar.scss */
+/* line 71, ../../shared/scss/cfs/_sidebar.scss */
 .sidebar .menu-header a {
   color: #444;
 }
-/* line 74, ../scss/cfs/_sidebar.scss */
+/* line 74, ../../shared/scss/cfs/_sidebar.scss */
 .sidebar .menu-header a:hover {
   color: #88beec;
 }
 
-/* line 81, ../scss/cfs/_sidebar.scss */
+/* line 81, ../../shared/scss/cfs/_sidebar.scss */
 .sidebar-container {
   display: -webkit-flex;
   display: flex;
@@ -11432,7 +11432,7 @@ a.navbar-item.is-active:not(:focus):not(:hover),
   height: 100%;
 }
 
-/* line 88, ../scss/cfs/_sidebar.scss */
+/* line 88, ../../shared/scss/cfs/_sidebar.scss */
 .sidebar-header {
   display: -webkit-flex;
   display: flex;
@@ -11446,7 +11446,7 @@ a.navbar-item.is-active:not(:focus):not(:hover),
   background-color: #f7f7f7;
 }
 
-/* line 100, ../scss/cfs/_sidebar.scss */
+/* line 100, ../../shared/scss/cfs/_sidebar.scss */
 .sidebar-navbar {
   display: -webkit-flex;
   display: flex;
@@ -11459,7 +11459,7 @@ a.navbar-item.is-active:not(:focus):not(:hover),
   background-color: #f7f7f7;
 }
 
-/* line 111, ../scss/cfs/_sidebar.scss */
+/* line 111, ../../shared/scss/cfs/_sidebar.scss */
 .sidebar-body {
   -webkit-flex: 1;
   flex: 1;
@@ -11469,7 +11469,7 @@ a.navbar-item.is-active:not(:focus):not(:hover),
   opacity: 1;
 }
 
-/* line 122, ../scss/cfs/_sidebar.scss */
+/* line 122, ../../shared/scss/cfs/_sidebar.scss */
 .sidebar-footer {
   display: -webkit-flex;
   display: flex;
@@ -11482,7 +11482,7 @@ a.navbar-item.is-active:not(:focus):not(:hover),
   border-top: 1px solid #dfe1e3;
 }
 
-/* line 135, ../scss/cfs/_sidebar.scss */
+/* line 135, ../../shared/scss/cfs/_sidebar.scss */
 .sidebar-divider {
   display: block;
   overflow: hidden;
@@ -11493,56 +11493,56 @@ a.navbar-item.is-active:not(:focus):not(:hover),
   background: #e4e6e7;
 }
 
-/* line 149, ../scss/cfs/_sidebar.scss */
+/* line 149, ../../shared/scss/cfs/_sidebar.scss */
 body.sidebar-expanded .sidebar-background {
   display: block;
 }
-/* line 153, ../scss/cfs/_sidebar.scss */
+/* line 153, ../../shared/scss/cfs/_sidebar.scss */
 body.sidebar-expanded .sidebar {
   -moz-transform: translate3d(0, 0, 0);
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
 }
-/* line 159, ../scss/cfs/_sidebar.scss */
+/* line 159, ../../shared/scss/cfs/_sidebar.scss */
 body.sidebar-adaptable .navbar {
   position: fixed;
   top: 0;
   width: 100%;
 }
-/* line 166, ../scss/cfs/_sidebar.scss */
+/* line 166, ../../shared/scss/cfs/_sidebar.scss */
 body.sidebar-adaptable .main-content {
   padding-top: 3.125rem;
 }
-/* line 170, ../scss/cfs/_sidebar.scss */
+/* line 170, ../../shared/scss/cfs/_sidebar.scss */
 body.sidebar-adaptable .sidebar {
   top: 3.125rem;
 }
-/* line 174, ../scss/cfs/_sidebar.scss */
+/* line 174, ../../shared/scss/cfs/_sidebar.scss */
 body.sidebar-adaptable .sidebar-navbar {
   display: none;
 }
-/* line 180, ../scss/cfs/_sidebar.scss */
+/* line 180, ../../shared/scss/cfs/_sidebar.scss */
 body.sidebar-adaptable.sidebar-expanded .sidebar-background {
   display: none;
 }
-/* line 184, ../scss/cfs/_sidebar.scss */
+/* line 184, ../../shared/scss/cfs/_sidebar.scss */
 body.sidebar-adaptable.sidebar-expanded .main-content,
 body.sidebar-adaptable.sidebar-expanded .page-footer {
   margin-left: 15.625rem;
 }
-/* line 189, ../scss/cfs/_sidebar.scss */
+/* line 189, ../../shared/scss/cfs/_sidebar.scss */
 body.sidebar-adaptable.sidebar-expanded .page-footer.is-fixed {
   margin-left: 0;
   left: 15.625rem;
 }
 
 @media screen and (max-width: 768px) {
-  /* line 201, ../scss/cfs/_sidebar.scss */
+  /* line 201, ../../shared/scss/cfs/_sidebar.scss */
   body.sidebar-expanded .sidebar-background,
   body.sidebar-adaptable.sidebar-expanded .sidebar-background {
     display: block;
   }
-  /* line 205, ../scss/cfs/_sidebar.scss */
+  /* line 205, ../../shared/scss/cfs/_sidebar.scss */
   body.sidebar-expanded .main-content,
   body.sidebar-expanded .page-footer,
   body.sidebar-adaptable.sidebar-expanded .main-content,
@@ -11550,166 +11550,166 @@ body.sidebar-adaptable.sidebar-expanded .page-footer.is-fixed {
     margin-left: 0;
   }
 
-  /* line 212, ../scss/cfs/_sidebar.scss */
+  /* line 212, ../../shared/scss/cfs/_sidebar.scss */
   body.sidebar-adaptable .navbar {
     position: relative;
   }
-  /* line 216, ../scss/cfs/_sidebar.scss */
+  /* line 216, ../../shared/scss/cfs/_sidebar.scss */
   body.sidebar-adaptable .main-content {
     padding-top: 2.5rem;
   }
-  /* line 220, ../scss/cfs/_sidebar.scss */
+  /* line 220, ../../shared/scss/cfs/_sidebar.scss */
   body.sidebar-adaptable .sidebar {
     top: 0;
   }
-  /* line 224, ../scss/cfs/_sidebar.scss */
+  /* line 224, ../../shared/scss/cfs/_sidebar.scss */
   body.sidebar-adaptable .sidebar-navbar {
     display: -webkit-flex;
     display: flex;
   }
 }
-/* line 3, ../scss/cfs/_page_section.scss */
+/* line 3, ../../shared/scss/cfs/_page_section.scss */
 .page-section-header {
   font-size: 3rem;
   text-align: center;
 }
 
-/* line 9, ../scss/cfs/_page_section.scss */
+/* line 9, ../../shared/scss/cfs/_page_section.scss */
 .page-section:not(:last-of-type) {
   border-bottom: 1px solid #eaeaea;
 }
 
-/* line 16, ../scss/cfs/_page_section.scss */
+/* line 16, ../../shared/scss/cfs/_page_section.scss */
 .random-word-section .random-word {
   font-size: 3rem;
   text-align: center;
 }
 
 @media screen and (max-width: 768px) {
-  /* line 24, ../scss/cfs/_page_section.scss */
+  /* line 24, ../../shared/scss/cfs/_page_section.scss */
   .page-section-header {
     font-size: 2rem;
   }
 
-  /* line 29, ../scss/cfs/_page_section.scss */
+  /* line 29, ../../shared/scss/cfs/_page_section.scss */
   .random-word-section .random-word {
     font-size: 1.625rem;
   }
 }
-/* line 3, ../scss/cfs/_parallax.scss */
+/* line 3, ../../shared/scss/cfs/_parallax.scss */
 .parallax-block {
   padding: 11.25rem 0 31.25rem 0;
   background-attachment: fixed;
   background-size: cover;
 }
-/* line 9, ../scss/cfs/_parallax.scss */
+/* line 9, ../../shared/scss/cfs/_parallax.scss */
 .parallax-block .parallax-body {
   padding-right: 1.125rem;
   padding-left: 1.125rem;
   text-align: center;
 }
-/* line 16, ../scss/cfs/_parallax.scss */
+/* line 16, ../../shared/scss/cfs/_parallax.scss */
 .parallax-block.intro {
   color: #fff;
   background-image: url("../images/jumbo_bg.png");
 }
-/* line 20, ../scss/cfs/_parallax.scss */
+/* line 20, ../../shared/scss/cfs/_parallax.scss */
 .parallax-block.intro h1 {
   margin-bottom: 0.9375rem;
 }
 
 @media screen and (max-width: 768px) {
-  /* line 27, ../scss/cfs/_parallax.scss */
+  /* line 27, ../../shared/scss/cfs/_parallax.scss */
   .parallax-block {
     padding: 9.375rem 0 25rem 0;
   }
 }
-/* line 2, ../scss/cfs/_searchbox.scss */
+/* line 2, ../../shared/scss/cfs/_searchbox.scss */
 .searchbox .dropdown {
   display: block;
 }
 
-/* line 9, ../scss/cfs/_blocks.scss */
+/* line 9, ../../shared/scss/cfs/_blocks.scss */
 .icon-blocks .icon-blocks-header {
   font-size: 3rem;
   margin-bottom: 20px;
   text-align: center;
 }
 
-/* line 18, ../scss/cfs/_blocks.scss */
+/* line 18, ../../shared/scss/cfs/_blocks.scss */
 .icon-block {
   padding-top: 1.875rem;
   padding-bottom: 1.875rem;
   text-align: center;
 }
-/* line 24, ../scss/cfs/_blocks.scss */
+/* line 24, ../../shared/scss/cfs/_blocks.scss */
 .icon-block a {
   color: #818a91;
 }
-/* line 27, ../scss/cfs/_blocks.scss */
+/* line 27, ../../shared/scss/cfs/_blocks.scss */
 .icon-block a:hover {
   color: #373A3C;
 }
-/* line 32, ../scss/cfs/_blocks.scss */
+/* line 32, ../../shared/scss/cfs/_blocks.scss */
 .icon-block .icon-block-icon {
   font-size: 3.75rem;
 }
-/* line 36, ../scss/cfs/_blocks.scss */
+/* line 36, ../../shared/scss/cfs/_blocks.scss */
 .icon-block .icon-block-header {
   font-size: 2rem;
 }
 
 @media screen and (max-width: 768px) {
-  /* line 43, ../scss/cfs/_blocks.scss */
+  /* line 43, ../../shared/scss/cfs/_blocks.scss */
   .icon-blocks .icon-blocks-header {
     font-size: 2rem;
   }
 
-  /* line 48, ../scss/cfs/_blocks.scss */
+  /* line 48, ../../shared/scss/cfs/_blocks.scss */
   .icon-block:not(:last-of-type) {
     border-bottom: 1px solid #eaeaea;
   }
 }
-/* line 2, ../scss/cfs/_modal.scss */
+/* line 2, ../../shared/scss/cfs/_modal.scss */
 .confirmation-modal .box {
   display: flex;
   flex-direction: column;
 }
-/* line 7, ../scss/cfs/_modal.scss */
+/* line 7, ../../shared/scss/cfs/_modal.scss */
 .confirmation-modal .modal-header {
   font-size: 2.125rem;
   text-align: center;
 }
-/* line 13, ../scss/cfs/_modal.scss */
+/* line 13, ../../shared/scss/cfs/_modal.scss */
 .confirmation-modal .modal-body {
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
   text-align: center;
 }
-/* line 20, ../scss/cfs/_modal.scss */
+/* line 20, ../../shared/scss/cfs/_modal.scss */
 .confirmation-modal .modal-footer {
   text-align: center;
 }
-/* line 24, ../scss/cfs/_modal.scss */
+/* line 24, ../../shared/scss/cfs/_modal.scss */
 .confirmation-modal .modal-footer .confirmation-buttons .button {
   margin-right: 0.3125rem;
   margin-left: 0.3125rem;
 }
 
 @media screen and (max-width: 768px) {
-  /* line 34, ../scss/cfs/_modal.scss */
+  /* line 34, ../../shared/scss/cfs/_modal.scss */
   .confirmation-modal .modal-header {
     font-size: 1.75rem;
   }
 }
-/* line 2, ../scss/cfs/_notification.scss */
+/* line 2, ../../shared/scss/cfs/_notification.scss */
 .notification.msg-notification {
   position: absolute;
   z-index: 1000;
   width: 100%;
 }
 
-/* line 1, ../scss/cfs/_pagination.scss */
+/* line 1, ../../shared/scss/cfs/_pagination.scss */
 *,
 *::after,
 *::before {
@@ -11718,31 +11718,31 @@ body.sidebar-adaptable.sidebar-expanded .page-footer.is-fixed {
   box-sizing: border-box;
 }
 
-/* line 7, ../scss/cfs/_pagination.scss */
+/* line 7, ../../shared/scss/cfs/_pagination.scss */
 nav[role='navigation'] {
   text-align: center;
 }
 
-/* line 11, ../scss/cfs/_pagination.scss */
+/* line 11, ../../shared/scss/cfs/_pagination.scss */
 .cd-pagination {
   width: 90%;
   max-width: 1000px;
   margin-top: 1.25rem;
   text-align: center;
 }
-/* line 18, ../scss/cfs/_pagination.scss */
+/* line 18, ../../shared/scss/cfs/_pagination.scss */
 .cd-pagination li {
   /* hide numbers on small devices */
   display: inline-block;
   margin: 0 0.2em;
   background-color: #fff;
 }
-/* line 26, ../scss/cfs/_pagination.scss */
+/* line 26, ../../shared/scss/cfs/_pagination.scss */
 .cd-pagination li.button {
   /* make sure prev next buttons are visible */
   display: inline-block;
 }
-/* line 32, ../scss/cfs/_pagination.scss */
+/* line 32, ../../shared/scss/cfs/_pagination.scss */
 .cd-pagination a,
 .cd-pagination span {
   -moz-user-select: -moz-none;
@@ -11754,18 +11754,18 @@ nav[role='navigation'] {
   /* use padding and font-size to change buttons size */
   padding: 0.4em 1em;
 }
-/* line 44, ../scss/cfs/_pagination.scss */
+/* line 44, ../../shared/scss/cfs/_pagination.scss */
 .cd-pagination a {
   text-decoration: none;
   color: #2E4057;
   border: 1px solid #e6e6e6;
   border-radius: 0.25em;
 }
-/* line 51, ../scss/cfs/_pagination.scss */
+/* line 51, ../../shared/scss/cfs/_pagination.scss */
 .cd-pagination a:hover {
   background-color: #f2f2f2;
 }
-/* line 55, ../scss/cfs/_pagination.scss */
+/* line 55, ../../shared/scss/cfs/_pagination.scss */
 .cd-pagination a:active {
   /* click effect */
   -moz-transform: scale(0.9);
@@ -11773,25 +11773,25 @@ nav[role='navigation'] {
   -webkit-transform: scale(0.9);
   transform: scale(0.9);
 }
-/* line 60, ../scss/cfs/_pagination.scss */
+/* line 60, ../../shared/scss/cfs/_pagination.scss */
 .cd-pagination a.disabled {
   pointer-events: none;
   /* button disabled */
   color: rgba(46, 64, 87, 0.4);
 }
-/* line 66, ../scss/cfs/_pagination.scss */
+/* line 66, ../../shared/scss/cfs/_pagination.scss */
 .cd-pagination a.disabled::before, .cd-pagination a.disabled::after {
   opacity: 0.4;
 }
-/* line 73, ../scss/cfs/_pagination.scss */
+/* line 73, ../../shared/scss/cfs/_pagination.scss */
 .cd-pagination .button:first-of-type a::before {
   content: '\00ab  ';
 }
-/* line 77, ../scss/cfs/_pagination.scss */
+/* line 77, ../../shared/scss/cfs/_pagination.scss */
 .cd-pagination .button:last-of-type a::after {
   content: ' \00bb';
 }
-/* line 81, ../scss/cfs/_pagination.scss */
+/* line 81, ../../shared/scss/cfs/_pagination.scss */
 .cd-pagination .current {
   pointer-events: none;
   color: #fff;
@@ -11800,7 +11800,7 @@ nav[role='navigation'] {
   background-color: #64a281;
 }
 
-/* line 91, ../scss/cfs/_pagination.scss */
+/* line 91, ../../shared/scss/cfs/_pagination.scss */
 .cd-pagination.no-space {
   display: inline-block;
   width: auto;
@@ -11814,17 +11814,17 @@ nav[role='navigation'] {
   content: " ";
   display: table;
 }
-/* line 102, ../scss/cfs/_pagination.scss */
+/* line 102, ../../shared/scss/cfs/_pagination.scss */
 .cd-pagination.no-space li {
   float: left;
   margin: 0;
   border-right: 1px solid #e6e6e6;
 }
-/* line 109, ../scss/cfs/_pagination.scss */
+/* line 109, ../../shared/scss/cfs/_pagination.scss */
 .cd-pagination.no-space li:last-of-type {
   border-right: none;
 }
-/* line 114, ../scss/cfs/_pagination.scss */
+/* line 114, ../../shared/scss/cfs/_pagination.scss */
 .cd-pagination.no-space a,
 .cd-pagination.no-space span {
   float: left;
@@ -11832,11 +11832,11 @@ nav[role='navigation'] {
   border: none;
   border-radius: 0;
 }
-/* line 124, ../scss/cfs/_pagination.scss */
+/* line 124, ../../shared/scss/cfs/_pagination.scss */
 .cd-pagination.no-space li:first-of-type a {
   border-radius: 0.25em 0 0 0.25em;
 }
-/* line 128, ../scss/cfs/_pagination.scss */
+/* line 128, ../../shared/scss/cfs/_pagination.scss */
 .cd-pagination.no-space li:last-of-type a {
   border-radius: 0 0.25em 0.25em 0;
 }
@@ -11852,28 +11852,28 @@ move buttons - move prev and next buttons to the sides
   content: " ";
   display: table;
 }
-/* line 142, ../scss/cfs/_pagination.scss */
+/* line 142, ../../shared/scss/cfs/_pagination.scss */
 .cd-pagination.move-buttons .button:first-of-type {
   float: left;
 }
-/* line 146, ../scss/cfs/_pagination.scss */
+/* line 146, ../../shared/scss/cfs/_pagination.scss */
 .cd-pagination.move-buttons .button:last-of-type {
   float: right;
 }
 
-/* line 151, ../scss/cfs/_pagination.scss */
+/* line 151, ../../shared/scss/cfs/_pagination.scss */
 .cd-pagination.no-space.move-buttons {
   display: block;
   overflow: hidden;
   width: 90%;
   max-width: 1000px;
 }
-/* line 158, ../scss/cfs/_pagination.scss */
+/* line 158, ../../shared/scss/cfs/_pagination.scss */
 .cd-pagination.no-space.move-buttons li {
   float: none;
   border: none;
 }
-/* line 164, ../scss/cfs/_pagination.scss */
+/* line 164, ../../shared/scss/cfs/_pagination.scss */
 .cd-pagination.no-space.move-buttons a,
 .cd-pagination.no-space.move-buttons span {
   float: none;
@@ -11884,19 +11884,19 @@ move buttons - move prev and next buttons to the sides
 custom icons - customize the small arrow inside the next and prev buttons 
 
 -------------------------------- */
-/* line 177, ../scss/cfs/_pagination.scss */
+/* line 177, ../../shared/scss/cfs/_pagination.scss */
 .cd-pagination.custom-icons .button a {
   position: relative;
 }
-/* line 181, ../scss/cfs/_pagination.scss */
+/* line 181, ../../shared/scss/cfs/_pagination.scss */
 .cd-pagination.custom-icons .button:first-of-type a {
   padding-left: 2.4em;
 }
-/* line 185, ../scss/cfs/_pagination.scss */
+/* line 185, ../../shared/scss/cfs/_pagination.scss */
 .cd-pagination.custom-icons .button:last-of-type a {
   padding-right: 2.4em;
 }
-/* line 189, ../scss/cfs/_pagination.scss */
+/* line 189, ../../shared/scss/cfs/_pagination.scss */
 .cd-pagination.custom-icons .button:first-of-type a::before,
 .cd-pagination.custom-icons .button:last-of-type a::after {
   display: inline-block;
@@ -11909,11 +11909,11 @@ custom icons - customize the small arrow inside the next and prev buttons
   margin-top: -8px;
   content: '';
 }
-/* line 205, ../scss/cfs/_pagination.scss */
+/* line 205, ../../shared/scss/cfs/_pagination.scss */
 .cd-pagination.custom-icons .button:first-of-type a::before {
   left: 0.8em;
 }
-/* line 209, ../scss/cfs/_pagination.scss */
+/* line 209, ../../shared/scss/cfs/_pagination.scss */
 .cd-pagination.custom-icons .button:last-of-type a::after {
   -moz-transform: rotate(180deg);
   -ms-transform: rotate(180deg);
@@ -11927,12 +11927,12 @@ custom icons - customize the small arrow inside the next and prev buttons
 custom buttons - replace prev and next buttons text with a custom icon 
 
 -------------------------------- */
-/* line 223, ../scss/cfs/_pagination.scss */
+/* line 223, ../../shared/scss/cfs/_pagination.scss */
 .cd-pagination.custom-buttons a,
 .cd-pagination.custom-buttons span {
   vertical-align: middle;
 }
-/* line 228, ../scss/cfs/_pagination.scss */
+/* line 228, ../../shared/scss/cfs/_pagination.scss */
 .cd-pagination.custom-buttons .button a {
   /* image replacement */
   overflow: hidden;
@@ -11942,14 +11942,14 @@ custom buttons - replace prev and next buttons text with a custom icon
   text-indent: 100%;
   color: transparent;
 }
-/* line 241, ../scss/cfs/_pagination.scss */
+/* line 241, ../../shared/scss/cfs/_pagination.scss */
 .cd-pagination.custom-buttons .button:last-of-type a {
   -moz-transform: rotate(180deg);
   -ms-transform: rotate(180deg);
   -webkit-transform: rotate(180deg);
   transform: rotate(180deg);
 }
-/* line 244, ../scss/cfs/_pagination.scss */
+/* line 244, ../../shared/scss/cfs/_pagination.scss */
 .no-touch .cd-pagination.custom-buttons .button:last-of-type a:active {
   -moz-transform: scale(0.9) rotate(180deg);
   -ms-transform: scale(0.9) rotate(180deg);
@@ -11957,7 +11957,7 @@ custom buttons - replace prev and next buttons text with a custom icon
   transform: scale(0.9) rotate(180deg);
 }
 
-/* line 251, ../scss/cfs/_pagination.scss */
+/* line 251, ../../shared/scss/cfs/_pagination.scss */
 .cd-pagination.no-space.custom-buttons .button:last-of-type a {
   border-radius: 0.25em 0 0 0.25em;
 }
@@ -11967,7 +11967,7 @@ custom buttons - replace prev and next buttons text with a custom icon
 animated buttons - animate the text inside prev and next buttons 
 
 -------------------------------- */
-/* line 263, ../scss/cfs/_pagination.scss */
+/* line 263, ../../shared/scss/cfs/_pagination.scss */
 .cd-pagination.animated-buttons a,
 .cd-pagination.animated-buttons span {
   overflow: hidden;
@@ -11975,12 +11975,12 @@ animated buttons - animate the text inside prev and next buttons
   height: 50px;
   padding: 0 1.4em;
 }
-/* line 273, ../scss/cfs/_pagination.scss */
+/* line 273, ../../shared/scss/cfs/_pagination.scss */
 .cd-pagination.animated-buttons .button a {
   position: relative;
   padding: 0 2em;
 }
-/* line 279, ../scss/cfs/_pagination.scss */
+/* line 279, ../../shared/scss/cfs/_pagination.scss */
 .cd-pagination.animated-buttons .button:first-of-type a::before,
 .cd-pagination.animated-buttons .button:last-of-type a::after {
   -moz-transform: translateX(-50%);
@@ -11994,14 +11994,14 @@ animated buttons - animate the text inside prev and next buttons
   right: auto;
   left: 50%;
 }
-/* line 288, ../scss/cfs/_pagination.scss */
+/* line 288, ../../shared/scss/cfs/_pagination.scss */
 .cd-pagination.animated-buttons .button:last-of-type a::after {
   -moz-transform: translateX(-50%) rotate(180deg);
   -ms-transform: translateX(-50%) rotate(180deg);
   -webkit-transform: translateX(-50%) rotate(180deg);
   transform: translateX(-50%) rotate(180deg);
 }
-/* line 292, ../scss/cfs/_pagination.scss */
+/* line 292, ../../shared/scss/cfs/_pagination.scss */
 .cd-pagination.animated-buttons i {
   -moz-transform: translateY(100%);
   -ms-transform: translateY(100%);
@@ -12015,7 +12015,7 @@ animated buttons - animate the text inside prev and next buttons
   height: 100%;
 }
 
-/* line 302, ../scss/cfs/_pagination.scss */
+/* line 302, ../../shared/scss/cfs/_pagination.scss */
 .no-touch .cd-pagination.animated-buttons .button a:hover i {
   -moz-transform: translateY(0);
   -ms-transform: translateY(0);
@@ -12023,7 +12023,7 @@ animated buttons - animate the text inside prev and next buttons
   transform: translateY(0);
 }
 
-/* line 306, ../scss/cfs/_pagination.scss */
+/* line 306, ../../shared/scss/cfs/_pagination.scss */
 .no-touch .cd-pagination.animated-buttons .button:first-of-type a:hover::before {
   -moz-transform: translateX(-50%) translateY(-50px);
   -ms-transform: translateX(-50%) translateY(-50px);
@@ -12031,7 +12031,7 @@ animated buttons - animate the text inside prev and next buttons
   transform: translateX(-50%) translateY(-50px);
 }
 
-/* line 310, ../scss/cfs/_pagination.scss */
+/* line 310, ../../shared/scss/cfs/_pagination.scss */
 .no-touch .cd-pagination.animated-buttons .button:last-of-type a:hover::after {
   -moz-transform: translateX(-50%) rotate(180deg) translateY(50px);
   -ms-transform: translateX(-50%) rotate(180deg) translateY(50px);
@@ -12040,12 +12040,12 @@ animated buttons - animate the text inside prev and next buttons
 }
 
 @media screen and (max-width: 768px) {
-  /* line 317, ../scss/cfs/_pagination.scss */
+  /* line 317, ../../shared/scss/cfs/_pagination.scss */
   .cd-pagination li.page-num {
     display: none;
   }
 }
-/* line 15, ../scss/cfs/_alert.scss */
+/* line 16, ../../shared/scss/cfs/_alert.scss */
 .alert {
   display: -webkit-flex;
   display: flex;
@@ -12062,27 +12062,27 @@ animated buttons - animate the text inside prev and next buttons
   padding: 0.9375rem;
   border: 1px solid transparent;
 }
-/* line 28, ../scss/cfs/_alert.scss */
+/* line 29, ../../shared/scss/cfs/_alert.scss */
 .alert.abs-alert {
   position: absolute;
   z-index: 1000;
   width: 100%;
 }
-/* line 35, ../scss/cfs/_alert.scss */
+/* line 36, ../../shared/scss/cfs/_alert.scss */
 .alert > p,
 .alert > ul {
   margin-bottom: 0;
 }
-/* line 40, ../scss/cfs/_alert.scss */
+/* line 41, ../../shared/scss/cfs/_alert.scss */
 .alert > p + p {
   margin-top: 5px;
 }
-/* line 44, ../scss/cfs/_alert.scss */
+/* line 45, ../../shared/scss/cfs/_alert.scss */
 .alert .alert-content {
   -webkit-order: 1;
   order: 1;
 }
-/* line 48, ../scss/cfs/_alert.scss */
+/* line 49, ../../shared/scss/cfs/_alert.scss */
 .alert .close {
   -webkit-order: 2;
   order: 2;
@@ -12094,7 +12094,7 @@ animated buttons - animate the text inside prev and next buttons
   color: #000;
   text-shadow: 0 1px 0 #fff;
 }
-/* line 61, ../scss/cfs/_alert.scss */
+/* line 62, ../../shared/scss/cfs/_alert.scss */
 .alert .close:hover, .alert .close:focus {
   cursor: pointer;
   text-decoration: none;
@@ -12102,130 +12102,130 @@ animated buttons - animate the text inside prev and next buttons
   color: #000;
 }
 
-/* line 72, ../scss/cfs/_alert.scss */
+/* line 73, ../../shared/scss/cfs/_alert.scss */
 .alert.small {
   font-size: 0.875rem;
   padding: 0.625rem;
 }
 
-/* line 78, ../scss/cfs/_alert.scss */
+/* line 79, ../../shared/scss/cfs/_alert.scss */
 .alert-heading {
   color: inherit;
 }
 
-/* line 82, ../scss/cfs/_alert.scss */
+/* line 83, ../../shared/scss/cfs/_alert.scss */
 .alert-link {
   font-weight: bold;
 }
 
-/* line 86, ../scss/cfs/_alert.scss */
+/* line 87, ../../shared/scss/cfs/_alert.scss */
 .alert-danger {
   color: #a94442;
   border-color: #ebcccc;
   background-color: #f2dede;
 }
-/* line 6, ../scss/cfs/_alert.scss */
+/* line 7, ../../shared/scss/cfs/_alert.scss */
 .alert-danger hr {
   border-top-color: #e4b9b9;
 }
-/* line 10, ../scss/cfs/_alert.scss */
+/* line 11, ../../shared/scss/cfs/_alert.scss */
 .alert-danger .alert-link {
   color: #843534;
 }
 
-/* line 90, ../scss/cfs/_alert.scss */
+/* line 91, ../../shared/scss/cfs/_alert.scss */
 .alert-info {
   color: #31708f;
   border-color: #bcdff1;
   background-color: #d9edf7;
 }
-/* line 6, ../scss/cfs/_alert.scss */
+/* line 7, ../../shared/scss/cfs/_alert.scss */
 .alert-info hr {
   border-top-color: #a6d5ec;
 }
-/* line 10, ../scss/cfs/_alert.scss */
+/* line 11, ../../shared/scss/cfs/_alert.scss */
 .alert-info .alert-link {
   color: #245269;
 }
 
-/* line 94, ../scss/cfs/_alert.scss */
+/* line 95, ../../shared/scss/cfs/_alert.scss */
 .alert-success {
   color: #3c763d;
   border-color: #d0e9c6;
   background-color: #dff0d8;
 }
-/* line 6, ../scss/cfs/_alert.scss */
+/* line 7, ../../shared/scss/cfs/_alert.scss */
 .alert-success hr {
   border-top-color: #c1e2b3;
 }
-/* line 10, ../scss/cfs/_alert.scss */
+/* line 11, ../../shared/scss/cfs/_alert.scss */
 .alert-success .alert-link {
   color: #2b542c;
 }
 
-/* line 98, ../scss/cfs/_alert.scss */
+/* line 99, ../../shared/scss/cfs/_alert.scss */
 .alert-warning {
   color: #8a6d3b;
   border-color: #faf2cc;
   background-color: #fcf8e3;
 }
-/* line 6, ../scss/cfs/_alert.scss */
+/* line 7, ../../shared/scss/cfs/_alert.scss */
 .alert-warning hr {
   border-top-color: #f7ecb5;
 }
-/* line 10, ../scss/cfs/_alert.scss */
+/* line 11, ../../shared/scss/cfs/_alert.scss */
 .alert-warning .alert-link {
   color: #66512c;
 }
 
-/* line 1, ../scss/cfs/_form.scss */
+/* line 1, ../../shared/scss/cfs/_form.scss */
 .errorlist {
   margin-top: 0.25rem;
   margin-left: 0;
   padding-left: 0;
   list-style: none;
 }
-/* line 8, ../scss/cfs/_form.scss */
+/* line 8, ../../shared/scss/cfs/_form.scss */
 .errorlist li {
   font-size: 0.875rem;
   color: #ff3860;
 }
 
-/* line 15, ../scss/cfs/_form.scss */
+/* line 15, ../../shared/scss/cfs/_form.scss */
 .form-error {
   font-weight: bold;
   color: #ff3860;
 }
 
-/* line 21, ../scss/cfs/_form.scss */
+/* line 21, ../../shared/scss/cfs/_form.scss */
 .error {
   font-size: 0.875rem;
   color: #ff3860;
 }
 
-/* line 2, ../scss/cfs/_user_menu.scss */
+/* line 2, ../../shared/scss/cfs/_user_menu.scss */
 .user-menu .user-menu-icon {
   margin-right: 0.625rem;
 }
-/* line 5, ../scss/cfs/_user_menu.scss */
+/* line 5, ../../shared/scss/cfs/_user_menu.scss */
 .user-menu .user-menu-icon i {
   font-size: 1.125rem;
 }
 
-/* line 1, ../scss/cfs/_tags.scss */
+/* line 1, ../../shared/scss/cfs/_tags.scss */
 .tag {
   background: #fdfdfd;
 }
-/* line 4, ../scss/cfs/_tags.scss */
+/* line 4, ../../shared/scss/cfs/_tags.scss */
 .tag a {
   color: #666;
 }
-/* line 7, ../scss/cfs/_tags.scss */
+/* line 7, ../../shared/scss/cfs/_tags.scss */
 .tag a:hover {
   color: #111;
 }
 
-/* line 10, ../scss/cfs/_audio_player.scss */
+/* line 10, ../../shared/scss/cfs/_audio_player.scss */
 .audio-player-wrapper {
   display: flex;
   height: 100vh;
@@ -12235,7 +12235,7 @@ animated buttons - animate the text inside prev and next buttons
   justify-content: center;
 }
 
-/* line 22, ../scss/cfs/_audio_player.scss */
+/* line 22, ../../shared/scss/cfs/_audio_player.scss */
 .audio-player {
   display: inline-block;
   line-height: 1.5625;
@@ -12245,30 +12245,30 @@ animated buttons - animate the text inside prev and next buttons
   background-color: #fff;
   box-shadow: 0 5px 8px rgba(0, 0, 0, 0.15);
 }
-/* line 33, ../scss/cfs/_audio_player.scss */
+/* line 33, ../../shared/scss/cfs/_audio_player.scss */
 .audio-player.is-loading {
   border: none;
   box-shadow: none;
 }
-/* line 38, ../scss/cfs/_audio_player.scss */
+/* line 38, ../../shared/scss/cfs/_audio_player.scss */
 .audio-player .loading-icon {
   font-size: 30px;
   colcor: #666;
 }
 
-/* line 45, ../scss/cfs/_audio_player.scss */
+/* line 45, ../../shared/scss/cfs/_audio_player.scss */
 .audio-player-controls {
   display: flex;
 }
-/* line 48, ../scss/cfs/_audio_player.scss */
+/* line 48, ../../shared/scss/cfs/_audio_player.scss */
 .audio-player-controls > div.player-control {
   border-right: 1px solid #e0e0e0;
 }
-/* line 51, ../scss/cfs/_audio_player.scss */
+/* line 51, ../../shared/scss/cfs/_audio_player.scss */
 .audio-player-controls > div.player-control:last-child {
   border-right: none;
 }
-/* line 55, ../scss/cfs/_audio_player.scss */
+/* line 55, ../../shared/scss/cfs/_audio_player.scss */
 .audio-player-controls > div.player-control a {
   display: block;
   line-height: 0;
@@ -12277,7 +12277,7 @@ animated buttons - animate the text inside prev and next buttons
   color: #404040;
 }
 
-/* line 69, ../scss/cfs/_audio_player.scss */
+/* line 69, ../../shared/scss/cfs/_audio_player.scss */
 .audio-player-progress {
   position: relative;
   min-width: 200px;
@@ -12285,7 +12285,7 @@ animated buttons - animate the text inside prev and next buttons
   cursor: pointer;
   background-color: #e0e0e0;
 }
-/* line 79, ../scss/cfs/_audio_player.scss */
+/* line 79, ../../shared/scss/cfs/_audio_player.scss */
 .audio-player-progress .audio-player-seeker {
   position: absolute;
   top: 0;
@@ -12294,28 +12294,28 @@ animated buttons - animate the text inside prev and next buttons
   background-color: #404040;
 }
 
-/* line 89, ../scss/cfs/_audio_player.scss */
+/* line 89, ../../shared/scss/cfs/_audio_player.scss */
 .audio-player-time {
   display: flex;
   justify-content: space-between;
 }
-/* line 95, ../scss/cfs/_audio_player.scss */
+/* line 95, ../../shared/scss/cfs/_audio_player.scss */
 .audio-player-time .audio-player-time-current {
   font-weight: 700;
   padding-left: 5px;
 }
-/* line 101, ../scss/cfs/_audio_player.scss */
+/* line 101, ../../shared/scss/cfs/_audio_player.scss */
 .audio-player-time .audio-player-time-total {
   padding-right: 5px;
   opacity: 0.5;
 }
 
-/* line 1, ../scss/cfs/vue/_vue.scss */
+/* line 1, ../../shared/scss/cfs/vue/_vue.scss */
 [v-cloak] {
   display: none;
 }
 
-/* line 5, ../scss/cfs/vue/_vue.scss */
+/* line 5, ../../shared/scss/cfs/vue/_vue.scss */
 .fade-transition-enter,
 .fade-transition-slow-enter,
 .fade-transition-leave-active,
@@ -12323,29 +12323,29 @@ animated buttons - animate the text inside prev and next buttons
   opacity: 0;
 }
 
-/* line 12, ../scss/cfs/vue/_vue.scss */
+/* line 12, ../../shared/scss/cfs/vue/_vue.scss */
 .fade-transition-enter-active,
 .fade-transition-leave-active {
   transition: opacity 0.5s ease;
 }
 
-/* line 17, ../scss/cfs/vue/_vue.scss */
+/* line 17, ../../shared/scss/cfs/vue/_vue.scss */
 .fade-transition-slow-enter-active,
 .fade-transition-slow-leave-active {
   transition: opacity 1.0s ease;
 }
 
-/* line 6, ../scss/cfs/vue/_markdown-editor.scss */
+/* line 6, ../../shared/scss/cfs/vue/_markdown-editor.scss */
 .markdown-editor .view-box .view-text {
   font-size: 1.125rem;
 }
-/* line 9, ../scss/cfs/vue/_markdown-editor.scss */
+/* line 9, ../../shared/scss/cfs/vue/_markdown-editor.scss */
 .markdown-editor .view-box .view-text .tagged-text {
   padding: 5px 0;
   background-color: #e0eee8;
 }
 
-/* line 18, ../scss/cfs/vue/_markdown-editor.scss */
+/* line 18, ../../shared/scss/cfs/vue/_markdown-editor.scss */
 .markdown-editor-controls {
   display: flex;
   justify-content: space-between;

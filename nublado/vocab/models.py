@@ -62,10 +62,6 @@ class VocabEntry(
         verbose_name=_("label_description"),
         blank=True
     )
-    slug = models.SlugField(
-        verbose_name=_("label_slug"),
-        max_length=255,
-    )
 
     objects = VocabEntryManager()
 
@@ -126,10 +122,6 @@ class VocabSource(
         verbose_name=_("label_vocab_source_type"),
         choices=SOURCE_TYPE_CHOICES,
         default=CREATED,
-    )
-    slug = models.SlugField(
-        verbose_name=_("label_slug"),
-        max_length=255,
     )
 
     objects = VocabSourceManager()

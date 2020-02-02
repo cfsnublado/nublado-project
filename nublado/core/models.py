@@ -123,6 +123,10 @@ class SlugifyModel(models.Model):
     * max_iterations - how many iterations to search for an open slug before raising IntegrityError, default 1000
     * slug_separator - the character to put in place of spaces and other non url friendly characters, default '-'
     '''
+    slug = models.SlugField(
+        verbose_name=_("label_slug"),
+        max_length=255,
+    )
 
     class Meta:
         abstract = True

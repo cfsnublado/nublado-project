@@ -8,7 +8,7 @@ from django.utils import timezone
 from django.utils.translation import ugettext as _
 
 from coretest.models import (
-    TestLanguageModel, TestParentModel, TestTrackedFieldModel,
+    TestAccessModel, TestLanguageModel, TestParentModel, TestTrackedFieldModel,
     TestTranslationModel, TestTimestampModel, TestUserstampModel,
     TestUUIDModel
 )
@@ -18,20 +18,34 @@ User = get_user_model()
 # Testing abstract classes in core using test models from coretest.
 
 
+class AccessModelTest(TestCase):
+
+    def setUp(self):
+        self.test_model = TestAccessModel.objects.create(name='hello')
+
+    def test_access_status_values(self):
+        self.assertEqual(TestAccessModel.ACCESS_PUBLIC, 3)
+        self.assertEqual(TestAccessModel.ACCESS_PROTECTED, 2)
+        self.assertEqual(TestAccessModel.ACCESS_PRIVATE, 1)
+
+    def test_default_access_status(self):
+        self.assertEqual(self.test_model.access_status, TestAccessModel.ACCESS_PUBLIC)
+
+
 class TrackedFieldModelTest(TestCase):
 
     def setUp(self):
-        self.test_model = TestTrackedFieldModel.objects.create(name="hello")
+        self.test_model = TestTrackedFieldModel.objects.create(name='hello')
 
     def test_field_changed(self):
-        self.test_model.name = "hello"
-        self.assertFalse(self.test_model.field_changed("name"))
-        self.test_model.name = "something"
-        self.assertTrue(self.test_model.field_changed("name"))
+        self.test_model.name = 'hello'
+        self.assertFalse(self.test_model.field_changed('name'))
+        self.test_model.name = 'something'
+        self.assertTrue(self.test_model.field_changed('name'))
         self.test_model.save()
-        self.assertFalse(self.test_model.field_changed("name"))
-        self.test_model.name = "hello"
-        self.assertTrue(self.test_model.field_changed("name"))
+        self.assertFalse(self.test_model.field_changed('name'))
+        self.test_model.name = 'hello'
+        self.assertTrue(self.test_model.field_changed('name'))
 
 
 class ParentModelTest(TestCase):

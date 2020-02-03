@@ -73,8 +73,9 @@ class TestUtilities(TestCase):
         # Code blocks
         # Fenced-in code with syntax highlighting
         html = markdown_to_html('```python\nHello\n```')
+
         self.assertEqual(
-            '<pre><code>Hello\n</code></pre>\n',
+            '<div class="codehilite"><pre><span></span><code><span class="n">Hello</span>\n</code></pre></div>\n',
             html
         )
         # Fenced-in code without syntax highlighting

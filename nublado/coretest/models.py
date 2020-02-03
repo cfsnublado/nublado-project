@@ -1,7 +1,7 @@
 from django.db import models
 
 from core.models import (
-    LanguageModel, ParentModel,
+    AccessModel, LanguageModel, ParentModel,
     TimestampModel, TrackedFieldModel, TranslationModel,
     UserstampModel, UUIDModel
 )
@@ -38,6 +38,10 @@ class TestColorModel(BaseTestModel):
         choices=COLOR_CHOICES,
         default=GREEN
     )
+
+
+class TestAccessModel(BaseTestModel, AccessModel):
+    pass
 
 
 class TestTrackedFieldModel(BaseTestModel, TrackedFieldModel):

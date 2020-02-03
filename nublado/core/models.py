@@ -11,6 +11,26 @@ from .managers import ParentManager, TranslationManager
 from .validation import validate_translation_languages
 
 
+class AccessModel(models.Model):
+    ACCESS_PUBLIC = 3
+    ACCESS_PROTECTED = 2
+    ACCESS_PRIVATE = 1
+    ACCESS_CHOICES = (
+        (ACCESS_PUBLIC, _('label_acccess_public')),
+        (ACCESS_PROTECTED, _('label_acccess_protected')),
+        (ACCESS_PRIVATE, _('label_acccess_private')),
+    )
+
+    access_status = models.IntegerField(
+        verbose_name=_('label_access_status'),
+        choices=ACCESS_CHOICES,
+        default=ACCESS_PUBLIC
+    )
+
+    class Meta:
+        abstract = True
+
+
 # Note on naming conventions.
 # All models, abstract or otherwise, that are meant to be subclassed by other models,
 # are suffixed with 'Model.'
@@ -123,8 +143,9 @@ class SlugifyModel(models.Model):
     * max_iterations - how many iterations to search for an open slug before raising IntegrityError, default 1000
     * slug_separator - the character to put in place of spaces and other non url friendly characters, default '-'
     '''
+
     slug = models.SlugField(
-        verbose_name=_("label_slug"),
+        verbose_name=_('label_slug'),
         max_length=255,
     )
 

@@ -10,6 +10,10 @@ from django.utils.translation import ugettext_lazy as _
 from .managers import ParentManager, TranslationManager
 from .validation import validate_translation_languages
 
+# Note on naming conventions.
+# All models, abstract or otherwise, that are meant to be subclassed by other models,
+# are suffixed with 'Model.'
+
 
 class AccessModel(models.Model):
     ACCESS_PUBLIC = 3
@@ -30,10 +34,6 @@ class AccessModel(models.Model):
     class Meta:
         abstract = True
 
-
-# Note on naming conventions.
-# All models, abstract or otherwise, that are meant to be subclassed by other models,
-# are suffixed with 'Model.'
 
 class InviteModel(models.Model):
     ACCEPTED = 3
@@ -318,6 +318,89 @@ class UUIDModel(models.Model):
     A model whose id is a generated uuid.
     '''
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+
+    class Meta:
+        abstract = True
+
+
+# Project-related models
+
+class ProjectContentModel(models.Model):
+
+    class Meta:
+        abstract = True
+
+    def get_project(self):
+        raise NotImplementedError('Method get_project needs to be implemented.')
+
+
+class ProjectModel(
+    AccessModel, TimestampModel, SlugifyModel,
+    SerializeModel
+):
+    unique_slug = False
+    slug_value_field_name = 'name'
+    slug_max_iterations = 500
+
+    owner = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        related_name='%(app_label)s_%(class)s',
+        on_delete=models.CASCADE
+    )
+    name = models.CharField(
+        verbose_name=_('label_name'),
+        max_length=255,
+    )
+    description = models.TextField(
+        verbose_name=_('label_description'),
+        blank=True
+    )
+
+    class Meta:
+        verbose_name = _('label_project')
+        verbose_name_plural = _('label_project_plural')
+        unique_together = ('owner', 'name')
+        abstract = True
+
+    def __str__(self):
+        return self.name
+
+
+class ProjectMemberModel(TimestampModel):
+    project = None
+    member = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        related_name='%(app_label)s_%(class)s',
+        on_delete=models.CASCADE
+    )
+
+    class Meta:
+        verbose_name = _('label_project_member')
+        verbose_name_plural = _('label_project_member_plural')
+        unique_together = ('member', 'project')
+        abstract = True
+
+
+class ProjectPublishMemberModel(ProjectMemberModel):
+    """
+    See Ghost blog permissions for inspiration.
+    """
+    ROLE_ADMIN = 4
+    ROLE_EDITOR = 3
+    ROLE_AUTHOR = 2
+    ROLE_CONTRIBUTOR = 1
+    ROLE_CHOICES = (
+        (ROLE_ADMIN, _('label_role_admin')),
+        (ROLE_EDITOR, _('label_role_editor')),
+        (ROLE_AUTHOR, _('label_role_author')),
+        (ROLE_CONTRIBUTOR, _('label_role_contributor'))
+    )
+
+    role = models.IntegerField(
+        verbose_name=_('label_role'),
+        choices=ROLE_CHOICES,
+        default=ROLE_CONTRIBUTOR
+    )
 
     class Meta:
         abstract = True

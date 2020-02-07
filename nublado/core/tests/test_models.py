@@ -3,19 +3,148 @@ import uuid
 from django.conf import settings
 from django.contrib.auth import get_user_model
 from django.core.exceptions import ValidationError
+from django.db.utils import IntegrityError
 from django.test import TestCase
 from django.utils import timezone
 from django.utils.translation import ugettext as _
 
+from ..models import (
+    AccessModel, ProjectModel, ProjectMemberModel,
+    SerializeModel, SlugifyModel,
+    TimestampModel
+)
 from coretest.models import (
-    TestAccessModel, TestLanguageModel, TestParentModel, TestTrackedFieldModel,
-    TestTranslationModel, TestTimestampModel, TestUserstampModel,
-    TestUUIDModel
+    TestAccessModel, TestLanguageModel, TestParentModel, TestProjectModel,
+    TestProjectContentModel, TestProjectMemberModel, TestProjectPublishMemberModel,
+    TestTrackedFieldModel, TestTranslationModel,
+    TestTimestampModel, TestUserstampModel, TestUUIDModel
 )
 
 User = get_user_model()
 
 # Testing abstract classes in core using test models from coretest.
+
+
+class ProjectModelTest(TestCase):
+
+    def setUp(self):
+        self.user = User.objects.create_user(
+            username='cfs7',
+            first_name='Christopher',
+            last_name='Sanders',
+            email='cfs7@foo.com',
+            password='Coffee?69c'
+        )
+        self.project = TestProjectModel.objects.create(
+            owner=self.user,
+            name='hello'
+        )
+
+    def test_inheritance(self):
+        classes = (
+            ProjectModel, AccessModel, TimestampModel, SlugifyModel,
+            SerializeModel
+        )
+        for class_name in classes:
+            self.assertTrue(
+                issubclass(TestProjectModel, class_name)
+            )
+
+
+class ProjectMemberModelTest(TestCase):
+    def setUp(self):
+        self.user = User.objects.create_user(
+            username='cfs7',
+            first_name='Christopher',
+            last_name='Sanders',
+            email='cfs7@foo.com',
+            password='Coffee?69c'
+        )
+        self.project = TestProjectModel.objects.create(
+            owner=self.user,
+            name='hello'
+        )
+
+    def test_unique_together_member_project(self):
+        member_1 = TestProjectMemberModel.objects.create(
+            project=self.project,
+            member=self.user
+        )
+        member_1.full_clean()
+
+        # Attempt to create another project member with same user.
+        with self.assertRaises(IntegrityError):
+            member_2 = TestProjectMemberModel.objects.create(
+                project=self.project,
+                member=self.user
+            )
+            member_2.full_clean()
+
+
+class ProjectPublishMemberModelTest(TestCase):
+    def setUp(self):
+        self.user = User.objects.create_user(
+            username='cfs7',
+            first_name='Christopher',
+            last_name='Sanders',
+            email='cfs7@foo.com',
+            password='Coffee?69c'
+        )
+        self.project = TestProjectModel.objects.create(
+            owner=self.user,
+            name='hello'
+        )
+
+    def test_inheritance(self):
+        classes = (
+            ProjectMemberModel,
+        )
+        for class_name in classes:
+            self.assertTrue(
+                issubclass(TestProjectPublishMemberModel, class_name)
+            )
+
+    def test_access_status_values(self):
+        member = TestProjectPublishMemberModel.objects.create(
+            project=self.project,
+            member=self.user
+        )
+        self.assertEqual(member.ROLE_ADMIN, 4)
+        self.assertEqual(member.ROLE_EDITOR, 3)
+        self.assertEqual(member.ROLE_AUTHOR, 2)
+        self.assertEqual(member.ROLE_CONTRIBUTOR, 1)
+
+    def test_default_access_status(self):
+        member = TestProjectPublishMemberModel.objects.create(
+            project=self.project,
+            member=self.user
+        )
+        self.assertEqual(member.role, TestProjectPublishMemberModel.ROLE_CONTRIBUTOR)
+
+
+class ProjectContentModelTest(TestCase):
+
+    def setUp(self):
+        self.user = User.objects.create_user(
+            username='cfs7',
+            first_name='Christopher',
+            last_name='Sanders',
+            email='cfs7@foo.com',
+            password='Coffee?69c'
+        )
+        self.project = TestProjectModel.objects.create(
+            owner=self.user,
+            name='hello'
+        )
+        self.project_content = TestProjectContentModel.objects.create(
+            creator=self.user,
+            name='hello',
+            content='asdf asdf'
+        )
+
+    def test_get_project(self):
+        project = self.project_content.get_project()
+        self.assertEqual('foo', project)
 
 
 class AccessModelTest(TestCase):

@@ -69,6 +69,21 @@ class ObjectSessionMixin(object):
             del request.session['session_obj']
 
 
+class PermissionMixin(object):
+    superuser_override = True
+
+    def dispatch(self, request, *args, **kwargs):
+        has_permission = self.check_permission()
+
+        if not has_permission:
+            raise PermissionDenied
+
+        return super(PermissionMixin, self).dispatch(request, *args, **kwargs)
+
+    def check_permission(self, *args, **kwargs):
+        raise NotImplementedError('Method check_permission needs to be implemented.')
+
+
 class CachedObjectMixin(object):
 
     def get_object(self):

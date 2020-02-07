@@ -1,9 +1,11 @@
+from django.conf import settings
 from django.db import models
 
 from core.models import (
     AccessModel, LanguageModel, ParentModel,
-    TimestampModel, TrackedFieldModel, TranslationModel,
-    UserstampModel, UUIDModel
+    ProjectModel, ProjectContentModel, ProjectMemberModel,
+    ProjectPublishMemberModel, TimestampModel, TrackedFieldModel,
+    TranslationModel, UserstampModel, UUIDModel
 )
 
 # These models are only used for testing purposes. They are to be migrated only into the test db.
@@ -76,3 +78,37 @@ class TestUserstampModel(BaseTestModel, UserstampModel):
 
 class TestUUIDModel(BaseTestModel, UUIDModel):
     pass
+
+
+class TestProjectModel(ProjectModel):
+    pass
+
+
+class TestProjectMemberModel(ProjectMemberModel):
+    project = models.ForeignKey(
+        TestProjectModel,
+        related_name='project_members',
+        on_delete=models.CASCADE
+    )
+
+
+class TestProjectPublishMemberModel(ProjectPublishMemberModel):
+    project = models.ForeignKey(
+        TestProjectModel,
+        related_name='project_publish_members',
+        on_delete=models.CASCADE
+    )
+
+
+class TestProjectContentModel(BaseTestModel, ProjectContentModel):
+    creator = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        related_name='%(app_label)s_%(class)s',
+        on_delete=models.CASCADE
+    )
+    content = models.TextField(
+        verbose_name='content',
+    )
+
+    def get_project(self):
+        return 'foo'

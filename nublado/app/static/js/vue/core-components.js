@@ -465,7 +465,7 @@ const BaseLanguageSearch = {
     },
     search() {
       url = this.searchUrl + "?search_term=" + this.searchTerm + "&search_language=" + this.language
-      window.location.replace(url);
+      window.location.assign(url);
     }
   },
   created() {
@@ -499,7 +499,7 @@ const BaseTag = {
   methods: {
     select() {
       if (this.selectRedirectUrl) {
-        window.location.replace(this.selectRedirectUrl)
+        window.location.assign(this.selectRedirectUrl)
       }
 
       this.$emit("select-tag", this.id)

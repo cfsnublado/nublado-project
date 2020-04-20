@@ -60,6 +60,13 @@ class ProjectMemberModelTest(TestCase):
             email='cfs7@foo.com',
             password='Coffee?69c'
         )
+        self.user_2 = User.objects.create_user(
+            username='naranjo',
+            first_name='Naranjo',
+            last_name='Oranges',
+            email='naranjo@foo.com',
+            password='Coffee?69c'
+        )
         self.project = TestProjectModel.objects.create(
             owner=self.user,
             name='hello'
@@ -68,12 +75,27 @@ class ProjectMemberModelTest(TestCase):
     def test_unique_together_member_project(self):
         member_1 = TestProjectMemberModel.objects.create(
             project=self.project,
-            member=self.user
+            member=self.user_2
         )
         member_1.full_clean()
 
         # Attempt to create another project member with same user.
         with self.assertRaises(IntegrityError):
+            member_2 = TestProjectMemberModel.objects.create(
+                project=self.project,
+                member=self.user_2
+            )
+            member_2.full_clean()
+
+    def test_new_member_not_owner(self):
+        member_1 = TestProjectMemberModel.objects.create(
+            project=self.project,
+            member=self.user_2
+        )
+        member_1.full_clean()
+
+        # Attempt to create a member from owner.
+        with self.assertRaises(ValidationError):
             member_2 = TestProjectMemberModel.objects.create(
                 project=self.project,
                 member=self.user
@@ -109,17 +131,16 @@ class ProjectPublishMemberModelTest(TestCase):
             project=self.project,
             member=self.user
         )
-        self.assertEqual(member.ROLE_ADMIN, 4)
-        self.assertEqual(member.ROLE_EDITOR, 3)
-        self.assertEqual(member.ROLE_AUTHOR, 2)
-        self.assertEqual(member.ROLE_CONTRIBUTOR, 1)
+        self.assertEqual(member.ROLE_ADMIN, 3)
+        self.assertEqual(member.ROLE_EDITOR, 2)
+        self.assertEqual(member.ROLE_AUTHOR, 1)
 
     def test_default_access_status(self):
         member = TestProjectPublishMemberModel.objects.create(
             project=self.project,
             member=self.user
         )
-        self.assertEqual(member.role, TestProjectPublishMemberModel.ROLE_CONTRIBUTOR)
+        self.assertEqual(member.role, TestProjectPublishMemberModel.ROLE_AUTHOR)
 
 
 class ProjectContentModelTest(TestCase):

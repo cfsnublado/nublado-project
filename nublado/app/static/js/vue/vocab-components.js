@@ -37,12 +37,12 @@ const VocabSource = {
   methods: {
     view() {
       if (this.viewUrl) {
-        window.location.replace(this.viewUrl)
+        window.location.assign(this.viewUrl)
       }
     },
     edit() {
       if (this.editUrl) {
-        window.location.replace(this.editUrl)
+        window.location.assign(this.editUrl)
       }
     },
     remove() {
@@ -154,7 +154,7 @@ const VocabSourceSearch = {
       clearTimeout(this.searchTimerId)
       this.isOpen = false
       url = this.searchUrl + "?source=" + encodeURIComponent(this.searchTerm)
-      window.location.replace(url)
+      window.location.assign(url)
     }
   }
 }
@@ -176,7 +176,7 @@ const VocabSourceEntrySearch = {
       clearTimeout(this.searchTimerId)
       this.isOpen = false
       url = this.searchUrl + "?search_entry=" + encodeURIComponent(this.searchTerm) + "&search_language=" + this.language + "&search_source=" + this.sourceId
-      window.location.replace(url);
+      window.location.assign(url);
     }
   },
 }
@@ -219,7 +219,7 @@ const VocabEntry = {
   methods: {
     view() {
       if (this.viewUrl) {
-        window.location.replace(this.viewUrl)
+        window.location.assign(this.viewUrl)
       }
     },
     edit() {},
@@ -330,7 +330,7 @@ const VocabEntrySearch = {
       clearTimeout(this.searchTimerId)
       this.isOpen = false
       url = this.searchUrl + "?search_entry=" + encodeURIComponent(this.searchTerm) + "&search_language=" + this.language
-      window.location.replace(url);
+      window.location.assign(url);
     }
   },
 }
@@ -460,7 +460,7 @@ const VocabEntryRandom = {
         this.viewUrl = this.initViewUrl
         .replace("xx", this.vocabEntry.language)
         .replace("zzz", this.vocabEntry.slug)  
-        window.location.replace(this.viewUrl)
+        window.location.assign(this.viewUrl)
       }
     },
     getVocabEntry() {
@@ -538,12 +538,12 @@ const VocabContext = {
   methods: {
     selectVocabSource() {
       if (this.vocabSourceUrl) {
-        window.location.replace(this.vocabSourceUrl)
+        window.location.assign(this.vocabSourceUrl)
       }
     },
     edit() {
       if (this.editUrl) {
-        window.location.replace(this.editUrl)
+        window.location.assign(this.editUrl)
       }
     },
     remove() {
@@ -597,7 +597,7 @@ const VocabContextTags = {
         this.tagSelectUrl = this.tagSelectUrl
           .replace("xx", this.selectedVocabEntry.language)
           .replace("zzz", this.selectedVocabEntry.slug)
-        window.location.replace(this.tagSelectUrl)
+        window.location.assign(this.tagSelectUrl)
       }
     },
     toggleTag(index) {
@@ -686,12 +686,12 @@ const VocabEntryContext = {
   methods: {
     selectVocabSource() {
       if (this.vocabSourceUrl) {
-        window.location.replace(this.vocabSourceUrl)
+        window.location.assign(this.vocabSourceUrl)
       }
     },
     edit() {
       if (this.editUrl) {
-        window.location.replace(this.editUrl)
+        window.location.assign(this.editUrl)
       }
     },
     remove() {

@@ -367,6 +367,12 @@ class ProjectModel(
 
 
 class ProjectMemberModel(TimestampModel):
+    """
+    A member of a project's team.
+
+    Make sure project property inherits from ProjectModel
+    Project owner doesn't need a related ProjectMemberModel.
+    """
     project = None
     member = models.ForeignKey(
         settings.AUTH_USER_MODEL,
@@ -380,26 +386,29 @@ class ProjectMemberModel(TimestampModel):
         unique_together = ('member', 'project')
         abstract = True
 
+    def clean(self):
+        # Make sure member isn't the project owner.
+        if self.member == self.project.owner:
+            raise ValidationError(_('validation_project_member_is_owner'))
+
 
 class ProjectPublishMemberModel(ProjectMemberModel):
     """
     See Ghost blog permissions for inspiration.
     """
-    ROLE_ADMIN = 4
-    ROLE_EDITOR = 3
-    ROLE_AUTHOR = 2
-    ROLE_CONTRIBUTOR = 1
+    ROLE_ADMIN = 3
+    ROLE_EDITOR = 2
+    ROLE_AUTHOR = 1
     ROLE_CHOICES = (
         (ROLE_ADMIN, _('label_role_admin')),
         (ROLE_EDITOR, _('label_role_editor')),
-        (ROLE_AUTHOR, _('label_role_author')),
-        (ROLE_CONTRIBUTOR, _('label_role_contributor'))
+        (ROLE_AUTHOR, _('label_role_author'))
     )
 
     role = models.IntegerField(
         verbose_name=_('label_role'),
         choices=ROLE_CHOICES,
-        default=ROLE_CONTRIBUTOR
+        default=ROLE_AUTHOR
     )
 
     class Meta:

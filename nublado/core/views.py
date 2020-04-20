@@ -70,7 +70,6 @@ class ObjectSessionMixin(object):
 
 
 class PermissionMixin(object):
-    superuser_override = True
 
     def dispatch(self, request, *args, **kwargs):
         has_permission = self.check_permission()

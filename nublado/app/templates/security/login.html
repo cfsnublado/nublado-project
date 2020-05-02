@@ -83,7 +83,7 @@ novalidate>
 <div style="margin-top: 20px;">
 <a
 class="button"
-href="{% url 'social:begin' 'google-oauth2' %}"
+href="{% url_set_param 'social:begin' 'google-oauth2' approval_prompt='force' %}"
 >
 <span class="icon"><i class="fab fa-google"></i></span>
 <span>{% trans "msg_login_google" %}</span>

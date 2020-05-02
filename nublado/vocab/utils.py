@@ -2,7 +2,6 @@ import random
 
 import requests
 from jsonschema import validate as validate_schema
-
 import markdown2
 from bs4 import BeautifulSoup
 from markdownify import markdownify as md

@@ -36,7 +36,10 @@ SOCIAL_AUTH_URL_NAMESPACE = "social"
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = get_env_variable("SOCIAL_AUTH_GOOGLE_OAUTH2_KEY")
 SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = get_env_variable("SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET")
 SOCIAL_AUTH_GOOGLE_LOGIN = "/auth/login/google-oauth2/"
-
+SOCIAL_AUTH_POSTGRES_JSONFIELD = True
+SOCIAL_AUTH_GOOGLE_OAUTH2_AUTH_EXTRA_ARGUMENTS = {
+    'approval_prompt': 'auto'
+}
 SOCIAL_AUTH_PIPELINE = (
     'social_core.pipeline.social_auth.social_details',
     'social_core.pipeline.social_auth.social_uid',
@@ -62,7 +65,7 @@ TMP_DIR = MEDIA_ROOT / "tmp"
 
 STATIC_ROOT = PROJECT_ROOT / "staticfiles"
 STATIC_URL = "/static/"
-TATICFILES_DIRS = [PROJECT_ROOT / "static"]
+STATICFILES_DIRS = [PROJECT_ROOT / "static"]
 
 ALLOWED_HOSTS = []
 

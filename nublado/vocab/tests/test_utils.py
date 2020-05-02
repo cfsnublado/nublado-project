@@ -127,9 +127,9 @@ class ExportVocabEntriesTest(TestCommon):
         self.request.user = self.user
         self.user_2 = User.objects.create_user(
             username='kfl7',
-            first_name='Karen',
-            last_name='Fuentes',
-            email='kfl7@foo.com',
+            first_name='Foo',
+            last_name='Foo',
+            email='foo7@foo.com',
             password=self.pwd
         )
 

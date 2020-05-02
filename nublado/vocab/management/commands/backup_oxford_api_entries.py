@@ -1,27 +1,15 @@
-import getpass
 import json
 from pathlib import Path
 
 from django.conf import settings
-from django.contrib.auth import authenticate
-from django.core.management.base import BaseCommand, CommandError
+from django.core.management.base import CommandError
 
+from core.management.base import LoginCommand
 from vocab.models import VocabEntry, VocabEntryJsonData
 
 
-class Command(BaseCommand):
+class Command(LoginCommand):
     help = 'Backs up Oxford API vocab entry data.'
-
-    def login_user(self):
-        username = input('Username: ')
-        password = getpass.getpass('Password: ')
-
-        user = authenticate(username=username, password=password)
-
-        if user is not None:
-            return user
-        else:
-            raise CommandError('Invalid login')
 
     def add_arguments(self, parser):
         parser.add_argument('--output_path', nargs=1, type=str)

@@ -1,16 +1,13 @@
-import getpass
-
 import requests
 from rest_framework import status
 
 from django.conf import settings
-from django.contrib.auth import authenticate
-from django.core.management.base import BaseCommand, CommandError
 
+from core.management.base import LoginCommand
 from vocab.models import VocabDefinition, VocabEntry
 
 
-class Command(BaseCommand):
+class Command(LoginCommand):
     help = 'Backs up definitions.'
     OXFORD_API_ID = getattr(settings, 'OXFORD_API_ID', None)
     OXFORD_API_KEY = getattr(settings, 'OXFORD_API_KEY', None)
@@ -22,18 +19,6 @@ class Command(BaseCommand):
         'expression': VocabDefinition.EXPRESSION,
         'other': VocabDefinition.OTHER
     }
-
-    def login_user(self):
-        username = input('Username: ')
-        password = getpass.getpass('Password: ')
-
-        user = authenticate(username=username, password=password)
-
-        if user is not None:
-            if not user.is_superuser:
-                raise CommandError('Must be superuser')
-        else:
-            raise CommandError('Invalid login')
 
     def add_definitions_from_oxford(self, json_data, vocab_entry):
         '''

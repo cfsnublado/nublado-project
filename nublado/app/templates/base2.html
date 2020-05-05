@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+{% load static %}
+{% load core_extras %}
+{% load i18n %}
+
+<html lang="en">
+
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>
+{% block title %}{% endblock title %} | {{ project_name }}
+</title>
+
+<link rel="icon" href="{% static 'favicon.ico' %}">
+
+{% block stylesheets %}
+
+<link rel="stylesheet" href="{% static 'css/app.css' %}" />
+<link rel="stylesheet" href="{% static 'css/fontawesome-all.css' %}" />
+
+{% endblock stylesheets %}
+
+{% block styles %}
+<style>
+
+.navbar-dropdown {
+  margin-right: 5px;
+}
+
+.user-nav-avatar {
+  min-width: 40px;
+  min-height: 40px;
+}
+
+</style>
+{% endblock styles %}
+
+</head>
+
+<body class="{% block body_classes %}theme-cloudy{% endblock body_classes %}" style="min-height: 100vh;">
+
+<div id="app-container">
+
+{% block navbar %}
+<nav class="navbar is-bordered" role="navigation" aria-label="main navigation">
+
+<div class="navbar-brand">
+
+<a
+id="navbar-sidebar-trigger"
+class="sidebar-trigger" 
+aria-label="navbar-sidebar-trigger" 
+@click.prevent="toggleSidebar"
+>
+<span></span>
+<span></span>
+<span></span>
+</a>
+
+<a class="navbar-item navbar-logo" href="{% url 'app:home' %}">
+<img src="{% static 'images/nublado-logo-sm.png' %}" alt="nublado-logo">
+</a>
+
+</div>
+
+<div 
+id="navbar-menu" 
+class="navbar-menu"
+ref="navbarMenu"
+>
+
+<div class="navbar-end">
+
+{% include "includes/_user_nav.html" %}
+
+</div><!-- navbar -->
+
+</div><!-- navbar-menu -->
+
+</nav><!-- navbar -->
+
+{% endblock navbar %}
+
+{% block sidebar %}
+<div id="sidebar-background" class="sidebar-background" @click="toggleSidebar(false)"></div>
+
+<div
+id="sidebar"
+class="sidebar"
+ref="sidebar"
+>
+<div class="sidebar-container">
+
+<div class="sidebar-navbar">
+
+<a 
+id="sidebar-trigger"
+class="sidebar-trigger" 
+aria-label="sidebar-trigger" 
+@click.prevent="toggleSidebar"
+>
+<span></span>
+<span></span>
+<span></span>
+</a>
+
+<a class="navbar-item navbar-logo" href="{% url 'app:home' %}">
+<img src="{% static 'images/nublado-logo-sm.png' %}" alt="nublado-logo">
+</a>
+
+</div>
+
+<div class="sidebar-body">
+
+{% block sidebar_nav_items %}
+
+<div class="menu">
+
+{% if user.is_authenticated %}
+
+  <p class="menu-label">
+  {% trans "label_your_menu" %}
+  </p>
+
+  <ul class="menu-list">
+
+  <li>
+  <a 
+  class="{% block your_sources_link_active %}{% endblock your_sources_link_active %}"
+  href="{% url 'vocab:auth_vocab_sources' %}"
+  >
+  <i class="fas fa-fw fa-book-open menu-icon"></i> {% trans "label_your_sources" %}
+  </a>
+
+  </li>
+
+  <li class="sidebar-divider"></li>
+
+  </ul>
+
+{% endif %}
+
+<p class="menu-label">
+{% trans "label_general" %}
+</p>
+
+<ul class="menu-list">
+
+<li>
+<a 
+class="{% block home_link_active %}{% endblock home_link_active %}"
+href="{% url 'app:home' %}"
+>
+<i class="fas fa-fw fa-home menu-icon"></i> {% trans "label_home" %}
+</a>
+</li>
+
+<li>
+<a 
+class="{% block vocab_entries_link_active %}{% endblock vocab_entries_link_active %}"
+href="{% url 'vocab:vocab_entries' %}"
+>
+<i class="fas fa-fw fa-language menu-icon"></i> {% trans "label_vocabulary" %}
+</a>
+</li>
+
+<li>
+<a 
+class="{% block vocab_sources_link_active %}{% endblock vocab_sources_link_active %}"
+href="{% url 'vocab:vocab_sources' %}"
+>
+<i class="fas fa-fw fa-project-diagram menu-icon"></i> {% trans "label_sources" %}
+</a>
+</li>
+
+</ul>
+
+</div>
+
+{% endblock sidebar_nav_items %}
+
+</div><!-- end sidebar-body -->
+
+<div class="sidebar-footer">
+
+<dropdown
+id="sidebar-language-selector"
+dropdown-classes="is-up"
+>
+
+<template slot="dropdown-label">
+{% trans "label_language" %}: {{ LANGUAGE_CODE|upper }}
+</template>
+
+<template slot="dropdown-content">
+{% get_language_info_list for LANGUAGES as languages %}
+
+{% for language in languages %}
+
+  <a id="sidebar-{{ language.code }}" class="dropdown-item" href="{% change_language language.code %}">
+  {{ language.name_translated }}
+  </a>
+
+{% endfor %}
+</template>
+
+</dropdown>
+
+</div><!-- end sidebar-footer -->
+
+</div>
+</div><!-- end sidebar -->
+{% endblock sidebar %}
+
+{% block top_messages %}
+
+<div id="messages">
+{% include "includes/_messages.html" %}
+</div><!-- messages -->
+
+{% endblock top_messages %}
+
+{% block full_width_sections %}{% endblock full_width_sections %}
+
+{% block content_container %}
+
+<section class="section {% block main_section_classes %}main-content{% endblock main_section_classes %}">
+<div class="columns">
+<div class="column is-10 is-offset-1">
+
+{% block content_top %}{% endblock content_top %}
+
+{% block content %}{% endblock content %}
+
+</div>
+</div>
+</section>
+
+{% endblock content_container %}
+
+{% block page_footer %}
+<footer class="page-footer">
+
+{% now "Y" %} | {{ project_name }}
+
+</footer>
+{% endblock page_footer %}
+
+{% block modal_content %}{% endblock modal_content %}
+
+</div><!-- app-container -->
+
+<script>
+{# Block reserved for JavaScript variables whose values come from backend Python content #}
+{% block python_to_javascript %}
+
+// If enabled, maintain sidebar's state between requests.
+var initSidebarSessionEnabled = false; 
+var sidebarExpanded = false;
+var appSessionUrl = "{% url 'app:app_session' %}";
+
+{% endblock python_to_javascript %}
+</script>
+
+{% block scripts %}
+
+<script src="{% static 'js/showdown.min.js' %}"></script>
+<script src="{% static 'js/mark/mark.min.js' %}"></script>
+<script src="{% static 'js/axios.min.js' %}"></script>
+<script src="{% static 'js/ajax.js' %}"></script>
+<script src="{% static 'js/vue.js' %}"></script>
+<script src="{% static 'js/vue/plugins/modal.js' %}"></script>
+<script src="{% static 'js/vue/core-components.js' %}"></script>
+<script src="{% static 'js/vue/app-components.js' %}"></script>
+<script src="{% static 'js/vue/vocab-components.js' %}"></script>
+<script src="{% static 'js/vue/directives/vue-scrollto.js' %}"></script>
+<script src="{% static 'js/vue/app.js' %}"></script>
+
+{% endblock scripts %}
+
+</body>
+</html>

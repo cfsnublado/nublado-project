@@ -9,19 +9,19 @@ from ..conf import settings
 
 register = template.Library()
 
-IMG_CIRCLE = "circle"
+IMG_CIRCLE = 'circle'
 
 
 # @cache_result()
 @register.simple_tag
-def profile_image_url(user, size=settings.USERS_IMAGE_DEFAULT_SIZE):
+def profile_gravatar_url(user, size=settings.USERS_IMAGE_DEFAULT_SIZE):
     if settings.USERS_USE_GRAVATAR:
-        params = {"s": str(size)}
+        params = {'s': str(size)}
 
         if settings.USERS_GRAVATAR_DEFAULT:
-            params["d"] = settings.USERS_GRAVATAR_DEFAULT
+            params['d'] = settings.USERS_GRAVATAR_DEFAULT
 
-        path = "{0}/?{1}".format(
+        path = '{0}/?{1}'.format(
             hashlib.md5(force_bytes(user.email.lower())).hexdigest(), urlencode(params)
         )
 
@@ -40,17 +40,17 @@ def profile_image(
     if user.profile.avatar_url:
         url = user.profile.avatar_url
     else:
-        url = profile_image_url(user, size)
+        url = profile_gravatar_url(user, size)
 
     if border_radius == IMG_CIRCLE:
         border_radius = int(size / 2)
 
     image_context = dict(kwargs, **{
-        "user": user,
-        "url": url,
-        "alt": alt,
-        "size": size,
-        "border_radius": border_radius
+        'user': user,
+        'url': url,
+        'alt': alt,
+        'size': size,
+        'border_radius': border_radius
     })
 
-    return render_to_string("users/profile_image/profile_image_tag.html", image_context)
+    return render_to_string('users/profile_image/profile_image_tag.html', image_context)

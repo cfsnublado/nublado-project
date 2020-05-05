@@ -2,6 +2,7 @@ import os
 import sys
 from pathlib import Path
 
+from django.contrib.messages import constants as message_constants
 from django.core.exceptions import ImproperlyConfigured
 from django.utils.translation import ugettext_lazy as _
 
@@ -150,6 +151,14 @@ TEMPLATES = [
         },
     },
 ]
+
+MESSAGE_TAGS = {
+    message_constants.DEBUG: 'alert-primary',
+    message_constants.INFO: 'alert-info',
+    message_constants.SUCCESS: 'alert-success',
+    message_constants.WARNING: 'alert-warning',
+    message_constants.ERROR: 'alert-danger',
+}
 
 AUTHENTICATION_BACKENDS = (
     "social_core.backends.google.GoogleOAuth2",

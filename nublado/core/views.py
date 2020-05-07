@@ -8,12 +8,21 @@ from django.http import HttpResponse, HttpResponseNotFound, JsonResponse
 from django.shortcuts import get_object_or_404, render
 from django.utils.translation import ugettext_lazy as _
 from django.views.decorators.cache import cache_control
-from django.views.generic import View
 
-from .forms import UploadFileForm
-from .utils import LazyEncoder, handle_deleted_file, handle_upload
+from .permissions import is_requested_user
+from .utils import (
+    LazyEncoder
+)
 
 User = get_user_model()
+
+
+def get_requested_user_by_username(username=None):
+    user = get_object_or_404(
+        User.objects.select_related('profile'),
+        username=username
+    )
+    return user
 
 
 def home_files(request, filename):
@@ -42,14 +51,6 @@ def render_js(request, cache=True, *args, **kwargs):
     return response
 
 
-def get_required_user(request, username=None):
-    user = get_object_or_404(
-        User.objects.select_related('profile'),
-        username=username
-    )
-    return user
-
-
 class ObjectSessionMixin(object):
     session_obj = None
     session_obj_attrs = []
@@ -69,20 +70,6 @@ class ObjectSessionMixin(object):
             del request.session['session_obj']
 
 
-class PermissionMixin(object):
-
-    def dispatch(self, request, *args, **kwargs):
-        has_permission = self.check_permission()
-
-        if not has_permission:
-            raise PermissionDenied
-
-        return super(PermissionMixin, self).dispatch(request, *args, **kwargs)
-
-    def check_permission(self, *args, **kwargs):
-        raise NotImplementedError('Method check_permission needs to be implemented.')
-
-
 class CachedObjectMixin(object):
 
     def get_object(self):
@@ -95,6 +82,13 @@ class CachedObjectMixin(object):
                 self.object = super(CachedObjectMixin, self).get_object()
 
         return self.object
+
+
+class PermissionMixin(object):
+    check_access = True
+
+    def check_permission(self, *args, **kwargs):
+        raise NotImplementedError('Method check_permission needs to be implemented.')
 
 
 class AutocompleteMixin(object):
@@ -213,7 +207,9 @@ class UserMixin(object):
     '''
 
     def dispatch(self, request, *args, **kwargs):
-        self.requested_user = get_required_user(request, kwargs['username'])
+        self.requested_user = get_requested_user_by_username(
+            kwargs['username']
+        )
         return super(UserMixin, self).dispatch(request, *args, **kwargs)
 
     def get_context_data(self, **kwargs):
@@ -223,24 +219,28 @@ class UserMixin(object):
 
 
 class UserRequiredMixin(object):
-    '''
+    """
     Requesting user must be the the requested user or superuser.
-    '''
+    """
+
+    requested_user = None
 
     def dispatch(self, request, *args, **kwargs):
-        if request.user.is_superuser:
-            self.requested_user = request.user
-        else:
-            self.requested_user = get_required_user(request, kwargs['username'])
-            if request.user.id != self.requested_user.id:
+        if request.user.is_authenticated:
+            self.requested_user = get_requested_user_by_username(
+                kwargs['username']
+            )
+            if not is_requested_user(request.user, self.requested_user):
                 raise PermissionDenied
+        else:
+            raise PermissionDenied
         return super(UserRequiredMixin, self).dispatch(request, *args, **kwargs)
 
 
 class SuperuserRequiredMixin(object):
-    '''
+    """
     Requesting user must be superuser.
-    '''
+    """
 
     def dispatch(self, request, *args, **kwargs):
         if not request.user.is_superuser:
@@ -448,47 +448,3 @@ class AjaxDeleteMixin(MessageMixin, AjaxDataMixin):
             return JsonResponse(self.data, encoder=LazyEncoder)
         else:
             return super(AjaxDeleteMixin, self).delete(request, *args, **kwargs)
-
-
-class UploadView(View):
-    '''
-    View used for Fine Uploader.
-    '''
-
-    def post(self, request, *args, **kwargs):
-        '''A POST request. Validate the form and then handle the upload
-        based ont the POSTed data. Does not handle extra parameters yet.
-        '''
-        form = UploadFileForm(request.POST, request.FILES)
-        if form.is_valid():
-            handle_upload(request.FILES['qqfile'], form.cleaned_data)
-            data = {
-                'uuid': form.cleaned_data['qquuid'],
-                'success': True,
-            }
-            return JsonResponse(data, encoder=LazyEncoder, status=200)
-        else:
-            data = {
-                'success': False,
-                'error': '{0}'.format(repr(form.errors))
-            }
-            return JsonResponse(data, encoder=LazyEncoder, status=400)
-
-    def delete(self, request, *args, **kwargs):
-        '''A DELETE request. If found, deletes a file with the corresponding
-        UUID from the server's filesystem.
-        '''
-        qquuid = kwargs.get('qquuid', '')
-        if qquuid:
-            try:
-                handle_deleted_file(qquuid)
-                data = {
-                    'success': True,
-                }
-                return JsonResponse(data, encoder=LazyEncoder, status=200)
-            except Exception as e:
-                data = {
-                    'success': False,
-                    'error': '{0}'.format(repr(e))
-                }
-                return JsonResponse(data, encoder=LazyEncoder, status=400)

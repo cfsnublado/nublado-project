@@ -131,6 +131,7 @@ class ProjectPublishMemberModelTest(TestCase):
             project=self.project,
             member=self.user
         )
+        self.assertEqual(member.ROLE_OWNER, 4)
         self.assertEqual(member.ROLE_ADMIN, 3)
         self.assertEqual(member.ROLE_EDITOR, 2)
         self.assertEqual(member.ROLE_AUTHOR, 1)

@@ -43,7 +43,7 @@ def change_language(context, language=None, *args, **kwargs):
 
 
 @register.simple_tag(takes_context=True)
-def url_set_param(context, url=None, **kwargs):
+def url_set_param(context, url=None, *args, **kwargs):
     '''
     Sets url query pararmeter.
 
@@ -51,7 +51,10 @@ def url_set_param(context, url=None, **kwargs):
     '''
 
     if url is not None:
-        url = URLObject(reverse(url))
+        if args:
+            url = URLObject(reverse(url, args=args))
+        else:
+            url = URLObject(reverse(url))
     else:
         url = URLObject(context.request.get_full_path())
     path = url.path

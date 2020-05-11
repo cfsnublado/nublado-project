@@ -12,7 +12,7 @@ from .validation import validate_translation_languages
 
 # Note on naming conventions.
 # All models, abstract or otherwise, that are meant to be subclassed by other models,
-# are suffixed with 'Model.'
+# are suffixed with "Model."
 
 
 class AccessModel(models.Model):
@@ -20,13 +20,13 @@ class AccessModel(models.Model):
     ACCESS_PROTECTED = 2
     ACCESS_PRIVATE = 1
     ACCESS_CHOICES = (
-        (ACCESS_PUBLIC, _('label_acccess_public')),
-        (ACCESS_PROTECTED, _('label_acccess_protected')),
-        (ACCESS_PRIVATE, _('label_acccess_private')),
+        (ACCESS_PUBLIC, _("label_acccess_public")),
+        (ACCESS_PROTECTED, _("label_acccess_protected")),
+        (ACCESS_PRIVATE, _("label_acccess_private")),
     )
 
     access_status = models.IntegerField(
-        verbose_name=_('label_access_status'),
+        verbose_name=_("label_access_status"),
         choices=ACCESS_CHOICES,
         default=ACCESS_PUBLIC
     )
@@ -40,23 +40,23 @@ class InviteModel(models.Model):
     DECLINED = 2
     PENDING = 1
     STATUS_CHOICES = (
-        (PENDING, _('label_invite_pending')),
-        (ACCEPTED, _('label_invite_status_accepted')),
-        (DECLINED, _('label_invite_status_declined'))
+        (PENDING, _("label_invite_pending")),
+        (ACCEPTED, _("label_invite_status_accepted")),
+        (DECLINED, _("label_invite_status_declined"))
     )
     sender = models.ForeignKey(
         settings.AUTH_USER_MODEL,
-        related_name='invites_sent',
+        related_name="invites_sent",
         on_delete=models.CASCADE
     )
     receiver = models.ForeignKey(
         settings.AUTH_USER_MODEL,
-        related_name='invites_received',
+        related_name="invites_received",
         on_delete=models.CASCADE
 
     )
     status = models.IntegerField(
-        verbose_name=_('label_status'),
+        verbose_name=_("label_status"),
         choices=STATUS_CHOICES,
         default=PENDING,
     )
@@ -68,8 +68,8 @@ class InviteModel(models.Model):
         # Raise error if sender and receiver refer to the same object.
         if self.sender_id == self.receiver_id:
             raise ValidationError(
-                _('validation_invite_sender_receiver_equal'),
-                code='invite_sender_receiver_equal'
+                _("validation_invite_sender_receiver_equal"),
+                code="invite_sender_receiver_equal"
             )
 
 
@@ -78,7 +78,7 @@ class LanguageModel(models.Model):
     LANGUAGE_CHOICES = settings.LANGUAGES
 
     language = models.CharField(
-        verbose_name=_('label_language'),
+        verbose_name=_("label_language"),
         max_length=2,
         choices=LANGUAGE_CHOICES,
         default=DEFAULT_LANGUAGE,
@@ -89,16 +89,16 @@ class LanguageModel(models.Model):
 
 
 class ParentModel(models.Model):
-    '''
+    """
     A self-referencing, parent/children model.
-    '''
+    """
     parent = models.ForeignKey(
-        'self',
-        db_column='parent_id',
+        "self",
+        db_column="parent_id",
         null=True,
         blank=True,
         default=None,
-        related_name='%(app_label)s_%(class)s_children',
+        related_name="%(app_label)s_%(class)s_children",
         on_delete=models.CASCADE
     )
 
@@ -134,18 +134,18 @@ class SerializeModel(models.Model):
 
 
 class SlugifyModel(models.Model):
-    '''
+    """
     Models that inherit from this class get an auto filled slug property based on the models name property.
     Correctly handles duplicate values (slugs are unique), and truncates slug if value too long.
     The following attributes can be overridden on a per model basis:
-    * value_field_name - the value to slugify, default 'name'
-    * slug_field_name - the field to store the slugified value in, default 'slug'
+    * value_field_name - the value to slugify, default "name"
+    * slug_field_name - the field to store the slugified value in, default "slug"
     * max_iterations - how many iterations to search for an open slug before raising IntegrityError, default 1000
-    * slug_separator - the character to put in place of spaces and other non url friendly characters, default '-'
-    '''
+    * slug_separator - the character to put in place of spaces and other non url friendly characters, default "-"
+    """
 
     slug = models.SlugField(
-        verbose_name=_('label_slug'),
+        verbose_name=_("label_slug"),
         max_length=255,
     )
 
@@ -155,11 +155,11 @@ class SlugifyModel(models.Model):
     def save(self, *args, **kwargs):
 
         pk_field_name = self._meta.pk.name
-        value_field_name = getattr(self, 'value_field_name', 'name')
-        slug_field_name = getattr(self, 'slug_field_name', 'slug')
-        max_iterations = getattr(self, 'slug_max_iterations', 1000)
-        slug_separator = getattr(self, 'slug_separator', '-')
-        unique_slug = getattr(self, 'unique_slug', True)
+        value_field_name = getattr(self, "value_field_name", "name")
+        slug_field_name = getattr(self, "slug_field_name", "slug")
+        max_iterations = getattr(self, "slug_max_iterations", 1000)
+        slug_separator = getattr(self, "slug_separator", "-")
+        unique_slug = getattr(self, "unique_slug", True)
 
         if unique_slug:
             # fields, query set, other setup variables
@@ -181,14 +181,14 @@ class SlugifyModel(models.Model):
             counter = 2
             while queryset.filter(**{slug_field_name: slug}).count() > 0 and counter < max_iterations:
                 slug = original_slug
-                suffix = '{0}{1}'.format(slug_separator, counter)
+                suffix = "{0}{1}".format(slug_separator, counter)
                 if slug_len and len(slug) + len(suffix) > slug_len:
                     slug = slug[:slug_len - len(suffix)]
-                slug = '{0}{1}'.format(slug, suffix)
+                slug = "{0}{1}".format(slug, suffix)
                 counter += 1
 
             if counter == max_iterations:
-                raise IntegrityError('Unable to locate unique slug')
+                raise IntegrityError("Unable to locate unique slug")
         else:
             slug = slugify(getattr(self, value_field_name))
         self.slug = slug
@@ -198,12 +198,12 @@ class SlugifyModel(models.Model):
 
 class TimestampModel(models.Model):
     date_created = models.DateTimeField(
-        verbose_name=_('label_date_created'),
+        verbose_name=_("label_date_created"),
         default=timezone.now,
         editable=False
     )
     date_updated = models.DateTimeField(
-        verbose_name=_('label_date_updated'),
+        verbose_name=_("label_date_updated"),
         auto_now=True,
         editable=False
     )
@@ -213,7 +213,7 @@ class TimestampModel(models.Model):
 
 
 class TrackedFieldModel(models.Model):
-    # Fields to be 'listened' to for changes.
+    # Fields to be "listened" to for changes.
     tracked_fields = []
 
     class Meta:
@@ -248,33 +248,33 @@ class TranslationModel(ParentModel, LanguageModel):
 
     @property
     def translations(self):
-        '''
+        """
         Returns reverse relation of children with the property name of translations.
         Inheriting classes need to implement this.
 
         Example: return self.blog_post_children
-        '''
+        """
         raise NotImplementedError
 
     def clean(self, *args, **kwargs):
         validate_translation_languages(
             self,
             ValidationError(
-                {'language': _('validation_translation_languages_equal')},
-                code='translation_languages_equal'
+                {"language": _("validation_translation_languages_equal")},
+                code="translation_languages_equal"
             )
         )
 
     def get_available_languages(self, include_self_language=True, exceptions=None):
-        '''
-        Returns tuple of languages from language choices that haven't been used by
-        the object's translations.
+        """
+        Returns tuple of languages from language choices that haven"t been used by
+        the object"s translations.
         include_self_language: whether to include self language in available languages.
         exceptions: list of used languages to be included in available languages for whatever reason.
-        '''
+        """
         if self.is_parent:
             languages = list(
-                self.translations.all().values_list('language', flat=True)
+                self.translations.all().values_list("language", flat=True)
             )
             if not include_self_language:
                 languages.append(self.language)
@@ -290,22 +290,22 @@ class TranslationModel(ParentModel, LanguageModel):
 
 
 class UserstampModel(models.Model):
-    '''
+    """
     A model that records which user created it and which
     user last updated it.
-    '''
+    """
     created_by = models.ForeignKey(
         settings.AUTH_USER_MODEL,
         blank=True,
         null=True,
-        related_name='%(app_label)s_%(class)s_created_objects',
+        related_name="%(app_label)s_%(class)s_created_objects",
         on_delete=models.SET_NULL
     )
     last_updated_by = models.ForeignKey(
         settings.AUTH_USER_MODEL,
         blank=True,
         null=True,
-        related_name='%(app_label)s_%(class)s_last_updated_objects',
+        related_name="%(app_label)s_%(class)s_last_updated_objects",
         on_delete=models.SET_NULL
     )
 
@@ -314,10 +314,29 @@ class UserstampModel(models.Model):
 
 
 class UUIDModel(models.Model):
-    '''
+    """
     A model whose id is a generated uuid.
-    '''
+    """
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+
+    class Meta:
+        abstract = True
+
+
+class PublishModel(models.Model):
+
+    STATUS_PUBLISHED = 2
+    STATUS_DRAFT = 1
+    PUBLISH_CHOICES = (
+        (STATUS_PUBLISHED, _("label_status_published")),
+        (STATUS_DRAFT, _("label_status_draft"))
+    )
+
+    publish_status = models.IntegerField(
+        verbose_name=_("label_publish_status"),
+        choices=PUBLISH_CHOICES,
+        default=STATUS_DRAFT
+    )
 
     class Meta:
         abstract = True
@@ -331,7 +350,7 @@ class ProjectContentModel(models.Model):
         abstract = True
 
     def get_project(self):
-        raise NotImplementedError('Method get_project needs to be implemented.')
+        raise NotImplementedError("Method get_project needs to be implemented.")
 
 
 class ProjectModel(
@@ -339,27 +358,27 @@ class ProjectModel(
     SerializeModel
 ):
     unique_slug = False
-    slug_value_field_name = 'name'
+    slug_value_field_name = "name"
     slug_max_iterations = 500
 
     owner = models.ForeignKey(
         settings.AUTH_USER_MODEL,
-        related_name='%(app_label)s_%(class)s',
+        related_name="%(app_label)s_%(class)s",
         on_delete=models.CASCADE
     )
     name = models.CharField(
-        verbose_name=_('label_name'),
+        verbose_name=_("label_name"),
         max_length=255,
     )
     description = models.TextField(
-        verbose_name=_('label_description'),
+        verbose_name=_("label_description"),
         blank=True
     )
 
     class Meta:
-        verbose_name = _('label_project')
-        verbose_name_plural = _('label_project_plural')
-        unique_together = ('owner', 'name')
+        verbose_name = _("label_project")
+        verbose_name_plural = _("label_project_plural")
+        unique_together = ("owner", "name")
         abstract = True
 
     def __str__(self):
@@ -368,29 +387,29 @@ class ProjectModel(
 
 class ProjectMemberModel(TimestampModel):
     """
-    A member of a project's team.
+    A member of a project"s team.
 
     Make sure project property inherits from ProjectModel
-    Project owner doesn't need a related ProjectMemberModel.
+    Project owner doesn"t need a related ProjectMemberModel.
     """
     project = None
     member = models.ForeignKey(
         settings.AUTH_USER_MODEL,
-        related_name='%(app_label)s_%(class)s',
+        related_name="%(app_label)s_%(class)s",
         on_delete=models.CASCADE
     )
 
     class Meta:
-        verbose_name = _('label_project_member')
-        verbose_name_plural = _('label_project_member_plural')
-        unique_together = ('member', 'project')
+        verbose_name = _("label_project_member")
+        verbose_name_plural = _("label_project_member_plural")
+        unique_together = ("member", "project")
         abstract = True
 
     def clean(self):
-        # Make sure member isn't the project owner.
-        if hasattr(self, 'member'):
+        # Make sure member isn"t the project owner.
+        if hasattr(self, "member"):
             if self.member == self.project.owner:
-                raise ValidationError(_('validation_project_member_is_owner'))
+                raise ValidationError(_("validation_project_member_is_owner"))
 
 
 class ProjectPublishMemberModel(ProjectMemberModel):
@@ -402,13 +421,13 @@ class ProjectPublishMemberModel(ProjectMemberModel):
     ROLE_EDITOR = 2
     ROLE_AUTHOR = 1
     ROLE_CHOICES = (
-        (ROLE_ADMIN, _('label_role_admin')),
-        (ROLE_EDITOR, _('label_role_editor')),
-        (ROLE_AUTHOR, _('label_role_author'))
+        (ROLE_ADMIN, _("label_role_admin")),
+        (ROLE_EDITOR, _("label_role_editor")),
+        (ROLE_AUTHOR, _("label_role_author"))
     )
 
     role = models.IntegerField(
-        verbose_name=_('label_role'),
+        verbose_name=_("label_role"),
         choices=ROLE_CHOICES,
         default=ROLE_AUTHOR
     )

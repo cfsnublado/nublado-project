@@ -43,6 +43,10 @@ class="box vocab-context-box"
 v-show="isVisible"
 >
 
+<div class="box-top">
+
+<span style="font-size: 28px; font-weight: bold; color: #777;">[[ vocabContext.order ]]</span>
+
 <div class="box-controls">
 
 <span 
@@ -78,6 +82,8 @@ class="delete-btn"
 
 </div>
 
+</div>
+
 <a
 href="#"
 @click.prevent="selectVocabSource"
@@ -86,8 +92,6 @@ href="#"
 </a>
 
 <div :id="[[ vocabContext.id ]]" class="vocab-context">
-
-<span> [[ vocabContext.order ]] </span>
 
 <div 
 :id="('context-' + vocabContext.id + '-text')"

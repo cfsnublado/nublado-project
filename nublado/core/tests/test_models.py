@@ -8,21 +8,233 @@ from django.test import TestCase
 from django.utils import timezone
 from django.utils.translation import ugettext as _
 
+from ..managers import OrderedModelManager
 from ..models import (
-    AccessModel, ProjectModel, ProjectMemberModel,
+    AccessModel, OrderedModel, ProjectModel, ProjectMemberModel,
     SerializeModel, SlugifyModel,
     TimestampModel
 )
 from coretest.models import (
-    TestAccessModel, TestLanguageModel, TestParentModel, TestProjectModel,
-    TestProjectContentModel, TestProjectMemberModel, TestProjectPublishMemberModel,
-    TestTrackedFieldModel, TestTranslationModel,
-    TestTimestampModel, TestUserstampModel, TestUUIDModel
+    TestAccessModel, TestLanguageModel, TestModel, TestOrderedModel,
+    TestParentModel, TestProjectModel, TestProjectContentModel,
+    TestProjectMemberModel, TestProjectPublishMemberModel,
+    TestTrackedFieldModel, TestTranslationModel, TestTimestampModel,
+    TestUserstampModel, TestUUIDModel
 )
 
 User = get_user_model()
 
 # Testing abstract classes in core using test models from coretest.
+
+
+class OrderedModelTest(TestCase):
+    def setUp(self):
+        self.foo_group = TestModel.objects.create(
+            name="Test Group Container"
+        )
+        self.foo_a = TestOrderedModel.objects.create(
+            foo_group=self.foo_group,
+            name="foo A"
+        )
+        self.foo_b = TestOrderedModel.objects.create(
+            foo_group=self.foo_group,
+            name="foo B"
+        )
+        self.foo_c = TestOrderedModel.objects.create(
+            foo_group=self.foo_group,
+            name="foo C"
+        )
+        self.foo_d = TestOrderedModel.objects.create(
+            foo_group=self.foo_group,
+            name="foo D"
+        )
+
+    def test_inheritance(self):
+        classes = (
+            OrderedModel,
+        )
+        for class_name in classes:
+            self.assertTrue(
+                issubclass(TestOrderedModel, class_name)
+            )
+
+    def test_order_on_create(self):
+        self.assertEqual(self.foo_a.order, 1)
+        self.assertEqual(self.foo_b.order, 2)
+        self.assertEqual(self.foo_c.order, 3)
+        self.assertEqual(self.foo_d.order, 4)
+
+    # Manager tests
+    def test_manager(self):
+        self.assertIsInstance(
+            TestOrderedModel.objects, OrderedModelManager
+        )
+
+    def test_change_order(self):
+        TestOrderedModel.objects.change_order(self.foo_c, 1)
+        self.foo_a.refresh_from_db()
+        self.foo_b.refresh_from_db()
+        self.foo_c.refresh_from_db()
+        self.foo_d.refresh_from_db()
+
+        self.assertEqual(self.foo_c.order, 1)
+        self.assertEqual(self.foo_a.order, 2)
+        self.assertEqual(self.foo_b.order, 3)
+        self.assertEqual(self.foo_d.order, 4)
+
+        TestOrderedModel.objects.change_order(self.foo_c, 3)
+        self.foo_a.refresh_from_db()
+        self.foo_b.refresh_from_db()
+        self.foo_c.refresh_from_db()
+        self.foo_d.refresh_from_db()
+
+        self.assertEqual(self.foo_a.order, 1)
+        self.assertEqual(self.foo_b.order, 2)
+        self.assertEqual(self.foo_c.order, 3)
+        self.assertEqual(self.foo_d.order, 4)
+
+        TestOrderedModel.objects.change_order(self.foo_c, 4)
+        self.foo_a.refresh_from_db()
+        self.foo_b.refresh_from_db()
+        self.foo_c.refresh_from_db()
+        self.foo_d.refresh_from_db()
+
+        self.assertEqual(self.foo_a.order, 1)
+        self.assertEqual(self.foo_b.order, 2)
+        self.assertEqual(self.foo_d.order, 3)
+        self.assertEqual(self.foo_c.order, 4)
+
+        TestOrderedModel.objects.change_order(self.foo_c, 1)
+        self.foo_a.refresh_from_db()
+        self.foo_b.refresh_from_db()
+        self.foo_c.refresh_from_db()
+        self.foo_d.refresh_from_db()
+
+        self.assertEqual(self.foo_c.order, 1)
+        self.assertEqual(self.foo_a.order, 2)
+        self.assertEqual(self.foo_b.order, 3)
+        self.assertEqual(self.foo_d.order, 4)
+
+        TestOrderedModel.objects.change_order(self.foo_a, 3)
+        self.foo_a.refresh_from_db()
+        self.foo_b.refresh_from_db()
+        self.foo_c.refresh_from_db()
+        self.foo_d.refresh_from_db()
+
+        self.assertEqual(self.foo_c.order, 1)
+        self.assertEqual(self.foo_b.order, 2)
+        self.assertEqual(self.foo_a.order, 3)
+        self.assertEqual(self.foo_d.order, 4)
+
+        TestOrderedModel.objects.change_order(self.foo_a, 1)
+        TestOrderedModel.objects.change_order(self.foo_c, 3)
+        self.foo_a.refresh_from_db()
+        self.foo_b.refresh_from_db()
+        self.foo_c.refresh_from_db()
+        self.foo_d.refresh_from_db()
+
+        self.assertEqual(self.foo_a.order, 1)
+        self.assertEqual(self.foo_b.order, 2)
+        self.assertEqual(self.foo_c.order, 3)
+        self.assertEqual(self.foo_d.order, 4)
+
+        # Test same order.
+        TestOrderedModel.objects.change_order(self.foo_c, 3)
+        self.foo_a.refresh_from_db()
+        self.foo_b.refresh_from_db()
+        self.foo_c.refresh_from_db()
+        self.foo_d.refresh_from_db()
+
+        self.assertEqual(self.foo_a.order, 1)
+        self.assertEqual(self.foo_b.order, 2)
+        self.assertEqual(self.foo_c.order, 3)
+        self.assertEqual(self.foo_d.order, 4)
+
+        # Test out of range
+        TestOrderedModel.objects.change_order(self.foo_c, 0)
+        self.foo_a.refresh_from_db()
+        self.foo_b.refresh_from_db()
+        self.foo_c.refresh_from_db()
+        self.foo_d.refresh_from_db()
+
+        self.assertEqual(self.foo_a.order, 1)
+        self.assertEqual(self.foo_b.order, 2)
+        self.assertEqual(self.foo_c.order, 3)
+        self.assertEqual(self.foo_d.order, 4)
+
+        TestOrderedModel.objects.change_order(self.foo_c, 5)
+        self.foo_a.refresh_from_db()
+        self.foo_b.refresh_from_db()
+        self.foo_c.refresh_from_db()
+        self.foo_d.refresh_from_db()
+
+        self.assertEqual(self.foo_a.order, 1)
+        self.assertEqual(self.foo_b.order, 2)
+        self.assertEqual(self.foo_c.order, 3)
+        self.assertEqual(self.foo_d.order, 4)
+
+    def test_close_order_gap(self):
+        self.foo_b.delete()
+        TestOrderedModel.objects.close_order_gap(self.foo_b)
+        self.foo_a.refresh_from_db()
+        self.foo_c.refresh_from_db()
+        self.foo_d.refresh_from_db()
+
+        self.assertEqual(self.foo_a.order, 1)
+        self.assertEqual(self.foo_c.order, 2)
+        self.assertEqual(self.foo_d.order, 3)
+
+        self.foo_a.delete()
+        TestOrderedModel.objects.close_order_gap(self.foo_a)
+        self.foo_c.refresh_from_db()
+        self.foo_d.refresh_from_db()
+
+        self.assertEqual(self.foo_c.order, 1)
+        self.assertEqual(self.foo_d.order, 2)
+
+        self.foo_d.delete()
+        TestOrderedModel.objects.close_order_gap(self.foo_d)
+        self.foo_c.refresh_from_db()
+
+        self.assertEqual(self.foo_c.order, 1)
+
+        self.foo_c.delete()
+        TestOrderedModel.objects.close_order_gap(self.foo_c)
+
+    def test_close_order_gap_no_delete(self):
+        """
+        Orders are unchanged if supposedly removed element
+        still exists in db
+
+        """
+
+        TestOrderedModel.objects.close_order_gap(self.foo_b)
+        self.foo_a.refresh_from_db()
+        self.foo_b.refresh_from_db()
+        self.foo_c.refresh_from_db()
+        self.foo_d.refresh_from_db()
+
+        self.assertEqual(self.foo_a.order, 1)
+        self.assertEqual(self.foo_b.order, 2)
+        self.assertEqual(self.foo_c.order, 3)
+        self.assertEqual(self.foo_d.order, 4)
+
+    # Private functions
+    def test_private_get_group_filter_dict(self):
+        foo = TestOrderedModel.objects.get(order=1)
+        manager = TestOrderedModel.objects
+        group_filter = manager._OrderedModelManager__get_group_filter_dict(foo)
+        expected_group_filter = {"foo_group_id": foo.foo_group_id}
+
+        self.assertEqual(group_filter, expected_group_filter)
+
+    def test_private_get_max_order(self):
+        foo = TestOrderedModel.objects.get(order=1)
+        manager = TestOrderedModel.objects
+        group_filter = manager._OrderedModelManager__get_group_filter_dict(foo)
+        max_order = manager._OrderedModelManager__get_max_order(group_filter)
+
+        self.assertEqual(max_order, 4)
 
 
 class ProjectModelTest(TestCase):

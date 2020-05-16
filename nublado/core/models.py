@@ -15,6 +15,16 @@ from .validation import validate_translation_languages
 # are suffixed with "Model."
 
 
+class OrderedModel(models.Model):
+    # Reference to parent group container (model or model_id)
+    group_field = "group_container"
+
+    order = models.IntegerField(default=1)
+
+    class Meta:
+        abstract = True
+
+
 class AccessModel(models.Model):
     ACCESS_PUBLIC = 3
     ACCESS_PROTECTED = 2

@@ -161,7 +161,7 @@ class NestedVocabContextViewSet(
             "vocabcontextentry_set__vocab_entry_tags"
         )
         qs = qs.filter(vocab_source_id=self.kwargs["vocab_source_pk"])
-        qs = qs.order_by("-date_created")
+        qs = qs.order_by("order")
 
         return qs
 

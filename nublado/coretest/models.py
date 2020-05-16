@@ -1,8 +1,9 @@
 from django.conf import settings
 from django.db import models
 
+from core.managers import OrderedModelManager
 from core.models import (
-    AccessModel, LanguageModel, ParentModel,
+    AccessModel, LanguageModel, OrderedModel, ParentModel,
     ProjectModel, ProjectContentModel, ProjectMemberModel,
     ProjectPublishMemberModel, TimestampModel, TrackedFieldModel,
     TranslationModel, UserstampModel, UUIDModel
@@ -23,6 +24,21 @@ class BaseTestModel(models.Model):
 
 class TestModel(BaseTestModel):
     pass
+
+
+class TestOrderedModel(BaseTestModel, OrderedModel):
+    group_field = "foo_group_id"
+
+    foo_group = models.ForeignKey(
+        TestModel,
+        related_name="foo_items",
+        on_delete=models.CASCADE
+    )
+
+    objects = OrderedModelManager()
+
+    class Meta:
+        index_together = ("foo_group", "order")
 
 
 class TestColorModel(BaseTestModel):

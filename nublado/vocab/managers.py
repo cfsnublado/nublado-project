@@ -2,12 +2,18 @@ from django.db import models
 from django.db.models.functions import Lower
 from django.db.models import Count
 
+from core.managers import OrderedModelManager
+
 
 class VocabEntryManager(models.Manager):
     pass
 
 
 class VocabSourceManager(models.Manager):
+    pass
+
+
+class VocabContextManager(OrderedModelManager):
     pass
 
 

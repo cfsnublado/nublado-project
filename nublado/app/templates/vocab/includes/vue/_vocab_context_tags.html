@@ -21,7 +21,7 @@ v-cloak
 
 <vocab-context-tags
 v-for="(vocabContext, index) in vocabContexts"
-:key="vocabContext.id"
+:key="vocabContext.order"
 :id="('context-' + vocabContext.id)"
 :init-is-admin="isAdmin"
 :init-vocab-context="vocabContext"
@@ -86,6 +86,8 @@ href="#"
 </a>
 
 <div :id="[[ vocabContext.id ]]" class="vocab-context">
+
+<span> [[ vocabContext.order ]] </span>
 
 <div 
 :id="('context-' + vocabContext.id + '-text')"

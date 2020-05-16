@@ -135,12 +135,12 @@ class VocabContextSerializer(BaseSerializer, HyperlinkedModelSerializer):
         model = VocabContext
         fields = (
             "url", "id", "vocab_source_url",
-            "vocab_source_id", "content", "vocab_entries_url",
+            "vocab_source_id", "content", "order", "vocab_entries_url",
             "vocab_entry_tags", "date_created", "date_updated",
         )
         read_only_fields = (
             "url", "id", "vocab_source_url",
-            "vocab_source_id", "vocab_entries_url", "vocab_entry_tags",
+            "vocab_source_id", "order", "vocab_entries_url", "vocab_entry_tags",
             "date_created", "date_updated"
         )
 

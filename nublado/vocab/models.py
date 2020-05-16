@@ -4,13 +4,13 @@ from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
 from core.models import (
-    LanguageModel, SerializeModel,
+    LanguageModel, OrderedModel, SerializeModel,
     SlugifyModel, TimestampModel, TrackedFieldModel
 )
 from core.utils import tag_text
 from .managers import (
-    VocabContextEntryManager, VocabEntryManager,
-    VocabSourceManager
+    VocabContextManager, VocabContextEntryManager,
+    VocabEntryManager, VocabSourceManager
 )
 
 
@@ -140,8 +140,10 @@ class VocabSource(
 
 
 class VocabContext(
-    TimestampModel, SerializeModel, VocabSourceContentModel
+    TimestampModel, SerializeModel,
+    VocabSourceContentModel, OrderedModel
 ):
+    group_field = "vocab_source_id"
 
     vocab_source = models.ForeignKey(
         VocabSource,
@@ -156,6 +158,8 @@ class VocabContext(
     content = models.TextField(
         verbose_name=_("label_content"),
     )
+
+    objects = VocabContextManager()
 
     class Meta:
         verbose_name = _("label_vocab_context")

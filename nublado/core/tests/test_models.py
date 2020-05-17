@@ -70,6 +70,17 @@ class OrderedModelTest(TestCase):
             TestOrderedModel.objects, OrderedModelManager
         )
 
+    def test_append_to_order(self):
+        foo = TestOrderedModel(foo_group=self.foo_group, name="new foo")
+        foo.save()
+        self.assertEqual(foo.order, 1)
+        manager = TestOrderedModel.objects
+        group_filter = manager._OrderedModelManager__get_group_filter_dict(foo)
+        max_order = manager._OrderedModelManager__get_max_order(group_filter)
+        TestOrderedModel.objects.append_to_order(foo)
+        self.assertEqual(foo.order, 5)
+        self.assertEqual(foo.order, max_order + 1)
+
     def test_change_order(self):
         TestOrderedModel.objects.change_order(self.foo_c, 1)
         self.foo_a.refresh_from_db()

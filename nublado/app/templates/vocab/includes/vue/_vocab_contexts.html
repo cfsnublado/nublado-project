@@ -5,6 +5,7 @@
 <vocab-contexts
 :init-is-admin="{{ user.is_admin|yesno:'true,false' }}"
 init-vocab-contexts-url="{{ vocab_contexts_url }}"
+@delete-vocab-context="deleteVocabContext(index)"
 inline-template
 >
 
@@ -28,9 +29,9 @@ init-source-url="{{ vocab_source_url }}"
 inline-template
 >
 
-<transition name="fade-transition" v-on:after-enter="isVisible = true" v-on:after-leave="isVisible = false">
+<transition name="fade-transition">
 
-<div class="panel" v-show="isVisible">
+<div class="panel">
 
 <div class="panel-top">
 <div class="panel-buttons">

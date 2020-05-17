@@ -536,7 +536,9 @@ const VocabContext = {
   },
   methods: {
     selectVocabSource() {
+      console.log("FUCKKK")
       if (this.vocabSourceUrl) {
+        console.log("SHITTT")
         window.location.assign(this.vocabSourceUrl)
       }
     },
@@ -649,7 +651,6 @@ const VocabEntryContext = {
   mixins: [
     MarkdownMixin,
     HighlightMixin,
-    VisibleMixin,
     AdminMixin
   ],
   props: {

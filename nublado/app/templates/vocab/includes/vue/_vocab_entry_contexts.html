@@ -29,17 +29,27 @@ v-for="(vocabEntryContext, index) in vocabContexts"
 init-edit-url="{{ vocab_context_edit_url }}"
 init-delete-url="{{ vocab_context_delete_url }}"
 init-vocab-source-url="{{ vocab_source_url }}"
-@delete-vocab-context="onDeleteVocabContext(index)"
+@delete-vocab-context="deleteVocabContext(index)"
 inline-template
 >
 
-<transition name="fade-transition" v-on:after-enter="isVisible = true" v-on:after-leave="isVisible = false">
+<transition name="fade-transition">
 
 <div 
 :id="id"
 class="box vocab-context-box" 
-v-show="isVisible"
 >
+
+<div class="box-top">
+
+<span class="vocab-source-name" style="font-size: 18px;">
+<a
+href="#"
+@click.prevent="selectVocabSource"
+>
+[[ vocabEntryContext.vocab_source ]]
+</a>
+</span>
 
 <div class="box-controls">
 
@@ -74,14 +84,9 @@ class="delete-btn"
 
 </ajax-delete>
 
-</div>
+</div><!-- box-controls -->
 
-<a
-href="#"
-@click.prevent="selectVocabSource"
->
-[[ vocabEntryContext.vocab_source ]]
-</a>
+</div><!-- box-top -->
 
 <div :id="[[ vocabEntryContext.id ]]" class="vocab-context">
 

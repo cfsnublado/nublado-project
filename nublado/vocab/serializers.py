@@ -122,6 +122,10 @@ class VocabContextSerializer(BaseSerializer, HyperlinkedModelSerializer):
         lookup_field="pk",
         source="vocab_source"
     )
+    vocab_source_name = StringRelatedField(
+        many=False,
+        source="vocab_source"
+    )
     vocab_entries_url = HyperlinkedIdentityField(
         view_name="api:nested-vocab-context-entry-list",
         lookup_url_kwarg="vocab_context_pk"
@@ -135,11 +139,11 @@ class VocabContextSerializer(BaseSerializer, HyperlinkedModelSerializer):
         model = VocabContext
         fields = (
             "url", "id", "vocab_source_url",
-            "vocab_source_id", "content", "order", "vocab_entries_url",
+            "vocab_source_id", "vocab_source_name", "content", "order", "vocab_entries_url",
             "vocab_entry_tags", "date_created", "date_updated",
         )
         read_only_fields = (
-            "url", "id", "vocab_source_url",
+            "url", "id", "vocab_source_name", "vocab_source_url",
             "vocab_source_id", "order", "vocab_entries_url", "vocab_entry_tags",
             "date_created", "date_updated"
         )

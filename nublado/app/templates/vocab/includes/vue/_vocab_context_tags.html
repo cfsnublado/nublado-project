@@ -29,7 +29,7 @@ v-for="(vocabContext, index) in vocabContexts"
 :context-element="('#context-' + vocabContext.id + '-text')"
 init-edit-url="{{ vocab_context_edit_url }}"
 init-delete-url="{{ vocab_context_delete_url }}"
-init-source-url="{{ vocab_source_url }}"
+init-vocab-source-url="{{ vocab_source_url }}"
 init-tag-select-url="{{ tag_select_url }}"
 @delete-vocab-context="deleteVocabContext(index)"
 inline-template
@@ -45,6 +45,15 @@ class="box vocab-context-box"
 <div class="box-top">
 
 <span class="order-num">[[ vocabContext.order ]]</span>
+
+<span class="vocab-source-name" style="font-size: 18px;">
+<a
+href="#"
+@click.prevent="selectVocabSource"
+>
+[[ vocabContext.vocab_source_name ]]
+</a>
+</span>
 
 <div class="box-controls">
 
@@ -82,13 +91,6 @@ class="delete-btn"
 </div>
 
 </div>
-
-<a
-href="#"
-@click.prevent="selectVocabSource"
->
-[[ vocabContext.vocab_source ]]
-</a>
 
 <div :id="[[ vocabContext.id ]]" class="vocab-context">
 

@@ -14,15 +14,12 @@ class VocabSourceManager(models.Manager):
 
 
 class VocabContextManager(OrderedModelManager):
-    pass
+
+    def get_queryset(self):
+        return super(VocabContextManager, self).get_queryset().select_related("vocab_source")
 
 
 class VocabContextEntryManager(models.Manager):
-    """
-    Returns a queryset of the frequency of vocab entry languages in the source.
-
-    Queryset fields: language, freq
-    """
 
     def source_entry_language_freq(self, vocab_source_id):
         qs = super().get_queryset()

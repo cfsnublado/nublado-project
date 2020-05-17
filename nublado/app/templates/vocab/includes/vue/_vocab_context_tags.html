@@ -31,21 +31,20 @@ init-edit-url="{{ vocab_context_edit_url }}"
 init-delete-url="{{ vocab_context_delete_url }}"
 init-source-url="{{ vocab_source_url }}"
 init-tag-select-url="{{ tag_select_url }}"
-@delete-vocab-context="onDeleteVocabContext(index)"
+@delete-vocab-context="deleteVocabContext(index)"
 inline-template
 >
 
-<transition name="fade-transition" v-on:after-enter="isVisible = true" v-on:after-leave="isVisible = false">
+<transition name="fade-transition">
 
 <div 
 :id="id"
 class="box vocab-context-box" 
-v-show="isVisible"
 >
 
 <div class="box-top">
 
-<span style="font-size: 28px; font-weight: bold; color: #777;">[[ vocabContext.order ]]</span>
+<span class="order-num">[[ vocabContext.order ]]</span>
 
 <div class="box-controls">
 

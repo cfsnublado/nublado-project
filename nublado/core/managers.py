@@ -19,7 +19,6 @@ class OrderedModelManager(models.Manager):
         """
         group_filter_dict: {group_field_name: group_field}
         """
-
         results = self.filter(
             **group_filter_dict
         ).aggregate(
@@ -71,6 +70,17 @@ class OrderedModelManager(models.Manager):
                     obj.order = new_order
                     obj.save()
 
+    def append_to_order(self, obj):
+        """ Moves object to the last place in the order. """
+        group_filter_dict = self.__get_group_filter_dict(obj)
+
+        if group_filter_dict:
+            with transaction.atomic():
+                max_order = self.__get_max_order(group_filter_dict)
+                value = max_order + 1
+                obj.order = value
+                obj.save()
+
     def close_order_gap(self, removed_obj):
         """
         Closes the gap made by an ordered element after being deleted from db.
@@ -96,16 +106,8 @@ class OrderedModelManager(models.Manager):
 
     def create(self, **kwargs):
         instance = self.model(**kwargs)
-        group_filter_dict = self.__get_group_filter_dict(instance)
-
-        if group_filter_dict:
-            with transaction.atomic():
-                max_order = self.__get_max_order(group_filter_dict)
-                value = max_order + 1
-                instance.order = value
-                instance.save()
-
-            return instance
+        self.append_to_order(instance)
+        return instance
 
 
 class TeamProjectManager(models.Manager):

@@ -88,11 +88,19 @@ class VocabContextCreateForm(VocabContextForm):
 
     def __init__(self, *args, **kwargs):
         self.vocab_source = kwargs.pop("vocab_source", None)
-        self.creator = kwargs.pop("creator", None)
+        # self.creator = kwargs.pop("creator", None)
+
         super(VocabContextCreateForm, self).__init__(*args, **kwargs)
+
         if not self.vocab_source:
             raise ValueError(_("validation_vocab_source_required"))
+
         self.instance.vocab_source = self.vocab_source
+
+    def save(self, commit=True, *args, **kwargs):
+        vocab_context = super(VocabContextCreateForm, self).save(commit=False)
+        VocabContext.objects.append_to_order(vocab_context)
+        return vocab_context
 
 
 class VocabContextUpdateForm(VocabContextForm):

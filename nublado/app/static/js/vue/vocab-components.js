@@ -502,7 +502,6 @@ const VocabContext = {
   mixins: [
     MarkdownMixin,
     HighlightMixin,
-    VisibleMixin,
     AdminMixin
   ],
   props: {
@@ -779,7 +778,7 @@ const VocabContexts = {
         this.complete()
       })
     },
-    onDeleteVocabContext(index) {
+    deleteVocabContext(index) {
       this.$delete(this.vocabContexts, index)
     }
   },

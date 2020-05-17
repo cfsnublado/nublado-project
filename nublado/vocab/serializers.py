@@ -110,7 +110,7 @@ class VocabSourceSerializer(BaseSerializer, HyperlinkedModelSerializer):
 
 class VocabContextSerializer(BaseSerializer, HyperlinkedModelSerializer):
     json_encoder = UUIDEncoder
-    minimal_data_fields = ["content", "date_created"]
+    minimal_data_fields = ["order", "content", "date_created"]
     url = HyperlinkedIdentityField(
         view_name="api:vocab-context-detail",
         lookup_field="pk"

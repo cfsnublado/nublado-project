@@ -42,6 +42,13 @@ inline-template
 class="box vocab-context-box" 
 >
 
+<div class="box-top">
+
+<div class="box-top-left">
+
+</div>
+
+<div class="box-top-right">
 <div class="box-controls">
 
 <span 
@@ -77,9 +84,13 @@ class="delete-btn"
 
 </div><!-- box-controls -->
 
-<div class="box-top">
+</div><!-- box-top-right -->
 
-<div class="box-top-left">
+</div><!-- box-top -->
+
+<div :id="[[ vocabContext.id ]]" class="vocab-context">
+
+<div class="vocab-context-details">
 <span class="order-num">[[ vocabContext.order ]]</span>
 <span class="vocab-source-name">
 <a
@@ -90,13 +101,6 @@ href="#"
 </a>
 </span>
 </div>
-
-<div class="box-top-right">
-</div><!-- box-top-right -->
-
-</div><!-- box-top -->
-
-<div :id="[[ vocabContext.id ]]" class="vocab-context">
 
 <div 
 :id="('context-' + vocabContext.id + '-text')"

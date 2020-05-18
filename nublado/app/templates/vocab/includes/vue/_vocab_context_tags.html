@@ -44,9 +44,9 @@ class="box vocab-context-box"
 
 <div class="box-top">
 
+<div class="box-top-left">
 <span class="order-num">[[ vocabContext.order ]]</span>
-
-<span class="vocab-source-name" style="font-size: 18px;">
+<span class="vocab-source-name">
 <a
 href="#"
 @click.prevent="selectVocabSource"
@@ -54,7 +54,9 @@ href="#"
 [[ vocabContext.vocab_source_name ]]
 </a>
 </span>
+</div>
 
+<div class="box-top-right">
 <div class="box-controls">
 
 <span 
@@ -88,9 +90,10 @@ class="delete-btn"
 
 </ajax-delete>
 
-</div>
+</div><!-- box-controls -->
+</div><!-- box-top-right -->
 
-</div>
+</div><!-- box-top -->
 
 <div :id="[[ vocabContext.id ]]" class="vocab-context">
 

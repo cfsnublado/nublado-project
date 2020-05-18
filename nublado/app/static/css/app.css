@@ -12379,7 +12379,7 @@ animated buttons - animate the text inside prev and next buttons
 }
 /* line 56, ../scss/cfs/vocab/_vocab.scss */
 .vocab-context-box .vocab-context-text {
-  font-size: 1.375rem;
+  font-size: 1.25rem;
 }
 /* line 60, ../scss/cfs/vocab/_vocab.scss */
 .vocab-context-box .vocab-entries {
@@ -12397,12 +12397,12 @@ animated buttons - animate the text inside prev and next buttons
 /* line 75, ../scss/cfs/vocab/_vocab.scss */
 .vocab-source-box .box-controls .control,
 .vocab-context-box .box-controls .control {
-  padding-left: 0.75rem;
+  padding-left: 0.625rem;
 }
 /* line 78, ../scss/cfs/vocab/_vocab.scss */
 .vocab-source-box .box-controls .control a,
 .vocab-context-box .box-controls .control a {
-  font-size: 1.25rem;
+  font-size: 1rem;
   color: #aaa;
 }
 /* line 83, ../scss/cfs/vocab/_vocab.scss */

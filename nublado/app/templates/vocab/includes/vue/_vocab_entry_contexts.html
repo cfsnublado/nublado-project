@@ -40,20 +40,6 @@ inline-template
 class="box vocab-context-box" 
 >
 
-<div class="box-top">
-
-<div class="box-top-left">
-<span class="vocab-source-name" style="font-size: 18px;">
-<a
-href="#"
-@click.prevent="selectVocabSource"
->
-[[ vocabEntryContext.vocab_source ]]
-</a>
-</span>
-</div>
-
-<div class="box-top-right">
 <div class="box-controls">
 
 <span 
@@ -88,6 +74,21 @@ class="delete-btn"
 </ajax-delete>
 
 </div><!-- box-controls -->
+
+<div class="box-top">
+
+<div class="box-top-left">
+<span class="vocab-source-name" style="font-size: 18px;">
+<a
+href="#"
+@click.prevent="selectVocabSource"
+>
+[[ vocabEntryContext.vocab_source ]]
+</a>
+</span>
+</div>
+
+<div class="box-top-right">
 </div><!-- box-top-right -->
 
 </div><!-- box-top -->

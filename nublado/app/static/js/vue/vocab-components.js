@@ -1,7 +1,6 @@
 const VocabSource = {
   mixins: [
     AdminMixin,
-    VisibleMixin,
     MarkdownMixin
   ],
   props: {
@@ -132,7 +131,7 @@ const VocabSources = {
         this.complete()
       })
     },
-    onDeleteVocabSource(index) {
+    deleteVocabSource(index) {
       this.$delete(this.vocabSources, index)
     }
   },

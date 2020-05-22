@@ -137,6 +137,17 @@ aria-label="sidebar-trigger"
 
   </li>
 
+  <li>
+  <a 
+  id="sidebar-new-source"
+  class="{% block vocab_source_create_link_active %}{% endblock vocab_source_create_link_active %}"
+  href="{% url 'vocab:vocab_source_create' %}"
+  >
+  <i class="fas fa-fw fa-plus menu-icon"></i>
+  {% trans "label_new_source" %}
+  </a>
+  </li>
+
   <li class="sidebar-divider"></li>
 
   </ul>

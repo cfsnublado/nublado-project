@@ -64,6 +64,27 @@ class OrderedModelTest(TestCase):
         self.assertEqual(self.foo_c.order, 3)
         self.assertEqual(self.foo_d.order, 4)
 
+    def test_order_append_on_create(self):
+        # Create without order kwarg. Append to order.
+        foo = TestOrderedModel.objects.create(
+            foo_group=self.foo_group,
+            name="new foo"
+        )
+        manager = TestOrderedModel.objects
+        group_filter = manager._OrderedModelManager__get_group_filter_dict(foo)
+        max_order = manager._OrderedModelManager__get_max_order(group_filter)
+        self.assertEqual(foo.order, max_order)
+        self.assertEqual(foo.order, 5)
+
+        # Create order kwarg. Don't append to order.
+        order = 20
+        foo_2 = TestOrderedModel.objects.create(
+            foo_group=self.foo_group,
+            name="new foo",
+            order=order
+        )
+        self.assertEqual(foo_2.order, order)
+
     # Manager tests
     def test_manager(self):
         self.assertIsInstance(

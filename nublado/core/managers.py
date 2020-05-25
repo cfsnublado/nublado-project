@@ -106,7 +106,10 @@ class OrderedModelManager(models.Manager):
 
     def create(self, **kwargs):
         instance = self.model(**kwargs)
-        self.append_to_order(instance)
+        if "order" not in kwargs:
+            self.append_to_order(instance)
+        else:
+            instance.save()
         return instance
 
 

@@ -213,6 +213,7 @@ def import_vocab_source_json(data, user):
     )
 
     if "vocab_contexts" in data:
+        vocab_context_order = 1
 
         for vocab_context_dict in data["vocab_contexts"]:
             vocab_context_data = vocab_context_dict["vocab_context_data"]
@@ -221,8 +222,10 @@ def import_vocab_source_json(data, user):
             )
             vocab_context_serializer.is_valid(raise_exception=True)
             vocab_context = vocab_context_serializer.save(
-                vocab_source_id=vocab_source.id
+                vocab_source_id=vocab_source.id,
+                order=vocab_context_order
             )
+            vocab_context_order += 1
 
             if "vocab_entries" in vocab_context_dict:
 

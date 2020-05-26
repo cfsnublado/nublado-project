@@ -2,9 +2,11 @@
 {% load i18n %}
 
 {% if not edit_entries %}{% alias False as edit_entries %}{% endif %}
+{% if not max_language %}{% alias "en" as max_language %}{% endif %}
 
 <vocab-entries
 :init-is-admin="{{ user.is_admin|yesno:'true,false' }}"
+init-language="{{ max_language }}"
 vocab-entries-url="{{ vocab_entries_url }}"
 inline-template
 >
@@ -63,7 +65,7 @@ v-for="(vocabEntry, index) in vocabEntries"
 :init-vocab-entry="vocabEntry"
 init-view-url="{{ vocab_entry_url }}"
 init-delete-url="{{ vocab_entry_delete_url }}"
-@delete-vocab-entry="onDeleteVocabEntry(index)"
+@delete-vocab-entry="deleteVocabEntry(index)"
 inline-template
 >
 

@@ -5,6 +5,7 @@ from django.views.generic import (
 
 from core.views import ObjectSessionMixin
 
+from ..models import VocabContextEntry
 from .views_mixins import (
     VocabEntryMixin, VocabSourceEntrySearchMixin, VocabSourceMixin,
     VocabSourceSearchMixin, VocabSourceSessionMixin
@@ -25,6 +26,14 @@ class VocabSourceEntriesView(
     VocabSourceEntrySearchMixin, TemplateView
 ):
     template_name = "{0}/vocab_source_entries.html".format(APP_NAME)
+
+    def get_context_data(self, **kwargs):
+        context = super(VocabSourceEntriesView, self).get_context_data(**kwargs)
+        context["max_language"] = VocabContextEntry.objects.source_entry_language_max(
+            self.vocab_source.id
+        )
+
+        return context
 
 
 class VocabSourceContextsView(

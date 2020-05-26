@@ -309,7 +309,7 @@ const VocabEntries = {
       this.language = language
       this.getVocabEntries()
     },
-    onDeleteVocabEntry(index) {
+    deleteVocabEntry(index) {
       this.$delete(this.vocabEntries, index)
     }
   },

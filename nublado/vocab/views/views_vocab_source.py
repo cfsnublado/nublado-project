@@ -29,10 +29,12 @@ class VocabSourceEntriesView(
 
     def get_context_data(self, **kwargs):
         context = super(VocabSourceEntriesView, self).get_context_data(**kwargs)
-        context["max_language"] = VocabContextEntry.objects.source_entry_language_max(
+        max_language = VocabContextEntry.objects.source_entry_language_max(
             self.vocab_source.id
         )
-
+        if not max_language:
+            max_language = "en"
+        context["max_language"] = max_language
         return context
 
 

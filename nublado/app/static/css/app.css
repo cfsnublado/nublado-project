@@ -12596,7 +12596,7 @@ animated buttons - animate the text inside prev and next buttons
   }
   /* line 269, ../scss/cfs/vocab/_vocab.scss */
   .vocab-entry-tag-group.tags .tag:not(:last-child) {
-    margin-right: 0.875rem;
-    margin-bottom: 0.875rem;
+    margin-right: 0.75rem;
+    margin-bottom: 0.75rem;
   }
 }

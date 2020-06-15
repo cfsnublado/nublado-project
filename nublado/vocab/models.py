@@ -256,6 +256,40 @@ class VocabContextEntry(
         return self.vocab_context.vocab_source
 
 
+class VocabContextAudio(
+    TimestampModel, SlugifyModel,
+    SerializeModel, VocabSourceContentModel
+):
+    unique_slug = False
+    slug_value_field_name = "name"
+    slug_max_iterations = 500
+
+    creator = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        related_name="%(app_label)s_%(class)s",
+        on_delete=models.CASCADE
+    )
+    vocab_context = models.ForeignKey(
+        VocabContext,
+        related_name="vocab_context_audios",
+        on_delete=models.CASCADE
+    )
+    name = models.CharField(
+        verbose_name=_("label_name"),
+        max_length=255,
+    )
+    audio_url = models.URLField(
+        verbose_name=_("label_audio_url")
+    )
+
+    def get_serializer(self):
+        from .serializers import VocabContextAudioSerializer
+        return VocabContextAudioSerializer
+
+    def get_vocab_source(self):
+        return self.vocab_source.vocab_source
+
+
 class VocabEntryTag(VocabSourceContentModel):
     vocab_context_entry = models.ForeignKey(
         VocabContextEntry,

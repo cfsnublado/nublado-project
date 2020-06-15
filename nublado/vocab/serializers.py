@@ -12,7 +12,8 @@ from core.serializers import (
 )
 from .models import (
     VocabEntry, VocabContextEntry,
-    VocabContext, VocabSource
+    VocabContext, VocabContextAudio,
+    VocabSource
 )
 
 User = get_user_model()
@@ -209,3 +210,57 @@ class VocabContextEntrySerializer(BaseSerializer, HyperlinkedModelSerializer):
             "vocab_context_url", "vocab_source_id", "vocab_source_url",
             "vocab_source", "vocab_source_slug", "date_created", "date_updated"
         )
+
+
+class VocabContextAudioListSerializer(
+    ListSerializer
+):
+    pass
+
+
+class VocabContextAudioSerializer(
+    BaseSerializer,
+    HyperlinkedModelSerializer
+):
+    json_encoder = UUIDEncoder
+    minimal_data_fields = [
+        "name", "audio_url", "date_created"
+    ]
+    url = HyperlinkedIdentityField(
+        view_name="api:vocab-context-audio-detail",
+        lookup_field="pk"
+    )
+    vocab_context_url = HyperlinkedRelatedField(
+        many=False,
+        read_only=True,
+        view_name="api:vocab-context-detail",
+        lookup_field="pk",
+        source="vocab_context"
+    )
+    creator_id = ReadOnlyField(source="creator.id")
+    creator_username = ReadOnlyField(source="creator.username")
+    creator_url = HyperlinkedRelatedField(
+        many=False,
+        read_only=True,
+        view_name="api:user-detail",
+        lookup_field="username",
+        source="creator"
+    )
+
+    class Meta:
+        list_serializer = VocabContextAudioListSerializer
+        model = VocabContextAudio
+        fields = (
+            "url", "id", "post_id", "post", "post_slug",
+            "post_url", "creator_id", "creator_username",
+            "creator_url", "name", "audio_url", "slug",
+            "date_created", "date_updated"
+        )
+        read_only_fields = (
+            "url", "id", "post_id", "post_slug", "post_url",
+            "creator_id", "creator_url", "slug",
+            "date_created", "date_updated"
+        )
+
+    def create(self, validated_data):
+        return VocabContextAudio.objects.create(**validated_data)

@@ -12,12 +12,14 @@ from rest_framework.viewsets import (
 )
 
 from core.api.views_api import APIDefaultsMixin
+from core.utils import str_to_bool
 from ..models import (
-    VocabEntry, VocabContextEntry,
-    VocabContext, VocabSource
+    VocabEntry, VocabContext, VocabContextAudio,
+    VocabContextEntry, VocabSource
 )
 from ..serializers import (
-    VocabContextEntrySerializer, VocabContextSerializer
+    VocabContextSerializer, VocabContextAudioSerializer,
+    VocabContextEntrySerializer
 )
 from .pagination import SmallPagination
 from .permissions import (
@@ -306,3 +308,67 @@ class NestedVocabContextEntryViewSet(
         self.get_vocab_context(vocab_context_pk=kwargs["vocab_context_pk"])
 
         return super(NestedVocabContextEntryViewSet, self).list(request, *args, **kwargs)
+
+
+class VocabContextAudioViewSet(
+    APIDefaultsMixin, RetrieveModelMixin, UpdateModelMixin,
+    DestroyModelMixin, ListModelMixin, GenericViewSet
+):
+    lookup_field = "pk"
+    lookup_url_kwarg = "pk"
+    serializer_class = VocabContextAudioSerializer
+    queryset = VocabContextAudio.objects.select_related(
+        "vocab_context", "vocab_context__vocab_source", "creator"
+    ).order_by("-date_created")
+    permission_classes = [ReadPermission]
+    pagination_class = SmallPagination
+
+    def get_object(self):
+        obj = get_object_or_404(self.get_queryset(), pk=self.kwargs["pk"])
+        self.check_object_permissions(self.request, obj.post)
+        return obj
+
+
+class NestedVocabContextAudioViewSet(
+    APIDefaultsMixin, CreateModelMixin,
+    ListModelMixin, GenericViewSet
+):
+    lookup_field = "pk"
+    lookup_url_kwarg = "pk"
+    queryset = VocabContextAudio.objects.select_related(
+        "vocab_context", "vocab_context__vocab_source",
+        "creator"
+    ).order_by("-date_created")
+    serializer_class = VocabContextAudioSerializer
+    post = None
+    permission_classes = [ReadPermission]
+    pagination_class = SmallPagination
+
+    def get_vocab_context(self, vocab_context_pk=None):
+        if not self.vocab_context:
+            self.vocab_context = get_object_or_404(
+                VocabContext.objects.select_related("vocab_source"),
+                id=vocab_context_pk
+            )
+        return self.vocab_context
+
+    def get_queryset(self):
+        return self.queryset.filter(vocab_context_id=self.kwargs["vocab_context_pk"])
+
+    def create(self, request, *args, **kwargs):
+        self.get_vocab_context(vocab_context_pk=kwargs["vocab_context_pk"])
+        # self.check_object_permissions(request, self.post.project)
+        return super(NestedVocabContextAudioViewSet, self).create(request, *args, **kwargs)
+
+    def perform_create(self, serializer):
+        serializer.save(
+            creator=self.request.user,
+            vocab_context=self.vocab_context
+        )
+
+    def list(self, request, *args, **kwargs):
+        self.get_vocab_context(vocab_context_pk=kwargs["vocab_context_pk"])
+        no_pagination = self.request.query_params.get("no_pagination", None)
+        if str_to_bool(no_pagination):
+            self.pagination_class = None
+        return super(NestedVocabContextAudioViewSet, self).list(request, *args, **kwargs)

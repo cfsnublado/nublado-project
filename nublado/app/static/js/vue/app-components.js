@@ -501,6 +501,27 @@ const NavbarDropdown = {
   `  
 }
 
+const FileUploader = {
+  mixins: [BaseFileUploader]
+}
+
+const AudioFileUploader = {
+  mixins: [BaseFileUploader],
+  methods: {
+    validateFile() {
+      validated = false
+
+      if (this.file.type == 'audio/mpeg') {
+        validated = true
+      } else {
+        console.error('Invalid file type')
+      }
+      
+      return validated
+    }
+  }
+}
+
 const convertTimeHHMMSS = (val) => {
   let hhmmss = new Date(val * 1000).toISOString().substr(11, 8)
 

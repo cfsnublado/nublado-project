@@ -398,7 +398,7 @@ const VocabEntryInfo = {
     }
   },
   methods: {
-    toggleVocabEntryInfoVisible() {
+    toggleVisible() {
       this.vocabEntryInfoVisible = !this.vocabEntryInfoVisible
       
       if (this.vocabEntryInfoVisible && !this.vocabEntryInfoLoaded) {

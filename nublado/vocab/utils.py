@@ -453,25 +453,25 @@ def parse_oxford_entry_json(json_data, language="en"):
                     "definitions": [],
                 }
 
-                if "pronunciations" in lexical_entry:
-                    for pronunciation in lexical_entry["pronunciations"]:
-                        if "phoneticNotation" in pronunciation:
-                            if pronunciation["phoneticNotation"].lower() == "ipa":
-                                pronunciation_dict = {
-                                    "phoneticSpelling": "",
-                                    "audioFile": ""
-                                }
-
-                                if "phoneticSpelling" in pronunciation:
-                                    pronunciation_dict["phoneticSpelling"] = pronunciation["phoneticSpelling"]
-
-                                if "audioFile" in pronunciation:
-                                    pronunciation_dict["audioFile"] = pronunciation["audioFile"]
-
-                                lexical_entry_dict["pronunciations"]["ipa"].append(pronunciation_dict)
-
                 if "entries" in lexical_entry:
                     for entry in lexical_entry["entries"]:
+                        if "pronunciations" in entry:
+                            for pronunciation in entry["pronunciations"]:
+                                if "phoneticNotation" in pronunciation:
+                                    if pronunciation["phoneticNotation"].lower() == "ipa":
+                                        pronunciation_dict = {
+                                            "phoneticSpelling": "",
+                                            "audioFile": ""
+                                        }
+
+                                        if "phoneticSpelling" in pronunciation:
+                                            pronunciation_dict["phoneticSpelling"] = pronunciation["phoneticSpelling"]
+
+                                        if "audioFile" in pronunciation:
+                                            pronunciation_dict["audioFile"] = pronunciation["audioFile"]
+
+                                        lexical_entry_dict["pronunciations"]["ipa"].append(pronunciation_dict)
+
                         if "senses" in entry:
                             for sense in entry["senses"]:
                                 if "definitions" in sense:

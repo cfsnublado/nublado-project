@@ -15,6 +15,7 @@ django-widget-tweaks==1.4.5
 djangorestframework==3.11.0
 docutils==0.16
 drf-nested-routers==0.91
+dropbox==10.2.0
 gunicorn==20.0.4
 idna==2.8
 imagesize==1.2.0

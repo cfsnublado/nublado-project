@@ -5,6 +5,10 @@ from rest_framework.routers import DefaultRouter
 from django.urls import path, re_path
 from django.conf.urls import include
 
+from dbx.api.views_api import (
+    DbxDeleteFileView, DbxSharedLinkView,
+    DbxUploadAudioView, DbxUserFilesView
+)
 from users.api.views_api import UserViewSet, ProfileViewSet
 from vocab.api.views_vocab_context import (
     NestedVocabContextEntryViewSet, NestedVocabContextViewSet,
@@ -78,6 +82,10 @@ urlpatterns = [
         VocabEntryLanguageExportView.as_view(),
         name="vocab_entries_language_export"
     ),
+    path("dbx-shared-link/", DbxSharedLinkView.as_view(), name="dbx_shared_link"),
+    path("dbx-user-files/", DbxUserFilesView.as_view(), name="dbx_user_files"),
+    path("dbx-delete-file/", DbxDeleteFileView.as_view(), name="dbx_delete_file"),
+    path("dbx-upload-audio/", DbxUploadAudioView.as_view(), name="dbx_upload_audio"),
     path("", include(router.urls)),
     path("", include(vocab_context_router.urls)),
     path("", include(vocab_entry_context_router.urls)),

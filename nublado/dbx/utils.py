@@ -44,7 +44,7 @@ def upload_file_to_dbx(dbx, local_filepath, dbx_filepath):
 
 
 def get_dbx_files(dbx, rel_path=""):
-    files = dbx.files_list_folder(rel_path).entries
+    files = dbx.files_list_folder(rel_path)
 
     return files.entries
 
@@ -67,6 +67,9 @@ def get_dbx_files_json(dbx_token, rel_path=""):
     )
     results = r.json()
 
+    if "entries" not in results:
+        results["entries"] = []
+
     return results["entries"]
 
 
@@ -74,7 +77,7 @@ def get_user_dbx_files(dbx, user_id):
     user_dir = "/{}".format(user_id)
     files = get_dbx_files(dbx, rel_path=user_dir)
 
-    return files.entries
+    return files
 
 
 def get_user_dbx_files_json(dbx, user_id):

@@ -1,0 +1,148 @@
+{% extends "base.html" %}
+{% load static %}
+{% load core_extras %}
+{% load i18n %}
+
+{% block title %}Dropbox{% endblock title %}
+
+{% block content %}
+
+{% url 'api:dbx_delete_file' as dbx_file_delete_url %}
+
+<div class="columns is-multiline">
+<div class="column is-6 is-offset-3">
+{% csrf_token %}
+
+<dbx
+shared-link-url="{% url 'api:dbx_shared_link' %}"
+:init-is-admin="{{ user.is_admin|yesno:"true,false" }}"
+inline-template
+>
+
+<div class="dbx-container">
+
+<div class="dbx-shared-link" style="margin-bottom: 30px;">
+
+<label class="label" for="audio-url">
+{% trans 'label_dbx_audio_shared_link' %}
+</label>
+<input id="audio-url" class="input" ref="audio-url" name="audio-url" v-model="sharedLink" readonly>
+
+</div>
+
+<div class="dbx-file-uploader" style="margin-bottom: 30px;">
+
+<dbx-audio-file-uploader
+ref="dbx-audio-file-uploader"
+init-upload-url={% url 'api:dbx_upload_audio' %}
+:parent-processing="processing"
+@change-file="onChangeDbxFile"
+@upload-dbx-file="onUploadDbxFile($event.path_lower)"
+>
+
+<template slot="label-select-file">
+{% trans 'label_select_audio_file' %}
+</template>
+
+<template slot="label-submit">
+{% trans 'label_submit_file' %}
+</template>
+
+</dbx-audio-file-uploader>
+
+</div>
+
+<div class="dbx-user-files">
+
+<dbx-user-files
+ref="dbx-user-files"
+files-url="{% url 'api:dbx_user_files' %}"
+:parent-processing="processing"
+:init-is-admin="isAdmin"
+@select-dbx-file="getSharedLink($event)"
+@delete-dbx-file="onDeleteDbxFile"
+inline-template
+>
+
+<div>
+
+<button
+class="button is-primary"
+v-bind:class="[{ 'is-loading': processing }]"
+@click.prevent="getFiles"
+>
+Get User dbx files
+</button>
+
+<ul
+class="files"
+v-cloak
+>
+
+<dbx-file
+v-for="(file, index) in sortedFiles"
+:key="file.id"
+:init-file="file"
+:init-is-admin="isAdmin"
+init-delete-url="{{ dbx_file_delete_url }}"
+@select-dbx-file="selectDbxFile($event.path_lower)"
+@delete-dbx-file="onDeleteDbxFile(index)"
+inline-template
+>
+
+<transition name="fade-transition" v-on:after-enter="isVisible = true" v-on:after-leave="remove">
+
+<li v-show="isVisible"> 
+
+<ajax-delete
+v-if="isAdmin"
+delete-confirm-id="delete-dbx-file"
+:delete-url="deleteUrl"
+:init-data="{'dbx_path': file.path_lower}"
+@ajax-success="isVisible = false"
+inline-template
+>
+
+<a 
+class="delete" 
+href="#"
+@click.prevent="confirmDelete"
+>
+</a>
+
+</ajax-delete>
+
+<a 
+href="#"
+@click.prevent="selectDbxFile(file)"
+>
+[[ file.name ]]
+</a>
+
+</li>
+
+</transition>
+
+</dbx-file>
+
+</ul>
+
+</div>
+
+</dbx-user-files>
+
+</div>
+
+</div><!-- dbx-container -->
+
+</dbx>
+
+</div>
+</div>
+{% endblock content %}
+
+{% block modal_content %}
+
+{% include 'dbx/includes/_dbx_file_delete_modal.html' with modal_id='delete-dbx-file' modal_name='confirmation-modal' %} 
+
+{% endblock modal_content %}

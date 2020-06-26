@@ -49,7 +49,6 @@ class VocabSourceCreateView(
         return reverse(
             "vocab:vocab_source_dashboard",
             kwargs={
-                "vocab_source_pk": self.object.id,
                 "vocab_source_slug": self.object.slug
             }
         )
@@ -71,7 +70,6 @@ class VocabSourceUpdateView(
         return reverse(
             "vocab:vocab_source_dashboard",
             kwargs={
-                "vocab_source_pk": self.object.id,
                 "vocab_source_slug": self.object.slug
             }
         )

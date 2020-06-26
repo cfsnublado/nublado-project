@@ -23,6 +23,14 @@ const VocabSource = {
     initDeleteUrl: {
       type: String,
       default: ""
+    },
+    slugPlaceholder: {
+      type: String,
+      default: "zzz",
+    },
+    idPlaceholder: {
+      type: Number,
+      default: 0,
     }
   },
   data() {
@@ -51,19 +59,17 @@ const VocabSource = {
   created() {
     if (this.initViewUrl) {
       this.viewUrl = this.initViewUrl
-        .replace(0, this.source.id)
-        .replace("zzz", this.source.slug)   
+        .replace(this.slugPlaceholder, this.source.slug)   
     }
 
     if (this.initEditUrl) {
       this.editUrl = this.initEditUrl
-        .replace(0, this.source.id)
-        .replace("zzz", this.source.slug) 
+        .replace(this.slugPlaceholder, this.source.slug) 
     }
 
     if (this.initDeleteUrl) {
       this.deleteUrl = this.initDeleteUrl
-        .replace(0, this.source.id)
+        .replace(this.idPlaceholder, this.source.id)
     } 
   }
 }

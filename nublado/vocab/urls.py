@@ -53,7 +53,7 @@ auth_urls = [
         name="auth_vocab_sources"
     ),
     path(
-        "source/<int:vocab_source_pk>-<slug:vocab_source_slug>/update/",
+        "source/<slug:vocab_source_slug>/update/",
         VocabSourceUpdateView.as_view(),
         name="vocab_source_update"
     ),
@@ -131,7 +131,7 @@ urlpatterns = [
         name="vocab_sources"
     ),
     path(
-        "source/<int:vocab_source_pk>-<slug:vocab_source_slug>/",
+        "source/<slug:vocab_source_slug>/",
         VocabSourceDashboardView.as_view(),
         name="vocab_source_dashboard"
     ),

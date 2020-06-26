@@ -94,6 +94,7 @@ class VocabSource(
     """
     A model for vocab sources that contain the contexts.
     """
+
     BOOK = 1
     WEBSITE = 2
     BLOG = 3
@@ -106,7 +107,7 @@ class VocabSource(
         (CREATED, _("label_source_created")),
         (OTHER, _("label_source_other")),
     )
-    unique_slug = False
+    unique_slug = True
     value_field_name = "name"
     max_iterations = 500
 

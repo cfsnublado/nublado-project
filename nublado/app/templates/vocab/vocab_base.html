@@ -16,7 +16,7 @@
   <p class="menu-header">
   <a 
   id="sidebar-vocab-source-name" 
-  href="{% url 'vocab:vocab_source_dashboard' vocab_source.id vocab_source.slug %}"
+  href="{% url 'vocab:vocab_source_dashboard' vocab_source.slug %}"
   >
   <span id="menu-vocab-source-name"> {{ vocab_source.name }} </span>
   </a>
@@ -50,7 +50,7 @@
     <a
     id="sidebar-vocab-source-edit"
     class="{% block vocab_source_edit_link_active %}{% endblock vocab_source_edit_link_active %}"
-    href="{% url 'vocab:vocab_source_update' vocab_source.id vocab_source.slug %}">
+    href="{% url 'vocab:vocab_source_update' vocab_source.slug %}">
     <i class="menu-icon fas fa-edit fa-fw"></i> {% trans "label_edit_source" %}
     </a>
     </li>

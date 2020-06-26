@@ -36,9 +36,9 @@
 {% block vocab_sources %}
 
 {% url_set_param "api:vocab-source-list" creator=user.id|stringformat:"s" as vocab_sources_url %}
+{% url "vocab:vocab_source_dashboard" "zzz" as vocab_source_view_url %}
+{% url "vocab:vocab_source_update" "zzz" as vocab_source_edit_url %}
 {% url "api:vocab-source-detail" 0 as vocab_source_delete_url %}
-{% url "vocab:vocab_source_dashboard" 0 "zzz" as vocab_source_view_url %}
-{% url "vocab:vocab_source_update" 0 "zzz" as vocab_source_edit_url %}
 
 {% alias user.is_authenticated as source_admin %}
 

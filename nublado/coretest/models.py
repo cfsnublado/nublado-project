@@ -5,8 +5,8 @@ from core.managers import OrderedModelManager
 from core.models import (
     AccessModel, LanguageModel, OrderedModel, ParentModel,
     ProjectModel, ProjectContentModel, ProjectMemberModel,
-    ProjectPublishMemberModel, TimestampModel, TrackedFieldModel,
-    TranslationModel, UserstampModel, UUIDModel
+    ProjectPublishMemberModel, SlugifyModel, TimestampModel,
+    TrackedFieldModel, TranslationModel, UserstampModel, UUIDModel
 )
 
 # These models are only used for testing purposes. They are to be migrated only into the test db.
@@ -24,6 +24,12 @@ class BaseTestModel(models.Model):
 
 class TestModel(BaseTestModel):
     pass
+
+
+class TestSlugifyModel(BaseTestModel, SlugifyModel):
+
+    def __str__(self):
+        return self.name
 
 
 class TestOrderedModel(BaseTestModel, OrderedModel):

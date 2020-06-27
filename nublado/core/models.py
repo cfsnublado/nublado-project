@@ -150,9 +150,14 @@ class SlugifyModel(models.Model):
     The following attributes can be overridden on a per model basis:
     * value_field_name - the value to slugify, default "name"
     * slug_field_name - the field to store the slugified value in, default "slug"
-    * max_iterations - how many iterations to search for an open slug before raising IntegrityError, default 1000
+    * slug_max_iterations - how many iterations to search for an open slug before raising IntegrityError, default 1000
     * slug_separator - the character to put in place of spaces and other non url friendly characters, default "-"
+    * unique_slug - determines if slug is to be unique and needs to be modified if it clashes with another slug
     """
+    value_field_name = "name"
+    slug_field_name = "slug"
+    slug_max_iterations = 100
+    unique_slug = True
 
     slug = models.SlugField(
         verbose_name=_("label_slug"),
@@ -167,15 +172,14 @@ class SlugifyModel(models.Model):
         pk_field_name = self._meta.pk.name
         value_field_name = getattr(self, "value_field_name", "name")
         slug_field_name = getattr(self, "slug_field_name", "slug")
-        max_iterations = getattr(self, "slug_max_iterations", 1000)
-        slug_separator = getattr(self, "slug_separator", "-")
+        max_iterations = getattr(self, "slug_max_iterations", 100)
         unique_slug = getattr(self, "unique_slug", True)
 
         if unique_slug:
             # fields, query set, other setup variables
             slug_field = self._meta.get_field(slug_field_name)
             slug_len = slug_field.max_length
-            queryset = self.__class__.objects.all()
+            queryset = self.get_unique_slug_queryset()
             # if the pk of the record is set, exclude it from the slug search
             current_pk = getattr(self, pk_field_name)
             if current_pk:
@@ -191,19 +195,24 @@ class SlugifyModel(models.Model):
             counter = 2
             while queryset.filter(**{slug_field_name: slug}).count() > 0 and counter < max_iterations:
                 slug = original_slug
-                suffix = "{0}{1}".format(slug_separator, counter)
+                suffix = "-{0}".format(counter)
+
                 if slug_len and len(slug) + len(suffix) > slug_len:
                     slug = slug[:slug_len - len(suffix)]
                 slug = "{0}{1}".format(slug, suffix)
+
                 counter += 1
 
             if counter == max_iterations:
                 raise IntegrityError("Unable to locate unique slug")
         else:
             slug = slugify(getattr(self, value_field_name))
-        self.slug = slug
 
+        self.slug = slug
         super(SlugifyModel, self).save(*args, **kwargs)
+
+    def get_unique_slug_queryset(self):
+        return self.__class__.objects.all()
 
 
 class TimestampModel(models.Model):

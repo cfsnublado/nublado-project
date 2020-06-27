@@ -6,6 +6,7 @@ from django.core.exceptions import ValidationError
 from django.db.utils import IntegrityError
 from django.test import TestCase
 from django.utils import timezone
+from django.utils.text import slugify
 from django.utils.translation import ugettext as _
 
 from ..managers import OrderedModelManager
@@ -17,7 +18,7 @@ from ..models import (
 from coretest.models import (
     TestAccessModel, TestLanguageModel, TestModel, TestOrderedModel,
     TestParentModel, TestProjectModel, TestProjectContentModel,
-    TestProjectMemberModel, TestProjectPublishMemberModel,
+    TestProjectMemberModel, TestProjectPublishMemberModel, TestSlugifyModel,
     TestTrackedFieldModel, TestTranslationModel, TestTimestampModel,
     TestUserstampModel, TestUUIDModel
 )
@@ -25,6 +26,61 @@ from coretest.models import (
 User = get_user_model()
 
 # Testing abstract classes in core using test models from coretest.
+
+
+class SlugifyModelTest(TestCase):
+
+    def setUp(self):
+        self.obj = TestSlugifyModel.objects.create(
+            name="This is a test object"
+        )
+
+    def test_inheritance(self):
+        classes = (
+            SlugifyModel,
+        )
+        for class_name in classes:
+            self.assertTrue(
+                issubclass(TestSlugifyModel, class_name)
+            )
+
+    def test_default_values(self):
+        self.assertEqual(self.obj.slug_max_iterations, 100)
+        self.assertEqual(self.obj.value_field_name, "name")
+        self.assertEqual(self.obj.slug_field_name, "slug")
+        self.assertTrue(self.obj.unique_slug)
+
+    def test_get_unique_slug_queryset(self):
+        obj = TestSlugifyModel.objects.create(name="This is another test object")
+        qs_1 = obj.get_unique_slug_queryset()
+        qs_2 = TestSlugifyModel.objects.all()
+        self.assertQuerysetEqual(qs_1, qs_2, transform=lambda x: x, ordered=False)
+
+    def test_slugify_on_save(self):
+        name = "This is another test object"
+        slug = "this-is-another-test-object"
+        obj = TestSlugifyModel.objects.create(name=name)
+        self.assertEqual(obj.slug, slug)
+
+        name = "¡Este es un extraño espectáculo!"
+        slug = "este-es-un-extrano-espectaculo"
+        obj.name = name
+        obj.save()
+        self.assertEqual(obj.slug, slug)
+
+    def test_slugify_unique_on_save(self):
+        name = "This is another test object"
+        slug = "this-is-another-test-object"
+        obj = TestSlugifyModel.objects.create(name=name)
+        self.assertEqual(obj.slug, slug)
+
+        slug_2 = "{}-{}".format(slug, "2")
+        obj_2 = TestSlugifyModel.objects.create(name=name)
+        self.assertEqual(obj_2.slug, slug_2)
+
+        slug_3 = "{}-{}".format(slug, "3")
+        obj_3 = TestSlugifyModel.objects.create(name=name)
+        self.assertEqual(obj_3.slug, slug_3)
 
 
 class OrderedModelTest(TestCase):

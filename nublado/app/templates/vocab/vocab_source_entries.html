@@ -39,7 +39,7 @@
 <span id="vocab-entries-scroll-top"></span>
 
 {% url "api:vocab-source-entry-list" vocab_source.id as vocab_entries_url %}
-{% url "vocab:vocab_source_entry" vocab_source.id vocab_source.slug "xx" "zzz" as vocab_entry_url %}
+{% url "vocab:vocab_source_entry" vocab_source.slug "xx" "zzz" as vocab_entry_url %}
 {% url "api:vocab-entry-detail" 0 as vocab_entry_delete_url %}
 
 {% include "vocab/includes/vue/_vocab_entries.html" %}

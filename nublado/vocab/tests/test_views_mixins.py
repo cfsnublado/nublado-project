@@ -22,12 +22,12 @@ class TestCommon(TestCase):
 
     def setUp(self):
         self.request_factory = RequestFactory()
-        self.pwd = 'Pizza?69p'
+        self.pwd = "Pizza?69p"
         self.user = User.objects.create_user(
-            username='cfs',
-            first_name='Christopher',
-            last_name='Sanders',
-            email='cfs7@foo.com',
+            username="cfs",
+            first_name="Christopher",
+            last_name="Sanders",
+            email="cfs7@foo.com",
             password=self.pwd
         )
 
@@ -35,7 +35,7 @@ class TestCommon(TestCase):
         self.client.login(username=username, password=self.pwd)
 
     def add_session_to_request(self, request):
-        '''Annotate a request object with a session'''
+        """Annotate a request object with a session"""
         middleware = SessionMiddleware()
         middleware.process_request(request)
         request.session.save()
@@ -44,10 +44,10 @@ class TestCommon(TestCase):
 class VocabSourceSessionMixinTest(TestCommon):
 
     class VocabSourceView(VocabSourceSessionMixin, TemplateView):
-        template_name = 'fake_template.html'
+        template_name = "fake_template.html"
 
         def dispatch(self, request, *args, **kwargs):
-            self.vocab_source = VocabSource.objects.get(id=self.kwargs['pk'])
+            self.vocab_source = VocabSource.objects.get(id=self.kwargs["pk"])
 
             return super(VocabSourceSessionMixin, self).dispatch(request, *args, **kwargs)
 
@@ -55,7 +55,7 @@ class VocabSourceSessionMixinTest(TestCommon):
         super(VocabSourceSessionMixinTest, self).setUp()
         self.vocab_source = VocabSource.objects.create(
             creator=self.user,
-            name='Test Source'
+            name="Test Source"
         )
 
     def test_inheritance(self):
@@ -66,7 +66,7 @@ class VocabSourceSessionMixinTest(TestCommon):
             self.assertTrue(issubclass(VocabSourceSessionMixin, class_name))
 
     def test_session_data(self):
-        request = self.request_factory.get('/fake-path')
+        request = self.request_factory.get("/fake-path")
         self.add_session_to_request(request)
         request.user = self.user
         view = setup_test_view(
@@ -77,12 +77,12 @@ class VocabSourceSessionMixinTest(TestCommon):
         view.dispatch(view.request, *view.args, **view.kwargs)
         view.setup_session(request)
         self.assertEqual(
-            request.session['session_obj'],
+            request.session["session_obj"],
             {
-                'vocab_source': {
-                    'id': self.vocab_source.id,
-                    'name': self.vocab_source.name,
-                    'slug': self.vocab_source.slug
+                "vocab_source": {
+                    "id": self.vocab_source.id,
+                    "name": self.vocab_source.name,
+                    "slug": self.vocab_source.slug
                 }
             }
         )
@@ -91,13 +91,13 @@ class VocabSourceSessionMixinTest(TestCommon):
 class VocabSourceMixinTest(TestCommon):
 
     class VocabSourceView(VocabSourceMixin, TemplateView):
-        template_name = 'fake_template.html'
+        template_name = "fake_template.html"
 
     def setUp(self):
         super(VocabSourceMixinTest, self).setUp()
         self.vocab_source = VocabSource.objects.create(
             creator=self.user,
-            name='Test Source'
+            name="Test Source"
         )
 
     def test_inheritance(self):
@@ -108,7 +108,7 @@ class VocabSourceMixinTest(TestCommon):
             self.assertTrue(issubclass(VocabSourceMixin, class_name))
 
     def test_get_context_data(self):
-        request = self.request_factory.get('/fake-path')
+        request = self.request_factory.get("/fake-path")
         self.add_session_to_request(request)
         request.user = self.user
         view = setup_test_view(
@@ -118,16 +118,16 @@ class VocabSourceMixinTest(TestCommon):
         )
         view.dispatch(view.request, *view.args, **view.kwargs)
         context = view.get_context_data()
-        self.assertEqual(context['vocab_source'], self.vocab_source)
+        self.assertEqual(context["vocab_source"], self.vocab_source)
 
 
 class VocabSourcePermissionMixinTest(TestCommon):
 
     class VocabSourceView(VocabSourcePermissionMixin, TemplateView):
-        template_name = 'fake_template.html'
+        template_name = "fake_template.html"
 
         def dispatch(self, request, *args, **kwargs):
-            self.vocab_source = VocabSource.objects.get(id=self.kwargs['pk'])
+            self.vocab_source = VocabSource.objects.get(id=self.kwargs["pk"])
 
             return super(VocabSourcePermissionMixin, self).dispatch(request, *args, **kwargs)
 
@@ -135,7 +135,7 @@ class VocabSourcePermissionMixinTest(TestCommon):
         super(VocabSourcePermissionMixinTest, self).setUp()
         self.vocab_source = VocabSource.objects.create(
             creator=self.user,
-            name='Test Source'
+            name="Test Source"
         )
 
     def test_inheritance(self):
@@ -146,7 +146,7 @@ class VocabSourcePermissionMixinTest(TestCommon):
             self.assertTrue(issubclass(VocabSourcePermissionMixin, class_name))
 
     def test_permissions_creator(self):
-        request = self.request_factory.get('/fake-path')
+        request = self.request_factory.get("/fake-path")
         self.add_session_to_request(request)
         request.user = self.user
         view = setup_test_view(self.VocabSourceView(), request, pk=self.vocab_source.pk)
@@ -155,13 +155,13 @@ class VocabSourcePermissionMixinTest(TestCommon):
 
     def test_permissions_not_creator(self):
         user = User.objects.create_user(
-            username='non',
-            first_name='Non',
-            last_name='Member',
-            email='nonmember@no.com',
+            username="non",
+            first_name="Non",
+            last_name="Member",
+            email="nonmember@no.com",
             password=self.pwd
         )
-        request = self.request_factory.get('/fake-path')
+        request = self.request_factory.get("/fake-path")
         self.add_session_to_request(request)
         request.user = user
         view = setup_test_view(self.VocabSourceView(), request, pk=self.vocab_source.pk)
@@ -172,18 +172,18 @@ class VocabSourcePermissionMixinTest(TestCommon):
 class VocabSourceSearchMixinTest(TestCommon):
 
     class VocabSourceSearchView(VocabSourceSearchMixin, TemplateView):
-        template_name = 'fake_template.html'
+        template_name = "fake_template.html"
 
     def setUp(self):
         super(VocabSourceSearchMixinTest, self).setUp()
         self.vocab_source = VocabSource.objects.create(
             creator=self.user,
-            name='Test Source'
+            name="Test Source"
         )
 
     def dispatch_view(self, source=None):
         request = self.request_factory.get(
-            '/fake-path?source={0}'.format(source)
+            "/fake-path?source={0}".format(source)
         )
         request.user = self.user
         view = setup_test_view(
@@ -195,7 +195,7 @@ class VocabSourceSearchMixinTest(TestCommon):
 
     def get_response(self, source=None):
         request = self.request_factory.get(
-            '/fake-path?source={0}'.format(source)
+            "/fake-path?source={0}".format(source)
         )
         request.user = self.user
         response = self.VocabSourceSearchView.as_view()(request)
@@ -209,10 +209,9 @@ class VocabSourceSearchMixinTest(TestCommon):
         self.assertRedirects(
             response,
             expected_url=reverse(
-                'vocab:vocab_source_dashboard',
+                "vocab:vocab_source_dashboard",
                 kwargs={
-                    'vocab_source_pk': self.vocab_source.id,
-                    'vocab_source_slug': self.vocab_source.slug
+                    "vocab_source_slug": self.vocab_source.slug
                 }
             ),
             status_code=302,
@@ -221,35 +220,35 @@ class VocabSourceSearchMixinTest(TestCommon):
         )
 
     def test_get_context_data(self):
-        search_source = 'foo'
+        search_source = "foo"
         view = self.dispatch_view(source=search_source)
         context = view.get_context_data()
-        self.assertEqual(context['search_term'], search_source)
-        self.assertIsNone(context['vocab_source'])
+        self.assertEqual(context["search_term"], search_source)
+        self.assertIsNone(context["vocab_source"])
 
 
 class VocabEntrySessionMixinTest(TestCommon):
 
     class VocabEntryView(VocabEntrySessionMixin, TemplateView):
-        template_name = 'fake_template.html'
+        template_name = "fake_template.html"
 
         def dispatch(self, request, *args, **kwargs):
-            self.vocab_entry = VocabEntry.objects.get(id=self.kwargs['pk'])
+            self.vocab_entry = VocabEntry.objects.get(id=self.kwargs["pk"])
 
             return super(VocabEntrySessionMixin, self).dispatch(request, *args, **kwargs)
 
     def setUp(self):
         super(VocabEntrySessionMixinTest, self).setUp()
         self.superuser = User.objects.create_superuser(
-            username='foo',
-            first_name='Christopher',
-            last_name='Sanders',
-            email='foo7@foo.com',
+            username="foo",
+            first_name="Christopher",
+            last_name="Sanders",
+            email="foo7@foo.com",
             password=self.pwd
         )
         self.vocab_entry = VocabEntry.objects.create(
-            language='en',
-            entry='perplexed'
+            language="en",
+            entry="perplexed"
         )
 
     def test_inheritance(self):
@@ -260,7 +259,7 @@ class VocabEntrySessionMixinTest(TestCommon):
             self.assertTrue(issubclass(VocabEntrySessionMixin, class_name))
 
     def test_session_data(self):
-        request = self.request_factory.get('/fake-path')
+        request = self.request_factory.get("/fake-path")
         self.add_session_to_request(request)
         request.user = self.user
         view = setup_test_view(
@@ -271,13 +270,13 @@ class VocabEntrySessionMixinTest(TestCommon):
         view.dispatch(view.request, *view.args, **view.kwargs)
         view.setup_session(request)
         self.assertEqual(
-            request.session['session_obj'],
+            request.session["session_obj"],
             {
-                'vocab_entry': {
-                    'id': self.vocab_entry.id,
-                    'language': self.vocab_entry.language,
-                    'entry': self.vocab_entry.entry,
-                    'slug': self.vocab_entry.slug
+                "vocab_entry": {
+                    "id": self.vocab_entry.id,
+                    "language": self.vocab_entry.language,
+                    "entry": self.vocab_entry.entry,
+                    "slug": self.vocab_entry.slug
                 }
             }
         )
@@ -286,20 +285,20 @@ class VocabEntrySessionMixinTest(TestCommon):
 class VocabEntryMixinTest(TestCommon):
 
     class VocabEntryView(VocabEntryMixin, TemplateView):
-        template_name = 'fake_template.html'
+        template_name = "fake_template.html"
 
     def setUp(self):
         super(VocabEntryMixinTest, self).setUp()
         self.superuser = User.objects.create_superuser(
-            username='foo',
-            first_name='Christopher',
-            last_name='Sanders',
-            email='foo7@foo.com',
+            username="foo",
+            first_name="Christopher",
+            last_name="Sanders",
+            email="foo7@foo.com",
             password=self.pwd
         )
         self.vocab_entry = VocabEntry.objects.create(
-            language='en',
-            entry='perplexed'
+            language="en",
+            entry="perplexed"
         )
 
     def test_inheritance(self):
@@ -310,7 +309,7 @@ class VocabEntryMixinTest(TestCommon):
             self.assertTrue(issubclass(VocabEntryMixin, class_name))
 
     def test_get_context_data(self):
-        request = self.request_factory.get('/fake-path')
+        request = self.request_factory.get("/fake-path")
         self.add_session_to_request(request)
         request.user = self.user
         view = setup_test_view(
@@ -320,31 +319,31 @@ class VocabEntryMixinTest(TestCommon):
         )
         view.dispatch(view.request, *view.args, **view.kwargs)
         context = view.get_context_data()
-        self.assertEqual(context['vocab_entry'], self.vocab_entry)
+        self.assertEqual(context["vocab_entry"], self.vocab_entry)
 
 
 class VocabEntryPermissionMixinTest(TestCommon):
 
     class VocabEntryView(VocabEntryPermissionMixin, TemplateView):
-        template_name = 'fake_template.html'
+        template_name = "fake_template.html"
 
         def dispatch(self, request, *args, **kwargs):
-            self.vocab_entry = VocabEntry.objects.get(id=self.kwargs['pk'])
+            self.vocab_entry = VocabEntry.objects.get(id=self.kwargs["pk"])
 
             return super(VocabEntryPermissionMixin, self).dispatch(request, *args, **kwargs)
 
     def setUp(self):
         super(VocabEntryPermissionMixinTest, self).setUp()
         self.superuser = User.objects.create_superuser(
-            username='foo',
-            first_name='Christopher',
-            last_name='Sanders',
-            email='foo7@foo.com',
+            username="foo",
+            first_name="Christopher",
+            last_name="Sanders",
+            email="foo7@foo.com",
             password=self.pwd
         )
         self.vocab_entry = VocabEntry.objects.create(
-            language='en',
-            entry='perplexed'
+            language="en",
+            entry="perplexed"
         )
 
     def test_inheritance(self):
@@ -355,7 +354,7 @@ class VocabEntryPermissionMixinTest(TestCommon):
             self.assertTrue(issubclass(VocabEntryPermissionMixin, class_name))
 
     def test_permissions_superuser(self):
-        request = self.request_factory.get('/fake-path')
+        request = self.request_factory.get("/fake-path")
         self.add_session_to_request(request)
         request.user = self.superuser
         view = setup_test_view(self.VocabEntryView(), request, pk=self.vocab_entry.pk)
@@ -363,7 +362,7 @@ class VocabEntryPermissionMixinTest(TestCommon):
         self.assertEqual(response.status_code, 200)
 
     def test_permissions_not_superuser(self):
-        request = self.request_factory.get('/fake-path')
+        request = self.request_factory.get("/fake-path")
         self.add_session_to_request(request)
         request.user = self.user
         view = setup_test_view(self.VocabEntryView(), request, pk=self.vocab_entry.pk)
@@ -374,18 +373,18 @@ class VocabEntryPermissionMixinTest(TestCommon):
 class VocabEntrySearchMixinTest(TestCommon):
 
     class VocabEntrySearchView(VocabEntrySearchMixin, TemplateView):
-        template_name = 'fake_template.html'
+        template_name = "fake_template.html"
 
     def setUp(self):
         super(VocabEntrySearchMixinTest, self).setUp()
         self.vocab_entry = VocabEntry.objects.create(
-            language='es',
-            entry='tergiversar'
+            language="es",
+            entry="tergiversar"
         )
 
     def dispatch_view(self, language=None, term=None):
         request = self.request_factory.get(
-            '/fake-path?search_language={0}&search_entry={1}'.format(
+            "/fake-path?search_language={0}&search_entry={1}".format(
                 language,
                 term
             )
@@ -400,7 +399,7 @@ class VocabEntrySearchMixinTest(TestCommon):
 
     def get_response(self, language=None, entry=None):
         request = self.request_factory.get(
-            '/fake-path?search_language={0}&search_entry={1}'.format(
+            "/fake-path?search_language={0}&search_entry={1}".format(
                 language,
                 entry
             )
@@ -418,10 +417,10 @@ class VocabEntrySearchMixinTest(TestCommon):
         self.assertRedirects(
             response,
             expected_url=reverse(
-                'vocab:vocab_entry',
+                "vocab:vocab_entry",
                 kwargs={
-                    'vocab_entry_language': self.vocab_entry.language,
-                    'vocab_entry_slug': self.vocab_entry.slug
+                    "vocab_entry_language": self.vocab_entry.language,
+                    "vocab_entry_slug": self.vocab_entry.slug
                 }
             ),
             status_code=302,
@@ -430,18 +429,18 @@ class VocabEntrySearchMixinTest(TestCommon):
         )
 
     def test_get_context_data(self):
-        search_language = 'es'
-        search_term = 'fuafua'
+        search_language = "es"
+        search_term = "fuafua"
         view = self.dispatch_view(language=search_language, term=search_term)
         context = view.get_context_data()
-        self.assertEqual(context['search_language'], search_language)
-        self.assertEqual(context['search_term'], search_term)
-        self.assertIsNone(context['vocab_entry'])
+        self.assertEqual(context["search_language"], search_language)
+        self.assertEqual(context["search_term"], search_term)
+        self.assertIsNone(context["vocab_entry"])
 
         # Search language defualts to en if not in languages
-        search_language = 'fr'
+        search_language = "fr"
         view = self.dispatch_view(language=search_language, term=search_term)
         context = view.get_context_data()
-        self.assertEqual(context['search_language'], 'en')
-        self.assertEqual(context['search_term'], search_term)
-        self.assertIsNone(context['vocab_entry'])
+        self.assertEqual(context["search_language"], "en")
+        self.assertEqual(context["search_term"], search_term)
+        self.assertIsNone(context["vocab_entry"])

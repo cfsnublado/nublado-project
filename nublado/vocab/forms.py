@@ -88,7 +88,6 @@ class VocabContextCreateForm(VocabContextForm):
 
     def __init__(self, *args, **kwargs):
         self.vocab_source = kwargs.pop("vocab_source", None)
-        # self.creator = kwargs.pop("creator", None)
 
         super(VocabContextCreateForm, self).__init__(*args, **kwargs)
 

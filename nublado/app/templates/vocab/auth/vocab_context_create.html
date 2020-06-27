@@ -11,7 +11,7 @@
 {{ block.super }}
 
 <li>
-<a href="{% url 'vocab:vocab_source_contexts' vocab_source.id vocab_source.slug %}">
+<a href="{% url 'vocab:vocab_source_contexts' vocab_source.slug %}">
 {% trans "label_contexts" %}
 </a>
 </li>

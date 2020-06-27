@@ -211,6 +211,14 @@ const VocabEntry = {
     initDeleteUrl: {
       type: String,
       default: ""
+    },
+    entryLanguagePlaceholder: {
+      type: String,
+      default: "xx"
+    },
+    entrySlugPlaceholder: {
+      type: String,
+      default: "zzz"
     }
   },
   data() {
@@ -235,8 +243,8 @@ const VocabEntry = {
   created() {
     if (this.initViewUrl) {
       this.viewUrl = this.initViewUrl
-        .replace("xx", this.vocabEntry.language)
-        .replace("zzz", this.vocabEntry.slug)
+        .replace(this.entryLanguagePlaceholder, this.vocabEntry.language)
+        .replace(this.entrySlugPlaceholder, this.vocabEntry.slug)
     }
 
     if (this.initDeleteUrl) {
@@ -678,6 +686,10 @@ const VocabEntryContext = {
     initDeleteUrl: {
       type: String,
       default: ""
+    },
+    sourceSlugPlaceholder: {
+      type: String,
+      default: "zzz"
     }
   },
   data() {
@@ -712,8 +724,7 @@ const VocabEntryContext = {
 
     if (this.initVocabSourceUrl) {
       this.vocabSourceUrl = this.initVocabSourceUrl
-        .replace(0, this.vocabEntryContext.vocab_source_id)
-        .replace('zzz', this.vocabEntryContext.vocab_source_slug)
+        .replace(this.sourceSlugPlaceholder, this.vocabEntryContext.vocab_source_slug)
     }
 
     if (this.initEditUrl) {

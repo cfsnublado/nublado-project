@@ -12,7 +12,7 @@
 {% block vocab_entry_search %}
 
 {% url "vocab:vocab_source_entry_language_autocomplete" vocab_source.id "zz" as autocomplete_url %}
-{% url "vocab:vocab_source_entries" vocab_source.id vocab_source.slug  as search_url %}
+{% url "vocab:vocab_source_entries" vocab_source.slug  as search_url %}
 {% alias vocab_source.id|stringformat:"s" as source_id %}
 {% alias "source-id="|add:source_id as comp_extra %}
 {% alias "vocab-source-entry-search" as comp_name %}
@@ -34,7 +34,7 @@
 <div class="column is-6 icon-block">
 <div class="box">
 
-<a href="{% url 'vocab:vocab_source_entries' vocab_source.id vocab_source.slug %}">
+<a href="{% url 'vocab:vocab_source_entries' vocab_source.slug %}">
 
 <header class="icon-block-header">
 <i class="fas fa-language icon-block-icon"></i>
@@ -53,7 +53,7 @@
 <div class="column is-6 icon-block">
 <div class="box">
 
-<a href="{% url 'vocab:vocab_source_contexts' vocab_source.id vocab_source.slug %}">
+<a href="{% url 'vocab:vocab_source_contexts' vocab_source.slug %}">
 
 <header class="icon-block-header">
 <i class="fas fa-book icon-block-icon"></i>

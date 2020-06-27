@@ -111,7 +111,6 @@ class VocabSourceSearchMixin(object):
     def search_success(self, **kwargs):
         return redirect(
             "vocab:vocab_source_dashboard",
-            vocab_source_pk=self.vocab_source.id,
             vocab_source_slug=self.vocab_source.slug
         )
 
@@ -279,7 +278,6 @@ class VocabSourceEntrySearchMixin(VocabEntrySearchMixin):
         if self.vocab_entry and self.vocab_source and self.vocab_entry_redirect_url:
             return redirect(
                 self.vocab_entry_redirect_url,
-                vocab_source_pk=self.vocab_source.id,
                 vocab_source_slug=self.vocab_source.slug,
                 vocab_entry_language=self.vocab_entry.language,
                 vocab_entry_slug=self.vocab_entry.slug

@@ -28,7 +28,7 @@
   <a 
   id="sidebar-vocab-source-entries"
   class="{% block vocab_source_entries_link_active %}{% endblock vocab_source_entries_link_active %}"
-  href="{% url 'vocab:vocab_source_entries' vocab_source.id vocab_source.slug %}"
+  href="{% url 'vocab:vocab_source_entries' vocab_source.slug %}"
   >
   <i class="menu-icon fas fa-language fa-fw"></i> {% trans "label_vocabulary" %}
   </a>
@@ -38,7 +38,7 @@
   <a 
   id="sidebar-vocab-source-contexts"
   class="{% block vocab_source_contexts_link_active %}{% endblock vocab_source_contexts_link_active %}"
-  href="{% url 'vocab:vocab_source_contexts' vocab_source.id vocab_source.slug %}"
+  href="{% url 'vocab:vocab_source_contexts' vocab_source.slug %}"
   >
   <i class="menu-icon fas fa-book fa-fw"></i> {% trans "label_contexts" %}
   </a>

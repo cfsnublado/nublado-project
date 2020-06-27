@@ -84,7 +84,6 @@ class VocabContextCreateFormTest(TestCommon):
     def test_create_context(self):
         form = VocabContextCreateForm(
             data=self.context_data,
-            creator=self.user,
             vocab_source=self.source
         )
         context = form.save()
@@ -94,4 +93,4 @@ class VocabContextCreateFormTest(TestCommon):
 
     def test_form_error_if_no_source(self):
         with self.assertRaisesRegexp(ValueError, _('validation_vocab_source_required')):
-            VocabContextCreateForm(data=self.context_data, creator=self.user)
+            VocabContextCreateForm(data=self.context_data)

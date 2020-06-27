@@ -136,17 +136,17 @@ urlpatterns = [
         name="vocab_source_dashboard"
     ),
     path(
-        "source/<int:vocab_source_pk>-<slug:vocab_source_slug>/contexts/",
+        "source/<slug:vocab_source_slug>/contexts/",
         VocabSourceContextsView.as_view(),
         name="vocab_source_contexts"
     ),
     path(
-        "source/<int:vocab_source_pk>-<slug:vocab_source_slug>/entries/",
+        "source/<slug:vocab_source_slug>/entries/",
         VocabSourceEntriesView.as_view(),
         name="vocab_source_entries"
     ),
     path(
-        "source/<int:vocab_source_pk>-<slug:vocab_source_slug>/entry/<slug:vocab_entry_language>/<slug:vocab_entry_slug>/",
+        "source/<slug:vocab_source_slug>/entry/<slug:vocab_entry_language>/<slug:vocab_entry_slug>/",
         VocabSourceEntryView.as_view(),
         name="vocab_source_entry"
     ),

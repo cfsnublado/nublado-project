@@ -156,7 +156,6 @@ class VocabSourceContextsViewTest(TestCommon):
             reverse(
                 "vocab:vocab_source_contexts",
                 kwargs={
-                    "vocab_source_pk": self.vocab_source.pk,
                     "vocab_source_slug": self.vocab_source.slug
                 }
             )
@@ -168,7 +167,6 @@ class VocabSourceContextsViewTest(TestCommon):
             reverse(
                 "vocab:vocab_source_contexts",
                 kwargs={
-                    "vocab_source_pk": self.vocab_source.pk,
                     "vocab_source_slug": self.vocab_source.slug
                 }
             )
@@ -181,7 +179,6 @@ class VocabSourceContextsViewTest(TestCommon):
             reverse(
                 "vocab:vocab_source_contexts",
                 kwargs={
-                    "vocab_source_pk": self.vocab_source.pk,
                     "vocab_source_slug": self.vocab_source.slug
                 }
             )
@@ -221,7 +218,6 @@ class VocabSourceEntriesViewTest(TestCommon):
             reverse(
                 "vocab:vocab_source_entries",
                 kwargs={
-                    "vocab_source_pk": self.vocab_source.pk,
                     "vocab_source_slug": self.vocab_source.slug
                 }
             )
@@ -233,7 +229,6 @@ class VocabSourceEntriesViewTest(TestCommon):
             reverse(
                 "vocab:vocab_source_entries",
                 kwargs={
-                    "vocab_source_pk": self.vocab_source.pk,
                     "vocab_source_slug": self.vocab_source.slug
                 }
             )
@@ -246,7 +241,6 @@ class VocabSourceEntriesViewTest(TestCommon):
             reverse(
                 "vocab:vocab_source_entries",
                 kwargs={
-                    "vocab_source_pk": self.vocab_source.pk,
                     "vocab_source_slug": self.vocab_source.slug
                 }
             )

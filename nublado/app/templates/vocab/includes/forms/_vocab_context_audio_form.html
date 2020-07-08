@@ -1,0 +1,40 @@
+{% load widget_tweaks %}
+{% load i18n %}
+
+<div id="__all__-errors" class="errors">
+{{ form.non_field_errors }}
+</div>
+
+<div class="field">
+
+<label class="label" for="name">
+{{ form.name.label }}
+</label>
+
+<div class="control">
+{% render_field form.name class+="input" %}
+</div>
+
+<div id="{{ form.name.auto_id }}-errors" class="errors">
+{{ form.name.errors }}
+</div>
+
+</div>
+
+<div class="field">
+
+<div class="field">
+
+<label class="label" for="audio_url">
+{{ form.audio_url.label }}
+</label>
+
+<div class="control">
+{% render_field form.audio_url class+="input" %}
+</div>
+
+<div id="{{ form.audio_url.auto_id }}-errors" class="errors">
+{{ form.audio_url.errors }}
+</div>
+
+</div>

@@ -2,8 +2,8 @@ from django.urls import include, path, re_path
 
 from .views.views_vocab_auth import VocabUserDashboardView
 from .views.views_vocab_context_auth import (
-    VocabContextCreateView, VocabContextTagView,
-    VocabContextEntryTagView
+    VocabContextCreateView, VocabContextAudioCreateView,
+    VocabContextTagView, VocabContextEntryTagView
 )
 from .views.views_vocab_entry import (
     VocabEntriesView, VocabEntryView
@@ -68,7 +68,7 @@ auth_urls = [
         name="vocab_source_export_json"
     ),
     path(
-        "source/<int:vocab_source_pk>-<slug:vocab_source_slug>/context/create",
+        "source/<slug:vocab_source_slug>/context/create",
         VocabContextCreateView.as_view(),
         name="vocab_context_create"
     ),
@@ -76,6 +76,11 @@ auth_urls = [
         "context/<int:vocab_context_pk>/edit/",
         VocabContextTagView.as_view(),
         name="vocab_context_tag"
+    ),
+    path(
+        "context/<int:vocab_context_pk>/audio/create/",
+        VocabContextAudioCreateView.as_view(),
+        name="vocab_context_audio_create"
     ),
     path(
         "vocabcontextentry/<int:vocab_context_entry_pk>/tag/",

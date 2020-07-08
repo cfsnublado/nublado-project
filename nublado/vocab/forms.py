@@ -5,7 +5,7 @@ from django.utils.translation import ugettext_lazy as _
 from core.forms import BaseModelForm
 from .models import (
     VocabEntry, VocabContext,
-    VocabSource
+    VocabContextAudio, VocabSource
 )
 
 User = get_user_model()
@@ -127,3 +127,45 @@ class VocabSourceUpdateForm(VocabSourceForm):
 
     class Meta(VocabSourceForm.Meta):
         model = VocabSource
+
+
+class VocabContextAudioForm(BaseModelForm):
+
+    class Meta:
+        abstract = True
+        fields = ["name", "audio_url"]
+        error_messages = {
+            "name": {
+                "required": _("validation_field_required"),
+            },
+            "audio_url": {
+                "required": _("validation_field_required"),
+            }
+        }
+
+class VocabContextAudioCreateForm(VocabContextAudioForm):
+
+    def __init__(self, *args, **kwargs):
+        self.creator = kwargs.pop("creator", None)
+        self.vocab_context = kwargs.pop("vocab_context", None)
+
+        super(VocabContextAudioCreateForm, self).__init__(*args, **kwargs)
+
+        if not self.creator:
+            raise ValueError(_("validation_creator_required"))
+
+        if not self.vocab_context:
+            raise ValueError(_("validation_vocab_context_required"))
+
+        self.instance.creator = self.creator
+        self.instance.vocab_context = self.vocab_context
+
+    class Meta(VocabContextAudioForm.Meta):
+        model = VocabContextAudio
+
+
+class VocabContextAudioUpdateForm(VocabContextAudioForm):
+
+    class Meta(VocabContextAudioForm.Meta):
+        model = VocabContextAudio
+

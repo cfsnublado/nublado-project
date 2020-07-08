@@ -73,7 +73,7 @@ class VocabSourceMixin(CachedObjectMixin):
             if hasattr(obj, "vocab_source_id"):
                 self.vocab_source = obj.vocab_source
             elif isinstance(obj, VocabSource):
-                    self.vocab_source = obj
+                self.vocab_source = obj
             else:
                 raise Http404("Vocab source not found.")
 

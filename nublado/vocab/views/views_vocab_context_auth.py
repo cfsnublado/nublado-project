@@ -2,13 +2,14 @@ import json
 
 from django.apps import apps
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.shortcuts import get_object_or_404
 from django.urls import reverse
 from django.views.generic import (
     CreateView, DetailView
 )
 
-from ..forms import VocabContextCreateForm
-from ..models import (VocabContextEntry, VocabContext)
+from ..forms import VocabContextCreateForm, VocabContextAudioCreateForm
+from ..models import (VocabContextEntry, VocabContext, VocabContextAudio)
 from .views_mixins import (
     VocabSourceMixin, VocabSourcePermissionMixin,
     VocabSourceSessionMixin
@@ -76,3 +77,48 @@ class VocabContextEntryTagView(
         qs = qs.select_related("vocab_entry", "vocab_context")
         qs = qs.prefetch_related("vocab_entry_tags")
         return qs
+
+
+class VocabContextAudioCreateView(
+    LoginRequiredMixin, VocabSourceMixin,
+    VocabSourceSessionMixin,
+    CreateView
+):
+    model = VocabContextAudio
+    form_class = VocabContextAudioCreateForm
+    template_name = '{0}/auth/vocab_context_audio_create.html'.format(APP_NAME)
+    vocab_context_id = "vocab_context_pk"
+    vocab_context = None
+
+    def get_vocab_source(self, request, *args, **kwargs):
+        self.get_vocab_context(request, *args, **kwargs)
+        print(self.vocab_context)
+        self.vocab_source = self.vocab_context.vocab_source
+
+    def get_vocab_context(self, request, *args, **kwargs):
+        if self.vocab_context_id in kwargs:
+            self.vocab_context = get_object_or_404(
+                VocabContext.objects.select_related("vocab_source"),
+                id=kwargs[self.vocab_context_id]
+            )
+            print(self.vocab_context)
+
+    def get_form_kwargs(self):
+        kwargs = super(VocabContextAudioCreateView, self).get_form_kwargs()
+        kwargs["vocab_context"] = self.vocab_context
+        kwargs["creator"] = self.request.user
+
+        return kwargs
+
+    def get_success_url(self):
+        return reverse(
+            "vocab:vocab_source_contexts",
+            kwargs={
+                "vocab_source_slug": self.vocab_source.slug
+            }
+        )
+
+    def get_context_data(self, **kwargs):
+        context = super(VocabContextAudioCreateView, self).get_context_data(**kwargs)
+        context["vocab_context"] = self.vocab_context
+        return context

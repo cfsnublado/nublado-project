@@ -92,7 +92,6 @@ class VocabContextAudioCreateView(
 
     def get_vocab_source(self, request, *args, **kwargs):
         self.get_vocab_context(request, *args, **kwargs)
-        print(self.vocab_context)
         self.vocab_source = self.vocab_context.vocab_source
 
     def get_vocab_context(self, request, *args, **kwargs):
@@ -101,7 +100,6 @@ class VocabContextAudioCreateView(
                 VocabContext.objects.select_related("vocab_source"),
                 id=kwargs[self.vocab_context_id]
             )
-            print(self.vocab_context)
 
     def get_form_kwargs(self):
         kwargs = super(VocabContextAudioCreateView, self).get_form_kwargs()

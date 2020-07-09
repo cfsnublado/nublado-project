@@ -11,7 +11,8 @@ from dbx.api.views_api import (
 )
 from users.api.views_api import UserViewSet, ProfileViewSet
 from vocab.api.views_vocab_context import (
-    NestedVocabContextEntryViewSet, NestedVocabContextViewSet,
+    NestedVocabContextAudioViewSet, NestedVocabContextEntryViewSet,
+    NestedVocabContextViewSet, VocabContextAudioViewSet,
     VocabContextEntryViewSet, VocabContextViewSet
 )
 from vocab.api.views_vocab_entry import (
@@ -37,6 +38,8 @@ router.register("profile", ProfileViewSet, basename="profile")
 router.register("entry", VocabEntryViewSet, basename="vocab-entry")
 router.register("source", VocabSourceViewSet, basename="vocab-source")
 router.register("vocab-context", VocabContextViewSet, basename="vocab-context")
+router.register("vocab-context-audio", VocabContextAudioViewSet, basename="vocab-context-audio")
+
 router.register("vocab-context-entry", VocabContextEntryViewSet, basename="vocab-context-entry")
 
 vocab_context_router = NestedSimpleRouter(router, "source", lookup="vocab_source")
@@ -47,6 +50,13 @@ vocab_entry_context_router.register(
     "vocab-context-entry",
     NestedVocabContextEntryViewSet,
     basename="nested-vocab-context-entry"
+)
+
+vocab_context_audio_router = NestedSimpleRouter(router, "vocab-context", lookup="vocab_context")
+vocab_context_audio_router.register(
+    "vocab-context-audio",
+    NestedVocabContextAudioViewSet,
+    basename="nested-vocab-context-audio"
 )
 
 vocab_source_entry_list = VocabSourceEntryViewSet.as_view({"get": "list"})
@@ -89,4 +99,5 @@ urlpatterns = [
     path("", include(router.urls)),
     path("", include(vocab_context_router.urls)),
     path("", include(vocab_entry_context_router.urls)),
+    path("", include(vocab_context_audio_router.urls)),
 ]

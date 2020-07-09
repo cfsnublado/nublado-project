@@ -43,7 +43,8 @@ class VocabContextViewSet(
     def get_queryset(self):
         qs = self.queryset.prefetch_related(
             "vocabcontextentry_set__vocab_entry",
-            "vocabcontextentry_set__vocab_entry_tags"
+            "vocabcontextentry_set__vocab_entry_tags",
+            "vocab_context_audios__creator"
         )
         qs = qs.order_by("-date_created")
 
@@ -160,7 +161,8 @@ class NestedVocabContextViewSet(
     def get_queryset(self):
         qs = self.queryset.prefetch_related(
             "vocabcontextentry_set__vocab_entry",
-            "vocabcontextentry_set__vocab_entry_tags"
+            "vocabcontextentry_set__vocab_entry_tags",
+            "vocab_context_audios__creator"
         )
         qs = qs.filter(vocab_source_id=self.kwargs["vocab_source_pk"])
         qs = qs.order_by("order")
@@ -340,7 +342,7 @@ class NestedVocabContextAudioViewSet(
         "creator"
     ).order_by("-date_created")
     serializer_class = VocabContextAudioSerializer
-    post = None
+    vocab_context = None
     permission_classes = [ReadPermission]
     pagination_class = SmallPagination
 
@@ -357,7 +359,6 @@ class NestedVocabContextAudioViewSet(
 
     def create(self, request, *args, **kwargs):
         self.get_vocab_context(vocab_context_pk=kwargs["vocab_context_pk"])
-        # self.check_object_permissions(request, self.post.project)
         return super(NestedVocabContextAudioViewSet, self).create(request, *args, **kwargs)
 
     def perform_create(self, serializer):

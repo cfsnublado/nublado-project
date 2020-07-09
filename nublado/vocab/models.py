@@ -177,6 +177,8 @@ class VocabContext(
         """
         Returns a list of all of the context's vocab entries along with their
         corresponding tags (i.e., entry instances in the context.)
+
+        Note: Consider prefetching vocabcontextentry_set in querysets to avoid multiple calls.
         """
         entries_tags = []
         context_entries = self.vocabcontextentry_set.all()

@@ -351,62 +351,6 @@ const AjaxDelete = {
   }
 }
 
-const AudioPlayer = {
-  props: {
-    initAudioId: {
-      type: String,
-      required: true
-    },
-    initSoundFile: {
-      type: String,
-      default: null
-    }
-  },
-  data() {
-    return {
-      audioId: this.initAudioId,
-      soundFile: this.initSoundFile,
-      audio: null,
-      playing: false,
-      loaded: false
-    }
-  },
-  methods: {
-    load() {
-      if(this.audio.readyState >= 2) {
-        this.loaded = true
-
-        return this.playing = false
-      }
-
-      throw new Error('Failed to load sound file.')
-    },
-    stop() {
-      this.playing = false
-      this.audio.currentTime = 0
-    },
-  },
-  watch: {
-    playing(value) {
-      if(value) {
-        return this.audio.play()
-      }
-    }
-  },
-  mounted() {
-    this.audio = this.$el.querySelector('#' + this.audioId)
-    this.audio.addEventListener('loadeddata', this.load)
-    this.audio.addEventListener('play', () => { this.playing = true })
-    this.audio.addEventListener('ended', () => { this.stop() })
-  },
-  template: `
-    <span>
-      <a @click.prevent="playing = !playing" href="#"> <i class="vocab-pronunciation-icon fas fa-volume-up"></i> </a>
-      <audio :id="audioId" ref="audiofile" :src="soundFile" preload="auto" style="display: none;"></audio>
-    </span>
-  `
-}
-
 const AlertMessage = {
   mixins: [BaseMessage],
   template: `
@@ -562,4 +506,178 @@ const ConfirmationModal = {
       this.no = reject
     })
   }
+}
+
+// AUDIO PLAYER 
+
+const AudioFilePlayer = {
+  props: {
+    audioPlayerId: {
+      type: String,
+      default: 'audio-player'
+    },
+    audioUrl: {
+      type: String,
+      default: null
+    },
+    autoPlay: {
+      type: Boolean,
+      default: false
+    },
+    initLoop: {
+      type: Boolean,
+      default: false
+    },
+    hasLoopBtn: {
+      type: Boolean,
+      default: true
+    },
+    hasStopBtn: {
+      type: Boolean,
+      default: true
+    },
+    hasMuteBtn: {
+      type: Boolean,
+      default: true
+    },
+    hasDownloadBtn: {
+      type: Boolean,
+      default: true
+    },
+    hasVolumeBtn: {
+      type: Boolean,
+      default: true
+    }
+  },
+  data() {
+    return {
+      audio: null,
+      seekBar: null,
+      playing: false,
+      resumePlaying: false, // after mouseup
+      dragging: false,
+      audioLoaded: false,
+      currentSeconds: 0,
+      durationSeconds: 0,
+      loop: false,
+      showVolume: false,
+      previousVolume: 35,
+      volume: 100,
+      hasError: false,
+    }
+  },
+  computed: {
+    currentTime() {
+      return convertTimeHHMMSS(this.currentSeconds)
+    },
+    durationTime() {
+      return convertTimeHHMMSS(this.durationSeconds)
+    },
+    percentComplete() {
+      return parseInt(this.currentSeconds / this.durationSeconds * 100)
+    },
+    muted() {
+      return this.volume / 100 === 0
+    }
+  },
+  watch: {
+    playing(value) {
+      if (value) {
+        this.audio.play()
+      } else {
+        this.audio.pause()
+      }
+    },
+    volume(value) {
+      this.showVolume = false
+      this.audio.volume = this.volume / 100
+    }
+  },
+  methods: {
+    download() {
+      this.stop()
+      window.location.assign(this.audioUrl)
+    },
+    load() {
+      if (this.audio.readyState >= 2) {
+        console.log('audio loaded')
+        this.audioLoaded = true
+        this.durationSeconds = parseInt(this.audio.duration)
+
+        return this.playing = this.autoPlay
+      }
+
+      throw new Error('Failed to load sound file.')
+    },
+    mute() {
+      if (this.muted) {
+        return this.volume = this.previousVolume
+      }
+
+      this.previousVolume = this.volume
+      this.volume = 0
+    },
+    seek(e) {
+      this.playing = false
+
+      const el = this.seekBar.getBoundingClientRect()
+      const seekPos = (e.clientX - el.left) / el.width
+
+      this.audio.currentTime = parseInt(this.audio.duration * seekPos)
+    },
+    stop() {
+      this.playing = false
+      this.audio.currentTime = 0
+    },
+    update() {
+      this.currentSeconds = parseInt(this.audio.currentTime)
+    },
+    error() {
+      this.hasError = true
+      console.error('Error loading ' + this.audioUrl)
+    },
+    onProgressMousedown(e) {
+      if (this.audioLoaded) {
+        this.dragging = true
+        this.resumePlaying = this.playing
+      }
+    },
+    onProgressMouseup(e) {
+      if (this.dragging) {
+        this.dragging = false
+        this.seek(e)
+
+        if (this.resumePlaying && !this.playing) {
+          this.playing = true
+        }
+      }
+    },
+    onProgressMousemove(e) {
+      if (this.dragging) {
+        this.seek(e)
+      }
+    }
+  },
+  created() {
+    this.loop = this.initLoop
+  },
+  mounted() {
+    this.audio = this.$el.querySelector('#' + this.audioPlayerId)
+
+    if (this.audioUrl) {
+      this.audio.src = this.audioUrl
+    }
+    
+    this.audio.addEventListener('error', this.error)
+    this.audio.addEventListener('play', () => { this.playing = true })
+    this.audio.addEventListener('pause', () => { this.playing = false });
+    this.audio.addEventListener('ended', this.stop)
+    this.audio.addEventListener('timeupdate', this.update)
+    this.audio.addEventListener('loadeddata', this.load)
+
+    window.addEventListener('mouseup', this.onProgressMouseup)
+    window.addEventListener('mousemove', this.onProgressMousemove)
+
+    this.seekBar = this.$refs.audioPlayerSeekBar
+  },
 }

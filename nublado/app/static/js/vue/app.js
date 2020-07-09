@@ -1,6 +1,5 @@
 Vue.component("ajax-delete", AjaxDelete)
 Vue.component("ajax-tag", AjaxTag)
-Vue.component("audio-player", AudioPlayer)
 Vue.component("alert-message", AlertMessage)
 Vue.component("dropdown", Dropdown)
 Vue.component("navbar-dropdown", NavbarDropdown)
@@ -28,6 +27,8 @@ Vue.component("vocab-entry-context", VocabEntryContext)
 Vue.component("vocab-contexts", VocabContexts)
 Vue.component("vocab-context-tags", VocabContextTags)
 Vue.component("vocab-context-editor", VocabContextEditor)
+Vue.component("vocab-pronunciation-audio", VocabPronunciationAudio)
+
 
 // Dropbox
 Vue.component("dbx", Dbx)

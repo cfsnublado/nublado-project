@@ -2,11 +2,10 @@ from rest_framework.serializers import (
     CharField, HyperlinkedIdentityField, HyperlinkedRelatedField,
     HyperlinkedModelSerializer,
     IntegerField, ListSerializer, ReadOnlyField, Serializer,
-    SerializerMethodField, StringRelatedField, PrimaryKeyRelatedField
+    SerializerMethodField, StringRelatedField
 )
 
 from django.contrib.auth import get_user_model
-from django.db import models
 
 from core.serializers import (
     BaseSerializer, UUIDEncoder
@@ -196,7 +195,6 @@ class VocabContextSerializer(BaseSerializer, HyperlinkedModelSerializer):
         lookup_url_kwarg="vocab_context_pk",
         lookup_field="pk"
     )
-    # vocab_context_audios = PrimaryKeyRelatedField(queryset=VocabContextAudio.objects.all(), many=True)
     vocab_context_audios = VocabContextAudioSerializer(many=True, read_only=True)
 
     class Meta:
@@ -251,6 +249,12 @@ class VocabContextEntrySerializer(BaseSerializer, HyperlinkedModelSerializer):
         lookup_field="pk",
         source="vocab_context"
     )
+    vocab_context_order = StringRelatedField(source="vocab_context.order")
+    vocab_context_audios = VocabContextAudioSerializer(
+        many=True,
+        source="vocab_context.vocab_context_audios",
+        read_only=True
+    )
     vocab_context = StringRelatedField(many=False)
     vocab_source_id = ReadOnlyField(source="vocab_context.vocab_source_id")
     vocab_source_url = HyperlinkedRelatedField(
@@ -273,14 +277,17 @@ class VocabContextEntrySerializer(BaseSerializer, HyperlinkedModelSerializer):
     class Meta:
         model = VocabContextEntry
         fields = (
-            "url", "id", "vocab_entry_url", "vocab_entry_id", "vocab_entry",
+            "url", "id", "vocab_entry_url", "vocab_entry_id",
+            "vocab_entry", "vocab_entry_tags",
             "vocab_context_id", "vocab_context_url",
-            "vocab_context", "vocab_source_id", "vocab_source_url", "vocab_source",
-            "vocab_source_slug", "date_created",
-            "date_updated", "vocab_entry_tags"
+            "vocab_context", "vocab_context_order", "vocab_context_audios",
+            "vocab_source_id", "vocab_source_url",
+            "vocab_source", "vocab_source_slug",
+            "date_created", "date_updated"
         )
         read_only_fields = (
             "url", "id", "vocab_entry_url", "vocab_entry_id", "vocab_context_id",
-            "vocab_context_url", "vocab_source_id", "vocab_source_url",
-            "vocab_source", "vocab_source_slug", "date_created", "date_updated"
+            "vocab_context_url", "vocab_context_order", "vocab_context_audios",
+            "vocab_source_id", "vocab_source_url", "vocab_source", "vocab_source_slug",
+            "date_created", "date_updated"
         )

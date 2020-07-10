@@ -29,6 +29,15 @@ from .permissions import (
 from .views_mixins import BatchMixin
 
 
+vocab_context_qs = VocabContext.objects.select_related(
+    "vocab_source"
+).prefetch_related(
+    "vocabcontextentry_set__vocab_entry",
+    "vocabcontextentry_set__vocab_entry_tags",
+    "vocab_context_audios__creator"
+)
+
+
 class VocabContextViewSet(
     APIDefaultsMixin, RetrieveModelMixin, UpdateModelMixin, DestroyModelMixin,
     ListModelMixin, GenericViewSet
@@ -36,17 +45,12 @@ class VocabContextViewSet(
     lookup_field = "pk"
     lookup_url_kwarg = "pk"
     serializer_class = VocabContextSerializer
-    queryset = VocabContext.objects.select_related("vocab_source")
+    queryset = vocab_context_qs
     permission_classes = [ReadPermission, SourceContextCreatorPermission]
     pagination_class = SmallPagination
 
     def get_queryset(self):
-        qs = self.queryset.prefetch_related(
-            "vocabcontextentry_set__vocab_entry",
-            "vocabcontextentry_set__vocab_entry_tags",
-            "vocab_context_audios__creator"
-        )
-        qs = qs.order_by("-date_created")
+        qs = self.queryset.order_by("-date_created")
 
         return qs
 
@@ -146,7 +150,7 @@ class NestedVocabContextViewSet(
 ):
     lookup_field = "pk"
     lookup_url_kwarg = "pk"
-    queryset = VocabContext.objects.select_related("vocab_source")
+    queryset = vocab_context_qs
     serializer_class = VocabContextSerializer
     vocab_source = None
     permission_classes = [ReadPermission, SourceCreatorPermission]
@@ -159,12 +163,7 @@ class NestedVocabContextViewSet(
         return self.vocab_source
 
     def get_queryset(self):
-        qs = self.queryset.prefetch_related(
-            "vocabcontextentry_set__vocab_entry",
-            "vocabcontextentry_set__vocab_entry_tags",
-            "vocab_context_audios__creator"
-        )
-        qs = qs.filter(vocab_source_id=self.kwargs["vocab_source_pk"])
+        qs = self.queryset.filter(vocab_source_id=self.kwargs["vocab_source_pk"])
         qs = qs.order_by("order")
 
         return qs
@@ -184,17 +183,21 @@ class NestedVocabContextViewSet(
         return super(NestedVocabContextViewSet, self).list(request, *args, **kwargs)
 
 
+vocab_context_entry_qs = VocabContextEntry.objects.select_related(
+    "vocab_entry", "vocab_context", "vocab_context__vocab_source"
+).prefetch_related(
+    "vocab_entry_tags",
+    "vocab_context__vocab_context_audios__creator"
+)
+
+
 class VocabContextEntryViewSet(
     APIDefaultsMixin, RetrieveModelMixin, DestroyModelMixin,
     ListModelMixin, GenericViewSet
 ):
     lookup_field = "pk"
     lookup_url_kwarg = "pk"
-    queryset = VocabContextEntry.objects.select_related(
-        "vocab_entry", "vocab_context", "vocab_context__vocab_source"
-    ).prefetch_related(
-        "vocab_entry_tags"
-    )
+    queryset = vocab_context_entry_qs
     serializer_class = VocabContextEntrySerializer
     permission_classes = [
         ReadPermission,
@@ -258,11 +261,7 @@ class NestedVocabContextEntryViewSet(
 ):
     lookup_field = "pk"
     lookup_url_kwarg = "pk"
-    queryset = VocabContextEntry.objects.select_related(
-        "vocab_entry", "vocab_context", "vocab_context__vocab_source"
-    ).prefetch_related(
-        "vocab_entry_tags"
-    )
+    queryset = vocab_context_entry_qs
     serializer_class = VocabContextEntrySerializer
     vocab_entry = None
     vocab_context = None

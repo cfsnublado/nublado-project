@@ -43,6 +43,90 @@ class="box vocab-context-box"
 <div class="box-top">
 
 <div class="box-top-left">
+<vocab-context-audio-player
+:audio-player-id="'vocab-context-audio-player-' + vocabEntryContext.id"
+:init-audios="vocabEntryContext.vocab_context_audios"
+v-if="vocabEntryContext.vocab_context_audios.length > 0"
+inline-template
+>
+<div 
+class="audio-player-container center"
+v-cloak
+>
+
+<audio
+:id="audioPlayerId" 
+:loop="loop"
+preload="auto"
+style="display: none;"
+>
+</audio>
+
+<div 
+class="audio-player"
+v-bind:class="[{ 'is-loading': !audioLoaded }]"
+>
+<div class="audio-player-controls">
+
+<div class="player-control">
+
+<a href="#" v-if="!audioLoaded">
+<i class="fas fa-spinner fa-pulse"></i>
+</a>
+
+<a 
+href="#"
+title="Play/Pause"
+@click.prevent="playing = !playing" 
+v-else
+>
+<i v-if="!playing" class="fas fa-play"></i>
+<i v-else class="fas fa-pause"></i>
+</a>
+
+</div>
+
+<div class="audio-progress-container">
+
+<div class="audio-progress">
+
+<div 
+:id="audioPlayerId + '-seekbar'" 
+class="seek-bar"
+@mousedown="onProgressMousedown"
+>
+
+<div 
+class="play-bar"
+:style="{ width: this.percentComplete + '%' }"
+>
+
+<div class="bullet"></div>
+
+</div><!-- play-bar -->
+
+</div><!-- seek-bar -->
+
+</div><!-- progress -->
+
+<!--
+<div class="audio-player-time">
+
+<div class="audio-player-time-current">[[ currentTime ]]</div>
+<div class="audio-player-time-total">[[ durationTime ]]</div>
+
+</div>
+-->
+<!-- audio-player-time -->
+
+</div><!-- progress-container -->
+
+</div><!-- audio-player-controls -->
+
+</div><!-- audio-player -->
+
+</div><!-- audio-player-container -->
+</vocab-context-audio-player>
 </div>
 
 <div class="box-top-right">
@@ -87,6 +171,7 @@ class="delete-btn"
 <div :id="[[ vocabEntryContext.id ]]" class="vocab-context">
 
 <div class="vocab-context-details">
+<span class="order-num">[[ vocabEntryContext.vocab_context_order ]]</span>
 <span class="vocab-source-name" style="font-size: 18px;">
 <a
 href="#"

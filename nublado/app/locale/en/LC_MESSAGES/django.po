@@ -578,22 +578,16 @@ msgid "label_sources"
 msgstr "Sources"
 
 #: nublado/app/templates/dbx/dbx.html:27
-#, fuzzy
-#| msgid "label_dashboard"
 msgid "label_dbx_audio_shared_link"
-msgstr "Dashboard"
+msgstr "Audio link"
 
 #: nublado/app/templates/dbx/dbx.html:44
-#, fuzzy
-#| msgid "label_edit_profile"
 msgid "label_select_audio_file"
-msgstr "Edit profile"
+msgstr "Select audio"
 
 #: nublado/app/templates/dbx/dbx.html:48
-#, fuzzy
-#| msgid "label_edit_profile"
 msgid "label_submit_file"
-msgstr "Edit profile"
+msgstr "Upload audio"
 
 #: nublado/app/templates/dbx/includes/_dbx_file_delete_modal.html:9
 #, fuzzy

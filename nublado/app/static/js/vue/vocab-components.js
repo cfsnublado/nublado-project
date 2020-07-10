@@ -529,12 +529,23 @@ const VocabContextAudioPlayer = {
       audios: this.initAudios,
       selectedAudio: null,
       selectedAudioIndex: null,
-      showPlaylist: false
+      showPlaylist: false,
+      initLoad: false
     }
   },  
   methods: {
+    playAudio() {
+      if (this.initLoad) {
+        this.audio.play()
+      } else {
+        if (this.audios.length > 0) {
+          this.initLoad = true
+          this.selectAudio(0)
+        }
+      }
+    },
     selectAudio(index) {
-      this.audioLoaded = false
+      this.loading = true
       this.selectedAudio = this.audios[index]
       this.selectedAudioIndex = index
       this.audio.src = this.selectedAudio.audio_url
@@ -559,11 +570,7 @@ const VocabContextAudioPlayer = {
   created() {
     this.loop = this.initLoop
   },
-  mounted() {
-    if (this.audios.length > 0) {
-      this.selectAudio(0)
-    }
-  }
+  mounted() {}
 }
 
 const VocabContext = {

@@ -46,6 +46,7 @@ class="box vocab-context-box"
 <vocab-context-audio-player
 :audio-player-id="'vocab-context-audio-player-' + vocabEntryContext.id"
 :init-audios="vocabEntryContext.vocab_context_audios"
+:auto-play="true"
 v-if="vocabEntryContext.vocab_context_audios.length > 0"
 inline-template
 >
@@ -64,20 +65,20 @@ style="display: none;"
 
 <div 
 class="audio-player"
-v-bind:class="[{ 'is-loading': !audioLoaded }]"
+v-bind:class="[{ 'is-loading': loading }]"
 >
 <div class="audio-player-controls">
 
 <div class="player-control">
 
-<a href="#" v-if="!audioLoaded">
+<a href="#" v-if="loading">
 <i class="fas fa-spinner fa-pulse"></i>
 </a>
 
 <a 
 href="#"
 title="Play/Pause"
-@click.prevent="playing = !playing" 
+@click.prevent="playing = !playing"
 v-else
 >
 <i v-if="!playing" class="fas fa-play"></i>

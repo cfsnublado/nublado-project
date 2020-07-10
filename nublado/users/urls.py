@@ -25,12 +25,12 @@ urlpatterns = [
         name='profile_view'
     ),
     path(
-        'forgot-password/',
+        'help/forgot-password/',
         UserForgotPasswordRequestView.as_view(),
         name='user_password_reset_request'
     ),
     re_path(
-        r'^forgot-password-reset/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})/$',
+        r'^help/forgot-password-reset/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})/$',
         UserForgotPasswordResetView.as_view(),
         name='user_forgot_password_reset'
     ),

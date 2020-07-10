@@ -95,15 +95,12 @@ class GetRandomVocabEntryTest(TestCommon):
 
         random.seed(0)
         random_vocab_entry_0 = get_random_vocab_entry()
-        print(random_vocab_entry_0)
 
         random.seed(1)
         random_vocab_entry_1 = get_random_vocab_entry()
-        print(random_vocab_entry_1)
 
         random.seed(2)
         random_vocab_entry_2 = get_random_vocab_entry()
-        print(random_vocab_entry_2)
 
         random.seed(0)
         self.assertEqual(random_vocab_entry_0, get_random_vocab_entry())

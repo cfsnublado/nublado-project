@@ -33,6 +33,18 @@
 
 {% block content %}
 
+<p class="buttons">
+<a 
+class="button is-success"
+href="{% url 'vocab:vocab_context_audio_create' vocab_context.id %}"
+>
+<span class="icon is-small">
+<i class="fas fa-music"></i>
+</span>
+<span>{% trans "label_add_audio" %}</span>
+</a>
+</p>
+
 {% url "api:vocab-context-detail" vocab_context.id as vocab_context_edit_url %}
 
 {% url "api:vocab-entry-detail-data" as vocab_entry_detail_url%}

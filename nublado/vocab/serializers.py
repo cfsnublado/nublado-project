@@ -226,6 +226,8 @@ class VocabContextSerializer(BaseSerializer, HyperlinkedModelSerializer):
 
 
 class VocabContextEntrySerializer(BaseSerializer, HyperlinkedModelSerializer):
+    json_encoder = UUIDEncoder
+
     minimal_data_fields = [
         "vocab_entry", "vocab_context", "vocab_entry_tags",
         "date_created"
@@ -249,7 +251,7 @@ class VocabContextEntrySerializer(BaseSerializer, HyperlinkedModelSerializer):
         lookup_field="pk",
         source="vocab_context"
     )
-    vocab_context_order = StringRelatedField(source="vocab_context.order")
+    vocab_context_order = ReadOnlyField(source="vocab_context.order")
     vocab_context_audios = VocabContextAudioSerializer(
         many=True,
         source="vocab_context.vocab_context_audios",

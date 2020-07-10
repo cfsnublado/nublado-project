@@ -7,12 +7,14 @@ from django.urls import reverse
 from django.test import TestCase
 
 from ..models import (
-    VocabEntry, VocabEntryTag, VocabContext, VocabContextEntry,
+    VocabEntry, VocabEntryTag, VocabContext,
+    VocabContextAudio, VocabContextEntry,
     VocabSource
 )
 from ..serializers import (
     VocabEntrySerializer, VocabContextSerializer,
-    VocabContextEntrySerializer, VocabSourceSerializer
+    VocabContextAudioSerializer, VocabContextEntrySerializer,
+    VocabSourceSerializer
 )
 
 User = get_user_model()
@@ -218,9 +220,19 @@ class VocabContextSerializerTest(TestCommon):
             vocab_source=self.vocab_source,
             content="Hello"
         )
-        self.request = self.client.get(reverse("api:vocab-source-list")).wsgi_request
+        self.vocab_context_audio = VocabContextAudio.objects.create(
+            vocab_context=self.vocab_context,
+            creator=self.user,
+            name="Test audio",
+            audio_url="https://www.foo.com/foo.mp3"
+        )
+        self.request = self.client.get(reverse("api:vocab-context-list")).wsgi_request
         self.serializer = VocabContextSerializer(
             self.vocab_context,
+            context={"request": self.request}
+        )
+        self.vocab_context_audio_serializer = VocabContextAudioSerializer(
+            self.vocab_context_audio,
             context={"request": self.request}
         )
 
@@ -253,6 +265,14 @@ class VocabContextSerializerTest(TestCommon):
             "vocab_source_name": self.vocab_source.name,
             "order": self.vocab_context.order,
             "content": self.vocab_context.content,
+            "vocab_context_audios_url": drf_reverse(
+                "api:nested-vocab-context-audio-list",
+                kwargs={"vocab_context_pk": self.vocab_context.id},
+                request=self.request
+            ),
+            "vocab_context_audios": [
+                self.vocab_context_audio_serializer.data
+            ],
             "vocab_entries_url": drf_reverse(
                 "api:nested-vocab-context-entry-list",
                 kwargs={"vocab_context_pk": self.vocab_context.id},
@@ -282,6 +302,14 @@ class VocabContextSerializerTest(TestCommon):
             "vocab_source_name": self.vocab_source.name,
             "order": self.vocab_context.order,
             "content": self.vocab_context.content,
+            "vocab_context_audios_url": drf_reverse(
+                "api:nested-vocab-context-audio-list",
+                kwargs={"vocab_context_pk": self.vocab_context.id},
+                request=self.request
+            ),
+            "vocab_context_audios": [
+                json.loads(self.vocab_context_audio_serializer.json_data())
+            ],
             "vocab_entries_url": drf_reverse(
                 "api:nested-vocab-context-entry-list",
                 kwargs={"vocab_context_pk": self.vocab_context.id},
@@ -292,6 +320,7 @@ class VocabContextSerializerTest(TestCommon):
             "date_updated": self.vocab_context.date_updated.isoformat(),
         })
         json_data = self.serializer.json_data()
+
         self.assertEqual(json.loads(expected_json_data), json.loads(json_data))
 
     def test_validation_no_content(self):
@@ -319,6 +348,12 @@ class VocabContextEntrySerializerTest(TestCommon):
             vocab_source=self.vocab_source,
             content="Hello"
         )
+        self.vocab_context_audio = VocabContextAudio.objects.create(
+            vocab_context=self.vocab_context,
+            creator=self.user,
+            name="Test audio",
+            audio_url="https://www.foo.com/foo.mp3"
+        )
         self.vocab_entry = VocabEntry.objects.create(
             language="es",
             entry="tergiversar"
@@ -334,6 +369,10 @@ class VocabContextEntrySerializerTest(TestCommon):
         self.request = self.client.get(reverse("api:vocab-source-list")).wsgi_request
         self.serializer = VocabContextEntrySerializer(
             self.vocab_context_entry,
+            context={"request": self.request}
+        )
+        self.vocab_context_audio_serializer = VocabContextAudioSerializer(
+            self.vocab_context_audio,
             context={"request": self.request}
         )
 
@@ -371,6 +410,10 @@ class VocabContextEntrySerializerTest(TestCommon):
                 request=self.request
             ),
             "vocab_context": self.vocab_context.content,
+            "vocab_context_order": self.vocab_context.order,
+            "vocab_context_audios": [
+                self.vocab_context_audio_serializer.data
+            ],
             "vocab_entry_tags": [self.vocab_tag.content],
             "date_created": self.vocab_context_entry.date_created.isoformat(),
             "date_updated": self.vocab_context_entry.date_updated.isoformat(),
@@ -408,6 +451,10 @@ class VocabContextEntrySerializerTest(TestCommon):
                 request=self.request
             ),
             "vocab_context": self.vocab_context.content,
+            "vocab_context_order": self.vocab_context.order,
+            "vocab_context_audios": [
+                json.loads(self.vocab_context_audio_serializer.json_data())
+            ],
             "vocab_entry_tags": [self.vocab_tag.content],
             "date_created": self.vocab_context_entry.date_created.isoformat(),
             "date_updated": self.vocab_context_entry.date_updated.isoformat(),

@@ -356,7 +356,7 @@ const AlertMessage = {
   template: `
     <transition name="fade-transition-slow" v-on:after-enter="isOpen = true" v-on:after-leave="isOpen = false">
 
-    <div v-show="isOpen" :class="[messageType, 'alert abs-alert']">
+    <div v-show="isOpen" :class="[messageType, "alert abs-alert"]">
 
     <div class="alert-content">
     {{ messageText }}
@@ -455,10 +455,10 @@ const AudioFileUploader = {
     validateFile() {
       validated = false
 
-      if (this.file.type == 'audio/mpeg') {
+      if (this.file.type == "audio/mpeg") {
         validated = true
       } else {
-        console.error('Invalid file type')
+        console.error("Invalid file type")
       }
       
       return validated
@@ -510,11 +510,11 @@ const ConfirmationModal = {
 
 // AUDIO PLAYER 
 
-const AudioFilePlayer = {
+const AudioPlayer = {
   props: {
     audioPlayerId: {
       type: String,
-      default: 'audio-player'
+      default: "audio-player"
     },
     audioUrl: {
       type: String,
@@ -600,14 +600,14 @@ const AudioFilePlayer = {
     },
     load() {
       if (this.audio.readyState >= 2) {
-        console.log('audio loaded')
+        console.log("audio loaded")
         this.audioLoaded = true
         this.durationSeconds = parseInt(this.audio.duration)
 
         return this.playing = this.autoPlay
       }
 
-      throw new Error('Failed to load sound file.')
+      throw new Error("Failed to load sound file.")
     },
     mute() {
       if (this.muted) {
@@ -634,7 +634,7 @@ const AudioFilePlayer = {
     },
     error() {
       this.hasError = true
-      console.error('Error loading ' + this.audioUrl)
+      console.error("Error loading " + this.audioUrl)
     },
     onProgressMousedown(e) {
       if (this.audioLoaded) {
@@ -662,22 +662,23 @@ const AudioFilePlayer = {
     this.loop = this.initLoop
   },
   mounted() {
-    this.audio = this.$el.querySelector('#' + this.audioPlayerId)
-
+    this.audio = this.$el.querySelector("#" + this.audioPlayerId)
+    console.log(this.audio)
     if (this.audioUrl) {
       this.audio.src = this.audioUrl
     }
     
-    this.audio.addEventListener('error', this.error)
-    this.audio.addEventListener('play', () => { this.playing = true })
-    this.audio.addEventListener('pause', () => { this.playing = false });
-    this.audio.addEventListener('ended', this.stop)
-    this.audio.addEventListener('timeupdate', this.update)
-    this.audio.addEventListener('loadeddata', this.load)
+    this.audio.addEventListener("error", this.error)
+    this.audio.addEventListener("play", () => { this.playing = true })
+    this.audio.addEventListener("pause", () => { this.playing = false });
+    this.audio.addEventListener("ended", this.stop)
+    this.audio.addEventListener("timeupdate", this.update)
+    this.audio.addEventListener("loadeddata", this.load)
 
-    window.addEventListener('mouseup', this.onProgressMouseup)
-    window.addEventListener('mousemove', this.onProgressMousemove)
+    window.addEventListener("mouseup", this.onProgressMouseup)
+    window.addEventListener("mousemove", this.onProgressMousemove)
 
-    this.seekBar = this.$refs.audioPlayerSeekBar
+    this.seekBar = this.$el.querySelector("#" + this.audioPlayerId + "-seekbar")
+    console.log(this.seekBar)
   },
 }

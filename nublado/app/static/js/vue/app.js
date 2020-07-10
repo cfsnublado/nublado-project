@@ -28,6 +28,7 @@ Vue.component("vocab-contexts", VocabContexts)
 Vue.component("vocab-context-tags", VocabContextTags)
 Vue.component("vocab-context-editor", VocabContextEditor)
 Vue.component("vocab-pronunciation-audio", VocabPronunciationAudio)
+Vue.component("vocab-context-audio-player", VocabContextAudioPlayer)
 
 
 // Dropbox

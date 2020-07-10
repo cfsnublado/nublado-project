@@ -510,8 +510,66 @@ const VocabEntryRandom = {
   }
 }
 
+const VocabContextAudioPlayer = {
+  mixins: [
+    AudioPlayer,
+  ],
+  props: {
+    initAudios: {
+      type: Array,
+      default: []
+    },
+    playlistOpenClass: {
+      type: String,
+      default: "playlist-open"
+    }
+  },
+  data() {
+    return {
+      audios: this.initAudios,
+      selectedAudio: null,
+      selectedAudioIndex: null,
+      showPlaylist: false
+    }
+  },  
+  methods: {
+    selectAudio(index) {
+      this.audioLoaded = false
+      this.selectedAudio = this.audios[index]
+      this.selectedAudioIndex = index
+      this.audio.src = this.selectedAudio.audio_url
+      this.togglePlaylist(false)
+    },
+    togglePlaylist(boolVal) {
+      if (boolVal === true || boolVal === false) {
+        this.showPlaylist = boolVal
+      }
+      else {
+        this.showPlaylist = !this.showPlaylist
+      }
+      
+      if (this.showPlaylist) {
+        this.$el.classList.add(this.playlistOpenClass)
+      } 
+      else {
+        this.$el.classList.remove(this.playlistOpenClass)
+      }
+    }
+  },
+  created() {
+    this.loop = this.initLoop
+  },
+  mounted() {
+    if (this.audios.length > 0) {
+      this.selectAudio(0)
+    }
+  }
+}
 
 const VocabContext = {
+  components: {
+    "vocab-context-audio-player": VocabContextAudioPlayer
+  },
   mixins: [
     MarkdownMixin,
     HighlightMixin,
@@ -549,9 +607,7 @@ const VocabContext = {
   },
   methods: {
     selectVocabSource() {
-      console.log("FUCKKK")
       if (this.vocabSourceUrl) {
-        console.log("SHITTT")
         window.location.assign(this.vocabSourceUrl)
       }
     },
@@ -569,7 +625,7 @@ const VocabContext = {
     if (this.initVocabSourceUrl) {
       this.vocabSourceUrl = this.initVocabSourceUrl
         .replace(0, this.vocabContext.vocab_source_id)
-        .replace('zzz', this.vocabContext.vocab_source_slug)
+        .replace("zzz", this.vocabContext.vocab_source_slug)
     }
 
     if (this.initEditUrl) {
@@ -777,7 +833,7 @@ const VocabContexts = {
           response.data.num_pages
         )
         VueScrollTo.scrollTo({
-          el: '#vocab-contexts-scroll-top',
+          el: "#vocab-contexts-scroll-top"
         })
         this.success()
       })
@@ -1043,7 +1099,7 @@ const VocabPronunciationAudio = {
         return this.playing = false
       }
 
-      throw new Error('Failed to load sound file.')
+      throw new Error("Failed to load sound file.")
     },
     stop() {
       this.playing = false
@@ -1058,10 +1114,10 @@ const VocabPronunciationAudio = {
     }
   },
   mounted() {
-    this.audio = this.$el.querySelector('#' + this.audioId)
-    this.audio.addEventListener('loadeddata', this.load)
-    this.audio.addEventListener('play', () => { this.playing = true })
-    this.audio.addEventListener('ended', () => { this.stop() })
+    this.audio = this.$el.querySelector("#" + this.audioId)
+    this.audio.addEventListener("loadeddata", this.load)
+    this.audio.addEventListener("play", () => { this.playing = true })
+    this.audio.addEventListener("ended", () => { this.stop() })
   },
   template: `
     <span>
@@ -1070,3 +1126,128 @@ const VocabPronunciationAudio = {
     </span>
   `
 }
+
+// const VocabContextAudio = {
+//   mixins: [
+//     AdminMixin,
+//     VisibleMixin,
+//     MarkdownMixin
+//   ],
+//   props: {
+//     initAudio: {
+//       type: Object,
+//       required: true
+//     },
+//     initViewUrl: {
+//       type: String,
+//       default: ""
+//     },
+//     initEditUrl: {
+//       type: String,
+//       default: ""
+//     },
+//     initDeleteUrl: {
+//       type: String,
+//       default: ""
+//     }
+//   },
+//   data() {
+//     return {
+//       audio: this.initAudio,
+//       viewUrl: this.initViewUrl,
+//       editUrl: this.initEditUrl,
+//       deleteUrl: this.initDeleteUrl,
+//       idPlaceholder: "0"
+//     }
+//   },
+//   methods: {
+//     edit() {
+//       if (this.editUrl) {
+//         window.location.assign(this.editUrl)
+//       }
+//     },
+//     remove() {
+//       this.$emit("delete-vocab-context-audio", this.audio.id)
+//     }
+//   },
+//   created() {
+//     if (this.initDeleteUrl) {
+//       this.deleteUrl = this.initDeleteUrl
+//         .replace(this.idPlaceholder, this.audio.id)
+//     }
+
+//     if (this.initEditUrl) {
+//       this.editUrl = this.initEditUrl
+//         .replace(this.idPlaceholder, this.audio.id)
+//       console.log(this.editUrl)
+//     }
+//   }
+// }
+
+// const VocabContextAudios = {
+//   components: {
+//     "vocab-context-audio": VocabContextAudio
+//   },
+//   mixins: [
+//     AdminMixin,
+//     AjaxProcessMixin,
+//     PaginationMixin
+//   ],
+//   props: {
+//     vocabContextAudiosUrl: {
+//       type: String,
+//       default: ""
+//     }
+//   },
+//   data() {
+//     return {
+//       vocabContextAudios: null
+//     }
+//   },
+//   methods: {
+//     getVocabContextAudios(page=1) {
+//       this.process()
+
+//       params = {
+//         page: page
+//       }
+
+//       axios.get(this.vocabContextAudiosUrl, {
+//         params: params
+//       })
+//       .then(response => {
+//         this.vocabContextAudios = response.data.results
+//         this.setPagination(
+//           response.data.previous,
+//           response.data.next,
+//           response.data.page_num,
+//           response.data.count,
+//           response.data.num_pages
+//         )
+//         VueScrollTo.scrollTo({
+//           el: "#vocab-context-audios-scroll-top",
+//         })
+//         this.success()
+//       })
+//       .catch(error => {
+//         if (error.response) {
+//           console.log(error.response)
+//         } else if (error.request) {
+//           console.log(error.request)
+//         } else {
+//           console.log(error.message)
+//         }
+//         console.log(error.config)
+//       })
+//       .finally(() => {
+//         this.complete()
+//       })
+//     },
+//     onDeleteVocabContextAudio(index) {
+//       this.$delete(this.vocabContextAudios, index)
+//     }
+//   },
+//   created() {
+//     this.getVocabContextAudios()
+//   }
+// }

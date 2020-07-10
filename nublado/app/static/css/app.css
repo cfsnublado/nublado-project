@@ -12601,3 +12601,139 @@ animated buttons - animate the text inside prev and next buttons
     margin-bottom: 0.75rem;
   }
 }
+/* line 21, ../scss/cfs/vocab/_vocab_context_audio_player.scss */
+.audio-player-container {
+  display: flex;
+}
+/* line 24, ../scss/cfs/vocab/_vocab_context_audio_player.scss */
+.audio-player-container.center {
+  justify-content: center;
+}
+
+/* line 29, ../scss/cfs/vocab/_vocab_context_audio_player.scss */
+.audio-title {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* line 35, ../scss/cfs/vocab/_vocab_context_audio_player.scss */
+.audio-player {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 400;
+  color: #666;
+  border: 1px solid #fff;
+  background-color: #fff;
+}
+/* line 46, ../scss/cfs/vocab/_vocab_context_audio_player.scss */
+.audio-player.is-loading {
+  border: none;
+  box-shadow: none;
+}
+/* line 51, ../scss/cfs/vocab/_vocab_context_audio_player.scss */
+.audio-player .loading-icon {
+  font-size: 30px;
+  color: #666;
+}
+
+/* line 58, ../scss/cfs/vocab/_vocab_context_audio_player.scss */
+.audio-player-controls {
+  display: flex;
+  align-items: center;
+}
+/* line 63, ../scss/cfs/vocab/_vocab_context_audio_player.scss */
+.audio-player-controls > div.player-control {
+  border-right: 1px solid #fff;
+}
+/* line 66, ../scss/cfs/vocab/_vocab_context_audio_player.scss */
+.audio-player-controls > div.player-control:last-child {
+  border-right: none;
+}
+/* line 70, ../scss/cfs/vocab/_vocab_context_audio_player.scss */
+.audio-player-controls > div.player-control a {
+  display: block;
+  line-height: 0;
+  padding: 0.5rem;
+  text-decoration: none;
+  color: #666;
+}
+/* line 81, ../scss/cfs/vocab/_vocab_context_audio_player.scss */
+.audio-player-controls > div.player-control a:last-child {
+  padding-left: 0;
+}
+
+/* line 88, ../scss/cfs/vocab/_vocab_context_audio_player.scss */
+.audio-progress-container {
+  width: 25rem;
+  height: 30px;
+  padding: 10px 10px 10px 12px;
+}
+/* line 93, ../scss/cfs/vocab/_vocab_context_audio_player.scss */
+.audio-progress-container .audio-progress {
+  height: 8px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  background-color: #bbb;
+}
+/* line 100, ../scss/cfs/vocab/_vocab_context_audio_player.scss */
+.audio-progress-container .audio-progress .seek-bar {
+  height: 8px;
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: #bbb;
+}
+/* line 108, ../scss/cfs/vocab/_vocab_context_audio_player.scss */
+.audio-progress-container .audio-progress .seek-bar .play-bar {
+  float: left;
+  overflow: visible !important;
+  position: relative;
+  height: 8px;
+  border-radius: 5px;
+  background-color: #00c85f;
+}
+/* line 119, ../scss/cfs/vocab/_vocab_context_audio_player.scss */
+.audio-progress-container .audio-progress .seek-bar .play-bar .bullet {
+  position: absolute;
+  top: -4px;
+  right: -12px;
+  width: 18px;
+  height: 18px;
+  content: '';
+  border-radius: 50%;
+  background: #777;
+}
+
+/* line 137, ../scss/cfs/vocab/_vocab_context_audio_player.scss */
+.audio-player-time {
+  display: flex;
+  font-size: 14px;
+  justify-content: space-between;
+}
+/* line 144, ../scss/cfs/vocab/_vocab_context_audio_player.scss */
+.audio-player-time .audio-player-time-current {
+  font-weight: 700;
+  padding-left: 5px;
+}
+/* line 150, ../scss/cfs/vocab/_vocab_context_audio_player.scss */
+.audio-player-time .audio-player-time-total {
+  padding-right: 5px;
+  opacity: 0.5;
+}
+
+@media screen and (max-width: 599px) {
+  /* line 158, ../scss/cfs/vocab/_vocab_context_audio_player.scss */
+  .audio-player {
+    width: 100%;
+  }
+
+  /* line 162, ../scss/cfs/vocab/_vocab_context_audio_player.scss */
+  .audio-progress-container {
+    width: 12.5rem;
+  }
+
+  /* line 166, ../scss/cfs/vocab/_vocab_context_audio_player.scss */
+  .audio-title {
+    align-items: center;
+  }
+}

@@ -1,5 +1,5 @@
 import random
-
+import re
 import requests
 from jsonschema import validate as validate_schema
 import markdown2
@@ -11,7 +11,7 @@ from django.contrib.auth import get_user_model
 
 from .conf import settings
 from .models import (
-    VocabContextEntry, VocabEntry,
+    VocabContextAudio, VocabContextEntry, VocabEntry,
     VocabEntryJsonData, VocabSource
 )
 from .serializers import (
@@ -136,10 +136,11 @@ def vocab_source_markdown_to_dict(md_text):
 
     source_data["name"] = html.metadata["source_name"]
 
-    print(source_data["name"])
-
     if "source_type" in html.metadata:
-        vocab_source_type = getattr(VocabSource, html.metadata["source_type"].upper(), None)
+        vocab_source_type = getattr(
+            VocabSource, html.metadata["source_type"].upper(),
+            None
+        )
 
         if vocab_source_type is not None:
             source_data["source_type"] = vocab_source_type
@@ -180,11 +181,33 @@ def vocab_source_markdown_to_dict(md_text):
 
             tagged_vocab.extract()
 
+        # VocabContextAudio
+        vocab_context_audios = li.find("div", "vocab-context-audios")
+
+        if vocab_context_audios:
+            vocab_context_dict["vocab_context_audios"] = []
+
+            for vocab_context_audio in vocab_context_audios.find_all("p", recursive=False):
+                # audio title: audio file link
+                audio_list = [x.strip() for x in re.split(r':(?!//)', vocab_context_audio.string)]
+                vocab_context_dict["vocab_context_audios"].append(
+                    {
+                        "vocab_context_audio_data": {
+                            "name": audio_list[0],
+                            "audio_url": audio_list[1]
+                        }
+                    }
+                )
+
+            vocab_context_audios.extract()
+
         li_content = li.decode_contents()
 
         # Revert li content back to markdown. (Hacky I know).
         vocab_context_dict["vocab_context_data"]["content"] = md(li_content)
         data_dict["vocab_contexts"].append(vocab_context_dict)
+
+    print("{0} markdown has been converted.".format(source_data["name"]))
 
     return data_dict
 
@@ -251,6 +274,16 @@ def import_vocab_source_json(data, user):
                         for vocab_entry_tag in vocab_context_entry_dict["vocab_entry_tags"]:
                             vocab_context_entry.add_vocab_entry_tag(vocab_entry_tag)
                         vocab_context_entry.save()
+
+            if "vocab_context_audios" in vocab_context_dict:
+                for vocab_context_audio_dict in vocab_context_dict["vocab_context_audios"]:
+                    vocab_context_audio_data = vocab_context_audio_dict["vocab_context_audio_data"]
+                    VocabContextAudio.objects.create(
+                        creator_id=user_id,
+                        vocab_context_id=vocab_context.id,
+                        name=vocab_context_audio_data["name"],
+                        audio_url=vocab_context_audio_data["audio_url"]
+                    )
 
 
 def validate_vocab_entries_json_schema(data):
@@ -380,6 +413,26 @@ def validate_vocab_source_json_schema(data):
                                 },
                                 "required": ["vocab_entry_data", "vocab_entry_tags"]
                             },
+                            "vocab_context_audios": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "vocab_context_audio_data": {
+                                            "type": "object",
+                                            "properties": {
+                                                "name": {
+                                                    "type": "string",
+                                                },
+                                                "audio_url": {
+                                                    "type": "string"
+                                                },
+                                            },
+                                        }
+                                    },
+                                    "required": ["vocab_context_audio_data"]
+                                }
+                            }
                         },
                     },
                     "required": ["vocab_context_data"]

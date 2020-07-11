@@ -16,6 +16,7 @@ from .models import (
 )
 from .serializers import (
     VocabEntrySerializer,
+    VocabContextAudioSerializer,
     VocabContextSerializer,
     VocabSourceSerializer
 )
@@ -100,6 +101,18 @@ def export_vocab_source(request=None, vocab_source=None):
                                 "vocab_entry_tags": vocab_context_entry.get_vocab_entry_tags()
                             }
                         )
+
+                if vocab_context.vocab_context_audios.count():
+                    vocab_context_dict["vocab_context_audios"] = []
+                    for vocab_context_audio in vocab_context.vocab_context_audios.all():
+                        vocab_entry = vocab_context_entry.vocab_entry
+                        vocab_context_audio_serializer = VocabContextAudioSerializer(
+                            vocab_context_audio,
+                            context={"request": request}
+                        )
+                        vocab_context_dict["vocab_context_audios"].append({
+                            "vocab_context_audio_data": vocab_context_audio_serializer.get_minimal_data(),
+                        })
 
                 vocab_source_dict["vocab_contexts"].append(vocab_context_dict)
 

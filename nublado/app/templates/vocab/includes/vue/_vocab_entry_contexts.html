@@ -43,6 +43,64 @@ class="box vocab-context-box"
 <div class="box-top">
 
 <div class="box-top-left">
+
+<div class="vocab-context-details">
+
+<span class="order-num">[[ vocabEntryContext.vocab_context_order ]]</span>
+<span class="vocab-source-name" style="font-size: 18px;">
+<a
+href="#"
+@click.prevent="selectVocabSource"
+>
+[[ vocabEntryContext.vocab_source ]]
+</a>
+</span>
+
+</div>
+
+</div>
+
+<div class="box-top-right">
+<div class="box-controls">
+
+<span 
+class="control"
+v-if="isAdmin"
+>
+<a
+class="edit-btn"
+@click.prevent="edit"
+>
+<i class="fas fa-edit fas"></i>
+</a>
+</span>
+
+<ajax-delete
+v-if="isAdmin"
+delete-confirm-id="delete-vocab-context"
+:delete-url="deleteUrl"
+@ajax-success="remove"
+inline-template
+>
+
+<span class="control">
+<a
+class="delete-btn"
+@click.prevent="confirmDelete"
+>
+<i class="fas fa-times fas"></i>
+</a>
+</span>
+
+</ajax-delete>
+
+</div><!-- box-controls -->
+</div><!-- box-top-right -->
+
+</div><!-- box-top -->
+
+<div :id="[[ vocabEntryContext.id ]]" class="vocab-context">
+
 <vocab-context-audio-player
 :audio-player-id="'vocab-context-audio-player-' + vocabEntryContext.id"
 :init-audios="vocabEntryContext.vocab_context_audios"
@@ -51,7 +109,7 @@ v-if="vocabEntryContext.vocab_context_audios.length > 0"
 inline-template
 >
 <div 
-class="audio-player-container center"
+class="audio-player-container"
 v-cloak
 >
 
@@ -128,60 +186,6 @@ class="play-bar"
 
 </div><!-- audio-player-container -->
 </vocab-context-audio-player>
-</div>
-
-<div class="box-top-right">
-<div class="box-controls">
-
-<span 
-class="control"
-v-if="isAdmin"
->
-<a
-class="edit-btn"
-@click.prevent="edit"
->
-<i class="fas fa-edit fas"></i>
-</a>
-</span>
-
-<ajax-delete
-v-if="isAdmin"
-delete-confirm-id="delete-vocab-context"
-:delete-url="deleteUrl"
-@ajax-success="remove"
-inline-template
->
-
-<span class="control">
-<a
-class="delete-btn"
-@click.prevent="confirmDelete"
->
-<i class="fas fa-times fas"></i>
-</a>
-</span>
-
-</ajax-delete>
-
-</div><!-- box-controls -->
-</div><!-- box-top-right -->
-
-</div><!-- box-top -->
-
-<div :id="[[ vocabEntryContext.id ]]" class="vocab-context">
-
-<div class="vocab-context-details">
-<span class="order-num">[[ vocabEntryContext.vocab_context_order ]]</span>
-<span class="vocab-source-name" style="font-size: 18px;">
-<a
-href="#"
-@click.prevent="selectVocabSource"
->
-[[ vocabEntryContext.vocab_source ]]
-</a>
-</span>
-</div>
 
 <div 
 :id="('context-' + vocabEntryContext.vocab_context_id + '-text')"

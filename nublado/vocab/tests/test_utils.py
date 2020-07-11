@@ -381,6 +381,12 @@ class ValidateVocabSourceJSONTest(TestCommon):
             vocab_context=vocab_context,
             vocab_entry=vocab_entry
         )
+        vocab_context_audio = VocabContextAudio.objects.create(
+            creator=self.user,
+            vocab_context=vocab_context,
+            name="Test audio",
+            audio_url="http://www.foo.com/foo.mp3"
+        )
         vocab_source_serializer = VocabSourceSerializer(
             vocab_source,
             context={"request": self.request}
@@ -393,6 +399,10 @@ class ValidateVocabSourceJSONTest(TestCommon):
             vocab_entry,
             context={"request": self.request}
         )
+        vocab_context_audio_serializer = VocabContextAudioSerializer(
+            vocab_context_audio,
+            context={"request": self.request}
+        )
         data = {
             "vocab_source_data": vocab_source_serializer.get_minimal_data(),
             "vocab_contexts": [
@@ -403,7 +413,10 @@ class ValidateVocabSourceJSONTest(TestCommon):
                             "vocab_entry_data": vocab_entry_serializer.get_minimal_data(),
                             "vocab_entry_tags": vocab_context_entry.get_vocab_entry_tags(),
                         }
-                    ]
+                    ],
+                    "vocab_context_audios": [{
+                        "vocab_context_audio_data": vocab_context_audio_serializer.get_minimal_data()
+                    }]
                 }
             ]
         }

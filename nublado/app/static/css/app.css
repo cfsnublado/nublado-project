@@ -12665,7 +12665,7 @@ animated buttons - animate the text inside prev and next buttons
 
 /* line 88, ../scss/cfs/vocab/_vocab_context_audio_player.scss */
 .audio-progress-container {
-  width: 25rem;
+  width: 31.25rem;
   height: 30px;
   padding: 10px 10px 10px 12px;
 }
@@ -12729,7 +12729,7 @@ animated buttons - animate the text inside prev and next buttons
 
   /* line 162, ../scss/cfs/vocab/_vocab_context_audio_player.scss */
   .audio-progress-container {
-    width: 12.5rem;
+    width: 100%;
   }
 
   /* line 166, ../scss/cfs/vocab/_vocab_context_audio_player.scss */

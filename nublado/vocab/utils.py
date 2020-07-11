@@ -8,6 +8,7 @@ from markdownify import markdownify as md
 from rest_framework import status
 
 from django.contrib.auth import get_user_model
+from django.utils.translation import ugettext_lazy as _
 
 from .conf import settings
 from .models import (
@@ -550,6 +551,17 @@ def parse_oxford_entry_json(json_data, language="en"):
                                             for definition in subsense["definitions"]:
                                                 lexical_entry_dict["definitions"].append(definition)
 
+                lexical_category = lexical_entry_dict["lexicalCategory"]
+                if lexical_category == "verb":
+                    lexical_entry_dict["lexicalCategory"] = _("label_verb")
+                elif lexical_category == "adjective":
+                    lexical_entry_dict["lexicalCategory"] = _("label_adjective")
+                elif lexical_category == "noun":
+                    lexical_entry_dict["lexicalCategory"] = _("label_noun")
+                elif lexical_category == "adverb":
+                    lexical_entry_dict["lexicalCategory"] = _("label_adverb")
+                elif lexical_category == "idiomatic":
+                    lexical_entry_dict["lexicalCategory"] = _("label_idiomatic")
                 results_dict["lexicalEntries"].append(lexical_entry_dict)
 
     return results_dict

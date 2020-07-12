@@ -38,7 +38,7 @@ novalidate
 <ajax-delete
 delete-confirm-id="delete-vocab-source"
 delete-url="{% url 'api:vocab-source-detail' vocab_source.id %}" 
-delete-redirect-url="{% url 'vocab:vocab_sources' %}"
+delete-redirect-url="{% url 'vocab:auth_vocab_sources' %}"
 inline-template
 >
 

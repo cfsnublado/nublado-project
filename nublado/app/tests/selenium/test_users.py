@@ -9,7 +9,10 @@ from django.urls import reverse
 # from django.utils.http import urlsafe_base64_encode
 
 from users.models import User
-from .base import PROJECT_NAME, FunctionalTest, error_msgs, msgs, page_titles, links, DEFAULT_PWD
+from .base import (
+    PROJECT_NAME, FunctionalTest, error_msgs, msgs,
+    page_titles, links, DEFAULT_PWD
+)
 
 NEW_PWD = "Coffee?69c"
 

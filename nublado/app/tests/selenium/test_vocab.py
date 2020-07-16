@@ -19,6 +19,7 @@ page_titles.update({
     "vocab_entry_create_en": "{0} | {1}".format("Create vocab entry", PROJECT_NAME),
     "vocab_entry_update_en": "{0} | {1}".format("Edit vocab entry", PROJECT_NAME),
     "vocab_sources_en": "{0} | {1}".format("Sources", PROJECT_NAME),
+    "vocab_sources_auth_en": "{0} | {1}".format("Your sources", PROJECT_NAME),
     "vocab_source_entry_en": "{0} - {1} | {2}",
     "vocab_source_contexts_en": "{0} - Contexts | {1}",
     "vocab_source_create_en": "{0} | {1}".format("Create source", PROJECT_NAME),
@@ -334,7 +335,6 @@ class VocabSourceAuthTest(TestCommon):
             reverse(
                 "vocab:vocab_source_update",
                 kwargs={
-                    "vocab_source_pk": self.vocab_source.id,
                     "vocab_source_slug": self.vocab_source.slug
                 }
             )
@@ -362,7 +362,6 @@ class VocabSourceAuthTest(TestCommon):
             reverse(
                 "vocab:vocab_source_update",
                 kwargs={
-                    "vocab_source_pk": self.vocab_source.id,
                     "vocab_source_slug": self.vocab_source.slug
                 }
             )
@@ -375,7 +374,7 @@ class VocabSourceAuthTest(TestCommon):
             modal_id="delete-vocab-source"
         )
         self.get_element_by_id("vocab-source-delete-ok").click()
-        self.load_page(page_titles["vocab_sources_en"])
+        self.load_page(page_titles["vocab_sources_auth_en"])
 
         self.assertFalse(
             VocabSource.objects.filter(id=vocab_source_id).exists()
@@ -511,7 +510,6 @@ class VocabContextAuthTest(TestCommon):
             reverse(
                 "vocab:vocab_source_dashboard",
                 kwargs={
-                    "vocab_source_pk": self.vocab_source.id,
                     "vocab_source_slug": self.vocab_source.slug
                 }
             )
@@ -571,7 +569,6 @@ class VocabContextAuthTest(TestCommon):
             reverse(
                 "vocab:vocab_source_entry",
                 kwargs={
-                    "vocab_source_pk": self.vocab_source.id,
                     "vocab_source_slug": self.vocab_source.slug,
                     "vocab_entry_language": self.vocab_entry.language,
                     "vocab_entry_slug": self.vocab_entry.slug
@@ -613,7 +610,6 @@ class VocabContextAuthTest(TestCommon):
             reverse(
                 "vocab:vocab_source_contexts",
                 kwargs={
-                    "vocab_source_pk": self.vocab_source.id,
                     "vocab_source_slug": self.vocab_source.slug,
                 }
             )

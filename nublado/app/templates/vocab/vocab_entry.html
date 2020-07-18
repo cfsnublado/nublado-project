@@ -63,7 +63,7 @@
 {% url_set_param "api:vocab-context-entry-list" vocab_entry=vocab_entry.id as vocab_contexts_url %}
 {% url "api:vocab-context-detail" 0 as vocab_context_delete_url %}
 {% url "vocab:vocab_context_tag" 0 as vocab_context_edit_url %}
-{% url "vocab:vocab_source_dashboard" 0 "zzz" as vocab_source_url %}
+{% url "vocab:vocab_source_dashboard" "zzz" as vocab_source_url %}
 
 {% include "vocab/includes/vue/_vocab_entry_contexts.html" %}
 

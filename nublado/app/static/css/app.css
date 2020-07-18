@@ -12725,8 +12725,13 @@ nav[role='navigation'] {
 .cd-pagination-small {
   display: none;
 }
+/* line 92, ../scss/cfs/_pagination.scss */
+.cd-pagination-small .dropdown-content {
+  max-height: 15.625rem;
+  overflow: auto;
+}
 
-/* line 93, ../scss/cfs/_pagination.scss */
+/* line 98, ../scss/cfs/_pagination.scss */
 .cd-pagination.no-space {
   display: inline-block;
   width: auto;
@@ -12740,17 +12745,17 @@ nav[role='navigation'] {
   content: " ";
   display: table;
 }
-/* line 104, ../scss/cfs/_pagination.scss */
+/* line 109, ../scss/cfs/_pagination.scss */
 .cd-pagination.no-space li {
   float: left;
   margin: 0;
   border-right: 1px solid #e6e6e6;
 }
-/* line 111, ../scss/cfs/_pagination.scss */
+/* line 116, ../scss/cfs/_pagination.scss */
 .cd-pagination.no-space li:last-of-type {
   border-right: none;
 }
-/* line 116, ../scss/cfs/_pagination.scss */
+/* line 121, ../scss/cfs/_pagination.scss */
 .cd-pagination.no-space a,
 .cd-pagination.no-space span {
   float: left;
@@ -12758,24 +12763,25 @@ nav[role='navigation'] {
   border: none;
   border-radius: 0;
 }
-/* line 126, ../scss/cfs/_pagination.scss */
+/* line 131, ../scss/cfs/_pagination.scss */
 .cd-pagination.no-space li:first-of-type a {
   border-radius: 0.25em 0 0 0.25em;
 }
-/* line 130, ../scss/cfs/_pagination.scss */
+/* line 135, ../scss/cfs/_pagination.scss */
 .cd-pagination.no-space li:last-of-type a {
   border-radius: 0 0.25em 0.25em 0;
 }
 
 @media screen and (max-width: 768px) {
-  /* line 136, ../scss/cfs/_pagination.scss */
+  /* line 141, ../scss/cfs/_pagination.scss */
   .cd-pagination {
     display: none;
   }
 
-  /* line 140, ../scss/cfs/_pagination.scss */
+  /* line 145, ../scss/cfs/_pagination.scss */
   .cd-pagination-small {
-    display: block;
+    display: flex;
+    justify-content: center;
   }
 }
 /* line 16, ../../prototype/scss/cfs/_alert.scss */
@@ -12947,12 +12953,6 @@ nav[role='navigation'] {
 .form-buttons {
   margin-top: 2.5rem;
   margin-bottom: 2.5rem;
-}
-
-/* line 1, ../scss/cfs/_dropdown.scss */
-.dropdown-content {
-  max-height: 15.625rem;
-  overflow: auto;
 }
 
 /* line 2, ../../prototype/scss/cfs/_user_menu.scss */

@@ -12619,7 +12619,7 @@ body.sidebar-adaptable.sidebar-expanded .page-footer.is-fixed {
   width: 100%;
 }
 
-/* line 1, ../../prototype/scss/cfs/_pagination.scss */
+/* line 1, ../scss/cfs/_pagination.scss */
 *,
 *::after,
 *::before {
@@ -12628,33 +12628,36 @@ body.sidebar-adaptable.sidebar-expanded .page-footer.is-fixed {
   box-sizing: border-box;
 }
 
-/* line 7, ../../prototype/scss/cfs/_pagination.scss */
+/* line 7, ../scss/cfs/_pagination.scss */
 nav[role='navigation'] {
   text-align: center;
 }
 
-/* line 11, ../../prototype/scss/cfs/_pagination.scss */
-.cd-pagination {
+/* line 11, ../scss/cfs/_pagination.scss */
+.cd-pagination,
+.cd-pagination-small {
   width: 90%;
   max-width: 1000px;
   margin-top: 1.25rem;
   text-align: center;
 }
-/* line 18, ../../prototype/scss/cfs/_pagination.scss */
-.cd-pagination li {
-  /* hide numbers on small devices */
+/* line 19, ../scss/cfs/_pagination.scss */
+.cd-pagination li.pagination-button,
+.cd-pagination-small li.pagination-button {
   display: inline-block;
   margin: 0 0.2em;
   background-color: #fff;
 }
-/* line 26, ../../prototype/scss/cfs/_pagination.scss */
-.cd-pagination li.button {
-  /* make sure prev next buttons are visible */
+/* line 26, ../scss/cfs/_pagination.scss */
+.cd-pagination li.pagination-button.button,
+.cd-pagination-small li.pagination-button.button {
   display: inline-block;
 }
-/* line 32, ../../prototype/scss/cfs/_pagination.scss */
-.cd-pagination a,
-.cd-pagination span {
+/* line 30, ../scss/cfs/_pagination.scss */
+.cd-pagination li.pagination-button a,
+.cd-pagination li.pagination-button span,
+.cd-pagination-small li.pagination-button a,
+.cd-pagination-small li.pagination-button span {
   -moz-user-select: -moz-none;
   -ms-user-select: none;
   -webkit-user-select: none;
@@ -12664,53 +12667,66 @@ nav[role='navigation'] {
   /* use padding and font-size to change buttons size */
   padding: 0.4em 1em;
 }
-/* line 44, ../../prototype/scss/cfs/_pagination.scss */
-.cd-pagination a {
+/* line 42, ../scss/cfs/_pagination.scss */
+.cd-pagination li.pagination-button a,
+.cd-pagination-small li.pagination-button a {
   text-decoration: none;
   color: #2E4057;
   border: 1px solid #e6e6e6;
   border-radius: 0.25em;
 }
-/* line 51, ../../prototype/scss/cfs/_pagination.scss */
-.cd-pagination a:hover {
+/* line 49, ../scss/cfs/_pagination.scss */
+.cd-pagination li.pagination-button a:hover,
+.cd-pagination-small li.pagination-button a:hover {
   background-color: #f2f2f2;
 }
-/* line 55, ../../prototype/scss/cfs/_pagination.scss */
-.cd-pagination a:active {
+/* line 53, ../scss/cfs/_pagination.scss */
+.cd-pagination li.pagination-button a:active,
+.cd-pagination-small li.pagination-button a:active {
   /* click effect */
   -moz-transform: scale(0.9);
   -ms-transform: scale(0.9);
   -webkit-transform: scale(0.9);
   transform: scale(0.9);
 }
-/* line 60, ../../prototype/scss/cfs/_pagination.scss */
-.cd-pagination a.disabled {
+/* line 58, ../scss/cfs/_pagination.scss */
+.cd-pagination li.pagination-button a.disabled,
+.cd-pagination-small li.pagination-button a.disabled {
   pointer-events: none;
   /* button disabled */
   color: rgba(46, 64, 87, 0.4);
 }
-/* line 66, ../../prototype/scss/cfs/_pagination.scss */
-.cd-pagination a.disabled::before, .cd-pagination a.disabled::after {
+/* line 64, ../scss/cfs/_pagination.scss */
+.cd-pagination li.pagination-button a.disabled::before, .cd-pagination li.pagination-button a.disabled::after,
+.cd-pagination-small li.pagination-button a.disabled::before,
+.cd-pagination-small li.pagination-button a.disabled::after {
   opacity: 0.4;
 }
-/* line 73, ../../prototype/scss/cfs/_pagination.scss */
-.cd-pagination .button:first-of-type a::before {
+/* line 72, ../scss/cfs/_pagination.scss */
+.cd-pagination .button:first-of-type a::before,
+.cd-pagination-small .button:first-of-type a::before {
   content: '\00ab  ';
 }
-/* line 77, ../../prototype/scss/cfs/_pagination.scss */
-.cd-pagination .button:last-of-type a::after {
+/* line 76, ../scss/cfs/_pagination.scss */
+.cd-pagination .button:last-of-type a::after,
+.cd-pagination-small .button:last-of-type a::after {
   content: ' \00bb';
 }
-/* line 81, ../../prototype/scss/cfs/_pagination.scss */
-.cd-pagination .current {
+/* line 80, ../scss/cfs/_pagination.scss */
+.cd-pagination .current,
+.cd-pagination-small .current {
   pointer-events: none;
   color: #fff;
   border-color: #64a281;
-  /* selected number */
   background-color: #64a281;
 }
 
-/* line 91, ../../prototype/scss/cfs/_pagination.scss */
+/* line 89, ../scss/cfs/_pagination.scss */
+.cd-pagination-small {
+  display: none;
+}
+
+/* line 93, ../scss/cfs/_pagination.scss */
 .cd-pagination.no-space {
   display: inline-block;
   width: auto;
@@ -12724,17 +12740,17 @@ nav[role='navigation'] {
   content: " ";
   display: table;
 }
-/* line 102, ../../prototype/scss/cfs/_pagination.scss */
+/* line 104, ../scss/cfs/_pagination.scss */
 .cd-pagination.no-space li {
   float: left;
   margin: 0;
   border-right: 1px solid #e6e6e6;
 }
-/* line 109, ../../prototype/scss/cfs/_pagination.scss */
+/* line 111, ../scss/cfs/_pagination.scss */
 .cd-pagination.no-space li:last-of-type {
   border-right: none;
 }
-/* line 114, ../../prototype/scss/cfs/_pagination.scss */
+/* line 116, ../scss/cfs/_pagination.scss */
 .cd-pagination.no-space a,
 .cd-pagination.no-space span {
   float: left;
@@ -12742,217 +12758,24 @@ nav[role='navigation'] {
   border: none;
   border-radius: 0;
 }
-/* line 124, ../../prototype/scss/cfs/_pagination.scss */
+/* line 126, ../scss/cfs/_pagination.scss */
 .cd-pagination.no-space li:first-of-type a {
   border-radius: 0.25em 0 0 0.25em;
 }
-/* line 128, ../../prototype/scss/cfs/_pagination.scss */
+/* line 130, ../scss/cfs/_pagination.scss */
 .cd-pagination.no-space li:last-of-type a {
   border-radius: 0 0.25em 0.25em 0;
 }
 
-/* -------------------------------- 
-
-move buttons - move prev and next buttons to the sides
-
--------------------------------- */
-/* line 4, ../../prototype/scss/bulma/utilities/_mixins.scss */
-.cd-pagination.move-buttons::after {
-  clear: both;
-  content: " ";
-  display: table;
-}
-/* line 142, ../../prototype/scss/cfs/_pagination.scss */
-.cd-pagination.move-buttons .button:first-of-type {
-  float: left;
-}
-/* line 146, ../../prototype/scss/cfs/_pagination.scss */
-.cd-pagination.move-buttons .button:last-of-type {
-  float: right;
-}
-
-/* line 151, ../../prototype/scss/cfs/_pagination.scss */
-.cd-pagination.no-space.move-buttons {
-  display: block;
-  overflow: hidden;
-  width: 90%;
-  max-width: 1000px;
-}
-/* line 158, ../../prototype/scss/cfs/_pagination.scss */
-.cd-pagination.no-space.move-buttons li {
-  float: none;
-  border: none;
-}
-/* line 164, ../../prototype/scss/cfs/_pagination.scss */
-.cd-pagination.no-space.move-buttons a,
-.cd-pagination.no-space.move-buttons span {
-  float: none;
-}
-
-/* -------------------------------- 
-
-custom icons - customize the small arrow inside the next and prev buttons 
-
--------------------------------- */
-/* line 177, ../../prototype/scss/cfs/_pagination.scss */
-.cd-pagination.custom-icons .button a {
-  position: relative;
-}
-/* line 181, ../../prototype/scss/cfs/_pagination.scss */
-.cd-pagination.custom-icons .button:first-of-type a {
-  padding-left: 2.4em;
-}
-/* line 185, ../../prototype/scss/cfs/_pagination.scss */
-.cd-pagination.custom-icons .button:last-of-type a {
-  padding-right: 2.4em;
-}
-/* line 189, ../../prototype/scss/cfs/_pagination.scss */
-.cd-pagination.custom-icons .button:first-of-type a::before,
-.cd-pagination.custom-icons .button:last-of-type a::after {
-  display: inline-block;
-  position: absolute;
-  top: 50%;
-  /* set size for custom icons */
-  width: 16px;
-  height: 16px;
-  /* set margin-top = icon height/2 */
-  margin-top: -8px;
-  content: '';
-}
-/* line 205, ../../prototype/scss/cfs/_pagination.scss */
-.cd-pagination.custom-icons .button:first-of-type a::before {
-  left: 0.8em;
-}
-/* line 209, ../../prototype/scss/cfs/_pagination.scss */
-.cd-pagination.custom-icons .button:last-of-type a::after {
-  -moz-transform: rotate(180deg);
-  -ms-transform: rotate(180deg);
-  -webkit-transform: rotate(180deg);
-  transform: rotate(180deg);
-  right: 0.8em;
-}
-
-/* -------------------------------- 
-
-custom buttons - replace prev and next buttons text with a custom icon 
-
--------------------------------- */
-/* line 223, ../../prototype/scss/cfs/_pagination.scss */
-.cd-pagination.custom-buttons a,
-.cd-pagination.custom-buttons span {
-  vertical-align: middle;
-}
-/* line 228, ../../prototype/scss/cfs/_pagination.scss */
-.cd-pagination.custom-buttons .button a {
-  /* image replacement */
-  overflow: hidden;
-  /* set custom width */
-  width: 40px;
-  white-space: nowrap;
-  text-indent: 100%;
-  color: transparent;
-}
-/* line 241, ../../prototype/scss/cfs/_pagination.scss */
-.cd-pagination.custom-buttons .button:last-of-type a {
-  -moz-transform: rotate(180deg);
-  -ms-transform: rotate(180deg);
-  -webkit-transform: rotate(180deg);
-  transform: rotate(180deg);
-}
-/* line 244, ../../prototype/scss/cfs/_pagination.scss */
-.no-touch .cd-pagination.custom-buttons .button:last-of-type a:active {
-  -moz-transform: scale(0.9) rotate(180deg);
-  -ms-transform: scale(0.9) rotate(180deg);
-  -webkit-transform: scale(0.9) rotate(180deg);
-  transform: scale(0.9) rotate(180deg);
-}
-
-/* line 251, ../../prototype/scss/cfs/_pagination.scss */
-.cd-pagination.no-space.custom-buttons .button:last-of-type a {
-  border-radius: 0.25em 0 0 0.25em;
-}
-
-/* -------------------------------- 
-
-animated buttons - animate the text inside prev and next buttons 
-
--------------------------------- */
-/* line 263, ../../prototype/scss/cfs/_pagination.scss */
-.cd-pagination.animated-buttons a,
-.cd-pagination.animated-buttons span {
-  overflow: hidden;
-  line-height: 50px;
-  height: 50px;
-  padding: 0 1.4em;
-}
-/* line 273, ../../prototype/scss/cfs/_pagination.scss */
-.cd-pagination.animated-buttons .button a {
-  position: relative;
-  padding: 0 2em;
-}
-/* line 279, ../../prototype/scss/cfs/_pagination.scss */
-.cd-pagination.animated-buttons .button:first-of-type a::before,
-.cd-pagination.animated-buttons .button:last-of-type a::after {
-  -moz-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  -webkit-transform: translateX(-50%);
-  transform: translateX(-50%);
-  -moz-transition: -moz-transform 0.3s;
-  -o-transition: -o-transform 0.3s;
-  -webkit-transition: -webkit-transform 0.3s;
-  transition: transform 0.3s;
-  right: auto;
-  left: 50%;
-}
-/* line 288, ../../prototype/scss/cfs/_pagination.scss */
-.cd-pagination.animated-buttons .button:last-of-type a::after {
-  -moz-transform: translateX(-50%) rotate(180deg);
-  -ms-transform: translateX(-50%) rotate(180deg);
-  -webkit-transform: translateX(-50%) rotate(180deg);
-  transform: translateX(-50%) rotate(180deg);
-}
-/* line 292, ../../prototype/scss/cfs/_pagination.scss */
-.cd-pagination.animated-buttons i {
-  -moz-transform: translateY(100%);
-  -ms-transform: translateY(100%);
-  -webkit-transform: translateY(100%);
-  transform: translateY(100%);
-  -moz-transition: -moz-transform 0.3s;
-  -o-transition: -o-transform 0.3s;
-  -webkit-transition: -webkit-transform 0.3s;
-  transition: transform 0.3s;
-  display: block;
-  height: 100%;
-}
-
-/* line 302, ../../prototype/scss/cfs/_pagination.scss */
-.no-touch .cd-pagination.animated-buttons .button a:hover i {
-  -moz-transform: translateY(0);
-  -ms-transform: translateY(0);
-  -webkit-transform: translateY(0);
-  transform: translateY(0);
-}
-
-/* line 306, ../../prototype/scss/cfs/_pagination.scss */
-.no-touch .cd-pagination.animated-buttons .button:first-of-type a:hover::before {
-  -moz-transform: translateX(-50%) translateY(-50px);
-  -ms-transform: translateX(-50%) translateY(-50px);
-  -webkit-transform: translateX(-50%) translateY(-50px);
-  transform: translateX(-50%) translateY(-50px);
-}
-
-/* line 310, ../../prototype/scss/cfs/_pagination.scss */
-.no-touch .cd-pagination.animated-buttons .button:last-of-type a:hover::after {
-  -moz-transform: translateX(-50%) rotate(180deg) translateY(50px);
-  -ms-transform: translateX(-50%) rotate(180deg) translateY(50px);
-  -webkit-transform: translateX(-50%) rotate(180deg) translateY(50px);
-  transform: translateX(-50%) rotate(180deg) translateY(50px);
-}
-
 @media screen and (max-width: 768px) {
-  /* line 317, ../../prototype/scss/cfs/_pagination.scss */
-  .cd-pagination li.page-num {
+  /* line 136, ../scss/cfs/_pagination.scss */
+  .cd-pagination {
     display: none;
+  }
+
+  /* line 140, ../scss/cfs/_pagination.scss */
+  .cd-pagination-small {
+    display: block;
   }
 }
 /* line 16, ../../prototype/scss/cfs/_alert.scss */
@@ -13124,6 +12947,12 @@ animated buttons - animate the text inside prev and next buttons
 .form-buttons {
   margin-top: 2.5rem;
   margin-bottom: 2.5rem;
+}
+
+/* line 1, ../scss/cfs/_dropdown.scss */
+.dropdown-content {
+  max-height: 15.625rem;
+  overflow: auto;
 }
 
 /* line 2, ../../prototype/scss/cfs/_user_menu.scss */

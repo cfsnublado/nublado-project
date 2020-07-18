@@ -227,9 +227,9 @@ v-if="pageCount > 1"
 >
 <nav role="pagination">
 
-<ul class="cd-pagination">
+<ul class="cd-pagination-small">
 
-<li v-if="previousUrl">
+<li class="pagination-button" v-if="previousUrl">
 <a
 @click.prevent="getVocabContexts(pageNum - 1)"
 >
@@ -237,12 +237,70 @@ v-if="pageCount > 1"
 </a>
 </li>
 
+<li class="pagination-button" v-else>
+<a class="disabled" href="#">{% trans 'label_previous' %}</a>
+</li>
+
+<li class="pagination-button">
+
+<dropdown
+id="pagination-small-dropdown"
+dropdown-classes="is-up"
+>
+
+<template slot="dropdown-label">
+{% trans "label_page" %}  [[ pageNum ]] &nbsp; <i class="fas fa-caret-up"></i>"
+</template>
+
+<template slot="dropdown-content">
+  <a 
+  v-for="page in pageCount" 
+  class="dropdown-item"
+  @click.prevent="getVocabContexts(page)"
+  >
+  [[ page ]]
+  </a>
+</template>
+
+</dropdown>
+
+</li>
+
+<li class="pagination-button" v-if="nextUrl">
+<a
+@click.prevent="getVocabContexts(pageNum + 1)"
+>
+{% trans 'label_next' %}
+</a>
+</li>
+
 <li v-else>
+<a 
+class="disabled" 
+href="#"
+>
+{% trans 'label_next' %}
+</a>
+</li>
+</ul>
+
+<ul class="cd-pagination">
+
+<li class="pagination-button" v-if="previousUrl">
+<a
+@click.prevent="getVocabContexts(pageNum - 1)"
+>
+{% trans 'label_previous' %}
+</a>
+</li>
+
+<li class="pagination-button" v-else>
 <a class="disabled" href="#">{% trans 'label_previous' %}</a>
 </li>
 
 <li
 v-for="page in pageCount"
+class="pagination-button"
 :class="[ (pageNum != page) ? 'page-num' : 'current-page' ]"
 >
 
@@ -262,7 +320,7 @@ v-else
 
 </li>
 
-<li v-if="nextUrl">
+<li class="pagination-button" v-if="nextUrl">
 <a
 @click.prevent="getVocabContexts(pageNum + 1)"
 >
@@ -270,7 +328,7 @@ v-else
 </a>
 </li>
 
-<li v-else>
+<li class="pagination-button" v-else>
 <a 
 class="disabled" 
 href="#"

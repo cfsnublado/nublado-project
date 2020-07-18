@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-18 03:43-0700\n"
+"POT-Creation-Date: 2020-07-18 11:35-0700\n"
 "PO-Revision-Date: 2018-11-28 21:16-0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -952,45 +952,33 @@ msgstr "¿Eliminar entrada?"
 msgid "msg_confirm_delete_vocab_source"
 msgstr "¿Eliminar fuente?"
 
+#: nublado/app/templates/vocab/includes/vue/_pagination.html:14
+#: nublado/app/templates/vocab/includes/vue/_pagination.html:19
+#: nublado/app/templates/vocab/includes/vue/_pagination.html:71
+#: nublado/app/templates/vocab/includes/vue/_pagination.html:76
+#: nublado/app/templates/vocab/includes/vue/_vocab_contexts.html:98
+#: nublado/app/templates/vocab/includes/vue/_vocab_contexts.html:103
+msgid "label_previous"
+msgstr "Anterior"
+
+#: nublado/app/templates/vocab/includes/vue/_pagination.html:30
+msgid "label_of"
+msgstr "de"
+
+#: nublado/app/templates/vocab/includes/vue/_pagination.html:51
+#: nublado/app/templates/vocab/includes/vue/_pagination.html:60
+#: nublado/app/templates/vocab/includes/vue/_pagination.html:105
+#: nublado/app/templates/vocab/includes/vue/_pagination.html:114
+#: nublado/app/templates/vocab/includes/vue/_vocab_contexts.html:131
+#: nublado/app/templates/vocab/includes/vue/_vocab_contexts.html:140
+msgid "label_next"
+msgstr "Siguiente"
+
 #: nublado/app/templates/vocab/includes/vue/_vocab_context_tags.html:15
 #: nublado/app/templates/vocab/includes/vue/_vocab_contexts.html:18
 #: nublado/app/templates/vocab/includes/vue/_vocab_entry_contexts.html:15
 msgid "msg_no_contexts"
 msgstr "No hay contextos."
-
-#: nublado/app/templates/vocab/includes/vue/_vocab_context_tags.html:236
-#: nublado/app/templates/vocab/includes/vue/_vocab_context_tags.html:241
-#: nublado/app/templates/vocab/includes/vue/_vocab_context_tags.html:293
-#: nublado/app/templates/vocab/includes/vue/_vocab_context_tags.html:298
-#: nublado/app/templates/vocab/includes/vue/_vocab_contexts.html:98
-#: nublado/app/templates/vocab/includes/vue/_vocab_contexts.html:103
-#: nublado/app/templates/vocab/includes/vue/_vocab_entries.html:99
-#: nublado/app/templates/vocab/includes/vue/_vocab_entries.html:104
-#: nublado/app/templates/vocab/includes/vue/_vocab_entry_contexts.html:216
-#: nublado/app/templates/vocab/includes/vue/_vocab_entry_contexts.html:221
-#: nublado/app/templates/vocab/includes/vue/_vocab_sources.html:138
-#: nublado/app/templates/vocab/includes/vue/_vocab_sources.html:143
-msgid "label_previous"
-msgstr "Anterior"
-
-#: nublado/app/templates/vocab/includes/vue/_vocab_context_tags.html:252
-msgid "label_page"
-msgstr "Página"
-
-#: nublado/app/templates/vocab/includes/vue/_vocab_context_tags.html:273
-#: nublado/app/templates/vocab/includes/vue/_vocab_context_tags.html:282
-#: nublado/app/templates/vocab/includes/vue/_vocab_context_tags.html:327
-#: nublado/app/templates/vocab/includes/vue/_vocab_context_tags.html:336
-#: nublado/app/templates/vocab/includes/vue/_vocab_contexts.html:131
-#: nublado/app/templates/vocab/includes/vue/_vocab_contexts.html:140
-#: nublado/app/templates/vocab/includes/vue/_vocab_entries.html:132
-#: nublado/app/templates/vocab/includes/vue/_vocab_entries.html:141
-#: nublado/app/templates/vocab/includes/vue/_vocab_entry_contexts.html:249
-#: nublado/app/templates/vocab/includes/vue/_vocab_entry_contexts.html:258
-#: nublado/app/templates/vocab/includes/vue/_vocab_sources.html:171
-#: nublado/app/templates/vocab/includes/vue/_vocab_sources.html:180
-msgid "label_next"
-msgstr "Siguiente"
 
 #: nublado/app/templates/vocab/includes/vue/_vocab_contexts.html:3
 msgid "header_contexts"
@@ -1093,6 +1081,9 @@ msgstr "Fuentes"
 #: nublado/app/templates/vocab/vocab_sources.html:20
 msgid "label_search_sources"
 msgstr "Buscar fuentes"
+
+#~ msgid "label_page"
+#~ msgstr "Página"
 
 #~ msgid "msg_python_cool_desc"
 #~ msgstr "Se desarrolla este proyecto con el entorno de Django."

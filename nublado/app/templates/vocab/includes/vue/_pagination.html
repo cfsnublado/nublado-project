@@ -1,0 +1,121 @@
+{% load i18n %}
+
+<section
+v-if="pageCount > 1"
+>
+<nav role="pagination">
+
+<ul class="cd-pagination-small">
+
+<li class="pagination-button" v-if="previousUrl">
+<a
+@click.prevent="{{ prev_action }}"
+>
+{% trans "label_previous" %}
+</a>
+</li>
+
+<li class="pagination-button" v-else>
+<a class="disabled" href="#">{% trans "label_previous" %}</a>
+</li>
+
+<li class="pagination-button">
+
+<dropdown
+id="pagination-small-dropdown"
+dropdown-classes="is-up"
+>
+
+<template slot="dropdown-label">
+[[ pageNum ]]&nbsp; {% trans "label_of" %} &nbsp;[[ pageCount ]] &nbsp; <i class="fas fa-caret-up"></i>
+</template>
+
+<template slot="dropdown-content">
+  <a 
+  v-for="page in pageCount" 
+  class="dropdown-item"
+  @click.prevent="{{ select_action }}"
+  >
+  [[ page ]]
+  </a>
+</template>
+
+</dropdown>
+
+</li>
+
+<li class="pagination-button" v-if="nextUrl">
+<a
+@click.prevent="{{ next_action }}"
+>
+{% trans "label_next" %}
+</a>
+</li>
+
+<li class="pagination-button" v-else>
+<a 
+class="disabled" 
+href="#"
+>
+{% trans "label_next" %}
+</a>
+</li>
+</ul>
+
+<ul class="cd-pagination">
+
+<li class="pagination-button" v-if="previousUrl">
+<a
+@click.prevent="{{ prev_action }}"
+>
+{% trans "label_previous" %}
+</a>
+</li>
+
+<li class="pagination-button" v-else>
+<a class="disabled" href="#">{% trans "label_previous" %}</a>
+</li>
+
+<li
+v-for="page in pageCount"
+class="pagination-button"
+:class="[ (pageNum != page) ? 'page-num' : 'current-page' ]"
+>
+
+<a 
+v-if="pageNum == page" 
+class="current" 
+href="#"
+>
+[[ page ]]
+</a>
+<a 
+v-else 
+@click.prevent="{{ select_action }}"
+>
+[[ page ]]
+</a>
+
+</li>
+
+<li class="pagination-button" v-if="nextUrl">
+<a
+@click.prevent="{{ next_action }}"
+>
+{% trans "label_next" %}
+</a>
+</li>
+
+<li class="pagination-button" v-else>
+<a 
+class="disabled" 
+href="#"
+>
+{% trans "label_next" %}
+</a>
+</li>
+
+</ul>
+</nav>
+
+</section>

@@ -12702,36 +12702,36 @@ nav[role='navigation'] {
 .cd-pagination-small li.pagination-button a.disabled::after {
   opacity: 0.4;
 }
-/* line 72, ../scss/cfs/_pagination.scss */
-.cd-pagination .button:first-of-type a::before,
-.cd-pagination-small .button:first-of-type a::before {
-  content: '\00ab  ';
-}
-/* line 76, ../scss/cfs/_pagination.scss */
-.cd-pagination .button:last-of-type a::after,
-.cd-pagination-small .button:last-of-type a::after {
-  content: ' \00bb';
-}
-/* line 80, ../scss/cfs/_pagination.scss */
-.cd-pagination .current,
-.cd-pagination-small .current {
+/* line 70, ../scss/cfs/_pagination.scss */
+.cd-pagination li.pagination-button a.current,
+.cd-pagination-small li.pagination-button a.current {
   pointer-events: none;
   color: #fff;
   border-color: #64a281;
   background-color: #64a281;
 }
+/* line 79, ../scss/cfs/_pagination.scss */
+.cd-pagination .button:first-of-type a::before,
+.cd-pagination-small .button:first-of-type a::before {
+  content: '\00ab  ';
+}
+/* line 83, ../scss/cfs/_pagination.scss */
+.cd-pagination .button:last-of-type a::after,
+.cd-pagination-small .button:last-of-type a::after {
+  content: ' \00bb';
+}
 
-/* line 89, ../scss/cfs/_pagination.scss */
+/* line 88, ../scss/cfs/_pagination.scss */
 .cd-pagination-small {
   display: none;
 }
-/* line 92, ../scss/cfs/_pagination.scss */
+/* line 91, ../scss/cfs/_pagination.scss */
 .cd-pagination-small .dropdown-content {
   max-height: 15.625rem;
   overflow: auto;
 }
 
-/* line 98, ../scss/cfs/_pagination.scss */
+/* line 97, ../scss/cfs/_pagination.scss */
 .cd-pagination.no-space {
   display: inline-block;
   width: auto;
@@ -12745,17 +12745,17 @@ nav[role='navigation'] {
   content: " ";
   display: table;
 }
-/* line 109, ../scss/cfs/_pagination.scss */
+/* line 108, ../scss/cfs/_pagination.scss */
 .cd-pagination.no-space li {
   float: left;
   margin: 0;
   border-right: 1px solid #e6e6e6;
 }
-/* line 116, ../scss/cfs/_pagination.scss */
+/* line 115, ../scss/cfs/_pagination.scss */
 .cd-pagination.no-space li:last-of-type {
   border-right: none;
 }
-/* line 121, ../scss/cfs/_pagination.scss */
+/* line 120, ../scss/cfs/_pagination.scss */
 .cd-pagination.no-space a,
 .cd-pagination.no-space span {
   float: left;
@@ -12763,22 +12763,22 @@ nav[role='navigation'] {
   border: none;
   border-radius: 0;
 }
-/* line 131, ../scss/cfs/_pagination.scss */
+/* line 130, ../scss/cfs/_pagination.scss */
 .cd-pagination.no-space li:first-of-type a {
   border-radius: 0.25em 0 0 0.25em;
 }
-/* line 135, ../scss/cfs/_pagination.scss */
+/* line 134, ../scss/cfs/_pagination.scss */
 .cd-pagination.no-space li:last-of-type a {
   border-radius: 0 0.25em 0.25em 0;
 }
 
 @media screen and (max-width: 768px) {
-  /* line 141, ../scss/cfs/_pagination.scss */
+  /* line 140, ../scss/cfs/_pagination.scss */
   .cd-pagination {
     display: none;
   }
 
-  /* line 145, ../scss/cfs/_pagination.scss */
+  /* line 144, ../scss/cfs/_pagination.scss */
   .cd-pagination-small {
     display: flex;
     justify-content: center;

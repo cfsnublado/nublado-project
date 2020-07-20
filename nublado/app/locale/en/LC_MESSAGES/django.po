@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-18 11:35-0700\n"
+"POT-Creation-Date: 2020-07-20 09:15-0700\n"
 "PO-Revision-Date: 2018-11-28 21:15-0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -794,7 +794,7 @@ msgstr "Add audio to context"
 #: nublado/app/templates/vocab/auth/vocab_context_audio_create.html:13
 #: nublado/app/templates/vocab/auth/vocab_context_create.html:15
 #: nublado/app/templates/vocab/auth/vocab_context_tag.html:22
-#: nublado/app/templates/vocab/includes/vue/_vocab_context_tags.html:19
+#: nublado/app/templates/vocab/includes/vue/_vocab_context_tags.html:21
 #: nublado/app/templates/vocab/includes/vue/_vocab_entry_contexts.html:19
 #: nublado/app/templates/vocab/vocab_base.html:43
 #: nublado/app/templates/vocab/vocab_source_contexts.html:18
@@ -973,6 +973,16 @@ msgstr "Next"
 #: nublado/app/templates/vocab/includes/vue/_vocab_entry_contexts.html:15
 msgid "msg_no_contexts"
 msgstr "There are no contexts."
+
+#: nublado/app/templates/vocab/includes/vue/_vocab_context_tags.html:24
+msgid "msg_context_tag_instructions"
+msgstr ""
+"To highlight vocabulary in a context, click on the checkbox."
+
+#: nublado/app/templates/vocab/includes/vue/_vocab_context_tags.html:26
+msgid "msg_context_tag_vocab_instructions"
+msgstr ""
+""
 
 #: nublado/app/templates/vocab/includes/vue/_vocab_contexts.html:3
 msgid "header_contexts"

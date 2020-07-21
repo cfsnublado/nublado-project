@@ -140,7 +140,9 @@ class VocabEntryInfoView(APIView):
         )
 
         if json_data:
-            result_data = parse_oxford_entry_json(json_data)
+            result_data = parse_oxford_entry_json(
+                json_data, language=self.vocab_entry.language
+            )
 
             return Response(data=result_data)
         else:

@@ -511,17 +511,29 @@ def parse_oxford_entry_json(json_data, language="en"):
     for result in json_data["results"]:
         if "lexicalEntries" in result:
             for lexical_entry in result["lexicalEntries"]:
+                lexical_category = lexical_entry["lexicalCategory"]["text"].lower()
+                if lexical_category == "verb":
+                    lexical_category = _("label_verb")
+                elif lexical_category == "adjective":
+                    lexical_category = _("label_adjective")
+                elif lexical_category == "noun":
+                    lexical_category = _("label_noun")
+                elif lexical_category == "adverb":
+                    lexical_category = _("label_adverb")
+                elif lexical_category == "idiomatic":
+                    lexical_category = _("label_idiomatic")
+
                 lexical_entry_dict = {
-                    "lexicalCategory": lexical_entry["lexicalCategory"]["text"].lower(),
-                    "pronunciations": {
-                        "ipa": [],
-                        "audioFile": ""
-                    },
-                    "definitions": [],
+                    "lexicalCategory": lexical_category,
+                    "entries": []
                 }
 
                 if "entries" in lexical_entry:
                     for entry in lexical_entry["entries"]:
+                        entry_dict = {
+                            "pronunciations": [],
+                            "senses": []
+                        }
                         if "pronunciations" in entry:
                             for pronunciation in entry["pronunciations"]:
                                 if "phoneticNotation" in pronunciation:
@@ -537,31 +549,41 @@ def parse_oxford_entry_json(json_data, language="en"):
                                         if "audioFile" in pronunciation:
                                             pronunciation_dict["audioFile"] = pronunciation["audioFile"]
 
-                                        lexical_entry_dict["pronunciations"]["ipa"].append(pronunciation_dict)
+                                        entry_dict["pronunciations"].append(pronunciation_dict)
 
                         if "senses" in entry:
                             for sense in entry["senses"]:
+                                sense_dict = {
+                                    "definitions": [],
+                                    "examples": []
+                                }
                                 if "definitions" in sense:
                                     for definition in sense["definitions"]:
-                                        lexical_entry_dict["definitions"].append(definition)
+                                        sense_dict["definitions"].append(definition)
+
+                                if "examples" in sense:
+                                    for example in sense["examples"]:
+                                        if "text" in example:
+                                            sense_dict["examples"].append(example["text"])
+                                entry_dict["senses"].append(sense_dict)
 
                                 if "subsenses" in sense:
                                     for subsense in sense["subsenses"]:
+                                        subsense_dict = {
+                                            "definitions": [],
+                                            "examples": []
+                                        }
                                         if "definitions" in subsense:
                                             for definition in subsense["definitions"]:
-                                                lexical_entry_dict["definitions"].append(definition)
+                                                subsense_dict["definitions"].append(definition)
+                                        if "examples" in subsense:
+                                            for example in subsense["examples"]:
+                                                if "text" in example:
+                                                    subsense_dict["examples"].append(example["text"])
+                                        entry_dict["senses"].append(subsense_dict)
 
-                lexical_category = lexical_entry_dict["lexicalCategory"]
-                if lexical_category == "verb":
-                    lexical_entry_dict["lexicalCategory"] = _("label_verb")
-                elif lexical_category == "adjective":
-                    lexical_entry_dict["lexicalCategory"] = _("label_adjective")
-                elif lexical_category == "noun":
-                    lexical_entry_dict["lexicalCategory"] = _("label_noun")
-                elif lexical_category == "adverb":
-                    lexical_entry_dict["lexicalCategory"] = _("label_adverb")
-                elif lexical_category == "idiomatic":
-                    lexical_entry_dict["lexicalCategory"] = _("label_idiomatic")
+                        lexical_entry_dict["entries"].append(entry_dict)
+
                 results_dict["lexicalEntries"].append(lexical_entry_dict)
 
     return results_dict

@@ -41,38 +41,54 @@ inline-template
     <li 
       v-for="lexicalEntry in vocabEntryInfo.lexicalEntries"
     >
-      <span class="vocab-lexical-category">
+      <div class="vocab-lexical-category">
       [[ lexicalEntry.lexicalCategory ]]
-      </span>
-      &nbsp;
-
-      <span
-        v-for="(ipaPronunciation, index) in lexicalEntry.pronunciations.ipa"
-      >
-      <span 
-      v-if="ipaPronunciation.phoneticSpelling"
-      class="vocab-pronunciation"
-      >
-      [ [[ ipaPronunciation.phoneticSpelling ]] ]
-      </span>
-      <vocab-pronunciation-audio 
-      v-if="ipaPronunciation.audioFile"
-      :init-audio-id="'marginSizes' + index"
-      :init-sound-file="ipaPronunciation.audioFile"
-      >
-      </vocab-pronunciation-audio>
-      &nbsp;
-      </span>
-
-      <div class="vocab-definitions">
-      <ul>
-        <li v-for="def in lexicalEntry.definitions">
-          <p class="vocab-definition-text">
-           &#8226; [[ def ]]
-          </p>
-        </li>
-      </ul>
       </div>
+    
+      <div v-for="entry in lexicalEntry.entries">
+
+        <span
+          v-for="(pronunciation, index) in entry.pronunciations"
+        >
+
+        <span 
+        v-if="pronunciation.phoneticSpelling"
+        class="vocab-pronunciation"
+        >
+        [ [[ pronunciation.phoneticSpelling ]] ]
+        </span>
+
+        <vocab-pronunciation-audio 
+        v-if="pronunciation.audioFile"
+        :init-audio-id="'marginSizes' + index"
+        :init-sound-file="pronunciation.audioFile"
+        >
+        </vocab-pronunciation-audio>
+    
+        </span><!-- pronunciations -->
+
+        <div v-for="sense in entry.senses">
+
+          <div class="vocab-definitions">
+          <ul>
+            <li v-for="def in sense.definitions">
+              <p class="vocab-definition-text">
+               &#8226; [[ def ]]
+              </p>
+            </li>
+
+            <li v-for="example in sense.examples">
+              <p class="vocab-example-text">
+              <i>"[[ example ]]"</i>
+              </p>
+            </li>
+
+          </ul>
+          </div>
+
+        </div><!-- senses -->
+
+      </div><!-- entries -->
 
     </li>
 

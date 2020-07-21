@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-20 09:15-0700\n"
+"POT-Creation-Date: 2020-07-20 14:41-0700\n"
 "PO-Revision-Date: 2018-11-28 21:15-0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -794,7 +794,7 @@ msgstr "Add audio to context"
 #: nublado/app/templates/vocab/auth/vocab_context_audio_create.html:13
 #: nublado/app/templates/vocab/auth/vocab_context_create.html:15
 #: nublado/app/templates/vocab/auth/vocab_context_tag.html:22
-#: nublado/app/templates/vocab/includes/vue/_vocab_context_tags.html:21
+#: nublado/app/templates/vocab/includes/vue/_vocab_context_tags.html:30
 #: nublado/app/templates/vocab/includes/vue/_vocab_entry_contexts.html:19
 #: nublado/app/templates/vocab/vocab_base.html:43
 #: nublado/app/templates/vocab/vocab_source_contexts.html:18
@@ -968,21 +968,15 @@ msgstr "of"
 msgid "label_next"
 msgstr "Next"
 
-#: nublado/app/templates/vocab/includes/vue/_vocab_context_tags.html:15
+#: nublado/app/templates/vocab/includes/vue/_vocab_context_tags.html:16
 #: nublado/app/templates/vocab/includes/vue/_vocab_contexts.html:18
 #: nublado/app/templates/vocab/includes/vue/_vocab_entry_contexts.html:15
 msgid "msg_no_contexts"
 msgstr "There are no contexts."
 
 #: nublado/app/templates/vocab/includes/vue/_vocab_context_tags.html:24
-msgid "msg_context_tag_instructions"
-msgstr ""
-"To highlight vocabulary in a context, click on the checkbox."
-
-#: nublado/app/templates/vocab/includes/vue/_vocab_context_tags.html:26
-msgid "msg_context_tag_vocab_instructions"
-msgstr ""
-""
+msgid "label_create_context"
+msgstr "Create context"
 
 #: nublado/app/templates/vocab/includes/vue/_vocab_contexts.html:3
 msgid "header_contexts"
@@ -1085,6 +1079,9 @@ msgstr "Sources"
 #: nublado/app/templates/vocab/vocab_sources.html:20
 msgid "label_search_sources"
 msgstr "Search sources"
+
+#~ msgid "msg_context_tag_instructions"
+#~ msgstr "To highlight vocabulary in a context, click on the checkbox."
 
 #~ msgid "label_page"
 #~ msgstr "Page"
@@ -1228,11 +1225,6 @@ msgstr "Search sources"
 
 #~ msgid "label_entries"
 #~ msgstr "Entries"
-
-#, fuzzy
-#~| msgid "label_next"
-#~ msgid "label_create_context"
-#~ msgstr "Next"
 
 #~ msgid "header_create_entry"
 #~ msgstr "Create entry"

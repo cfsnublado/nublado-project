@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-20 14:41-0700\n"
+"POT-Creation-Date: 2020-07-21 17:46-0700\n"
 "PO-Revision-Date: 2018-11-28 21:16-0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -411,7 +411,7 @@ msgstr "Este campo es obligatorio."
 msgid "validation_vocab_context_required"
 msgstr "Este campo es obligatorio."
 
-#: nublado/vocab/models.py:58 nublado/app/templates/vocab/vocab_base.html:88
+#: nublado/vocab/models.py:58 nublado/app/templates/vocab/vocab_base.html:98
 msgid "label_entry"
 msgstr "Entrada"
 
@@ -515,23 +515,23 @@ msgstr "Terminar edición"
 msgid "label_json_data_other"
 msgstr "Actualizar"
 
-#: nublado/vocab/utils.py:556
+#: nublado/vocab/utils.py:516
 msgid "label_verb"
 msgstr "verbo"
 
-#: nublado/vocab/utils.py:558
+#: nublado/vocab/utils.py:518
 msgid "label_adjective"
 msgstr "adjetivo"
 
-#: nublado/vocab/utils.py:560
+#: nublado/vocab/utils.py:520
 msgid "label_noun"
 msgstr "sustantivo"
 
-#: nublado/vocab/utils.py:562
+#: nublado/vocab/utils.py:522
 msgid "label_adverb"
 msgstr "adverbio"
 
-#: nublado/vocab/utils.py:564
+#: nublado/vocab/utils.py:524
 msgid "label_idiomatic"
 msgstr "idiomático"
 
@@ -1000,7 +1000,7 @@ msgstr "Mostrar detalles"
 msgid "label_hide_details"
 msgstr "Ocultar detalles"
 
-#: nublado/app/templates/vocab/includes/vue/_vocab_entry_info.html:84
+#: nublado/app/templates/vocab/includes/vue/_vocab_entry_info.html:100
 msgid "msg_no_vocab_info"
 msgstr "La información no fue encontrada."
 
@@ -1013,23 +1013,29 @@ msgid "msg_no_sources"
 msgstr "No hay fuentes."
 
 #: nublado/app/templates/vocab/vocab_base.html:13
-#: nublado/app/templates/vocab/vocab_base.html:150
+#: nublado/app/templates/vocab/vocab_base.html:160
 msgid "label_source"
 msgstr "Fuente"
 
-#: nublado/app/templates/vocab/vocab_base.html:54
+#: nublado/app/templates/vocab/vocab_base.html:53
+#, fuzzy
+#| msgid "label_contexts_with_audio"
+msgid "label_context_audios"
+msgstr "Audios"
+
+#: nublado/app/templates/vocab/vocab_base.html:64
 msgid "label_edit_source"
 msgstr "Editar fuente"
 
-#: nublado/app/templates/vocab/vocab_base.html:62
+#: nublado/app/templates/vocab/vocab_base.html:72
 msgid "label_export_source_json"
 msgstr "Exportar JSON"
 
-#: nublado/app/templates/vocab/vocab_base.html:72
+#: nublado/app/templates/vocab/vocab_base.html:82
 msgid "label_new_vocab_context"
 msgstr "Nuevo contexto"
 
-#: nublado/app/templates/vocab/vocab_base.html:109
+#: nublado/app/templates/vocab/vocab_base.html:119
 #: nublado/app/templates/vocab/vocab_entry.html:43
 msgid "label_edit_entry"
 msgstr "Editar entrada"
@@ -1069,6 +1075,14 @@ msgstr "Vocabulario etiquetado en esta fuente"
 #: nublado/app/templates/vocab/vocab_source_dashboard.html:64
 msgid "msg_source_contexts_desc"
 msgstr "Contextos en esta fuente"
+
+#: nublado/app/templates/vocab/vocab_source_dashboard.html:79
+msgid "label_contexts_audios"
+msgstr "Audios"
+
+#: nublado/app/templates/vocab/vocab_source_dashboard.html:83
+msgid "msg_contexts_with_audio_desc"
+msgstr "Contextos con audio en esta fuente"
 
 #: nublado/app/templates/vocab/vocab_source_entries.html:6
 msgid "page_vocab_source_entries_title"

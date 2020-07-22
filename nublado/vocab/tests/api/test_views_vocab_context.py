@@ -166,7 +166,7 @@ class VocabContextViewSetTest(TestCommon):
         response = self.client.get(
             reverse("api:vocab-context-list")
         )
-        self.assertCountEqual(json.loads(expected_results), json.loads(response.content))
+        self.assertEqual(json.loads(expected_results), json.loads(response.content))
 
     def test_view_list_num_db_hits(self):
         with self.assertNumQueries(5):
@@ -939,7 +939,7 @@ class NestedVocabContextViewSetTest(TestCommon):
             )
         )
 
-        self.assertCountEqual(json.loads(expected_results), json.loads(response.content))
+        self.assertEqual(json.loads(expected_results), json.loads(response.content))
 
         # Source 2
         data_3 = self.get_context_serializer_data(self.vocab_context_3)
@@ -958,7 +958,7 @@ class NestedVocabContextViewSetTest(TestCommon):
                 kwargs={"vocab_source_pk": self.vocab_source_2.id}
             )
         )
-        self.assertCountEqual(json.loads(expected_results), json.loads(response.content))
+        self.assertEqual(json.loads(expected_results), json.loads(response.content))
 
     def test_view_list_num_db_hits(self):
         self.login_test_user(self.user.username)
@@ -989,6 +989,65 @@ class NestedVocabContextViewSetTest(TestCommon):
                     kwargs={"vocab_source_pk": self.vocab_source.id}
                 )
             )
+
+    def test_view_list_contexts_with_audios(self):
+        vocab_source = VocabSource.objects.create(
+            creator=self.user,
+            name="test source"
+        )
+        vocab_context_1_audio = VocabContext.objects.create(
+            vocab_source=vocab_source,
+            content="test content 1"
+        )
+        VocabContextAudio.objects.create(
+            creator=self.user,
+            vocab_context=vocab_context_1_audio,
+            name="Test audio",
+            audio_url="https://www.foo.com/foo1.mp3"
+        )
+        vocab_context_0_audio = VocabContext.objects.create(
+            vocab_source=vocab_source,
+            content="test content 2"
+        )
+
+        data_1 = self.get_context_serializer_data(vocab_context_1_audio)
+        data_2 = self.get_context_serializer_data(vocab_context_0_audio)
+        expected_results = json.dumps({
+            "next": None,
+            "previous": None,
+            "page_num": 1,
+            "count": 2,
+            "num_pages": 1,
+            "results": [data_1, data_2]
+        })
+        response = self.client.get(
+            reverse(
+                "api:nested-vocab-context-list",
+                kwargs={"vocab_source_pk": vocab_source.id}
+            )
+        )
+        self.assertEqual(
+            json.loads(expected_results), json.loads(response.content)
+        )
+
+        expected_results = json.dumps({
+            "next": None,
+            "previous": None,
+            "page_num": 1,
+            "count": 1,
+            "num_pages": 1,
+            "results": [data_1]
+        })
+        response = self.client.get(
+            reverse(
+                "api:nested-vocab-context-list",
+                kwargs={"vocab_source_pk": vocab_source.id}
+            ),
+            {"audios": True},
+        )
+        self.assertEqual(
+            json.loads(expected_results), json.loads(response.content)
+        )
 
     # Permissions
 

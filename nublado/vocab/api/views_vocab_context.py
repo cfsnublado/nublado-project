@@ -11,6 +11,8 @@ from rest_framework.viewsets import (
     GenericViewSet
 )
 
+from django.db.models import Count
+
 from core.api.views_api import APIDefaultsMixin
 from core.utils import str_to_bool
 from ..models import (
@@ -164,6 +166,14 @@ class NestedVocabContextViewSet(
 
     def get_queryset(self):
         qs = self.queryset.filter(vocab_source_id=self.kwargs["vocab_source_pk"])
+
+        contexts_audios = self.request.query_params.get("audios", None)
+        if str_to_bool(contexts_audios):
+            # If audios query_param, then only return contexts with audios.
+            qs = qs.annotate(
+                audio_count=Count("vocab_context_audios")
+            ).filter(audio_count__gte=1)
+
         qs = qs.order_by("order")
 
         return qs

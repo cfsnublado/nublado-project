@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-21 17:46-0700\n"
+"POT-Creation-Date: 2020-07-23 21:54-0700\n"
 "PO-Revision-Date: 2018-11-28 21:16-0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -803,7 +803,8 @@ msgstr "Agregar audio al contexto"
 #: nublado/app/templates/vocab/includes/vue/_vocab_context_tags.html:30
 #: nublado/app/templates/vocab/includes/vue/_vocab_entry_contexts.html:19
 #: nublado/app/templates/vocab/vocab_base.html:43
-#: nublado/app/templates/vocab/vocab_source_contexts.html:18
+#: nublado/app/templates/vocab/vocab_source_contexts.html:20
+#: nublado/app/templates/vocab/vocab_source_contexts_audios.html:17
 #: nublado/app/templates/vocab/vocab_source_dashboard.html:60
 msgid "label_contexts"
 msgstr "Contextos"
@@ -1018,9 +1019,9 @@ msgid "label_source"
 msgstr "Fuente"
 
 #: nublado/app/templates/vocab/vocab_base.html:53
-#, fuzzy
-#| msgid "label_contexts_with_audio"
-msgid "label_context_audios"
+#: nublado/app/templates/vocab/vocab_source_contexts_audios.html:23
+#: nublado/app/templates/vocab/vocab_source_dashboard.html:80
+msgid "label_contexts_audios"
 msgstr "Audios"
 
 #: nublado/app/templates/vocab/vocab_base.html:64
@@ -1062,6 +1063,10 @@ msgstr "Vocabulario - %(v)s"
 msgid "page_vocab_source_contexts_title"
 msgstr "Contextos"
 
+#: nublado/app/templates/vocab/vocab_source_contexts_audios.html:7
+msgid "page_vocab_source_contexts_audios_title"
+msgstr "Contextos con audio"
+
 #: nublado/app/templates/vocab/vocab_source_dashboard.html:19
 #: nublado/app/templates/vocab/vocab_source_entries.html:31
 #: nublado/app/templates/vocab/vocab_source_entry.html:17
@@ -1076,11 +1081,7 @@ msgstr "Vocabulario etiquetado en esta fuente"
 msgid "msg_source_contexts_desc"
 msgstr "Contextos en esta fuente"
 
-#: nublado/app/templates/vocab/vocab_source_dashboard.html:79
-msgid "label_contexts_audios"
-msgstr "Audios"
-
-#: nublado/app/templates/vocab/vocab_source_dashboard.html:83
+#: nublado/app/templates/vocab/vocab_source_dashboard.html:84
 msgid "msg_contexts_with_audio_desc"
 msgstr "Contextos con audio en esta fuente"
 
@@ -1099,6 +1100,11 @@ msgstr "Fuentes"
 #: nublado/app/templates/vocab/vocab_sources.html:20
 msgid "label_search_sources"
 msgstr "Buscar fuentes"
+
+#, fuzzy
+#~| msgid "label_contexts_with_audio"
+#~ msgid "label_context_audios"
+#~ msgstr "Audios"
 
 #, fuzzy
 #~| msgid "msg_user_reset_password_instructions"

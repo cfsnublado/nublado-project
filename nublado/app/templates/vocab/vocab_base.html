@@ -48,7 +48,7 @@
   <a 
   id="sidebar-vocab-source-contexts-audios"
   class="{% block vocab_source_contexts_audios_link_active %}{% endblock vocab_source_contexts_audios_link_active %}"
-  href=""
+  href="{% url 'vocab:vocab_source_contexts_audios' vocab_source.slug %}"
   >
   <i class="menu-icon fas fa-music fa-fw"></i> {% trans "label_contexts_audios" %}
   </a>

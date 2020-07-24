@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-21 17:46-0700\n"
+"POT-Creation-Date: 2020-07-23 21:54-0700\n"
 "PO-Revision-Date: 2018-11-28 21:15-0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -797,7 +797,8 @@ msgstr "Add audio to context"
 #: nublado/app/templates/vocab/includes/vue/_vocab_context_tags.html:30
 #: nublado/app/templates/vocab/includes/vue/_vocab_entry_contexts.html:19
 #: nublado/app/templates/vocab/vocab_base.html:43
-#: nublado/app/templates/vocab/vocab_source_contexts.html:18
+#: nublado/app/templates/vocab/vocab_source_contexts.html:20
+#: nublado/app/templates/vocab/vocab_source_contexts_audios.html:17
 #: nublado/app/templates/vocab/vocab_source_dashboard.html:60
 msgid "label_contexts"
 msgstr "Contexts"
@@ -1012,9 +1013,9 @@ msgid "label_source"
 msgstr "Source"
 
 #: nublado/app/templates/vocab/vocab_base.html:53
-#, fuzzy
-#| msgid "label_contexts_with_audio"
-msgid "label_context_audios"
+#: nublado/app/templates/vocab/vocab_source_contexts_audios.html:23
+#: nublado/app/templates/vocab/vocab_source_dashboard.html:80
+msgid "label_contexts_audios"
 msgstr "Audios"
 
 #: nublado/app/templates/vocab/vocab_base.html:64
@@ -1056,6 +1057,10 @@ msgstr "Vocabulary - %(v)s"
 msgid "page_vocab_source_contexts_title"
 msgstr "Contexts"
 
+#: nublado/app/templates/vocab/vocab_source_contexts_audios.html:7
+msgid "page_vocab_source_contexts_audios_title"
+msgstr "Contexts with audio"
+
 #: nublado/app/templates/vocab/vocab_source_dashboard.html:19
 #: nublado/app/templates/vocab/vocab_source_entries.html:31
 #: nublado/app/templates/vocab/vocab_source_entry.html:17
@@ -1070,11 +1075,7 @@ msgstr "Tagged vocabulary in this source"
 msgid "msg_source_contexts_desc"
 msgstr "Contexts in this source"
 
-#: nublado/app/templates/vocab/vocab_source_dashboard.html:79
-msgid "label_contexts_audios"
-msgstr "Audios"
-
-#: nublado/app/templates/vocab/vocab_source_dashboard.html:83
+#: nublado/app/templates/vocab/vocab_source_dashboard.html:84
 msgid "msg_contexts_with_audio_desc"
 msgstr "Contexts with audio in this source"
 
@@ -1093,6 +1094,11 @@ msgstr "Sources"
 #: nublado/app/templates/vocab/vocab_sources.html:20
 msgid "label_search_sources"
 msgstr "Search sources"
+
+#, fuzzy
+#~| msgid "label_contexts_with_audio"
+#~ msgid "label_context_audios"
+#~ msgstr "Audios"
 
 #~ msgid "msg_context_tag_instructions"
 #~ msgstr "To highlight vocabulary in a context, click on the checkbox."

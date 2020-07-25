@@ -38,7 +38,6 @@ style="margin-top: 20px;"
 
 <div 
 style="margin-bottom: 30px;"
-v-cloak
 >
   <a 
   @click.prevent="filterAudio"
@@ -50,7 +49,7 @@ v-cloak
 </div>
 
 <div 
-v-if="!processing && vocabContexts && vocabContexts.length == 0"
+v-if="!processing && filterAudioSelected && vocabContexts && vocabContexts.length == 0"
 >
 <div>
 {% trans "msg_no_contexts_with_audio" %}

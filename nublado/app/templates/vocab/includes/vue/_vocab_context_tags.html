@@ -36,7 +36,10 @@ style="margin-top: 20px;"
 
 <div v-else>
 
-<div style="margin-bottom: 30px;">
+<div 
+style="margin-bottom: 30px;"
+v-cloak
+>
   <a 
   @click.prevent="filterAudio"
   >

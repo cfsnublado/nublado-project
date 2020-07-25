@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-23 21:54-0700\n"
+"POT-Creation-Date: 2020-07-25 15:21-0700\n"
 "PO-Revision-Date: 2018-11-28 21:16-0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -411,7 +411,7 @@ msgstr "Este campo es obligatorio."
 msgid "validation_vocab_context_required"
 msgstr "Este campo es obligatorio."
 
-#: nublado/vocab/models.py:58 nublado/app/templates/vocab/vocab_base.html:98
+#: nublado/vocab/models.py:58 nublado/app/templates/vocab/vocab_base.html:88
 msgid "label_entry"
 msgstr "Entrada"
 
@@ -800,11 +800,10 @@ msgstr "Agregar audio al contexto"
 #: nublado/app/templates/vocab/auth/vocab_context_audio_create.html:13
 #: nublado/app/templates/vocab/auth/vocab_context_create.html:15
 #: nublado/app/templates/vocab/auth/vocab_context_tag.html:22
-#: nublado/app/templates/vocab/includes/vue/_vocab_context_tags.html:30
+#: nublado/app/templates/vocab/includes/vue/_vocab_context_tags.html:15
 #: nublado/app/templates/vocab/includes/vue/_vocab_entry_contexts.html:19
 #: nublado/app/templates/vocab/vocab_base.html:43
 #: nublado/app/templates/vocab/vocab_source_contexts.html:20
-#: nublado/app/templates/vocab/vocab_source_contexts_audios.html:17
 #: nublado/app/templates/vocab/vocab_source_dashboard.html:60
 msgid "label_contexts"
 msgstr "Contextos"
@@ -975,15 +974,23 @@ msgstr "de"
 msgid "label_next"
 msgstr "Siguiente"
 
-#: nublado/app/templates/vocab/includes/vue/_vocab_context_tags.html:16
+#: nublado/app/templates/vocab/includes/vue/_vocab_context_tags.html:23
 #: nublado/app/templates/vocab/includes/vue/_vocab_contexts.html:18
 #: nublado/app/templates/vocab/includes/vue/_vocab_entry_contexts.html:15
 msgid "msg_no_contexts"
 msgstr "No hay contextos."
 
-#: nublado/app/templates/vocab/includes/vue/_vocab_context_tags.html:24
+#: nublado/app/templates/vocab/includes/vue/_vocab_context_tags.html:31
 msgid "label_create_context"
 msgstr "Crear contexto"
+
+#: nublado/app/templates/vocab/includes/vue/_vocab_context_tags.html:46
+msgid "msg_filter_contexts_with_audios"
+msgstr "Filtrar contextos con audio"
+
+#: nublado/app/templates/vocab/includes/vue/_vocab_context_tags.html:51
+msgid "msg_no_contexts_with_audio"
+msgstr "No hay contextos con audio."
 
 #: nublado/app/templates/vocab/includes/vue/_vocab_contexts.html:3
 msgid "header_contexts"
@@ -1014,29 +1021,23 @@ msgid "msg_no_sources"
 msgstr "No hay fuentes."
 
 #: nublado/app/templates/vocab/vocab_base.html:13
-#: nublado/app/templates/vocab/vocab_base.html:160
+#: nublado/app/templates/vocab/vocab_base.html:150
 msgid "label_source"
 msgstr "Fuente"
 
-#: nublado/app/templates/vocab/vocab_base.html:53
-#: nublado/app/templates/vocab/vocab_source_contexts_audios.html:23
-#: nublado/app/templates/vocab/vocab_source_dashboard.html:80
-msgid "label_contexts_audios"
-msgstr "Audios"
-
-#: nublado/app/templates/vocab/vocab_base.html:64
+#: nublado/app/templates/vocab/vocab_base.html:54
 msgid "label_edit_source"
 msgstr "Editar fuente"
 
-#: nublado/app/templates/vocab/vocab_base.html:72
+#: nublado/app/templates/vocab/vocab_base.html:62
 msgid "label_export_source_json"
 msgstr "Exportar JSON"
 
-#: nublado/app/templates/vocab/vocab_base.html:82
+#: nublado/app/templates/vocab/vocab_base.html:72
 msgid "label_new_vocab_context"
 msgstr "Nuevo contexto"
 
-#: nublado/app/templates/vocab/vocab_base.html:119
+#: nublado/app/templates/vocab/vocab_base.html:109
 #: nublado/app/templates/vocab/vocab_entry.html:43
 msgid "label_edit_entry"
 msgstr "Editar entrada"
@@ -1063,10 +1064,6 @@ msgstr "Vocabulario - %(v)s"
 msgid "page_vocab_source_contexts_title"
 msgstr "Contextos"
 
-#: nublado/app/templates/vocab/vocab_source_contexts_audios.html:7
-msgid "page_vocab_source_contexts_audios_title"
-msgstr "Contextos con audio"
-
 #: nublado/app/templates/vocab/vocab_source_dashboard.html:19
 #: nublado/app/templates/vocab/vocab_source_entries.html:31
 #: nublado/app/templates/vocab/vocab_source_entry.html:17
@@ -1080,10 +1077,6 @@ msgstr "Vocabulario etiquetado en esta fuente"
 #: nublado/app/templates/vocab/vocab_source_dashboard.html:64
 msgid "msg_source_contexts_desc"
 msgstr "Contextos en esta fuente"
-
-#: nublado/app/templates/vocab/vocab_source_dashboard.html:84
-msgid "msg_contexts_with_audio_desc"
-msgstr "Contextos con audio en esta fuente"
 
 #: nublado/app/templates/vocab/vocab_source_entries.html:6
 msgid "page_vocab_source_entries_title"
@@ -1100,6 +1093,12 @@ msgstr "Fuentes"
 #: nublado/app/templates/vocab/vocab_sources.html:20
 msgid "label_search_sources"
 msgstr "Buscar fuentes"
+
+#~ msgid "label_contexts_audios"
+#~ msgstr "Audios"
+
+#~ msgid "page_vocab_source_contexts_audios_title"
+#~ msgstr "Contextos con audio"
 
 #, fuzzy
 #~| msgid "label_contexts_with_audio"

@@ -816,7 +816,8 @@ const VocabContexts = {
   },
   data() {
     return {
-      vocabContexts: null
+      vocabContexts: [],
+      filterAudioSelected: false
     }
   },
   methods: {
@@ -824,7 +825,8 @@ const VocabContexts = {
       this.process()
 
       params = {
-        page: page
+        page: page,
+        filter_audios: this.filterAudioSelected
       }
 
       axios.get(this.vocabContextsUrl, {
@@ -860,6 +862,12 @@ const VocabContexts = {
     },
     deleteVocabContext(index) {
       this.$delete(this.vocabContexts, index)
+    },
+    filterAudio() {
+      if (this.processing === false) {
+        this.filterAudioSelected = !this.filterAudioSelected
+        this.getVocabContexts()
+      }
     }
   },
   created() {

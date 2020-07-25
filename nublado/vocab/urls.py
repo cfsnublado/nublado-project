@@ -13,7 +13,7 @@ from .views.views_vocab_entry_auth import (
     VocabEntryUpdateView
 )
 from .views.views_vocab_source import (
-    VocabSourceContextsView, VocabSourceContextsAudiosView,
+    VocabSourceContextsView,
     VocabSourceDashboardView, VocabSourceEntriesView,
     VocabSourceEntryView, VocabSourcesView
 )
@@ -145,11 +145,6 @@ urlpatterns = [
         "source/<slug:vocab_source_slug>/contexts/",
         VocabSourceContextsView.as_view(),
         name="vocab_source_contexts"
-    ),
-    path(
-        "source/<slug:vocab_source_slug>/contexts/audios",
-        VocabSourceContextsAudiosView.as_view(),
-        name="vocab_source_contexts_audios"
     ),
     path(
         "source/<slug:vocab_source_slug>/entries/",

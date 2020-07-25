@@ -11,7 +11,14 @@ class="vocab-contexts"
 v-cloak
 >
 
-<div v-if="vocabContexts && vocabContexts.length == 0">
+<div class="page-header">
+{% trans "label_contexts" %}
+</div>
+
+<div 
+v-if="!filterAudioSelected && vocabContexts.length == 0 && !processing"
+>
+
 <div>
 {% trans "msg_no_contexts" %}
 </div>
@@ -24,10 +31,29 @@ style="margin-top: 20px;"
 {% trans "label_create_context" %}
 </a>
 </div>
+
 </div>
 
-<div v-else class="page-header">
-{% trans "label_contexts" %}
+<div v-else>
+
+<div style="margin-bottom: 30px;">
+  <a 
+  @click.prevent="filterAudio"
+  >
+  <i v-bind:class="[filterAudioSelected ? 'fa-check-square' : 'fa-square', 'fas']"></i>
+  </a>
+  &nbsp;
+  {% trans "msg_filter_contexts_with_audios" %}
+</div>
+
+<div 
+v-if="vocabContexts.length == 0 && !processing"
+>
+<div>
+{% trans "msg_no_contexts_with_audio" %}
+</div>
+</div>
+
 </div>
 
 <vocab-context-tags

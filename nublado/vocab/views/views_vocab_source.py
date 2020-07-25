@@ -60,12 +60,6 @@ class VocabSourceContextsView(
         return qs
 
 
-class VocabSourceContextsAudiosView(
-    VocabSourceContextsView
-):
-    template_name = "{0}/vocab_source_contexts_audios.html".format(APP_NAME)
-
-
 class VocabSourceEntryView(
     VocabEntryMixin, VocabSourceMixin,
     VocabSourceSessionMixin, TemplateView

@@ -1043,7 +1043,7 @@ class NestedVocabContextViewSetTest(TestCommon):
                 "api:nested-vocab-context-list",
                 kwargs={"vocab_source_pk": vocab_source.id}
             ),
-            {"audios": True},
+            {"filter_audios": True},
         )
         self.assertEqual(
             json.loads(expected_results), json.loads(response.content)

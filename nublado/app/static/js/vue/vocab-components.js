@@ -816,7 +816,7 @@ const VocabContexts = {
   },
   data() {
     return {
-      vocabContexts: [],
+      vocabContexts: null,
       filterAudioSelected: false
     }
   },

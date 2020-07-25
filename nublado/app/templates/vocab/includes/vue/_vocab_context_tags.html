@@ -16,7 +16,7 @@ v-cloak
 </div>
 
 <div 
-v-if="!filterAudioSelected && vocabContexts.length == 0"
+v-if="!processing && !filterAudioSelected && vocabContexts && vocabContexts.length == 0"
 >
 
 <div>
@@ -50,7 +50,7 @@ v-cloak
 </div>
 
 <div 
-v-if="!processing && vocabContexts.length == 0"
+v-if="!processing && vocabContexts && vocabContexts.length == 0"
 >
 <div>
 {% trans "msg_no_contexts_with_audio" %}

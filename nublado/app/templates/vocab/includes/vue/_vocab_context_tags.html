@@ -16,7 +16,7 @@ v-cloak
 </div>
 
 <div 
-v-if="!filterAudioSelected && vocabContexts.length == 0 && !processing"
+v-if="!processing && !filterAudioSelected && vocabContexts.length == 0"
 >
 
 <div>
@@ -47,7 +47,7 @@ style="margin-top: 20px;"
 </div>
 
 <div 
-v-if="vocabContexts.length == 0 && !processing"
+v-if="!processing && vocabContexts.length == 0"
 >
 <div>
 {% trans "msg_no_contexts_with_audio" %}

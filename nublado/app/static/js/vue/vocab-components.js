@@ -817,11 +817,12 @@ const VocabContexts = {
   data() {
     return {
       vocabContexts: [],
-      filterAudioSelected: false
+      filterAudioSelected: false,
     }
   },
   methods: {
     getVocabContexts(page=1) {
+
       this.process()
 
       params = {
@@ -870,7 +871,7 @@ const VocabContexts = {
       }
     }
   },
-  created() {
+  mounted() {
     this.getVocabContexts()
   }
 }

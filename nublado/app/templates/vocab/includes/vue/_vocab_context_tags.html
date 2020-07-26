@@ -30,7 +30,7 @@ style="margin-bottom: 30px;"
 </div>
 
 <div 
-v-if="filterAudioSelected && vocabContexts.length == 0"
+v-if="!processing && filterAudioSelected && vocabContexts.length == 0"
 >
 <div>
 {% trans "msg_no_contexts_with_audio" %}

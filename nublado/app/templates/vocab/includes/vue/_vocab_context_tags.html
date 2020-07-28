@@ -15,7 +15,28 @@ v-cloak
 {% trans "label_contexts" %}
 </div>
 
+<div 
+v-if="!processing && vocabContexts && vocabContexts.length == 0 && !filterAudioSelected"
+>
+
 <div>
+{% trans "msg_no_contexts" %}
+</div>
+<div>
+<a 
+href="{% url 'vocab:vocab_context_create' vocab_source.slug %}" 
+class="button is-info" 
+style="margin-top: 20px;"
+>
+{% trans "label_create_context" %}
+</a>
+</div>
+
+</div>
+
+<div
+v-else-if="vocabContexts"
+>
 
 <div 
 style="margin-bottom: 30px;"
@@ -35,25 +56,6 @@ v-if="filterAudioSelected && vocabContexts.length == 0"
 <div>
 {% trans "msg_no_contexts_with_audio" %}
 </div>
-</div>
-
-</div>
-
-<div 
-v-if="!processing && vocabContexts.length == 0 && !filterAudioSelected"
->
-
-<div>
-{% trans "msg_no_contexts" %}
-</div>
-<div>
-<a 
-href="{% url 'vocab:vocab_context_create' vocab_source.slug %}" 
-class="button is-info" 
-style="margin-top: 20px;"
->
-{% trans "label_create_context" %}
-</a>
 </div>
 
 </div>

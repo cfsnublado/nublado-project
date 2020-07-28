@@ -60,6 +60,11 @@ v-if="filterAudioSelected && vocabContexts.length == 0"
 
 </div>
 
+<div v-if="processing" style="color: #777; font-size: 30px;">
+<i class="fas fa-cog fa-spin"></i>
+</div>
+
+<div v-else>
 <vocab-context-tags
 v-for="(vocabContext, index) in vocabContexts"
 :key="vocabContext.order"
@@ -264,6 +269,8 @@ style="margin-top: 20px;"
 </vocab-context-tags>
 
 {% include "vocab/includes/vue/_pagination.html" with select_action="getVocabContexts(page)" prev_action="getVocabContexts(pageNum - 1)" next_action="getVocabContexts(pageNum + 1)" %}
+
+</div><!-- processing -->
 
 </div>
 

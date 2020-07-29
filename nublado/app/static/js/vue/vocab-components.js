@@ -279,11 +279,14 @@ const VocabEntries = {
   data() {
     return {
       language: this.initLanguage,
-      vocabEntries: null
+      vocabEntries: null,
+      timerId: null,
+      processDelay: 500
     }
   },
   methods: {
     getVocabEntries(page=1) {
+      clearTimeout(this.timerId)
       this.process()
 
       params = {
@@ -291,36 +294,38 @@ const VocabEntries = {
         page: page
       }
 
-      axios.get(this.vocabEntriesUrl, {
-        params: params
-      })
-      .then(response => {
-        this.vocabEntries = response.data.results
-        this.setPagination(
-          response.data.previous,
-          response.data.next,
-          response.data.page_num,
-          response.data.count,
-          response.data.num_pages
-        )
-        VueScrollTo.scrollTo({
-          el: "#vocab-entries-scroll-top",
+      this.timerId = setTimeout(()=>{
+        axios.get(this.vocabEntriesUrl, {
+          params: params
         })
-        this.success()
-      })
-      .catch(error => {
-        if (error.response) {
-          console.log(error.response)
-        } else if (error.request) {
-          console.log(error.request)
-        } else {
-          console.log(error.message)
-        }
-        console.log(error.config)
-      })
-      .finally(() => {
-        this.complete()
-      })
+        .then(response => {
+          this.vocabEntries = response.data.results
+          this.setPagination(
+            response.data.previous,
+            response.data.next,
+            response.data.page_num,
+            response.data.count,
+            response.data.num_pages
+          )
+          VueScrollTo.scrollTo({
+            el: "#vocab-entries-scroll-top",
+          })
+          this.success()
+        })
+        .catch(error => {
+          if (error.response) {
+            console.log(error.response)
+          } else if (error.request) {
+            console.log(error.request)
+          } else {
+            console.log(error.message)
+          }
+          console.log(error.config)
+        })
+        .finally(() => {
+          this.complete()
+        })
+      }, this.processDelay)
     },
     setLanguage(language) {
       this.language = language

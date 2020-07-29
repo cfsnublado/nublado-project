@@ -27,7 +27,9 @@ inline-template
   v-show="vocabEntryInfoVisible"
   >
 
-  <span v-show="processing"><i class="fas fa-cog fa-spin"></i></span>
+  <div v-show="processing" class="vocab-processing-icon">
+  <i class="fas fa-cog fa-spin"></i>
+  </div>
 
   <div 
   class="box"

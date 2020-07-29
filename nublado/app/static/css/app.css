@@ -13149,75 +13149,78 @@ nav[role='navigation'] {
 /* line 118, ../scss/cfs/vocab/_vocab.scss */
 .vocab-definition-text {
   font-size: 1.125rem;
-  margin-left: 10px;
+  margin-bottom: 0.5rem;
+  margin-left: 0.625rem;
 }
 
-/* line 124, ../scss/cfs/vocab/_vocab.scss */
+/* line 125, ../scss/cfs/vocab/_vocab.scss */
 .vocab-example-text {
   font-size: 1.125rem;
-  margin-left: 20px;
-  color: #558A92;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  margin-left: 1.25rem;
+  color: #558a92;
 }
 
-/* line 132, ../scss/cfs/vocab/_vocab.scss */
+/* line 135, ../scss/cfs/vocab/_vocab.scss */
 .vocab-lexical-category {
   font-size: 1.125rem;
   color: #4183c4;
 }
 
-/* line 138, ../scss/cfs/vocab/_vocab.scss */
+/* line 141, ../scss/cfs/vocab/_vocab.scss */
 .vocab-pronunciation {
   font-size: 1.25rem;
   color: #4a4a4a;
 }
 
-/* line 144, ../scss/cfs/vocab/_vocab.scss */
+/* line 147, ../scss/cfs/vocab/_vocab.scss */
 .vocab-pronunciation-icon {
   font-size: 1rem;
   color: #979797;
 }
 
-/* line 150, ../scss/cfs/vocab/_vocab.scss */
+/* line 153, ../scss/cfs/vocab/_vocab.scss */
 .vocab-pronunciation p {
   margin-top: 0;
   margin-bottom: 0;
 }
 
-/* line 155, ../scss/cfs/vocab/_vocab.scss */
+/* line 158, ../scss/cfs/vocab/_vocab.scss */
 .vocab-entry-tag-group {
   margin-top: 1.25rem;
   margin-bottom: 1.25rem;
 }
-/* line 160, ../scss/cfs/vocab/_vocab.scss */
+/* line 163, ../scss/cfs/vocab/_vocab.scss */
 .vocab-entry-tag-group.tags .tag:not(body) {
   font-size: 1.25rem;
 }
-/* line 164, ../scss/cfs/vocab/_vocab.scss */
+/* line 167, ../scss/cfs/vocab/_vocab.scss */
 .vocab-entry-tag-group.tags .tag:not(:last-child) {
   margin-right: 1rem;
   margin-bottom: 1rem;
 }
 
-/* line 171, ../scss/cfs/vocab/_vocab.scss */
+/* line 174, ../scss/cfs/vocab/_vocab.scss */
 .untagged-context-text {
   display: none;
 }
 
-/* line 176, ../scss/cfs/vocab/_vocab.scss */
+/* line 179, ../scss/cfs/vocab/_vocab.scss */
 .vocab-context-text .tagged-text {
   padding: 5px 0;
   background-color: #e0eee8;
 }
 
-/* line 184, ../scss/cfs/vocab/_vocab.scss */
+/* line 187, ../scss/cfs/vocab/_vocab.scss */
 .vocab-context-entries .vocab-context {
   padding-top: 1rem;
 }
-/* line 188, ../scss/cfs/vocab/_vocab.scss */
+/* line 191, ../scss/cfs/vocab/_vocab.scss */
 .vocab-context-entries .vocab-context-text {
   font-size: 1.125rem;
 }
-/* line 192, ../scss/cfs/vocab/_vocab.scss */
+/* line 195, ../scss/cfs/vocab/_vocab.scss */
 .vocab-context-entries .vocab-source-title {
   font-size: 0.875rem;
   font-style: italic;
@@ -13225,97 +13228,97 @@ nav[role='navigation'] {
   color: #888;
 }
 
-/* line 202, ../scss/cfs/vocab/_vocab.scss */
+/* line 205, ../scss/cfs/vocab/_vocab.scss */
 .vocab-list {
   margin-left: 0;
   list-style: none;
 }
 
-/* line 208, ../scss/cfs/vocab/_vocab.scss */
+/* line 211, ../scss/cfs/vocab/_vocab.scss */
 .vocab-list li {
   padding-top: 5px;
   padding-bottom: 5px;
 }
 
-/* line 213, ../scss/cfs/vocab/_vocab.scss */
+/* line 216, ../scss/cfs/vocab/_vocab.scss */
 .vocab-list li a {
   color: #777;
 }
 
-/* line 217, ../scss/cfs/vocab/_vocab.scss */
+/* line 220, ../scss/cfs/vocab/_vocab.scss */
 .vocab-list li a:hover {
   color: #222;
 }
 
-/* line 221, ../scss/cfs/vocab/_vocab.scss */
+/* line 224, ../scss/cfs/vocab/_vocab.scss */
 .language-label {
   font-size: 14px;
   font-weight: bold;
 }
 
-/* line 226, ../scss/cfs/vocab/_vocab.scss */
+/* line 229, ../scss/cfs/vocab/_vocab.scss */
 .entry-list li {
   display: inline-block;
   font-size: 14px;
   padding-right: 5px;
 }
 
-/* line 234, ../scss/cfs/vocab/_vocab.scss */
+/* line 237, ../scss/cfs/vocab/_vocab.scss */
 .entry-list a {
   color: #555;
 }
 
-/* line 238, ../scss/cfs/vocab/_vocab.scss */
+/* line 241, ../scss/cfs/vocab/_vocab.scss */
 .entry-list li a:hover {
   color: #000;
 }
 
-/* line 242, ../scss/cfs/vocab/_vocab.scss */
+/* line 245, ../scss/cfs/vocab/_vocab.scss */
 .context-list .context-list-item {
   font-size: 14px;
   margin: 0 -20px;
   padding: 0 20px 0 20px;
 }
 
-/* line 249, ../scss/cfs/vocab/_vocab.scss */
+/* line 252, ../scss/cfs/vocab/_vocab.scss */
 .context-list .context-list-item a {
   color: #555;
 }
 
-/* line 253, ../scss/cfs/vocab/_vocab.scss */
+/* line 256, ../scss/cfs/vocab/_vocab.scss */
 .context-list .context-list-item a:hover {
   color: #000;
 }
 
-/* line 257, ../scss/cfs/vocab/_vocab.scss */
+/* line 260, ../scss/cfs/vocab/_vocab.scss */
 .context-list .context-list-item.bordered {
   padding-top: 1rem;
   border-top: 1px solid #eee;
 }
 
-/* line 263, ../scss/cfs/vocab/_vocab.scss */
+/* line 266, ../scss/cfs/vocab/_vocab.scss */
 .vocab-processing-icon {
-  color: #777;
   font-size: 2rem;
   text-align: center;
+  color: #777;
 }
 
 @media screen and (max-width: 768px) {
-  /* line 270, ../scss/cfs/vocab/_vocab.scss */
+  /* line 275, ../scss/cfs/vocab/_vocab.scss */
   .entry-header {
     font-size: 2.5rem;
   }
 
-  /* line 274, ../scss/cfs/vocab/_vocab.scss */
+  /* line 279, ../scss/cfs/vocab/_vocab.scss */
   .vocab-context-text {
     font-size: 1.125rem;
   }
 
-  /* line 280, ../scss/cfs/vocab/_vocab.scss */
+  /* line 285, ../scss/cfs/vocab/_vocab.scss */
   .vocab-entry-tag-group.tags .tag:not(body) {
     font-size: 1rem;
   }
-  /* line 284, ../scss/cfs/vocab/_vocab.scss */
+  /* line 289, ../scss/cfs/vocab/_vocab.scss */
   .vocab-entry-tag-group.tags .tag:not(:last-child) {
     margin-right: 0.75rem;
     margin-bottom: 0.75rem;

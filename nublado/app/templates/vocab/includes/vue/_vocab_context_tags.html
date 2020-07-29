@@ -60,7 +60,10 @@ v-if="filterAudioSelected && vocabContexts.length == 0"
 
 </div>
 
-<div v-if="processing" style="color: #777; font-size: 30px;">
+<div 
+v-if="processing"
+class="vocab-processing-icon"
+>
 <i class="fas fa-cog fa-spin"></i>
 </div>
 

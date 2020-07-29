@@ -19,6 +19,14 @@ v-cloak
 {% trans "label_contexts" %}
 </div>
 
+<div 
+v-if="processing"
+class="vocab-processing-icon"
+>
+<i class="fas fa-cog fa-spin"></i>
+</div>
+
+<div v-else>
 <vocab-entry-context
 v-for="(vocabEntryContext, index) in vocabContexts"
 :key="vocabEntryContext.vocab_context_id"
@@ -203,6 +211,8 @@ v-html="markdownToHtml(vocabEntryContext.vocab_context)"
 </vocab-entry-context>
 
 {% include "vocab/includes/vue/_pagination.html" with select_action="getVocabContexts(page)" prev_action="getVocabContexts(pageNum - 1)" next_action="getVocabContexts(pageNum + 1)" %}
+
+</div><!-- processing -->
 
 </div>
 

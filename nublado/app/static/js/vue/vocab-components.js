@@ -95,47 +95,50 @@ const VocabSources = {
   },
   data() {
     return {
-      vocabSources: null
+      vocabSources: null,
+      timerId: null,
+      processDelay: 500
     }
   },
   methods: {
     getVocabSources(page=1) {
+      clearTimeout(this.timerId)
       this.process()
 
       params = {
         page: page
       }
 
-      axios.get(this.vocabSourcesUrl, {
-        params: params
-      })
-      .then(response => {
-        this.vocabSources = response.data.results
-        this.setPagination(
-          response.data.previous,
-          response.data.next,
-          response.data.page_num,
-          response.data.count,
-          response.data.num_pages
-        )
-        VueScrollTo.scrollTo({
-          el: "#vocab-sources-scroll-top",
+      this.timerId = setTimeout(()=>{
+        axios.get(this.vocabSourcesUrl, {
+          params: params
         })
-        this.success()
-      })
-      .catch(error => {
-        if (error.response) {
-          console.log(error.response)
-        } else if (error.request) {
-          console.log(error.request)
-        } else {
-          console.log(error.message)
-        }
-        console.log(error.config)
-      })
-      .finally(() => {
-        this.complete()
-      })
+        .then(response => {
+          this.vocabSources = response.data.results
+          this.setPagination(
+            response.data.previous,
+            response.data.next,
+            response.data.page_num,
+            response.data.count,
+            response.data.num_pages
+          )
+          VueScrollTo.scrollTo({
+            el: "#vocab-sources-scroll-top",
+          })
+          this.success()
+        })
+        .catch(error => {
+          if (error.response) {
+            console.log(error.response)
+          } else if (error.request) {
+            console.log(error.request)
+          } else {
+            console.log(error.message)
+          }
+          console.log(error.config)
+        })
+        .finally(() => { this.complete() })
+      }, this.processDelay)
     },
     deleteVocabSource(index) {
       this.$delete(this.vocabSources, index)
@@ -408,39 +411,47 @@ const VocabEntryInfo = {
       vocabEntryInfo: {},
       vocabEntryInfoVisible: false,
       vocabEntryInfoLoaded: false,
-      hasError: false
+      hasError: false,
+      timerId: null,
+      processDelay: 500
     }
   },
   methods: {
     toggleVisible() {
-      this.vocabEntryInfoVisible = !this.vocabEntryInfoVisible
+      if (!this.processing) {
+        this.vocabEntryInfoVisible = !this.vocabEntryInfoVisible
       
-      if (this.vocabEntryInfoVisible && !this.vocabEntryInfoLoaded) {
-        this.getVocabEntryInfo()
+        if (this.vocabEntryInfoVisible && !this.vocabEntryInfoLoaded) {
+          this.getVocabEntryInfo()
+        }
       }
     },
     getVocabEntryInfo() {
+      clearTimeout(this.timerid)
       this.process()
-      axios.get(
-        this.endpointUrl
-      )
-      .then(response => {
-        this.vocabEntryInfo = response.data;
-        this.vocabEntryInfoLoaded = true
-        this.success()
-      })
-      .catch(error => {
-        if (error.response) {
-          console.log(error.response)
-        } else if (error.request) {
-          console.log(error.request)
-        } else {
-          console.log(error.message)
-        }
-        console.error("VocabEntryInfo error")
-        this.hasError = true
-      })
-      .finally(() => this.complete())
+
+      this.timerId = setTimeout(()=>{
+        axios.get(
+          this.endpointUrl
+        )
+        .then(response => {
+          this.vocabEntryInfo = response.data;
+          this.vocabEntryInfoLoaded = true
+          this.success()
+        })
+        .catch(error => {
+          if (error.response) {
+            console.log(error.response)
+          } else if (error.request) {
+            console.log(error.request)
+          } else {
+            console.log(error.message)
+          }
+          console.error("VocabEntryInfo error")
+          this.hasError = true
+        })
+        .finally(() => this.complete())
+      }, this.processDelay)
     }
   }
 }

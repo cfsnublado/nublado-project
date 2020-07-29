@@ -29,6 +29,15 @@ style="margin-top: 20px;"
 </div>
 </div>
 
+<div 
+v-if="processing"
+class="vocab-processing-icon"
+>
+<i class="fas fa-cog fa-spin"></i>
+</div>
+
+<div v-else>
+
 <vocab-source
 v-for="(vocabSource, index) in vocabSources"
 :key="vocabSource.id"
@@ -123,6 +132,8 @@ v-html="markdownToHtml(source.description)"
 </vocab-source>
 
 {% include "vocab/includes/vue/_pagination.html" with select_action="getVocabSources(page)" prev_action="getVocabSources(pageNum - 1)" next_action="getVocabSources(pageNum + 1)" %}
+
+</div><!-- processing -->
 
 </div>
 

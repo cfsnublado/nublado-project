@@ -304,12 +304,14 @@ class AjaxSessionMixin(object):
 
     Expeced session post data in request body: {'session_data': {'key': 'value', ...}}
     '''
+    allowed_session_keys = []
 
     def post(self, request, *args, **kwargs):
         if request.is_ajax():
             data = json.loads(request.body)
             for key, value in data['session_data'].items():
-                request.session[key] = value
+                if key in self.allowed_session_keys:
+                    request.session[key] = value
             return JsonResponse({})
         else:
             return HttpResponseNotFound('Error')

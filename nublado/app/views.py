@@ -5,7 +5,7 @@ from vocab.utils import get_random_vocab_entry
 
 
 class AppSessionView(AjaxSessionMixin, View):
-    pass
+    allowed_session_keys = ["sidebar_locked"]
 
 
 class HomeView(ObjectSessionMixin, TemplateView):

@@ -516,10 +516,6 @@ const AudioPlayer = {
       type: String,
       default: "audio-player"
     },
-    audioUrl: {
-      type: String,
-      default: null
-    },
     autoPlay: {
       type: Boolean,
       default: false
@@ -601,8 +597,10 @@ const AudioPlayer = {
       this.audio.pause()
     },
     download() {
-      this.stop()
-      window.location.assign(this.audioUrl)
+      if (this.audio.src) {
+        this.stop()
+        window.location.assign(this.audio.src)
+      }
     },
     load() {
       if (this.audio.readyState >= 2) {
@@ -642,7 +640,7 @@ const AudioPlayer = {
     },
     error() {
       this.hasError = true
-      console.error("Error loading " + this.audioUrl)
+      console.error("Error loading audio")
     },
     onProgressMousedown(e) {
       if (!this.loading) {
@@ -671,22 +669,15 @@ const AudioPlayer = {
   },
   mounted() {
     this.audio = this.$el.querySelector("#" + this.audioPlayerId)
-
-    if (this.audioUrl) {
-      this.audio.src = this.audioUrl
-    }
-    
     this.audio.addEventListener("error", this.error)
     this.audio.addEventListener("play", () => { this.playing = true })
     this.audio.addEventListener("pause", () => { this.playing = false });
     this.audio.addEventListener("ended", this.stop)
     this.audio.addEventListener("timeupdate", this.update)
     this.audio.addEventListener("loadeddata", this.load)
+    this.seekBar = this.$el.querySelector("#" + this.audioPlayerId + "-seekbar")
 
     window.addEventListener("mouseup", this.onProgressMouseup)
     window.addEventListener("mousemove", this.onProgressMousemove)
-
-    this.seekBar = this.$el.querySelector("#" + this.audioPlayerId + "-seekbar")
-
   },
 }

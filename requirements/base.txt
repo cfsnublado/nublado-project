@@ -59,7 +59,7 @@ sphinxcontrib-qthelp==1.0.3
 sphinxcontrib-serializinghtml==1.1.4
 sqlparse==0.3.1
 tornado==6.0.4
-urllib3==1.25.9
+urllib3==1.26.5
 URLObject==2.4.3
 whitenoise==5.1.0
 zipp==3.1.0
